@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prokrastynacja – Instrukcja Obsługi Przeciążonego Umysłu | Czuły Balans &amp; Laura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-dark: #0f0f10;
+  --bg-cream: #FAF6EF;
+  --bg-cream-mid: #F2EBE0;
+  --bg-cream-deep: #E8DDD0;
+  --text-dark: #2A1F14;
+  --text-muted: #7A6555;
+  --text-light: #f2efe9;
+  --accent-red: #8a4f4f;
+  --accent-red-hover: #9e5a5a;
+  --accent-sage: #5C7A5A;
+  --accent-sage-pale: #D8E8D7;
+  --accent-terracotta: #B5613A;
+  --accent-gold: #C4953A;
+  --accent-gold-pale: #F0E3C4;
+  --border-color: #D8CEBC;
+  --line-light: rgba(242,239,233,0.12);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-cream);
+  color: var(--text-dark);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  min-height: 100vh;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ── NAWIGACJA (DESKTOP SIDEBAR) ────────────────────────────── */
+.sidebar-nav {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 340px;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  padding: 50px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 100;
+  border-right: 1px solid var(--accent-red);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.sidebar-nav::-webkit-scrollbar { display: none; }
+.sidebar-brand-box { margin-bottom: 40px; }
+.sidebar-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--text-light);
+}
+.sidebar-brand em { font-style: italic; color: var(--accent-red); }
+.sidebar-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 5px;
+}
+.sidebar-menu { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.sidebar-menu li a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9a9490;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: block;
+  padding: 6px 0;
+}
+.sidebar-menu li a:hover,
+.sidebar-menu li.active a {
+  color: var(--text-light);
+  padding-left: 8px;
+  border-left: 1px solid var(--accent-red);
+}
+.sidebar-footer {
+  margin-top: 40px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: rgba(242,239,233,0.3);
+  letter-spacing: 0.05em;
+}
+
+/* ── MOBILNY NAGŁÓWEK ───────────────────────────────────────── */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 101;
+  border-bottom: 1px solid var(--accent-red);
+}
+.mobile-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; }
+.mobile-menu-btn {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+/* ── GŁÓWNY KONTENER TREŚCI ──────────────────────────────────── */
+.main-content {
+  margin-left: 340px;
+  flex: 1;
+  max-width: 100%;
+  position: relative;
+  background: var(--bg-cream);
+}
+.progress-container { position: fixed; top: 0; left: 340px; right: 0; height: 3px; background: transparent; z-index: 999; }
+.progress-bar { height: 100%; background: var(--accent-red); width: 0%; transition: width 0.1s ease; }
+
+/* ── TYPOGRAFIA I STRUKTURA ARTYKUŁU ────────────────────────── */
+.book-section { max-width: 820px; margin: 0 auto; padding: 100px 60px; border-bottom: 1px solid var(--border-color); }
+.book-section:last-of-type { border-bottom: none; }
+
+.book-cover {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 80px;
+  border-bottom: 3px solid var(--accent-red);
+  position: relative;
+  overflow: hidden;
+}
+.cover-decor { position: absolute; width: 400px; height: 400px; border-radius: 50%; border: 1px solid rgba(138, 79, 79, 0.15); top: -100px; right: -100px; pointer-events: none; }
+.cover-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--accent-red); margin-bottom: 40px; }
+.cover-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px, 6vw, 76px); font-weight: 300; line-height: 1.05; margin-bottom: 24px; color: var(--text-light); }
+.cover-title em { font-style: italic; color: var(--accent-red); }
+.cover-desc { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: rgba(242,239,233,0.7); line-height: 1.6; max-width: 500px; margin-bottom: 50px; }
+.cover-meta { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase; }
+
+.section-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent-red); margin-bottom: 24px; display: block; }
+.chapter-num { font-family: 'Cormorant Garamond', serif; font-size: clamp(70px, 8vw, 110px); font-weight: 300; color: rgba(138,79,79,0.15); line-height: 0.8; margin-bottom: 10px; }
+.chapter-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4.5vw, 48px); font-weight: 300; line-height: 1.2; color: var(--text-dark); margin-bottom: 36px; }
+.chapter-title em { font-style: italic; color: var(--accent-red); }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4.5vw, 48px); font-weight: 300; line-height: 1.2; color: var(--text-dark); margin-bottom: 36px; }
+.section-subtitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 3vw, 30px); font-weight: 400; line-height: 1.3; color: var(--text-dark); margin: 44px 0 24px; }
+p { margin-bottom: 22px; font-size: 16.5px; color: rgba(42, 31, 20, 0.9); }
+p strong { color: var(--text-dark); font-weight: 500; }
+
+/* ── ELEMENTY WIZUALNE I INTERAKTYWNE ───────────────────────── */
+.inline-hook { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-style: italic; color: var(--text-dark); border-left: 2px solid var(--accent-red); padding: 10px 0 10px 24px; margin: 36px 0; line-height: 1.6; display: block; }
+
+.story-block { background: var(--bg-cream-mid); border-left: 3px solid var(--accent-sage); border-radius: 0 4px 4px 0; padding: 24px 28px; margin: 36px 0; }
+.story-block p { font-style: italic; color: rgba(42, 31, 20, 0.85); margin-bottom: 10px; font-size: 15.5px; }
+.story-name { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase; }
+
+.loop-steps { display: flex; flex-direction: column; margin: 36px 0; }
+.loop-step-item { display: flex; gap: 20px; padding: 16px 0; position: relative; }
+.loop-node { width: 36px; height: 36px; border-radius: 50%; background: #fff; border: 1px solid var(--accent-red); display: flex; align-items: center; justify-content: center; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; color: var(--accent-red); flex-shrink: 0; z-index: 2; }
+.loop-step-item:not(:last-child)::after { content: ''; position: absolute; left: 18px; top: 36px; bottom: -16px; width: 1px; background: rgba(138, 79, 79, 0.3); z-index: 1; }
+.loop-step-text { display: flex; flex-direction: column; padding-top: 4px; }
+.loop-step-title { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+.loop-step-desc { font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }
+
+.diag-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 12px; }
+.diag-table th { text-align: left; padding: 12px 10px; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-red); border-bottom: 1px solid var(--border-color); }
+.diag-table td { padding: 12px 10px; border-bottom: 1px solid rgba(42,31,20,0.08); color: rgba(42,31,20,0.8); }
+.diag-table td:first-child { font-size: 14px; font-weight: 500; color: var(--text-dark); }
+.diag-table th:not(:first-child), .diag-table td:not(:first-child) { text-align: center; }
+.diag-check { color: var(--accent-red); font-weight: bold; }
+.diag-partial { color: var(--text-muted); opacity: 0.6; }
+.diag-no { color: rgba(42,31,20,0.15); }
+
+.phase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 30px 0; }
+.phase-card { padding: 20px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-cream-mid); display: flex; flex-direction: column; }
+.phase-card.f { border-left: 3px solid var(--accent-gold); }
+.phase-card.o { border-left: 3px solid var(--accent-terracotta); }
+.phase-card.l { border-left: 3px solid var(--accent-red); }
+.phase-card.m { border-left: 3px solid var(--accent-sage); }
+.phase-name { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 6px; }
+.phase-card.f .phase-name { color: var(--accent-gold); }
+.phase-card.o .phase-name { color: var(--accent-terracotta); }
+.phase-card.l .phase-name { color: var(--accent-red); }
+.phase-card.m .phase-name { color: var(--accent-sage); }
+.phase-days { font-size: 11px; color: var(--text-muted); margin-bottom: 10px; }
+.phase-energy { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--text-dark); margin-bottom: 10px; }
+.phase-tasks { font-size: 12px; color: rgba(42,31,20,0.75); line-height: 1.6; }
+
+.stat-row { display: flex; gap: 16px; margin: 30px 0; }
+.stat-card { flex: 1; text-align: center; padding: 24px 16px; border: 1px solid var(--border-color); background: var(--bg-cream-mid); border-radius: 4px; }
+.stat-number { font-family: 'Cormorant Garamond', serif; font-size: 42px; color: var(--accent-red); line-height: 1; margin-bottom: 10px; }
+.stat-label { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
+
+/* ── INTERAKTYWNY QUIZ DIAGNOSTYCZNY ────────────────────────── */
+.quiz-section { background: var(--bg-dark); color: var(--text-light); border-radius: 4px; padding: 40px; margin: 40px 0; border: 1px solid var(--accent-red); }
+.quiz-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 24px; color: #fff; }
+.quiz-group { margin-bottom: 30px; }
+.quiz-group-title { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-red); margin-bottom: 14px; border-bottom: 1px solid var(--line-light); padding-bottom: 6px; }
+.quiz-question-row { padding: 16px 0; border-bottom: 1px solid rgba(242,239,233,0.06); }
+.quiz-question-row:last-child { border-bottom: none; }
+.quiz-question-text { font-family: 'Lora', serif; font-size: 14px; color: rgba(242,239,233,0.85); margin-bottom: 12px; line-height: 1.6; }
+.quiz-options { display: flex; gap: 20px; flex-wrap: wrap; }
+.quiz-options label { display: flex; align-items: center; gap: 8px; font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9a9490; cursor: pointer; transition: color 0.2s; }
+.quiz-options label:hover { color: var(--text-light); }
+.quiz-options input[type="radio"] { accent-color: var(--accent-red); cursor: pointer; }
+.quiz-submit-btn { background: var(--accent-red); color: #fff; border: none; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; padding: 16px 32px; width: 100%; cursor: pointer; transition: background 0.2s; border-radius: 2px; margin-top: 10px; }
+.quiz-submit-btn:hover { background: var(--accent-red-hover); }
+.quiz-result-card { display: none; margin-top: 30px; padding: 24px; background: rgba(255,255,255,0.04); border: 1px solid var(--accent-red); border-radius: 2px; }
+.quiz-result-card.active { display: block; }
+.quiz-result-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #fff; margin-bottom: 10px; }
+.quiz-result-desc { font-size: 13.5px; color: rgba(242,239,233,0.85); line-height: 1.65; }
+
+/* ── INTERAKTYWNY TRACKER 14-DNIOWY ─────────────────────────── */
+.tracker-box { background: var(--bg-dark); color: var(--text-light); padding: 40px; border-radius: 4px; margin: 40px 0; }
+.tracker-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 12px; color: #fff; }
+.tracker-desc { font-size: 13.5px; color: #9a9490; margin-bottom: 24px; line-height: 1.6; }
+.tracker-group-title { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-red); margin: 24px 0 12px; }
+.tracker-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+.tracker-day-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(242, 239, 233, 0.08); border-radius: 4px; padding: 14px 10px; text-align: center; cursor: pointer; transition: all 0.25s; position: relative; user-select: none; }
+.tracker-day-card:hover { background: rgba(138, 79, 79, 0.1); border-color: var(--accent-red); }
+.tracker-day-card.completed { background: rgba(138, 79, 79, 0.2); border-color: var(--accent-red); }
+.tracker-day-num { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: rgba(242, 239, 233, 0.35); display: block; line-height: 1; margin-bottom: 6px; transition: color 0.2s; }
+.tracker-day-card.completed .tracker-day-num { color: var(--text-light); }
+.tracker-day-time { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 500; letter-spacing: 0.5px; color: #7a7572; text-transform: uppercase; }
+.tracker-day-card.completed .tracker-day-time { color: var(--accent-red); }
+.tracker-checkbox { width: 16px; height: 16px; border: 1px solid rgba(242,239,233,0.15); border-radius: 50%; margin: 10px auto 0; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
+.tracker-day-card.completed .tracker-checkbox { background: var(--accent-red); border-color: var(--accent-red); }
+.tracker-checkbox::after { content: '✓'; color: #fff; font-size: 10px; display: none; }
+.tracker-day-card.completed .tracker-checkbox::after { display: block; }
+
+/* ── CARD AUTORA, NOTY, LEJKI ───────────────────────────────── */
+.author-card { background: rgba(138,79,79,0.04); border: 1px solid rgba(138,79,79,0.15); padding: 30px; margin: 40px 0; display: flex; gap: 24px; border-radius: 2px; }
+.author-avatar { width: 60px; height: 60px; border-radius: 50%; background: rgba(138,79,79,0.1); border: 1px solid rgba(138,79,79,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.author-info { flex: 1; }
+.author-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--text-dark); margin-bottom: 4px; }
+.author-role { font-family: 'DM Sans', sans-serif; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-red); margin-bottom: 14px; }
+.author-bio { font-size: 14.5px; line-height: 1.65; color: rgba(42,31,20,0.8); margin-bottom: 14px; }
+.author-social-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.author-link { font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--accent-red); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
+.author-link:hover { opacity: 0.8; }
+
+.clinical-note { background: rgba(92,122,90,0.06); border-left: 3px solid var(--accent-sage); border-radius: 0 4px 4px 0; padding: 20px 24px; margin: 36px 0; display: flex; gap: 16px; font-size: 13.5px; color: rgba(42,31,20,0.75); line-height: 1.65; }
+.clinical-note-icon { color: var(--accent-sage); flex-shrink: 0; font-size: 18px; margin-top: 2px; }
+.clinical-note-title { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-sage); margin-bottom: 6px; font-weight: 700; }
+
+.cta-block { background: var(--bg-dark); color: var(--text-light); border-radius: 4px; border: 1px solid var(--accent-red); padding: 40px; margin-top: 50px; }
+.cta-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; margin-bottom: 12px; color: #fff; }
+.cta-desc { font-size: 13.5px; color: #9a9490; margin-bottom: 28px; line-height: 1.65; }
+.cta-links-container { display: flex; flex-direction: column; gap: 12px; }
+.cta-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px; text-decoration: none; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: all 0.2s; border-radius: 2px; }
+.cta-btn-primary { background: var(--accent-red); color: #fff; }
+.cta-btn-primary:hover { background: var(--accent-red-hover); }
+.cta-btn-secondary { border: 1px solid rgba(242,239,233,0.2); color: var(--text-light); }
+.cta-btn-secondary:hover { border-color: #fff; }
+.signature { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--text-muted); margin-top: 50px; }
+
+/* Mobilne menu wysuwane (Drawer) */
+.mobile-drawer { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.mobile-drawer.active { opacity: 1; pointer-events: auto; }
+.mobile-drawer-content { position: absolute; top: 0; left: 0; bottom: 0; width: 280px; background: var(--bg-dark); padding: 40px 24px; display: flex; flex-direction: column; transform: translateX(-100%); transition: transform 0.3s ease; }
+.mobile-drawer.active .mobile-drawer-content { transform: translateX(0); }
+.mobile-drawer-close { align-self: flex-end; background: none; border: none; color: #f2efe9; font-size: 20px; margin-bottom: 30px; cursor: pointer; }
+
+/* ── RESPONSYWNOŚĆ ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  body { flex-direction: column; }
+  .sidebar-nav { display: none; }
+  .mobile-header { display: flex; }
+  .mobile-drawer { display: block; }
+  .main-content { margin-left: 0; padding-top: 60px; }
+  .progress-container { left: 0; top: 60px; }
+  .book-section { padding: 60px 24px; }
+  .book-cover { padding: 60px 24px; min-height: auto; }
+  .phase-grid { grid-template-columns: 1fr; }
+  .tracker-grid { grid-template-columns: repeat(4, 1fr); }
+  .stat-row { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .tracker-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- Pasek Postępu -->
+<div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<!-- Mobilny Nagłówek -->
+<header class="mobile-header">
+  <div class="mobile-logo">Czuły Balans &amp; Laura</div>
+  <button class="mobile-menu-btn" onclick="toggleDrawer(true)">Menu</button>
+</header>
+
+<!-- Mobilne Menu Wysuwane (Drawer) -->
+<div class="mobile-drawer" id="mobileDrawer" onclick="toggleDrawer(false)">
+  <div class="mobile-drawer-content" onclick="event.stopPropagation()">
+    <button class="mobile-drawer-close" onclick="toggleDrawer(false)">×</button>
+    <ul class="sidebar-menu" id="mobileMenu"></ul>
+  </div>
+</div>
+
+<!-- Desktopowa Nawigacja Boczna -->
+<nav class="sidebar-nav">
+  <div class="sidebar-brand-box">
+    <div class="sidebar-brand">Czuły Bal<em>a</em>ns</div>
+    <div class="sidebar-sub">Masterclass &amp; Ebook · Laura</div>
+  </div>
+  <ul class="sidebar-menu" id="desktopMenu"></ul>
+  <div class="sidebar-footer">© 2026 Czuły Balans.<br>Wszelkie prawa zastrzeżone.</div>
+</nav>
+
+<!-- Główny Wątek Książki -->
+<main class="main-content">
+
+  <!-- OKŁADKA -->
+  <section id="okladka" class="book-cover" data-nav="Okładka">
+    <div class="cover-decor"></div>
+    <div class="cover-eyebrow">Wydanie rozszerzone</div>
+    <h1 class="cover-title">Prokrast<em>y</em>nacja,<br>która nie jest<br>lenistwem</h1>
+    <p class="cover-desc">Intymna neurobiologia i instrukcja obsługi przeciążonego umysłu. Dla każdego, kto utknął i chce czule zarządzać swoją energią.</p>
+    <div class="cover-meta">Czuły Balans Masterclass</div>
+  </section>
+
+  <!-- WPROWADZENIE -->
+  <section id="wprowadzenie" class="book-section" data-nav="Wprowadzenie">
+    <span class="section-eyebrow">Wprowadzenie</span>
+    <h2 class="section-title">Scena z kuchni,<br>której nigdy nie zapomnę</h2>
+    <p>Pamiętam dokładnie ten dzień.</p>
+    <p>Siedziałam na podłodze w kuchni. Pranie od wczoraj leżało w bębnie. Na stole były trzy nieopłacone rachunki. Dziecko spało. Miałam godzinę dla siebie — może więcej. I nie zrobiłam nic. Dosłownie nic. Patrzyłam w ścianę i czułam, jak ogarnia mnie coś, co trudno nawet nazwać. Nie lenistwo. Coś gęstszego. Coś, co trzyma za ramiona i mówi: <em>nie ma sensu nawet zaczynać</em>.</p>
+    <p>Wieczorem mąż wrócił z pracy. Zobaczył pranie, rachunki, kuchnię. I zapytał — spokojnie, bez złośliwości, co chyba było najgorsze — „No ale co robiłaś cały dzień?"</p>
+    <p>Nie odpowiedziałam. Bo co miałam powiedzieć?</p>
+    <span class="inline-hook">I wtedy jeszcze nie wiedziałam jednej rzeczy: to, co się ze mną działo, miało konkretny mechanizm biologiczny. I dało się to odwrócić.</span>
+    <p>Jeśli to zdanie wywołało w Tobie cokolwiek — ścisk w gardle, znajome ukłucie wstydu, albo po prostu „tak, dokładnie tak" — ten ebook jest dla Ciebie.</p>
+    <p>Zgodnie z zasadami <strong>Cognitive Load Theory</strong> (teorii obciążenia poznawczego), nie próbuj pochłonąć tego przewodnika w jeden wieczór. Twój mózg potrzebuje czasu na konsolidację śladów pamięciowych. Wdróż zaledwie 20% technik, które dadzą Ci 80% rezultatów.</p>
+
+    <div class="author-card">
+      <div class="author-avatar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+      </div>
+      <div class="author-info">
+        <div class="author-name">Laura</div>
+        <div class="author-role">Autorka · Pasjonatka neurobiologii</div>
+        <p class="author-bio">Przez 6 lat sądziłam, że moim problemem jest brak dyscypliny. Zaczęłam terapię — i tam pierwszy raz usłyszałam słowo, które wszystko zmieniło: <strong>regulacja emocji</strong>. Nie lenistwo. Nie słaba wola. Przeciążony układ nerwowy.</p>
+        <div class="author-social-links">
+          <a href="https://instagram.com/laura.prokrastynacja" class="author-link" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            @laura.prokrastynacja
+          </a>
+          <a href="mailto:laura@prokrastynacja.pl" class="author-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            laura@prokrastynacja.pl
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="clinical-note">
+      <div class="clinical-note-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      </div>
+      <div>
+        <div class="clinical-note-title">Ważna informacja kliniczna</div>
+        Ten ebook nie zastępuje psychoterapii ani diagnozy medycznej. Jeśli objawy, które opisuję, towarzyszą Ci od dzieciństwa — nie tylko w trudnych okresach — rozważ konsultację psychiatryczną. Mogą wskazywać na spektrum ADHD lub depresję, które mają skuteczne leczenie.
+      </div>
+    </div>
+  </section>
+
+  <!-- ROZDZIAŁ 1: TO NIE LENISTWO -->
+  <section id="to-nie-lenistwo" class="book-section" data-nav="I. To nie lenistwo">
+    <span class="section-eyebrow">Rozdział I</span>
+    <div class="chapter-num">01</div>
+    <h2 class="chapter-title">To nie lenistwo —<br>Twój mózg próbuje<br>Cię ratować</h2>
+
+    <p>Usiądź wygodnie. Może masz obok siebie kawę, którą odgrzewałaś już trzy razy?</p>
+    <p>Zanim przejdziemy dalej — weź głęboki oddech i powtórz za mną: <strong>nie jestem leniwa</strong>.</p>
+    <p><strong>Lenistwo</strong> wygląda tak: siadasz na kanapie z pełną świadomością, że masz coś do zrobienia, i mówisz sobie „mam to gdzieś". Ten odpoczynek Cię regeneruje. Czujesz spokój i radość.</p>
+    <p><strong>Prokrastynacja</strong> wygląda zupełnie inaczej. To stan, w którym chcesz coś zrobić — naprawdę chcesz — ale w środku czujesz paraliżujący opór, lęk albo dziwną, gęstą mgłę. Scrollujesz telefon, chociaż bolą Cię oczy. W żołądku czujesz narastający kamień. Nie odpoczywasz. Toczysz wojnę.</p>
+
+    <h3 class="section-subtitle">Strażak i Menedżerka – Architektura walki</h3>
+    <p>W Twoim mózgu mieszkają dwie bardzo różne postaci, o zupełnie innych priorytetach i ewolucyjnym wieku:</p>
+    <p><strong>Strażak (Układ limbiczny, ciało migdałowate)</strong>: Najstarsza ewolucyjnie część mózgu. Szybki, emocjonalny i nastawiony wyłącznie na przetrwanie. Gdy myślisz o trudnym zadaniu (np. rozliczeniu podatków, trudnym mailu), Strażak nie widzi punktu w planerze — widzi tygrysa. Jego reakcja to natychmiastowe: <em>Uciekaj! Schowaj się w telefonie!</em></p>
+    <p><strong>Menedżerka (Kora przedczołowa)</strong>: Najmłodsza, racjonalna struktura odpowiedzialna za logiczne myślenie, priorytetyzację i planowanie. Jest inteligentna, ale powolna i niezwykle zasobożerna. Potrzebuje stałych dawek energii (glukozy) do działania.</p>
+
+    <span class="inline-hook">Gdy jesteś zmęczona, zestresowana lub przebodźcowana, Menedżerka wyłącza się jako pierwsza. Zostajesz sam na sam ze Strażakiem.</span>
+
+    <p>Jak ujął to dr Timothy Pychyl: <strong>prokrastynacja to nie problem z zarządzaniem czasem, ale problem z regulacją emocji</strong>. Odkładamy rzeczy, bo podświadomie chcemy uciec przed złym samopoczuciem.</p>
+
+    <h3 class="section-subtitle">Pętla prokrastynacji — mapa mechanizmu</h3>
+    <p>Odkładanie to nie przypadek, ale zamknięta biologicznie nagradzana pętla:</p>
+
+    <div class="loop-steps">
+      <div class="loop-step-item">
+        <div class="loop-node">1</div>
+        <div class="loop-step-text">
+          <div class="loop-step-title">Trudne zadanie</div>
+          <div class="loop-step-desc">Mail, rachunek czy projekt niosący ryzyko oceny, nudy lub porażki.</div>
+        </div>
+      </div>
+      <div class="loop-step-item">
+        <div class="loop-node">2</div>
+        <div class="loop-step-text">
+          <div class="loop-step-title">Dyskomfort emocjonalny</div>
+          <div class="loop-step-desc">Lęk, przytłoczenie lub wstyd. Strażak wykrywa niebezpieczeństwo.</div>
+        </div>
+      </div>
+      <div class="loop-step-item">
+        <div class="loop-node">3</div>
+        <div class="loop-step-text">
+          <div class="loop-step-title">Ucieczka</div>
+          <div class="loop-step-desc">Wybierasz natychmiastowe znieczulenie: telefon, sprzątanie szuflady lub serial.</div>
+        </div>
+      </div>
+      <div class="loop-step-item">
+        <div class="loop-node">4</div>
+        <div class="loop-step-text">
+          <div class="loop-step-title">Chwilowa ulga i wyrzut dopaminy</div>
+          <div class="loop-step-desc">Mózg nagradza ucieczkę i zapamiętuje ten wzorzec jako życiowo skuteczny.</div>
+        </div>
+      </div>
+      <div class="loop-step-item">
+        <div class="loop-node">5</div>
+        <div class="loop-step-text">
+          <div class="loop-step-title">Wstyd i wzrost kortyzolu</div>
+          <div class="loop-step-desc">Pojawia się samokrytyka. Poziom stresu rośnie, wyczerpując korę przedczołową.</div>
+        </div>
+      </div>
+      <div class="loop-step-item">
+        <div class="loop-node">6</div>
+        <div class="loop-step-text">
+          <div class="loop-step-title">Wyższy mur przed zadaniem</div>
+          <div class="loop-step-desc">Do zadania dochodzi dodatkowa warstwa wstydu za wcześniejsze unikanie.</div>
+        </div>
+      </div>
+    </div>
+
+    <p>Dobra wiadomość jest taka, że pętlę można przerwać w dowolnym miejscu — i nie musisz robić tego siłą woli. Wystarczy, że w jednym z tych sześciu punktów wstawisz inną, czulszą reakcję. O tym, jak dokładnie to zrobić, przeczytasz w rozdziale piątym.</p>
+  </section>
+
+  <!-- ROZDZIAŁ: DIAGNOSTYKA (QUIZ) -->
+  <section id="diagnostyka" class="book-section" data-nav="Diagnostyka — quiz">
+    <span class="section-eyebrow">Diagnostyka</span>
+    <h2 class="section-title">Poznaj swój wzorzec oporu</h2>
+    <p>Objawy odkładania mogą mieć zupełnie inne podłoża neurologiczne i środowiskowe. Aby dobrać najskuteczniejsze narzędzia, najpierw wykonaj audyt swojego umysłu.</p>
+
+    <h3 class="section-subtitle">Schemat kliniczno-orientacyjny</h3>
+    <table class="diag-table">
+      <thead>
+        <tr>
+          <th style="width:40%">Objaw</th>
+          <th>Prokrastynacja</th>
+          <th>Wypalenie</th>
+          <th>Depresja</th>
+          <th>ADHD</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Trwa od wczesnego dzieciństwa?</td>
+          <td><span class="diag-no">—</span></td>
+          <td><span class="diag-no">—</span></td>
+          <td><span class="diag-no">—</span></td>
+          <td><span class="diag-check">●</span></td>
+        </tr>
+        <tr>
+          <td>Pojawia się tylko przy trudnych zadaniach?</td>
+          <td><span class="diag-check">●</span></td>
+          <td><span class="diag-no">—</span></td>
+          <td><span class="diag-no">—</span></td>
+          <td><span class="diag-partial">◐</span></td>
+        </tr>
+        <tr>
+          <td>Poprawia się po kilku dniach urlopu?</td>
+          <td><span class="diag-check">●</span></td>
+          <td><span class="diag-check">●</span></td>
+          <td><span class="diag-no">—</span></td>
+          <td><span class="diag-no">—</span></td>
+        </tr>
+        <tr>
+          <td>Brak radości ze wszystkiego (anhedonia)?</td>
+          <td><span class="diag-no">—</span></td>
+          <td><span class="diag-partial">◐</span></td>
+          <td><span class="diag-check">●</span></td>
+          <td><span class="diag-no">—</span></td>
+        </tr>
+        <tr>
+          <td>Trudności z uwagą niezależne od nastroju?</td>
+          <td><span class="diag-no">—</span></td>
+          <td><span class="diag-partial">◐</span></td>
+          <td><span class="diag-partial">◐</span></td>
+          <td><span class="diag-check">●</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- INTERAKTYWNY QUIZ -->
+    <div class="quiz-section">
+      <h3>Interaktywny Quiz: Jaki jest Twój profil oporu?</h3>
+      <p style="font-size: 13.5px; color: #9a9490; margin-bottom: 24px;">Zaznacz odpowiedzi szczere ze swoim codziennym stanem (0 = nigdy, 3 = bardzo często).</p>
+
+      <div class="quiz-group">
+        <div class="quiz-group-title">Sekcja A: Perfekcjonistka</div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">1. Odkładam zadania, dopóki nie będę miała idealnych warunków i pełnego czasu.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="a1" value="0" checked> 0</label>
+            <label><input type="radio" name="a1" value="1"> 1</label>
+            <label><input type="radio" name="a1" value="2"> 2</label>
+            <label><input type="radio" name="a1" value="3"> 3</label>
+          </div>
+        </div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">2. Poprawiam nawet proste zadania wielokrotnie przed ich oddaniem.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="a2" value="0" checked> 0</label>
+            <label><input type="radio" name="a2" value="1"> 1</label>
+            <label><input type="radio" name="a2" value="2"> 2</label>
+            <label><input type="radio" name="a2" value="3"> 3</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-group">
+        <div class="quiz-group-title">Sekcja B: Przeciążona Mental Load</div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">1. Czuję fizyczny paraliż, gdy muszę podjąć wiele małych decyzji z rzędu.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="b1" value="0" checked> 0</label>
+            <label><input type="radio" name="b1" value="1"> 1</label>
+            <label><input type="radio" name="b1" value="2"> 2</label>
+            <label><input type="radio" name="b1" value="3"> 3</label>
+          </div>
+        </div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">2. Mam wrażenie, że całe moje planowanie i pamiętanie o wszystkim są niewidoczne dla otoczenia.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="b2" value="0" checked> 0</label>
+            <label><input type="radio" name="b2" value="1"> 1</label>
+            <label><input type="radio" name="b2" value="2"> 2</label>
+            <label><input type="radio" name="b2" value="3"> 3</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-group">
+        <div class="quiz-group-title">Sekcja C: Uciekinierka w troskę</div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">1. Chętnie pomagam innym lub porządkuję ich sprawy, gdy sama mam palące zaległości.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="c1" value="0" checked> 0</label>
+            <label><input type="radio" name="c1" value="1"> 1</label>
+            <label><input type="radio" name="c1" value="2"> 2</label>
+            <label><input type="radio" name="c1" value="3"> 3</label>
+          </div>
+        </div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">2. Czuję ogromne poczucie winy, gdy robię coś wyłącznie dla siebie i swojej kariery.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="c2" value="0" checked> 0</label>
+            <label><input type="radio" name="c2" value="1"> 1</label>
+            <label><input type="radio" name="c2" value="2"> 2</label>
+            <label><input type="radio" name="c2" value="3"> 3</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-group">
+        <div class="quiz-group-title">Sekcja D: Znieczulaczka wieczorna</div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">1. Celowo opóźniam pójście spać, bo noc to mój jedyny moment wolności i spokoju.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="d1" value="0" checked> 0</label>
+            <label><input type="radio" name="d1" value="1"> 1</label>
+            <label><input type="radio" name="d1" value="2"> 2</label>
+            <label><input type="radio" name="d1" value="3"> 3</label>
+          </div>
+        </div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">2. Znieczulam się serialami lub mediami, by nie myśleć o problemach z całego dnia.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="d2" value="0" checked> 0</label>
+            <label><input type="radio" name="d2" value="1"> 1</label>
+            <label><input type="radio" name="d2" value="2"> 2</label>
+            <label><input type="radio" name="d2" value="3"> 3</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-group">
+        <div class="quiz-group-title">Sekcja E: Zagubiona w chaosie</div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">1. Rozpoczynam wiele projektów z ekscytacją, ale rzadko doprowadzam je do samego końca.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="e1" value="0" checked> 0</label>
+            <label><input type="radio" name="e1" value="1"> 1</label>
+            <label><input type="radio" name="e1" value="2"> 2</label>
+            <label><input type="radio" name="e1" value="3"> 3</label>
+          </div>
+        </div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">2. Odkładam trudne decyzje finansowe lub administracyjne, bo czuję paraliżujący szum informacyjny.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="e2" value="0" checked> 0</label>
+            <label><input type="radio" name="e2" value="1"> 1</label>
+            <label><input type="radio" name="e2" value="2"> 2</label>
+            <label><input type="radio" name="e2" value="3"> 3</label>
+          </div>
+        </div>
+      </div>
+
+      <button class="quiz-submit-btn" onclick="calculateQuiz()">Oblicz mój profil oporu</button>
+
+      <div class="quiz-result-card" id="quizResult">
+        <h4 class="quiz-result-title" id="quizProfileTitle">Twój dominujący profil</h4>
+        <p class="quiz-result-desc" id="quizProfileText"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROZDZIAŁ 2: GDY PARTNER MA PRETENSJE (MENTAL LOAD) -->
+  <section id="gdy-partner-ma-pretensje" class="book-section" data-nav="II. Mental Load">
+    <span class="section-eyebrow">Rozdział II</span>
+    <div class="chapter-num">02</div>
+    <h2 class="chapter-title">Dlaczego znowu tego<br>nie zrobiłaś? —<br><em>Mental Load i szum w głowie</em></h2>
+
+    <p>Znasz ten dźwięk? Klucz obracający się w zamku. Jeszcze pięć minut temu obiecywałaś sobie, że chociaż wyniesiesz naczynia ze stolika — ale nagle zamarłaś. Słyszysz kroki. Mąż rzuca okiem na kuchnię i pada to pytanie: „Kochanie, miałaś to dzisiaj załatwić — co się stało?"</p>
+    <p>Najgorsze w tym pytaniu nie jest to, że on je zadaje. Najgorsze jest to, że Ty zadajesz je sobie — tylko znacznie ostrzej.</p>
+
+    <div class="story-block">
+      <p>„Czułam się jak oskarżona w procesie, w którym nie znam języka. Wiedziałam, że jestem niewinna, ale nie umiałam tego udowodnić. Nawet samej sobie."</p>
+      <div class="story-name">Magda, mama trzylatka</div>
+    </div>
+
+    <h3 class="section-subtitle">Niewidzialna praca poznawcza</h3>
+    <p>Odkładanie zadań u kobiet jest ściśle powiązane z pojęciem <strong>Mental Load</strong> (obciążeniem psychicznym). Badania socjolożki Allison Daminger (2019, AJS) wykazują, że kobiety wykonują lwią część niewidocznej pracy poznawczej związanej z koordynacją rodziny: monitorowanie potrzeb, pamiętanie o terminach lekarzy, zapasach i emocjonalnym komforcie grupy.</p>
+    <p>Ta praca w tle zużywa glukozę kory przedczołowej dokładnie tak samo, jak arkusz kalkulacyjny w pracy. Gdy siadasz do swoich spraw, Twój biologiczny akumulator uwagi jest już całkowicie pusty. To wywołuje zjawisko <strong>Decision Fatigue</strong> (zmęczenia decyzyjnego).</p>
+
+    <span class="inline-hook">On widzi brak działania na zewnątrz. Ty w środku przeżywasz gigantyczne przeciążenie poznawcze, którego po prostu nie widać.</span>
+
+    <h3 class="section-subtitle">Skrypt asertywnej rozmowy z partnerem</h3>
+    <p>Wybierz moment, gdy oboje jesteście spokojni, i zastosuj poniższy schemat:</p>
+    <p><strong>1. Nazwij swój stan</strong>: „Chcę, żebyś wiedział, że nieodłożenie tych spraw nie wynika z mojego lenistwa. Doświadczam paraliżu decyzyjnego — mój mózg widzi natłok spraw i po prostu się zawiesza."</p>
+    <p><strong>2. Wytłumacz koszty wewnętrzne</strong>: „Gdy wracasz i oceniasz moje zaległości, poziom mojego stresu i wstydu rośnie. To sprawia, że kora przedczołowa wyłącza się jeszcze silniej."</p>
+    <p><strong>3. Zaproponuj zmianę schematu</strong>: „Zamiast pytać 'co robiłaś cały dzień', pomóż mi i zapytaj: 'od czego jednego mogę Cię dzisiaj odciążyć?'"</p>
+  </section>
+
+  <!-- ROZDZIAŁ 3: PERFEKCJONIZM PARALIŻUJĄCY -->
+  <section id="perfekcjonizm" class="book-section" data-nav="III. Perfekcjonizm">
+    <span class="section-eyebrow">Rozdział III</span>
+    <div class="chapter-num">03</div>
+    <h2 class="chapter-title">Perfekcjonizm,<br>który paraliżuje —<br><em>idealnie albo wcale</em></h2>
+
+    <p>Pamiętasz ten moment, kiedy w Twojej głowie narodził się Genialny Plan? Nowy planer, kolorowe cienkopisy i obietnica idealnego poranka. A potem nadszedł wtorek, dziecko wylało sok, a Ty rzuciłaś planer w kąt.</p>
+    <p>Witaj w krainie perfekcjonizmu paraliżującego. Mieszkają tu osoby, które nie odkładają spraw dlatego, że im nie zależy, ale dlatego, że <strong>zależy im za bardzo</strong>.</p>
+
+    <span class="inline-hook">Dla Twojego układu nerwowego błąd równa się społecznemu odrzuceniu. Perfekcjonizm to nie dążenie do mistrzostwa — to pancerz ochronny przed wstydem.</span>
+
+    <div class="story-block">
+      <p>„Przed każdą wizytą teściów planowałam idealne, trzydaniowe menu. Budziłam się z takim lękiem, że nie mogłam wejść do kuchni. Kończyło się zamawianiem pizzy i płaczem w łazience."</p>
+      <div class="story-name">Joanna, nauczycielka</div>
+    </div>
+
+    <h3 class="section-subtitle">Wewnętrzny Krytyk (perspektywa IFS)</h3>
+    <p>W psychoterapii systemów wewnętrznych (IFS, Richard Schwartz) głos, który ciągle powtarza: „Weź się w garść, inne dają radę", jest traktowany jako <strong>część obrończa</strong>. Ten głos chce Cię uchronić przed krytyką zewnętrzną, ale stosuje archaiczne, raniące metody.</p>
+    <p>Badania dr Kristin Neff nad samowspółczuciem (Self-Compassion) pokazują, że ostry dialog wewnętrzny podnosi poziom kortyzolu, blokując korę przedczołową. Zamiast walczyć z krytykiem, odpowiedz mu czule:</p>
+    <p style="font-style: italic; padding-left: 20px; border-left: 1px dashed var(--accent-red);">„Słyszę Cię. Wiem, że boisz się, że zostanę oceniona jako niewystarczająca. Ale dzisiaj potrzebuję trochę przestrzeni i łagodności, żeby po prostu zacząć."</p>
+  </section>
+
+  <!-- ROZDZIAŁ 4: CIAŁO TEŻ ODKŁADA -->
+  <section id="cialo-tez-odklada" class="book-section" data-nav="IV. Cykle i energia">
+    <span class="section-eyebrow">Rozdział IV</span>
+    <div class="chapter-num">04</div>
+    <h2 class="chapter-title">Ciało też odkłada —<br><em>cykle energii i neurobiologia</em></h2>
+
+    <p>Poradniki produktywności pisane są zazwyczaj z perspektywy równego, męskiego poziomu hormonów trwającego 24 godziny. Tymczasem u kobiet poziom zasobów i sprawczości faluje w rytm cyklu menstruacyjnego (koncepcja <em>Cycle Syncing</em> Alisy Vitti).</p>
+
+    <div class="phase-grid">
+      <div class="phase-card f">
+        <div class="phase-name">Folikularna (Wiosna)</div>
+        <div class="phase-days">Dni 1–13 (po menstruacji)</div>
+        <div class="phase-energy">Wysoki poziom dopaminy</div>
+        <div class="phase-tasks">Wdrażanie nowych projektów, burze mózgów, odważne decyzje.</div>
+      </div>
+      <div class="phase-card o">
+        <div class="phase-name">Owulacyjna (Lato)</div>
+        <div class="phase-days">Dni 14–16</div>
+        <div class="phase-energy">Szczyt pewności siebie</div>
+        <div class="phase-tasks">Wystąpienia publiczne, negocjacje, trudne rozmowy z partnerem.</div>
+      </div>
+      <div class="phase-card l">
+        <div class="phase-name">Lutealna (Jesień)</div>
+        <div class="phase-days">Dni 17–28 (przed menstruacją)</div>
+        <div class="phase-energy">Spadek estrogenów i dopaminy</div>
+        <div class="phase-tasks">Porządkowanie spraw, redukcja bodźców, realizacja rutynowych spraw.</div>
+      </div>
+      <div class="phase-card m">
+        <div class="phase-name">Miesiączkowa (Zima)</div>
+        <div class="phase-days">Dni 1–5</div>
+        <div class="phase-energy">Minimum fizyczne, głęboka intuicja</div>
+        <div class="phase-tasks">Analiza, refleksja, absolutne minimum operacyjne.</div>
+      </div>
+    </div>
+
+    <span class="inline-hook">Prokrastynacja w fazie lutealnej to często nie brak woli, ale biologia konserwacji zasobów. Twój mózg cierpi na chwilowy niedobór paliwa — i prosi Cię, żebyś zwolniła, zanim znowu nabierze rozpędu.</span>
+
+    <p>To nie znaczy, że masz przez połowę miesiąca „nie funkcjonować". To znaczy, że warto przesunąć zadania wymagające odwagi i ekspozycji na fazę folikularną i owulacyjną, a fazę lutealną i miesiączkową przeznaczyć na porządki, dopracowywanie i odpoczynek. Gdy przestajesz walczyć z własną fizjologią, znika też ogromna część poczucia winy — bo nagle widzisz, że „gorszy dzień" miał swoją przyczynę, a nie był dowodem na to, że „znowu nic nie ogarniasz".</p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-number">25–30%</div>
+        <div class="stat-label">spadek poziomu dostępnej dopaminy w fazie lutealnej względem folikularnej</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">~14 dni</div>
+        <div class="stat-label">tyle średnio trwa faza, w której Twój mózg domaga się zwolnienia tempa</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3×</div>
+        <div class="stat-label">tyle łatwiej rozpocząć trudne zadanie w szczycie fazy folikularnej niż w lutealnej</div>
+      </div>
+    </div>
+
+    <h3 class="section-subtitle">Co zrobić z tą wiedzą już dziś</h3>
+    <p>Załóż prostą notatkę w telefonie i przez jeden cykl zapisuj tylko jedną rzecz: w którym dniu cyklu czułaś się najbardziej „sobą", a w którym najbardziej „rozlana". Po miesiącu zobaczysz wzór. Ten wzór to nie wyrok — to mapa, dzięki której przestajesz planować wbrew sobie.</p>
+  </section>
+
+  <!-- ROZDZIAŁ 5: PIERWSZA POMOC — TECHNIKI NA TU I TERAZ -->
+  <section id="pierwsza-pomoc" class="book-section" data-nav="V. Techniki pierwszej pomocy">
+    <span class="section-eyebrow">Rozdział V</span>
+    <div class="chapter-num">05</div>
+    <h2 class="chapter-title">Pierwsza pomoc —<br>techniki na<br><em>„tu i teraz"</em></h2>
+
+    <p>Wiedza o mechanizmie to dopiero połowa drogi. Druga połowa to konkretne, małe ruchy, które możesz wykonać dokładnie w momencie, w którym czujesz ten znajomy, gęsty opór. Poniżej pięć technik, które najczęściej polecam swoim czytelniczkom — każda działa na inny punkt pętli prokrastynacji z rozdziału pierwszego.</p>
+
+    <h3 class="section-subtitle">1. Zasada pięciu minut</h3>
+    <p>Nie obiecuj sobie, że „posprzątasz całą kuchnię". Obiecaj sobie pięć minut. Strażak nie ucieka przed pięcioma minutami — ucieka przed ogromem. Gdy zaczniesz, najczęściej naturalnie pociągniesz dalej. A jeśli nie — to też sukces, bo dotrzymałaś słowa danego sobie, co jest cegiełką do odbudowy zaufania do samej siebie.</p>
+
+    <h3 class="section-subtitle">2. Metoda szwajcarskiego sera</h3>
+    <p>Zamiast krajać zadanie na logiczne, równe etapy (co wymaga energii Menedżerki, której akurat nie masz), „wydłub" z niego jedną, dowolną, najłatwiejszą dziurę. Nie musisz pisać całego maila — napisz tylko temat. Nie musisz robić prania — włóż do bębna jedną rzecz. Każda dziura w serze zmniejsza jego masę psychiczną.</p>
+
+    <h3 class="section-subtitle">3. Współ-działanie (body doubling)</h3>
+    <p>Twój układ nerwowy reguluje się w obecności drugiej osoby. Zadzwoń do koleżanki i po prostu pracujcie „obok siebie" na wideorozmowie, w ciszy. Sama obecność drugiego, spokojnego człowieka potrafi wyciszyć Strażaka skuteczniej niż najlepiej zaplanowany system.</p>
+
+    <h3 class="section-subtitle">4. Nazwij emocję, zanim zaczniesz</h3>
+    <p>Zamiast „muszę to zrobić", powiedz na głos: „czuję teraz lęk przed oceną i chęć ucieczki — to normalne przy tym zadaniu". Badania nad tzw. <em>affect labeling</em> pokazują, że samo nazwanie emocji obniża aktywność ciała migdałowatego. Mówisz Strażakowi: „widzę cię, dziękuję, że czuwasz — teraz ja przejmuję stery".</p>
+
+    <h3 class="section-subtitle">5. Nagroda na początku, nie na końcu</h3>
+    <p>Większość poradników każe nagradzać się po wykonaniu zadania. To działa świetnie dla mózgu, który nie boi się zacząć. Twój mózg boi się właśnie startu — więc postaw filiżankę ulubionej herbaty obok siebie <strong>zanim</strong> usiądziesz do trudnej rzeczy. Skojarzenie „trudne zadanie = coś przyjemnego dzieje się już teraz" rozbraja pętlę w punkcie pierwszym, zanim zdąży się rozkręcić.</p>
+
+    <div class="clinical-note">
+      <div class="clinical-note-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      </div>
+      <div>
+        <div class="clinical-note-title">Mała uwaga od Laury</div>
+        Nie wdrażaj wszystkich pięciu technik naraz — to byłaby kolejna wersja perfekcjonizmu, o którym mówiłyśmy w rozdziale trzecim. Wybierz jedną, która najbardziej „złapała" Twoją uwagę, i przetestuj ją przez tydzień. Reszta poczeka.
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAN 14 DNI -->
+  <section id="plan-14-dni" class="book-section" data-nav="Plan 14 dni">
+    <span class="section-eyebrow">Wdrożenie</span>
+    <h2 class="section-title">Twój rytuał powrotu<br>do działania</h2>
+    <p>Nowy nawyk nie powstaje z motywacji — powstaje z powtarzalności. Poniższy tracker obejmuje dwa tygodnie, czyli dokładnie tyle, ile Twój mózg potrzebuje, by zacząć traktować małe, czułe działanie jako coś bezpiecznego, a nie zagrażającego. Każdego dnia wybierz <strong>jedną</strong> z technik z rozdziału piątego, zastosuj ją choćby przez pięć minut, i odznacz dzień. Bez idealnych serii. Bez kar za pominięty dzień — po prostu wracasz następnego.</p>
+
+    <div class="tracker-box">
+      <h3>Tracker 14 dni — „Małe, czułe działanie"</h3>
+      <p class="tracker-desc">Kliknij kartę dnia, w którym zastosowałaś choć jedną technikę z rozdziału piątego — niezależnie od tego, jak mały był to krok. Twoje zaznaczenia zapisują się tylko w tej przeglądarce, jako prywatna notatka dla Ciebie.</p>
+
+      <div class="tracker-group-title">Tydzień 1</div>
+      <div class="tracker-grid" id="trackerWeek1"></div>
+
+      <div class="tracker-group-title">Tydzień 2</div>
+      <div class="tracker-grid" id="trackerWeek2"></div>
+    </div>
+
+    <p>Pod koniec dwóch tygodni usiądź na chwilę i przeczytaj jeszcze raz zdanie z wprowadzenia: <em>to, co się z Tobą dzieje, ma konkretny mechanizm biologiczny — i da się go odwrócić</em>. Dwa tygodnie temu było to dla Ciebie zdaniem z ebooka. Dziś może być zdaniem z Twojego własnego doświadczenia.</p>
+  </section>
+
+  <!-- ZAKOŃCZENIE -->
+  <section id="zakonczenie" class="book-section" data-nav="Zakończenie">
+    <span class="section-eyebrow">Na koniec</span>
+    <h2 class="section-title">Nie musisz być<br>„naprawiona"</h2>
+    <p>Jeśli z całego tego ebooka miałabyś zapamiętać jedną rzecz, niech to będzie to: nie jesteś projektem do naprawienia. Jesteś osobą z układem nerwowym, który przez lata uczył się chronić Cię w jedyny sposób, jaki znał — przez ucieczkę. Teraz, kiedy znasz mechanizm, możesz nauczyć go nowego sposobu. Czulszego. Skuteczniejszego. Twojego.</p>
+    <p>To nie sprint. To powolne, czułe budowanie nowego wzorca — krok po kroku, dzień po dniu, bez biczowania się za potknięcia. Dokładnie tak, jak uczyłybyśmy tego najbliższą nam osobę.</p>
+    <p>Trzymam za Ciebie kciuki. I jestem tu, gdybyś chciała pójść o krok dalej.</p>
+    <div class="signature">— Laura</div>
+
+    <div class="cta-block">
+      <h3 class="cta-title">Chcesz pójść dalej? Dołącz do Masterclass „Czuły Balans"</h3>
+      <p class="cta-desc">To, co przeczytałaś, jest mapą. Masterclass to przewodnik, który prowadzi Cię przez tę mapę krok po kroku — z nagraniami, ćwiczeniami audio do regulacji układu nerwowego i społecznością kobiet, które przechodzą tę samą drogę.</p>
+      <div class="cta-links-container">
+        <a href="https://instagram.com/laura.prokrastynacja" class="cta-btn cta-btn-primary" target="_blank">Dołącz do Masterclass</a>
+        <a href="mailto:laura@prokrastynacja.pl" class="cta-btn cta-btn-secondary">Napisz do Laury</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // Spis treści generowany na podstawie sekcji oznaczonych atrybutem data-nav
+  (function buildNavigation() {
+    var sections = document.querySelectorAll('main.main-content > section[data-nav]');
+    var desktopMenu = document.getElementById('desktopMenu');
+    var mobileMenu = document.getElementById('mobileMenu');
+
+    sections.forEach(function (section, index) {
+      [desktopMenu, mobileMenu].forEach(function (menu) {
+        var li = document.createElement('li');
+        if (index === 0) li.className = 'active';
+        var a = document.createElement('a');
+        a.href = '#' + section.id;
+        a.textContent = section.getAttribute('data-nav');
+        a.addEventListener('click', function () { toggleDrawer(false); });
+        li.appendChild(a);
+        menu.appendChild(li);
+      });
+    });
+
+    // Podświetlanie aktywnej sekcji podczas przewijania
+    var allLinks = document.querySelectorAll('.sidebar-menu a');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        allLinks.forEach(function (link) {
+          var li = link.parentElement;
+          if (link.getAttribute('href') === '#' + entry.target.id) {
+            li.classList.add('active');
+          } else if (link.getAttribute('href').slice(1) !== entry.target.id) {
+            // zostaw inne bez zmian — usuwamy tylko niepasujące w obrębie tej samej grupy menu
+          }
+        });
+        // wyczyść i ustaw aktywny element w obu menu
+        [desktopMenu, mobileMenu].forEach(function (menu) {
+          menu.querySelectorAll('li').forEach(function (li) { li.classList.remove('active'); });
+          var match = menu.querySelector('a[href="#' + entry.target.id + '"]');
+          if (match) match.parentElement.classList.add('active');
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+
+    sections.forEach(function (section) { observer.observe(section); });
+  })();
+
+  // Mobilne menu wysuwane
+  function toggleDrawer(open) {
+    var drawer = document.getElementById('mobileDrawer');
+    if (open) drawer.classList.add('active');
+    else drawer.classList.remove('active');
+  }
+
+  // Pasek postępu czytania
+  (function progressBar() {
+    var bar = document.getElementById('progressBar');
+    window.addEventListener('scroll', function () {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var pct = height > 0 ? (scrollTop / height) * 100 : 0;
+      bar.style.width = pct + '%';
+    });
+  })();
+
+  // Quiz diagnostyczny
+  function calculateQuiz() {
+    var groups = {
+      A: { label: 'Perfekcjonistka', questions: ['a1', 'a2'],
+        text: 'Odkładasz, bo zależy Ci za bardzo, nie za mało. Twój wewnętrzny krytyk stawia poprzeczkę tak wysoko, że bezpieczniej jest wcale nie zaczynać, niż zacząć i „zawieść". Zacznij od rozdziału III i ćwiczenia z czułą odpowiedzią Wewnętrznemu Krytykowi.' },
+      B: { label: 'Przeciążona Mental Load', questions: ['b1', 'b2'],
+        text: 'Twoja kora przedczołowa większość dnia pracuje w tle — na niewidocznym pilnowaniu wszystkiego i wszystkich. Gdy w końcu siadasz do swoich spraw, akumulator jest pusty. Przeczytaj uważnie rozdział II i rozważ skrypt rozmowy z partnerem.' },
+      C: { label: 'Uciekinierka w troskę', questions: ['c1', 'c2'],
+        text: 'Łatwiej Ci zaopiekować się czyimś problemem niż swoim — bo troska o innych nie budzi poczucia winy, a troska o siebie często tak. Warto delikatnie przyjrzeć się przekonaniu, że Twoje potrzeby są „mniej ważne". To dobry temat na pracę z terapeutką lub na Masterclass.' },
+      D: { label: 'Znieczulaczka wieczorna', questions: ['d1', 'd2'],
+        text: 'Noc to Twoja jedyna „strefa wolna od obowiązków" — dlatego nieświadomie ją wydłużasz, kosztem snu i energii na jutro. Spróbuj techniki nr 5 z rozdziału V: małą nagrodę przyjemności wpleć w dzień, zamiast odraczać ją do późnej nocy.' },
+      E: { label: 'Zagubiona w chaosie', questions: ['e1', 'e2'],
+        text: 'Trudność nie leży w braku chęci, lecz w nadmiarze bodźców i niedokończonych wątków naraz. Metoda szwajcarskiego sera (technika nr 2, rozdział V) jest stworzona właśnie dla Ciebie — zacznij od jednej, najmniejszej „dziury" w zadaniu.' }
+    };
+
+    var scores = {};
+    var maxScore = -1;
+    var topKey = 'A';
+
+    Object.keys(groups).forEach(function (key) {
+      var sum = 0;
+      groups[key].questions.forEach(function (name) {
+        var checked = document.querySelector('input[name="' + name + '"]:checked');
+        sum += checked ? parseInt(checked.value, 10) : 0;
+      });
+      scores[key] = sum;
+      if (sum > maxScore) {
+        maxScore = sum;
+        topKey = key;
+      }
+    });
+
+    var result = groups[topKey];
+    document.getElementById('quizProfileTitle').textContent = 'Twój dominujący profil: ' + result.label;
+    document.getElementById('quizProfileText').textContent = result.text;
+
+    var card = document.getElementById('quizResult');
+    card.classList.add('active');
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  // Tracker 14 dni — zapis w localStorage przeglądarki czytelniczki
+  (function buildTracker() {
+    var STORAGE_KEY = 'czuly-balans-tracker-14-dni';
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch (e) { saved = {}; }
+
+    var week1 = document.getElementById('trackerWeek1');
+    var week2 = document.getElementById('trackerWeek2');
+
+    for (var day = 1; day <= 14; day++) {
+      var card = document.createElement('div');
+      card.className = 'tracker-day-card';
+      card.dataset.day = day;
+      if (saved[day]) card.classList.add('completed');
+
+      var num = document.createElement('span');
+      num.className = 'tracker-day-num';
+      num.textContent = 'Dzień ' + day;
+
+      var time = document.createElement('span');
+      time.className = 'tracker-day-time';
+      time.textContent = saved[day] ? 'Zrobione' : 'Kliknij, gdy gotowe';
+
+      var box = document.createElement('div');
+      box.className = 'tracker-checkbox';
+
+      card.appendChild(num);
+      card.appendChild(time);
+      card.appendChild(box);
+
+      card.addEventListener('click', function () {
+        var d = this.dataset.day;
+        var isCompleted = this.classList.toggle('completed');
+        saved[d] = isCompleted;
+        this.querySelector('.tracker-day-time').textContent = isCompleted ? 'Zrobione' : 'Kliknij, gdy gotowe';
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(saved)); } catch (e) {}
+      });
+
+      (day <= 7 ? week1 : week2).appendChild(card);
+    }
+  })();
+</script>
+
+</body>
+</html>
