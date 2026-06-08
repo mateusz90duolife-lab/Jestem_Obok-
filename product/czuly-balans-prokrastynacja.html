@@ -525,6 +525,16 @@ p strong { color: var(--text-dark); font-weight: 500; }
       </tbody>
     </table>
 
+    <div class="clinical-note">
+      <div class="clinical-note-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <div class="clinical-note-title">Jeśli zaznaczyłaś głównie kolumnę ADHD</div>
+        U kobiet diagnoza ADHD przybywa średnio 10–15 lat później niż u mężczyzn — bo dziewczynki uczą się maskować objawy (kamuflaż, kompensacja). Jeśli trudności z uwagą towarzyszą Ci od dzieciństwa, niezależnie od nastroju czy poziomu stresu, rozważ konsultację psychiatryczną specjalizującą się w dorosłych. Techniki z tego ebooka przyniosą ulgę, ale właściwa diagnoza może dosłownie zmienić Twoje życie — bo w końcu zrozumiesz, dlaczego „staranie się bardziej" nigdy nie wystarczało.
+      </div>
+    </div>
+
     <!-- INTERAKTYWNY QUIZ -->
     <div class="quiz-section">
       <h3>Interaktywny Quiz: Jaki jest Twój profil oporu?</h3>
@@ -550,6 +560,15 @@ p strong { color: var(--text-dark); font-weight: 500; }
             <label><input type="radio" name="a2" value="3"> 3</label>
           </div>
         </div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">3. Czuję, że nie warto zaczynać, jeśli nie będę mogła skończyć od razu, porządnie i do końca.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="a3" value="0" checked> 0</label>
+            <label><input type="radio" name="a3" value="1"> 1</label>
+            <label><input type="radio" name="a3" value="2"> 2</label>
+            <label><input type="radio" name="a3" value="3"> 3</label>
+          </div>
+        </div>
       </div>
 
       <div class="quiz-group">
@@ -570,6 +589,15 @@ p strong { color: var(--text-dark); font-weight: 500; }
             <label><input type="radio" name="b2" value="1"> 1</label>
             <label><input type="radio" name="b2" value="2"> 2</label>
             <label><input type="radio" name="b2" value="3"> 3</label>
+          </div>
+        </div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">3. Pod koniec dnia mam poczucie, że zrobiłam dużo, a jednocześnie nic z „moich" spraw — jakby mój czas istniał tylko dla innych.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="b3" value="0" checked> 0</label>
+            <label><input type="radio" name="b3" value="1"> 1</label>
+            <label><input type="radio" name="b3" value="2"> 2</label>
+            <label><input type="radio" name="b3" value="3"> 3</label>
           </div>
         </div>
       </div>
@@ -594,6 +622,15 @@ p strong { color: var(--text-dark); font-weight: 500; }
             <label><input type="radio" name="c2" value="3"> 3</label>
           </div>
         </div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">3. Moje własne projekty zawsze czekają w kolejce, bo obowiązki wobec rodziny i znajomych uważam za pilniejsze.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="c3" value="0" checked> 0</label>
+            <label><input type="radio" name="c3" value="1"> 1</label>
+            <label><input type="radio" name="c3" value="2"> 2</label>
+            <label><input type="radio" name="c3" value="3"> 3</label>
+          </div>
+        </div>
       </div>
 
       <div class="quiz-group">
@@ -616,6 +653,15 @@ p strong { color: var(--text-dark); font-weight: 500; }
             <label><input type="radio" name="d2" value="3"> 3</label>
           </div>
         </div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">3. Odczuwam opór przed zamknięciem wieczoru — jakby pójście spać oznaczało, że jutro zaczyna się ta sama, ciężka pętla od nowa.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="d3" value="0" checked> 0</label>
+            <label><input type="radio" name="d3" value="1"> 1</label>
+            <label><input type="radio" name="d3" value="2"> 2</label>
+            <label><input type="radio" name="d3" value="3"> 3</label>
+          </div>
+        </div>
       </div>
 
       <div class="quiz-group">
@@ -636,6 +682,15 @@ p strong { color: var(--text-dark); font-weight: 500; }
             <label><input type="radio" name="e2" value="1"> 1</label>
             <label><input type="radio" name="e2" value="2"> 2</label>
             <label><input type="radio" name="e2" value="3"> 3</label>
+          </div>
+        </div>
+        <div class="quiz-question-row">
+          <div class="quiz-question-text">3. Trudno mi zacząć, gdy nie widzę wyraźnie pierwszego kroku — brak struktury paraliżuje mnie bardziej niż trudność samego zadania.</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="e3" value="0" checked> 0</label>
+            <label><input type="radio" name="e3" value="1"> 1</label>
+            <label><input type="radio" name="e3" value="2"> 2</label>
+            <label><input type="radio" name="e3" value="3"> 3</label>
           </div>
         </div>
       </div>
@@ -740,17 +795,18 @@ p strong { color: var(--text-dark); font-weight: 500; }
     <div class="stat-row">
       <div class="stat-card">
         <div class="stat-number">25–30%</div>
-        <div class="stat-label">spadek poziomu dostępnej dopaminy w fazie lutealnej względem folikularnej</div>
+        <div class="stat-label">szacowany spadek dostępności dopaminy w fazie lutealnej (Bäckström i wsp., fluktuacje neurosteroidów)</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">~14 dni</div>
-        <div class="stat-label">tyle średnio trwa faza, w której Twój mózg domaga się zwolnienia tempa</div>
+        <div class="stat-label">tyle średnio trwa faza lutealna + miesiączkowa — połowa miesiąca z obniżonymi zasobami energetycznymi</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">3×</div>
-        <div class="stat-label">tyle łatwiej rozpocząć trudne zadanie w szczycie fazy folikularnej niż w lutealnej</div>
+        <div class="stat-number">76%</div>
+        <div class="stat-label">kobiet z PMDD deklaruje istotny wpływ fazy lutealnej na zdolność do pracy i podejmowania decyzji (badanie IAPMD 2021)</div>
       </div>
     </div>
+    <p style="font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: -10px;">Dane orientacyjne — badania nad cyklem hormonalnym a produktywnością są wciąż rozwijającą się dziedziną. Traktuj je jako punkt odniesienia, nie diagnozę.</p>
 
     <h3 class="section-subtitle">Co zrobić z tą wiedzą już dziś</h3>
     <p>Załóż prostą notatkę w telefonie i przez jeden cykl zapisuj tylko jedną rzecz: w którym dniu cyklu czułaś się najbardziej „sobą", a w którym najbardziej „rozlana". Po miesiącu zobaczysz wzór. Ten wzór to nie wyrok — to mapa, dzięki której przestajesz planować wbrew sobie.</p>
@@ -779,13 +835,42 @@ p strong { color: var(--text-dark); font-weight: 500; }
     <h3 class="section-subtitle">5. Nagroda na początku, nie na końcu</h3>
     <p>Większość poradników każe nagradzać się po wykonaniu zadania. To działa świetnie dla mózgu, który nie boi się zacząć. Twój mózg boi się właśnie startu — więc postaw filiżankę ulubionej herbaty obok siebie <strong>zanim</strong> usiądziesz do trudnej rzeczy. Skojarzenie „trudne zadanie = coś przyjemnego dzieje się już teraz" rozbraja pętlę w punkcie pierwszym, zanim zdąży się rozkręcić.</p>
 
+    <h3 class="section-subtitle">6. Protokół 3R — Czuły Start <em>(metoda własna)</em></h3>
+    <p>Wszystkie poprzednie techniki działają świetnie, gdy masz choć odrobinę zasobów. Protokół 3R jest na moment, gdy nie masz nic — gdy siedzisz sparaliżowana i nawet „pięć minut" brzmi abstrakcyjnie. To trzy kroki, które zajmują 90 sekund i działają bezpośrednio na układ nerwowy.</p>
+
+    <div class="loop-steps" style="margin: 24px 0;">
+      <div class="loop-step-item">
+        <div class="loop-node" style="background:var(--accent-sage-pale); border-color:var(--accent-sage); color:var(--accent-sage);">R1</div>
+        <div class="loop-step-text">
+          <div class="loop-step-title">Rozpoznaj — gdzie to jest w ciele?</div>
+          <div class="loop-step-desc">Zamknij oczy. Gdzie czujesz opór fizycznie? Ścisk w żołądku, napięcie w ramionach, ucisk w klatce? Połóż tam rękę i powiedz na głos (albo w myśli): <em>„Widzę cię. To ma sens."</em> Samo to zdanie sygnalizuje układowi nerwowemu, że jesteś bezpieczna — nie walczysz ze sobą.</div>
+        </div>
+      </div>
+      <div class="loop-step-item">
+        <div class="loop-node" style="background:var(--accent-sage-pale); border-color:var(--accent-sage); color:var(--accent-sage);">R2</div>
+        <div class="loop-step-text">
+          <div class="loop-step-title">Ureguluj — oddech 4-2-6</div>
+          <div class="loop-step-desc">Wdech przez nos: <strong>4 sekundy</strong>. Zatrzymaj: <strong>2 sekundy</strong>. Wydech przez usta: <strong>6 sekund</strong>. Powtórz 3 razy. Wydłużony wydech aktywuje nerw błędny i fizycznie obniża poziom kortyzolu — efekt jest mierzalny już po 90 sekundach. To nie jest metafora. To fizjologia.</div>
+        </div>
+      </div>
+      <div class="loop-step-item">
+        <div class="loop-node" style="background:var(--accent-sage-pale); border-color:var(--accent-sage); color:var(--accent-sage);">R3</div>
+        <div class="loop-step-text">
+          <div class="loop-step-title">Rusz — jeden gest, nie zadanie</div>
+          <div class="loop-step-desc">Teraz — dokładnie teraz — wykonaj jeden fizyczny gest w kierunku zadania. Nie „zacznij pisać maila". Dosłownie: <em>otwórz skrzynkę mailową</em>. Albo: <em>wyjmij zeszyt z szuflady</em>. Jeden gest. Mózg potraktuje go jako dowód, że zaczęłaś — i zmieni ocenę zagrożenia.</div>
+        </div>
+      </div>
+    </div>
+
+    <span class="inline-hook" style="font-size:17px;">Protokół 3R to nie „motywacja". To interwencja biologiczna — dajesz ciału sygnał, zanim głowa zdąży powiedzieć „nie".</span>
+
     <div class="clinical-note">
       <div class="clinical-note-icon">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
       </div>
       <div>
         <div class="clinical-note-title">Mała uwaga od Laury</div>
-        Nie wdrażaj wszystkich pięciu technik naraz — to byłaby kolejna wersja perfekcjonizmu, o którym mówiłyśmy w rozdziale trzecim. Wybierz jedną, która najbardziej „złapała" Twoją uwagę, i przetestuj ją przez tydzień. Reszta poczeka.
+        Nie wdrażaj wszystkich sześciu technik naraz — to byłaby kolejna wersja perfekcjonizmu, o którym mówiłyśmy w rozdziale trzecim. Wybierz jedną, która najbardziej „złapała" Twoją uwagę, i przetestuj ją przez tydzień. Ja polecam zacząć od Protokołu 3R — bo działa nawet wtedy, gdy wszystko inne zawodzi.
       </div>
     </div>
   </section>
@@ -820,11 +905,55 @@ p strong { color: var(--text-dark); font-weight: 500; }
     <div class="signature">— Laura</div>
 
     <div class="cta-block">
-      <h3 class="cta-title">Chcesz pójść dalej? Dołącz do Masterclass „Czuły Balans"</h3>
-      <p class="cta-desc">To, co przeczytałaś, jest mapą. Masterclass to przewodnik, który prowadzi Cię przez tę mapę krok po kroku — z nagraniami, ćwiczeniami audio do regulacji układu nerwowego i społecznością kobiet, które przechodzą tę samą drogę.</p>
+      <div style="font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--accent-red); margin-bottom:16px;">Czuły Balans Masterclass — edycja 2026</div>
+      <h3 class="cta-title">Ten ebook to mapa.<br>Masterclass to droga, którą przejdziesz razem ze mną.</h3>
+      <p class="cta-desc">8 tygodni pracy na żywo + materiały dożywotnio. Dla kobiet, które chcą przestać walczyć ze sobą i zacząć pracować <em>z</em> własnym układem nerwowym.</p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin: 24px 0;">
+        <div style="padding:16px; background:rgba(255,255,255,0.04); border:1px solid rgba(242,239,233,0.1); border-radius:4px;">
+          <div style="font-family:'DM Sans',sans-serif; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--accent-red); margin-bottom:8px;">Moduł 1–2</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:16px; color:#fff; margin-bottom:6px;">Diagnoza i demaskaż</div>
+          <div style="font-size:12px; color:#9a9490; line-height:1.6;">Głęboka diagnostyka Twojego profilu oporu + sesja audio do regulacji układu nerwowego.</div>
+        </div>
+        <div style="padding:16px; background:rgba(255,255,255,0.04); border:1px solid rgba(242,239,233,0.1); border-radius:4px;">
+          <div style="font-family:'DM Sans',sans-serif; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--accent-gold); margin-bottom:8px;">Moduł 3–4</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:16px; color:#fff; margin-bottom:6px;">Mental Load i związek</div>
+          <div style="font-size:12px; color:#9a9490; line-height:1.6;">Jak rozmawiać z partnerem, renegocjować obowiązki i odzyskać swój czas bez konfliktu.</div>
+        </div>
+        <div style="padding:16px; background:rgba(255,255,255,0.04); border:1px solid rgba(242,239,233,0.1); border-radius:4px;">
+          <div style="font-family:'DM Sans',sans-serif; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--accent-sage); margin-bottom:8px;">Moduł 5–6</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:16px; color:#fff; margin-bottom:6px;">Protokół 3R na co dzień</div>
+          <div style="font-size:12px; color:#9a9490; line-height:1.6;">Nagrania audio do ćwiczeń somatic regulation + 30-dniowy plan wdrożenia krok po kroku.</div>
+        </div>
+        <div style="padding:16px; background:rgba(255,255,255,0.04); border:1px solid rgba(242,239,233,0.1); border-radius:4px;">
+          <div style="font-family:'DM Sans',sans-serif; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--accent-terracotta); margin-bottom:8px;">Moduł 7–8</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:16px; color:#fff; margin-bottom:6px;">Cykl i planowanie</div>
+          <div style="font-size:12px; color:#9a9490; line-height:1.6;">Jak zsynchronizować kalendarz z cyklem hormonalnym i przestać planować wbrew sobie.</div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:16px; align-items:flex-start; margin:24px 0; padding:20px; background:rgba(255,255,255,0.03); border-radius:4px;">
+        <div style="flex:1;">
+          <div style="font-family:'Lora',serif; font-size:13.5px; font-style:italic; color:rgba(242,239,233,0.8); line-height:1.7; margin-bottom:8px;">„Przeszłam przez pięć programów produktywności. To pierwszy, po którym przestałam się wstydzić za siebie. Laura tłumaczy, a nie ocenia."</div>
+          <div style="font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted);">Kasia W., przedsiębiorczyni, mama dwójki</div>
+        </div>
+        <div style="flex:1;">
+          <div style="font-family:'Lora',serif; font-size:13.5px; font-style:italic; color:rgba(242,239,233,0.8); line-height:1.7; margin-bottom:8px;">„W trzecim tygodniu po raz pierwszy w życiu przeprosiłam się z porankami. Dosłownie."</div>
+          <div style="font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted);">Marta D., nauczycielka akademicka</div>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:20px 0; border-top:1px solid rgba(242,239,233,0.1); margin-bottom:20px;">
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:38px; color:#fff; line-height:1;">297 <span style="font-size:18px;">zł</span></div>
+          <div style="font-family:'DM Sans',sans-serif; font-size:10px; color:var(--text-muted); letter-spacing:1px;">dostęp dożywotni · faktury VAT · gwarancja 14 dni</div>
+        </div>
+        <div style="font-size:12px; color:#9a9490; max-width:200px; text-align:right; line-height:1.5;">Kolejna edycja: <strong style="color:#fff;">wrzesień 2026</strong><br>Zapisy otwarte do wyczerpania miejsc.</div>
+      </div>
+
       <div class="cta-links-container">
-        <a href="https://instagram.com/laura.prokrastynacja" class="cta-btn cta-btn-primary" target="_blank">Dołącz do Masterclass</a>
-        <a href="mailto:laura@prokrastynacja.pl" class="cta-btn cta-btn-secondary">Napisz do Laury</a>
+        <a href="mailto:laura@prokrastynacja.pl?subject=Zapisy Masterclass 2026" class="cta-btn cta-btn-primary">Zapisz się na Masterclass — 297 zł</a>
+        <a href="https://instagram.com/laura.prokrastynacja" class="cta-btn cta-btn-secondary" target="_blank">Obserwuj na Instagramie — @laura.prokrastynacja</a>
       </div>
     </div>
   </section>
@@ -897,22 +1026,19 @@ p strong { color: var(--text-dark); font-weight: 500; }
   // Quiz diagnostyczny
   function calculateQuiz() {
     var groups = {
-      A: { label: 'Perfekcjonistka', questions: ['a1', 'a2'],
-        text: 'Odkładasz, bo zależy Ci za bardzo, nie za mało. Twój wewnętrzny krytyk stawia poprzeczkę tak wysoko, że bezpieczniej jest wcale nie zaczynać, niż zacząć i „zawieść". Zacznij od rozdziału III i ćwiczenia z czułą odpowiedzią Wewnętrznemu Krytykowi.' },
-      B: { label: 'Przeciążona Mental Load', questions: ['b1', 'b2'],
-        text: 'Twoja kora przedczołowa większość dnia pracuje w tle — na niewidocznym pilnowaniu wszystkiego i wszystkich. Gdy w końcu siadasz do swoich spraw, akumulator jest pusty. Przeczytaj uważnie rozdział II i rozważ skrypt rozmowy z partnerem.' },
-      C: { label: 'Uciekinierka w troskę', questions: ['c1', 'c2'],
-        text: 'Łatwiej Ci zaopiekować się czyimś problemem niż swoim — bo troska o innych nie budzi poczucia winy, a troska o siebie często tak. Warto delikatnie przyjrzeć się przekonaniu, że Twoje potrzeby są „mniej ważne". To dobry temat na pracę z terapeutką lub na Masterclass.' },
-      D: { label: 'Znieczulaczka wieczorna', questions: ['d1', 'd2'],
-        text: 'Noc to Twoja jedyna „strefa wolna od obowiązków" — dlatego nieświadomie ją wydłużasz, kosztem snu i energii na jutro. Spróbuj techniki nr 5 z rozdziału V: małą nagrodę przyjemności wpleć w dzień, zamiast odraczać ją do późnej nocy.' },
-      E: { label: 'Zagubiona w chaosie', questions: ['e1', 'e2'],
-        text: 'Trudność nie leży w braku chęci, lecz w nadmiarze bodźców i niedokończonych wątków naraz. Metoda szwajcarskiego sera (technika nr 2, rozdział V) jest stworzona właśnie dla Ciebie — zacznij od jednej, najmniejszej „dziury" w zadaniu.' }
+      A: { label: 'Perfekcjonistka', questions: ['a1', 'a2', 'a3'],
+        text: 'Odkładasz, bo zależy Ci za bardzo — nie za mało. Twój wewnętrzny krytyk stawia poprzeczkę tak wysoko, że bezpieczniej jest wcale nie zaczynać, niż zacząć i „zawieść". Kluczowe rozdziały dla Ciebie to III (Perfekcjonizm) i V/R1 (Rozpoznaj — praca z głosem krytycznym). Zacznij od ćwiczenia z czułą odpowiedzią Wewnętrznemu Krytykowi — i powtarzaj je każdego dnia przez tydzień, zanim przejdziesz do technik działania.' },
+      B: { label: 'Przeciążona Mental Load', questions: ['b1', 'b2', 'b3'],
+        text: 'Twoja kora przedczołowa większość dnia pracuje w tle — na niewidocznym pilnowaniu wszystkiego i wszystkich. Gdy w końcu siadasz do swoich spraw, biologiczny akumulator uwagi jest pusty. To nie lenistwo — to wyczerpanie zasobu, który nie jest odnawialny samą siłą woli. Rozdział II i skrypt rozmowy z partnerem to Twój priorytet. Protokół 3R (technika 6) pomoże Ci uruchomić choćby jeden mały ruch, gdy zasoby są na zero.' },
+      C: { label: 'Uciekinierka w troskę', questions: ['c1', 'c2', 'c3'],
+        text: 'Łatwiej Ci zaopiekować się czyimś problemem niż swoim — bo troska o innych nie budzi poczucia winy, a troska o siebie bardzo często tak. U podstaw leży często głębokie przekonanie, że Twoje potrzeby są „mniej ważne" lub „nieuzasadnione". To dobry temat na pracę z terapeutką. W praktyce: spróbuj przez jeden tydzień traktować JEDEN swój projekt jak zlecenie dla klientki — z terminem, priorytetem i przestrzenią w kalendarzu.' },
+      D: { label: 'Znieczulaczka wieczorna', questions: ['d1', 'd2', 'd3'],
+        text: 'Noc to Twoja jedyna „strefa wolna od obowiązków" — dlatego nieświadomie ją wydłużasz, kosztem snu i energii na jutro. To błędne koło: zmęczenie jutro sprawi, że potrzebujesz więcej znieczulenia wieczorem. Kluczowa zmiana: wpleć małe przyjemności w ciągu dnia (technika 5), żeby noc przestała być jedyną przestrzenią, gdzie możesz „być tylko sobą". Rozdział IV (cykle energii) pokaże Ci, kiedy w ciągu miesiąca masz naturalnie więcej przestrzeni dla siebie.' },
+      E: { label: 'Zagubiona w chaosie', questions: ['e1', 'e2', 'e3'],
+        text: 'Trudność nie leży w braku chęci, lecz w nadmiarze bodźców i niedokończonych pętli w głowie. Gdy nie widać pierwszego kroku, mózg blokuje start jako „zbyt ryzykowny". Metoda szwajcarskiego sera (technika 2) i Protokół 3R/R3 (jeden fizyczny gest) są stworzone właśnie dla Ciebie. Jeden konkretny gest > dziesięć minut planowania.' }
     };
 
     var scores = {};
-    var maxScore = -1;
-    var topKey = 'A';
-
     Object.keys(groups).forEach(function (key) {
       var sum = 0;
       groups[key].questions.forEach(function (name) {
@@ -920,61 +1046,115 @@ p strong { color: var(--text-dark); font-weight: 500; }
         sum += checked ? parseInt(checked.value, 10) : 0;
       });
       scores[key] = sum;
-      if (sum > maxScore) {
-        maxScore = sum;
-        topKey = key;
-      }
     });
 
-    var result = groups[topKey];
-    document.getElementById('quizProfileTitle').textContent = 'Twój dominujący profil: ' + result.label;
-    document.getElementById('quizProfileText').textContent = result.text;
+    var maxScore = Math.max.apply(null, Object.values(scores));
+    var topKeys = Object.keys(groups).filter(function (k) { return scores[k] === maxScore; });
+
+    var titleEl = document.getElementById('quizProfileTitle');
+    var textEl = document.getElementById('quizProfileText');
+
+    if (maxScore === 0) {
+      titleEl.textContent = 'Wszystkie wyniki równe zero';
+      textEl.textContent = 'Odpowiedziałaś "0" na wszystkie pytania — możliwe, że jesteś akurat w dobrej fazie, albo quiz nie trafia w Twój konkretny wzorzec. Wróć do tabeli diagnostycznej i przyjrzyj się jej jeszcze raz.';
+    } else if (topKeys.length === 1) {
+      var r = groups[topKeys[0]];
+      titleEl.textContent = 'Twój dominujący profil: ' + r.label + ' (' + maxScore + '/9 pkt)';
+      textEl.textContent = r.text;
+    } else {
+      var labels = topKeys.map(function (k) { return groups[k].label; }).join(' i ');
+      titleEl.textContent = 'Dwa równorzędne profile: ' + labels + ' (po ' + maxScore + '/9 pkt)';
+      textEl.textContent = topKeys.map(function (k) { return '▸ ' + groups[k].label + ': ' + groups[k].text; }).join('\n\n');
+      textEl.style.whiteSpace = 'pre-line';
+    }
 
     var card = document.getElementById('quizResult');
     card.classList.add('active');
-    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(function () { card.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100);
   }
 
-  // Tracker 14 dni — zapis w localStorage przeglądarki czytelniczki
+  // Tracker 14 dni — zapis w localStorage, wyświetlanie dat od dnia startu
   (function buildTracker() {
     var STORAGE_KEY = 'czuly-balans-tracker-14-dni';
+    var START_KEY   = 'czuly-balans-tracker-start';
     var saved = {};
-    try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch (e) { saved = {}; }
+    var startTs = null;
 
-    var week1 = document.getElementById('trackerWeek1');
-    var week2 = document.getElementById('trackerWeek2');
+    try { saved   = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch (e) { saved = {}; }
+    try { startTs = JSON.parse(localStorage.getItem(START_KEY)); } catch (e) { startTs = null; }
 
-    for (var day = 1; day <= 14; day++) {
-      var card = document.createElement('div');
-      card.className = 'tracker-day-card';
-      card.dataset.day = day;
-      if (saved[day]) card.classList.add('completed');
+    var DAYS_PL = ['niedz.','pon.','wt.','śr.','czw.','pt.','sob.'];
 
-      var num = document.createElement('span');
-      num.className = 'tracker-day-num';
-      num.textContent = 'Dzień ' + day;
-
-      var time = document.createElement('span');
-      time.className = 'tracker-day-time';
-      time.textContent = saved[day] ? 'Zrobione' : 'Kliknij, gdy gotowe';
-
-      var box = document.createElement('div');
-      box.className = 'tracker-checkbox';
-
-      card.appendChild(num);
-      card.appendChild(time);
-      card.appendChild(box);
-
-      card.addEventListener('click', function () {
-        var d = this.dataset.day;
-        var isCompleted = this.classList.toggle('completed');
-        saved[d] = isCompleted;
-        this.querySelector('.tracker-day-time').textContent = isCompleted ? 'Zrobione' : 'Kliknij, gdy gotowe';
-        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(saved)); } catch (e) {}
-      });
-
-      (day <= 7 ? week1 : week2).appendChild(card);
+    function dayLabel(offset) {
+      if (!startTs) return '';
+      var d = new Date(startTs + offset * 86400000);
+      return DAYS_PL[d.getDay()] + ' ' + d.getDate() + '.' + String(d.getMonth() + 1).padStart(2, '0');
     }
+
+    function renderCards() {
+      var week1 = document.getElementById('trackerWeek1');
+      var week2 = document.getElementById('trackerWeek2');
+      week1.innerHTML = '';
+      week2.innerHTML = '';
+
+      for (var day = 1; day <= 14; day++) {
+        (function (d) {
+          var card = document.createElement('div');
+          card.className = 'tracker-day-card';
+          if (saved[d]) card.classList.add('completed');
+
+          var num = document.createElement('span');
+          num.className = 'tracker-day-num';
+          num.textContent = d;
+
+          var dateLabel = document.createElement('span');
+          dateLabel.style.cssText = 'display:block; font-family:"DM Sans",sans-serif; font-size:9px; color:#7a7572; letter-spacing:0; margin-bottom:2px;';
+          dateLabel.textContent = dayLabel(d - 1);
+
+          var time = document.createElement('span');
+          time.className = 'tracker-day-time';
+          time.textContent = saved[d] ? 'Zrobione' : 'Dzień ' + d;
+
+          var box = document.createElement('div');
+          box.className = 'tracker-checkbox';
+
+          card.appendChild(num);
+          if (startTs) card.appendChild(dateLabel);
+          card.appendChild(time);
+          card.appendChild(box);
+
+          card.addEventListener('click', function () {
+            if (!startTs) {
+              startTs = Date.now() - (d - 1) * 86400000;
+              try { localStorage.setItem(START_KEY, JSON.stringify(startTs)); } catch (e) {}
+              renderCards();
+              return;
+            }
+            var isCompleted = this.classList.toggle('completed');
+            saved[d] = isCompleted;
+            this.querySelector('.tracker-day-time').textContent = isCompleted ? 'Zrobione' : 'Dzień ' + d;
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(saved)); } catch (e) {}
+          });
+
+          (d <= 7 ? week1 : week2).appendChild(card);
+        })(day);
+      }
+    }
+
+    renderCards();
+
+    // Przycisk reset
+    var trackerBox = document.querySelector('.tracker-box');
+    var resetBtn = document.createElement('button');
+    resetBtn.textContent = 'Zacznij od nowa (reset)';
+    resetBtn.style.cssText = 'margin-top:20px; background:none; border:1px solid rgba(242,239,233,0.15); color:#9a9490; font-family:"DM Sans",sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; padding:8px 16px; cursor:pointer; border-radius:2px;';
+    resetBtn.addEventListener('click', function () {
+      if (!confirm('Wyczyścić postęp i zacząć od nowa?')) return;
+      saved = {}; startTs = null;
+      try { localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(START_KEY); } catch (e) {}
+      renderCards();
+    });
+    trackerBox.appendChild(resetBtn);
   })();
 </script>
 
