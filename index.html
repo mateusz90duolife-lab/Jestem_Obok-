@@ -2,1053 +2,765 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Kwestionariusz przesiewowy ADHD·ASD·Zdrowie psychiczne</title>
-<meta name="description" content="Profesjonalny naukowo uzasadniony kwestionariusz przesiewowy dla dorosłych: ADHD, spektrum autyzmu, lęk, depresja, PTSD/CPTSD. Oparty na DSM-5-TR i ICD-11.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Test przesiewowy ADHD · ASD · Zdrowie psychiczne</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-/* ─── DESIGN TOKENS ──────────────────────────────────────────────── */
+/* ─── TOKENS ─── */
 :root{
-  --bg:        #080e17;
-  --bg1:       #0d1726;
-  --bg2:       #111f30;
-  --surf:      #162238;
-  --surf2:     #1c2d45;
-  --surf3:     #243550;
-  --border:    rgba(255,255,255,.07);
-  --border2:   rgba(255,255,255,.12);
-  --txt:       #e6edf5;
-  --txt2:      #8fa4bd;
-  --txt3:      #5d7898;
-  --acc:       #3b82f6;
-  --acc2:      #2563eb;
-  --acc-glow:  rgba(59,130,246,.25);
-  --adhd:      #f59e0b;
-  --asd:       #8b5cf6;
-  --dep:       #06b6d4;
-  --anx:       #f59e0b;
-  --ptsd:      #ef4444;
-  --pers:      #64748b;
-  --green:     #10b981;
-  --yellow:    #f59e0b;
-  --red:       #ef4444;
-  --purple:    #8b5cf6;
-  --r:         16px;
-  --r2:        12px;
-  --shadow:    0 8px 32px rgba(0,0,0,.45);
-  --shadow2:   0 2px 12px rgba(0,0,0,.3);
-  --font:      'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --trans:     .18s cubic-bezier(.4,0,.2,1);
+  --bg:#07101c; --bg1:#0c1828; --bg2:#111f33;
+  --s0:#162439; --s1:#1c2d47; --s2:#243455; --s3:#2e4068;
+  --b0:rgba(255,255,255,.05); --b1:rgba(255,255,255,.09); --b2:rgba(255,255,255,.15);
+  --t0:#e8f0fa; --t1:#9fb8d4; --t2:#6585a8; --t3:#3d5a7a;
+  --blue:#3b82f6; --blue2:#1d4ed8; --blue-g:rgba(59,130,246,.2);
+  --purple:#8b5cf6; --purple2:#6d28d9;
+  --amber:#f59e0b; --cyan:#06b6d4; --red:#ef4444; --green:#10b981; --rose:#f43f5e;
+  --adhd:#f59e0b; --asd:#8b5cf6; --dep:#06b6d4; --anx:#f97316; --ptsd:#ef4444;
+  --r:14px; --r2:10px; --tr:.18s cubic-bezier(.4,0,.2,1);
+  --sh:0 8px 40px rgba(0,0,0,.5); --sh2:0 2px 12px rgba(0,0,0,.3);
 }
-
-/* ─── RESET & BASE ───────────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{
-  font-family:var(--font);
-  background:var(--bg);
-  color:var(--txt);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  min-height:100vh;
-  overflow-x:hidden;
-}
-img,svg{display:block;max-width:100%}
-button{font-family:var(--font);cursor:pointer;border:none;outline:none}
-a{color:var(--acc);text-decoration:none}
-a:hover{text-decoration:underline}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t0);
+  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg1)}
+::-webkit-scrollbar-thumb{background:var(--s3);border-radius:99px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
 
-/* ─── SCROLLBAR ──────────────────────────────────────────────────── */
-::-webkit-scrollbar{width:6px;height:6px}
-::-webkit-scrollbar-track{background:var(--bg1)}
-::-webkit-scrollbar-thumb{background:var(--surf3);border-radius:99px}
-::-webkit-scrollbar-thumb:hover{background:var(--border2)}
+/* ─── TOP BAR ─── */
+#topbar{position:fixed;top:0;left:0;right:0;z-index:200;height:56px;
+  background:rgba(7,16,28,.88);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--b0);display:flex;align-items:center}
+#topbar .wrap{display:flex;align-items:center;gap:14px;width:100%;max-width:860px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:14px;white-space:nowrap}
+.logo-icon{width:30px;height:30px;border-radius:8px;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  display:grid;place-items:center;font-size:13px;flex-shrink:0}
+.logo small{display:block;font-size:10px;font-weight:400;color:var(--t2);line-height:1}
+#progWrap{flex:1;display:flex;align-items:center;gap:10px;opacity:0;transition:.3s}
+#progWrap.on{opacity:1}
+#progTrack{flex:1;height:4px;background:var(--s2);border-radius:99px;overflow:hidden}
+#progFill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--purple));
+  border-radius:99px;transition:width .4s ease}
+#progTxt{font-size:11px;color:var(--t2);white-space:nowrap;min-width:52px;text-align:right}
 
-/* ─── LAYOUT ─────────────────────────────────────────────────────── */
-.container{max-width:880px;margin:0 auto;padding:0 20px}
-.container.wide{max-width:1100px}
+/* ─── SECTION NAV ─── */
+#secNav{display:none;position:fixed;top:56px;left:0;right:0;z-index:190;
+  background:rgba(7,16,28,.9);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--b0);overflow-x:auto;scrollbar-width:none}
+#secNav::-webkit-scrollbar{display:none}
+#secNav.on{display:block}
+#secNavInner{display:flex;gap:5px;padding:7px 20px;max-width:860px;margin:0 auto;width:max-content;min-width:100%}
+.sdot{width:32px;height:32px;border-radius:9px;background:var(--s0);border:1px solid var(--b0);
+  color:var(--t2);font-size:11px;font-weight:800;display:grid;place-items:center;
+  cursor:pointer;transition:var(--tr);flex-shrink:0;position:relative}
+.sdot:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.sdot.cur{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 0 14px var(--blue-g)}
+.sdot.done{border-color:rgba(16,185,129,.5);color:var(--green)}
+.sdot.done.cur{background:var(--blue);border-color:var(--blue);color:#fff}
+.sdot.done::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);
+  width:4px;height:4px;border-radius:50%;background:var(--green)}
 
-/* ─── TOP BAR ────────────────────────────────────────────────────── */
-.topbar{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(8,14,23,.85);
-  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
-  height:58px;
-  display:flex;align-items:center;
-}
-.topbar-inner{
-  width:100%;max-width:880px;margin:0 auto;padding:0 20px;
-  display:flex;align-items:center;gap:14px;
-}
-.logo{
-  display:flex;align-items:center;gap:10px;
-  font-weight:700;font-size:14px;letter-spacing:-.2px;
-  white-space:nowrap;
-}
-.logo-icon{
-  width:32px;height:32px;border-radius:8px;
-  background:linear-gradient(135deg,var(--acc),var(--purple));
-  display:flex;align-items:center;justify-content:center;
-  font-size:14px;
-  flex-shrink:0;
-}
-.logo-text small{display:block;color:var(--txt3);font-size:11px;font-weight:400}
-.progress-wrap{
-  flex:1;display:flex;align-items:center;gap:10px;
-  opacity:0;transition:opacity .3s;
-}
-.progress-wrap.visible{opacity:1}
-.progress-track{
-  flex:1;height:5px;background:var(--surf3);border-radius:99px;overflow:hidden;
-}
-.progress-fill{
-  height:100%;width:0;
-  background:linear-gradient(90deg,var(--acc),var(--purple));
-  border-radius:99px;transition:width .4s ease;
-}
-.progress-count{
-  font-size:12px;color:var(--txt3);white-space:nowrap;min-width:60px;text-align:right;
-}
+/* ─── PAGES ─── */
+.page{display:none;padding-top:56px}
+.page.on{display:block}
+#pageQuiz{padding-top:96px}
 
-/* ─── SECTION DOTS ───────────────────────────────────────────────── */
-.sec-nav{
-  position:fixed;top:58px;left:0;right:0;z-index:90;
-  background:rgba(8,14,23,.9);
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--border);
-  display:none;
-  overflow-x:auto;
-  scrollbar-width:none;
-}
-.sec-nav::-webkit-scrollbar{display:none}
-.sec-nav.visible{display:block}
-.sec-nav-inner{
-  max-width:880px;margin:0 auto;padding:8px 20px;
-  display:flex;gap:6px;align-items:center;
-}
-.secdot{
-  flex-shrink:0;
-  width:34px;height:34px;border-radius:10px;
-  background:var(--surf);border:1px solid var(--border);
-  color:var(--txt3);font-size:11px;font-weight:800;
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;transition:var(--trans);position:relative;
-}
-.secdot:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-1px)}
-.secdot.current{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:0 0 12px var(--acc-glow)}
-.secdot.complete{border-color:var(--green);color:var(--green)}
-.secdot.complete.current{background:var(--acc);border-color:var(--acc);color:#fff}
-.secdot::after{
-  content:'';position:absolute;bottom:-3px;left:50%;transform:translateX(-50%);
-  width:4px;height:4px;border-radius:50%;background:var(--green);
-  opacity:0;transition:opacity .2s;
-}
-.secdot.complete::after{opacity:1}
-
-/* ─── PAGES ──────────────────────────────────────────────────────── */
-.page{display:none;padding-top:58px}
-.page.active{display:block}
-#page-quiz{padding-top:102px}
-
-/* ─── HERO / INTRO ───────────────────────────────────────────────── */
-.hero{
-  padding:80px 0 60px;
-  text-align:center;
-  position:relative;overflow:hidden;
-}
-.hero-bg{
-  position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 50% at 50% 0%, rgba(59,130,246,.12) 0%,transparent 70%);
-  pointer-events:none;
-}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:7px;
-  background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.25);
-  color:var(--acc);font-size:12px;font-weight:600;letter-spacing:.5px;
-  text-transform:uppercase;padding:6px 14px;border-radius:99px;
-  margin-bottom:24px;
-}
-.hero-badge::before{content:'⬡';font-size:10px}
-h1.hero-title{
-  font-size:clamp(30px,5vw,52px);font-weight:900;letter-spacing:-1.5px;
-  line-height:1.1;margin-bottom:20px;
-}
-h1.hero-title .line2{
-  background:linear-gradient(90deg,var(--acc),var(--purple));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.hero-sub{
-  font-size:18px;color:var(--txt2);max-width:580px;
-  margin:0 auto 40px;font-weight:400;line-height:1.7;
-}
-.hero-stats{
-  display:flex;justify-content:center;flex-wrap:wrap;gap:0;
-  border:1px solid var(--border);border-radius:var(--r);
-  overflow:hidden;max-width:600px;margin:0 auto 48px;
-  background:var(--surf);
-}
-.hero-stat{
-  flex:1;min-width:110px;padding:20px 16px;
-  border-right:1px solid var(--border);text-align:center;
-}
-.hero-stat:last-child{border-right:none}
-.hero-stat .n{font-size:28px;font-weight:800;background:linear-gradient(135deg,var(--acc),var(--purple));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero-stat .l{font-size:12px;color:var(--txt3);margin-top:3px}
-
-/* ─── BUTTONS ────────────────────────────────────────────────────── */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  font-size:15px;font-weight:700;letter-spacing:-.2px;
-  padding:14px 28px;border-radius:12px;cursor:pointer;
-  transition:var(--trans);border:none;outline:none;
-  text-decoration:none;
-}
-.btn-primary{
-  background:linear-gradient(135deg,var(--acc),var(--acc2));
-  color:#fff;box-shadow:0 4px 20px var(--acc-glow);
-}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px var(--acc-glow);filter:brightness(1.08)}
-.btn-primary:active{transform:translateY(0)}
-.btn-ghost{
-  background:transparent;color:var(--txt);
-  border:1px solid var(--border2);
-}
-.btn-ghost:hover{background:var(--surf);border-color:var(--border2)}
-.btn-sm{padding:10px 18px;font-size:13px;border-radius:10px}
-.btn-icon{padding:10px;border-radius:10px;font-size:18px}
-.btn-row{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
-
-/* ─── CARDS ──────────────────────────────────────────────────────── */
-.card{
-  background:var(--surf);border:1px solid var(--border);
-  border-radius:var(--r);padding:22px;
-}
-.card2{
-  background:var(--surf2);border:1px solid var(--border);
-  border-radius:var(--r2);padding:18px;
-}
-
-/* ─── DISCLAIMER ─────────────────────────────────────────────────── */
-.disclaimer{
-  background:rgba(239,68,68,.06);
-  border:1px solid rgba(239,68,68,.2);
-  border-radius:var(--r);padding:18px 20px;
-  font-size:14px;line-height:1.7;color:#ffd5d5;
-}
-.disclaimer strong{color:#fff}
-.disclaimer .crisis{
-  display:inline-flex;align-items:center;gap:6px;
-  background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.35);
-  padding:4px 10px;border-radius:6px;font-weight:700;font-size:13px;
-  color:#ff9999;margin-top:8px;
-}
-
-/* ─── SCALE LEGEND ───────────────────────────────────────────────── */
-.scale-grid{
-  display:grid;grid-template-columns:repeat(5,1fr);gap:8px;
-  margin-top:14px;
-}
-.scale-item{
-  background:var(--surf2);border:1px solid var(--border);
-  border-radius:10px;padding:12px 8px;text-align:center;
-}
-.scale-item .n{font-size:22px;font-weight:800;color:var(--acc)}
-.scale-item .l{font-size:11px;color:var(--txt3);margin-top:4px}
-
-/* ─── INFO SECTIONS (tools, etc.) ───────────────────────────────── */
-.tool-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;
-  margin-top:14px;
-}
-.tool-chip{
-  background:var(--surf2);border:1px solid var(--border);
-  border-radius:10px;padding:10px 12px;
-  font-size:13px;display:flex;align-items:center;gap:8px;
-}
-.tool-chip::before{
-  content:'';width:6px;height:6px;border-radius:50%;
-  background:var(--acc);flex-shrink:0;
-}
-
-/* ─── SECTION HEADER IN QUIZ ─────────────────────────────────────── */
-.quiz-sec-header{
-  padding:20px 0 16px;
-  border-bottom:1px solid var(--border);
-  margin-bottom:20px;
-}
-.quiz-sec-header .tag{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
-  color:var(--acc);margin-bottom:8px;
-}
-.quiz-sec-header h2{font-size:22px;font-weight:800;letter-spacing:-.4px;display:flex;align-items:center;gap:10px}
-.quiz-sec-header .frame-note{
-  display:inline-flex;align-items:center;gap:7px;
+/* ═══ INTRO PAGE ═══ */
+.hero{padding:72px 0 50px;text-align:center;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:-100px;left:50%;transform:translateX(-50%);
+  width:700px;height:400px;
+  background:radial-gradient(ellipse,rgba(59,130,246,.1) 0%,transparent 70%);
+  pointer-events:none}
+.badge{display:inline-flex;align-items:center;gap:7px;
   background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);
-  padding:7px 13px;border-radius:8px;font-size:13px;color:var(--txt2);
-  margin-top:10px;
-}
+  color:var(--blue);font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+  padding:6px 14px;border-radius:99px;margin-bottom:22px}
+h1{font-size:clamp(28px,5vw,50px);font-weight:900;letter-spacing:-1.5px;line-height:1.1;margin-bottom:18px}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--blue),var(--purple));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:17px;color:var(--t1);max-width:560px;margin:0 auto 40px;font-weight:400}
+.stats-row{display:flex;justify-content:center;flex-wrap:wrap;gap:0;
+  border:1px solid var(--b1);border-radius:var(--r);overflow:hidden;
+  background:var(--s0);max-width:560px;margin:0 auto 44px}
+.stat{flex:1;min-width:100px;padding:18px 12px;border-right:1px solid var(--b0);text-align:center}
+.stat:last-child{border-right:none}
+.stat .n{font-size:26px;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--purple));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat .l{font-size:11px;color:var(--t2);margin-top:2px}
 
-/* ─── QUESTION CARD ──────────────────────────────────────────────── */
-.q-card{
-  background:var(--surf);border:1px solid var(--border);
-  border-radius:var(--r);padding:20px;
-  margin-bottom:12px;
-  transition:border-color var(--trans),transform var(--trans),box-shadow var(--trans);
-}
-.q-card:hover{border-color:var(--border2);transform:translateY(-1px);box-shadow:var(--shadow2)}
-.q-card.answered{border-color:rgba(16,185,129,.35)}
-.q-card.answered:hover{border-color:rgba(16,185,129,.55)}
-.q-num{
-  font-size:11px;font-weight:800;color:var(--txt3);letter-spacing:.5px;
-  text-transform:uppercase;margin-bottom:6px;
-}
-.q-text{font-size:15.5px;font-weight:600;color:var(--txt);line-height:1.55;margin-bottom:8px}
-.q-meta{
-  display:flex;flex-wrap:wrap;align-items:center;gap:6px;
-  margin-bottom:16px;
-}
-.q-area{
-  display:inline-flex;align-items:center;gap:5px;
-  background:var(--surf3);border:1px solid var(--border);
-  font-size:11px;font-weight:600;color:var(--txt3);
-  padding:3px 9px;border-radius:6px;
-}
-.q-just{font-size:11px;color:var(--txt3)}
+/* scale box */
+.scale-box{background:var(--s0);border:1px solid var(--b1);border-radius:var(--r);padding:20px;margin:20px 0}
+.scale-box h3{font-size:14px;font-weight:700;margin-bottom:12px}
+.scale-row{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.scale-cell{background:var(--s1);border:1px solid var(--b0);border-radius:9px;
+  padding:11px 6px;text-align:center}
+.scale-cell .n{font-size:20px;font-weight:800;color:var(--blue)}
+.scale-cell .l{font-size:10px;color:var(--t2);margin-top:3px}
 
-/* ─── OPTION BUTTONS ─────────────────────────────────────────────── */
-.opts{display:flex;gap:6px;flex-wrap:wrap}
-.opt{
-  flex:1;min-width:70px;max-width:140px;
-  background:var(--surf2);border:1px solid var(--border);
-  border-radius:10px;padding:10px 6px;text-align:center;
-  cursor:pointer;transition:var(--trans);user-select:none;
-}
-.opt:hover{border-color:var(--acc);background:rgba(59,130,246,.08);transform:translateY(-2px)}
-.opt.sel{
-  background:linear-gradient(135deg,var(--acc),var(--acc2));
-  border-color:var(--acc);color:#fff;
-  box-shadow:0 4px 14px var(--acc-glow);transform:translateY(-2px);
-}
-.opt .n{font-size:20px;font-weight:800;display:block}
-.opt .l{font-size:10px;color:var(--txt3);display:block;margin-top:2px}
-.opt.sel .l{color:rgba(255,255,255,.8)}
+/* disclaimer */
+.disc{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);
+  border-radius:var(--r);padding:16px 18px;font-size:13.5px;color:#ffd0d0;line-height:1.7;margin:16px 0}
+.disc strong{color:#fff}
+.crisis-chip{display:inline-flex;align-items:center;gap:6px;margin-top:8px;
+  background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);
+  padding:5px 12px;border-radius:7px;font-weight:700;font-size:13px;color:#ff9999}
 
-/* ─── NAV BUTTONS ────────────────────────────────────────────────── */
-.quiz-nav{
-  display:flex;justify-content:space-between;align-items:center;
-  gap:12px;padding:24px 0 12px;
-  border-top:1px solid var(--border);margin-top:24px;
-}
-.quiz-nav-center{font-size:13px;color:var(--txt3)}
-.autosave-note{
-  text-align:center;font-size:12px;color:var(--txt3);
-  padding:10px;display:flex;align-items:center;justify-content:center;gap:6px;
-}
-.autosave-note::before{content:'💾'}
+/* tools grid */
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px;margin-top:12px}
+.tc{background:var(--s1);border:1px solid var(--b0);border-radius:9px;
+  padding:9px 12px;font-size:12.5px;display:flex;align-items:center;gap:7px}
+.tc::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0}
+.info-block{background:var(--s0);border:1px solid var(--b1);border-radius:var(--r);padding:20px;margin:16px 0}
+.info-block h3{font-size:14px;font-weight:700;margin-bottom:8px}
 
-/* ─── RESULTS PAGE ───────────────────────────────────────────────── */
-.results-hero{
-  background:linear-gradient(180deg,rgba(59,130,246,.06) 0%,transparent 100%);
-  border-bottom:1px solid var(--border);
-  padding:40px 0 30px;text-align:center;
-}
-.results-hero h2{font-size:30px;font-weight:900;letter-spacing:-.5px}
-.results-hero p{color:var(--txt2);margin-top:6px}
+/* ─── BUTTONS ─── */
+.btn{display:inline-flex;align-items:center;gap:7px;font-family:inherit;
+  font-size:15px;font-weight:700;padding:13px 26px;border-radius:12px;
+  cursor:pointer;border:none;outline:none;transition:var(--tr);text-decoration:none}
+.btn-p{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;
+  box-shadow:0 4px 20px rgba(59,130,246,.3)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,130,246,.4);filter:brightness(1.08)}
+.btn-g{background:transparent;color:var(--t0);border:1px solid var(--b2)}
+.btn-g:hover{background:var(--s1)}
+.btn-s{padding:10px 18px;font-size:13px;border-radius:10px}
+.brow{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:18px 0}
 
-/* ─── SCORE CARDS ────────────────────────────────────────────────── */
-.score-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;
-  padding:24px 0;
-}
-.score-card{
-  background:var(--surf);border:1px solid var(--border);
-  border-radius:var(--r);padding:20px;
-  position:relative;overflow:hidden;
-  transition:var(--trans);
-}
-.score-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.score-card::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
-  background:var(--c);
-}
-.score-card .head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:14px}
-.score-card .title{font-weight:700;font-size:15px;display:flex;align-items:center;gap:7px}
-.score-card .badge{
-  font-size:11px;font-weight:700;padding:4px 10px;border-radius:99px;white-space:nowrap;
-}
-.score-card .big-num{
-  font-size:36px;font-weight:900;letter-spacing:-1px;color:var(--c);
-  display:flex;align-items:baseline;gap:4px;
-}
-.score-card .big-num small{font-size:14px;color:var(--txt3);font-weight:500}
-.score-track{height:8px;background:var(--surf3);border-radius:99px;overflow:hidden;margin:12px 0 10px}
-.score-fill{height:100%;border-radius:99px;background:var(--c);transition:width 1s cubic-bezier(.4,0,.2,1)}
-.score-interp{font-size:13px;color:var(--txt2)}
-/* level badge colors */
-.lvl0{background:rgba(16,185,129,.15);color:#34d399}
-.lvl1{background:rgba(245,158,11,.15);color:#fbbf24}
-.lvl2{background:rgba(249,115,22,.15);color:#fb923c}
-.lvl3{background:rgba(239,68,68,.15);color:#f87171}
-.lvl4{background:rgba(239,68,68,.25);color:#fca5a5}
+/* ═══ QUIZ ═══ */
+.qhdr{padding:16px 0 14px;border-bottom:1px solid var(--b0);margin-bottom:18px}
+.qhdr .stag{font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.qhdr h2{font-size:21px;font-weight:800;letter-spacing:-.3px;display:flex;align-items:center;gap:9px}
+.qhdr .fnote{display:inline-flex;align-items:center;gap:6px;margin-top:9px;
+  background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.18);
+  padding:7px 12px;border-radius:8px;font-size:13px;color:var(--t1)}
 
-/* ─── FLAGS ──────────────────────────────────────────────────────── */
-.flags-section{background:var(--surf);border:1px solid var(--border);border-radius:var(--r);padding:22px;margin-bottom:18px}
-.flags-section h3{font-size:17px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.flag{
-  display:flex;gap:12px;align-items:flex-start;
-  padding:13px 15px;border-radius:10px;margin-bottom:8px;font-size:14px;
-}
+.qcard{background:var(--s0);border:1px solid var(--b0);border-radius:var(--r);
+  padding:18px 20px;margin-bottom:10px;transition:border-color var(--tr),transform var(--tr)}
+.qcard:hover{border-color:var(--b1);transform:translateY(-1px)}
+.qcard.ans{border-color:rgba(16,185,129,.35)}
+.qcard.crit-q{border-left:3px solid var(--red)}
+.qid{font-size:10.5px;font-weight:800;color:var(--t3);letter-spacing:.5px;text-transform:uppercase;margin-bottom:5px}
+.qtxt{font-size:15px;font-weight:600;line-height:1.55;margin-bottom:7px}
+.qarea{display:inline-flex;align-items:center;gap:5px;
+  background:var(--s2);border:1px solid var(--b0);
+  font-size:11px;font-weight:600;color:var(--t2);padding:3px 9px;border-radius:6px;margin-bottom:12px}
+.opts{display:flex;gap:5px;flex-wrap:wrap}
+.opt{flex:1;min-width:66px;background:var(--s1);border:1px solid var(--b0);
+  border-radius:9px;padding:9px 4px;text-align:center;cursor:pointer;
+  transition:var(--tr);user-select:none}
+.opt:hover{border-color:var(--blue);background:rgba(59,130,246,.08);transform:translateY(-2px)}
+.opt.sel{background:linear-gradient(135deg,var(--blue),var(--blue2));
+  border-color:var(--blue);box-shadow:0 3px 12px var(--blue-g);transform:translateY(-2px)}
+.opt .on{font-size:18px;font-weight:800;display:block}
+.opt .ol{font-size:9.5px;color:var(--t2);display:block;margin-top:2px}
+.opt.sel .ol{color:rgba(255,255,255,.75)}
+
+.qnav{display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding:20px 0 10px;border-top:1px solid var(--b0);margin-top:20px}
+.qnav-c{font-size:12px;color:var(--t2)}
+.save-note{text-align:center;font-size:11.5px;color:var(--t3);padding:8px;
+  display:flex;align-items:center;justify-content:center;gap:5px}
+
+/* ═══ RESULTS ═══ */
+.rhero{background:linear-gradient(180deg,rgba(59,130,246,.07),transparent);
+  border-bottom:1px solid var(--b0);padding:36px 0 28px;text-align:center}
+.rhero h2{font-size:28px;font-weight:900;letter-spacing:-.5px}
+.rhero p{color:var(--t1);margin-top:5px;font-size:14px}
+
+/* ── GAUGES ── */
+.gauge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;padding:24px 0 10px}
+.gcard{background:var(--s0);border:1px solid var(--b1);border-radius:var(--r);
+  padding:22px;position:relative;overflow:hidden;transition:var(--tr)}
+.gcard:hover{transform:translateY(-2px);box-shadow:var(--sh)}
+.gcard-accent{position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c)}
+.gcard-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:16px}
+.gcard-title{font-weight:700;font-size:15px;display:flex;align-items:center;gap:7px}
+.lvbadge{font-size:11px;font-weight:700;padding:4px 10px;border-radius:99px;white-space:nowrap}
+.lv0{background:rgba(16,185,129,.15);color:#34d399}
+.lv1{background:rgba(245,158,11,.15);color:#fbbf24}
+.lv2{background:rgba(249,115,22,.15);color:#fb923c}
+.lv3{background:rgba(239,68,68,.18);color:#f87171}
+.lv4{background:rgba(239,68,68,.28);color:#fca5a5}
+
+/* gauge ring (SVG) */
+.gauge-ring{display:block;margin:0 auto 12px}
+.gauge-bg{fill:none;stroke:var(--s2);stroke-width:9}
+.gauge-arc{fill:none;stroke-width:9;stroke-linecap:round;
+  stroke-dasharray:251.2;stroke-dashoffset:251.2;
+  transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)}
+.gauge-num{font-size:20px;font-weight:900;text-anchor:middle;dominant-baseline:central}
+.gauge-sub{font-size:9px;text-anchor:middle;dominant-baseline:central;fill:#6585a8}
+.gcard-interp{font-size:12.5px;color:var(--t1);text-align:center;line-height:1.5}
+
+/* ── SUMMARY PANEL ── */
+.sum-panel{background:var(--s0);border:1px solid var(--b1);border-radius:var(--r);
+  padding:22px;margin:8px 0}
+.sum-panel h3{font-size:16px;font-weight:800;margin-bottom:14px;
+  display:flex;align-items:center;gap:8px}
+
+/* flags */
+.flag{display:flex;gap:11px;align-items:flex-start;padding:12px 14px;
+  border-radius:10px;margin-bottom:8px;font-size:13.5px;line-height:1.6}
 .flag:last-child{margin-bottom:0}
-.flag-icon{font-size:18px;line-height:1;flex-shrink:0;margin-top:1px}
-.flag-body b{color:var(--txt);font-weight:700}
-.flag-body{line-height:1.6}
-.flag.crit{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.3)}
-.flag.adhd{background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.25)}
-.flag.asd{background:rgba(139,92,246,.07);border:1px solid rgba(139,92,246,.25)}
-.flag.ok{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.2);color:var(--txt3)}
+.fi{font-size:17px;flex-shrink:0;margin-top:1px}
+.flag.fc{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.28)}
+.flag.fa{background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.22)}
+.flag.fs{background:rgba(139,92,246,.07);border:1px solid rgba(139,92,246,.22)}
+.flag.fok{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.2);color:var(--t2)}
+.flag b{color:var(--t0)}
 
-/* ─── DETAILS/ACCORDION ──────────────────────────────────────────── */
-.accordion{
-  background:var(--surf);border:1px solid var(--border);
-  border-radius:var(--r);margin-bottom:12px;overflow:hidden;
-}
-.accordion summary{
-  cursor:pointer;font-weight:700;font-size:15px;
-  padding:18px 20px;list-style:none;
-  display:flex;align-items:center;justify-content:space-between;
-  transition:background var(--trans);
-}
-.accordion summary::-webkit-details-marker{display:none}
-.accordion summary::after{
-  content:'›';font-size:20px;color:var(--txt3);
-  transition:transform var(--trans);
-}
-.accordion[open] summary::after{transform:rotate(90deg)}
-.accordion summary:hover{background:var(--surf2)}
-.accordion summary span.sum-icon{margin-right:8px}
-.accordion-body{padding:4px 20px 20px;border-top:1px solid var(--border)}
+/* accordion */
+.acc{background:var(--s0);border:1px solid var(--b1);border-radius:var(--r);
+  margin:10px 0;overflow:hidden}
+.acc summary{display:flex;align-items:center;justify-content:space-between;
+  padding:16px 20px;cursor:pointer;list-style:none;font-weight:700;font-size:14px;
+  transition:background var(--tr)}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:hover{background:var(--s1)}
+.acc summary::after{content:'›';font-size:18px;color:var(--t2);transition:transform var(--tr);margin-left:auto;padding-left:12px}
+.acc[open] summary::after{transform:rotate(90deg)}
+.acc[open] summary{border-bottom:1px solid var(--b0)}
+.acc-body{padding:6px 20px 20px}
 
-/* ─── TABLES ─────────────────────────────────────────────────────── */
-.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:14px}
-.tbl th,.tbl td{border:1px solid var(--border);padding:9px 12px;text-align:left;vertical-align:top}
-.tbl th{background:var(--surf3);font-weight:700;color:var(--txt2);font-size:12px;letter-spacing:.3px;text-transform:uppercase}
-.tbl tr:nth-child(even) td{background:rgba(255,255,255,.015)}
-.mini-bar{height:7px;background:var(--surf3);border-radius:99px;overflow:hidden;min-width:80px}
-.mini-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--purple));border-radius:99px}
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:12px}
+.tbl th,.tbl td{border:1px solid var(--b0);padding:9px 11px;text-align:left;vertical-align:top}
+.tbl th{background:var(--s1);font-weight:700;font-size:11px;text-transform:uppercase;
+  letter-spacing:.4px;color:var(--t2)}
+.tbl tr:nth-child(even) td{background:rgba(255,255,255,.01)}
 
-/* ─── SECTION SCORE TABLE ────────────────────────────────────────── */
-.sec-score-grid{display:flex;flex-direction:column;gap:8px;padding-top:8px}
-.sec-score-row{
-  display:flex;align-items:center;gap:12px;
-  background:var(--surf2);border-radius:10px;padding:10px 14px;
-}
-.sec-score-row .sec-letter{
-  width:28px;height:28px;border-radius:7px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:12px;font-weight:800;flex-shrink:0;
-  background:var(--surf3);color:var(--txt2);
-}
-.sec-score-row .sec-name{flex:1;font-size:13px;font-weight:500}
-.sec-score-row .sec-pts{font-size:12px;color:var(--txt3);white-space:nowrap}
-.sec-score-row .sec-bar{flex:1;max-width:150px}
+/* per-section table */
+.srow{display:flex;align-items:center;gap:10px;background:var(--s1);
+  border-radius:9px;padding:9px 12px;margin-bottom:6px}
+.srow:last-child{margin-bottom:0}
+.sl{width:26px;height:26px;border-radius:7px;background:var(--s2);
+  display:grid;place-items:center;font-size:11px;font-weight:800;color:var(--t2);flex-shrink:0}
+.sn{flex:1;font-size:12.5px;font-weight:500}
+.sbar{flex:1;max-width:130px;height:6px;background:var(--s2);border-radius:99px;overflow:hidden}
+.sbar i{display:block;height:100%;
+  background:linear-gradient(90deg,var(--blue),var(--purple));border-radius:99px}
+.sp{font-size:11px;color:var(--t2);white-space:nowrap;min-width:48px;text-align:right}
 
-/* ─── RADAR CHART (CSS) ──────────────────────────────────────────── */
-.radar-wrap{
-  display:flex;justify-content:center;
-  padding:16px 0;
-}
-.chart-bars{
-  display:flex;align-items:flex-end;gap:8px;height:140px;
-  padding:0 8px;
-}
-.chart-bar-wrap{display:flex;flex-direction:column;align-items:center;gap:6px}
-.chart-bar{
-  width:36px;min-height:4px;border-radius:6px 6px 0 0;
-  transition:height 1s cubic-bezier(.4,0,.2,1);
-  position:relative;
-}
-.chart-bar .chart-label{
-  position:absolute;top:-22px;left:50%;transform:translateX(-50%);
-  font-size:11px;font-weight:700;white-space:nowrap;color:var(--txt);
-}
-.chart-bar-name{font-size:10px;color:var(--txt3);text-align:center;max-width:50px;line-height:1.3}
+/* chart columns */
+.col-chart{display:flex;align-items:flex-end;gap:10px;height:160px;
+  padding:0 10px;justify-content:center}
+.col-wrap{display:flex;flex-direction:column;align-items:center;gap:7px}
+.col{width:44px;min-height:4px;border-radius:8px 8px 0 0;position:relative;
+  transition:height 1.1s cubic-bezier(.4,0,.2,1)}
+.col-pct{position:absolute;top:-20px;left:50%;transform:translateX(-50%);
+  font-size:11px;font-weight:700;color:var(--t0);white-space:nowrap}
+.col-name{font-size:10px;color:var(--t2);text-align:center;max-width:50px;line-height:1.3}
 
-/* ─── PRINT ──────────────────────────────────────────────────────── */
+/* recommendations */
+.rec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:12px}
+.rec-card{background:var(--s1);border:1px solid var(--b0);border-radius:11px;padding:14px}
+.rec-card .ri{font-size:22px;margin-bottom:8px}
+.rec-card h4{font-size:13px;font-weight:700;margin-bottom:5px}
+.rec-card p{font-size:12px;color:var(--t1);line-height:1.55}
+
+/* print */
 @media print{
-  .topbar,.sec-nav,.btn-row,.quiz-nav,.autosave-note,
-  #page-intro,#page-quiz{display:none!important}
-  body{background:#fff;color:#000;font-size:12px}
-  .score-card,.flags-section,.accordion{
-    break-inside:avoid;border:1px solid #ccc!important;
-    background:#fff!important;
-  }
-  .score-card::before{background:#999!important}
-  .tbl th{background:#f5f5f5!important;color:#333!important}
-  .score-card .big-num{color:#333!important}
-  .score-fill{background:#999!important}
-  #page-results{display:block!important;padding-top:0!important}
-  .results-hero{background:#f9f9f9!important;border:1px solid #ddd!important}
-  .flag{background:#f9f9f9!important;border:1px solid #ddd!important;color:#333!important}
+  #topbar,#secNav,.btn,.brow,.qnav,.save-note,#pageIntro,#pageQuiz{display:none!important}
+  body{background:#fff;color:#000}
+  .gcard,.sum-panel,.acc{break-inside:avoid;background:#fff!important;border:1px solid #ccc!important}
+  .gcard-accent{background:#aaa!important}
+  #pageResults{display:block!important;padding-top:0!important}
+  .rhero{background:#f8f8f8!important;border:1px solid #ddd!important}
+  .flag,.disc{background:#f9f9f9!important;border:1px solid #ddd!important;color:#333!important}
+  .flag b,.disc strong{color:#000!important}
+  .gauge-num{fill:#000!important}
+  .tbl th{background:#eee!important;color:#333!important}
 }
-
-/* ─── RESPONSIVE ─────────────────────────────────────────────────── */
-@media(max-width:640px){
-  .hero{padding:60px 0 40px}
-  h1.hero-title{font-size:28px}
-  .hero-stats{flex-direction:column}
-  .hero-stat{border-right:none;border-bottom:1px solid var(--border)}
-  .hero-stat:last-child{border-bottom:none}
-  .scale-grid{grid-template-columns:repeat(3,1fr)}
-  .opt{min-width:56px}
-  .score-grid{grid-template-columns:1fr}
+@media(max-width:600px){
+  h1{font-size:26px}.stats-row{flex-direction:column}
+  .stat{border-right:none;border-bottom:1px solid var(--b0)}.stat:last-child{border-bottom:none}
+  .scale-row{grid-template-columns:repeat(3,1fr)}.opt{min-width:56px}
+  .gauge-grid{grid-template-columns:1fr}.col-chart{gap:6px}.col{width:36px}
 }
-@media(max-width:400px){
-  .opts{gap:4px}
-  .opt .l{display:none}
-}
-
-/* ─── ANIMATIONS ─────────────────────────────────────────────────── */
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 var(--acc-glow)}50%{box-shadow:0 0 0 8px transparent}}
-.fade-in{animation:fadeIn .35s ease both}
-
-/* ─── TOOLTIP ────────────────────────────────────────────────────── */
-[title]{cursor:default}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.fu{animation:fadeUp .35s ease both}
 </style>
 </head>
 <body>
 
-<!-- ═══════════════ TOP BAR ═══════════════ -->
-<header class="topbar">
-  <div class="topbar-inner">
+<!-- ═══ TOPBAR ═══ -->
+<header id="topbar">
+  <div class="wrap">
     <div class="logo">
       <div class="logo-icon">🧠</div>
-      <div class="logo-text">
-        Kwestionariusz przesiewowy
-        <small>ADHD · ASD · Zdrowie psychiczne</small>
-      </div>
+      <div>Kwestionariusz przesiewowy<small>ADHD · ASD · Zdrowie psychiczne</small></div>
     </div>
-    <div class="progress-wrap" id="progressWrap">
-      <div class="progress-track">
-        <div class="progress-fill" id="progressFill"></div>
-      </div>
-      <div class="progress-count" id="progressCount">0 / 189</div>
+    <div id="progWrap">
+      <div id="progTrack"><div id="progFill"></div></div>
+      <div id="progTxt">0 / 189</div>
     </div>
   </div>
 </header>
+<nav id="secNav"><div id="secNavInner"></div></nav>
 
-<!-- ═══════════════ SECTION NAV ═══════════════ -->
-<nav class="sec-nav" id="secNav"></nav>
-
-<!-- ════════════════════════════════════════════════════════
-     PAGE: INTRO
-     ════════════════════════════════════════════════════════ -->
-<div class="page active" id="page-intro">
+<!-- ═══════════════════════════════════════════════════════════
+     INTRO
+═══════════════════════════════════════════════════════════ -->
+<div class="page on" id="pageIntro">
 <main>
-  <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="container">
-      <div class="hero-badge">Narzędzie samooceny · DSM-5-TR &amp; ICD-11</div>
-      <h1 class="hero-title">
-        Profesjonalny kwestionariusz<br>
-        <span class="line2">przesiewowy dla dorosłych</span>
-      </h1>
-      <p class="hero-sub">
-        Wielowymiarowa samoocena w kierunku ADHD, spektrum autyzmu, zaburzeń lękowych,
-        depresji oraz PTSD/CPTSD. Pytania oparte na uznanych narzędziach naukowych.
+    <div class="hero-glow"></div>
+    <div class="wrap">
+      <div class="badge">⬡ Narzędzie samooceny · DSM-5-TR &amp; ICD-11</div>
+      <h1>Profesjonalny test przesiewowy<br><em>dla dorosłych</em></h1>
+      <p class="hero-sub">Kompleksowa samoocena w kierunku ADHD, spektrum autyzmu (ASD), zaburzeń lękowych, depresji i PTSD/CPTSD oparta na kryteriach naukowych.</p>
+      <div class="stats-row">
+        <div class="stat"><div class="n">189</div><div class="l">pytań diagnostycznych</div></div>
+        <div class="stat"><div class="n">19</div><div class="l">sekcji klinicznych</div></div>
+        <div class="stat"><div class="n">~50 min</div><div class="l">czas wypełniania</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">obszarów oceny</div></div>
+      </div>
+      <div class="brow">
+        <button class="btn btn-p" onclick="startQuiz(false)">▶&ensp;Rozpocznij test</button>
+        <button class="btn btn-g" id="resumeBtn" style="display:none" onclick="startQuiz(true)">↻&ensp;Wznów zapisany</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap" style="padding-bottom:60px">
+    <div class="scale-box">
+      <h3>Skala odpowiedzi 0–4</h3>
+      <div class="scale-row">
+        <div class="scale-cell"><div class="n">0</div><div class="l">Nigdy</div></div>
+        <div class="scale-cell"><div class="n">1</div><div class="l">Rzadko</div></div>
+        <div class="scale-cell"><div class="n">2</div><div class="l">Czasami</div></div>
+        <div class="scale-cell"><div class="n">3</div><div class="l">Często</div></div>
+        <div class="scale-cell"><div class="n">4</div><div class="l">Bardzo często</div></div>
+      </div>
+      <p style="margin-top:13px;font-size:12.5px;color:var(--t2)">
+        📌 <strong style="color:var(--t1)">Sekcja A (Dzieciństwo):</strong> przed 12. rokiem życia &nbsp;·&nbsp;
+        📌 <strong style="color:var(--t1)">Pozostałe:</strong> ostatnie 6 miesięcy &nbsp;·&nbsp;
+        💾 Postęp zapisuje się automatycznie
       </p>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="n">189</div><div class="l">pytań diagnostycznych</div></div>
-        <div class="hero-stat"><div class="n">19</div><div class="l">sekcji klinicznych</div></div>
-        <div class="hero-stat"><div class="n">~50</div><div class="l">minut testu</div></div>
-        <div class="hero-stat"><div class="n">5</div><div class="l">obszarów oceny</div></div>
-      </div>
-      <div class="btn-row">
-        <button class="btn btn-primary" onclick="startQuiz(false)">▶&ensp;Rozpocznij test</button>
-        <button class="btn btn-ghost" id="resumeBtn" style="display:none" onclick="startQuiz(true)">↻&ensp;Wznów zapisany test</button>
-      </div>
     </div>
-  </section>
 
-  <!-- NARZĘDZIA REFERENCYJNE -->
-  <section style="padding:40px 0 30px">
-    <div class="container">
-      <div class="card">
-        <h3 style="font-size:16px;font-weight:800;margin-bottom:6px">Narzędzia referencyjne</h3>
-        <p style="font-size:13px;color:var(--txt2);margin-bottom:14px">Pytania mierzą te same konstrukty psychologiczne co uznane narzędzia, nie kopiując pytań chronionych prawem autorskim.</p>
-        <div class="tool-grid">
-          <div class="tool-chip">ASRS v1.1 — ADHD</div>
-          <div class="tool-chip">DIVA-5 — ADHD dorosłych</div>
-          <div class="tool-chip">AQ-50 — spektrum autyzmu</div>
-          <div class="tool-chip">RAADS-R — ASD dorosłych</div>
-          <div class="tool-chip">CAT-Q — maskowanie ASD</div>
-          <div class="tool-chip">PHQ-9 — depresja</div>
-          <div class="tool-chip">GAD-7 — lęk uogólniony</div>
-          <div class="tool-chip">PCL-5 — PTSD</div>
-          <div class="tool-chip">BIS-11 — impulsywność</div>
-          <div class="tool-chip">DERS — regulacja emocji</div>
-          <div class="tool-chip">EQ — empatia</div>
-          <div class="tool-chip">IES-R — stres pourazowy</div>
-        </div>
+    <div class="info-block">
+      <h3>Narzędzia referencyjne</h3>
+      <div class="tools">
+        <div class="tc">ASRS v1.1 — ADHD</div><div class="tc">DIVA-5 — ADHD dorosłych</div>
+        <div class="tc">AQ-50 — spektrum autyzmu</div><div class="tc">RAADS-R — ASD dorosłych</div>
+        <div class="tc">CAT-Q — maskowanie ASD</div><div class="tc">PHQ-9 — depresja</div>
+        <div class="tc">GAD-7 — lęk uogólniony</div><div class="tc">PCL-5 — PTSD</div>
+        <div class="tc">BIS-11 — impulsywność</div><div class="tc">DERS — regulacja emocji</div>
+        <div class="tc">EQ — empatia</div><div class="tc">IES-R — stres pourazowy</div>
       </div>
     </div>
-  </section>
 
-  <!-- SKALA -->
-  <section style="padding:0 0 30px">
-    <div class="container">
-      <div class="card">
-        <h3 style="font-size:16px;font-weight:800;margin-bottom:4px">Jak odpowiadać — skala 0–4</h3>
-        <p style="font-size:13px;color:var(--txt2);margin-bottom:14px">Wybierz liczbę najlepiej opisującą częstotliwość danego zachowania lub doświadczenia.</p>
-        <div class="scale-grid">
-          <div class="scale-item"><div class="n">0</div><div class="l">Nigdy / nie dotyczy</div></div>
-          <div class="scale-item"><div class="n">1</div><div class="l">Rzadko&nbsp;(&lt;raz/mies.)</div></div>
-          <div class="scale-item"><div class="n">2</div><div class="l">Czasami (kilka/mies.)</div></div>
-          <div class="scale-item"><div class="n">3</div><div class="l">Często (kilka/tydz.)</div></div>
-          <div class="scale-item"><div class="n">4</div><div class="l">Bardzo często / zawsze</div></div>
-        </div>
-        <p style="font-size:12px;color:var(--txt3);margin-top:14px">
-          📌 <strong style="color:var(--txt2)">Sekcja A (Dzieciństwo):</strong> oceń, jak często to dotyczyło Cię <strong>przed 12. rokiem życia</strong>.<br>
-          📌 <strong style="color:var(--txt2)">Pozostałe sekcje:</strong> oceń <strong>ostatnie 6 miesięcy</strong>.<br>
-          💾 Postęp zapisuje się automatycznie — możesz przerwać i wrócić do testu później.
-        </p>
-      </div>
+    <div class="disc">
+      <strong>⚠ Ważne zastrzeżenie.</strong> To narzędzie <strong>przesiewowe</strong> — nie stanowi diagnozy klinicznej. Wyniki omów ze specjalistą: psychiatrą, psychologiem klinicznym lub neuropsychologiem.<br>
+      <span class="crisis-chip">Kryzys psychiczny / myśli suicydalne → 116 123 &nbsp;|&nbsp; Zagrożenie życia → 112</span>
     </div>
-  </section>
-
-  <!-- DISCLAIMER -->
-  <section style="padding:0 0 60px">
-    <div class="container">
-      <div class="disclaimer">
-        <strong>⚠&ensp;Ważne zastrzeżenie medyczne</strong><br>
-        Niniejszy kwestionariusz to narzędzie <strong>przesiewowe</strong> — nie stanowi diagnozy klinicznej i nie zastępuje konsultacji ze specjalistą (psychiatrą, psychologiem klinicznym, neuropsychologiem). Wynik wymaga interpretacji przez uprawnioną osobę.<br>
-        <span class="crisis">Kryzys psychiczny / myśli suicydalne → <strong>116 123</strong> (telefon zaufania) &nbsp;|&nbsp; Zagrożenie życia → <strong>112</strong></span>
-      </div>
-    </div>
-  </section>
+  </div>
 </main>
 </div>
 
-
-<!-- ════════════════════════════════════════════════════════
-     PAGE: QUIZ
-     ════════════════════════════════════════════════════════ -->
-<div class="page" id="page-quiz">
-  <div class="container" id="quizContainer"></div>
+<!-- ═══════════════════════════════════════════════════════════
+     QUIZ
+═══════════════════════════════════════════════════════════ -->
+<div class="page" id="pageQuiz">
+  <div class="wrap" id="quizWrap"></div>
 </div>
 
-
-<!-- ════════════════════════════════════════════════════════
-     PAGE: RESULTS
-     ════════════════════════════════════════════════════════ -->
-<div class="page" id="page-results">
-  <div class="results-hero">
-    <div class="container">
+<!-- ═══════════════════════════════════════════════════════════
+     RESULTS
+═══════════════════════════════════════════════════════════ -->
+<div class="page" id="pageResults">
+  <div class="rhero">
+    <div class="wrap">
       <h2>Twój profil przesiewowy</h2>
       <p id="resMeta"></p>
     </div>
   </div>
-  <div class="container" style="padding-bottom:80px">
-    <div id="resultsBody"></div>
-    <div class="btn-row" style="margin-top:32px">
-      <button class="btn btn-primary" onclick="window.print()">🖨&ensp;Drukuj / Zapisz PDF</button>
-      <button class="btn btn-ghost" onclick="goBackQuiz()">← Wróć do testu</button>
-      <button class="btn btn-ghost" onclick="resetAll()">↺ Zacznij od nowa</button>
+  <div class="wrap" style="padding-bottom:80px">
+    <div id="resBody"></div>
+    <div class="brow" style="margin-top:30px">
+      <button class="btn btn-p" onclick="window.print()">🖨 Drukuj / Zapisz PDF</button>
+      <button class="btn btn-g" onclick="goBack()">← Wróć do testu</button>
+      <button class="btn btn-g" onclick="resetAll()">↺ Zacznij od nowa</button>
     </div>
-    <div class="disclaimer" style="margin-top:28px;font-size:13px">
-      Wyniki mają charakter orientacyjny. Wydrukuj i zabierz na konsultację do specjalisty.<br>
-      W Polsce: psychiatra przez NFZ (skierowanie od lekarza pierwszego kontaktu), psycholog kliniczny, centrum zdrowia psychicznego.
+    <div class="disc" style="margin-top:24px;font-size:13px">
+      Wydrukuj wyniki i zabierz na konsultację. Psychiatra przez NFZ — skierowanie od lekarza pierwszego kontaktu. Centrum Zdrowia Psychicznego — bez skierowania.<br>
+      Kryzys: <strong>116 123</strong> (tel. zaufania) | Zagrożenie życia: <strong>112</strong>
     </div>
   </div>
 </div>
 
-<footer style="background:var(--bg1);border-top:1px solid var(--border);padding:24px 0;text-align:center;font-size:12px;color:var(--txt3)">
-  <div class="container">
-    Kwestionariusz v1.0 &bull; DSM-5-TR (APA, 2022) &bull; ICD-11 (WHO, 2022)<br>
-    Pełna dokumentacja i bibliografia: <code>kwestionariusz_przesiewowy_ADHD_ASD.md</code> &bull;
-    Nie zastępuje diagnozy klinicznej
-  </div>
+<footer style="background:var(--bg1);border-top:1px solid var(--b0);padding:20px 0;text-align:center;font-size:11.5px;color:var(--t3)">
+  <div class="wrap">Kwestionariusz przesiewowy v2.0 · DSM-5-TR (APA 2022) · ICD-11 (WHO 2022) · Nie zastępuje diagnozy klinicznej</div>
 </footer>
 
-<!-- ════════════════════════════════════════════════════════
-     JAVASCRIPT
-     ════════════════════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════════════════
+     SCRIPT
+═══════════════════════════════════════════════════════════ -->
 <script>
 'use strict';
-/* ═══ DATA ══════════════════════════════════════════════════ */
 const DATA = [{"letter": "A", "name": "Dzieciństwo (przed 12. rokiem życia)", "framing": "Oceń, jak często dotyczyło Cię to PRZED 12. rokiem życia.", "questions": [{"id": "A1", "text": "Miałem/am trudności z utrzymaniem uwagi na zadaniach szkolnych lub zabawach, które nie były dla mnie natychmiastowo interesujące.", "area": "Nieuwaga-ADHD", "just": "Uzasadnienie: Kryterium A1a DSM-5-TR; Lahey et al., 1994 — wskaźnik nieuwagi o najwyższej mocy predykcyjnej"}, {"id": "A2", "text": "Nauczyciele lub rodzice skarżyli się, że nie słucham, kiedy do mnie mówią — nawet gdy nic mnie nie rozpraszało.", "area": "Nieuwaga-ADHD", "just": "Uzasadnienie: DSM-5-TR kryterium A1b; Barkley, 2015 — deficyt słyszenia z wyłączeniem percepcyjnym"}, {"id": "A3", "text": "Zaczynałem/am zadania (np. prace domowe, projekty), ale rzadko je kończyłem/am.", "area": "Nieuwaga-ADHD", "just": "Uzasadnienie: DSM-5-TR kryterium A1c; Nigg et al., 2006"}, {"id": "A4", "text": "Gubiłem/am regularnie rzeczy potrzebne do szkoły (piórnik, zeszyty, klucze, tornister).", "area": "Nieuwaga-ADHD", "just": "Uzasadnienie: DSM-5-TR kryterium A1g"}, {"id": "A5", "text": "Łatwo rozpraszały mnie zewnętrzne bodźce — dźwięki, ruchy, myśli niezwiązane z zadaniem.", "area": "Nieuwaga-ADHD", "just": "Uzasadnienie: DSM-5-TR kryterium A1h; Kofler et al., 2020"}, {"id": "A6", "text": "Wiercidełem/am się, kręciłem/am nogami, wstawałem/am z ławki kiedy powinienem/am siedzieć.", "area": "Nadpobudliwość-ADHD", "just": "Uzasadnienie: DSM-5-TR kryterium A2a; Faraone et al., 2021"}, {"id": "A7", "text": "Miałem/am trudności z cichą zabawą lub siedzeniem w miejscu podczas długich zajęć.", "area": "Nadpobudliwość-ADHD", "just": "Uzasadnienie: DSM-5-TR kryterium A2c"}, {"id": "A8", "text": "Przerywałem/am innym w środku rozmowy lub odpowiadałem/am zanim pytanie zostało skończone.", "area": "Impulsywność-ADHD", "just": "Uzasadnienie: DSM-5-TR kryterium A2k; Sonuga-Barke et al., 2010"}, {"id": "A9", "text": "Robiłem/am rzeczy bez zastanowienia się nad konsekwencjami (np. niebezpieczne zabawy, zakupy, kłótnie).", "area": "Impulsywność-ADHD", "just": "Uzasadnienie: DSM-5-TR kryterium A2i; Nigg, 2000"}, {"id": "A10", "text": "Miałem/am trudności z czekaniem na swoją kolej w zabawach lub rozmowach.", "area": "Impulsywność-ADHD", "just": "Uzasadnienie: DSM-5-TR kryterium A2j; Castellanos et al., 2005"}, {"id": "A11", "text": "Preferowałem/am samotną zabawę lub zabawę według własnych zasad zamiast grupowej zabawy z rówieśnikami.", "area": "Interakcje społeczne-ASD", "just": "Uzasadnienie: DSM-5-TR kryterium A1; Klin et al., 2007"}, {"id": "A12", "text": "Miałem/am silne, pochłaniające zainteresowania tematami, które różniły się od zainteresowań rówieśników.", "area": "RRBs-ASD", "just": "Uzasadnienie: DSM-5-TR kryterium B3; Klin et al., 2007; Attwood, 2006"}, {"id": "A13", "text": "Lubiłem/am ściśle określone rutyny i bardzo denerwowałem/am się, gdy były zaburzane (np. zmiana trasy do szkoły).", "area": "RRBs-ASD", "just": "Uzasadnienie: DSM-5-TR kryterium B2; South et al., 2005"}, {"id": "A14", "text": "Dosłownie rozumiałem/am przenośnie/sarkastyczne komentarze — często nie rozumiałem/am żartów lub ironii.", "area": "Komunikacja-ASD", "just": "Uzasadnienie: Baron-Cohen et al., 1985; AQ item 7"}, {"id": "A15", "text": "Rówieśnicy uważali mnie za „dziwnego/dziwną\" lub trudnego/trudną do zrozumienia, choć sam/sama nie rozumiałem/am dlaczego.", "area": "Interakcje społeczne-ASD", "just": "Uzasadnienie: RAADS-R item; Attwood, 2006"}, {"id": "A16", "text": "Miałem/am opóźniony lub unikalny sposób mówienia jako dziecko (echolalia, mówienie o sobie w trzeciej osobie, bardzo formalny język).", "area": "Komunikacja-ASD", "just": "Uzasadnienie: ICD-11 6A02.0; Tager-Flusberg et al., 2005"}, {"id": "A17", "text": "Reagowałem/am silnie na pewne dźwięki, tekstury, zapachy lub smaki — niektóre były dla mnie nie do zniesienia.", "area": "Wrażliwość sensoryczna-ASD", "just": "Uzasadnienie: DSM-5-TR kryterium B4; Marco et al., 2011"}, {"id": "A18", "text": "Fascynowałem/am się specyficznymi częściami zabawek lub przedmiotów (np. kręcenie kółkami, układanie w rzędy) zamiast bawienia się nimi zgodnie z przeznaczeniem.", "area": "RRBs-ASD", "just": "Uzasadnienie: DSM-5-TR kryterium B1; Leekam et al., 2007"}, {"id": "A19", "text": "Doświadczyłem/am w dzieciństwie powtarzających się sytuacji, w których czułem/am się bezsilny/a, przestraszony/a lub zagrożony/a przez dorosłych lub rówieśników.", "area": "Trauma dziecięca-CPTSD", "just": "Uzasadnienie: CTQ; Herman, 1992; ICD-11 6B41"}, {"id": "A20", "text": "W dzieciństwie czułem/am, że moje uczucia i potrzeby nie były zauważane lub były ignorowane przez opiekunów.", "area": "Zaniedbanie emocjonalne-CPTSD", "just": "Uzasadnienie: Bernstein & Fink, 1998; van der Kolk, 2014"}, {"id": "A21", "text": "Jako dziecko bardzo trudno mi było regulować silne emocje — płakałem/am, krzyczałem/am lub zamrażałem/am się bardziej niż rówieśnicy.", "area": "Regulacja emocji", "just": "Uzasadnienie: Barkley, 2015 (ADHD); van der Kolk, 2014 (trauma)"}]}, {"letter": "B", "name": "Funkcjonowanie szkolne i akademickie", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "B1", "text": "Moje wyniki szkolne były znacznie poniżej moich możliwości — wiedziałem/am, że jestem zdolny/a, ale oceny tego nie odzwierciedlały.", "area": "Underachievement-ADHD", "just": "Uzasadnienie: Barkley et al., 2008; Frazier et al., 2007"}, {"id": "B2", "text": "Miałem/am trudności z ukończeniem prac pisemnych, wypracowań lub projektów na czas.", "area": "Funkcje wykonawcze-ADHD", "just": "Uzasadnienie: Willcutt et al., 2005; DIVA-5"}, {"id": "B3", "text": "Prace domowe zajmowały mi wielokrotnie więcej czasu niż rówieśnikom.", "area": "Przetwarzanie-ADHD/ASD", "just": "Uzasadnienie: Barkley, 2015; Attwood, 2006"}, {"id": "B4", "text": "Miałem/am problemy z organizacją materiałów szkolnych, notatkami, terminarze zadań.", "area": "Organizacja-ADHD", "just": "Uzasadnienie: DSM-5-TR kryterium A1d; Langberg et al., 2012"}, {"id": "B5", "text": "Odkładałem/am zadania szkolne na ostatnią chwilę, nawet gdy miałem/am wystarczająco dużo czasu.", "area": "Prokrastynacja-ADHD", "just": "Uzasadnienie: Pychyl & Flett, 2012; Barkley, 2015"}, {"id": "B6", "text": "Miałem/am trudności z siedzeniem cicho na lekcjach — czułem/am fizyczną potrzebę ruchu.", "area": "Nadpobudliwość-ADHD", "just": "Uzasadnienie: DSM-5-TR kryterium A2b"}, {"id": "B7", "text": "W czasie egzaminów lub ważnych zadań \"blokował/am się\" mimo wcześniejszego opanowania materiału.", "area": "Lęk/FE", "just": "Uzasadnienie: Tannock, 2000; Wood, 2006"}, {"id": "B8", "text": "Miałem/am trudności z uczeniem się w grupie — łatwiej przychodziło mi to samodzielnie.", "area": "Interakcje społeczne-ASD/ADHD", "just": "Uzasadnienie: AQ; Attwood, 2006"}, {"id": "B9", "text": "Nauczyciele i rodzice opisywali mnie jako \"leniwe\" lub \"niestarające się\", choć ja naprawdę się starałem/am.", "area": "ADHD-nierozpoznane", "just": "Uzasadnienie: Barkley, 2015 — narracja wokół ADHD u dzieci"}, {"id": "B10", "text": "Byłem/am znacznie bardziej skupiony/a i produktywny/a, gdy temat był dla mnie pasjonujący (stan \"hyperfocus\").", "area": "Hiperfokus-ADHD", "just": "Uzasadnienie: Ashinoff & Abu-Akel, 2021; Hupfeld et al., 2019"}]}, {"letter": "C", "name": "Relacje społeczne", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "C1", "text": "Trudno mi jest nawiązać nowe znajomości lub przyjaźnie, nawet gdy tego chcę.", "area": "Interakcje społeczne-ASD", "just": "Uzasadnienie: AQ item 11; RAADS-R"}, {"id": "C2", "text": "Preferuję głębokie relacje z jedną lub dwiema osobami niż szerokie kręgi towarzyskie.", "area": "Interakcje społeczne-ASD", "just": "Uzasadnienie: Attwood, 2006; RAADS-R item 25"}, {"id": "C3", "text": "Często nie rozumiem niepisanych zasad społecznych — dowiaduję się o nich dopiero po tym, gdy je złamię.", "area": "Teoria umysłu-ASD", "just": "Uzasadnienie: Baron-Cohen et al., 1985; AQ item 22"}, {"id": "C4", "text": "Kontakty społeczne wyczerpują mnie — potrzebuję potem czasu samemu/samej, żeby się zregenerować.", "area": "Zmęczenie społeczne-ASD/introversion", "just": "Uzasadnienie: CAT-Q; Livingston & Happé, 2017"}, {"id": "C5", "text": "Trudno mi jest rozpoznać, kiedy ktoś chce zakończyć rozmowę lub jest znudzony.", "area": "Teoria umysłu-ASD", "just": "Uzasadnienie: AQ item 44; Baron-Cohen et al., 2001"}, {"id": "C6", "text": "Byłem/am ofiarą manipulacji, wykorzystywania lub zastraszania — inni łatwo mnie \"nabrali\".", "area": "Naiwność społeczna-ASD", "just": "Uzasadnienie: Stokes et al., 2007; Barnhill, 2007"}, {"id": "C7", "text": "Przyjaźnie w moim życiu często kończą się nagle z powodów, których nie rozumiem.", "area": "Utrzymanie relacji-ASD", "just": "Uzasadnienie: Attwood, 2006"}, {"id": "C8", "text": "Czuję się inny/inna od innych ludzi — jakbym obserwował/a świat przez szybę.", "area": "Alienacja społeczna-ASD", "just": "Uzasadnienie: RAADS-R item 2; Attwood, 2006"}, {"id": "C9", "text": "Przechodzę od intensywnych, pochłaniających relacji do nagłego wycofania się.", "area": "Niestabilność relacji-BPD/ADHD", "just": "Uzasadnienie: DSM-5-TR BPD kryterium 2; Skirrow et al., 2014"}, {"id": "C10", "text": "W sytuacjach społecznych analizuję każde wypowiedziane słowo i gest — czy coś źle zrozumiałem/am.", "area": "Lęk społeczny/Maskowanie-ASD", "just": "Uzasadnienie: CAT-Q; Hull et al., 2019"}, {"id": "C11", "text": "Bardzo trudno mi jest skończyć lub ograniczyć rozmowę, gdy jestem zaaferowany/a tematem — mówię za dużo.", "area": "Komunikacja-ADHD/ASD", "just": "Uzasadnienie: ASRS; DSM-5-TR A2k"}, {"id": "C12", "text": "Czuję silną lojalność wobec bliskich — zdrada lub nielojalność jest dla mnie szczególnie bolesna.", "area": "Intensywność emocjonalna-ASD/ADHD", "just": "Uzasadnienie: Attwood, 2006; RSD — Dodson, 2019"}]}, {"letter": "D", "name": "Komunikacja", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "D1", "text": "Mam tendencję do mówienia wprost, bez owijania w bawełnę — co inni odbierają jako szorstkie lub niestosowne.", "area": "Komunikacja-ASD", "just": "Uzasadnienie: AQ item 34; Attwood, 2006"}, {"id": "D2", "text": "Trudno mi jest angażować się w \"small talk\" — rozmowy o pogodzie i plotkach wydają się bezcelowe.", "area": "Pragmatyka-ASD", "just": "Uzasadnienie: AQ item 36; Lord et al., 2000"}, {"id": "D3", "text": "Mówię dużo i szczegółowo o tematach, które mnie pasjonują, nawet jeśli inni tracą zainteresowanie.", "area": "Komunikacja-ASD/ADHD", "just": "Uzasadnienie: AQ item 29; ASRS"}, {"id": "D4", "text": "Mam trudności z interpretowaniem tonu głosu — nie zawsze wiem, czy ktoś jest ironiczny, żartuje, czy poważny.", "area": "Prosodyka-ASD", "just": "Uzasadnienie: Baron-Cohen et al., 1985; RAADS-R"}, {"id": "D5", "text": "Staram się zapamiętać odpowiednie frazy i reakcje w rozmowach — mam \"skrypty\" na typowe sytuacje.", "area": "Maskowanie-ASD", "just": "Uzasadnienie: CAT-Q; Hull et al., 2019"}, {"id": "D6", "text": "Moje komunikaty bywają rozumiane opacznie — ludzie myślą, że jestem złośliwy/a, gdy takim nie jestem.", "area": "Pragmatyka-ASD", "just": "Uzasadnienie: Tager-Flusberg et al., 2005"}, {"id": "D7", "text": "W trakcie rozmów śledzę wiele wątków naraz i często gubię wątek lub przeskakuję tematami.", "area": "Nieuwaga/dyskurs-ADHD", "just": "Uzasadnienie: ASRS; Barkley, 2015"}, {"id": "D8", "text": "Kontakt wzrokowy jest dla mnie niekomfortowy — albo unikam go, albo wymuszam go świadomie.", "area": "Komunikacja niewerbal.-ASD", "just": "Uzasadnienie: DSM-5-TR A2; Moriuchi et al., 2017"}, {"id": "D9", "text": "Dosłownie interpretuję instrukcje, umowy lub polecenia — mam trudności z \"czytaniem między wierszami\".", "area": "Dosłowność-ASD", "just": "Uzasadnienie: AQ item 7; Baron-Cohen et al., 1985"}, {"id": "D10", "text": "Kiedy jestem zdenerwowany/a lub podekscytowany/a, wypowiadam słowa lub frazy szybciej niż zwykle, przerywam innym.", "area": "Impulsywność-ADHD", "just": "Uzasadnienie: DSM-5-TR A2j,k; ASRS v1.1"}]}, {"letter": "E", "name": "Funkcje wykonawcze", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "E1", "text": "Mam trudności z planowaniem wieloetapowych zadań — nie wiem od czego zacząć, mimo że chcę działać.", "area": "Planowanie-FE/ADHD", "just": "Uzasadnienie: Willcutt et al., 2005; Barkley, 2015"}, {"id": "E2", "text": "Zapominam o ważnych terminach, spotkaniach lub zobowiązaniach mimo ich zapisania.", "area": "Pamięć prospektywna-ADHD", "just": "Uzasadnienie: DSM-5-TR A1g; Kessler et al., 2005"}, {"id": "E3", "text": "Mam trudności z przełączaniem się między zadaniami — potrzebuję dużo czasu na \"wejście\" w nowe zadanie.", "area": "Przełączanie-FE/ADHD/ASD", "just": "Uzasadnienie: Miyake et al., 2000; Geurts et al., 2014"}, {"id": "E4", "text": "Gdy zaczynam zadanie, które mi nie odpowiada, czuję silny opór fizyczny — \"paraliza startowa\".", "area": "Inicjacja-ADHD/FE", "just": "Uzasadnienie: Barkley, 2015 — deficyt motywacji; Brown, 2005"}, {"id": "E5", "text": "Mam trudności z oceną, ile czasu zajmie dane zadanie — regularnie za mało lub za dużo czasu planuje.", "area": "Zarządzanie czasem-ADHD", "just": "Uzasadnienie: Barkley, 2011 — \"time blindness\""}, {"id": "E6", "text": "Wykonuję wiele zadań naraz, ale żadnego nie kończę — \"multitasking pętla\".", "area": "Planowanie-ADHD", "just": "Uzasadnienie: Miyake et al., 2000; Lui & Tannock, 2007"}, {"id": "E7", "text": "Mam trudności z ustalaniem priorytetów — wszystko wydaje się albo pilne, albo zupełnie nieważne.", "area": "Priorytyzacja-ADHD", "just": "Uzasadnienie: Barkley, 2015; Brown, 2005"}, {"id": "E8", "text": "Moja przestrzeń (dom, biurko, samochód) jest chronicznie nieuporządkowana mimo prób utrzymania porządku.", "area": "Organizacja-ADHD", "just": "Uzasadnienie: DSM-5-TR A1d; Langberg et al., 2012"}, {"id": "E9", "text": "Mam \"ból myślenia\" przy złożonych zadaniach — umysł się \"wyłącza\" lub błądzi.", "area": "Pamięć robocza-ADHD", "just": "Uzasadnienie: Kofler et al., 2020; Kasper et al., 2012"}, {"id": "E10", "text": "Potrafię pracować efektywnie tylko pod presją czasu (\"deadline effect\").", "area": "Motywacja-ADHD", "just": "Uzasadnienie: Barkley, 2015 — interest-based nervous system"}]}, {"letter": "F", "name": "Uwaga i koncentracja", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "F1", "text": "W trakcie czytania tekstu myśli \"odpływają\" — muszę wracać i czytać te same zdania kilkukrotnie.", "area": "Nieuwaga-ADHD", "just": "Uzasadnienie: ASRS v1.1; DSM-5-TR A1"}, {"id": "F2", "text": "Podczas rozmowy tracę wątek tego, co mówię lub o czym mówi rozmówca.", "area": "Nieuwaga-ADHD", "just": "Uzasadnienie: ASRS v1.1; Brown, 2005"}, {"id": "F3", "text": "Kiedy jestem zaabsorbowany/a interesującym zadaniem, całkowicie tracę poczucie czasu (hiperfokus).", "area": "Hiperfokus-ADHD/ASD", "just": "Uzasadnienie: Hupfeld et al., 2019; Ashinoff & Abu-Akel, 2021"}, {"id": "F4", "text": "W środowisku z wieloma bodźcami (open space, tłum, TV) nie mogę się skupić — rozprasza mnie absolutnie wszystko.", "area": "Nieuwaga/Sensoryka-ADHD/ASD", "just": "Uzasadnienie: DSM-5-TR A1h; Marco et al., 2011"}, {"id": "F5", "text": "Mam trudności z koncentracją na nudnych, monotonnych zadaniach, nawet jeśli są ważne.", "area": "Nieuwaga-ADHD", "just": "Uzasadnienie: ASRS; Barkley, 2015 — novelty seeking"}, {"id": "F6", "text": "Często mam kilka okien/zakładek otwartych jednocześnie i skaczę między nimi bez celu.", "area": "Nieuwaga-ADHD", "just": "Uzasadnienie: Nakao et al., 2011; ASRS"}, {"id": "F7", "text": "Zdarza mi się \"wyłączyć\" w środku ważnego spotkania lub rozmowy — \"odlecieć myślami\".", "area": "Nieuwaga-ADHD", "just": "Uzasadnienie: ASRS v1.1; Kessler et al., 2005"}, {"id": "F8", "text": "Mam trudności z utrzymaniem uwagi na czyimś monologu lub wykładzie dłuższym niż kilka minut.", "area": "Nieuwaga-ADHD", "just": "Uzasadnienie: DSM-5-TR A1a; ASRS"}]}, {"letter": "G", "name": "Impulsywność", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "G1", "text": "Kupuję rzeczy impulsywnie bez planowania — wydaję więcej niż powinienem/am.", "area": "Impulsywność-ADHD", "just": "Uzasadnienie: Barkley et al., 2008; DIVA-5"}, {"id": "G2", "text": "Podejmuję ważne życiowe decyzje (praca, relacje, przeprowadzka) bardzo szybko, bez długiego analizowania.", "area": "Impulsywność-ADHD", "just": "Uzasadnienie: Nigg, 2000; BIS-11"}, {"id": "G3", "text": "Przerywam innym lub kończę ich zdania, bo już \"wiem\" co chcą powiedzieć.", "area": "Impulsywność-ADHD", "just": "Uzasadnienie: DSM-5-TR A2j,k; ASRS"}, {"id": "G4", "text": "Działam pod wpływem chwilowego nastroju lub impulsu w sposób, który później żałuję.", "area": "Impulsywność-ADHD", "just": "Uzasadnienie: BIS-11; Patton et al., 1995"}, {"id": "G5", "text": "Trudno mi się powstrzymać przed wyrażeniem opinii, nawet gdy wiem, że lepiej milczeć.", "area": "Impulsywność/ASD", "just": "Uzasadnienie: DSM-5-TR A2k; AQ item 28"}, {"id": "G6", "text": "Angażowałem/am się w ryzykowne zachowania (szybka jazda, używki, ryzykowny seks, ekstremalne sporty) bez pełnego przemyślenia.", "area": "Impulsywność/ryzyko-ADHD", "just": "Uzasadnienie: Barkley et al., 2008; Fischer et al., 2007"}, {"id": "G7", "text": "Moje odpowiedzi emocjonalne na frustrację lub krytykę są bardzo szybkie i intensywne — \"wybucham\".", "area": "RSD-ADHD/regulacja emocji", "just": "Uzasadnienie: Dodson, 2019; Shaw et al., 2014"}]}, {"letter": "H", "name": "Nadpobudliwość", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "H1", "text": "Odczuwam wewnętrzny niepokój, \"wewnętrzną wibrację\" nawet gdy siedzę spokojnie.", "area": "Wewnętrzna nadpobudliwość-ADHD dorosłych", "just": "Uzasadnienie: DSM-5-TR A2e; Barkley, 2015"}, {"id": "H2", "text": "Trudno mi jest siedzieć nieruchomo przez dłuższy czas — wiercę się, ruszam nogami, przestawiam przedmioty.", "area": "Nadpobudliwość-ADHD", "just": "Uzasadnienie: DSM-5-TR A2a; Faraone et al., 2021"}, {"id": "H3", "text": "Mój umysł jest \"zawsze włączony\" — trudno mi się zrelaksować lub \"wyłączyć myśli\".", "area": "Nadpobudliwość umysłowa-ADHD", "just": "Uzasadnienie: Barkley, 2015; Brown, 2005"}, {"id": "H4", "text": "Czuję potrzebę robienia kilku rzeczy naraz — oglądanie TV, rozmowa i scroll telefonu jednocześnie.", "area": "Nadpobudliwość-ADHD", "just": "Uzasadnienie: ASRS; Barkley, 2015"}, {"id": "H5", "text": "Intensywnie poszukuję nowych bodźców, wrażeń, nowych projektów lub hobby — szybko się nudzę.", "area": "Poszukiwanie nowości-ADHD", "just": "Uzasadnienie: White & Shah, 2011; Barkley, 2015"}, {"id": "H6", "text": "Trudno mi jest zakończyć aktywności wieczorem — mogę \"nie spać\" do bardzo późna, angażując się w różne czynności.", "area": "Regulacja snu-ADHD", "just": "Uzasadnienie: Bijlenga et al., 2019; Kooij & Bijlenga, 2013"}]}, {"letter": "I", "name": "Rutyny, sztywność i powtarzające się zachowania", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "I1", "text": "Mam silną potrzebę przestrzegania konkretnych rutyn — zmiana kolejności czynności powoduje dyskomfort lub niepokój.", "area": "RRBs-ASD", "just": "Uzasadnienie: DSM-5-TR B2a; South et al., 2005"}, {"id": "I2", "text": "Nieoczekiwane zmiany planów powodują u mnie nieproporcjonalnie silny stres lub rozdrażnienie.", "area": "Elastyczność-ASD", "just": "Uzasadnienie: DSM-5-TR B2b; Richler et al., 2007"}, {"id": "I3", "text": "Mam rytuały lub procedury, które MUSZĘ wykonać (np. przy wychodzeniu z domu, przed snem, przy jedzeniu).", "area": "RRBs-ASD", "just": "Uzasadnienie: Zandt et al., 2007; ICD-11 6A02"}, {"id": "I4", "text": "Bardzo trudno mi tolerować, gdy rzeczy są \"nie na swoim miejscu\" lub nie w określonym porządku.", "area": "Potrzeba symetrii-ASD/OCD", "just": "Uzasadnienie: Leekam et al., 2007; Zandt et al., 2007"}, {"id": "I5", "text": "Mam fascynujące mnie tematy lub obszary wiedzy, w których gromadzę szczegółowe informacje (\"specjalne zainteresowania\").", "area": "Restricted interests-ASD", "just": "Uzasadnienie: DSM-5-TR B3; Klin et al., 2007"}, {"id": "I6", "text": "Powtarzam pewne ruchy lub gesty (bujanie, machanie rękami, klikanie długopisem) — \"stimming\".", "area": "RRBs-ASD", "just": "Uzasadnienie: DSM-5-TR B1; Leekam et al., 2007; Kapp et al., 2019"}, {"id": "I7", "text": "Mam trudności z elastycznym myśleniem — \"widzę\" jedno właściwe rozwiązanie i trudno mi zaakceptować inne.", "area": "Sztywność poznawcza-ASD", "just": "Uzasadnienie: Geurts et al., 2014; Kenworthy et al., 2008"}, {"id": "I8", "text": "Trudno mi zakończyć aktywność lub \"przerwać\" coś w trakcie — muszę doprowadzić do końca.", "area": "Perseweracja-ASD/ADHD", "just": "Uzasadnienie: Leekam et al., 2007; Barkley, 2015"}]}, {"letter": "J", "name": "Wrażliwość sensoryczna", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "J1", "text": "Silnie reaguję na głośne dźwięki — tłumy, muzyka w tle, hałas uliczny mogą mnie fizycznie boleć lub paraliżować.", "area": "Nadwrażliwość słuchowa-ASD", "just": "Uzasadnienie: DSM-5-TR B4b; Marco et al., 2011"}, {"id": "J2", "text": "Pewne tekstury ubrań lub materiałów powodują silne podrażnienie — muszę usuwać metki, unikać konkretnych tkanin.", "area": "Nadwrażliwość dotykowa-ASD", "just": "Uzasadnienie: DSM-5-TR B4a; Cascio et al., 2008"}, {"id": "J3", "text": "Silne zapachy (perfumy, detergenty, jedzenie) są dla mnie wyjątkowo intensywne lub nieprzyjemne.", "area": "Nadwrażliwość węchowa-ASD", "just": "Uzasadnienie: Ben-Sasson et al., 2009; Marco et al., 2011"}, {"id": "J4", "text": "Jasne lub migające światła mogą być dla mnie nieprzyjemne lub wyczerpujące.", "area": "Nadwrażliwość wzrokowa-ASD", "just": "Uzasadnienie: DSM-5-TR B4; Ludlow et al., 2006"}, {"id": "J5", "text": "Mam selektywne preferencje żywieniowe ze względu na teksturę lub smak — pewne potrawy są dla mnie nie do spożycia.", "area": "Przetwarzanie smakowe-ASD", "just": "Uzasadnienie: Nadon et al., 2011; DSM-5-TR B4"}, {"id": "J6", "text": "Dotyk innych osób (nawet przyjazny) może być dla mnie nieprzyjemny lub przytłaczający.", "area": "Dotyk-ASD", "just": "Uzasadnienie: Cascio et al., 2008; Green et al., 2012"}, {"id": "J7", "text": "Środowiska z wieloma bodźcami naraz (centrum handlowe, impreza) są dla mnie wyczerpujące lub bolesne.", "area": "Sensoryczne przeciążenie-ASD", "just": "Uzasadnienie: Marco et al., 2011; Kinnealey et al., 2011"}, {"id": "J8", "text": "Szukam intensywnych doznań sensorycznych — lubie mocne smaki, głęboki ucisk, hałas do pracy.", "area": "Poszukiwanie sensoryczne-ASD/ADHD", "just": "Uzasadnienie: Ben-Sasson et al., 2009; Marco et al., 2011"}, {"id": "J9", "text": "Mam trudności z regulacją temperatury ciała — nie czuję zimna lub gorąca tak jak inni.", "area": "Interceptocja-ASD", "just": "Uzasadnienie: Garfinkel et al., 2016; Shah et al., 2016"}, {"id": "J10", "text": "Po długim dniu w środowisku społecznym lub sensorycznym doświadczam \"krachu\" — skrajnego wyczerpania, potrzeby izolacji.", "area": "Autistic burnout/przeciążenie", "just": "Uzasadnienie: Raymaker et al., 2020; Higgins et al., 2021"}]}, {"letter": "K", "name": "Regulacja emocji", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "K1", "text": "Przeżywam emocje bardzo intensywnie — wszystko czuję \"pełną mocą\", bez pośrednich stanów.", "area": "Intensywność emocjonalna-ADHD/ASD", "just": "Uzasadnienie: Shaw et al., 2014; Barkley, 2015; Attwood, 2006"}, {"id": "K2", "text": "Kiedy ktoś krytykuje mnie lub odrzuca, reakcja emocjonalna jest bardzo silna i trudna do opanowania.", "area": "RSD (Rejection Sensitive Dysphoria)-ADHD", "just": "Uzasadnienie: Dodson, 2019; Seymour et al., 2012"}, {"id": "K3", "text": "Moje nastroje zmieniają się bardzo szybko — w ciągu minut lub godzin mogę przejść od dobrego samopoczucia do rozpaczy.", "area": "Labilność emocjonalna-ADHD", "just": "Uzasadnienie: Shaw et al., 2014; Skirrow et al., 2014"}, {"id": "K4", "text": "Mam trudności z identyfikacją tego, co czuję — moje emocje są mi nieraz \"niejasne\" lub nierozróżnialne.", "area": "Aleksytymia-ASD", "just": "Uzasadnienie: Bird & Cook, 2013; Kinnaird et al., 2019"}, {"id": "K5", "text": "Kiedy jestem przytłoczony/a emocjami, \"wyłączam się\" — staję się niezdolny/a do działania lub mówienia (shutdown).", "area": "Shutdown-ASD/dysocjacja-trauma", "just": "Uzasadnienie: Bogdashina, 2016; van der Kolk, 2014"}, {"id": "K6", "text": "Mam trudności z \"odpuszczeniem\" złości lub rozczarowania — rozmyślam i powtarzam sytuacje w głowie.", "area": "Ruminacje-depresja/ADHD", "just": "Uzasadnienie: Nolen-Hoeksema, 2000; DERS"}, {"id": "K7", "text": "Małe, codzienne problemy wywołują u mnie nieproporcjonalną reakcję — poczucie katastrofy.", "area": "Regulacja emocji-ADHD", "just": "Uzasadnienie: Barkley, 2015; DERS; Gratz & Roemer, 2004"}, {"id": "K8", "text": "Używam jedzenia, zakupów, alkoholu, internetu lub innych substancji jako sposobu na \"wyciszenie\" emocji.", "area": "Regulacja-ADHD/trauma", "just": "Uzasadnienie: Biederman et al., 1997; Wilens et al., 2011"}, {"id": "K9", "text": "Czuję emocje innych osób bardzo intensywnie — \"wchłaniam\" cudze nastroje (empatia afektywna).", "area": "Empatia afektywna", "just": "Uzasadnienie: Dziobek et al., 2008; EQ; Smith, 2009"}, {"id": "K10", "text": "Po intensywnej interakcji społecznej potrzebuję godzin lub dni na regenerację emocjonalną.", "area": "Zmęczenie społeczne-ASD", "just": "Uzasadnienie: CAT-Q; Raymaker et al., 2020"}]}, {"letter": "L", "name": "Funkcjonowanie zawodowe", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "L1", "text": "Mam trudności z utrzymaniem regularnego rytmu pracy — produktywność jest bardzo nieregularna.", "area": "Funkcjonowanie zawodowe-ADHD", "just": "Uzasadnienie: Kessler et al., 2005; ASRS"}, {"id": "L2", "text": "Często zmieniałem/am pracę — albo rezygnowałem/am, albo byłem/am zwalniany/a z powodów związanych z zachowaniem lub produktywnością.", "area": "Historia zatrudnienia-ADHD", "just": "Uzasadnienie: Barkley et al., 2008; DIVA-5"}, {"id": "L3", "text": "Na spotkaniach mam trudności z koncentracją — \"wyłączam się\", scrolluję telefon lub robię notatki żeby się nie ujawnić.", "area": "Nieuwaga zawodowa-ADHD", "just": "Uzasadnienie: ASRS; Kessler et al., 2005"}, {"id": "L4", "text": "Mam trudności z pracą w środowiskach open space lub z wieloma rozproszeniami.", "area": "Nieuwaga/sensoryka-ADHD/ASD", "just": "Uzasadnienie: ASRS; Marco et al., 2011"}, {"id": "L5", "text": "Moje umiejętności zawodowe są bardzo nierówne — jestem ekspertem w niektórych obszarach, ale mam zaskakujące braki w innych.", "area": "Profil niejednolity-ASD/ADHD", "just": "Uzasadnienie: Attwood, 2006; Happé & Frith, 2006"}, {"id": "L6", "text": "Trudno mi dostosować się do nieformalnych zasad miejsca pracy (dress code, plotki, polityka biurowa).", "area": "Normy społeczne-ASD", "just": "Uzasadnienie: Hendrickx, 2009; Attwood, 2006"}, {"id": "L7", "text": "Konflikty z przełożonymi lub współpracownikami wynikają z mojej bezpośredniości lub trudności z \"graniem gier\" społecznych.", "area": "Komunikacja zawodowa-ASD", "just": "Uzasadnienie: Hendrickx, 2009; Muller et al., 2003"}, {"id": "L8", "text": "Osiągam znacznie więcej lub znacznie mniej niż wskazywałoby moje wykształcenie i inteligencja.", "area": "Underachievement-ADHD/ASD", "just": "Uzasadnienie: Barkley et al., 2008; Young et al., 2011"}]}, {"letter": "M", "name": "Relacje romantyczne i intymne", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "M1", "text": "Mam trudności z rozumieniem oczekiwań partnera/partnerki, które nie zostały wprost wyrażone.", "area": "Teoria umysłu-ASD", "just": "Uzasadnienie: Attwood, 2006; Renty & Roeyers, 2006"}, {"id": "M2", "text": "Mój partner/partnerka skarży się, że nie jestem \"obecny/a\" w związku — jestem zajęty/a myślami lub projektami.", "area": "Nieuwaga-ADHD", "just": "Uzasadnienie: Barkley, 2015; Wymbs et al., 2008"}, {"id": "M3", "text": "Zmienność moich nastrojów jest źródłem konfliktów w moich związkach.", "area": "Labilność-ADHD", "just": "Uzasadnienie: Shaw et al., 2014; Wymbs et al., 2008"}, {"id": "M4", "text": "Intymność fizyczna może być dla mnie niekomfortowa z powodów sensorycznych.", "area": "Sensoryczność-ASD", "just": "Uzasadnienie: Attwood, 2006; Sala et al., 2020"}, {"id": "M5", "text": "Mam wysokie, sztywne standardy dotyczące partnera/partnerki i związku, które trudno spełnić.", "area": "Sztywność-ASD", "just": "Uzasadnienie: Attwood, 2006; Hendrickx, 2009"}, {"id": "M6", "text": "Kiedy związek się kończy, przeżywam to nieproporcjonalnie silnie i długo.", "area": "RSD-ADHD/intensywność-ASD", "just": "Uzasadnienie: Dodson, 2019; Attwood, 2006"}, {"id": "M7", "text": "Trudno mi wyrażać uczucia partnerowi/partnerce w sposób, który on/ona rozumie.", "area": "Komunikacja emocjonalna-ASD", "just": "Uzasadnienie: Attwood, 2006; Renty & Roeyers, 2006"}]}, {"letter": "N", "name": "Strategie maskowania objawów (camouflaging)", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "N1", "text": "Obserwuję innych ludzi i kopiuję ich zachowania, gesty i sposób mówienia, żeby \"dopasować się\".", "area": "Maskowanie-ASD", "just": "Uzasadnienie: CAT-Q; Hull et al., 2019; Lai et al., 2017"}, {"id": "N2", "text": "Przygotowuję się przed wyjściem w miejsca publiczne — ćwiczę rozmowy lub scenariusze w głowie.", "area": "Maskowanie-ASD", "just": "Uzasadnienie: CAT-Q; Hull et al., 2019"}, {"id": "N3", "text": "Po interakcjach społecznych analizuję je szczegółowo (\"replaying\") — co powiedziałem/am źle.", "area": "Maskowanie-ASD", "just": "Uzasadnienie: CAT-Q; Livingston & Happé, 2017"}, {"id": "N4", "text": "Używam humoru lub żartowania jako strategii kamuflażu, żeby ukryć że nie rozumiem sytuacji.", "area": "Maskowanie-ASD/ADHD", "just": "Uzasadnienie: Hull et al., 2019; CAT-Q"}, {"id": "N5", "text": "Wymuszam kontakt wzrokowy nawet gdy jest dla mnie niekomfortowy — wiem, że jest \"oczekiwany\".", "area": "Maskowanie-ASD", "just": "Uzasadnienie: CAT-Q; Livingston & Happé, 2017"}, {"id": "N6", "text": "Jestem \"inną osobą\" w pracy lub środowiskach formalnych niż w domu — to wymaga ogromnego wysiłku.", "area": "Maskowanie-ASD", "just": "Uzasadnienie: Hull et al., 2019; Lai et al., 2017"}, {"id": "N7", "text": "Ukrywam swoje stimming lub rutyny przed innymi — robię je w miejscach prywatnych.", "area": "Maskowanie-ASD", "just": "Uzasadnienie: Kapp et al., 2019; CAT-Q"}, {"id": "N8", "text": "Jestem znacznie bardziej funkcjonalny/a gdy mam strukturę i przewidywalność — chaos mnie dezorientuje.", "area": "Kompensacja-ASD/ADHD", "just": "Uzasadnienie: CAT-Q; Hull et al., 2019"}, {"id": "N9", "text": "W pracy lub w relacjach \"gram rolę\" bardziej kompetentnej osoby niż faktycznie jestem — to jest wyczerpujące.", "area": "Maskowanie-ASD", "just": "Uzasadnienie: CAT-Q; Livingston & Happé, 2017; autistic burnout"}, {"id": "N10", "text": "Dbam o to, żeby inni nie widzieli moich trudności — nikt by nie powiedział, że mam problemy.", "area": "Maskowanie-ASD/ADHD", "just": "Uzasadnienie: Hull et al., 2019; Young et al., 2020"}]}, {"letter": "O", "name": "Depresja", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "O1", "text": "Przez ostatnie dwa tygodnie czułem/am smutek, przygnębienie lub poczucie beznadziei przez większość czasu.", "area": "Obniżony nastrój-Depresja", "just": "PHQ-9 item 1; DSM-5-TR A1"}, {"id": "O2", "text": "Straciłem/am zainteresowanie lub przyjemność z rzeczy, które wcześniej lubiłem/am.", "area": "Anhedonia-Depresja", "just": "PHQ-9 item 2; DSM-5-TR A2"}, {"id": "O3", "text": "Czuję się zmęczony/a przez większość czasu, nawet gdy wystarczająco śpię.", "area": "Zmęczenie-Depresja", "just": "PHQ-9 item 4; DSM-5-TR A6"}, {"id": "O4", "text": "Mam trudności z koncentracją lub podejmowaniem decyzji w sposób gorszy niż wcześniej.", "area": "Poznanie-Depresja", "just": "PHQ-9 item 7; DSM-5-TR A8"}, {"id": "O5", "text": "Czuję się bezwartościowy/a lub nadmiernie winię się za rzeczy.", "area": "Poczucie winy-Depresja", "just": "PHQ-9 item 6; DSM-5-TR A7"}, {"id": "O6", "text": "Zmieniła się moja waga lub apetyt — jadłem/am znacznie więcej lub mniej niż zwykle.", "area": "Zmiana apetytu-Depresja", "just": "PHQ-9 item 3; DSM-5-TR A4"}, {"id": "O7", "text": "Pojawiały się myśli o śmierci lub o tym, że lepiej byłoby nie żyć.", "area": "Myśli suicydalne-Depresja", "just": "PHQ-9 item 9; DSM-5-TR A9 — CZERWONA FLAGA"}, {"id": "O8", "text": "Moje spowolnienie lub pobudzenie psychoruchowe było zauważalne dla innych.", "area": "Psychomotoryka-Depresja", "just": "DSM-5-TR A5"}, {"id": "O9", "text": "Mam poczucie, że jestem ciężarem dla bliskich.", "area": "Depresja/suicydalność", "just": "Joiner, 2005 — perceived burdensomeness"}, {"id": "O10", "text": "Depresja ma wyraźny wzorzec sezonowy (gorsza jesienią/zimą).", "area": "SAD-Depresja sezonowa", "just": "DSM-5-TR specifier"}]}, {"letter": "P", "name": "Zaburzenia lękowe", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "P1", "text": "Czuję się stale zaniepokojony/a lub w stanie \"czujności\" bez wyraźnego powodu.", "area": "Uogólniony lęk-GAD", "just": "GAD-7 item 1; DSM-5-TR 300.02"}, {"id": "P2", "text": "Nie mogę powstrzymać się od martwienia się o różne rzeczy — umysł \"tworzy scenariusze katastroficzne\".", "area": "Niekontrolowane zamartwianie-GAD", "just": "GAD-7 item 2; DSM-5-TR kryterium A"}, {"id": "P3", "text": "Odczuwam fizyczne objawy lęku — szybkie bicie serca, duszność, pocenie się, drżenie.", "area": "Somatyzacja-lęk", "just": "DSM-5-TR; GAD-7"}, {"id": "P4", "text": "Unikam sytuacji społecznych z obawy przed ocenianiem lub ośmieszeniem.", "area": "Lęk społeczny-SAD", "just": "SPIN; DSM-5-TR 300.23"}, {"id": "P5", "text": "Doświadczyłem/am nagłych ataków intensywnego strachu (paniki) — serce bije mocno, duszność, strach przed śmiercią.", "area": "Lęk paniczny", "just": "DSM-5-TR 300.01; panika — Barlow, 2002"}, {"id": "P6", "text": "Martwię się o zdrowie swoje lub bliskich w sposób, który inni uważają za przesadny.", "area": "Lęk zdrowotny/hipochondria", "just": "DSM-5-TR IAD 300.7"}, {"id": "P7", "text": "Muszę wielokrotnie sprawdzać rzeczy (zamknięte drzwi, kran, piec) mimo wiedzy, że zrobiłem/am to wcześniej.", "area": "OCD-kompulsje", "just": "DSM-5-TR 300.3; Abramowitz et al., 2009"}, {"id": "P8", "text": "Mam natrętne, niechciane myśli lub obrazy, które powtarzają się mimo chęci ich zatrzymania.", "area": "OCD-obsesje", "just": "DSM-5-TR 300.3"}, {"id": "P9", "text": "Lęk wyraźnie przeszkadza mi w codziennym funkcjonowaniu, pracy lub relacjach.", "area": "Impairment-lęk", "just": "GAD-7; DSM-5-TR kryterium funkcjonalne"}, {"id": "P10", "text": "Mam trudności z relaksacją — nawet w spokojnych sytuacjach jestem \"spięty/a\".", "area": "GAD-napięcie", "just": "GAD-7 item 6; DSM-5-TR kryterium D3"}]}, {"letter": "Q", "name": "PTSD / CPTSD", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "Q1", "text": "Natrętne wspomnienia lub obrazy traumatycznych wydarzeń wracają bez mojej woli.", "area": "Intruzje-PTSD", "just": "PCL-5 item 1; DSM-5-TR B1; ICD-11 6B40"}, {"id": "Q2", "text": "Zdarzają mi się \"flashbacki\" — chwilowe poczucie, że traumatyczne wydarzenie dzieje się znowu.", "area": "Flashbacki-PTSD", "just": "PCL-5 item 3; DSM-5-TR B3"}, {"id": "Q3", "text": "Unikam myśli, miejsc, osób lub sytuacji przypominających traumatyczne doświadczenia.", "area": "Unikanie-PTSD", "just": "PCL-5 item 6,7; DSM-5-TR C"}, {"id": "Q4", "text": "Jestem w stanie stałej czujności — zawsze skanuje otoczenie w poszukiwaniu zagrożenia.", "area": "Hyperarousal-PTSD", "just": "PCL-5 item 14; DSM-5-TR E3"}, {"id": "Q5", "text": "Gwałtowne dźwięki lub nieoczekiwane dotknięcia wywołują u mnie silną, nieproporcjonalną reakcję strachu.", "area": "Exaggerated startle-PTSD", "just": "PCL-5 item 15; DSM-5-TR E4"}, {"id": "Q6", "text": "Mam trudności z przypomnieniem sobie ważnych aspektów traumatycznych wydarzeń.", "area": "Amnezja dysocjacyjna-PTSD", "just": "PCL-5 item 8; DSM-5-TR D1"}, {"id": "Q7", "text": "Czuję się emocjonalnie odcięty/a, znieczulony/a — jakby uczucia były za szybą.", "area": "Constriction-PTSD/dysocjacja", "just": "PCL-5 item 11; ICD-11 CPTSD 6B41"}, {"id": "Q8", "text": "Mam trwałe negatywne przekonania o sobie (np. \"jestem uszkodzony/a\", \"nie zasługuję na miłość\").", "area": "Negatywne przekonania-CPTSD", "just": "PCL-5 item 9; ICD-11 6B41 — zaburzenia samoorganizacji"}, {"id": "Q9", "text": "Mam trudności z zaufaniem innym — oczekuję, że zostaną mi skrzywdzony/a.", "area": "Relacje interpersonalne-CPTSD", "just": "ICD-11 6B41; Herman, 1992"}, {"id": "Q10", "text": "Doświadczyłem/am powtarzających się traumatycznych doświadczeń przez dłuższy czas (przemoc, zaniedbanie, mobing, nadużycia).", "area": "Trauma złożona-CPTSD", "just": "ICD-11 6B41; Herman, 1992; Ford, 2005"}, {"id": "Q11", "text": "Poczucie własnej tożsamości jest dla mnie nietrwałe lub rozmyte — \"nie wiem kim jestem\".", "area": "Tożsamość-CPTSD/BPD", "just": "ICD-11 6B41; Herman, 1992"}, {"id": "Q12", "text": "Doświadczam poczucia depersonalizacji (obserwuję siebie z zewnątrz) lub derealizacji (świat jest nierealny).", "area": "Dysocjacja-PTSD/CPTSD", "just": "DSM-5-TR PTSD z dysocjacją; van der Kolk, 2014"}]}, {"letter": "R", "name": "Zaburzenia osobowości — różnicowanie z ADHD/ASD", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "R1", "text": "Moje relacje intensywnie wahają się między idealizacją (\"ta osoba jest doskonała\") a dewaluacją (\"nienawidzę jej\").", "area": "Splitting-BPD", "just": "DSM-5-TR BPD kryterium 2"}, {"id": "R2", "text": "Podejmuję impulsywne działania (cięcie się, groźby, substancje) w odpowiedzi na silne emocje.", "area": "Impulsywność-BPD", "just": "DSM-5-TR BPD kryterium 4,5 — CZERWONA FLAGA"}, {"id": "R3", "text": "Mam chroniczne poczucie pustki wewnętrznej.", "area": "Pustka-BPD", "just": "DSM-5-TR BPD kryterium 7"}, {"id": "R4", "text": "Panieczny strach przed porzuceniem — rzeczywistym lub wyobrażonym.", "area": "Porzucenie-BPD", "just": "DSM-5-TR BPD kryterium 1"}, {"id": "R5", "text": "Mam trwałe poczucie, że jestem wyjątkowy/a i powinienem/am być traktowany/a inaczej niż inni.", "area": "Wielkościowość-NPD", "just": "DSM-5-TR NPD"}, {"id": "R6", "text": "Trudno mi uznać, że ktoś inny ma rację gdy się nie zgadzamy.", "area": "Empatia poznawcza-NPD/ASD", "just": "DSM-5-TR NPD; Baron-Cohen et al., 1985"}, {"id": "R7", "text": "Potrzebuję, żeby wszystko było zrobione \"po mojemu\" — trudno mi delegować zadania innym.", "area": "Perfekcjonizm-OCPD", "just": "DSM-5-TR OCPD kryterium 2"}, {"id": "R8", "text": "Odkładam przyjemności lub relaks \"na potem\" bo najpierw wszystko musi być zrobione.", "area": "Perfekcjonizm-OCPD", "just": "DSM-5-TR OCPD kryterium 3"}, {"id": "R9", "text": "Mam \"magiczne\" myślenie lub wierzę w szczególne zdolności/przekazy (np. telepatia, znaki).", "area": "Magiczne myślenie-SPD", "just": "DSM-5-TR SPD kryterium 3"}, {"id": "R10", "text": "Odczuwam silny dyskomfort w bliskich relacjach i aktywnie ich unikam.", "area": "Dyskomfort społeczny-SPD/AvPD", "just": "DSM-5-TR SPD kryterium 9"}]}, {"letter": "S", "name": "Dodatkowe konstrukty kliniczne", "framing": "Oceń ostatnie 6 miesięcy.", "questions": [{"id": "S1", "text": "Mój naturalny rytm snu jest przesunięty — najlepiej funkcjonuję późno w nocy (DSPS — Delayed Sleep Phase).", "area": "Rytm dobowy-ADHD", "just": "Bijlenga et al., 2019; Kooij & Bijlenga, 2013"}, {"id": "S2", "text": "Mam trudności z zasypianiem z powodu \"wyścigowych myśli\" lub nadmiernego pobudzenia.", "area": "Insomnia-ADHD/lęk", "just": "Bijlenga et al., 2019"}, {"id": "S3", "text": "Doświadczam krótkich (godziny–dni) epizodów wyjątkowo podwyższonego nastroju, energii i produktywności.", "area": "Hipomanię/Bipolar II", "just": "MDQ; DSM-5-TR"}, {"id": "S4", "text": "W tych epizodach potrzebuję bardzo mało snu i mimo to czuję się pełen/pełna energii.", "area": "Hipomanię", "just": "DSM-5-TR A5"}, {"id": "S5", "text": "Trudno mi rozpoznać głód, pragnienie, ból lub zmęczenie — nie \"słyszę\" sygnałów ciała.", "area": "Interocepcja-ASD", "just": "Garfinkel et al., 2016; Shah et al., 2016"}, {"id": "S6", "text": "Czuję się \"odcięty/a\" od własnego ciała — jakby nie było moje lub jakbym mieszkał/a \"w głowie\".", "area": "Depersonalizacja/dysocjacja", "just": "DSM-5-TR; van der Kolk, 2014"}, {"id": "S7", "text": "Mam doskonałą pamięć dla faktów, dat lub szczegółów z obszarów zainteresowań, ale słabą pamięć codzienną.", "area": "Profil pamięci-ASD", "just": "Happé & Frith, 2006"}, {"id": "S8", "text": "Mam trudności z \"zapamiętywaniem na żądanie\" — wiem że coś wiem, ale nie mogę tego przywołać pod presją.", "area": "Pamięć robocza-ADHD", "just": "Kofler et al., 2020"}, {"id": "S9", "text": "Mam trudności z odpowiedzią na pytanie \"czego chcę\" lub \"co lubię\" — moje preferencje są niejasne.", "area": "Aleksytymia/ADHD/ASD/trauma", "just": "Bird & Cook, 2013; van der Kolk, 2014"}, {"id": "S10", "text": "Czuję, że dopiero po diagnozie lub wiedzy o ADHD/ASD zaczyna się moje \"prawdziwe\" rozumienie siebie.", "area": "Poszukiwanie tożsamości", "just": "Kapp et al., 2013; Huws & Jones, 2008"}]}];
-const TOTAL_Q = DATA.reduce((a,s)=>a+s.questions.length,0);
-const SCALE_LABELS = ['Nigdy','Rzadko','Czasami','Często','B. często'];
-const SCALE_SUBLABELS = ['nigdy','<raz/mies.','kilka/mies.','kilka/tydz.','zawsze'];
-const SECTION_ICON = {A:'🧒',B:'📚',C:'👥',D:'💬',E:'🧠',F:'🔍',G:'⚡',H:'🌀',I:'🔄',J:'👂',K:'❤️',L:'💼',M:'💑',N:'🎭',O:'🌧️',P:'😰',Q:'🛡️',R:'🔬',S:'⚙️'};
+const TQ = DATA.reduce((a,s)=>a+s.questions.length,0);
+const SL = ['Nigdy','Rzadko','Czasami','Często','B. często'];
+const SS = ['nigdy','<raz/m.','kilka/m.','kilka/t.','zawsze'];
+const ICON = {A:'🧒',B:'📚',C:'👥',D:'💬',E:'🧠',F:'🔍',G:'⚡',H:'🌀',I:'🔄',J:'👂',K:'❤️',L:'💼',M:'💑',N:'🎭',O:'🌧️',P:'😰',Q:'🛡️',R:'🔬',S:'⚙️'};
 
-/* ═══ STATE ═════════════════════════════════════════════════ */
-let answers = JSON.parse(localStorage.getItem('kw_ans')||'{}');
-let curSec = 0;
-
-/* ═══ SYNDROME CONFIG ═══════════════════════════════════════ */
-const SYNDROMES = [
-  { key:'adhd', label:'ADHD', icon:'⚡', color:'#f59e0b',
-     sets:['E','F','G','H'],
-     bands:[ [25,'Brak wskazań klinicznych',0],[45,'Łagodne objawy — obserwacja',1],
-             [65,'Objawy umiarkowane — konsultacja wskazana',2],[80,'Objawy nasilone — diagnoza pilnie wskazana',3],
-             [101,'Bardzo nasilone — pilna konsultacja psychiatryczna',4] ] },
-  { key:'asd', label:'Spektrum autyzmu (ASD)', icon:'🎭', color:'#8b5cf6',
-     sets:['C','D','I','J','N'],
-     bands:[ [20,'Brak wskazań klinicznych',0],[40,'Łagodne cechy — obserwacja',1],
-             [60,'Cechy umiarkowane — diagnoza wskazana',2],[80,'Silne cechy — diagnoza pilnie wskazana',3],
-             [101,'Bardzo silne wskazania kliniczne',4] ] },
-  { key:'dep', label:'Depresja', icon:'🌧️', color:'#06b6d4',
-     sets:['O'],
-     bands:[ [22.5,'Minimalne objawy',0],[45,'Łagodna depresja',1],
-             [67.5,'Umiarkowana — konsultacja wskazana',2],[90,'Ciężka — pilna konsultacja',3],
-             [101,'Bardzo ciężka — natychmiastowa pomoc',4] ] },
-  { key:'anx', label:'Zaburzenia lękowe', icon:'😰', color:'#f59e0b',
-     sets:['P'],
-     bands:[ [22.5,'Minimalne objawy',0],[45,'Łagodny lęk',1],
-             [67.5,'Umiarkowany lęk — konsultacja wskazana',2],
-             [101,'Ciężki lęk — pilna konsultacja',3] ] },
-  { key:'ptsd', label:'PTSD / CPTSD', icon:'🛡️', color:'#ef4444',
-     sets:['Q'],
-     bands:[ [23,'Brak wskazań',0],[50,'Subkliniczne objawy pourazowe',1],
-             [75,'Kliniczne wskazania — ocena trauma-informed',2],
-             [101,'Silne wskazania CPTSD — pilna pomoc specjalistyczna',3] ] },
+// ── Syndromes ──
+const SYND = [
+  {k:'adhd',lb:'ADHD',ic:'⚡',cl:'#f59e0b',sets:['E','F','G','H'],
+   bands:[[25,'Brak wskazań klinicznych',0],[45,'Łagodne objawy — obserwacja',1],
+          [65,'Objawy umiarkowane — konsultacja wskazana',2],[80,'Objawy nasilone — diagnoza pilnie wskazana',3],
+          [101,'Bardzo nasilone — pilna konsultacja psychiatryczna',4]]},
+  {k:'asd',lb:'Spektrum autyzmu (ASD)',ic:'🎭',cl:'#8b5cf6',sets:['C','D','I','J','N'],
+   bands:[[20,'Brak wskazań klinicznych',0],[40,'Łagodne cechy — obserwacja',1],
+          [60,'Cechy umiarkowane — diagnoza wskazana',2],[80,'Silne cechy — diagnoza pilnie wskazana',3],
+          [101,'Bardzo silne wskazania kliniczne',4]]},
+  {k:'dep',lb:'Depresja',ic:'🌧️',cl:'#06b6d4',sets:['O'],
+   bands:[[22.5,'Minimalne objawy',0],[45,'Łagodna depresja',1],
+          [67.5,'Umiarkowana — konsultacja wskazana',2],[90,'Ciężka — pilna konsultacja',3],
+          [101,'Bardzo ciężka — natychmiastowa pomoc',4]]},
+  {k:'anx',lb:'Zaburzenia lękowe',ic:'😰',cl:'#f97316',sets:['P'],
+   bands:[[22.5,'Minimalne objawy',0],[45,'Łagodny lęk',1],
+          [67.5,'Umiarkowany lęk — konsultacja wskazana',2],
+          [101,'Ciężki lęk — pilna konsultacja',3]]},
+  {k:'ptsd',lb:'PTSD / CPTSD',ic:'🛡️',cl:'#ef4444',sets:['Q'],
+   bands:[[23,'Brak wskazań',0],[50,'Subkliniczne objawy pourazowe',1],
+          [75,'Kliniczne wskazania — ocena trauma-informed',2],
+          [101,'Silne wskazania CPTSD — pilna pomoc',3]]},
 ];
-const LEVEL_LABELS = ['Brak wskazań','Łagodne','Umiarkowane','Nasilone','B. nasilone'];
-const LEVEL_CLASSES = ['lvl0','lvl1','lvl2','lvl3','lvl4'];
+const LV_LB = ['Brak wskazań','Łagodne','Umiarkowane','Nasilone','B. nasilone'];
+const LV_CL = ['lv0','lv1','lv2','lv3','lv4'];
 
-/* ═══ HELPERS ═══════════════════════════════════════════════ */
-function val(id){ return answers[id]!=null ? answers[id] : 0; }
+// ── State ──
+let ans = JSON.parse(localStorage.getItem('kw2_ans')||'{}');
+let cur = 0;
+
+// ── Helpers ──
+const v = id => ans[id]!=null ? ans[id] : 0;
 function rawFor(sets){
-  let sum=0,max=0;
-  DATA.forEach(s=>s.questions.forEach(q=>{
-    if(sets.includes(q.id.match(/^[A-Z]+/)[0])){ max+=4; sum+=val(q.id); }
+  let s=0,m=0;
+  DATA.forEach(sec=>sec.questions.forEach(q=>{
+    if(sets.includes(q.id.match(/^[A-Z]+/)[0])){m+=4; s+=v(q.id);}
   }));
-  return {sum,max,pct:max?Math.round(sum/max*100):0};
+  return {s,m,pct:m?Math.round(s/m*100):0};
 }
 function bandFor(syn,pct){
-  for(const b of syn.bands){ if(pct<b[0]) return b; }
+  for(const b of syn.bands) if(pct<b[0]) return b;
   return syn.bands.at(-1);
 }
-function answeredCount(){ return Object.keys(answers).filter(k=>answers[k]!=null).length; }
-function secComplete(s){ return s.questions.every(q=>answers[q.id]!=null); }
+function answered(){ return Object.keys(ans).filter(k=>ans[k]!=null).length; }
+function secDone(s){ return s.questions.every(q=>ans[q.id]!=null); }
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
-/* ═══ PROGRESS ══════════════════════════════════════════════ */
-function updateProgress(){
-  const n=answeredCount(), pct=Math.round(n/TOTAL_Q*100);
-  document.getElementById('progressFill').style.width=pct+'%';
-  document.getElementById('progressCount').textContent=n+' / '+TOTAL_Q;
-  updateNavDots();
+// ── Progress ──
+function updProg(){
+  const n=answered(), p=Math.round(n/TQ*100);
+  document.getElementById('progFill').style.width=p+'%';
+  document.getElementById('progTxt').textContent=n+' / '+TQ;
+  updDots();
 }
 
-/* ═══ NAV DOTS ══════════════════════════════════════════════ */
-function buildNavDots(){
-  const nav=document.getElementById('secNav');
-  nav.innerHTML='<div class="sec-nav-inner" id="secNavInner"></div>';
-  const inner=document.getElementById('secNavInner');
+// ── Nav dots ──
+function buildDots(){
+  const inner=document.getElementById('secNavInner'); inner.innerHTML='';
   DATA.forEach((s,i)=>{
     const d=document.createElement('div');
-    d.className='secdot'; d.textContent=s.letter;
-    d.title=s.name;
-    d.onclick=()=>{curSec=i;renderSection();};
-    d.id='dot-'+i;
+    d.className='sdot'; d.textContent=s.letter; d.title=s.name; d.id='d'+i;
+    d.onclick=()=>{cur=i;renderSec();};
     inner.appendChild(d);
   });
 }
-function updateNavDots(){
+function updDots(){
   DATA.forEach((s,i)=>{
-    const d=document.getElementById('dot-'+i);
-    if(!d)return;
-    d.classList.toggle('current',i===curSec);
-    d.classList.toggle('complete',secComplete(s));
+    const d=document.getElementById('d'+i); if(!d)return;
+    d.classList.toggle('cur',i===cur);
+    d.classList.toggle('done',secDone(s));
   });
-  // scroll current dot into view
-  const dot=document.getElementById('dot-'+curSec);
+  const dot=document.getElementById('d'+cur);
   if(dot) dot.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
 }
 
-/* ═══ QUIZ RENDER ═══════════════════════════════════════════ */
-function renderSection(){
-  const s=DATA[curSec];
-  const icon=SECTION_ICON[s.letter]||'○';
-  let h=`<div class="quiz-sec-header fade-in">
-    <div class="tag">Sekcja ${s.letter} — ${curSec+1} / ${DATA.length}</div>
-    <h2>${icon} ${s.name}</h2>
-    <div class="frame-note">📌 ${s.framing}</div>
+// ── Render section ──
+function renderSec(){
+  const s=DATA[cur];
+  const ico=ICON[s.letter]||'○';
+  let h=`<div class="qhdr fu">
+    <div class="stag">Sekcja ${s.letter} &mdash; ${cur+1} / ${DATA.length}</div>
+    <h2>${ico} ${esc(s.name)}</h2>
+    <div class="fnote">📌 ${esc(s.framing)}</div>
   </div>`;
 
   s.questions.forEach(q=>{
-    const v=answers[q.id];
-    h+=`<div class="q-card${v!=null?' answered':''}" id="q-${q.id}">
-      <div class="q-num">${q.id}</div>
-      <div class="q-text">${escHtml(q.text)}</div>
-      <div class="q-meta">
-        <span class="q-area">${escHtml(q.area)}</span>
-        ${q.just?`<span class="q-just">${escHtml(q.just.substring(0,80))}</span>`:''}
-      </div>
+    const cv=ans[q.id];
+    const isCrit=['O7','R2'].includes(q.id);
+    h+=`<div class="qcard${cv!=null?' ans':''}${isCrit?' crit-q':''}" id="qc-${q.id}">
+      <div class="qid">${q.id}</div>
+      <div class="qtxt">${esc(q.text)}</div>
+      <div class="qarea">${esc(q.area)}</div>
       <div class="opts">`;
-    for(let i=0;i<5;i++){
-      h+=`<label class="opt${v===i?' sel':''}" onclick="setAns('${q.id}',${i})">
-        <span class="n">${i}</span><span class="l">${SCALE_SUBLABELS[i]}</span></label>`;
-    }
+    for(let i=0;i<5;i++)
+      h+=`<label class="opt${cv===i?' sel':''}" onclick="setA('${q.id}',${i})">
+        <span class="on">${i}</span><span class="ol">${SS[i]}</span></label>`;
     h+=`</div></div>`;
   });
 
-  const isLast=(curSec===DATA.length-1);
-  h+=`<div class="quiz-nav">
-    <button class="btn btn-ghost btn-sm" onclick="prevSec()" ${curSec===0?'disabled style="opacity:.35"':''}>← Poprzednia</button>
-    <div class="quiz-nav-center">${secComplete(s)?'<span style="color:var(--green)">✓ Sekcja wypełniona</span>':'<span>Wybierz odpowiedź dla każdego pytania</span>'}</div>
-    ${isLast
-      ?`<button class="btn btn-primary btn-sm" onclick="finishQuiz()">Zakończ i zobacz wyniki ✓</button>`
-      :`<button class="btn btn-primary btn-sm" onclick="nextSec()">Następna →</button>`}
+  const last=cur===DATA.length-1;
+  h+=`<div class="qnav">
+    <button class="btn btn-g btn-s" onclick="prev()" ${cur===0?'disabled style="opacity:.3"':''}>← Poprzednia</button>
+    <div class="qnav-c">${secDone(s)?'<span style="color:var(--green)">✓ Sekcja gotowa</span>':'Odpowiedz na każde pytanie'}</div>
+    ${last
+      ?`<button class="btn btn-p btn-s" onclick="finish()">Zakończ &amp; wyniki ✓</button>`
+      :`<button class="btn btn-p btn-s" onclick="next()">Następna →</button>`}
   </div>
-  <div class="autosave-note">Odpowiedzi zapisują się automatycznie. Możesz wrócić później.</div>`;
+  <div class="save-note">💾 Autozapis aktywny — możesz wrócić później</div>`;
 
-  document.getElementById('quizContainer').innerHTML=h;
+  document.getElementById('quizWrap').innerHTML=h;
   window.scrollTo({top:0,behavior:'instant'});
-  updateProgress();
-  updateNavDots();
+  updProg(); updDots();
 }
 
-function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
-function setAns(id,v){
-  answers[id]=v;
-  localStorage.setItem('kw_ans',JSON.stringify(answers));
-  const card=document.getElementById('q-'+id);
-  card.classList.add('answered');
-  card.querySelectorAll('.opt').forEach((o,i)=>o.classList.toggle('sel',i===v));
-  updateProgress();
-  updateNavDots();
+function setA(id,val){
+  ans[id]=val;
+  localStorage.setItem('kw2_ans',JSON.stringify(ans));
+  const c=document.getElementById('qc-'+id);
+  c.classList.add('ans');
+  c.querySelectorAll('.opt').forEach((o,i)=>o.classList.toggle('sel',i===val));
+  updProg(); updDots();
 }
+function next(){ if(cur<DATA.length-1){cur++;renderSec();} }
+function prev(){ if(cur>0){cur--;renderSec();} }
 
-function nextSec(){ if(curSec<DATA.length-1){curSec++;renderSection();} }
-function prevSec(){ if(curSec>0){curSec--;renderSection();} }
-
-/* ═══ START / FINISH ════════════════════════════════════════ */
 function startQuiz(resume){
-  if(!resume){ answers={}; localStorage.removeItem('kw_ans'); }
-  curSec=0;
-  showPage('quiz');
-  document.getElementById('progressWrap').classList.add('visible');
-  document.getElementById('secNav').classList.add('visible');
-  buildNavDots();
-  renderSection();
+  if(!resume){ans={};localStorage.removeItem('kw2_ans');}
+  cur=0;
+  showPage('Quiz');
+  document.getElementById('progWrap').classList.add('on');
+  document.getElementById('secNav').classList.add('on');
+  buildDots(); renderSec();
 }
-
-function finishQuiz(){
-  const missing=TOTAL_Q-answeredCount();
-  if(missing>0){
-    if(!confirm(`Pozostało ${missing} pytań bez odpowiedzi. Zostaną one policzone jako 0. Pokazać wyniki mimo to?`)) return;
-  }
+function finish(){
+  const miss=TQ-answered();
+  if(miss>0 && !confirm(`Pozostało ${miss} pytań bez odpowiedzi (liczone jako 0). Pokazać wyniki?`)) return;
   renderResults();
 }
-
 function showPage(p){
-  document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
-  document.getElementById('page-'+p).classList.add('active');
+  document.querySelectorAll('.page').forEach(el=>el.classList.remove('on'));
+  document.getElementById('page'+p).classList.add('on');
 }
-
-function goBackQuiz(){
-  showPage('quiz');
-  document.getElementById('progressWrap').classList.add('visible');
-  document.getElementById('secNav').classList.add('visible');
-  renderSection();
+function goBack(){
+  showPage('Quiz');
+  document.getElementById('progWrap').classList.add('on');
+  document.getElementById('secNav').classList.add('on');
+  renderSec();
 }
-
 function resetAll(){
   if(!confirm('Usunąć wszystkie odpowiedzi i zacząć od nowa?')) return;
-  answers={};
-  localStorage.removeItem('kw_ans');
-  document.getElementById('progressWrap').classList.remove('visible');
-  document.getElementById('secNav').classList.remove('visible');
+  ans={}; localStorage.removeItem('kw2_ans');
+  document.getElementById('progWrap').classList.remove('on');
+  document.getElementById('secNav').classList.remove('on');
   document.getElementById('resumeBtn').style.display='none';
-  showPage('intro');
-  window.scrollTo({top:0});
+  showPage('Intro'); window.scrollTo({top:0});
 }
 
-/* ═══ RED FLAGS ═════════════════════════════════════════════ */
-function computeFlags(){
-  const res={adhd:[],asd:[],crit:[]};
-  // ADHD: ≥5 pytań F+G+H z wynikiem 4
-  const fgh=['F','G','H'].flatMap(p=>DATA.find(s=>s.letter===p)?.questions.map(q=>q.id)||[]);
-  const fghHigh=fgh.filter(id=>val(id)>=4).length;
-  if(fghHigh>=5) res.adhd.push(`<b>Nasilone objawy core ADHD:</b> ${fghHigh} pytań z sekcji F·G·H ocenionych na 4 (max). Kluczowy wzorzec nieuwagi, impulsywności i nadpobudliwości.`);
-  // ADHD: dzieciństwo A1–A10 ≥3 na ≥4
-  const childIds=['A1','A2','A3','A4','A5','A6','A7','A8','A9','A10'];
-  const childHigh=childIds.filter(id=>val(id)>=3).length;
-  if(childHigh>=4) res.adhd.push(`<b>Objawy przed 12. r.ż.:</b> ${childHigh}/10 wczesnodziecięcych markerów ADHD ocenionych wysoko — spełnia kluczowe kryterium temporalne DSM-5-TR.`);
-  // ADHD: time blindness + paralysis
-  if(val('E4')>=3 && val('E5')>=3) res.adhd.push(`<b>Paraliza startowa + ślepota czasowa:</b> E4 (${val('E4')}/4) i E5 (${val('E5')}/4) — silne markery dysfunkcji wykonawczej charakterystycznej dla ADHD (Barkley, 2015).`);
-  // ADHD: RSD
-  if(val('K2')>=3 && val('G7')>=3) res.adhd.push(`<b>Rejection Sensitive Dysphoria (RSD):</b> K2 (${val('K2')}/4) + G7 (${val('G7')}/4) — wzorzec nadreaktywności na odrzucenie opisywany przez Dodsona (2019).`);
-  // ASD: rutyny, sensoryka, maskowanie
+// ── SVG Gauge ──
+function gauge(pct, color, label){
+  const r=40, cx=50, cy=50;
+  const circ=2*Math.PI*r; // 251.2
+  const offset=circ*(1-pct/100);
+  return `<svg class="gauge-ring" width="100" height="100" viewBox="0 0 100 100">
+    <circle class="gauge-bg" cx="${cx}" cy="${cy}" r="${r}"/>
+    <circle class="gauge-arc" cx="${cx}" cy="${cy}" r="${r}"
+      stroke="${color}"
+      style="stroke-dashoffset:${circ};transform:rotate(-90deg);transform-origin:50% 50%"
+      data-offset="${offset}"/>
+    <text class="gauge-num" x="${cx}" y="${cy-5}" fill="${color}">${pct}%</text>
+    <text class="gauge-sub" x="${cx}" y="${cy+10}" fill="#6585a8">${label}</text>
+  </svg>`;
+}
+
+// ── Red flags ──
+function flags(){
+  const r={adhd:[],asd:[],crit:[]};
+  const fghIds=['F','G','H'].flatMap(p=>DATA.find(s=>s.letter===p).questions.map(q=>q.id));
+  const fghH=fghIds.filter(id=>v(id)>=4).length;
+  if(fghH>=5) r.adhd.push(`<b>Nasilone objawy core ADHD:</b> ${fghH} pytań z sekcji F·G·H ocenionych na max (4) — nieuwaga, impulsywność, nadpobudliwość.`);
+  const chA=['A1','A2','A3','A4','A5','A6','A7','A8','A9','A10'].filter(id=>v(id)>=3).length;
+  if(chA>=4) r.adhd.push(`<b>Objawy przed 12. r.ż.:</b> ${chA}/10 wczesnodziecięcych markerów ADHD — kryterium temporalne DSM-5-TR spełnione.`);
+  if(v('E4')>=3&&v('E5')>=3) r.adhd.push(`<b>Paraliza startowa + ślepota czasowa:</b> E4=${v('E4')}/4, E5=${v('E5')}/4 — kluczowe markery dysfunkcji wykonawczej ADHD (Barkley, 2015).`);
+  if(v('K2')>=3&&v('G7')>=3) r.adhd.push(`<b>RSD (Rejection Sensitive Dysphoria):</b> K2=${v('K2')}/4, G7=${v('G7')}/4 — nadreaktywność na odrzucenie (Dodson, 2019).`);
   [['I','rutyn i sztywności'],['J','wrażliwości sensorycznej'],['N','maskowania objawów']].forEach(([p,n])=>{
-    const high=DATA.find(s=>s.letter===p)?.questions.filter(q=>val(q.id)>=3).length||0;
-    if(high>=6) res.asd.push(`<b>Silny wzorzec ${n}:</b> ${high} pytań z sekcji ${p} ocenionych na ≥3 — charakterystyczny marker ASD (DSM-5-TR kryterium B).`);
+    const c=DATA.find(s=>s.letter===p).questions.filter(q=>v(q.id)>=3).length;
+    if(c>=6) r.asd.push(`<b>Silny wzorzec ${n}:</b> ${c} pytań z sekcji ${p} ocenionych na ≥3 — kryterium B DSM-5-TR.`);
   });
-  // ASD: kamuflaż
-  if(val('N6')>=3 && val('K10')>=3) res.asd.push(`<b>Maskowanie z wyczerpaniem:</b> N6 (${val('N6')}/4) + K10 (${val('K10')}/4) — wzorzec kamuflażu prowadzący do autistic burnout (Raymaker i in., 2020).`);
-  // ASD: dzieciństwo
-  const childASD=['A11','A12','A13','A14','A15','A16','A17','A18'];
-  const childASDHigh=childASD.filter(id=>val(id)>=3).length;
-  if(childASDHigh>=5) res.asd.push(`<b>Wczesne sygnały ASD w dzieciństwie:</b> ${childASDHigh}/8 markerów ocenionych wysoko (sekcja A11–A18).`);
-  // KRYTYCZNE
-  if(val('O7')>=2) res.crit.push(`<b>🚨 Myśli suicydalne (O7: ${val('O7')}/4):</b> Skontaktuj się niezwłocznie ze specjalistą lub zadzwoń na telefon zaufania <strong>116 123</strong>. Kryzys / zagrożenie życia: <strong>112</strong>.`);
-  if(val('R2')>=2) res.crit.push(`<b>🚨 Impulsywne zachowania autodestrukcyjne (R2: ${val('R2')}/4):</b> Wskazana natychmiastowa pomoc specjalistyczna.`);
-  if(val('Q2')>=3 && val('Q4')>=3) res.crit.push(`<b>⚠ Flashbacki + stała czujność (Q2: ${val('Q2')}, Q4: ${val('Q4')}):</b> Pilna konsultacja traumatologiczna. Wskazane podejście trauma-informed.`);
-  return res;
+  const chASD=['A11','A12','A13','A14','A15','A16','A17','A18'].filter(id=>v(id)>=3).length;
+  if(chASD>=5) r.asd.push(`<b>Wczesne sygnały ASD:</b> ${chASD}/8 markerów dziecięcych ocenionych wysoko.`);
+  if(v('N6')>=3&&v('K10')>=3) r.asd.push(`<b>Maskowanie z wyczerpaniem:</b> N6=${v('N6')}/4, K10=${v('K10')}/4 — wzorzec autistic burnout (Raymaker i in., 2020).`);
+  if(v('O7')>=2) r.crit.push(`<b>🚨 Myśli suicydalne / rezygnacyjne (O7: ${v('O7')}/4)</b> — skontaktuj się niezwłocznie ze specjalistą lub zadzwoń: <strong>116 123</strong> (tel. zaufania) | <strong>112</strong> (kryzys).`);
+  if(v('R2')>=2) r.crit.push(`<b>🚨 Impulsywne zachowania autodestrukcyjne (R2: ${v('R2')}/4)</b> — wskazana natychmiastowa pomoc specjalistyczna.`);
+  if(v('Q2')>=3&&v('Q4')>=3) r.crit.push(`<b>⚠ Flashbacki + stała czujność (Q2: ${v('Q2')}, Q4: ${v('Q4')})</b> — pilna konsultacja traumatologiczna.`);
+  return r;
 }
 
-/* ═══ RENDER RESULTS ════════════════════════════════════════ */
-function renderResults(){
-  showPage('results');
-  document.getElementById('progressWrap').classList.remove('visible');
-  document.getElementById('secNav').classList.remove('visible');
-  document.getElementById('resMeta').textContent=
-    `Data: ${new Date().toLocaleDateString('pl-PL')} · Wypełniono: ${answeredCount()} / $189 pytań`;
+// ── Recommendations based on scores ──
+function recommendations(scores){
+  const recs=[];
+  if(scores.adhd.pct>=45) recs.push({i:'⚡',h:'Diagnostyka ADHD',p:'Psychiatra lub psycholog kliniczny specjalizujący się w ADHD u dorosłych. Wywiad DIVA-5, neuropsychologia.'});
+  if(scores.asd.pct>=40) recs.push({i:'🎭',h:'Diagnostyka ASD',p:'Psycholog kliniczny z doświadczeniem w ASD u dorosłych. Narzędzia: ADOS-2 (moduł 4), ADI-R, RAADS-R.'});
+  if(scores.dep.pct>=45) recs.push({i:'🌧️',h:'Leczenie depresji',p:'Konsultacja psychiatryczna w celu oceny farmakoterapii i psychoterapii (CBT, DBT, ACT).'});
+  if(scores.anx.pct>=45) recs.push({i:'😰',h:'Leczenie lęku',p:'Psychoterapia CBT wykazuje najwyższą skuteczność w leczeniu zaburzeń lękowych. Możliwa farmakoterapia.'});
+  if(scores.ptsd.pct>=50) recs.push({i:'🛡️',h:'Trauma-informed',p:'Terapia EMDR, CPT lub TF-CBT u specjalisty traumatologii. Trauma-informed care jako standard.'});
+  if(recs.length===0) recs.push({i:'✅',h:'Kontynuuj obserwację',p:'Wyniki nie wskazują na kliniczny poziom objawów. Obserwuj swoje funkcjonowanie i wróć do testu za 6–12 miesięcy.'});
+  recs.push({i:'📋',h:'Wydrukuj wyniki',p:'Zabierz wyniki na konsultację. Pomagają specjaliście w szybszym postawieniu hipotezy diagnostycznej.'});
+  return recs;
+}
 
-  const flags=computeFlags();
+// ── RENDER RESULTS ──
+function renderResults(){
+  showPage('Results');
+  document.getElementById('progWrap').classList.remove('on');
+  document.getElementById('secNav').classList.remove('on');
+  document.getElementById('resMeta').textContent=
+    `Data: ${new Date().toLocaleDateString('pl-PL')} · Wypełniono: ${answered()} / ${TQ} pytań`;
+
+  const fl=flags();
+  const scores={};
+  SYND.forEach(s=>{scores[s.k]=rawFor(s.sets);});
+
   let h='';
 
-  /* --- SCORE CARDS --- */
-  h+=`<div class="score-grid">`;
-  SYNDROMES.forEach(syn=>{
-    const r=rawFor(syn.sets);
-    const b=bandFor(syn,r.pct);
-    h+=`<div class="score-card" style="--c:${syn.color}">
-      <div class="head">
-        <div class="title">${syn.icon} ${syn.label}</div>
-        <span class="badge ${LEVEL_CLASSES[b[2]]}">${LEVEL_LABELS[b[2]]}</span>
-      </div>
-      <div class="big-num" style="color:${syn.color}">${r.sum}<small>/ ${r.max} (${r.pct}%)</small></div>
-      <div class="score-track"><div class="score-fill" style="width:0%;background:${syn.color}" data-target="${r.pct}"></div></div>
-      <div class="score-interp">${b[1]}</div>
-    </div>`;
-  });
-  h+=`</div>`;
-
-  /* --- KRYTYCZNE --- */
-  if(flags.crit.length){
-    h+=`<div class="flags-section" style="border-color:rgba(239,68,68,.4)">
+  /* ── Krytyczne ── */
+  if(fl.crit.length){
+    h+=`<div class="sum-panel" style="border-color:rgba(239,68,68,.4);margin-top:20px">
       <h3 style="color:#f87171">🚨 Wymaga natychmiastowego działania</h3>`;
-    flags.crit.forEach(t=>h+=`<div class="flag crit"><span class="flag-icon">🚨</span><div class="flag-body">${t}</div></div>`);
+    fl.crit.forEach(t=>h+=`<div class="flag fc"><span class="fi">🚨</span><div>${t}</div></div>`);
     h+=`</div>`;
   }
 
-  /* --- CZERWONE FLAGI --- */
-  h+=`<div class="flags-section">
-    <h3>🚩 Czerwone flagi diagnostyczne</h3>
-    <p style="font-size:13px;color:var(--txt2);margin-bottom:14px">Wzorce szczególnie podnoszące prawdopodobieństwo danego rozpoznania i uzasadniające pogłębioną diagnostykę.</p>`;
-  if(flags.adhd.length) flags.adhd.forEach(t=>h+=`<div class="flag adhd"><span class="flag-icon" style="color:#f59e0b">▲</span><div class="flag-body"><span style="color:#f59e0b;font-weight:700">ADHD — </span>${t}</div></div>`);
-  if(flags.asd.length) flags.asd.forEach(t=>h+=`<div class="flag asd"><span class="flag-icon" style="color:#8b5cf6">◆</span><div class="flag-body"><span style="color:#8b5cf6;font-weight:700">ASD — </span>${t}</div></div>`);
-  if(!flags.adhd.length && !flags.asd.length)
-    h+=`<div class="flag ok"><span class="flag-icon">✓</span><div class="flag-body">Nie wykryto wyraźnych czerwonych flag powyżej progów ilościowych. Nie wyklucza to rozpoznania — wyniki należy interpretować całościowo ze specjalistą.</div></div>`;
+  /* ── Gauge cards ── */
+  h+=`<div class="gauge-grid">`;
+  SYND.forEach(syn=>{
+    const r=scores[syn.k];
+    const b=bandFor(syn,r.pct);
+    h+=`<div class="gcard" style="--c:${syn.cl}">
+      <div class="gcard-accent"></div>
+      <div class="gcard-top">
+        <div class="gcard-title">${syn.ic} ${syn.lb}</div>
+        <span class="lvbadge ${LV_CL[b[2]]}">${LV_LB[b[2]]}</span>
+      </div>
+      ${gauge(r.pct, syn.cl, r.s+'/'+r.m)}
+      <div class="gcard-interp">${b[1]}</div>
+    </div>`;
+  });
   h+=`</div>`;
 
-  /* --- WYKRES SŁUPKOWY --- */
-  h+=`<details class="accordion">
-    <summary><span class="sum-icon">📊</span> Profil syntetyczny — wykres</summary>
-    <div class="accordion-body">
-      <p style="font-size:13px;color:var(--txt2);margin-bottom:16px">Procent maksymalnego wyniku w każdym obszarze klinicznym.</p>
-      <div class="chart-bars" id="chartBars">`;
-  SYNDROMES.forEach(syn=>{
-    const r=rawFor(syn.sets);
-    h+=`<div class="chart-bar-wrap">
-      <div class="chart-bar" style="background:${syn.color};height:0" data-h="${Math.round(r.pct*1.3)}" data-pct="${r.pct}">
-        <span class="chart-label">${r.pct}%</span>
+  /* ── Wykres ── */
+  h+=`<div class="sum-panel">
+    <h3>📊 Profil syntetyczny</h3>
+    <div class="col-chart" id="colChart">`;
+  SYND.forEach(syn=>{
+    const r=scores[syn.k];
+    h+=`<div class="col-wrap">
+      <div class="col" style="background:${syn.cl};height:0" data-h="${Math.round(r.pct*1.4)}" data-pct="${r.pct}">
+        <span class="col-pct">${r.pct}%</span>
       </div>
-      <div class="chart-bar-name">${syn.icon}<br>${syn.label.split(' ')[0]}</div>
+      <div class="col-name">${syn.ic}<br>${syn.lb.split(' ')[0]}</div>
     </div>`;
   });
-  h+=`</div></div></details>`;
+  h+=`</div></div>`;
 
-  /* --- RÓŻNICOWANIE --- */
-  h+=`<details class="accordion">
-    <summary><span class="sum-icon">🔍</span> Różnicowanie diagnostyczne</summary>
-    <div class="accordion-body">
-      <table class="tbl">
-        <tr><th>Cecha</th><th>ADHD</th><th>ASD</th></tr>
-        <tr><td>Motywacja uwagi</td><td>Nowość i nagroda</td><td>Zainteresowanie i rutyna</td></tr>
-        <tr><td>Impulsywność</td><td>Behawioralna, reaktywna</td><td>Raczej sztywność zachowań</td></tr>
-        <tr><td>Rutyny</td><td>Chaos, brak rutyny</td><td>Potrzeba rygorystycznej rutyny</td></tr>
-        <tr><td>Hiperfokus</td><td>Czasowy, zmienne tematy</td><td>Trwały, stałe zainteresowania</td></tr>
-        <tr><td>Sensoryka</td><td>Wtórna — szuka pobudzenia</td><td>Pierwotna i stała</td></tr>
-        <tr><td>Maskowanie</td><td>Rzadsze, mniej świadome</td><td>Powszechne, wyczerpujące</td></tr>
-        <tr><td>Emocje</td><td>Intensywne, zmienne (RSD)</td><td>Intensywne, trudne do identyfikacji (aleksytymia)</td></tr>
-      </table>
-      <table class="tbl">
-        <tr><th>Cecha</th><th>ADHD / ASD</th><th>Trauma / CPTSD</th><th>Depresja</th></tr>
-        <tr><td>Przebieg</td><td>Wzorzec przez całe życie</td><td>Zmiana po wydarzeniu</td><td>Epizodyczny</td></tr>
-        <tr><td>Uwaga</td><td>Neurologiczna, stała</td><td>Związana z hyperarousal</td><td>Globalne pogorszenie</td></tr>
-        <tr><td>Nastrój</td><td>Labilny, reaktywny</td><td>Lęk, odrętwienie</td><td>Stały obniżony nastrój</td></tr>
-        <tr><td>Anhedonia</td><td>Rzadka (hiperfokus zachowany)</td><td>Możliwa</td><td>Centralna</td></tr>
-      </table>
-      <p style="font-size:12px;color:var(--txt3);margin-top:12px">Współwystępowanie ADHD+ASD szacowane na 50–70% (Antshel i in., 2013). Wysoki wynik w kilku obszarach jednocześnie jest częsty i wymaga oceny neuropsychologicznej.</p>
+  /* ── Czerwone flagi ── */
+  h+=`<div class="sum-panel">
+    <h3>🚩 Czerwone flagi diagnostyczne</h3>
+    <p style="font-size:12.5px;color:var(--t1);margin-bottom:12px">Wzorce szczególnie podnoszące prawdopodobieństwo rozpoznania.</p>`;
+  if(fl.adhd.length) fl.adhd.forEach(t=>h+=`<div class="flag fa"><span class="fi" style="color:var(--adhd)">▲</span><div><span style="color:var(--adhd);font-weight:700">ADHD — </span>${t}</div></div>`);
+  if(fl.asd.length) fl.asd.forEach(t=>h+=`<div class="flag fs"><span class="fi" style="color:var(--asd)">◆</span><div><span style="color:var(--asd);font-weight:700">ASD — </span>${t}</div></div>`);
+  if(!fl.adhd.length&&!fl.asd.length)
+    h+=`<div class="flag fok"><span class="fi">✓</span><div>Brak wyraźnych czerwonych flag powyżej progów ilościowych. Interpretuj wyniki całościowo ze specjalistą.</div></div>`;
+  h+=`</div>`;
+
+  /* ── Rekomendacje ── */
+  const recs=recommendations(scores);
+  h+=`<div class="sum-panel">
+    <h3>📋 Rekomendacje kolejnych kroków</h3>
+    <div class="rec-grid">`;
+  recs.forEach(r=>h+=`<div class="rec-card"><div class="ri">${r.i}</div><h4>${r.h}</h4><p>${r.p}</p></div>`);
+  h+=`</div></div>`;
+
+  /* ── Różnicowanie ── */
+  h+=`<details class="acc">
+    <summary>🔍 Różnicowanie diagnostyczne ADHD · ASD · trauma · depresja</summary>
+    <div class="acc-body">
+    <table class="tbl"><tr><th>Cecha</th><th>ADHD</th><th>ASD</th></tr>
+    <tr><td>Motywacja uwagi</td><td>Nowość i nagroda</td><td>Zainteresowanie i rutyna</td></tr>
+    <tr><td>Impulsywność</td><td>Behawioralna, reaktywna</td><td>Raczej sztywność zachowań</td></tr>
+    <tr><td>Rutyny</td><td>Chaos, brak rutyny</td><td>Potrzeba rygorystycznej rutyny</td></tr>
+    <tr><td>Hiperfokus</td><td>Czasowy, zmienne tematy</td><td>Trwały, stałe zainteresowania</td></tr>
+    <tr><td>Sensoryka</td><td>Wtórna — szuka pobudzenia</td><td>Pierwotna i stała</td></tr>
+    <tr><td>Maskowanie</td><td>Rzadsze, mniej świadome</td><td>Powszechne, wyczerpujące</td></tr>
+    <tr><td>Emocje</td><td>Intensywne, zmienne (RSD)</td><td>Trudne do identyfikacji (aleksytymia)</td></tr>
+    </table>
+    <table class="tbl" style="margin-top:10px">
+    <tr><th>Cecha</th><th>ADHD / ASD</th><th>Trauma / CPTSD</th><th>Depresja</th></tr>
+    <tr><td>Przebieg</td><td>Całe życie</td><td>Zmiana po wydarzeniu</td><td>Epizodyczny</td></tr>
+    <tr><td>Uwaga</td><td>Neurologiczna, stała</td><td>Związana z hyperarousal</td><td>Globalne pogorszenie</td></tr>
+    <tr><td>Nastrój</td><td>Labilny, reaktywny</td><td>Lęk, odrętwienie</td><td>Stały obniżony nastrój</td></tr>
+    <tr><td>Anhedonia</td><td>Rzadka</td><td>Możliwa</td><td>Centralna</td></tr>
+    </table>
+    <p style="font-size:11.5px;color:var(--t2);margin-top:10px">Współwystępowanie ADHD+ASD: 50–70% (Antshel i in., 2013). Wysoki wynik w kilku obszarach wymaga oceny neuropsychologicznej.</p>
     </div>
   </details>`;
 
-  /* --- SZCZEGÓŁY SEKCJI --- */
-  h+=`<details class="accordion">
-    <summary><span class="sum-icon">📋</span> Szczegółowe wyniki wszystkich 19 sekcji</summary>
-    <div class="accordion-body">
-      <div class="sec-score-grid">`;
+  /* ── Sekcje szczegółowe ── */
+  h+=`<details class="acc">
+    <summary>📋 Wyniki wszystkich 19 sekcji</summary>
+    <div class="acc-body" style="padding-top:12px">`;
   DATA.forEach(s=>{
-    let sum=0,max=s.questions.length*4;
-    s.questions.forEach(q=>sum+=val(q.id));
-    const pct=Math.round(sum/max*100);
-    const icon=SECTION_ICON[s.letter]||'○';
-    h+=`<div class="sec-score-row">
-      <div class="sec-letter">${s.letter}</div>
-      <div class="sec-name">${icon} ${s.name}</div>
-      <div class="sec-bar"><div class="mini-bar"><i style="width:${pct}%"></i></div></div>
-      <div class="sec-pts">${sum}/${max} (${pct}%)</div>
-    </div>`;
+    let sm=0,mx=s.questions.length*4;
+    s.questions.forEach(q=>sm+=v(q.id));
+    const p=Math.round(sm/mx*100);
+    const ico=ICON[s.letter]||'○';
+    h+=`<div class="srow"><div class="sl">${s.letter}</div>
+      <div class="sn">${ico} ${esc(s.name)}</div>
+      <div class="sbar"><i style="width:${p}%"></i></div>
+      <div class="sp">${sm}/${mx} · ${p}%</div></div>`;
   });
-  h+=`</div></div></details>`;
+  h+=`</div></details>`;
 
-  /* --- PEWNOŚĆ NAUKOWA --- */
-  h+=`<details class="accordion">
-    <summary><span class="sum-icon">📚</span> Poziom pewności naukowej</summary>
-    <div class="accordion-body">
-      <table class="tbl">
-        <tr><th>Obszar</th><th>Poziom dowodów</th><th>Kluczowe źródło</th></tr>
-        <tr><td>ADHD u dorosłych</td><td style="color:#34d399">Bardzo wysoki</td><td>Faraone i in., 2021 (meta-analiza)</td></tr>
-        <tr><td>ASD u dorosłych</td><td style="color:#34d399">Wysoki</td><td>Lai i in., 2015</td></tr>
-        <tr><td>Maskowanie / kamuflaż</td><td style="color:#fbbf24">Umiarkowany–wysoki</td><td>Hull i in., 2019; CAT-Q</td></tr>
-        <tr><td>CPTSD</td><td style="color:#34d399">Wysoki</td><td>Cloitre i in., 2013; ICD-11</td></tr>
-        <tr><td>Sensoryczność w ASD</td><td style="color:#34d399">Wysoki</td><td>Marco i in., 2011; Ben-Sasson i in., 2009</td></tr>
-        <tr><td>RSD w ADHD</td><td style="color:#fb923c">Niski–umiarkowany</td><td>Głównie dane kliniczne</td></tr>
-        <tr><td>Współwystępowanie ADHD+ASD</td><td style="color:#34d399">Wysoki</td><td>Antshel i in., 2013</td></tr>
-      </table>
+  /* ── Poziom pewności ── */
+  h+=`<details class="acc">
+    <summary>📚 Poziom pewności naukowej obszarów</summary>
+    <div class="acc-body">
+    <table class="tbl">
+    <tr><th>Obszar</th><th>Poziom dowodów</th><th>Źródło</th></tr>
+    <tr><td>ADHD u dorosłych</td><td style="color:#34d399">Bardzo wysoki</td><td>Faraone i in., 2021</td></tr>
+    <tr><td>ASD u dorosłych</td><td style="color:#34d399">Wysoki</td><td>Lai i in., 2015</td></tr>
+    <tr><td>Maskowanie / kamuflaż</td><td style="color:#fbbf24">Umiarkowany–wysoki</td><td>Hull i in., 2019</td></tr>
+    <tr><td>CPTSD (ICD-11)</td><td style="color:#34d399">Wysoki</td><td>Cloitre i in., 2013</td></tr>
+    <tr><td>Sensoryczność w ASD</td><td style="color:#34d399">Wysoki</td><td>Marco i in., 2011</td></tr>
+    <tr><td>RSD w ADHD</td><td style="color:#fb923c">Niski–umiarkowany</td><td>Dane głównie kliniczne</td></tr>
+    <tr><td>Współwystępowanie ADHD+ASD</td><td style="color:#34d399">Wysoki</td><td>Antshel i in., 2013</td></tr>
+    </table>
     </div>
   </details>`;
 
-  document.getElementById('resultsBody').innerHTML=h;
+  document.getElementById('resBody').innerHTML=h;
 
-  /* Animate score bars */
+  /* Animate gauges */
   setTimeout(()=>{
-    document.querySelectorAll('.score-fill[data-target]').forEach(el=>{
-      el.style.width=el.dataset.target+'%';
+    document.querySelectorAll('.gauge-arc[data-offset]').forEach(el=>{
+      el.style.strokeDashoffset=el.dataset.offset;
     });
-    document.querySelectorAll('.chart-bar[data-h]').forEach(el=>{
+    document.querySelectorAll('.col[data-h]').forEach(el=>{
       el.style.height=el.dataset.h+'px';
     });
-  },100);
+  },120);
 
   window.scrollTo({top:0,behavior:'instant'});
 }
 
-/* ═══ INIT ══════════════════════════════════════════════════ */
-if(answeredCount()>0){
-  document.getElementById('resumeBtn').style.display='inline-flex';
-}
+// ── Init ──
+if(answered()>0) document.getElementById('resumeBtn').style.display='inline-flex';
 </script>
 </body>
 </html>
