@@ -111,14 +111,29 @@ Adres kanoniczny ustawiony w `<link rel="canonical">` i tagach `og:` to
 `https://mateusz90duolife-lab.github.io/Jestem_Obok-/most-bliskosci/`.
 Jeśli gra trafi na własną domenę, trzeba podmienić go w pięciu miejscach w nagłówku `index.html`.
 
-### Do zrobienia przed komercyjną publikacją
+### Fonty
 
-- **Self-hosting fontów.** Strona ciągnie Faustinę, Karlę i IBM Plex Mono z CDN Google, co przy
-  odbiorcy z UE oznacza przekazanie adresu IP do Google bez zgody. Pobierz woff2 (np. z
-  `gwfh.mranftl.com`), wrzuć do `most-bliskosci/fonts/`, dodaj reguły `@font-face`
-  z `font-display:swap` i usuń trzy tagi `<link>` do `fonts.googleapis.com`.
+Faustina, Karla i IBM Plex Mono są self-hostowane w `most-bliskosci/fonts/` (pliki TTF pobrane
+z oficjalnego repozytorium `google/fonts`, licencja OFL dołączona jako `OFL-*.txt` przy każdym
+kroju). Strona nie ładuje niczego z `fonts.googleapis.com` ani `fonts.gstatic.com` — zero żądań
+sieciowych do Google, zero przekazywania adresu IP odwiedzającego stronę trzecią.
+
+## Jak powstała ta gra
+
+Treść kart i kod zostały stworzone przy współpracy z sztuczną inteligencją. Informacja o tym
+jest widoczna na stronie w dwóch miejscach: w stopce (na każdym ekranie) i w panelu zasad,
+w sekcji „Jak powstała ta gra” — razem z zastrzeżeniem, że to nie jest narzędzie zaprojektowane
+ani zweryfikowane przez licencjonowanego terapeutę.
+
+## Do zrobienia przed komercyjną publikacją
+
 - **Autor, kontakt i licencja.** Repozytorium nie ma pliku `LICENSE`, a strona nie mówi, czyja jest gra.
 - **Jedna kanoniczna talia.** Aplikacja ma 150 kart w czterech kategoriach, a PDF do druku 90 kart
   w trzech sekcjach. Do rozstrzygnięcia, która wersja jest tą właściwą.
 - **Generator arkuszy do druku** z tej samej listy kart, żeby wersja pudełkowa i strona
   nie rozjeżdżały się przy każdej zmianie.
+- **Regulamin i polityka prywatności** jako osobne dokumenty, nie tylko zdanie w stopce —
+  wymagane przy sprzedaży, nawet jeśli gra nie zbiera danych.
+- **Sprawdzenie nazwy „Most Bliskości”** pod kątem wolności znaku towarowego przed sprzedażą pod tą nazwą.
+- **Walidacja z realną parą** przed publicznym uruchomieniem płatnym — żadna redakcja treści
+  nie zastąpi sprawdzenia, czy pytania i tempo faktycznie działają w żywej rozmowie.
