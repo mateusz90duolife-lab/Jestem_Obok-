@@ -1,0 +1,212 @@
+<title>Karty Teraz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Lora:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#ffffff; --ink:#1d1a17; --ink-soft:#6d655c; --ink-faint:#9a938a;
+  --hair:#ded7cd; --cut:#bdb5aa; --desk:#eceee9; --desk-edge:#d5d9d2;
+  --accent:#3d6b52;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --desk:#171a18; --desk-edge:#2b302c; } }
+:root[data-theme="dark"]{ --desk:#171a18; --desk-edge:#2b302c; }
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--desk);font-family:"Lora","Iowan Old Style",Georgia,"DejaVu Serif",serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.dot{color:var(--ink-faint);padding:0 .15em}
+
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 20px;background:var(--desk);border-bottom:1px solid var(--desk-edge)}
+.bar h1{font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0;color:var(--ink)}
+.bar-note{font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:12px;color:var(--ink-soft);margin:0}
+:root[data-theme="dark"] .bar h1,:root[data-theme="dark"] .bar-note{color:#e6e9e5}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bar h1,:root:not([data-theme="light"]) .bar-note{color:#e6e9e5}}
+.bar button{margin-left:auto;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);border:0;border-radius:2px;padding:9px 18px;cursor:pointer}
+.bar button:hover{background:#345944}
+.bar button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+
+.stack{padding:26px 20px 60px;display:flex;flex-direction:column;align-items:center;gap:26px}
+.sheet{width:297mm;height:210mm;background:var(--paper);position:relative;overflow:hidden;flex:0 0 auto}
+.stack .sheet{box-shadow:0 1px 2px rgba(0,0,0,.12),0 10px 30px rgba(0,0,0,.14)}
+.cards-sheet{padding:7mm 7mm 5mm}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:3mm;height:191mm}
+.sheet-foot{position:absolute;left:0;right:0;bottom:2.5mm;text-align:center;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+
+.card{position:relative;display:flex;flex-direction:column;background:var(--paper);border:.4mm dashed var(--cut);padding:6.5mm 7mm 5.5mm;overflow:hidden}
+.band{position:absolute;top:0;left:0;right:0;height:5mm;background:var(--accent)}
+.c-head{margin:4.5mm 0 0}
+.eyebrow{margin:0;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:7pt;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+.c-title{margin:1.5mm 0 0;font-size:15pt;font-weight:600;line-height:1.2;color:var(--ink);text-wrap:balance}
+.rule{height:1px;background:var(--hair);margin:3mm 0 0}
+.q-wrap{flex:1;display:flex;align-items:center;min-height:0}
+.q{margin:0;font-size:12pt;line-height:1.45;color:var(--ink);text-wrap:pretty}
+.rules{margin:0;padding-left:5mm}
+.rules li{font-size:8pt;line-height:1.4;margin-bottom:1.6mm}
+.rules b{font-weight:600}
+.card-rules .c-title{font-size:13pt}
+.lines{display:flex;flex-direction:column;gap:6.5mm;width:100%}
+.lines span{display:block;height:0;border-bottom:1px solid var(--hair)}
+.card-blank .c-title{color:var(--ink-faint);font-weight:400}
+.c-foot{display:flex;align-items:baseline;justify-content:space-between;gap:4mm;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;padding-top:3mm;border-top:1px solid var(--hair)}
+.mark{font-size:6.5pt;font-weight:700;letter-spacing:.16em;color:var(--accent)}
+.count{font-size:6.5pt;letter-spacing:.08em;color:var(--ink-faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+@page{size:A4 landscape;margin:0}
+@media print{
+  html,body{background:#fff}
+  .bar{display:none}
+  .stack{padding:0;gap:0;display:block}
+  .sheet{box-shadow:none;break-after:page;page-break-after:always;margin:0}
+  .sheet:last-child{break-after:auto;page-break-after:auto}
+  .card{break-inside:avoid;page-break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<div class="bar">
+  <h1>Most Bliskości — Teraz</h1>
+  <p class="bar-note">12 kart + karta zasad <span class="dot">·</span> A4 poziomo <span class="dot">·</span> skala 100% <span class="dot">·</span> 3 arkusze</p>
+  <button type="button" onclick="window.print()">Drukuj / zapisz PDF</button>
+</div>
+<div class="stack">
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Migawka czułości</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q">Przez 3 minuty zrób partnerowi masaż barków. Teraz, nie za chwilę.</p></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">T1 <span class="dot">·</span> 1/12</span></footer>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Serwis</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q">Wstań i przynieś partnerowi jego ulubiony napój. Bez pytania „czy chcesz” — po prostu to zrób.</p></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">T2 <span class="dot">·</span> 2/12</span></footer>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Stopy do góry</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q">3 minuty masażu stóp. Teraz, w tym miejscu.</p></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">T3 <span class="dot">·</span> 3/12</span></footer>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Szept</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q">Podejdź bliżej i wyszepcz partnerowi do ucha trzy rzeczy, które w nim kochasz.</p></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">T4 <span class="dot">·</span> 4/12</span></footer>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">60 sekund bez przerwy</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q">Przez minutę mów partnerowi same dobre rzeczy o nim. Bez „ale”, bez przerwy.</p></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">T5 <span class="dot">·</span> 5/12</span></footer>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Trzymaj mnie</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q">Obejmij partnera i przytrzymaj w uścisku przez minutę. W milczeniu.</p></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">T6 <span class="dot">·</span> 6/12</span></footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości <span class="dot">·</span> Teraz <span class="dot">·</span> arkusz 1 z 3</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Ręce</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q">3 minuty masażu dłoni. Teraz, przy tym stole.</p></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">T7 <span class="dot">·</span> 7/12</span></footer>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Jedno zdanie, teraz</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q">Spójrz na partnera i dokończ na głos, bez zastanawiania się dłużej niż 5 sekund: „Jestem wdzięczny/a, że jesteś dziś przy mnie, bo…”</p></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">T8 <span class="dot">·</span> 8/12</span></footer>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Wspólny oddech</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q">Połóż dłoń na klatce piersiowej partnera i przez minutę dopasuj swój oddech do jego. Nic nie mówcie.</p></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">T9 <span class="dot">·</span> 9/12</span></footer>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Twoje 2 minuty</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q">Przez 2 minuty robisz dokładnie to, o co partner poprosi. To on wybiera — Ty tylko wykonujesz.</p></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">T10 <span class="dot">·</span> 10/12</span></footer>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Głowa</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q">3 minuty masażu głowy i karku. Powoli.</p></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">T11 <span class="dot">·</span> 11/12</span></footer>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Oprzyj się</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q">Usiądź za partnerem, oprzyj go o siebie i posiedźcie tak w ciszy przez 2 minuty.</p></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">T12 <span class="dot">·</span> 12/12</span></footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości <span class="dot">·</span> Teraz <span class="dot">·</span> arkusz 2 z 3</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card card-rules">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Zasady</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><ol class="rules"><li>Wykonujesz <b>od razu, w tym miejscu</b>. Nie „za chwilę” i nie „jak skończymy”.</li><li><b>PASS działa w obie strony.</b> Możesz spasować, jeśli nie dasz rady. Partner może spasować, jeśli w tej chwili nie chce być dotykany. Odkładacie kartę bez tłumaczenia się.</li><li>Osoba przyjmująca może w każdej chwili powiedzieć <b>„wystarczy”</b>. To kończy kartę i nie wymaga powodu.</li><li>Po każdej karcie z sekcji <b>ODWAGA</b> dobierzcie jedną kartę TERAZ. To nie przerwa w rozmowie — to jej część.</li></ol></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">karta zasad</span></footer>
+      </article>
+      <article class="card card-blank">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Wasza karta</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><div class="lines"><span></span><span></span><span></span><span></span></div></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">dopiszcie własną</span></footer>
+      </article>
+      <article class="card card-blank">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Wasza karta</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><div class="lines"><span></span><span></span><span></span><span></span></div></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">dopiszcie własną</span></footer>
+      </article>
+      <article class="card card-blank">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Wasza karta</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><div class="lines"><span></span><span></span><span></span><span></span></div></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">dopiszcie własną</span></footer>
+      </article>
+      <article class="card card-blank">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Wasza karta</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><div class="lines"><span></span><span></span><span></span><span></span></div></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">dopiszcie własną</span></footer>
+      </article>
+      <article class="card card-blank">
+        <div class="band"></div>
+        <header class="c-head"><p class="eyebrow">Teraz</p><h3 class="c-title">Wasza karta</h3></header>
+        <div class="rule"></div>
+        <div class="q-wrap"><div class="lines"><span></span><span></span><span></span><span></span></div></div>
+        <footer class="c-foot"><span class="mark">MOST BLISKOŚCI</span><span class="count">dopiszcie własną</span></footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości <span class="dot">·</span> Teraz <span class="dot">·</span> arkusz 3 z 3 <span class="dot">·</span> karta zasad + 5 pustych kart do dopisania własnych</div>
+  </section>
+</div>
