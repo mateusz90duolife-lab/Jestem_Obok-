@@ -1,0 +1,1511 @@
+<title>Karty Bliżej</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#1d1a17;
+  --ink-soft:#6d655c;
+  --ink-faint:#9a938a;
+  --hair:#ded7cd;
+  --cut:#bdb5aa;
+  --desk:#efece6;
+  --desk-edge:#d9d4cb;
+  --s1:#b4722a;
+  --s2:#2f6f9e;
+  --s3:#8a3a58;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --desk:#1a1917;
+    --desk-edge:#302d29;
+  }
+}
+:root[data-theme="dark"]{
+  --desk:#1a1917;
+  --desk-edge:#302d29;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--desk);
+  font-family:"Lora","Iowan Old Style",Georgia,"DejaVu Serif",serif;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+.dot{color:var(--ink-faint);padding:0 .15em}
+
+/* ---------- screen chrome ---------- */
+.bar{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  padding:14px 20px;
+  background:var(--desk);
+  border-bottom:1px solid var(--desk-edge);
+}
+.bar h1{
+  font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;
+  font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  margin:0;color:var(--ink);
+}
+:root[data-theme="dark"] .bar h1,
+:root[data-theme="dark"] .bar .bar-note{color:#e8e3db}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .bar h1,
+  :root:not([data-theme="light"]) .bar .bar-note{color:#e8e3db}
+}
+.bar-note{
+  font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;
+  font-size:12px;color:var(--ink-soft);margin:0;
+}
+.bar button{
+  margin-left:auto;
+  font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;
+  font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:#fff;background:var(--s2);
+  border:0;border-radius:2px;padding:9px 18px;cursor:pointer;
+}
+.bar button:hover{background:#25597e}
+.bar button:focus-visible{outline:2px solid var(--s3);outline-offset:2px}
+
+.stack{padding:26px 20px 60px;display:flex;flex-direction:column;align-items:center;gap:26px}
+
+/* ---------- sheet ---------- */
+.sheet{
+  width:297mm;height:210mm;
+  background:var(--paper);
+  position:relative;
+  overflow:hidden;
+  flex:0 0 auto;
+}
+.stack .sheet{box-shadow:0 1px 2px rgba(0,0,0,.12),0 10px 30px rgba(0,0,0,.14)}
+
+.cards-sheet{padding:7mm 7mm 5mm}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:repeat(2,1fr);
+  gap:3mm;
+  height:191mm;
+}
+.sheet-foot{
+  position:absolute;left:0;right:0;bottom:2.5mm;
+  text-align:center;
+  font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;
+  font-size:6pt;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-faint);
+}
+
+/* ---------- card ---------- */
+.card{
+  position:relative;
+  display:flex;flex-direction:column;
+  background:var(--paper);
+  border:.4mm dashed var(--cut);
+  padding:6.5mm 7mm 5.5mm;
+  overflow:hidden;
+}
+.band{position:absolute;top:0;left:0;right:0;height:2.6mm}
+.card.s1 .band{background:var(--s1)} .card.s2 .band{background:var(--s2)} .card.s3 .band{background:var(--s3)}
+.c-head{margin:2mm 0 0}
+.eyebrow{
+  margin:0;
+  font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;
+  font-size:7pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+}
+.card.s1 .eyebrow{color:var(--s1)} .card.s2 .eyebrow{color:var(--s2)} .card.s3 .eyebrow{color:var(--s3)}
+.sub{
+  margin:.8mm 0 0;
+  font-style:italic;font-size:8pt;color:var(--ink-soft);
+}
+.rule{height:1px;background:var(--hair);margin:3mm 0 0}
+
+.q-wrap{flex:1;display:flex;align-items:center;min-height:0}
+.q{
+  margin:0;
+  color:var(--ink);
+  text-wrap:pretty;
+  hyphens:auto;
+}
+.q-xl{font-size:15pt;line-height:1.33}
+.q-lg{font-size:13pt;line-height:1.34}
+.q-md{font-size:11pt;line-height:1.38}
+.q-sm{font-size:9.5pt;line-height:1.42}
+
+.c-foot{
+  display:flex;align-items:baseline;justify-content:space-between;gap:4mm;
+  font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;
+  padding-top:3mm;
+  border-top:1px solid var(--hair);
+}
+.mark{font-size:7.5pt;font-weight:700;letter-spacing:.18em}
+.card.s1 .mark{color:var(--s1)} .card.s2 .mark{color:var(--s2)} .card.s3 .mark{color:var(--s3)}
+.count{font-size:6.5pt;letter-spacing:.08em;color:var(--ink-faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ---------- cover ---------- */
+.cover{padding:0}
+.cover-inner{
+  height:100%;
+  padding:13mm 18mm 10mm;
+  display:flex;flex-direction:column;
+  border-top:4mm solid var(--s2);
+}
+.cover-eyebrow{
+  margin:0;
+  font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;
+  font-size:9pt;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.cover-title{
+  margin:2mm 0 0;
+  font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;
+  font-size:48pt;font-weight:800;letter-spacing:.13em;line-height:1;
+  color:var(--s2);
+}
+.cover-lede{
+  margin:5mm 0 0;max-width:172mm;
+  font-size:12pt;line-height:1.5;color:var(--ink);text-wrap:balance;
+}
+.cover-cols{
+  margin-top:8mm;
+  display:grid;grid-template-columns:1fr 1.2fr;gap:15mm;align-content:start;
+  flex:1;min-height:0;
+}
+.cover-sections{display:flex;flex-direction:column;gap:7.5mm}
+.sec-row{display:flex;align-items:flex-start;gap:4mm}
+.sec-chip{
+  flex:0 0 auto;
+  width:10.5mm;height:10.5mm;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:12.5pt;font-weight:700;color:#fff;
+}
+.sec-row.s1 .sec-chip{background:var(--s1)} .sec-row.s2 .sec-chip{background:var(--s2)} .sec-row.s3 .sec-chip{background:var(--s3)}
+.sec-name{margin:.4mm 0 0;font-size:15pt;font-weight:600}
+.sec-meta{margin:1.4mm 0 0;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:9pt;color:var(--ink-soft);letter-spacing:.03em}
+.cover-how h2{
+  margin:0 0 3mm;
+  font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;
+  font-size:9pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--s3);
+}
+.cover-how h2+ol{margin-bottom:6mm}
+.cover-how ol{margin:0;padding-left:6mm}
+.cover-how li{font-size:10pt;line-height:1.5;margin-bottom:1.8mm;color:var(--ink);padding-left:.8mm}
+.cover-how b{font-weight:600}
+.cover-foot{
+  margin:0;padding-top:4mm;border-top:1px solid var(--hair);
+  font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;
+  font-size:7.5pt;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);
+}
+
+/* ---------- print ---------- */
+@page{size:A4 landscape;margin:0}
+@media print{
+  html,body{background:#fff}
+  .bar{display:none}
+  .stack{padding:0;gap:0;display:block}
+  .sheet{box-shadow:none;break-after:page;page-break-after:always;margin:0}
+  .sheet:last-child{break-after:auto;page-break-after:auto}
+  .card{break-inside:avoid;page-break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="bar">
+  <h1>Bliżej — 90 kart do druku</h1>
+  <p class="bar-note">A4 poziomo <span class="dot">·</span> skala 100% <span class="dot">·</span> 16 stron (okładka + 15 arkuszy)</p>
+  <button type="button" onclick="window.print()">Drukuj / zapisz PDF</button>
+</div>
+
+<div class="stack">
+  <section class="sheet cover">
+    <div class="cover-inner">
+      <p class="cover-eyebrow">Karty do rozmowy dla par</p>
+      <h1 class="cover-title">BLIŻEJ</h1>
+      <p class="cover-lede">90 pytań w trzech sekcjach. Od lekkiej ciekawości, przez otwartość,
+      aż po prawdziwą bliskość. Idziecie tak daleko, jak oboje chcecie.</p>
+
+      <div class="cover-cols">
+        <div class="cover-sections">
+          <div class="sec-row s1">
+            <span class="sec-chip">1</span>
+            <div><p class="sec-name">Poznajmy się</p><p class="sec-meta">karty 1–30 <span class="dot">·</span> lekko i ciekawie</p></div>
+          </div>
+          <div class="sec-row s2">
+            <span class="sec-chip">2</span>
+            <div><p class="sec-name">Zrozumiejmy się</p><p class="sec-meta">karty 31–60 <span class="dot">·</span> wymaga otwartości</p></div>
+          </div>
+          <div class="sec-row s3">
+            <span class="sec-chip">3</span>
+            <div><p class="sec-name">Prawdziwa bliskość</p><p class="sec-meta">karty 61–90 <span class="dot">·</span> duża bliskość i zaufanie</p></div>
+          </div>
+        </div>
+
+        <div class="cover-how">
+          <h2>Jak wydrukować</h2>
+          <ol>
+            <li>Papier <b>A4, orientacja pozioma</b>, skala <b>100%</b> (nie „dopasuj do strony”).</li>
+            <li>Najlepiej karton <b>250–300 g/m²</b>, druk jednostronny.</li>
+            <li>Tnij po przerywanej linii. Z arkusza wychodzi 6 kart, razem <b>15 arkuszy</b>.</li>
+            <li>Kolor paska u góry karty pokazuje sekcję — łatwiej posortować talię.</li>
+          </ol>
+          <h2>Zasady rozmowy</h2>
+          <ol>
+            <li>Jedna karta naraz. Oboje odpowiadacie, zanim losujecie następną.</li>
+            <li>Ten, kto słucha, nie ocenia i nie poprawia. Tylko słucha.</li>
+            <li><b>„Nie chcę dziś o tym mówić”</b> to pełna odpowiedź. Odkładacie kartę bez pytań.</li>
+            <li>Zacznijcie od sekcji 1. Sekcja 3 działa najlepiej, gdy nikt się nie spieszy.</li>
+          </ol>
+        </div>
+      </div>
+      <p class="cover-foot">Wydrukuj, potnij, rozmawiajcie.</p>
+    </div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czuję się najbardziej bezpiecznie w naszej relacji, gdy…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">1/30 <span class="dot">·</span> karta 1/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co jest małą rzeczą, którą robię, a która natychmiast poprawia Ci dzień?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">2/30 <span class="dot">·</span> karta 2/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaka moja cecha sprawia, że myślisz: „Dobrze, że właśnie ta osoba jest moim partnerem/partnerką”?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">3/30 <span class="dot">·</span> karta 3/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Moim ulubionym wspomnieniem z naszego wspólnego początku jest moment, gdy…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">4/30 <span class="dot">·</span> karta 4/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Kiedy wracam myślami do mijającego tygodnia, najbardziej doceniam to, że…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">5/30 <span class="dot">·</span> karta 5/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-sm">Jaka rzecz, którą robimy razem, jest dla Ciebie zupełnie zwyczajna, a mimo to chciałbyś/chciałabyś, żeby nigdy nie zniknęła z naszego życia?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">6/30 <span class="dot">·</span> karta 6/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 1 z 15 <span class="dot">·</span> karty 1–6</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Rzeczą, która zawsze potrafi mnie przy Tobie rozśmieszyć lub rozluźnić, jest…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">7/30 <span class="dot">·</span> karta 7/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Często zapominam Ci mówić, jak bardzo jestem wdzięczny/a za…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">8/30 <span class="dot">·</span> karta 8/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">W jakim zupełnie zwyczajnym momencie dnia najbardziej lubisz mieć mnie obok?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">9/30 <span class="dot">·</span> karta 9/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czuję, że najbardziej wspierasz mój rozwój osobisty, kiedy…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">10/30 <span class="dot">·</span> karta 10/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Gdyby ktoś obserwował nas przez jeden zwyczajny dzień, jaki moment najlepiej pokazałby mu, jacy naprawdę jesteśmy jako para?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">11/30 <span class="dot">·</span> karta 11/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Największym komplementem, jaki od Ciebie usłyszałem/am, było…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">12/30 <span class="dot">·</span> karta 12/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 2 z 15 <span class="dot">·</span> karty 7–12</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Rzeczą, która sprawia, że czuję się dumny/a z nas jako pary, jest…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">13/30 <span class="dot">·</span> karta 13/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Gdybyś miał/a opisać naszą obecną relację trzema słowami, jakie byś wybrał/a? Dlaczego właśnie te?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">14/30 <span class="dot">·</span> karta 14/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czuję, że jesteśmy prawdziwym zespołem w momentach, gdy…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">15/30 <span class="dot">·</span> karta 15/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Wymień 3 konkretne zachowania partnera/partnerki z ostatniego miesiąca, które poruszyły Twoje serce.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">16/30 <span class="dot">·</span> karta 16/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Podziękuj partnerowi/partnerce za jedną małą, codzienną rzecz, którą robi.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">17/30 <span class="dot">·</span> karta 17/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Powiedz w trzeciej osobie, co Twoim zdaniem świat najbardziej podziwia w Twoim partnerze/partnerce.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">18/30 <span class="dot">·</span> karta 18/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 3 z 15 <span class="dot">·</span> karty 13–18</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Każde z Was mówi jedną rzecz, którą partner/partnerka robi, dzięki której łatwiej Ci przy nim/niej odetchnąć.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">19/30 <span class="dot">·</span> karta 19/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Usiądźcie blisko siebie i opowiedzcie o najpiękniejszym marzeniu, jakie wiąże się z Waszą wspólną przyszłością.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">20/30 <span class="dot">·</span> karta 20/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaka mała rzecz potrafi Cię zaskakująco mocno zestresować lub zirytować? Co pomaga Ci wtedy wrócić do równowagi?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">21/30 <span class="dot">·</span> karta 21/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki drobiazg z dzieciństwa nadal potrafi wywołać u Ciebie natychmiastowy uśmiech?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">22/30 <span class="dot">·</span> karta 22/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki smak, zapach lub potrawa najbardziej przypomina Ci rodzinny dom?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">23/30 <span class="dot">·</span> karta 23/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">O czym marzyłeś/aś jako dziecko?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">24/30 <span class="dot">·</span> karta 24/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 4 z 15 <span class="dot">·</span> karty 19–24</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaka piosenka, film, miejsce albo zapach natychmiast przenosi Cię do ważnego momentu Twojego życia? Opowiedz, do jakiego.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">25/30 <span class="dot">·</span> karta 25/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka pasja lub zainteresowanie rzadko wychodzi u Ciebie na pierwszy plan?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">26/30 <span class="dot">·</span> karta 26/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Gdybyś jutro dostał/a jeden wolny dzień tylko dla siebie, bez obowiązków i poczucia winy — jak byś go spędził/a?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">27/30 <span class="dot">·</span> karta 27/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Jak najbardziej lubisz spędzać czas sam/a?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">28/30 <span class="dot">·</span> karta 28/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Wyobraź sobie, że wygraliście 50 milionów. Jak wygląda Wasz idealny wtorek za 2 lata?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">29/30 <span class="dot">·</span> karta 29/90</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 1 <span class="dot">·</span> POZNAJMY SIĘ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Możecie zbudować domek w dowolnym miejscu na świecie. Gdzie jest i jak wygląda?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">30/30 <span class="dot">·</span> karta 30/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 5 z 15 <span class="dot">·</span> karty 25–30</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jest we mnie coś, co chciałbym/chciałabym, żebyś lepiej rozumiał/a…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">1/30 <span class="dot">·</span> karta 31/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Największą lekcją, jaką wyciągnąłem/am z naszych dotychczasowych trudności, jest…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">2/30 <span class="dot">·</span> karta 32/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jedną rzeczą, którą chciałbym/chciałabym, żebyśmy robili inaczej podczas kłótni, jest…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">3/30 <span class="dot">·</span> karta 33/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Moje ciało czuje się najbardziej zaopiekowane przez Ciebie, gdy…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">4/30 <span class="dot">·</span> karta 34/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki gest z mojej strony sprawił, że poczułeś/aś: „Naprawdę mnie widzi”?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">5/30 <span class="dot">·</span> karta 35/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Gdybyśmy mogli cofnąć się do początku naszej relacji, jaką jedną rzecz chcielibyśmy zrobić wcześniej, a jaką później?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">6/30 <span class="dot">·</span> karta 36/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 6 z 15 <span class="dot">·</span> karty 31–36</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki jest najbardziej kojący gest, jaki potrafisz wykonać, gdy płaczę lub się stresuję?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">7/30 <span class="dot">·</span> karta 37/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Patrzcie sobie w oczy przez 2 minuty. Jeśli którekolwiek z Was chce przerwać — przerwijcie.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">8/30 <span class="dot">·</span> karta 38/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Powiedz, co partner/partnerka robi, dzięki czemu czujesz się atrakcyjnie.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">9/30 <span class="dot">·</span> karta 39/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-sm">Powiedz partnerowi/partnerce coś osobistego, czym czujesz się bezpiecznie podzielić. Możesz też powiedzieć: „Nie chcę dziś o tym mówić”.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">10/30 <span class="dot">·</span> karta 40/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaka cecha partnera/partnerki najbardziej pomogła Wam przejść przez trudny moment? Powiedz to wprost.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">11/30 <span class="dot">·</span> karta 41/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Powiedz, jaką odwagę emocjonalną najbardziej cenisz u partnera/partnerki.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">12/30 <span class="dot">·</span> karta 42/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 7 z 15 <span class="dot">·</span> karty 37–42</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Ustalcie jedno słowo-klucz, które oznacza: „Potrzebuję teraz zatrzymać rozmowę i poczuć się bezpiecznie”.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">13/30 <span class="dot">·</span> karta 43/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Powiedz, co w Waszej bliskości daje Ci największe poczucie spełnienia. Bliskość może oznaczać emocje, dotyk, rozmowę lub seks.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">14/30 <span class="dot">·</span> karta 44/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Powiedz partnerowi/partnerce coś w spokojnym, kojącym tonie, co chciałbyś/chciałabyś usłyszeć w trudnym dniu.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">15/30 <span class="dot">·</span> karta 45/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Czy jest wspomnienie z dzieciństwa, które szczególnie wpłynęło na to, kim dziś jestem? Jeśli chcesz, opowiedz o nim.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">16/30 <span class="dot">·</span> karta 46/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co w Twojej rodzinie lub domu z dzieciństwa dawało Ci największe poczucie bezpieczeństwa?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">17/30 <span class="dot">·</span> karta 47/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki moment w dorosłym życiu najbardziej zmienił Twoje myślenie o sobie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">18/30 <span class="dot">·</span> karta 48/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 8 z 15 <span class="dot">·</span> karty 43–48</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jakie zachowanie innych ludzi budzi w Tobie największy brak zaufania?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">19/30 <span class="dot">·</span> karta 49/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">W którym momencie poczułeś/aś, że partner/partnerka naprawdę Cię zna?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">20/30 <span class="dot">·</span> karta 50/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jakie wydarzenie najbardziej wpłynęło na Twój sposób myślenia o pieniądzach?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">21/30 <span class="dot">·</span> karta 51/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka decyzja z ostatnich kilku lat nauczyła Cię najwięcej o sobie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">22/30 <span class="dot">·</span> karta 52/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">W jakiej sytuacji najłatwiej zaczynasz być wobec siebie zbyt surowy/a? Jak mogę Ci wtedy pomóc?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">23/30 <span class="dot">·</span> karta 53/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki komplement trudno Ci przyjąć, nawet jeśli wiesz, że jest szczery?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">24/30 <span class="dot">·</span> karta 54/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 9 z 15 <span class="dot">·</span> karty 49–54</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Co robisz, gdy czujesz bezradność albo jesteś przeciążony/a? Czego wtedy potrzebujesz od partnera/partnerki?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">25/30 <span class="dot">·</span> karta 55/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">O co najtrudniej Ci poprosić mnie wprost, nawet jeśli bardzo tego potrzebujesz?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">26/30 <span class="dot">·</span> karta 56/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Kiedy podczas kłótni zaczynasz się zamykać albo wycofywać, co zazwyczaj dzieje się w Tobie chwilę wcześniej?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">27/30 <span class="dot">·</span> karta 57/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Co mogę zrobić podczas konfliktu, żebyś poczuł/a: „Jesteśmy po tej samej stronie, nawet jeśli się nie zgadzamy”?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">28/30 <span class="dot">·</span> karta 58/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Co dla Ciebie oznacza lojalność w związku — szczególnie wtedy, gdy partnera/partnerki nie ma obok?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">29/30 <span class="dot">·</span> karta 59/90</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 2 <span class="dot">·</span> ZROZUMIEJMY SIĘ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Co najłatwiej uruchamia w Tobie zazdrość i czego wtedy najbardziej potrzebujesz od partnera/partnerki?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">30/30 <span class="dot">·</span> karta 60/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 10 z 15 <span class="dot">·</span> karty 55–60</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Najbardziej bezbronny/a czuję się w momentach, kiedy…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">1/30 <span class="dot">·</span> karta 61/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Moją największą obawą związaną z upływem czasu i starzeniem się jest…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">2/30 <span class="dot">·</span> karta 62/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czuję, że odsuwam się emocjonalnie, kiedy w naszej przestrzeni pojawia się…</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">3/30 <span class="dot">·</span> karta 63/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaki był jeden z najtrudniejszych dni Twojego życia, zanim się poznaliśmy? Jeśli nie chcesz o nim mówić, wybierz inne pytanie.</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">4/30 <span class="dot">·</span> karta 64/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka cecha we mnie bywa dla mnie trudna i co chciałbym/chciałabym lepiej w niej zrozumieć?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">5/30 <span class="dot">·</span> karta 65/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Czego najbardziej boisz się w bliskich relacjach?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">6/30 <span class="dot">·</span> karta 66/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 11 z 15 <span class="dot">·</span> karty 61–66</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-sm">Wyobraź sobie, że Twój największy obecny lęk mógłby przemówić. Czego najbardziej chciałby Cię ostrzec? A czego potrzebowałby od nas jako pary?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">7/30 <span class="dot">·</span> karta 67/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jest coś, czego boisz się, że kiedyś mogę o Tobie pomyśleć. Co to jest?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">8/30 <span class="dot">·</span> karta 68/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaka część Ciebie najczęściej mówi: „Nie jestem wystarczająco dobry/a”? Co chciałbyś/chciałabyś, żebym wtedy pamiętał/a o Tobie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">9/30 <span class="dot">·</span> karta 69/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Co najbardziej boli Cię w poczuciu odrzucenia: brak miłości, brak uwagi, poczucie bycia nieważnym/ą czy coś innego?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">10/30 <span class="dot">·</span> karta 70/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Kiedy Cię zranię, czego naprawdę potrzebujesz, żeby móc znowu się do mnie zbliżyć?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">11/30 <span class="dot">·</span> karta 71/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jak wygląda dla Ciebie prawdziwe „przepraszam”? Co musi się wydarzyć, żebyś poczuł/a, że naprawdę Cię usłyszałem/am?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">12/30 <span class="dot">·</span> karta 72/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 12 z 15 <span class="dot">·</span> karty 67–72</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czego najbardziej boisz się kiedyś stracić w naszym związku?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">13/30 <span class="dot">·</span> karta 73/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaka część Ciebie istnieje niezależnie od naszego związku i potrzebujesz, żebym zawsze ją szanował/a?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">14/30 <span class="dot">·</span> karta 74/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaka jest jedna granica, której przekroczenie mogłoby sprawić, że zacząłbyś/zaczęłabyś emocjonalnie oddalać się ode mnie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">15/30 <span class="dot">·</span> karta 75/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Kiedy zaczynasz wątpić w naszą relację, jaka historia pojawia się wtedy w Twojej głowie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">16/30 <span class="dot">·</span> karta 76/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jakiej potrzeby najczęściej próbujesz nie mieć, ponieważ boisz się, że możesz być dla partnera/partnerki „za bardzo”?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">17/30 <span class="dot">·</span> karta 77/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Po czym poznajesz, że jesteś kochany/a — nawet jeśli nikt nie mówi Ci tego słowami?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">18/30 <span class="dot">·</span> karta 78/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 13 z 15 <span class="dot">·</span> karty 73–78</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Wyobraź sobie, że jesteśmy razem za 30 lat. Za co chciałbyś/chciałabyś wtedy najbardziej podziękować naszej obecnej wersji?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">19/30 <span class="dot">·</span> karta 79/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaka część naszej wspólnej historii najbardziej Cię wzruszyła, kiedy patrzysz na nią z dzisiejszej perspektywy?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">20/30 <span class="dot">·</span> karta 80/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czy jest coś, co wybaczyłeś/aś mi, ale rzadko o tym rozmawiamy? Co pomogło Ci to wybaczyć?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">21/30 <span class="dot">·</span> karta 81/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">W jakich momentach czujesz się samotny/a, nawet gdy jesteśmy razem?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">22/30 <span class="dot">·</span> karta 82/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki wzorzec z domu rodzinnego najbardziej boisz się powtórzyć w naszym związku?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">23/30 <span class="dot">·</span> karta 83/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Co sprawia, że czujesz dumę z partnera/partnerki właśnie w trudnych chwilach, a nie tylko w sukcesach?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">24/30 <span class="dot">·</span> karta 84/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 14 z 15 <span class="dot">·</span> karty 79–84</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czego nauczyłeś/aś się o sobie dzięki temu, że mnie kochasz?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">25/30 <span class="dot">·</span> karta 85/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka cisza między nami jest dla Ciebie dobra, a jaka Cię niepokoi?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">26/30 <span class="dot">·</span> karta 86/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Co chciałbyś/chciałabyś, żebym zapamiętał/a o Tobie, nawet gdyby wszystko inne kiedyś się zmieniło?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">27/30 <span class="dot">·</span> karta 87/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaka zmiana we mnie w ciągu ostatnich lat najbardziej Cię poruszyła — pozytywnie lub trudno?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">28/30 <span class="dot">·</span> karta 88/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Gdybyś mógł/mogła powiedzieć mi jedno zdanie, które dałoby Ci największe poczucie bezpieczeństwa na zawsze, jakie by to było?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">29/30 <span class="dot">·</span> karta 89/90</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sekcja 3 <span class="dot">·</span> PRAWDZIWA BLISKOŚĆ</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-sm">Gdybyś mógł/mogła dać naszej relacji jedną rzecz na resztę naszego wspólnego życia — czego najbardziej chciałbyś/chciałabyś, żeby nigdy nam nie zabrakło?</p></div>
+        <footer class="c-foot">
+          <span class="mark">BLIŻEJ</span>
+          <span class="count">30/30 <span class="dot">·</span> karta 90/90</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Bliżej <span class="dot">·</span> arkusz 15 z 15 <span class="dot">·</span> karty 85–90</div>
+  </section>
+</div>
