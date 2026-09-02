@@ -19,8 +19,10 @@ Ten e-book nie zastępuje konsultacji z lekarzem, psychiatrą, psychologiem ani 
 **2. Opisy działania mózgu są w tej książce świadomie uproszczone.**
 Mózg nie ma "ośrodka prokrastynacji", a żadna pojedyncza struktura nie odpowiada samodzielnie za to, że odkładasz zadania. Opisy takie jak "ciało migdałowate włącza alarm" czy "kora przedczołowa się rozładowuje" to **modele robocze** — użyteczne metafory, które pomagają zrozumieć własne zachowanie, a nie dosłowny opis neurobiologii. Wszędzie, gdzie upraszczam, oznaczam to znakiem ⚠️ i wyjaśniam, co wiadomo naprawdę.
 
-**3. Wszystkie historie kobiet w tej książce są fikcyjne.**
-Kasia, Marta, Agnieszka, Ewa, Julia, Anna, Maria, Monika, Paulina, Beata, Zofia, Renata, Joanna, Natalia i wszystkie pozostałe bohaterki to **przykłady ilustracyjne skonstruowane na potrzeby tego e-booka**. Powstały na bazie powtarzalnych wzorców, które widzę w pracy, ale nie są opisami rzeczywistych przypadków, nie są studiami klinicznymi i nie stanowią dowodu skuteczności żadnej z opisanych technik. Podane w nich liczby ("odzyskała 8 godzin tygodniowo") są ilustracją możliwego efektu, nie wynikiem pomiaru.
+**3. Wszystkie postacie w tej książce są fikcyjne. Bez wyjątku.**
+Kasia, Marta, Agnieszka, Ewa, Julia, Anna, Maria, Monika, Paulina, Beata, Renata, Joanna, Natalia, Paweł i wszystkie pozostałe postacie **nie istnieją**. Żadna z opisanych historii nie jest relacją z pracy z konkretną osobą, nie jest studium przypadku w rozumieniu klinicznym i nie opisuje żadnej mojej klientki ani czytelniczki.
+
+To **przykłady ilustracyjne, które napisałam na potrzeby tego e-booka**. Zbudowałam je z powtarzalnych wzorców, które widzę w pracy od lat — ale każda sytuacja, każdy dialog i każda liczba w tych historiach są wymyślone. W szczególności podane w nich efekty ("odzyskała 8 godzin tygodniowo", "tydzień później miała założoną działalność") to ilustracja możliwego przebiegu, a **nie wynik pomiaru i nie dowód skuteczności** żadnej z opisanych technik.
 
 ---
 
@@ -291,7 +293,7 @@ Sekcja, w której masz najwięcej punktów, wskazuje **wzorzec, od którego wart
 
 ## PIĘĆ PRZYKŁADÓW ILUSTRACYJNYCH
 
-> ⚠️ **Wszystkie poniższe historie są fikcyjne.** Zostały skonstruowane na potrzeby tego e-booka jako ilustracje typowych wzorców. Nie są opisami rzeczywistych osób ani studiami przypadku w rozumieniu klinicznym. Podane efekty i liczby ilustrują możliwy przebieg, a nie zmierzony rezultat. Skuteczność opisanych technik u konkretnej osoby może być zupełnie inna.
+> ⚠️ **Wszystkie pięć historii poniżej jest fikcyjnych.** Opisane kobiety nie istnieją — napisałam te historie na potrzeby e-booka jako ilustracje typowych wzorców. Nie są to opisy rzeczywistych osób ani studia przypadku w rozumieniu klinicznym. Podane efekty i liczby ilustrują możliwy przebieg, a nie zmierzony rezultat. Skuteczność opisanych technik u konkretnej osoby może być zupełnie inna.
 
 ### Przykład 1: Perfekcyjna Pani Domu — Kasia (postać fikcyjna)
 
@@ -539,7 +541,7 @@ To jest, moim zdaniem, najważniejsze narzędzie w całej tej książce.
 
 ### Przykład ilustracyjny: Marta i Paweł (postacie fikcyjne)
 
-> ⚠️ Historia fikcyjna, stworzona na potrzeby e-booka. Liczby są ilustracją, nie pomiarem.
+> ⚠️ Historia fikcyjna. Marta i Paweł nie istnieją — to postacie napisane na potrzeby e-booka. Liczby są ilustracją, nie pomiarem.
 
 **Przed:** Marta planowała wszystkie posiłki, zakupy, wywiadówki i wizyty lekarskie. Paweł "pomagał" — wypakowywał zmywarkę, gdy poprosiła, robił zakupy z jej listą. Systemem nadal zarządzała Marta.
 
@@ -1096,5 +1098,7 @@ Uczciwość wobec czytelniczki wymaga powiedzenia, **które fragmenty tej ksią�
 
 **© 2026 | Prokrastynacja w Kobiecym Zaciszu**
 Wszystkie prawa zastrzeżone.
+
+*Wszystkie postacie występujące w tej publikacji są fikcyjne. Jakiekolwiek podobieństwo do osób rzeczywistych, żyjących lub zmarłych, jest niezamierzone i przypadkowe.*
 
 *Ten e-book ma charakter edukacyjny i nie stanowi porady medycznej, psychologicznej ani prawnej. Nie zastępuje konsultacji ze specjalistą, diagnozy ani leczenia. Autorka nie ponosi odpowiedzialności za decyzje zdrowotne podjęte wyłącznie na podstawie tej publikacji.*

@@ -72,12 +72,16 @@ Dodatkowo w R7 **obalono mit "21 dni na nawyk"** i podano medianę ~66 dni z bad
 
 ## Priorytet 4 (🔴): oznaczenie case studies jako fikcyjnych
 
-- **Punkt 3 sekcji otwierającej** e-book wymienia z imienia wszystkie bohaterki i stwierdza, że są fikcyjne, że nie są przypadkami klinicznymi i że podane liczby są ilustracją, nie pomiarem.
+**Status: potwierdzone przez autorkę.** Wszystkie historie w publikacji są fikcyjne — żadna nie opisuje rzeczywistej osoby. Oznaczenia w tekście są więc twierdzeniem, a nie założeniem redakcyjnym.
+
+- **Punkt 3 sekcji otwierającej** wymienia z imienia wszystkie postacie i stwierdza wprost, że **nie istnieją**: żadna historia nie jest relacją z pracy z konkretną osobą ani studium przypadku, a wszystkie dialogi, sytuacje i liczby są wymyślone.
 - Nagłówek "BAZA STUDIÓW PRZYPADKU (CASE STUDIES)" → **"PIĘĆ PRZYKŁADÓW ILUSTRACYJNYCH"**, ze zbiorczą ramką ostrzegawczą.
-- Każda historia ma w tytule dopisek **"(postać fikcyjna)"**, a każdy przykład śródtekstowy — **"Przykład ilustracyjny (historia fikcyjna)"**.
+- Każda historia ma w tytule dopisek **"(postać fikcyjna)"**, a każdy przykład śródtekstowy — **"Przykład ilustracyjny (historia fikcyjna)"**. Łącznie 15 takich oznaczeń: 6 w nagłówkach i 9 przy przykładach śródtekstowych.
 - "Punkt przełomowy" → **"Ilustracja efektu"**, żeby nie sugerować udokumentowanego rezultatu.
 - "Marta odzyskała 8 godzin tygodniowo" → "opisuje odzyskanie kilku godzin tygodniowo", z zastrzeżeniem, że to ilustracja przebiegu, nie dowód.
 - Historia Julii nie kończy się już diagnozą ADHD jako puentą; dodano wyjaśnienie, dlaczego taki wzorzec zachowań nie wskazuje na ADHD.
+- Na stronie redakcyjnej dodano **standardową klauzulę**: wszystkie postacie są fikcyjne, a podobieństwo do osób rzeczywistych jest niezamierzone i przypadkowe.
+- Poprawiono listę imion: usunięto Zofię (postać nie występuje już w tekście po redakcji Rozdziału 3), dopisano Pawła z Rozdziału 6.5.
 
 ---
 
@@ -145,9 +149,10 @@ Wynikają z punktów 3, 9 i 13 recenzji:
 - Ton i głos autorki.
 - Pięć profili i pięć historii ilustracyjnych (zmieniono ich status, nie treść).
 
-## Czego nie dało się zrobić bez decyzji autorki
+## Do zrobienia przed publikacją
 
-1. **Potwierdzenie, że historie są fikcyjne.** Cały tekst zakłada, że tak — recenzja formułowała to warunkowo ("jeżeli to fikcyjne scenariusze"). **Jeśli którakolwiek historia opisuje realną osobę, oznaczenie trzeba zmienić** na "historia prawdziwa, publikowana za zgodą, dane zmienione", a zgodę pozyskać na piśmie.
-2. **Dane autorki** — pola `[IMIĘ I NAZWISKO AUTORKI]`, adres strony, Instagram, e-mail i link do trackera pozostają jako placeholdery z oryginału.
-3. **Weryfikacja aktualności numerów kryzysowych i realiów NFZ** przed publikacją — dane zmieniają się w czasie.
-4. **Konsultacja Rozdziału 10 przez lekarza lub psychologa klinicznego** przed sprzedażą. Rozdział jest teraz znacznie ostrożniejszy, ale to nadal najbardziej wrażliwa część publikacji.
+1. **Dane autorki** — pola `[IMIĘ I NAZWISKO AUTORKI]`, adres strony, Instagram, e-mail i link do trackera pozostają jako placeholdery z oryginału.
+2. **Weryfikacja aktualności numerów kryzysowych i realiów NFZ** przed publikacją — dane zmieniają się w czasie.
+3. **Konsultacja Rozdziału 10 przez lekarza lub psychologa klinicznego** przed sprzedażą. Rozdział jest teraz znacznie ostrożniejszy, ale to nadal najbardziej wrażliwa część publikacji.
+
+**Zamknięte:** status historii jako fikcyjnych — potwierdzony przez autorkę, oznaczenia w tekście zaktualizowane.
