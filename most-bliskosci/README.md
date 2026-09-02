@@ -43,6 +43,28 @@ najpierw przewiduje się reakcję partnera, a dopiero potem sprawdza prawdziwą.
 Do tego przycisk **Kończymy na dziś** dostępny w każdej chwili: zamyka wieczór tym samym pytaniem
 co finał („co zabieramy ze sobą?”), zapisuje most w miejscu, w którym stanął, i pozwala wrócić.
 
+## Bezpieczeństwo i przeciwwskazania
+
+Gra jawnie mówi, dla kogo nie jest przeznaczona: dla par, w których jedna osoba boi się reakcji
+drugiej, albo w związku występuje przemoc, groźby lub kontrola. Ten komunikat jest na ekranie
+startowym (osobny blok, wizualnie odróżniony od ogólnej noty o charakterze gry) i w panelu zasad —
+nie jest to techniczny disclaimer, tylko realne ostrzeżenie kliniczne: szczera odpowiedź wymaga
+poczucia bezpieczeństwa, a bez niego mechanika gry (przewidywanie odpowiedzi partnera, odsłanianie
+lęków w Odwadze) może zostać użyta jako narzędzie kontroli zamiast bliskości.
+
+Numery wsparcia — Niebieska Linia 800 120 002 (przemoc domowa, całodobowo) i 116 123 (Telefon
+Zaufania dla Dorosłych w Kryzysie Emocjonalnym) — są klikalne (`tel:`) w trzech miejscach: nocie
+ostrzegawczej, panelu zasad i stopce widocznej na każdym ekranie gry.
+
+Karta akcji **Kradzież** (partner przejmuje cudzą kartę i odpowiada pierwszy) jest wykluczona
+z losowania przy kartach kategorii Odwaga — wymuszałaby odpowiedź na cudzych warunkach dokładnie
+tam, gdzie gra wcześniej ustawiła bramkę zgody. Pozostaje dostępna w pozostałych kategoriach.
+
+Każda przyznana Karta Przywileju (z trafienia w „Czy mnie znasz?" i z Walki o Przywilej) pokazuje
+się teraz z przyciskiem **„Nie pasuje — dobierzcie inną"** obok „Zatrzymajcie". To domyka regułę,
+którą panel zasad już obiecywał („jeśli karta nie pasuje, odrzućcie i dobierzcie inną"), a wcześniej
+nie była nigdzie zaimplementowana przy samym momencie przyznania nagrody.
+
 ## Talia TERAZ
 
 Dwanaście krótkich rytuałów regulujących, podzielonych na cztery grupy narastającej bliskości

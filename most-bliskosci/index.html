@@ -224,6 +224,9 @@ header .shell{display:flex;align-items:center;gap:16px;height:56px}
   padding:15px 18px;background:rgba(232,169,74,.05);display:flex;flex-direction:column;gap:7px}
 .note p{font-size:14px;color:var(--t1);line-height:1.6;max-width:68ch}
 .note em{font-family:var(--serif);font-style:italic;color:var(--t0)}
+.note.warn{border-left-color:var(--odwaga);background:rgba(196,85,58,.07)}
+.note.warn p strong{color:var(--t0)}
+.note a{color:var(--odwaga);text-decoration:underline;text-underline-offset:2px}
 .names{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .names input{background:rgba(21,48,57,.55);border:1px solid var(--line);border-radius:10px;
   padding:13px 15px;color:var(--t0);font-size:16px;font-family:var(--serif);width:100%;transition:var(--tr)}
@@ -249,6 +252,8 @@ header .shell{display:flex;align-items:center;gap:16px;height:56px}
 .rules section{display:flex;flex-direction:column;gap:7px}
 .rules h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
 .rules p,.rules li{font-size:14.5px;color:var(--t1);line-height:1.6}
+.rules a{color:var(--odwaga);text-decoration:underline;text-underline-offset:2px}
+.rules p strong{color:var(--t0)}
 .rules ul{padding-left:18px;display:flex;flex-direction:column;gap:5px}
 .rules .creed{font-family:var(--serif);font-size:20px;font-style:italic;color:var(--t0);
   border-left:2px solid var(--gold);padding-left:14px;line-height:1.4}
@@ -357,6 +362,14 @@ footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--t3);font
         <em>pas</em>, bez tłumaczenia. Jeśli rozmowa otworzy coś, co Was przerasta, przerwijcie grę
         i wróćcie do niej innym razem albo poszukajcie wsparcia u specjalisty.</p>
     </div>
+    <div class="note warn">
+      <span class="mono">Ta gra nie jest dla każdej pary</span>
+      <p><strong>Nie grajcie w to, jeśli boisz się reakcji partnera, jeśli w związku występuje przemoc,
+        groźby albo kontrola.</strong> Szczera odpowiedź wymaga realnego poczucia bezpieczeństwa — bez niego
+        ta gra może zostać wykorzystana przeciwko Tobie. Jeśli to Wasza sytuacja, potrzebujecie pomocy
+        specjalisty, nie karty do gry: <a href="tel:800120002">Niebieska Linia 800 120 002</a> (całodobowo,
+        bezpłatnie) albo <a href="tel:116123">Telefon Zaufania dla Dorosłych w Kryzysie Emocjonalnym 116 123</a>.</p>
+    </div>
 
     <div class="acts" style="justify-content:flex-start;max-width:none">
       <button class="btn gold" id="btnStart">Rozłóż karty</button>
@@ -401,6 +414,8 @@ footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--t3);font
 <footer class="shell">
   <p>Most Bliskości · gra dla par · zasada nadrzędna: <em style="font-family:var(--serif)">nie naprawiaj, najpierw poznaj</em></p>
   <p style="margin-top:7px">Gra nie zbiera żadnych danych — postęp zapisuje się wyłącznie w Twojej przeglądarce.</p>
+  <p style="margin-top:7px">Potrzebujesz pomocy teraz? <a href="tel:800120002" style="color:var(--odwaga)">Niebieska Linia 800 120 002</a>
+    (przemoc domowa) · <a href="tel:116123" style="color:var(--odwaga)">116 123</a> (kryzys emocjonalny) — całodobowo, bezpłatnie.</p>
 </footer>
 
 <!-- ══════════ ZASADY ══════════ -->
@@ -497,6 +512,11 @@ footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--t3);font
       <p>To gra towarzyska dla dorosłych, nie terapia ani narzędzie diagnostyczne. Nie służy do oceniania
         partnera ani do rozstrzygania sporów. Jeśli rozmowa otworzy coś, co Was przerasta — przerwijcie
         i wróćcie do niej innym razem albo poszukajcie wsparcia u specjalisty.</p>
+      <p><strong>Nie jest też dla każdej pary.</strong> Jeśli boisz się reakcji partnera, jeśli w związku
+        występuje przemoc, groźby albo kontrola — nie grajcie. Szczerość wymaga bezpieczeństwa; bez niego
+        gra może zostać użyta przeciwko Tobie. Potrzebna jest wtedy pomoc specjalisty:
+        <a href="tel:800120002">Niebieska Linia 800 120 002</a> (całodobowo, bezpłatnie) albo
+        <a href="tel:116123">116 123</a> — Telefon Zaufania dla Dorosłych w Kryzysie Emocjonalnym.</p>
     </section>
 
     <section>
@@ -953,9 +973,11 @@ function riskCategory(){
   });
   return pool.length ? rnd(pool) : 'zbliz';
 }
-function maybeAction(){
+function maybeAction(cat){
   if (Math.random() > MODES[S.mode].act) return null;
-  const pool = ACTIONS.filter(a => !a.pass);
+  /* Kradzież wymusza odpowiedź na cudzych warunkach — niedopuszczalne
+     w kategorii, w której właśnie ustaliliście bramkę zgody. */
+  const pool = ACTIONS.filter(a => !a.pass && !(a.steal && cat === 'odwaga'));
   return rnd(pool);
 }
 
@@ -1276,7 +1298,7 @@ function startCard(c){
     S.pend.know = true; S.pend.knowStep = 'predict';
   }
   S.odwagaStreak = (c.kind === 'q' && c.cat === 'odwaga') ? S.odwagaStreak + 1 : 0;
-  const a = maybeAction();
+  const a = maybeAction(c.kind === 'q' ? c.cat : null);
   if (a){
     if (a.know && !S.pend.know){ S.pend.know = true; S.pend.knowStep = 'predict'; }
     else if (!(a.steal && S.pend.know)) S.pend.action = a;
@@ -1304,14 +1326,12 @@ function knowStep(k){
   S.pend.knowHit = (k === 'hit');
   const stat = S.knowStat && S.knowStat[other(S.turn)];
   if (stat) stat[k === 'hit' ? 'h' : 'm']++;
+  render();
   if (k === 'hit'){
-    const p = drawPrivilege();
-    S.privs[other(S.turn)].push(p.n);
-    render();
-    openNote('Karta Przywileju dla ' + partnerName(), p.n + ' — ' + p.t,
-      'Nagroda nie jest karą dla przegranego. To przywilej dla zwycięzcy.');
-  } else {
-    render();
+    showPrivilegeAward(other(S.turn), drawPrivilege(), {
+      kicker: 'Czy mnie znasz? · trafione',
+      quiet: 'Nagroda nie jest karą dla przegranego. To przywilej dla zwycięzcy.'
+    });
   }
 }
 function passCard(){
@@ -1452,6 +1472,33 @@ function openTeraz(mandatory){
   };
   wire();
 }
+function showPrivilegeAward(winnerIdx, prize, opts){
+  opts = opts || {};
+  const render_award = p => `
+    <div class="kicker">${esc(opts.kicker || 'Karta Przywileju')} · ${esc(S.names[winnerIdx])}</div>
+    <h3>${esc(p.n)}</h3>
+    <p>${esc(p.t)}</p>
+    ${opts.quiet ? `<p class="quiet">${esc(opts.quiet)}</p>` : ''}
+    <div class="acts" style="justify-content:center">
+      <button class="btn" data-redraw="1">Nie pasuje — dobierzcie inną</button>
+      <button class="btn gold" data-keep="1">Zatrzymajcie</button>
+    </div>`;
+  let prizeIdx = S.privs[winnerIdx].length;
+  S.privs[winnerIdx].push(prize.n);
+  save();
+  const o = openOv(render_award(prize));
+  const wire = () => {
+    o.querySelector('[data-keep]').onclick = () => { closeOv(); render(); };
+    o.querySelector('[data-redraw]').onclick = () => {
+      prize = drawPrivilege();
+      S.privs[winnerIdx][prizeIdx] = prize.n;
+      save();
+      o.querySelector('.box').innerHTML = render_award(prize);
+      wire();
+    };
+  };
+  wire();
+}
 function openConsent(cat){
   const o = openOv(`
     <div class="kicker">Poziom Odwaga</div>
@@ -1480,16 +1527,10 @@ function openChallenge(){
 
   const step3 = won => {
     const winner = won ? di : other(di);
-    S.privs[winner].push(prize.n);
-    save();
-    const o = $('.ov');
-    o.querySelector('.box').innerHTML = `
-      <div class="kicker">Walka o przywilej</div>
-      <h3>${esc(S.names[winner])} zgarnia nagrodę</h3>
-      <p><strong style="color:var(--gold)">${esc(prize.n.toUpperCase())}</strong>\n${esc(prize.t)}</p>
-      <p class="quiet">${won ? '„Ciekawe, co właśnie wygrałem/am…”' : 'Nagroda przechodzi na partnera. Bez urazy.'}</p>
-      <button class="btn gold" data-close="render">Wracamy do gry</button>`;
-    o.querySelector('[data-close]').onclick = () => { closeOv(); render(); };
+    showPrivilegeAward(winner, prize, {
+      kicker: 'Walka o przywilej · wynik',
+      quiet: won ? '„Ciekawe, co właśnie wygrałem/am…”' : 'Nagroda przechodzi na partnera. Bez urazy.'
+    });
   };
   const step2 = () => {
     const o = $('.ov');
