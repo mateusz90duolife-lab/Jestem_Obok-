@@ -1,0 +1,2022 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prokrastynacja, która nie jest lenistwem — Czuły Balans | Laura</title>
+<meta name="description" content="Intymna neurobiologia i instrukcja obsługi przeciążonego umysłu. Kompletny przewodnik po prokrastynacji dla kobiet: mechanizm, diagnostyka, metoda CZUŁY START, 21 narzędzi i plan 21 dni.">
+<meta name="author" content="Laura · Czuły Balans">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="book">
+<meta property="og:title" content="Prokrastynacja, która nie jest lenistwem">
+<meta property="og:description" content="Instrukcja obsługi przeciążonego umysłu. Wydanie rozszerzone.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════
+   CZUŁY BALANS — SYSTEM PROJEKTOWY EBOOKA
+   ══════════════════════════════════════════════════════ */
+:root{
+  --bg-dark:#0f0f10;
+  --bg-cream:#FAF6EF;
+  --bg-cream-mid:#F2EBE0;
+  --bg-cream-deep:#E8DDD0;
+  --paper:#FFFDF9;
+  --text-dark:#2A1F14;
+  --text-body:#3B2E22;
+  --text-muted:#7A6555;
+  --text-light:#f2efe9;
+  --accent-red:#8a4f4f;
+  --accent-red-hover:#9e5a5a;
+  --accent-sage:#5C7A5A;
+  --accent-sage-pale:#DCE9DB;
+  --accent-terracotta:#B5613A;
+  --accent-gold:#C4953A;
+  --accent-gold-pale:#F4E9CE;
+  --border-color:#D8CEBC;
+  --border-soft:#E6DCCC;
+  --line-light:rgba(242,239,233,.12);
+  --serif:'Lora',Georgia,'Times New Roman',serif;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --shadow-soft:0 2px 24px rgba(42,31,20,.06);
+  --shadow-card:0 4px 32px rgba(42,31,20,.09);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg-cream);
+  color:var(--text-body);
+  font-family:var(--serif);
+  font-size:17px;
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  display:flex;
+  min-height:100vh;
+}
+/* szum papieru */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:900;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+::selection{background:var(--accent-gold-pale);color:var(--text-dark)}
+
+/* ─── PASEK POSTĘPU ─── */
+.progress-container{position:fixed;top:0;left:0;right:0;height:3px;background:transparent;z-index:1000}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent-gold),var(--accent-terracotta));transition:width .12s linear}
+
+/* ─── NAWIGACJA BOCZNA ─── */
+.sidebar-nav{
+  width:300px;flex-shrink:0;background:var(--bg-dark);color:var(--text-light);
+  position:sticky;top:0;height:100vh;display:flex;flex-direction:column;
+  padding:38px 0 20px;z-index:100;
+}
+.sidebar-brand-box{padding:0 32px 26px;border-bottom:1px solid var(--line-light);margin-bottom:20px}
+.sidebar-brand{font-family:var(--display);font-size:29px;font-weight:400;letter-spacing:.5px;line-height:1.1}
+.sidebar-brand em{font-style:italic;color:var(--accent-gold)}
+.sidebar-sub{font-family:var(--sans);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,239,233,.45);margin-top:9px}
+.sidebar-menu{list-style:none;overflow-y:auto;flex:1;padding:0 18px}
+.sidebar-menu::-webkit-scrollbar{width:3px}
+.sidebar-menu::-webkit-scrollbar-thumb{background:rgba(242,239,233,.18);border-radius:9px}
+.sidebar-menu li{margin-bottom:1px}
+.sidebar-menu .menu-label{
+  font-family:var(--sans);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(242,239,233,.32);padding:20px 14px 8px;display:block;
+}
+.sidebar-menu a{
+  display:flex;align-items:baseline;gap:10px;padding:9px 14px;border-radius:7px;
+  color:rgba(242,239,233,.62);text-decoration:none;font-family:var(--sans);
+  font-size:13.5px;line-height:1.4;transition:background .2s,color .2s;
+}
+.sidebar-menu a:hover{background:rgba(242,239,233,.06);color:var(--text-light)}
+.sidebar-menu a.active{background:rgba(196,149,58,.14);color:#fff}
+.sidebar-menu a.active .menu-num{color:var(--accent-gold)}
+.menu-num{font-size:10px;letter-spacing:.05em;color:rgba(242,239,233,.3);min-width:20px;flex-shrink:0}
+.sidebar-footer{padding:18px 32px 0;border-top:1px solid var(--line-light);font-family:var(--sans);font-size:10.5px;line-height:1.7;color:rgba(242,239,233,.36)}
+
+/* ─── NAGŁÓWEK MOBILNY ─── */
+.mobile-header{display:none;position:sticky;top:0;z-index:200;background:var(--bg-dark);color:var(--text-light);padding:13px 18px;align-items:center;justify-content:space-between}
+.mobile-logo{font-family:var(--display);font-size:20px}
+.mobile-menu-btn{background:none;border:1px solid rgba(242,239,233,.3);color:var(--text-light);font-family:var(--sans);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border-radius:6px;cursor:pointer}
+.mobile-drawer{display:none;position:fixed;inset:0;background:rgba(15,15,16,.6);z-index:500;backdrop-filter:blur(3px)}
+.mobile-drawer.open{display:block}
+.mobile-drawer-content{position:absolute;top:0;left:0;bottom:0;width:min(320px,86vw);background:var(--bg-dark);padding:60px 0 24px;overflow-y:auto}
+.mobile-drawer-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--text-light);font-size:30px;line-height:1;cursor:pointer}
+
+/* ─── TREŚĆ GŁÓWNA ─── */
+.main-content{flex:1;min-width:0}
+.book-section{
+  max-width:720px;margin:0 auto;padding:104px 40px;
+  border-bottom:1px solid var(--border-soft);
+}
+.book-section:last-child{border-bottom:none}
+.section-eyebrow{
+  display:inline-block;font-family:var(--sans);font-size:10.5px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--accent-red);margin-bottom:22px;
+}
+.section-title{
+  font-family:var(--display);font-size:clamp(34px,5vw,50px);font-weight:400;
+  line-height:1.12;color:var(--text-dark);letter-spacing:-.5px;margin-bottom:34px;
+}
+.section-title em{font-style:italic;color:var(--accent-red)}
+.chapter-num{
+  font-family:var(--display);font-size:78px;font-weight:300;line-height:1;
+  color:var(--bg-cream-deep);margin-bottom:-14px;letter-spacing:-2px;
+}
+.chapter-title{
+  font-family:var(--display);font-size:clamp(32px,4.6vw,46px);font-weight:400;
+  line-height:1.14;color:var(--text-dark);letter-spacing:-.4px;margin-bottom:34px;
+}
+.chapter-title em{font-style:italic;color:var(--accent-red)}
+.section-subtitle{
+  font-family:var(--display);font-size:27px;font-weight:600;color:var(--text-dark);
+  margin:48px 0 18px;line-height:1.28;
+}
+.section-subtitle::before{
+  content:'';display:block;width:38px;height:2px;background:var(--accent-gold);margin-bottom:16px;
+}
+h4.mini-title{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-red);margin:32px 0 12px}
+p{margin-bottom:20px}
+p em{font-style:italic}
+strong{font-weight:600;color:var(--text-dark)}
+a{color:var(--accent-red)}
+.lead{font-size:19.5px;line-height:1.75;color:var(--text-dark)}
+ul.book-list,ol.book-list{margin:0 0 22px 22px}
+ul.book-list li,ol.book-list li{margin-bottom:11px;padding-left:6px}
+ul.book-list li::marker{color:var(--accent-gold)}
+ol.book-list li::marker{color:var(--accent-red);font-family:var(--sans);font-size:14px}
+hr.rule{border:none;height:1px;background:var(--border-color);margin:44px auto;width:120px}
+.dropcap::first-letter{
+  font-family:var(--display);float:left;font-size:68px;line-height:.82;
+  padding:6px 10px 0 0;color:var(--accent-red);font-weight:400;
+}
+
+/* ─── OKŁADKA ─── */
+.book-cover{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  background:var(--bg-dark);color:var(--text-light);padding:80px 60px;position:relative;overflow:hidden;
+}
+.cover-decor{
+  position:absolute;top:50%;right:-180px;width:520px;height:520px;transform:translateY(-50%);
+  border-radius:50%;background:radial-gradient(circle,rgba(196,149,58,.16),transparent 68%);
+}
+.cover-decor-2{
+  position:absolute;bottom:-120px;left:-100px;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(138,79,79,.18),transparent 70%);
+}
+.cover-inner{position:relative;z-index:2;max-width:660px;margin:0 auto;width:100%}
+.cover-eyebrow{
+  font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--accent-gold);margin-bottom:32px;
+}
+.cover-title{
+  font-family:var(--display);font-size:clamp(48px,8.5vw,86px);font-weight:300;
+  line-height:1.02;letter-spacing:-1.5px;margin-bottom:34px;
+}
+.cover-title em{font-style:italic;color:var(--accent-gold)}
+.cover-desc{
+  font-size:19px;line-height:1.72;color:rgba(242,239,233,.72);max-width:480px;margin-bottom:44px;
+}
+.cover-meta{
+  font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(242,239,233,.42);padding-top:26px;border-top:1px solid var(--line-light);
+}
+.cover-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+.cover-badge{
+  font-family:var(--sans);font-size:11px;letter-spacing:.06em;padding:7px 14px;
+  border:1px solid rgba(242,239,233,.22);border-radius:100px;color:rgba(242,239,233,.7);
+}
+
+/* ─── KOMPONENTY ─── */
+.inline-hook{
+  display:block;font-family:var(--display);font-size:25px;font-style:italic;
+  line-height:1.42;color:var(--accent-red);border-left:2px solid var(--accent-gold);
+  padding:6px 0 6px 26px;margin:38px 0;
+}
+.story-block{
+  background:var(--bg-cream-mid);border-radius:3px;padding:30px 34px;margin:36px 0;
+  border-left:3px solid var(--accent-terracotta);
+}
+.story-block p{font-style:italic;font-size:17.5px;color:var(--text-dark);margin-bottom:14px}
+.story-name{font-family:var(--sans);font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--text-muted)}
+.clinical-note{
+  display:flex;gap:16px;background:#FDF7F7;border:1px solid #EBD9D9;border-radius:4px;
+  padding:24px 26px;margin:36px 0;font-size:15.5px;line-height:1.7;color:var(--text-muted);
+}
+.clinical-note-icon{flex-shrink:0;color:var(--accent-red);margin-top:3px}
+.clinical-note-title{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-red);margin-bottom:8px}
+.key-box{
+  background:var(--paper);border:1px solid var(--border-color);border-radius:4px;
+  padding:28px 32px;margin:36px 0;box-shadow:var(--shadow-soft);
+}
+.key-box-title{
+  font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent-sage);margin-bottom:16px;
+  display:flex;align-items:center;gap:9px;
+}
+.key-box-title::before{content:'';width:22px;height:1px;background:var(--accent-sage)}
+.key-box ul{margin:0 0 0 20px}
+.key-box li{margin-bottom:10px}
+.key-box li::marker{color:var(--accent-sage)}
+.key-box p:last-child,.key-box ul:last-child{margin-bottom:0}
+.exercise-box{
+  background:linear-gradient(180deg,#FBF6EC,#F7F0E2);border:1px solid var(--accent-gold-pale);
+  border-radius:4px;padding:30px 34px;margin:38px 0;
+}
+.exercise-label{
+  font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--accent-gold);margin-bottom:6px;
+}
+.exercise-title{font-family:var(--display);font-size:25px;font-weight:600;color:var(--text-dark);margin-bottom:8px;line-height:1.25}
+.exercise-meta{font-family:var(--sans);font-size:12px;color:var(--text-muted);margin-bottom:18px;letter-spacing:.04em}
+.exercise-box ol{margin:0 0 0 20px}
+.exercise-box li{margin-bottom:10px}
+.exercise-box li::marker{color:var(--accent-gold);font-weight:700}
+.evidence-tag{
+  display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:100px;
+  margin:0 0 14px;font-weight:500;
+}
+.evidence-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor}
+.ev-strong{background:var(--accent-sage-pale);color:#3F5C3D}
+.ev-mid{background:var(--accent-gold-pale);color:#8A6620}
+.ev-practice{background:#EFE6E6;color:var(--accent-red)}
+
+/* ─── PĘTLA ─── */
+.loop-steps{margin:34px 0;position:relative}
+.loop-step-item{display:flex;gap:20px;padding-bottom:26px;position:relative}
+.loop-step-item:not(:last-child)::before{
+  content:'';position:absolute;left:17px;top:38px;bottom:0;width:1px;background:var(--border-color);
+}
+.loop-node{
+  flex-shrink:0;width:35px;height:35px;border-radius:50%;background:var(--paper);
+  border:1px solid var(--accent-red);color:var(--accent-red);display:flex;
+  align-items:center;justify-content:center;font-family:var(--sans);font-size:14px;font-weight:700;z-index:1;
+}
+.loop-step-title{font-family:var(--sans);font-size:15px;font-weight:700;color:var(--text-dark);margin-bottom:4px}
+.loop-step-desc{font-size:15.5px;color:var(--text-muted);line-height:1.65}
+.loop-step-text{padding-top:4px}
+
+/* ─── TABELE ─── */
+.diag-table,.data-table{
+  width:100%;border-collapse:collapse;margin:30px 0;font-family:var(--sans);font-size:14px;
+  background:var(--paper);box-shadow:var(--shadow-soft);
+}
+.diag-table th,.data-table th{
+  background:var(--bg-cream-deep);color:var(--text-dark);font-size:11.5px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;padding:14px 12px;text-align:left;
+  border-bottom:1px solid var(--border-color);
+}
+.diag-table td,.data-table td{padding:13px 12px;border-bottom:1px solid var(--border-soft);vertical-align:top;line-height:1.55}
+.diag-table tbody tr:last-child td,.data-table tbody tr:last-child td{border-bottom:none}
+.diag-table td:not(:first-child){text-align:center}
+.diag-check{color:var(--accent-sage);font-size:15px}
+.diag-partial{color:var(--accent-gold);font-size:15px}
+.diag-no{color:var(--border-color);font-size:15px}
+.table-scroll{overflow-x:auto;margin:30px 0}
+.table-scroll table{margin:0;min-width:520px}
+
+/* ─── QUIZ ─── */
+.quiz-section{
+  background:var(--bg-dark);color:var(--text-light);border-radius:6px;
+  padding:44px 40px;margin:44px 0;
+}
+.quiz-section h3{font-family:var(--display);font-size:29px;font-weight:500;margin-bottom:6px;color:#fff}
+.quiz-intro{font-size:14.5px;color:rgba(242,239,233,.6);margin-bottom:28px;line-height:1.65}
+.quiz-group{margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid var(--line-light)}
+.quiz-group:last-of-type{border-bottom:none}
+.quiz-group-title{
+  font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--accent-gold);margin-bottom:16px;
+}
+.quiz-question-row{display:flex;justify-content:space-between;align-items:flex-start;gap:22px;margin-bottom:16px;flex-wrap:wrap}
+.quiz-question-text{flex:1;min-width:220px;font-size:15.5px;line-height:1.6;color:rgba(242,239,233,.88)}
+.quiz-options{display:flex;gap:5px;flex-shrink:0}
+.quiz-options label{
+  font-family:var(--sans);font-size:13px;cursor:pointer;padding:6px 12px;border-radius:5px;
+  border:1px solid rgba(242,239,233,.18);color:rgba(242,239,233,.6);transition:all .18s;
+  display:flex;align-items:center;gap:5px;
+}
+.quiz-options label:hover{border-color:var(--accent-gold);color:#fff}
+.quiz-options input{accent-color:var(--accent-gold);cursor:pointer}
+.quiz-options input:checked+span{color:#fff;font-weight:700}
+.quiz-submit-btn{
+  width:100%;background:var(--accent-gold);color:#1a1a1a;border:none;border-radius:5px;
+  font-family:var(--sans);font-size:14px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:17px;cursor:pointer;transition:background .2s;margin-top:10px;
+}
+.quiz-submit-btn:hover{background:#D9A94A}
+.quiz-result-card{
+  display:none;margin-top:26px;background:rgba(242,239,233,.06);border:1px solid rgba(196,149,58,.35);
+  border-radius:5px;padding:28px 30px;
+}
+.quiz-result-card.show{display:block;animation:fadeUp .45s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.quiz-result-title{font-family:var(--display);font-size:26px;color:var(--accent-gold);margin-bottom:12px;font-weight:600}
+.quiz-result-desc{font-size:16px;line-height:1.75;color:rgba(242,239,233,.85);margin-bottom:14px}
+.quiz-result-rx{font-family:var(--sans);font-size:13.5px;line-height:1.7;color:rgba(242,239,233,.7);padding-top:14px;border-top:1px solid var(--line-light)}
+.quiz-scores{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.quiz-score-chip{font-family:var(--sans);font-size:11.5px;letter-spacing:.06em;padding:5px 11px;border-radius:100px;background:rgba(242,239,233,.08);color:rgba(242,239,233,.6)}
+.quiz-score-chip.top{background:rgba(196,149,58,.2);color:var(--accent-gold)}
+
+/* ─── FAZY CYKLU ─── */
+.phase-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px;margin:34px 0}
+.phase-card{background:var(--paper);border:1px solid var(--border-soft);border-radius:4px;padding:22px 22px 24px;border-top:3px solid}
+.phase-card.f{border-top-color:var(--accent-sage)}
+.phase-card.o{border-top-color:var(--accent-gold)}
+.phase-card.l{border-top-color:var(--accent-terracotta)}
+.phase-card.m{border-top-color:var(--accent-red)}
+.phase-name{font-family:var(--display);font-size:22px;font-weight:600;color:var(--text-dark);margin-bottom:3px}
+.phase-days{font-family:var(--sans);font-size:11.5px;letter-spacing:.08em;color:var(--text-muted);margin-bottom:12px}
+.phase-energy{font-family:var(--sans);font-size:12.5px;font-weight:700;color:var(--accent-red);margin-bottom:10px}
+.phase-tasks{font-size:15px;line-height:1.6;color:var(--text-muted)}
+
+/* ─── KARTY NARZĘDZI ─── */
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:32px 0}
+.tool-card{background:var(--paper);border:1px solid var(--border-soft);border-radius:4px;padding:22px 24px;position:relative}
+.tool-num{font-family:var(--display);font-size:15px;color:var(--accent-gold);font-weight:700;margin-bottom:6px}
+.tool-name{font-family:var(--sans);font-size:15px;font-weight:700;color:var(--text-dark);margin-bottom:8px;line-height:1.35}
+.tool-desc{font-size:14.8px;line-height:1.62;color:var(--text-muted)}
+.tool-when{font-family:var(--sans);font-size:11.5px;letter-spacing:.05em;color:var(--accent-red);margin-top:11px;padding-top:10px;border-top:1px dashed var(--border-color)}
+
+/* ─── PLAN 21 DNI ─── */
+.day-week{margin:30px 0}
+.week-head{
+  font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent-red);padding-bottom:9px;border-bottom:1px solid var(--border-color);margin-bottom:4px;
+}
+.day-row{display:flex;gap:18px;padding:13px 0;border-bottom:1px solid var(--border-soft);align-items:baseline}
+.day-num{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--accent-gold);min-width:52px;flex-shrink:0}
+.day-task{font-size:15.8px;line-height:1.62}
+.day-task b{color:var(--text-dark);font-weight:600}
+
+/* ─── KARTA AUTORKI ─── */
+.author-card{display:flex;gap:20px;background:var(--bg-cream-mid);border-radius:4px;padding:28px 30px;margin:38px 0}
+.author-avatar{
+  flex-shrink:0;width:56px;height:56px;border-radius:50%;background:var(--accent-red);
+  color:var(--bg-cream);display:flex;align-items:center;justify-content:center;
+}
+.author-name{font-family:var(--display);font-size:24px;font-weight:600;color:var(--text-dark);line-height:1.2}
+.author-role{font-family:var(--sans);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin:4px 0 12px}
+.author-bio{font-size:15.5px;line-height:1.72;color:var(--text-muted);margin-bottom:14px}
+.author-social-links{display:flex;flex-wrap:wrap;gap:16px}
+.author-link{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:13px;color:var(--accent-red);text-decoration:none}
+.author-link:hover{text-decoration:underline}
+
+/* ─── KARTY PRACY ─── */
+.worksheet{
+  background:var(--paper);border:1px solid var(--border-color);border-radius:4px;
+  padding:34px 36px;margin:34px 0;box-shadow:var(--shadow-card);
+}
+.worksheet-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-bottom:16px;border-bottom:2px solid var(--text-dark);margin-bottom:22px;flex-wrap:wrap}
+.worksheet-title{font-family:var(--display);font-size:26px;font-weight:600;color:var(--text-dark);line-height:1.2}
+.worksheet-tag{font-family:var(--sans);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted)}
+.field-line{border-bottom:1px solid var(--border-color);height:32px;margin-bottom:14px}
+.field-label{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-red);margin-bottom:8px;display:block}
+.checkbox-row{display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid var(--border-soft);font-size:15.5px}
+.checkbox-box{width:16px;height:16px;border:1.5px solid var(--text-muted);border-radius:2px;flex-shrink:0}
+.tracker-grid{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:12px;margin-top:8px}
+.tracker-grid th{background:var(--bg-cream-deep);padding:8px 4px;font-size:10.5px;letter-spacing:.06em;border:1px solid var(--border-color)}
+.tracker-grid td{border:1px solid var(--border-soft);height:30px;padding:4px 6px;text-align:left}
+.tracker-grid td:first-child{text-align:left;font-size:12.5px;width:40%}
+
+/* ─── FAQ ─── */
+.faq-item{border-bottom:1px solid var(--border-soft);padding:20px 0}
+.faq-q{font-family:var(--display);font-size:21px;font-weight:600;color:var(--text-dark);margin-bottom:9px;line-height:1.35}
+.faq-a{font-size:16px;line-height:1.75;color:var(--text-muted)}
+
+/* ─── BIBLIOGRAFIA ─── */
+.ref-list{list-style:none;margin:24px 0}
+.ref-list li{font-size:14.8px;line-height:1.65;color:var(--text-muted);padding:12px 0 12px 24px;border-bottom:1px solid var(--border-soft);position:relative}
+.ref-list li::before{content:'▸';position:absolute;left:0;color:var(--accent-gold)}
+.ref-list b{color:var(--text-dark)}
+
+/* ─── SPIS TREŚCI ─── */
+.toc-list{list-style:none;margin:28px 0}
+.toc-part{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-red);margin:30px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--border-color)}
+.toc-list li a{
+  display:flex;align-items:baseline;gap:12px;padding:11px 0;text-decoration:none;
+  color:var(--text-body);border-bottom:1px solid var(--border-soft);transition:color .18s;
+}
+.toc-list li a:hover{color:var(--accent-red)}
+.toc-num{font-family:var(--sans);font-size:11.5px;letter-spacing:.08em;color:var(--accent-gold);min-width:32px}
+.toc-name{flex:1;font-size:16.5px;line-height:1.4}
+.toc-name small{display:block;font-family:var(--sans);font-size:12.5px;color:var(--text-muted);margin-top:3px;line-height:1.5}
+
+/* ─── STRONA PRAW AUTORSKICH ─── */
+.colophon{font-family:var(--sans);font-size:13.5px;line-height:1.9;color:var(--text-muted)}
+.colophon dt{font-weight:700;color:var(--text-dark);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-top:20px}
+.colophon dd{margin-bottom:4px}
+
+/* ─── PRZYCISK POWRÓT ─── */
+.to-top{
+  position:fixed;right:26px;bottom:26px;width:44px;height:44px;border-radius:50%;
+  background:var(--bg-dark);color:var(--text-light);border:none;cursor:pointer;
+  display:none;align-items:center;justify-content:center;z-index:400;box-shadow:var(--shadow-card);
+}
+.to-top.show{display:flex}
+
+/* ─── RESPONSYWNOŚĆ ─── */
+@media (max-width:1020px){
+  body{display:block}
+  .sidebar-nav{display:none}
+  .mobile-header{display:flex}
+  .book-section{padding:64px 24px}
+  .book-cover{padding:72px 26px;min-height:auto}
+  .quiz-section{padding:32px 22px}
+  .worksheet{padding:26px 22px}
+  .author-card{flex-direction:column;gap:14px}
+  .quiz-question-row{flex-direction:column;gap:10px}
+}
+
+/* ─── DRUK / PDF ─── */
+@media print{
+  @page{size:A4;margin:20mm 18mm 22mm}
+  body{display:block;background:#fff;font-size:11pt;line-height:1.62}
+  body::before,.progress-container,.sidebar-nav,.mobile-header,.mobile-drawer,.to-top,.quiz-submit-btn,.no-print{display:none!important}
+  .main-content{max-width:none}
+  .book-section{max-width:none;padding:0 0 14mm;border-bottom:none;break-after:page;page-break-after:always}
+  .book-section:last-child{break-after:auto;page-break-after:auto}
+  .book-cover{min-height:auto;padding:40mm 0;background:#0f0f10!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;break-after:page}
+  .quiz-section,.story-block,.key-box,.exercise-box,.clinical-note,.worksheet,.tool-card,.phase-card,.diag-table,.data-table{
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;break-inside:avoid;page-break-inside:avoid;
+  }
+  .loop-step-item,.faq-item,.day-row,.author-card{break-inside:avoid;page-break-inside:avoid}
+  .section-title,.chapter-title,.section-subtitle,.exercise-title,.worksheet-title{break-after:avoid;page-break-after:avoid}
+  h3,h4{break-after:avoid}
+  .print-only{display:block!important}
+  a{color:var(--text-dark);text-decoration:none}
+  .quiz-options label{border-color:#bbb;color:#333}
+  .quiz-section{background:#1a1a1c!important}
+}
+.print-only{display:none}
+</style>
+</head>
+<body>
+
+<div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+
+<header class="mobile-header">
+  <div class="mobile-logo">Czuły Balans</div>
+  <button class="mobile-menu-btn" onclick="toggleDrawer(true)">Spis treści</button>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer" onclick="toggleDrawer(false)">
+  <div class="mobile-drawer-content" onclick="event.stopPropagation()">
+    <button class="mobile-drawer-close" onclick="toggleDrawer(false)">&times;</button>
+    <ul class="sidebar-menu" id="mobileMenu"></ul>
+  </div>
+</div>
+
+<nav class="sidebar-nav">
+  <div class="sidebar-brand-box">
+    <div class="sidebar-brand">Czuły Bal<em>a</em>ns</div>
+    <div class="sidebar-sub">Ebook &middot; Laura</div>
+  </div>
+  <ul class="sidebar-menu" id="desktopMenu"></ul>
+  <div class="sidebar-footer">
+    &copy; 2026 Czuły Balans.<br>Wszelkie prawa zastrzeżone.<br>Egzemplarz do użytku osobistego.
+  </div>
+</nav>
+
+<main class="main-content">
+
+<!-- ══════════ OKŁADKA ══════════ -->
+<section id="okladka" class="book-cover">
+  <div class="cover-decor"></div>
+  <div class="cover-decor-2"></div>
+  <div class="cover-inner">
+    <div class="cover-eyebrow">Wydanie rozszerzone &middot; 2026</div>
+    <h1 class="cover-title">Prokrast<em>y</em>nacja,<br>która nie jest<br>lenistwem</h1>
+    <p class="cover-desc">Intymna neurobiologia i instrukcja obsługi przeciążonego umysłu. Dla każdego, kto utknął i chce czule zarządzać swoją energią.</p>
+    <div class="cover-badges">
+      <span class="cover-badge">10 rozdziałów</span>
+      <span class="cover-badge">Metoda CZUŁY START</span>
+      <span class="cover-badge">21 narzędzi</span>
+      <span class="cover-badge">Plan 21 dni</span>
+      <span class="cover-badge">7 kart pracy</span>
+    </div>
+    <div class="cover-meta">Laura &middot; Czuły Balans Masterclass</div>
+  </div>
+</section>
+
+<!-- ══════════ STRONA REDAKCYJNA ══════════ -->
+<section id="metryka" class="book-section">
+  <span class="section-eyebrow">Strona redakcyjna</span>
+  <h2 class="section-title">Prokrastynacja,<br>która nie jest lenistwem</h2>
+  <p class="lead">Instrukcja obsługi przeciążonego umysłu.<br>Wydanie rozszerzone, 2026.</p>
+
+  <dl class="colophon">
+    <dt>Autorka</dt>
+    <dd>Laura &middot; Czuły Balans</dd>
+    <dt>Wydanie</dt>
+    <dd>Pierwsze rozszerzone, 2026</dd>
+    <dt>Kontakt</dt>
+    <dd><a href="mailto:laura@prokrastynacja.pl">laura@prokrastynacja.pl</a></dd>
+    <dd><a href="https://instagram.com/laura.prokrastynacja" target="_blank" rel="noopener">@laura.prokrastynacja</a></dd>
+    <dt>Licencja</dt>
+    <dd>Egzemplarz przeznaczony wyłącznie do użytku osobistego nabywcy. Kopiowanie, odsprzedaż, publiczne udostępnianie oraz wykorzystanie fragmentów w materiałach szkoleniowych bez pisemnej zgody autorki są zabronione.</dd>
+    <dt>Prawa autorskie</dt>
+    <dd>&copy; 2026 Czuły Balans. Wszelkie prawa zastrzeżone.</dd>
+  </dl>
+
+  <div class="clinical-note">
+    <div class="clinical-note-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+    </div>
+    <div>
+      <div class="clinical-note-title">Zastrzeżenie</div>
+      Ten ebook ma charakter edukacyjny i rozwojowy. Nie zastępuje psychoterapii, diagnozy ani leczenia. Nie jest poradą medyczną. Jeśli objawy, które tu opisuję, towarzyszą Ci od dzieciństwa albo znacząco utrudniają codzienne funkcjonowanie, skonsultuj się z psychologiem, psychoterapeutą lub psychiatrą. Autorka nie ponosi odpowiedzialności za decyzje podjęte na podstawie tej lektury.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SPIS TREŚCI ══════════ -->
+<section id="spis-tresci" class="book-section">
+  <span class="section-eyebrow">Nawigacja</span>
+  <h2 class="section-title">Spis treści</h2>
+  <p>Ta książka ma trzy warstwy: <strong>zrozumienie</strong> (dlaczego tak się dzieje), <strong>diagnozę</strong> (co dokładnie dzieje się u Ciebie) i <strong>działanie</strong> (co z tym zrobić od jutra rana). Możesz czytać po kolei albo wejść od razu w część, której najbardziej teraz potrzebujesz.</p>
+
+  <div class="toc-part">Część I &middot; Zrozumienie</div>
+  <ul class="toc-list">
+    <li><a href="#wprowadzenie"><span class="toc-num">—</span><span class="toc-name">Wprowadzenie: scena z kuchni<small>Dlaczego „co robiłaś cały dzień?" to najgorsze pytanie świata</small></span></a></li>
+    <li><a href="#jak-czytac"><span class="toc-num">—</span><span class="toc-name">Jak korzystać z tego ebooka<small>Zasada 20/80 i teoria obciążenia poznawczego</small></span></a></li>
+    <li><a href="#to-nie-lenistwo"><span class="toc-num">I</span><span class="toc-name">To nie lenistwo — Twój mózg próbuje Cię ratować<small>Strażak, Menedżerka i pętla prokrastynacji</small></span></a></li>
+    <li><a href="#diagnostyka"><span class="toc-num">II</span><span class="toc-name">Poznaj swój wzorzec oporu<small>Tabela różnicowa i test 5 profili</small></span></a></li>
+  </ul>
+
+  <div class="toc-part">Część II &middot; Cztery źródła oporu</div>
+  <ul class="toc-list">
+    <li><a href="#mental-load"><span class="toc-num">III</span><span class="toc-name">„Dlaczego znowu tego nie zrobiłaś?"<small>Mental Load, zmęczenie decyzyjne i szum w głowie</small></span></a></li>
+    <li><a href="#perfekcjonizm"><span class="toc-num">IV</span><span class="toc-name">Perfekcjonizm, który paraliżuje<small>Idealnie albo wcale. Wewnętrzny Krytyk w ujęciu IFS</small></span></a></li>
+    <li><a href="#cialo"><span class="toc-num">V</span><span class="toc-name">Ciało też odkłada<small>Sen, glukoza, ruch i falowanie energii w cyklu</small></span></a></li>
+    <li><a href="#dopamina"><span class="toc-num">VI</span><span class="toc-name">Dopamina i cyfrowe znieczulenie<small>Dlaczego telefon wygrywa z Twoim życiem</small></span></a></li>
+  </ul>
+
+  <div class="toc-part">Część III &middot; Działanie</div>
+  <ul class="toc-list">
+    <li><a href="#czuly-start"><span class="toc-num">VII</span><span class="toc-name">Metoda CZUŁY START<small>Siedem kroków od paraliżu do pierwszego ruchu</small></span></a></li>
+    <li><a href="#narzedziownik"><span class="toc-num">VIII</span><span class="toc-name">Narzędziownik: 21 technik<small>Dobrane do profilu oporu, z instrukcją użycia</small></span></a></li>
+    <li><a href="#plan-21"><span class="toc-num">IX</span><span class="toc-name">Plan 21 dni<small>Konkretne zadanie na każdy dzień, maksymalnie 15 minut</small></span></a></li>
+    <li><a href="#nawrot"><span class="toc-num">X</span><span class="toc-name">Kryzys i nawrót — protokół powrotu<small>Co robić, gdy wypadniesz z rytmu (bo wypadniesz)</small></span></a></li>
+    <li><a href="#rozmowy"><span class="toc-num">XI</span><span class="toc-name">Rozmowy z otoczeniem<small>Gotowe skrypty: partner, szef, dzieci, rodzice</small></span></a></li>
+    <li><a href="#zakonczenie"><span class="toc-num">—</span><span class="toc-name">Zakończenie: list do Ciebie<small>Ostatnie zdanie, które chcę, żebyś zapamiętała</small></span></a></li>
+  </ul>
+
+  <div class="toc-part">Dodatki</div>
+  <ul class="toc-list">
+    <li><a href="#karty-pracy"><span class="toc-num">A</span><span class="toc-name">Karty pracy do wydruku<small>7 arkuszy: audyt energii, rozbicie zadania, tracker</small></span></a></li>
+    <li><a href="#faq"><span class="toc-num">B</span><span class="toc-name">Najczęstsze pytania<small>12 pytań, które dostaję najczęściej</small></span></a></li>
+    <li><a href="#bibliografia"><span class="toc-num">C</span><span class="toc-name">Bibliografia i poziomy dowodów<small>Skąd to wiem i co jest tylko praktyką</small></span></a></li>
+  </ul>
+</section>
+
+<!-- ══════════ WPROWADZENIE ══════════ -->
+<section id="wprowadzenie" class="book-section">
+  <span class="section-eyebrow">Wprowadzenie</span>
+  <h2 class="section-title">Scena z kuchni,<br>której nigdy nie zapomnę</h2>
+
+  <p class="dropcap">Pamiętam dokładnie ten dzień.</p>
+  <p>Siedziałam na podłodze w kuchni. Pranie od wczoraj leżało w bębnie. Na stole były trzy nieopłacone rachunki. Dziecko spało. Miałam godzinę dla siebie — może więcej. I nie zrobiłam nic. Dosłownie nic. Patrzyłam w ścianę i czułam, jak ogarnia mnie coś, co trudno nawet nazwać. Nie lenistwo. Coś gęstszego. Coś, co trzyma za ramiona i mówi: <em>nie ma sensu nawet zaczynać</em>.</p>
+  <p>Wieczorem mąż wrócił z pracy. Zobaczył pranie, rachunki, kuchnię. I zapytał — spokojnie, bez złośliwości, co chyba było najgorsze — „No ale co robiłaś cały dzień?"</p>
+  <p>Nie odpowiedziałam. Bo co miałam powiedzieć?</p>
+
+  <span class="inline-hook">I wtedy jeszcze nie wiedziałam jednej rzeczy: to, co się ze mną działo, miało konkretny mechanizm biologiczny. I dało się to odwrócić.</span>
+
+  <p>Jeśli to zdanie wywołało w Tobie cokolwiek — ścisk w gardle, znajome ukłucie wstydu, albo po prostu „tak, dokładnie tak" — ten ebook jest dla Ciebie.</p>
+  <p>Przez sześć lat próbowałam wszystkiego, co obiecywało dyscyplinę. Planery, w których wypełniłam trzy strony. Aplikacje z blokadą mediów społecznościowych, które odinstalowywałam po tygodniu. Poranne rytuały o piątej rano, przetrwane dokładnie cztery dni. Każda z tych metod zakładała to samo: <strong>że problemem jest mój charakter</strong>.</p>
+  <p>Nie był. Problemem był układ nerwowy, który przez lata nauczył się, że pewne zadania są zagrożeniem — i uciekał od nich szybciej, niż zdążyłam pomyśleć. Kiedy to zrozumiałam, przestałam walczyć z sobą i zaczęłam ze sobą współpracować. To jest cała różnica między tą książką a wszystkim, co czytałaś wcześniej.</p>
+
+  <div class="key-box">
+    <div class="key-box-title">Co dostajesz w tej książce</div>
+    <ul>
+      <li><strong>Wyjaśnienie mechanizmu</strong> — dlaczego Twój mózg blokuje się przy zadaniach, na których Ci zależy, i dlaczego siła woli tu nie działa.</li>
+      <li><strong>Diagnozę</strong> — test, który pokaże, który z pięciu wzorców oporu dominuje u Ciebie, bo każdy wymaga innych narzędzi.</li>
+      <li><strong>Metodę CZUŁY START</strong> — siedmiokrokowy protokół, który stosujesz w momencie, gdy stoisz przed zadaniem i nie możesz ruszyć.</li>
+      <li><strong>21 narzędzi</strong> dobranych do profilu, plus plan 21 dni z konkretnym zadaniem na każdy dzień.</li>
+      <li><strong>Karty pracy</strong> do wydruku i skrypty rozmów z otoczeniem.</li>
+    </ul>
+  </div>
+
+  <div class="author-card">
+    <div class="author-avatar">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+    </div>
+    <div class="author-info">
+      <div class="author-name">Laura</div>
+      <div class="author-role">Autorka &middot; Pasjonatka neurobiologii</div>
+      <p class="author-bio">Przez 6 lat sądziłam, że moim problemem jest brak dyscypliny. Zaczęłam terapię — i tam pierwszy raz usłyszałam słowo, które wszystko zmieniło: <strong>regulacja emocji</strong>. Nie lenistwo. Nie słaba wola. Przeciążony układ nerwowy. Dziś prowadzę Czuły Balans — miejsce, w którym tłumaczę neurobiologię językiem kuchennego stołu.</p>
+      <div class="author-social-links">
+        <a href="https://instagram.com/laura.prokrastynacja" class="author-link" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @laura.prokrastynacja
+        </a>
+        <a href="mailto:laura@prokrastynacja.pl" class="author-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          laura@prokrastynacja.pl
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="clinical-note">
+    <div class="clinical-note-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+    </div>
+    <div>
+      <div class="clinical-note-title">Ważna informacja kliniczna</div>
+      Ten ebook nie zastępuje psychoterapii ani diagnozy medycznej. Jeśli objawy, które opisuję, towarzyszą Ci od dzieciństwa — nie tylko w trudnych okresach — rozważ konsultację psychiatryczną. Mogą wskazywać na spektrum ADHD lub depresję, które mają skuteczne leczenie.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ JAK CZYTAĆ ══════════ -->
+<section id="jak-czytac" class="book-section">
+  <span class="section-eyebrow">Instrukcja</span>
+  <h2 class="section-title">Jak korzystać<br>z tego ebooka</h2>
+
+  <p>Powiem Ci coś, czego zwykle nie mówi się na początku książki: <strong>nie czytaj tego jednym ciągiem</strong>.</p>
+  <p>Zgodnie z zasadami <strong>Cognitive Load Theory</strong> (teorii obciążenia poznawczego Johna Swellera), Twoja pamięć robocza mieści jednocześnie kilka elementów. Wszystko powyżej tego progu nie zostaje zapamiętane — zostaje zignorowane. Jeśli pochłoniesz ten przewodnik w jeden wieczór, poczujesz przyjemne poruszenie i nie zmienisz nic. Znasz to uczucie z innych poradników.</p>
+
+  <span class="inline-hook">Wdroż 20% technik, które dadzą Ci 80% rezultatów. Reszta poczeka.</span>
+
+  <div class="key-box">
+    <div class="key-box-title">Trzy tryby czytania — wybierz swój</div>
+    <ul>
+      <li><strong>Tryb kryzysowy (30 minut).</strong> Jesteś w dołku i potrzebujesz czegoś na teraz. Przeczytaj rozdział I, zrób test w rozdziale II, przejdź do metody CZUŁY START. Resztę zostaw na później.</li>
+      <li><strong>Tryb spokojny (3 tygodnie).</strong> Jeden rozdział co dwa dni, plus plan 21 dni realizowany równolegle. To wersja, która daje najtrwalsze efekty.</li>
+      <li><strong>Tryb warsztatowy.</strong> Czytasz z zeszytem, wypełniasz każdą kartę pracy i wracasz do trackera co wieczór. Dla osób, które lubią systemy.</li>
+    </ul>
+  </div>
+
+  <h3 class="section-subtitle">Znaczniki, które zobaczysz w tekście</h3>
+  <p>Chcę być z Tobą uczciwa co do tego, skąd wiem to, co piszę. Nie wszystko w tej książce ma tę samą wagę dowodową i nie zamierzam tego ukrywać, bo to Ty podejmujesz decyzje o swoim życiu.</p>
+  <p><span class="evidence-tag ev-strong">Mocne dowody</span> Badania powtarzane w wielu niezależnych zespołach, metaanalizy. Możesz na tym polegać.</p>
+  <p><span class="evidence-tag ev-mid">Dowody umiarkowane</span> Pojedyncze badania, spójna teoria, ale replikacje są ograniczone lub mieszane.</p>
+  <p><span class="evidence-tag ev-practice">Praktyka kliniczna</span> Podejście wypracowane w gabinetach i w mojej własnej pracy. Działa dla wielu osób, ale nie ma za sobą twardych badań. Traktuj jako propozycję do przetestowania, nie jako fakt.</p>
+
+  <div class="exercise-box">
+    <div class="exercise-label">Ćwiczenie zerowe</div>
+    <div class="exercise-title">Zanim przewrócisz stronę</div>
+    <div class="exercise-meta">3 minuty &middot; potrzebna kartka lub notatka w telefonie</div>
+    <ol>
+      <li>Zapisz <strong>jedno zadanie</strong>, które odkładasz najdłużej. Nie listę. Jedno.</li>
+      <li>Obok napisz, ile czasu realnie zajęłoby jego wykonanie, gdybyś już siedziała i robiła.</li>
+      <li>Napisz jedno zdanie: <em>co czuję w ciele, gdy o nim myślę</em>. Ucisk? Gorąco? Pustka?</li>
+      <li>Odłóż kartkę. Wrócimy do niej w rozdziale VII.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ I ══════════ -->
+<section id="to-nie-lenistwo" class="book-section">
+  <span class="section-eyebrow">Rozdział I</span>
+  <div class="chapter-num">01</div>
+  <h2 class="chapter-title">To nie lenistwo —<br>Twój mózg próbuje<br>Cię ratować</h2>
+
+  <p>Usiądź wygodnie. Może masz obok siebie kawę, którą odgrzewałaś już trzy razy?</p>
+  <p>Zanim przejdziemy dalej — weź głęboki oddech i powtórz za mną: <strong>nie jestem leniwa</strong>.</p>
+  <p><strong>Lenistwo</strong> wygląda tak: siadasz na kanapie z pełną świadomością, że masz coś do zrobienia, i mówisz sobie „mam to gdzieś". Ten odpoczynek Cię regeneruje. Czujesz spokój i radość.</p>
+  <p><strong>Prokrastynacja</strong> wygląda zupełnie inaczej. To stan, w którym chcesz coś zrobić — naprawdę chcesz — ale w środku czujesz paraliżujący opór, lęk albo dziwną, gęstą mgłę. Scrollujesz telefon, chociaż bolą Cię oczy. W żołądku czujesz narastający kamień. Nie odpoczywasz. Toczysz wojnę.</p>
+
+  <div class="table-scroll">
+    <table class="data-table">
+      <thead><tr><th style="width:34%">Wymiar</th><th>Odpoczynek</th><th>Prokrastynacja</th></tr></thead>
+      <tbody>
+        <tr><td>Decyzja</td><td>Świadoma i wybrana</td><td>Wymuszona przez opór</td></tr>
+        <tr><td>Stan ciała</td><td>Rozluźnienie</td><td>Napięcie, ucisk w brzuchu</td></tr>
+        <tr><td>Po godzinie</td><td>Regeneracja</td><td>Wyczerpanie i wstyd</td></tr>
+        <tr><td>Myśl w tle</td><td>„Zasłużyłam"</td><td>„Znowu nic nie zrobiłam"</td></tr>
+        <tr><td>Efekt na jutro</td><td>Więcej energii</td><td>Wyższy mur przed zadaniem</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-subtitle">Strażak i Menedżerka — architektura walki</h3>
+  <p>W Twoim mózgu mieszkają dwie bardzo różne postaci, o zupełnie innych priorytetach i ewolucyjnym wieku:</p>
+  <p><strong>Strażak (układ limbiczny, ciało migdałowate)</strong>: najstarsza ewolucyjnie część mózgu. Szybki, emocjonalny i nastawiony wyłącznie na przetrwanie. Gdy myślisz o trudnym zadaniu (rozliczeniu podatków, trudnym mailu), Strażak nie widzi punktu w planerze — widzi tygrysa. Jego reakcja to natychmiastowe: <em>Uciekaj! Schowaj się w telefonie!</em></p>
+  <p><strong>Menedżerka (kora przedczołowa)</strong>: najmłodsza, racjonalna struktura odpowiedzialna za logiczne myślenie, priorytetyzację i planowanie. Jest inteligentna, ale powolna i niezwykle zasobożerna. Potrzebuje stałych dawek energii do działania.</p>
+
+  <span class="inline-hook">Gdy jesteś zmęczona, zestresowana lub przebodźcowana, Menedżerka wyłącza się jako pierwsza. Zostajesz sam na sam ze Strażakiem.</span>
+
+  <p><span class="evidence-tag ev-strong">Mocne dowody</span></p>
+  <p>Jak ujął to dr Timothy Pychyl: <strong>prokrastynacja to nie problem z zarządzaniem czasem, ale problem z regulacją emocji</strong>. Odkładamy rzeczy, bo podświadomie chcemy uciec przed złym samopoczuciem. Metaanaliza Piersa Steela z 2007 roku, obejmująca kilkaset badań, pokazała to samo od strony statystycznej: najsilniejszymi predyktorami prokrastynacji nie są brak czasu ani nadmiar obowiązków, lecz <strong>awersja do zadania, impulsywność i niska wiara we własną skuteczność</strong>.</p>
+  <p>To ważne, więc powiem inaczej: badania nie znajdują „genu lenistwa". Znajdują układ nerwowy, który unika dyskomfortu. A unikanie dyskomfortu to nie wada charakteru — to podstawowa funkcja mózgu ssaka.</p>
+
+  <h3 class="section-subtitle">Pętla prokrastynacji — mapa mechanizmu</h3>
+  <p>Odkładanie to nie przypadek, ale zamknięta, biologicznie nagradzana pętla:</p>
+
+  <div class="loop-steps">
+    <div class="loop-step-item">
+      <div class="loop-node">1</div>
+      <div class="loop-step-text">
+        <div class="loop-step-title">Trudne zadanie</div>
+        <div class="loop-step-desc">Mail, rachunek czy projekt niosący ryzyko oceny, nudy lub porażki.</div>
+      </div>
+    </div>
+    <div class="loop-step-item">
+      <div class="loop-node">2</div>
+      <div class="loop-step-text">
+        <div class="loop-step-title">Dyskomfort emocjonalny</div>
+        <div class="loop-step-desc">Lęk, przytłoczenie lub wstyd. Strażak wykrywa niebezpieczeństwo.</div>
+      </div>
+    </div>
+    <div class="loop-step-item">
+      <div class="loop-node">3</div>
+      <div class="loop-step-text">
+        <div class="loop-step-title">Ucieczka</div>
+        <div class="loop-step-desc">Wybierasz natychmiastowe znieczulenie: telefon, sprzątanie szuflady lub serial.</div>
+      </div>
+    </div>
+    <div class="loop-step-item">
+      <div class="loop-node">4</div>
+      <div class="loop-step-text">
+        <div class="loop-step-title">Chwilowa ulga i wyrzut dopaminy</div>
+        <div class="loop-step-desc">Mózg nagradza ucieczkę i zapamiętuje ten wzorzec jako życiowo skuteczny.</div>
+      </div>
+    </div>
+    <div class="loop-step-item">
+      <div class="loop-node">5</div>
+      <div class="loop-step-text">
+        <div class="loop-step-title">Wstyd i wzrost kortyzolu</div>
+        <div class="loop-step-desc">Pojawia się samokrytyka. Poziom stresu rośnie, wyczerpując korę przedczołową.</div>
+      </div>
+    </div>
+    <div class="loop-step-item">
+      <div class="loop-node">6</div>
+      <div class="loop-step-text">
+        <div class="loop-step-title">Wyższy mur przed zadaniem</div>
+        <div class="loop-step-desc">Do zadania dochodzi dodatkowa warstwa wstydu za wcześniejsze unikanie.</div>
+      </div>
+    </div>
+  </div>
+
+  <p>Zwróć uwagę na krok czwarty. To on jest sercem problemu. Ulga po ucieczce jest <strong>natychmiastowa i pewna</strong>, a satysfakcja z wykonanego zadania — odroczona i niepewna. Twój mózg wybiera nagrodę bliższą. Zawsze. Nie dlatego, że jest zepsuty, tylko dlatego, że tak działa uczenie się przez wzmocnienie.</p>
+
+  <h3 class="section-subtitle">Gdzie w tę pętlę można się wciąć</h3>
+  <p>Dobra wiadomość: pętla ma sześć ogniw, a to znaczy sześć miejsc, w których da się ją przerwać. Cała reszta tej książki to rozwinięcie tych sześciu punktów wejścia.</p>
+
+  <div class="key-box">
+    <div class="key-box-title">Sześć punktów wejścia</div>
+    <ul>
+      <li><strong>Przy zadaniu (1)</strong> — zmniejsz jego rozmiar tak, żeby Strażak nie zobaczył tygrysa. Rozdział VII i VIII.</li>
+      <li><strong>Przy dyskomforcie (2)</strong> — naucz się go nazwać i wytrzymać 90 sekund zamiast uciekać. Rozdział VII.</li>
+      <li><strong>Przy ucieczce (3)</strong> — zwiększ tarcie dla telefonu, zmniejsz dla zadania. Rozdział VI.</li>
+      <li><strong>Przy uldze (4)</strong> — przenieś nagrodę na moment po zadaniu, nie przed nim. Rozdział VIII.</li>
+      <li><strong>Przy wstydzie (5)</strong> — samowspółczucie zamiast bicia się. To jedyny sposób, żeby obniżyć kortyzol. Rozdział IV.</li>
+      <li><strong>Przy murze (6)</strong> — protokół powrotu po wypadnięciu z rytmu. Rozdział X.</li>
+    </ul>
+  </div>
+
+  <div class="exercise-box">
+    <div class="exercise-label">Ćwiczenie 1</div>
+    <div class="exercise-title">Twoja własna pętla</div>
+    <div class="exercise-meta">10 minut &middot; karta pracy nr 1 w dodatku A</div>
+    <ol>
+      <li>Weź zadanie zapisane w ćwiczeniu zerowym.</li>
+      <li>Przejdź przez sześć kroków pętli i opisz każdy własnymi słowami. Co jest Twoją ucieczką? Telefon? Sprzątanie? Rozmowa z siostrą?</li>
+      <li>Zaznacz krok, w którym czujesz największą siłę. To Twoje główne ogniwo.</li>
+      <li>Zapamiętaj numer — w rozdziale VIII dobierzemy do niego narzędzia.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ II — DIAGNOSTYKA ══════════ -->
+<section id="diagnostyka" class="book-section">
+  <span class="section-eyebrow">Rozdział II</span>
+  <div class="chapter-num">02</div>
+  <h2 class="chapter-title">Poznaj swój<br>wzorzec oporu</h2>
+
+  <p>Prokrastynacja nie jest jednym zjawiskiem. Pod tą samą nazwą kryje się co najmniej pięć bardzo różnych mechanizmów, a każdy z nich potrzebuje innego zestawu narzędzi. Perfekcjonistka, która sześć razy przepisuje mail, i mama, która nie potrafi wyjść z kanapy po położeniu dziecka spać, mają w kalendarzu podobny brak działania — ale w mózgu dzieje się u nich coś zupełnie innego.</p>
+  <p>Objawy odkładania mogą mieć zupełnie inne podłoża neurologiczne i środowiskowe. Aby dobrać skuteczne narzędzia, najpierw wykonaj audyt swojego umysłu.</p>
+
+  <h3 class="section-subtitle">Schemat kliniczno-orientacyjny</h3>
+  <p>Ta tabela nie zastępuje diagnozy. Służy jednemu: pokazuje, czy to, co przeżywasz, jest raczej reaktywne (odpowiedź na sytuację, którą można zmienić), czy raczej strukturalne (wymagające dodatkowej pomocy specjalisty). Zaznacz w myślach, ile odpowiedzi po prawej opisuje Ciebie od zawsze, a ile pojawiło się dopiero w ostatnich miesiącach.</p>
+
+  <div class="table-scroll">
+    <table class="diag-table">
+      <thead>
+        <tr>
+          <th style="width:40%">Objaw</th>
+          <th>Prokrastynacja sytuacyjna</th>
+          <th>Wypalenie</th>
+          <th>Depresja</th>
+          <th>ADHD</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Trwa od wczesnego dzieciństwa</td><td><span class="diag-no">—</span></td><td><span class="diag-no">—</span></td><td><span class="diag-no">—</span></td><td><span class="diag-check">●</span></td></tr>
+        <tr><td>Pojawia się głównie przy trudnych zadaniach</td><td><span class="diag-check">●</span></td><td><span class="diag-no">—</span></td><td><span class="diag-no">—</span></td><td><span class="diag-partial">◐</span></td></tr>
+        <tr><td>Poprawia się po kilku dniach urlopu</td><td><span class="diag-check">●</span></td><td><span class="diag-check">●</span></td><td><span class="diag-no">—</span></td><td><span class="diag-no">—</span></td></tr>
+        <tr><td>Brak radości ze wszystkiego (anhedonia)</td><td><span class="diag-no">—</span></td><td><span class="diag-partial">◐</span></td><td><span class="diag-check">●</span></td><td><span class="diag-no">—</span></td></tr>
+        <tr><td>Trudności z uwagą niezależne od nastroju</td><td><span class="diag-no">—</span></td><td><span class="diag-partial">◐</span></td><td><span class="diag-partial">◐</span></td><td><span class="diag-check">●</span></td></tr>
+        <tr><td>Myśli, że „jestem obciążeniem dla bliskich"</td><td><span class="diag-no">—</span></td><td><span class="diag-partial">◐</span></td><td><span class="diag-check">●</span></td><td><span class="diag-no">—</span></td></tr>
+        <tr><td>Cynizm i dystans do własnej pracy</td><td><span class="diag-no">—</span></td><td><span class="diag-check">●</span></td><td><span class="diag-partial">◐</span></td><td><span class="diag-no">—</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:14px;color:var(--text-muted);font-family:var(--sans)">● = objaw typowy &middot; ◐ = objaw możliwy &middot; — = objaw nietypowy. Ta tabela ma charakter orientacyjny i nie zastępuje konsultacji z psychiatrą.</p>
+
+  <!-- INTERAKTYWNY QUIZ -->
+  <div class="quiz-section no-print">
+    <h3>Test: Jaki jest Twój profil oporu?</h3>
+    <p class="quiz-intro">Dziesięć krótkich stwierdzeń. Zaznacz odpowiedzi szczerze, zgodnie z Twoim codziennym stanem, a nie z tym, jak chciałabyś się czuć. 0 = nigdy, 3 = bardzo często. Zajmie Ci to 3 minuty.</p>
+
+    <div class="quiz-group">
+      <div class="quiz-group-title">Sekcja A &middot; Perfekcjonistka</div>
+      <div class="quiz-question-row">
+        <div class="quiz-question-text">1. Odkładam zadania, dopóki nie będę miała idealnych warunków i pełnego czasu.</div>
+        <div class="quiz-options" data-name="a1">
+          <label><input type="radio" name="a1" value="0" checked><span>0</span></label>
+          <label><input type="radio" name="a1" value="1"><span>1</span></label>
+          <label><input type="radio" name="a1" value="2"><span>2</span></label>
+          <label><input type="radio" name="a1" value="3"><span>3</span></label>
+        </div>
+      </div>
+      <div class="quiz-question-row">
+        <div class="quiz-question-text">2. Poprawiam nawet proste zadania wielokrotnie, zanim je oddam lub wyślę.</div>
+        <div class="quiz-options" data-name="a2">
+          <label><input type="radio" name="a2" value="0" checked><span>0</span></label>
+          <label><input type="radio" name="a2" value="1"><span>1</span></label>
+          <label><input type="radio" name="a2" value="2"><span>2</span></label>
+          <label><input type="radio" name="a2" value="3"><span>3</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz-group">
+      <div class="quiz-group-title">Sekcja B &middot; Przeciążona (Mental Load)</div>
+      <div class="quiz-question-row">
+        <div class="quiz-question-text">1. Czuję fizyczny paraliż, gdy muszę podjąć wiele małych decyzji z rzędu.</div>
+        <div class="quiz-options" data-name="b1">
+          <label><input type="radio" name="b1" value="0" checked><span>0</span></label>
+          <label><input type="radio" name="b1" value="1"><span>1</span></label>
+          <label><input type="radio" name="b1" value="2"><span>2</span></label>
+          <label><input type="radio" name="b1" value="3"><span>3</span></label>
+        </div>
+      </div>
+      <div class="quiz-question-row">
+        <div class="quiz-question-text">2. Mam wrażenie, że całe moje planowanie i pamiętanie o wszystkim jest niewidoczne dla otoczenia.</div>
+        <div class="quiz-options" data-name="b2">
+          <label><input type="radio" name="b2" value="0" checked><span>0</span></label>
+          <label><input type="radio" name="b2" value="1"><span>1</span></label>
+          <label><input type="radio" name="b2" value="2"><span>2</span></label>
+          <label><input type="radio" name="b2" value="3"><span>3</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz-group">
+      <div class="quiz-group-title">Sekcja C &middot; Uciekinierka w troskę</div>
+      <div class="quiz-question-row">
+        <div class="quiz-question-text">1. Chętnie pomagam innym lub porządkuję ich sprawy, gdy sama mam palące zaległości.</div>
+        <div class="quiz-options" data-name="c1">
+          <label><input type="radio" name="c1" value="0" checked><span>0</span></label>
+          <label><input type="radio" name="c1" value="1"><span>1</span></label>
+          <label><input type="radio" name="c1" value="2"><span>2</span></label>
+          <label><input type="radio" name="c1" value="3"><span>3</span></label>
+        </div>
+      </div>
+      <div class="quiz-question-row">
+        <div class="quiz-question-text">2. Czuję ogromne poczucie winy, gdy robię coś wyłącznie dla siebie i swojej kariery.</div>
+        <div class="quiz-options" data-name="c2">
+          <label><input type="radio" name="c2" value="0" checked><span>0</span></label>
+          <label><input type="radio" name="c2" value="1"><span>1</span></label>
+          <label><input type="radio" name="c2" value="2"><span>2</span></label>
+          <label><input type="radio" name="c2" value="3"><span>3</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz-group">
+      <div class="quiz-group-title">Sekcja D &middot; Znieczulaczka wieczorna</div>
+      <div class="quiz-question-row">
+        <div class="quiz-question-text">1. Celowo opóźniam pójście spać, bo noc to mój jedyny moment wolności i spokoju.</div>
+        <div class="quiz-options" data-name="d1">
+          <label><input type="radio" name="d1" value="0" checked><span>0</span></label>
+          <label><input type="radio" name="d1" value="1"><span>1</span></label>
+          <label><input type="radio" name="d1" value="2"><span>2</span></label>
+          <label><input type="radio" name="d1" value="3"><span>3</span></label>
+        </div>
+      </div>
+      <div class="quiz-question-row">
+        <div class="quiz-question-text">2. Znieczulam się serialami lub mediami społecznościowymi, żeby nie myśleć o problemach z całego dnia.</div>
+        <div class="quiz-options" data-name="d2">
+          <label><input type="radio" name="d2" value="0" checked><span>0</span></label>
+          <label><input type="radio" name="d2" value="1"><span>1</span></label>
+          <label><input type="radio" name="d2" value="2"><span>2</span></label>
+          <label><input type="radio" name="d2" value="3"><span>3</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz-group">
+      <div class="quiz-group-title">Sekcja E &middot; Zagubiona w chaosie</div>
+      <div class="quiz-question-row">
+        <div class="quiz-question-text">1. Rozpoczynam wiele projektów z ekscytacją, ale rzadko doprowadzam je do końca.</div>
+        <div class="quiz-options" data-name="e1">
+          <label><input type="radio" name="e1" value="0" checked><span>0</span></label>
+          <label><input type="radio" name="e1" value="1"><span>1</span></label>
+          <label><input type="radio" name="e1" value="2"><span>2</span></label>
+          <label><input type="radio" name="e1" value="3"><span>3</span></label>
+        </div>
+      </div>
+      <div class="quiz-question-row">
+        <div class="quiz-question-text">2. Odkładam trudne decyzje administracyjne lub finansowe, bo czuję paraliżujący szum informacyjny.</div>
+        <div class="quiz-options" data-name="e2">
+          <label><input type="radio" name="e2" value="0" checked><span>0</span></label>
+          <label><input type="radio" name="e2" value="1"><span>1</span></label>
+          <label><input type="radio" name="e2" value="2"><span>2</span></label>
+          <label><input type="radio" name="e2" value="3"><span>3</span></label>
+        </div>
+      </div>
+    </div>
+
+    <button class="quiz-submit-btn" onclick="calculateQuiz()">Oblicz mój profil oporu</button>
+
+    <div class="quiz-result-card" id="quizResult">
+      <div class="quiz-scores" id="quizScores"></div>
+      <h4 class="quiz-result-title" id="quizProfileTitle">Twój dominujący profil</h4>
+      <p class="quiz-result-desc" id="quizProfileText"></p>
+      <div class="quiz-result-rx" id="quizProfileRx"></div>
+    </div>
+  </div>
+
+  <h3 class="section-subtitle">Pięć profili — krótki opis</h3>
+  <p>Poniżej znajdziesz opis każdego profilu w wersji do przeczytania na papierze. W rozdziale VIII do każdego z nich dobiorę cztery-pięć narzędzi, które działają najlepiej.</p>
+
+  <h4 class="mini-title">A &middot; Perfekcjonistka</h4>
+  <p>Twój Strażak boi się nie zadania, tylko oceny. Odkładasz start, bo w głowie masz obraz doskonałego rezultatu — a każda wersja realna wygląda przy nim żałośnie. Twoje narzędzia to obniżanie poprzeczki „na wejściu" i praca z Wewnętrznym Krytykiem.</p>
+
+  <h4 class="mini-title">B &middot; Przeciążona</h4>
+  <p>Twoja kora przedczołowa jest wyczerpana zanim usiądziesz do swojej pracy, bo cały dzień prowadzisz w głowie logistykę życia rodzinnego (Mental Load). Twoje narzędzia to zewnętrzna pamięć, delegowanie decyzji i rozmowa z partnerem.</p>
+
+  <h4 class="mini-title">C &middot; Uciekinierka w troskę</h4>
+  <p>Zajmowanie się cudzymi sprawami daje Ci szybką ulgę i identyfikatuje jako „dobrą osobę". Odkładasz to, co Twoje, bo ktoś Ci powiedział kiedyś, że własne potrzeby to egoizm. Twoje narzędzia to praca z granicami i identyfikacją „opiekunki" jako części, nie całości.</p>
+
+  <h4 class="mini-title">D &middot; Znieczulaczka wieczorna</h4>
+  <p>Twoje odkładanie ma jasne miejsce w dobie: wieczór. To zjawisko nazwane w psychologii <em>revenge bedtime procrastination</em>. Nie chcesz iść spać, bo dzień odebrał Ci wszystko, co Twoje. Twoje narzędzia to odzyskiwanie kawałka „siebie" wcześniej w dniu, żeby nie musieć go wyszarpywać w nocy.</p>
+
+  <h4 class="mini-title">E &middot; Zagubiona w chaosie</h4>
+  <p>Startujesz z pełną energią, ale nie kończysz. Trudno Ci utrzymać strukturę i uwagę. Jeśli ten profil dominuje mocno i towarzyszy Ci od zawsze — koniecznie porozmawiaj z psychiatrą o diagnostyce ADHD. To nie wyrok, to często informacja, która wszystko upraszcza.</p>
+
+  <div class="clinical-note">
+    <div class="clinical-note-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div>
+    <div>
+      <div class="clinical-note-title">Ważne</div>
+      Nikt nie ma tylko jednego profilu. Zazwyczaj dwa wybijają się jako dominujące, a pozostałe pojawiają się zależnie od okoliczności. Pracuj przede wszystkim nad tym, który dominuje — reszta zwykle poprawia się „przy okazji".
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ III — MENTAL LOAD ══════════ -->
+<section id="mental-load" class="book-section">
+  <span class="section-eyebrow">Rozdział III</span>
+  <div class="chapter-num">03</div>
+  <h2 class="chapter-title">Dlaczego znowu<br>tego nie zrobiłaś? —<br><em>Mental Load i szum w głowie</em></h2>
+
+  <p>Znasz ten dźwięk? Klucz obracający się w zamku. Jeszcze pięć minut temu obiecywałaś sobie, że chociaż wyniesiesz naczynia ze stolika — ale nagle zamarłaś. Słyszysz kroki. Mąż rzuca okiem na kuchnię i pada to pytanie: <em>„Kochanie, miałaś to dzisiaj załatwić — co się stało?"</em></p>
+  <p>Najgorsze w tym pytaniu nie jest to, że on je zadaje. Najgorsze jest to, że Ty zadajesz je sobie — tylko znacznie ostrzej.</p>
+
+  <div class="story-block">
+    <p>„Czułam się jak oskarżona w procesie, w którym nie znam języka. Wiedziałam, że jestem niewinna, ale nie umiałam tego udowodnić. Nawet samej sobie."</p>
+    <div class="story-name">Magda, mama trzylatka</div>
+  </div>
+
+  <h3 class="section-subtitle">Niewidzialna praca poznawcza</h3>
+  <p><span class="evidence-tag ev-strong">Mocne dowody</span></p>
+  <p>Odkładanie zadań u kobiet jest ściśle powiązane z pojęciem <strong>Mental Load</strong> (obciążenia psychicznego). Badania socjolożki Allison Daminger (2019, „American Sociological Review") wykazały, że kobiety wykonują lwią część niewidocznej pracy poznawczej związanej z koordynacją rodziny: monitorowanie potrzeb, pamiętanie o terminach lekarzy, zapasach i emocjonalnym komforcie grupy. Praca ta ma cztery fazy — <em>anticipate, identify, decide, monitor</em> — i to trzy z nich (przewidywanie, identyfikacja, monitorowanie) spadają nieproporcjonalnie na kobiety, także w związkach, które opisują siebie jako „równe".</p>
+  <p>Ta praca w tle zużywa glukozę kory przedczołowej dokładnie tak samo, jak arkusz kalkulacyjny w pracy. Gdy siadasz do swoich spraw, Twój biologiczny akumulator uwagi jest już w dużej mierze rozładowany. To wywołuje zjawisko <strong>zmęczenia decyzyjnego</strong> (<em>decision fatigue</em>) — im więcej decyzji podjęłaś w ciągu dnia, tym gorsze podejmujesz kolejne, aż w końcu przestajesz podejmować jakiekolwiek.</p>
+
+  <span class="inline-hook">On widzi brak działania na zewnątrz. Ty w środku przeżywasz gigantyczne przeciążenie poznawcze, którego po prostu nie widać.</span>
+
+  <h3 class="section-subtitle">Trzy koszty, o których nikt Ci nie mówi</h3>
+  <p><strong>1. Koszt uwagi w tle.</strong> Nawet gdy siadasz do „swojego" zadania, część uwagi cały czas monitoruje, czy dziecko oddycha, czy pralka nie zaraz kończy, czy jutro trzeba coś przygotować. Ta uwaga rezydualna to od 20 do 40% mocy obliczeniowej, zależnie od dnia. Nie da się jej wyłączyć siłą woli — da się ją zewnętrznie odciążyć.</p>
+  <p><strong>2. Koszt przełączania.</strong> Każde „a jeszcze muszę" oznacza koszt przełączenia kontekstu, który psycholodzy szacują na 10-25% czasu zadania. Jeśli w ciągu dnia przełączasz się między pięcioma rolami trzydzieści razy, faktycznie tracisz do dwóch godzin czystego czasu na sam koszt przełączeń.</p>
+  <p><strong>3. Koszt emocjonalny „bycia dyspozycyjną".</strong> Gdy każdy w domu wie, że możesz przerwać to, co robisz, żeby odpowiedzieć na jego pytanie, Twój mózg nigdy nie wchodzi w stan skupienia. Po roku takiego trybu Twoja kora przedczołowa dosłownie „zapomina", jak się głęboko skupiać.</p>
+
+  <div class="key-box">
+    <div class="key-box-title">Krok, który zmienia najwięcej</div>
+    <p><strong>Zewnętrzna pamięć rodziny.</strong> Jedna widoczna dla wszystkich lista (białą tablica w kuchni, wspólny kalendarz, wspólna notatka) na której zapisane są <em>wszystkie</em> sprawy administracyjne rodziny na najbliższy tydzień. Nie Twoje sprawy — sprawy rodziny. Regeneracyjny efekt pojawia się w ciągu tygodnia: Twoja głowa dostaje sygnał, że nie musi już tego wszystkiego trzymać.</p>
+  </div>
+
+  <h3 class="section-subtitle">Skrypt asertywnej rozmowy z partnerem</h3>
+  <p>Wybierz moment, gdy oboje jesteście spokojni — nie po awanturze i nie w kuchni pełnej brudnych naczyń. Zastosuj poniższy schemat. Nie improwizuj, przeczytaj go sobie na głos wcześniej.</p>
+  <p><strong>1. Nazwij swój stan.</strong> „Chcę, żebyś wiedział, że nieodłożenie tych spraw nie wynika z mojego lenistwa. Doświadczam paraliżu decyzyjnego — mój mózg widzi natłok spraw i po prostu się zawiesza."</p>
+  <p><strong>2. Wytłumacz koszty wewnętrzne.</strong> „Gdy wracasz i oceniasz moje zaległości, poziom mojego stresu i wstydu rośnie. To sprawia, że kora przedczołowa wyłącza się jeszcze silniej. Nie robię tego przeciwko Tobie."</p>
+  <p><strong>3. Zaproponuj konkretną zmianę.</strong> „Zamiast pytać „co robiłaś cały dzień", pomóż mi i zapytaj: „od czego jednego mogę Cię dzisiaj odciążyć?" Nawet jeśli powiem, że nic — pytanie samo w sobie już mi pomaga."</p>
+  <p><strong>4. Umów się na konkret na tydzień.</strong> „W tym tygodniu chciałabym przetestować, że Ty przejmujesz odpowiedzialność za [X] — nie wykonanie, tylko pamiętanie i pilnowanie. Sprawdzimy w niedzielę, jak się z tym czuliśmy."</p>
+
+  <div class="exercise-box">
+    <div class="exercise-label">Ćwiczenie 2</div>
+    <div class="exercise-title">Audyt niewidzialnej pracy</div>
+    <div class="exercise-meta">20 minut &middot; karta pracy nr 2 w dodatku A</div>
+    <ol>
+      <li>Weź kartkę i podziel ją na trzy kolumny: <em>Ja &middot; Partner &middot; Podzielone</em>.</li>
+      <li>Wypisz w niej wszystko, co pilnuje Ciebie każdego dnia i tygodnia: terminy, zapasy, wizyty, urodziny, prezenty, umawianie fachowca, zapisywanie na zajęcia, sprawy w szkole.</li>
+      <li>Nie chodzi o wykonanie zadania — chodzi o to, kto o nim pamięta i decyduje, kiedy je wykonać.</li>
+      <li>Kiedy skończysz, pokaż partnerowi. Nie po to, żeby się kłócić. Po to, żeby zobaczyć.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ IV — PERFEKCJONIZM ══════════ -->
+<section id="perfekcjonizm" class="book-section">
+  <span class="section-eyebrow">Rozdział IV</span>
+  <div class="chapter-num">04</div>
+  <h2 class="chapter-title">Perfekcjonizm,<br>który paraliżuje —<br><em>idealnie albo wcale</em></h2>
+
+  <p>Pamiętasz ten moment, kiedy w Twojej głowie narodził się Genialny Plan? Nowy planer, kolorowe cienkopisy i obietnica idealnego poranka. A potem nadszedł wtorek, dziecko wylało sok, a Ty rzuciłaś planer w kąt.</p>
+  <p>Witaj w krainie perfekcjonizmu paraliżującego. Mieszkają tu osoby, które nie odkładają spraw dlatego, że im nie zależy, ale dlatego, że <strong>zależy im za bardzo</strong>.</p>
+
+  <span class="inline-hook">Dla Twojego układu nerwowego błąd równa się społecznemu odrzuceniu. Perfekcjonizm to nie dążenie do mistrzostwa — to pancerz ochronny przed wstydem.</span>
+
+  <div class="story-block">
+    <p>„Przed każdą wizytą teściów planowałam idealne, trzydaniowe menu. Budziłam się z takim lękiem, że nie mogłam wejść do kuchni. Kończyło się zamawianiem pizzy i płaczem w łazience."</p>
+    <div class="story-name">Joanna, nauczycielka</div>
+  </div>
+
+  <h3 class="section-subtitle">Dwa rodzaje perfekcjonizmu</h3>
+  <p><span class="evidence-tag ev-strong">Mocne dowody</span></p>
+  <p>Badania Paula Hewitta i Gordona Fletta rozróżniają dwa rodzaje perfekcjonizmu, i tylko jeden z nich naprawdę szkodzi:</p>
+  <p><strong>Perfekcjonizm dążący (adaptacyjny).</strong> Wysokie standardy plus umiejętność wybaczenia sobie błędu. Skorelowany z osiągnięciami i dobrym samopoczuciem. Jesteś tu, jeśli po nieudanym cieście mówisz „szkoda, spróbuję jeszcze raz w weekend".</p>
+  <p><strong>Perfekcjonizm samokrytyczny (dezadaptacyjny).</strong> Wysokie standardy plus toksyczna reakcja na własne błędy. Skorelowany z depresją, lękiem, zaburzeniami odżywiania — i, tak, z prokrastynacją. Jesteś tu, jeśli po nieudanym cieście mówisz „jestem beznadziejna, nawet tego nie umiem".</p>
+
+  <h3 class="section-subtitle">Wewnętrzny Krytyk w perspektywie IFS</h3>
+  <p><span class="evidence-tag ev-mid">Dowody umiarkowane</span></p>
+  <p>W psychoterapii systemów wewnętrznych (Internal Family Systems, Richard Schwartz) głos, który ciągle powtarza <em>„weź się w garść, inne dają radę"</em>, jest traktowany jako <strong>część obrończa</strong>. Ten głos chce Cię uchronić przed krytyką zewnętrzną, ale stosuje archaiczne, raniące metody, których nauczył się bardzo wcześnie — często przed dziesiątym rokiem życia.</p>
+  <p>Nie próbuj z nim walczyć. Wojna z krytykiem oznacza w Twoim mózgu drugi front, a on i tak zawsze wygra, bo zna Cię dłużej niż Ty siebie. Zamiast walki — dialog.</p>
+
+  <h3 class="section-subtitle">Odpowiedź samowspółczująca</h3>
+  <p>Badania dr Kristin Neff nad samowspółczuciem (<em>self-compassion</em>) pokazują, że ostry dialog wewnętrzny podnosi poziom kortyzolu, blokując korę przedczołową. Odwrotnie: łagodny dialog wewnętrzny aktywuje ten sam układ nerwu błędnego, który uspokaja Cię, gdy ktoś Ci współczuje z zewnątrz.</p>
+  <p>Zamiast walczyć z krytykiem, odpowiedz mu czule:</p>
+  <blockquote style="font-style:italic;padding:14px 22px;border-left:2px dashed var(--accent-red);color:var(--text-dark);margin:20px 0;font-family:var(--display);font-size:19px;line-height:1.55">„Słyszę Cię. Wiem, że boisz się, że zostanę oceniona jako niewystarczająca. Ale dzisiaj potrzebuję trochę przestrzeni i łagodności, żeby po prostu zacząć. Możesz siedzieć obok — nie musisz krzyczeć."</blockquote>
+
+  <div class="key-box">
+    <div class="key-box-title">Zasada „wersji szkicowej"</div>
+    <p>Perfekcjonizm zabija start, bo domaga się produktu. Rozwiązanie: nazwij pierwszą wersję <em>szkicem</em>. Nie „mój tekst", tylko „szkic tekstu". Nie „obiad", tylko „szkic obiadu — testujemy". Twój mózg inaczej traktuje coś, co ma już etykietę tymczasowości. Krytyk uspokaja się, bo wie, że będzie mógł jeszcze poprawić.</p>
+  </div>
+
+  <div class="exercise-box">
+    <div class="exercise-label">Ćwiczenie 3</div>
+    <div class="exercise-title">List do wewnętrznego Krytyka</div>
+    <div class="exercise-meta">15 minut &middot; kartka i długopis</div>
+    <ol>
+      <li>Zamknij oczy i przypomnij sobie ostatni raz, kiedy Krytyk się odezwał. Jaki miał głos? Do kogo był podobny?</li>
+      <li>Napisz do niego list, zaczynając od zdania: „Słyszę Cię i wiem, że próbujesz mnie chronić przed…"</li>
+      <li>Zapytaj go: <em>„Kim jest ta osoba, przed której oceną chcesz mnie uchronić? Kiedy zacząłeś to robić?"</em></li>
+      <li>Zakończ obietnicą: „Dziś biorę odpowiedzialność za odpowiedź na tę ocenę. Ty możesz odpocząć."</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ V — CIAŁO ══════════ -->
+<section id="cialo" class="book-section">
+  <span class="section-eyebrow">Rozdział V</span>
+  <div class="chapter-num">05</div>
+  <h2 class="chapter-title">Ciało też odkłada —<br><em>cykle energii i neurobiologia</em></h2>
+
+  <p>Poradniki produktywności pisane są zazwyczaj z perspektywy równego, męskiego poziomu hormonów trwającego 24 godziny. Tymczasem u kobiet poziom zasobów i sprawczości faluje w rytm cyklu menstruacyjnego. Jeśli próbujesz codziennie być tą samą wersją siebie, walczysz nie z lenistwem — walczysz z biologią.</p>
+
+  <h3 class="section-subtitle">Trzy filary, bez których żadna metoda nie zadziała</h3>
+  <p>Zanim wejdziemy w cykl, muszę powiedzieć jedno: jeśli nie śpisz, nie jesz i nie ruszasz się, żadna technika z tej książki nie zadziała. Poważnie, żadna. Kora przedczołowa to organ metaboliczny — bez paliwa się wyłącza.</p>
+
+  <div class="tool-grid">
+    <div class="tool-card">
+      <div class="tool-num">Filar 1</div>
+      <div class="tool-name">Sen — 7 do 9 godzin</div>
+      <div class="tool-desc">Krótszy sen o godzinę obniża sprawność kory przedczołowej porównywalnie do 0,05% alkoholu we krwi. Jedna zarwana noc = decyzje jak po lampce wina.</div>
+      <div class="tool-when">Priorytet, nawet kosztem serialu</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">Filar 2</div>
+      <div class="tool-name">Białko i stabilna glukoza</div>
+      <div class="tool-desc">Śniadanie z 20-30g białka stabilizuje uwagę na 4-5 godzin. Sam kawy z rogalikiem — masz zjazd o 11:00.</div>
+      <div class="tool-when">Codziennie, także w weekend</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">Filar 3</div>
+      <div class="tool-name">Ruch — 20 minut dziennie</div>
+      <div class="tool-desc">Krótki spacer, nawet po mieszkaniu, wydziela BDNF — białko, które dosłownie regeneruje neurony kory przedczołowej.</div>
+      <div class="tool-when">Zamiast trzeciej kawy</div>
+    </div>
+  </div>
+
+  <h3 class="section-subtitle">Cztery pory roku kobiecego cyklu</h3>
+  <p><span class="evidence-tag ev-mid">Dowody umiarkowane</span></p>
+  <p>Koncepcja <em>cycle syncing</em> (Alisa Vitti, Maisie Hill) mapuje cztery fazy cyklu miesięcznego na cztery pory roku. Nie każda kobieta doświadcza wszystkich w klasycznej formie (i nie każda ma cykl), ale metafora pomaga zaakceptować, że sprawczość nie jest liniowa.</p>
+
+  <div class="phase-grid">
+    <div class="phase-card f">
+      <div class="phase-name">Folikularna &middot; Wiosna</div>
+      <div class="phase-days">Dni 1-13 (po menstruacji)</div>
+      <div class="phase-energy">Wzrost estrogenu i dopaminy</div>
+      <div class="phase-tasks">Wdrażanie nowych projektów, burze mózgów, odważne decyzje, nauka nowych rzeczy.</div>
+    </div>
+    <div class="phase-card o">
+      <div class="phase-name">Owulacyjna &middot; Lato</div>
+      <div class="phase-days">Dni 14-16</div>
+      <div class="phase-energy">Szczyt pewności siebie</div>
+      <div class="phase-tasks">Wystąpienia publiczne, negocjacje, trudne rozmowy z partnerem, prezentacje.</div>
+    </div>
+    <div class="phase-card l">
+      <div class="phase-name">Lutealna &middot; Jesień</div>
+      <div class="phase-days">Dni 17-28 (przed menstruacją)</div>
+      <div class="phase-energy">Spadek estrogenów i dopaminy</div>
+      <div class="phase-tasks">Porządkowanie spraw, redukcja bodźców, realizacja rutynowych zadań, edycja tego, co już powstało.</div>
+    </div>
+    <div class="phase-card m">
+      <div class="phase-name">Miesiączkowa &middot; Zima</div>
+      <div class="phase-days">Dni 1-5</div>
+      <div class="phase-energy">Minimum fizyczne, głęboka intuicja</div>
+      <div class="phase-tasks">Analiza, refleksja, absolutne minimum operacyjne, planowanie kolejnego cyklu.</div>
+    </div>
+  </div>
+
+  <span class="inline-hook">Prokrastynacja w fazie lutealnej to często nie brak woli, tylko biologia konserwacji zasobów. Twój mózg cierpi, bo próbujesz sadzić rzodkiewkę w listopadzie.</span>
+
+  <p>Nie każdą fazą trzeba zarządzać — z niektórymi trzeba po prostu współpracować. Jeśli zaplanujesz duży, kreatywny projekt na dni 24-28 cyklu, po prostu Ci nie wyjdzie i uznasz to za dowód swojej niekompetencji. Ten sam projekt w dniach 6-13 może wyjść znakomicie.</p>
+
+  <div class="key-box">
+    <div class="key-box-title">Zasada trzech kolorów w kalendarzu</div>
+    <p>W ciągu miesiąca oznacz w swoim kalendarzu:</p>
+    <ul>
+      <li><strong>Zielone dni (10-15 dni)</strong>: startuj nowe, wysyłaj, decyduj.</li>
+      <li><strong>Żółte dni (8-10 dni)</strong>: porządkuj, edytuj, kończ.</li>
+      <li><strong>Czerwone dni (3-5 dni)</strong>: absolutne minimum, głęboki odpoczynek bez wyrzutów.</li>
+    </ul>
+    <p>Jeśli nie masz cyklu (menopauza, hormonoterapia, cykl nieregularny), stosuj tę samą rytmikę w skali tygodnia albo miesiąca kalendarzowego.</p>
+  </div>
+
+  <div class="clinical-note">
+    <div class="clinical-note-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div>
+    <div>
+      <div class="clinical-note-title">Uwaga</div>
+      Ekstremalny spadek energii w fazie lutealnej może oznaczać <strong>PMDD</strong> (przedmiesiączkowe zaburzenie dysforyczne) — zaburzenie, które dotyka ok. 5-8% kobiet i którym powinien się zająć psychiatra. Jeśli w drugiej połowie cyklu regularnie tracisz kontrolę nad emocjami lub myślisz o rezygnacji z życia, to nie jest „taka moja natura". To sygnał do wizyty.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ VI — DOPAMINA ══════════ -->
+<section id="dopamina" class="book-section">
+  <span class="section-eyebrow">Rozdział VI</span>
+  <div class="chapter-num">06</div>
+  <h2 class="chapter-title">Dopamina<br>i cyfrowe znieczulenie</h2>
+
+  <p>Odłożyłaś kiedyś telefon i nie umiałaś sobie przypomnieć, co przez ostatnie czterdzieści minut oglądałaś? Nie masz problemu z pamięcią. Masz normalną reakcję neurologiczną na projekt, który został zaprojektowany po to, żeby ten stan wywoływać.</p>
+
+  <h3 class="section-subtitle">Dopamina to nie „hormon szczęścia"</h3>
+  <p><span class="evidence-tag ev-strong">Mocne dowody</span></p>
+  <p>Dopamina, wbrew popularnym uproszczeniom, nie jest chemią przyjemności. Jest chemią <strong>przewidywania nagrody i motywacji</strong>. Skacze zanim dostaniesz nagrodę, spada gdy ją dostajesz. Właśnie dlatego scrollowanie jest tak wciągające: mózg nigdy nie wie, czy następny post będzie ten wart, więc dopamina utrzymuje się na wysokim poziomie ciągle. To ten sam mechanizm, który uzależnia od hazardu (<em>variable reward schedule</em> Skinnera).</p>
+
+  <p>Robert Sapolsky pokazał w słynnym eksperymencie z małpami: dopamina najmocniej skacze nie przy nagrodzie, tylko przy <em>sygnale zapowiadającym nagrodę</em>. Dla Twojego mózgu wibracja telefonu to sygnał. Nawet jeśli 90% powiadomień to śmieci — pozostałe 10% wystarczy, żeby układ nagrody uznał telefon za priorytet.</p>
+
+  <h3 class="section-subtitle">Dopaminowy dług</h3>
+  <p>Dr Anna Lembke w książce „Dopamine Nation" opisuje mechanizm, który zmienia grę: mózg dąży do homeostazy. Po każdym dużym wyrzucie dopaminy (godzina TikToka, słodycze, alkohol, seriale bingowane) następuje kompensacyjny spadek — <em>dopaminowy dług</em>. Poziom bazowy dopaminy chwilowo spada poniżej normy. To dlatego po weekendzie serialowym rzeczywistość wydaje się szara, a proste zadanie — nie do zrobienia.</p>
+
+  <span class="inline-hook">Nie odkładasz zadania, bo Cię przerasta. Odkładasz je, bo Twoja bazowa dopamina jest tak niska po godzinach scrollowania, że nic zwykłego nie ma już smaku.</span>
+
+  <h3 class="section-subtitle">Reset dopaminowy — 7 dni</h3>
+  <p>Nie musisz robić totalnego detoxu. Zbyt drastyczne odcięcie działa jak każda dieta 1200 kcal — kilka dni pięknie, potem odbicie. Zamiast tego: <strong>7 dni bez dopaminowych ekstremów</strong>.</p>
+
+  <div class="key-box">
+    <div class="key-box-title">Protokół 7 dni</div>
+    <ul>
+      <li><strong>Bez mediów społecznościowych</strong> na telefonie. Odinstaluj aplikacje. Instagram i TikTok tylko z przeglądarki, tylko z komputera, dwa razy dziennie po 15 minut, jeśli musisz.</li>
+      <li><strong>Bez seriali „na tło"</strong>. Jeśli film — to jeden i uważnie. Bez drugiego ekranu.</li>
+      <li><strong>Bez słodyczy po 17:00</strong>. To nie o kalorie, to o wieczorny dopaminowy szczyt, który burzy sen.</li>
+      <li><strong>Codziennie 20 minut nudy.</strong> Kawa bez telefonu. Spacer bez podcastu. Tak, będzie niekomfortowo pierwsze trzy dni. To znak, że działa.</li>
+    </ul>
+    <p>Po siódmym dniu Twoja bazowa dopamina wraca do poziomu, w którym zwykłe zadanie znowu ma smak, a rozmowa z partnerem znowu jest interesująca.</p>
+  </div>
+
+  <h3 class="section-subtitle">Zasada 20 sekund tarcia</h3>
+  <p>Shawn Achor („The Happiness Advantage") sformułował regułę, którą polecam wszystkim moim czytelniczkom: <strong>dodaj 20 sekund tarcia do rzeczy, których nie chcesz robić, odejmij 20 sekund od tych, które chcesz</strong>.</p>
+  <p><strong>Więcej tarcia:</strong> odinstaluj aplikację, wyloguj się, telefon w innym pokoju, hasło o 24 znaków. <strong>Mniej tarcia:</strong> książka na poduszce, buty do biegania obok drzwi, arkusz do wypełnienia otwarty na wieczór, matka do jogi rozłożona na podłodze.</p>
+
+  <div class="exercise-box">
+    <div class="exercise-label">Ćwiczenie 4</div>
+    <div class="exercise-title">Audyt Twojej dopaminy</div>
+    <div class="exercise-meta">1 tydzień &middot; karta pracy nr 3 w dodatku A</div>
+    <ol>
+      <li>Przez tydzień notuj każdego wieczoru dwie liczby: minuty spędzone w social media i minuty czystej pracy nad ważnym zadaniem.</li>
+      <li>Zapisz też subiektywnie: <em>ile radości dały mi dziś moje działania?</em> (1-10).</li>
+      <li>Po tygodniu popatrz na korelację. Zazwyczaj: im więcej social media, tym niższa radość z czegokolwiek. To Twój osobisty dopaminowy dług na wykresie.</li>
+      <li>Wybierz jedną rzecz z listy powyżej i zacznij od niej reset.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ VII — METODA CZUŁY START ══════════ -->
+<section id="czuly-start" class="book-section">
+  <span class="section-eyebrow">Rozdział VII</span>
+  <div class="chapter-num">07</div>
+  <h2 class="chapter-title">Metoda<br><em>Czuły Start</em></h2>
+
+  <p>To jest sedno tej książki. Wszystko, co było wcześniej, było przygotowaniem — teraz wchodzimy w praktykę.</p>
+  <p><strong>Czuły Start</strong> to protokół, który stosujesz w konkretnym momencie: stoisz przed zadaniem, wiesz, że masz je zrobić, i nie możesz się do niego zabrać. Nie chodzi o poranny rytuał ani wielki plan. Chodzi o siedem kroków, które prowadzą Cię przez próg oporu.</p>
+  <p>Sześć z tych kroków zajmuje w sumie 4 do 7 minut. Siódmy — samo zadanie — trwa tyle, ile trwa. Ale próg zostaje przekroczony w kilka minut, a to jest cała gra.</p>
+
+  <span class="inline-hook">Metoda ma jedną zasadę główną: nie próbuj chcieć. Zorganizuj sytuację tak, żeby móc.</span>
+
+  <div class="key-box">
+    <div class="key-box-title">Siedem kroków — mapa</div>
+    <ul style="list-style:none;margin:0">
+      <li style="padding:6px 0"><strong>C</strong> &middot; <strong>C</strong>iało &mdash; obniż napięcie</li>
+      <li style="padding:6px 0"><strong>Z</strong> &middot; <strong>Z</strong>obacz zadanie &mdash; nazwij, nie przekombinuj</li>
+      <li style="padding:6px 0"><strong>U</strong> &middot; <strong>U</strong>łatw start &mdash; najmniejszy pierwszy ruch</li>
+      <li style="padding:6px 0"><strong>Ł</strong> &middot; <strong>Ł</strong>agodnie do siebie &mdash; jedno zdanie samowspółczucia</li>
+      <li style="padding:6px 0"><strong>Y</strong> &middot; <strong>Y</strong>ka czasu &mdash; timer na 15 minut</li>
+      <li style="padding:6px 0"><strong>S</strong> &middot; <strong>S</strong>top &mdash; pauza po timerze, świadoma</li>
+      <li style="padding:6px 0"><strong>T</strong> &middot; <strong>T</strong>ak, wystarczy &mdash; zapisz, co zrobiłaś</li>
+    </ul>
+  </div>
+
+  <h3 class="section-subtitle">Krok 1 &middot; C — Ciało (60 sekund)</h3>
+  <p>Zanim mózg zacznie planować, ciało musi wyjść ze stanu zagrożenia. Zrób jedną z trzech rzeczy — wybierz tę, która pasuje do Twojej energii:</p>
+  <ul class="book-list">
+    <li><strong>Fizjologiczne westchnienie</strong> (protokół Andrew Hubermana): dwa krótkie wdechy nosem pod rząd, jeden długi wydech ustami. Powtórz 3 razy. To najszybszy udokumentowany sposób obniżenia poziomu pobudzenia.</li>
+    <li><strong>Rozgrzewka</strong>: 20 przysiadów albo taniec do jednego ulubionego utworu. Ruch wypuszcza z ciała nagromadzony kortyzol.</li>
+    <li><strong>Zimna woda</strong> na przedramiona lub twarz przez 30 sekund. Aktywuje nerw błędny, natychmiast obniża tętno.</li>
+  </ul>
+  <p>Bez tego kroku Twój Strażak zostaje na posterunku, cokolwiek dalej zrobisz.</p>
+
+  <h3 class="section-subtitle">Krok 2 &middot; Z — Zobacz zadanie (60 sekund)</h3>
+  <p>Weź kartkę. Napisz: <em>Chcę teraz zrobić…</em> i wypełnij zdanie <strong>jedną</strong> rzeczą. Nie pięć, nie „ogarnąć papiery" — jedno konkretne zadanie.</p>
+  <p>Jeśli w głowie masz „ogarnąć papiery", zapisz to na osobnej liście, a poniżej wybierz jedną rzecz z tej listy. Reszta poczeka. Twój mózg reaguje na obraz zadania — nie na jego rozmiar. „Ogarnąć papiery" to Everest. „Otworzyć kopertę z ZUS i przeczytać, co jest w środku" — to płaskowyż.</p>
+
+  <h3 class="section-subtitle">Krok 3 &middot; U — Ułatw start (60 sekund)</h3>
+  <p>Zadaj sobie pytanie: <em>jaki jest najmniejszy fizyczny ruch, który wchodzi w to zadanie?</em> Zmniejszaj tak długo, aż będzie żenująco proste.</p>
+  <ul class="book-list">
+    <li>„Napisać artykuł" &rarr; „Otworzyć dokument i wpisać tytuł".</li>
+    <li>„Umyć okna" &rarr; „Wyjąć spray z szafki".</li>
+    <li>„Zadzwonić do lekarza" &rarr; „Znaleźć numer w kalendarzu".</li>
+  </ul>
+  <p>To ma być tak małe, żeby Twój Strażak nie zdążył zareagować. Newton był tu blisko: obiekt w spoczynku pozostaje w spoczynku. Chodzi o wprawienie w ruch, nie o osiągnięcie celu.</p>
+
+  <h3 class="section-subtitle">Krok 4 &middot; Ł — Łagodnie do siebie (30 sekund)</h3>
+  <p>Powiedz sobie na głos jedno zdanie. Nie afirmację, tylko fakt:</p>
+  <blockquote style="font-style:italic;padding:14px 22px;border-left:2px dashed var(--accent-red);color:var(--text-dark);margin:20px 0;font-family:var(--display);font-size:19px">„To jest naprawdę trudne. Nie muszę robić tego dobrze. Muszę tylko zacząć."</blockquote>
+  <p>Brzmi banalnie, ale badania Neff pokazują: krótka fraza samowspółczucia obniża kortyzol w mierzalny sposób w ciągu minuty. To jest po prostu farmakologia — Twoja własna, wewnętrzna.</p>
+
+  <h3 class="section-subtitle">Krok 5 &middot; Y — Yka czasu (15 minut)</h3>
+  <p>Ustaw timer na <strong>15 minut</strong>. Nie 25 (jak w klasycznym Pomodoro), nie 45 (jak w bloku), tylko 15. To jest liczba, po której większość moich klientek wchodzi w flow i przestaje myśleć o zatrzymaniu się.</p>
+  <p>Umów się ze sobą: <em>przez te 15 minut robię tylko to jedno zadanie</em>. Jeśli mózg podpowie „a jeszcze muszę…" — zapisz to na kartce obok i wracaj. Ta kartka to Twoja zewnętrzna pamięć na ten kwadrans.</p>
+
+  <h3 class="section-subtitle">Krok 6 &middot; S — Stop (świadoma pauza)</h3>
+  <p>Gdy timer zadzwoni — <strong>zatrzymaj się na chwilę</strong>, nawet jeśli chce Ci się kontynuować. To kontrintuicyjne, ale ważne. Cel: nauczyć mózg, że siadanie do trudnego zadania nie oznacza kary bez końca. Skończenie po 15 minutach z uczuciem „to było ok" buduje trwałą motywację. Skończenie po 3 godzinach z uczuciem „nienawidzę tego" — dokładnie odwrotnie.</p>
+  <p>Możesz zrobić drugie 15 minut. Ale świadomie, po pauzie, jako <em>osobną decyzję</em>.</p>
+
+  <h3 class="section-subtitle">Krok 7 &middot; T — Tak, wystarczy (60 sekund)</h3>
+  <p>Zapisz w swoim trackerze (karta pracy nr 5) jedno zdanie: <em>„Dziś zrobiłam X. Wystarczy."</em> Nie „udało mi się tylko", nie „powinnam była więcej". Wystarczy.</p>
+  <p>To jest krok, który większość poradników pomija. A to on długoterminowo zmienia motywację, bo zapisuje w pamięci ślad sukcesu, nie ślad porażki.</p>
+
+  <div class="key-box">
+    <div class="key-box-title">Kiedy metoda nie zadziała</div>
+    <ul>
+      <li>Gdy nie spałaś, jesteś głodna albo chora. Wtedy najpierw fizjologia.</li>
+      <li>Gdy zadanie nie jest naprawdę Twoje. Czasem opór to informacja: „to nie jest to, co chcę robić". Warto to usłyszeć.</li>
+      <li>Gdy stosowałaś ją pięć razy pod rząd bez efektu. Wtedy zejdź o poziom: zadanie jest za duże, wróć do kroku 3.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ VIII — NARZĘDZIOWNIK ══════════ -->
+<section id="narzedziownik" class="book-section">
+  <span class="section-eyebrow">Rozdział VIII</span>
+  <div class="chapter-num">08</div>
+  <h2 class="chapter-title">Narzędziownik:<br><em>21 technik dobranych do profilu</em></h2>
+
+  <p>Nie wszystkie techniki działają na wszystkich. Poniżej znajdziesz 21 narzędzi pogrupowanych według pięciu profili z rozdziału II. Zacznij od tych z Twojego dominującego profilu, a pozostałe zostaw na później. Klasyczny błąd to próba wdrożenia dziesięciu technik naraz — mózg tego nie pomieści.</p>
+
+  <h3 class="section-subtitle">Dla Perfekcjonistki (A)</h3>
+  <div class="tool-grid">
+    <div class="tool-card">
+      <div class="tool-num">01</div>
+      <div class="tool-name">Wersja szkicowa</div>
+      <div class="tool-desc">Nazwij każdy pierwszy start „szkicem". Dopisz w tytule pliku: <em>szkic</em>. Krytyk toleruje szkic, nie toleruje produktu.</div>
+      <div class="tool-when">Przed każdym startem</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">02</div>
+      <div class="tool-name">Zasada 80%</div>
+      <div class="tool-desc">Zdecyduj z góry, że wyślesz przy 80% gotowości. Ostatnie 20% kosztuje więcej niż pierwsze 80%.</div>
+      <div class="tool-when">Maile, teksty, prezentacje</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">03</div>
+      <div class="tool-name">Deadline zewnętrzny</div>
+      <div class="tool-desc">Poproś kogoś o przeczytanie/odbiór w konkretnej godzinie. Perfekcjonizm poddaje się terminom nałożonym z zewnątrz.</div>
+      <div class="tool-when">Duże projekty</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">04</div>
+      <div class="tool-name">Dialog z Krytykiem</div>
+      <div class="tool-desc">Zamiast wygrywać z krytykiem, prowadź z nim krótką rozmowę: „Słyszę Cię, dziękuję, wracaj do bazy". Codziennie.</div>
+      <div class="tool-when">W momencie ataku samokrytyki</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">05</div>
+      <div class="tool-name">Świadomy błąd</div>
+      <div class="tool-desc">Raz w tygodniu zrób coś świadomie niedoskonale (niezgrabny mail, niedokończony post). Trening tolerancji.</div>
+      <div class="tool-when">Zaawansowane</div>
+    </div>
+  </div>
+
+  <h3 class="section-subtitle">Dla Przeciążonej (B)</h3>
+  <div class="tool-grid">
+    <div class="tool-card">
+      <div class="tool-num">06</div>
+      <div class="tool-name">Zewnętrzna pamięć rodziny</div>
+      <div class="tool-desc">Wspólny kalendarz + wspólna lista sprawcza. Wszystko, co pilnujesz, ma znaleźć się na zewnątrz Twojej głowy.</div>
+      <div class="tool-when">Wdrożenie w tygodniu 1</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">07</div>
+      <div class="tool-name">Deleguj decyzję, nie tylko zadanie</div>
+      <div class="tool-desc">„Kup prezent" to zadanie. „Zdecyduj, co, komu i kiedy wręczyć" to decyzja. Oddawaj oba naraz.</div>
+      <div class="tool-when">Codzienne rozmowy z partnerem</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">08</div>
+      <div class="tool-name">Reguła 2 minut Allena</div>
+      <div class="tool-desc">Wszystko, co zajmie mniej niż 2 minuty, rób od razu. Nie kolekcjonuj drobnych zadań na osobnej liście.</div>
+      <div class="tool-when">W ciągu dnia</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">09</div>
+      <div class="tool-name">Bloki uwagi rodzinnej</div>
+      <div class="tool-desc">Umów z rodziną 2 bloki dziennie po 45 minut, w których nie można Cię pytać o nic administracyjnego. To Twoja kora przedczołowa.</div>
+      <div class="tool-when">Rytuał tygodnia</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">10</div>
+      <div class="tool-name">Rytuał zamknięcia dnia</div>
+      <div class="tool-desc">3 minuty wieczorem: spisz wszystko, co masz w głowie na jutro. Głowa dostaje sygnał, że może odpuścić.</div>
+      <div class="tool-when">Codziennie po 21:00</div>
+    </div>
+  </div>
+
+  <h3 class="section-subtitle">Dla Uciekinierki w troskę (C)</h3>
+  <div class="tool-grid">
+    <div class="tool-card">
+      <div class="tool-num">11</div>
+      <div class="tool-name">Godzina „tylko moja"</div>
+      <div class="tool-desc">Jedna godzina dziennie, w kalendarzu, z Twoim imieniem. Traktuj ją jak wizytę u dentysty — nie do przełożenia.</div>
+      <div class="tool-when">Rano lub w porze siły</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">12</div>
+      <div class="tool-name">Pauza „czy proszą?"</div>
+      <div class="tool-desc">Zanim rzucisz się pomagać: zapytaj, czy ktoś Cię o to poprosił. Ratowanie niezaproszone jest ucieczką.</div>
+      <div class="tool-when">Wielokrotnie dziennie</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">13</div>
+      <div class="tool-name">Skrypt „to nie ja dziś"</div>
+      <div class="tool-desc">Naucz się trzech zdań odmowy bez usprawiedliwiania: „To nie mój obszar dziś", „Wracam do tego jutro", „Zajmij się tym Ty".</div>
+      <div class="tool-when">Ćwicz przed lustrem</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">14</div>
+      <div class="tool-name">Praca z częścią „Opiekunki"</div>
+      <div class="tool-desc">W ujęciu IFS — nazwij tę część, podziękuj jej. „Wiem, że dbasz o wszystkich. Dziś zajmę się sobą, jesteś wolna."</div>
+      <div class="tool-when">Rano, jako intencja dnia</div>
+    </div>
+  </div>
+
+  <h3 class="section-subtitle">Dla Znieczulaczki wieczornej (D)</h3>
+  <div class="tool-grid">
+    <div class="tool-card">
+      <div class="tool-num">15</div>
+      <div class="tool-name">Wcześniejszy „mój czas"</div>
+      <div class="tool-desc">Przenieś swoją godzinę „dla siebie" o 3-4 godziny wcześniej. Nie musisz jej wyszarpywać w nocy.</div>
+      <div class="tool-when">Wieczorny reset</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">16</div>
+      <div class="tool-name">Fizyczna granica dnia</div>
+      <div class="tool-desc">Rytuał, po którym „dzień jest zamknięty": zdjęcie stanika, umycie twarzy, świeca. Sygnał, że tryb czuwania kończy się.</div>
+      <div class="tool-when">Około 21:00</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">17</div>
+      <div class="tool-name">Telefon poza sypialnią</div>
+      <div class="tool-desc">Ładowarka w kuchni. Budzik zwykły. Sen wraca w tydzień, wieczór odzyskujesz od razu.</div>
+      <div class="tool-when">Od pierwszego dnia</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">18</div>
+      <div class="tool-name">Wieczór analogowy 3&times;/tydz.</div>
+      <div class="tool-desc">Trzy wieczory bez ekranów. Książka, wanna, rozmowa. Reset dopaminowy w miękkiej wersji.</div>
+      <div class="tool-when">Wtorek, czwartek, niedziela</div>
+    </div>
+  </div>
+
+  <h3 class="section-subtitle">Dla Zagubionej w chaosie (E)</h3>
+  <div class="tool-grid">
+    <div class="tool-card">
+      <div class="tool-num">19</div>
+      <div class="tool-name">Body doubling</div>
+      <div class="tool-desc">Pracuj z kimś w tym samym pomieszczeniu (lub online, cichy call). Sama obecność drugiej osoby stabilizuje uwagę.</div>
+      <div class="tool-when">Do zadań administracyjnych</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">20</div>
+      <div class="tool-name">Rytm zamiast planu</div>
+      <div class="tool-desc">Zamiast rozpisanego dnia — trzy stałe zakotwiczenia (rano, południe, wieczór). Dużo mniej do decydowania.</div>
+      <div class="tool-when">Codziennie</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-num">21</div>
+      <div class="tool-name">Zewnętrzny mózg</div>
+      <div class="tool-desc">Jedno miejsce (aplikacja lub notes), do którego zawsze zapisujesz. Bez systemu. System pojawia się z czasem.</div>
+      <div class="tool-when">Zawsze przy sobie</div>
+    </div>
+  </div>
+
+  <div class="clinical-note">
+    <div class="clinical-note-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div>
+    <div>
+      <div class="clinical-note-title">Zasada wdrożenia</div>
+      Wybierz <strong>2 narzędzia</strong> z Twojego profilu i wdrażaj tylko je przez 2 tygodnie. Kolejne dodawaj tylko wtedy, gdy poprzednie stały się rutyną. Sześć narzędzi wprowadzonych naraz to sześć niewdrożonych narzędzi.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ IX — PLAN 21 DNI ══════════ -->
+<section id="plan-21" class="book-section">
+  <span class="section-eyebrow">Rozdział IX</span>
+  <div class="chapter-num">09</div>
+  <h2 class="chapter-title">Plan 21 dni</h2>
+
+  <p>Dwadzieścia jeden dni to nie mit „ile trwa nawyk" (to nieprawda, nawyki zajmują 60-250 dni). Dwadzieścia jeden dni to okno, w którym Twój mózg zbiera wystarczająco danych, żeby zdecydować, że warto próbować dalej. To praktyka, nie transformacja.</p>
+  <p>Każdy dzień ma jedno konkretne zadanie. Zadanie zajmuje 5 do 15 minut. Jeśli któregoś dnia nie zdążysz — po prostu wracasz następnego dnia, nie „nadrabiasz". Ta zasada jest fundamentalna: <strong>brak sesji to nie porażka, tylko dane</strong>.</p>
+
+  <div class="key-box">
+    <div class="key-box-title">Zasady planu</div>
+    <ul>
+      <li>Codziennie <strong>tylko jedno zadanie</strong>. Nie dwa, nie trzy. Jedno.</li>
+      <li>Wpisuj wynik w trackerze (karta pracy nr 5) — nawet krzyżykiem.</li>
+      <li>Opuszczonego dnia nie odrabiasz. Idziesz do następnego.</li>
+      <li>Po każdym tygodniu — krótka refleksja (10 minut).</li>
+    </ul>
+  </div>
+
+  <div class="day-week">
+    <div class="week-head">Tydzień 1 &middot; Zauważanie</div>
+    <div class="day-row"><div class="day-num">Dzień 1</div><div class="day-task"><b>Wybór zadania.</b> Zapisz jedno zadanie, które odkładasz najdłużej. Nie zaczynaj — tylko zobacz.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 2</div><div class="day-task"><b>Twoja pętla.</b> Wypełnij kartę pracy nr 1 &mdash; opisz swoich sześć kroków pętli.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 3</div><div class="day-task"><b>Test profilu.</b> Wróć do quizu w rozdziale II. Zapisz swoje dwa dominujące profile.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 4</div><div class="day-task"><b>Trzy filary.</b> Sprawdź swój sen, białko i ruch przez ostatnie 7 dni. Zaznacz braki.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 5</div><div class="day-task"><b>Pierwszy Czuły Start.</b> Wybierz małe zadanie. Przejdź przez wszystkie 7 kroków metody. Sprawdź, co poszło.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 6</div><div class="day-task"><b>Audyt telefonu.</b> Sprawdź w ustawieniach, ile czasu dziennie spędzasz w mediach społecznościowych. Zapisz.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 7</div><div class="day-task"><b>Refleksja tygodnia.</b> Napisz jedno zdanie: <em>„W tym tygodniu zobaczyłam u siebie…"</em></div></div>
+  </div>
+
+  <div class="day-week">
+    <div class="week-head">Tydzień 2 &middot; Pierwsze narzędzia</div>
+    <div class="day-row"><div class="day-num">Dzień 8</div><div class="day-task"><b>Wybór narzędzi.</b> Z narzędziownika (rozdział VIII) wybierz 2 techniki z Twojego dominującego profilu.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 9</div><div class="day-task"><b>Narzędzie 1 &mdash; wdrożenie.</b> Zastosuj pierwsze narzędzie w konkretnej sytuacji. Zapisz efekt.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 10</div><div class="day-task"><b>Narzędzie 2 &mdash; wdrożenie.</b> To samo z drugim narzędziem.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 11</div><div class="day-task"><b>Rozmowa.</b> Jeśli masz partnera &mdash; przeprowadź rozmowę ze skryptu z rozdziału XI.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 12</div><div class="day-task"><b>Godzina „tylko moja".</b> Zablokuj w kalendarzu jedną godzinę. Nie odwołuj jej.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 13</div><div class="day-task"><b>Zewnętrzna pamięć.</b> Załóż wspólny kalendarz / listę / tablicę. Wpisz na nią co najmniej 5 rzeczy.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 14</div><div class="day-task"><b>Refleksja tygodnia.</b> Które z narzędzi realnie zadziałało? Dlaczego? Zapisz.</div></div>
+  </div>
+
+  <div class="day-week">
+    <div class="week-head">Tydzień 3 &middot; Ugruntowanie</div>
+    <div class="day-row"><div class="day-num">Dzień 15</div><div class="day-task"><b>Reset dopaminowy &mdash; start.</b> Wybierz jedną rzecz z protokołu 7 dni (rozdział VI). Zacznij od dziś.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 16</div><div class="day-task"><b>Ciało.</b> Wprowadź jeden nawyk fizyczny: 20 min ruchu, białkowe śniadanie albo 8h snu.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 17</div><div class="day-task"><b>List do Krytyka.</b> Zrób ćwiczenie 3 z rozdziału IV.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 18</div><div class="day-task"><b>Cykl.</b> Oznacz w kalendarzu na najbliższy miesiąc kolory faz (zielony/żółty/czerwony).</div></div>
+    <div class="day-row"><div class="day-num">Dzień 19</div><div class="day-task"><b>Duże zadanie.</b> Wybierz zadanie, które odkładasz &mdash; i zastosuj Czuły Start na całą metodę.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 20</div><div class="day-task"><b>Bilans.</b> Co się zmieniło? Co zostało? Nie oceniaj &mdash; opisz.</div></div>
+    <div class="day-row"><div class="day-num">Dzień 21</div><div class="day-task"><b>Plan na kolejny miesiąc.</b> Wybierz 2 rzeczy, które zostają na stałe. Reszta &mdash; kolejny rytm.</div></div>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ X — NAWRÓT ══════════ -->
+<section id="nawrot" class="book-section">
+  <span class="section-eyebrow">Rozdział X</span>
+  <div class="chapter-num">10</div>
+  <h2 class="chapter-title">Kryzys i nawrót —<br><em>protokół powrotu</em></h2>
+
+  <p>Wypadniesz z rytmu. Nie „jeśli", tylko „kiedy". Może zachorujesz. Może dziecko zachoruje. Może wpadnie deadline w pracy albo po prostu przyjdzie tydzień, w którym nic nie pójdzie. To nie jest wtedy dowód, że nie umiesz — to jest dowód, że jesteś człowiekiem. Ta książka byłaby oszustwem, gdyby nie zawierała rozdziału o tym, co robić, kiedy wracasz.</p>
+
+  <span class="inline-hook">Największym problemem nawrotu nie jest sam nawrót. Największym problemem jest wstyd, który zamyka drogę powrotną.</span>
+
+  <h3 class="section-subtitle">Efekt „a niech to"</h3>
+  <p><span class="evidence-tag ev-strong">Mocne dowody</span></p>
+  <p>Psycholog Alan Marlatt zbadał ludzi na dietach i odkrył zjawisko, które nazwał <em>„what-the-hell effect"</em> („efekt a niech to"). Po jednym drobnym odstępstwie (jedno ciastko) osoby na dietach zjadały drastycznie więcej niż osoby, które nie były na diecie. Powód? Myśl: „no i tak już zepsułam dzień".</p>
+  <p>Dokładnie ten sam mechanizm dotyczy planów i systemów. Opuszczasz jeden dzień, myślisz „no i tak już zepsułam tydzień", opuszczasz cały tydzień. Opuszczasz tydzień, myślisz „no i tak nic z tego nie wyjdzie", wracasz do punktu wyjścia.</p>
+  <p>Antidotum jest jedno i banalnie proste: <strong>opuszczonego dnia nie odrabiasz. Wracasz następnego</strong>. Jedna sesja plus jedna opuszczona to nie zero. To jedna.</p>
+
+  <h3 class="section-subtitle">Protokół powrotu &middot; 4 kroki</h3>
+  <div class="key-box">
+    <div class="key-box-title">Kiedy wypadniesz</div>
+    <ul>
+      <li><strong>1. Zauważ, że wypadłaś.</strong> Bez oceny. Nazwij po imieniu: „Zeszłam z torów na 5 dni".</li>
+      <li><strong>2. Zapytaj: co się stało?</strong> Nie „dlaczego jestem beznadziejna", tylko „co się wydarzyło w moim życiu, że system nie zadziałał". To zwykle mówi coś ważnego o systemie, nie o Tobie.</li>
+      <li><strong>3. Uprość do minimum.</strong> Nie wracaj do pełnego planu. Wybierz jedno najmniejsze zadanie z planu 21 dni i zrób tylko je.</li>
+      <li><strong>4. Zapisz w trackerze: „Wróciłam".</strong> Nie „jestem znowu w rytmie", nie „udało się". Tylko: „wróciłam". To buduje neurologiczny ślad powrotu, nie ideału.</li>
+    </ul>
+  </div>
+
+  <h3 class="section-subtitle">Trzy scenariusze, które przećwiczysz w głowie</h3>
+  <p><strong>Scenariusz 1: Choroba dziecka.</strong> Nie pracujesz nad sobą 5 dni. Wracasz — od jednej rzeczy, np. picia wody rano. Reszta nadchodzi z czasem. Nie próbujesz jednego dnia zrobić wszystkiego.</p>
+  <p><strong>Scenariusz 2: Duży projekt w pracy.</strong> Wiesz z góry, że przez 3 tygodnie system się pokruszy. Zamiast walczyć — z góry zdefiniuj wersję „low power" swojej rutyny (tylko 3 rzeczy). Wracasz po projekcie do pełnego bez wyrzutów.</p>
+  <p><strong>Scenariusz 3: Kryzys w związku lub zdrowia.</strong> Zawieszasz plan świadomie. Nie „zepsułam", tylko „pauzuję". Wracasz, gdy fundamenty stoją.</p>
+
+  <div class="clinical-note">
+    <div class="clinical-note-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div>
+    <div>
+      <div class="clinical-note-title">Kiedy szukać pomocy</div>
+      Jeśli po dwóch-trzech próbach powrotu wciąż nie umiesz ruszyć, jeśli codziennie budzisz się z ciężarem, którego nie potrafisz nazwać, jeśli myślisz o życiu w kategoriach „nie chcę już" — to nie jest teren tej książki. To teren gabinetu psychoterapeuty lub psychiatry. Zadzwoń do specjalisty; jeśli myśli są ostre, zadzwoń pod numer wsparcia (w Polsce: 116 123 &mdash; kryzysowy telefon zaufania).
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ROZDZIAŁ XI — ROZMOWY ══════════ -->
+<section id="rozmowy" class="book-section">
+  <span class="section-eyebrow">Rozdział XI</span>
+  <div class="chapter-num">11</div>
+  <h2 class="chapter-title">Rozmowy<br>z otoczeniem</h2>
+
+  <p>Sama zmiana Twojego wnętrza nie wystarczy. Jeśli otoczenie wciąż nie rozumie, co się z Tobą dzieje, wpadniesz z powrotem w te same schematy — tyle że z większą wiedzą o tym, że w nie wpadasz. Ten rozdział to gotowe skrypty. Nie musisz ich mówić dosłownie. Ale zdania są tak sformułowane, żeby aktywować u odbiorcy współpracę, nie obronę.</p>
+
+  <h3 class="section-subtitle">Rozmowa z partnerem</h3>
+  <p><strong>Kontekst.</strong> Wybierz spokojny moment. Nie po awanturze. Nie w kuchni z brudnymi naczyniami.</p>
+  <p><strong>Otwarcie:</strong> „Chcę Ci coś opowiedzieć o mnie, żebyś rozumiał, o co mi chodzi, gdy nie robię rzeczy, które oboje uważamy za oczywiste. Nie potrzebuję rad — potrzebuję, żebyś posłuchał 10 minut."</p>
+  <p><strong>Historia:</strong> „Ostatnio dużo czytałam o tym, dlaczego niektóre osoby odkładają zadania. Okazuje się, że to nie jest sprawa charakteru, tylko regulacji emocji. Mój mózg unika zadań, które go stresują. To biologia, nie decyzja."</p>
+  <p><strong>Prośba:</strong> „Prosiłabym Cię o dwie zmiany. Po pierwsze — kiedy widzisz, że coś nie zostało zrobione, zapytaj „mogę Cię jakoś odciążyć" zamiast „co robiłaś cały dzień". Po drugie — chciałabym, żebyśmy raz w tygodniu, w niedzielę wieczorem, przez 20 minut planowali tydzień wspólnie, żeby ta pamięć była zapisana gdzieś poza moją głową."</p>
+
+  <h3 class="section-subtitle">Rozmowa z szefem/szefową</h3>
+  <p><strong>Kontekst.</strong> Nie musisz tłumaczyć się z neurobiologii. Wystarczy język skuteczności.</p>
+  <p><strong>Otwarcie:</strong> „Chciałam porozmawiać o tym, jak mogę dostarczać wyniki bardziej przewidywalnie. Zauważam u siebie, że blokuję się przed niektórymi zadaniami — i chcę to zmienić przez zmiany w strukturze pracy."</p>
+  <p><strong>Konkret 1:</strong> „Chciałabym mieć dwie sesje po 90 minut bez powiadomień i spotkań w kalendarzu — najlepiej rano, gdy mam najlepszą uwagę. W tych blokach kończę zadania, które mają największą wagę."</p>
+  <p><strong>Konkret 2:</strong> „Przy każdym większym projekcie chciałabym umawiać z Tobą wcześniejszy „check-in" po pierwszej wersji — 60% roboczej — zamiast czekać z pełną gotową wersją. To pomoże mi nie utknąć w perfekcjonizmie."</p>
+
+  <h3 class="section-subtitle">Rozmowa z dzieckiem</h3>
+  <p><strong>Kontekst.</strong> Dzieci wyczuwają nasze stany i wypełniają je własnymi opowieściami („mama jest zła, bo ja coś zrobiłam"). Prosta rozmowa dużo zmienia.</p>
+  <p><strong>Skrypt:</strong> „Kochanie, chcę Ci powiedzieć, że kiedy jestem zmęczona i cicha, to nie z powodu Ciebie. Mój mózg ma dziś dużo do trawienia. Za chwilę odpocznę i wrócę do Ciebie. Kocham Cię tak samo jak zawsze."</p>
+
+  <h3 class="section-subtitle">Rozmowa z rodzicami (albo teściami)</h3>
+  <p><strong>Kontekst.</strong> „Trzeba się wziąć w garść" to najczęściej zdanie tłumaczone z języka pokolenia, które nie mogło sobie pozwolić na inne języki. Nie musisz go zmieniać. Możesz zmienić Twoją odpowiedź.</p>
+  <p><strong>Skrypt:</strong> „Wiem, że u Was to działało. Ja próbuję innego podejścia, które lepiej pasuje do mojego dziecka i mojego życia. Nie muszę Cię do niego przekonywać — proszę tylko, żebyś nie komentowała, jak spędzam czas. Ja o siebie zadbam sama."</p>
+
+  <div class="key-box">
+    <div class="key-box-title">Zasada trzech zdań</div>
+    <p>Każda z tych rozmów zmieści się w trzech zdaniach. Nie tłumacz się dłużej — długie tłumaczenia budzą kontrargumenty. Krótkie zdania zamykają temat.</p>
+  </div>
+</section>
+
+<!-- ══════════ ZAKOŃCZENIE ══════════ -->
+<section id="zakonczenie" class="book-section">
+  <span class="section-eyebrow">Zakończenie</span>
+  <h2 class="section-title">List do Ciebie</h2>
+
+  <p>Chcę, żebyś zapamiętała jedno zdanie z tej książki. Jeśli mam wybrać jedno:</p>
+
+  <span class="inline-hook">Nie jesteś leniwa. Jesteś inteligentnym układem nerwowym, który przez lata nauczył się bardzo skutecznie unikać cierpienia. Właśnie dlatego warto go zmieniać czule, nie siłą.</span>
+
+  <p>Nauczysz się rozpoznawać moment, w którym Twój Strażak przejmuje kierownicę. Nauczysz się prostych ruchów, które pozwalają Menedżerce wrócić na miejsce kierowcy. Nauczysz się dawać sobie trzy oddechy zamiast kolejnej godziny scrollowania.</p>
+  <p>Ale przede wszystkim &mdash; i to jest coś, na czym mi zależy najbardziej &mdash; nauczysz się rozmawiać ze sobą inaczej. Tym samym głosem, którym mówisz do bliskiej osoby, kiedy widzisz, że ma trudny dzień. Bez oskarżeń, bez sarkazmu, bez porównywania z sąsiadką z Instagrama.</p>
+  <p>Jestem z Tobą w tym procesie. Nie znajdziesz mnie w Twojej kuchni o 21:00, kiedy najbardziej tego potrzebujesz &mdash; ale jestem w tej książce i na moich kanałach. Napisz do mnie, kiedy będziesz miała ochotę. Piszę do wszystkich osobiście, nawet jeśli mi to zajmuje tygodnie.</p>
+
+  <p style="text-align:right;font-family:var(--display);font-size:24px;font-style:italic;color:var(--accent-red);margin-top:40px">&mdash; Laura</p>
+
+  <hr class="rule">
+
+  <div class="author-card">
+    <div class="author-avatar"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></div>
+    <div class="author-info">
+      <div class="author-name">Zostajemy w kontakcie?</div>
+      <div class="author-role">Newsletter &middot; Instagram &middot; Masterclass</div>
+      <p class="author-bio">Jeśli ta książka Ci pomogła, mam dla Ciebie jeszcze trzy miejsca: cotygodniowy newsletter z krótkimi ćwiczeniami, Instagram z codziennymi drobnymi impulsami i pełny <strong>Masterclass Czuły Balans</strong>, gdzie w sześciu tygodniach przechodzę z Tobą przez to wszystko na żywo.</p>
+      <div class="author-social-links">
+        <a href="https://instagram.com/laura.prokrastynacja" class="author-link" target="_blank" rel="noopener">@laura.prokrastynacja</a>
+        <a href="mailto:laura@prokrastynacja.pl" class="author-link">laura@prokrastynacja.pl</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ DODATEK A — KARTY PRACY ══════════ -->
+<section id="karty-pracy" class="book-section">
+  <span class="section-eyebrow">Dodatek A</span>
+  <h2 class="section-title">Karty pracy<br>do wydruku</h2>
+  <p>Poniższe siedem kart to najbardziej praktyczna część tej książki. Możesz je wypełnić na ekranie, ale najlepiej — wydrukuj i miej pod ręką. Ślad ołówka na papierze pracuje w mózgu inaczej niż click.</p>
+
+  <!-- Karta 1 -->
+  <div class="worksheet">
+    <div class="worksheet-head">
+      <div class="worksheet-title">Karta 1 &middot; Moja pętla prokrastynacji</div>
+      <div class="worksheet-tag">15 minut</div>
+    </div>
+    <span class="field-label">Zadanie, które odkładam:</span>
+    <div class="field-line"></div>
+    <span class="field-label">1. Co konkretnie w tym zadaniu wzbudza we mnie opór?</span>
+    <div class="field-line"></div><div class="field-line"></div>
+    <span class="field-label">2. Co czuję w ciele, gdy o nim myślę?</span>
+    <div class="field-line"></div>
+    <span class="field-label">3. Do czego ucieka moja uwaga? (moja typowa forma ucieczki)</span>
+    <div class="field-line"></div>
+    <span class="field-label">4. Co mówi mój wewnętrzny głos po ucieczce?</span>
+    <div class="field-line"></div><div class="field-line"></div>
+    <span class="field-label">5. W którym miejscu pętli mam największą siłę do przerwania?</span>
+    <div class="field-line"></div>
+  </div>
+
+  <!-- Karta 2 -->
+  <div class="worksheet">
+    <div class="worksheet-head">
+      <div class="worksheet-title">Karta 2 &middot; Audyt niewidzialnej pracy</div>
+      <div class="worksheet-tag">20 minut</div>
+    </div>
+    <table class="tracker-grid">
+      <thead><tr><th>Obszar</th><th>Ja</th><th>Partner</th><th>Podzielone</th></tr></thead>
+      <tbody>
+        <tr><td>Terminy medyczne rodziny</td><td></td><td></td><td></td></tr>
+        <tr><td>Urodziny i prezenty</td><td></td><td></td><td></td></tr>
+        <tr><td>Zapasy w domu</td><td></td><td></td><td></td></tr>
+        <tr><td>Szkoła / przedszkole (kontakt, papiery)</td><td></td><td></td><td></td></tr>
+        <tr><td>Finansowe (rachunki, ubezpieczenia)</td><td></td><td></td><td></td></tr>
+        <tr><td>Fachowcy w domu</td><td></td><td></td><td></td></tr>
+        <tr><td>Emocjonalny nadzór członków rodziny</td><td></td><td></td><td></td></tr>
+        <tr><td>Życie towarzyskie i relacje</td><td></td><td></td><td></td></tr>
+        <tr><td>Plany długoterminowe (wakacje, remont)</td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Karta 3 -->
+  <div class="worksheet">
+    <div class="worksheet-head">
+      <div class="worksheet-title">Karta 3 &middot; Tygodniowy audyt dopaminy</div>
+      <div class="worksheet-tag">1 tydzień</div>
+    </div>
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:14px;font-family:var(--sans)">Codziennie wieczorem wpisz trzy liczby. Po tygodniu popatrz na korelację.</p>
+    <table class="tracker-grid">
+      <thead><tr><th>Dzień</th><th>Minuty social media</th><th>Minuty pracy głębokiej</th><th>Radość dnia (1-10)</th></tr></thead>
+      <tbody>
+        <tr><td>Poniedziałek</td><td></td><td></td><td></td></tr>
+        <tr><td>Wtorek</td><td></td><td></td><td></td></tr>
+        <tr><td>Środa</td><td></td><td></td><td></td></tr>
+        <tr><td>Czwartek</td><td></td><td></td><td></td></tr>
+        <tr><td>Piątek</td><td></td><td></td><td></td></tr>
+        <tr><td>Sobota</td><td></td><td></td><td></td></tr>
+        <tr><td>Niedziela</td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Karta 4 -->
+  <div class="worksheet">
+    <div class="worksheet-head">
+      <div class="worksheet-title">Karta 4 &middot; Rozbicie dużego zadania</div>
+      <div class="worksheet-tag">10 minut</div>
+    </div>
+    <span class="field-label">Zadanie w wersji „Everestowej" (jak wygląda w głowie):</span>
+    <div class="field-line"></div>
+    <span class="field-label">Prawdziwy cel (co dokładnie ma się wydarzyć, żeby było zrobione?):</span>
+    <div class="field-line"></div>
+    <span class="field-label">Rozbij na maksymalnie 6 kroków, każdy do 20 minut:</span>
+    <div class="checkbox-row"><div class="checkbox-box"></div><div style="flex:1;border-bottom:1px solid var(--border-color);height:22px"></div></div>
+    <div class="checkbox-row"><div class="checkbox-box"></div><div style="flex:1;border-bottom:1px solid var(--border-color);height:22px"></div></div>
+    <div class="checkbox-row"><div class="checkbox-box"></div><div style="flex:1;border-bottom:1px solid var(--border-color);height:22px"></div></div>
+    <div class="checkbox-row"><div class="checkbox-box"></div><div style="flex:1;border-bottom:1px solid var(--border-color);height:22px"></div></div>
+    <div class="checkbox-row"><div class="checkbox-box"></div><div style="flex:1;border-bottom:1px solid var(--border-color);height:22px"></div></div>
+    <div class="checkbox-row"><div class="checkbox-box"></div><div style="flex:1;border-bottom:1px solid var(--border-color);height:22px"></div></div>
+    <span class="field-label" style="margin-top:16px">Najmniejszy pierwszy ruch (ma być żenująco łatwy):</span>
+    <div class="field-line"></div>
+  </div>
+
+  <!-- Karta 5 -->
+  <div class="worksheet">
+    <div class="worksheet-head">
+      <div class="worksheet-title">Karta 5 &middot; Tracker 21 dni</div>
+      <div class="worksheet-tag">21 dni</div>
+    </div>
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:14px;font-family:var(--sans)">Każdego dnia zaznacz X po wykonaniu zadania i wpisz jednym zdaniem: co dziś zrobiłam.</p>
+    <table class="tracker-grid">
+      <thead><tr><th>Dzień</th><th>X</th><th>Co dziś zrobiłam</th></tr></thead>
+      <tbody>
+        <tr><td>Dzień 1</td><td></td><td></td></tr>
+        <tr><td>Dzień 2</td><td></td><td></td></tr>
+        <tr><td>Dzień 3</td><td></td><td></td></tr>
+        <tr><td>Dzień 4</td><td></td><td></td></tr>
+        <tr><td>Dzień 5</td><td></td><td></td></tr>
+        <tr><td>Dzień 6</td><td></td><td></td></tr>
+        <tr><td>Dzień 7</td><td></td><td></td></tr>
+        <tr><td>Dzień 8</td><td></td><td></td></tr>
+        <tr><td>Dzień 9</td><td></td><td></td></tr>
+        <tr><td>Dzień 10</td><td></td><td></td></tr>
+        <tr><td>Dzień 11</td><td></td><td></td></tr>
+        <tr><td>Dzień 12</td><td></td><td></td></tr>
+        <tr><td>Dzień 13</td><td></td><td></td></tr>
+        <tr><td>Dzień 14</td><td></td><td></td></tr>
+        <tr><td>Dzień 15</td><td></td><td></td></tr>
+        <tr><td>Dzień 16</td><td></td><td></td></tr>
+        <tr><td>Dzień 17</td><td></td><td></td></tr>
+        <tr><td>Dzień 18</td><td></td><td></td></tr>
+        <tr><td>Dzień 19</td><td></td><td></td></tr>
+        <tr><td>Dzień 20</td><td></td><td></td></tr>
+        <tr><td>Dzień 21</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Karta 6 -->
+  <div class="worksheet">
+    <div class="worksheet-head">
+      <div class="worksheet-title">Karta 6 &middot; Rytm dnia z uwzględnieniem cyklu</div>
+      <div class="worksheet-tag">Miesiąc</div>
+    </div>
+    <span class="field-label">Dzień cyklu dziś:</span>
+    <div class="field-line"></div>
+    <span class="field-label">Kolor dnia (zielony / żółty / czerwony):</span>
+    <div class="field-line"></div>
+    <span class="field-label">Trzy zadania dopasowane do koloru:</span>
+    <div class="field-line"></div><div class="field-line"></div><div class="field-line"></div>
+    <span class="field-label">Co dziś odpuszczam bez wyrzutów?</span>
+    <div class="field-line"></div>
+  </div>
+
+  <!-- Karta 7 -->
+  <div class="worksheet">
+    <div class="worksheet-head">
+      <div class="worksheet-title">Karta 7 &middot; Refleksja tygodnia</div>
+      <div class="worksheet-tag">10 minut, co tydzień</div>
+    </div>
+    <span class="field-label">Co się udało (nawet drobnego)?</span>
+    <div class="field-line"></div><div class="field-line"></div>
+    <span class="field-label">Kiedy wypadłam z rytmu i dlaczego (bez oceny)?</span>
+    <div class="field-line"></div><div class="field-line"></div>
+    <span class="field-label">Które narzędzie z narzędziownika naprawdę zadziałało?</span>
+    <div class="field-line"></div>
+    <span class="field-label">Jedno małe zadanie na jutro (nie plan tygodnia — jedno na jutro):</span>
+    <div class="field-line"></div>
+    <span class="field-label">Jedno zdanie samowspółczucia do samej siebie:</span>
+    <div class="field-line"></div>
+  </div>
+</section>
+
+<!-- ══════════ DODATEK B — FAQ ══════════ -->
+<section id="faq" class="book-section">
+  <span class="section-eyebrow">Dodatek B</span>
+  <h2 class="section-title">Najczęstsze<br>pytania</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Ile czasu zajmuje, żeby to zadziałało?</div>
+    <div class="faq-a">Pierwsze zmiany widać po 3-7 dniach systematycznej pracy z metodą Czuły Start. Trwałe zmiany schematów myślenia — 8 do 12 tygodni. To nie „21 dni", żeby być inną osobą. To 21 dni, żeby zebrać wystarczająco danych i wiedzieć, że warto iść dalej.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Mam ADHD (albo podejrzenie). Czy to działa też u mnie?</div>
+    <div class="faq-a">Tak, ale musisz uzupełnić o dwie rzeczy: rozmowę z psychiatrą (leczenie farmakologiczne dramatycznie zwiększa skuteczność wszystkich technik behawioralnych) i mocne wsparcie strukturalne z zewnątrz — body doubling, przypomnienia w telefonie, koleżanka do wspólnej pracy. Sama metoda działa dobrze na ADHD w warunkach dopamino-neutralnych.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Nie mam partnera / partner nie chce ze mną o tym rozmawiać.</div>
+    <div class="faq-a">Cała metoda działa też solo. Skrypty rozmów z rozdziału XI możesz zastosować w innych relacjach — z siostrą, przyjaciółką, terapeutką. „Zewnętrzna pamięć" to wtedy Twoja jedna wspólna notatka z Twoim samym systemem. Zadziała.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Nie mam czasu na 15 minut dziennie.</div>
+    <div class="faq-a">Zawsze mamy 15 minut. Nawet gdy nie mamy. Zrób 5 minut. Zrób 90 sekund fizjologicznego westchnienia. Zasada jest jedna: <em>coś nikłego dziś jest wszystkim ponad nic</em>. Nawyk buduje się przez rytm, nie przez wielkość.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Zrobiłam quiz i wyszły mi wysokie wyniki w trzech profilach. Co dalej?</div>
+    <div class="faq-a">To normalne — profile nakładają się na siebie. Zacznij od dwóch narzędzi z jednego (wybierz ten, którego opis najbardziej Cię wzrusza). W tygodniu 4-5 dołóż jedno z drugiego. Trzeciego nie ruszaj przez pierwsze dwa miesiące.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Wypadłam z rytmu po pierwszym tygodniu. Zaczynać od nowa?</div>
+    <div class="faq-a">Nie. Wróć do dnia, w którym wypadłaś. Nie odrabiaj opuszczonych. Zapisz w trackerze: „Wróciłam po X dniach". To buduje właściwy ślad neurologiczny. „Zaczynanie od nowa" trenuje mózg do myślenia „albo idealnie, albo wcale" — czyli dokładnie ten wzorzec, z którego wychodzimy.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Czy mogę pracować z tym samodzielnie, bez terapii?</div>
+    <div class="faq-a">Tak, jeśli Twoje trudności są sytuacyjne i nie towarzyszy im wyraźne cierpienie każdego dnia. Nie, jeśli budzisz się codziennie z uczuciem beznadziei, myślisz o życiu w kategoriach „nie chcę już" albo funkcjonujesz na 40% od miesięcy. Wtedy ta książka jest wsparciem, ale nie zastąpi specjalisty.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Czy metoda działa dla mężczyzn?</div>
+    <div class="faq-a">Cała neurobiologia (rozdziały I, IV, VI) — tak. Rozdział o Mental Load i o cyklu jest napisany z perspektywy kobiet, bo większość moich czytelniczek to kobiety. Mężczyźni czytający tę książkę zwykle mówią, że rozdziały o pętli i o dopaminie były najbardziej trafne — a rozdział o Mental Load pomógł im zobaczyć swój dom inaczej.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Ile już razy zaczynałam. Skąd wiem, że tym razem będzie inaczej?</div>
+    <div class="faq-a">Nie wiesz. I to jest w porządku. Różnica jest jedna: ta książka nie zakłada, że zawsze się uda. Zakłada, że wypadniesz z rytmu — i ma rozdział o powrocie. Każda metoda, która obiecuje ci „30 dni i nowa osoba", zostawi Cię z jeszcze większym wstydem, kiedy nie zadziała. Ta zostawi Cię z narzędziem powrotu.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Czy potrzebuję kupić dodatkowe rzeczy (aplikacje, planer)?</div>
+    <div class="faq-a">Nie. Wszystko, co potrzebujesz, znajdziesz w tej książce, plus zeszyt i długopis. Aplikacje i planery pomagają, ale zawsze jako narzędzie, nie jako klucz. Klucz jest w Twojej głowie.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Czy mogę udostępnić ten ebook koleżance?</div>
+    <div class="faq-a">Nie. Egzemplarz jest przypisany do Ciebie i objęty licencją użytku osobistego. Jeśli chcesz kupić egzemplarz koleżance — napisz do mnie, dam Ci kod rabatowy na drugi egzemplarz. Praca autorska jest w tej książce znaczna i pozwala mi pisać kolejne. Dziękuję za respekt.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Gdzie mogę zadać własne pytanie?</div>
+    <div class="faq-a">Napisz na <a href="mailto:laura@prokrastynacja.pl">laura@prokrastynacja.pl</a> albo DM na Instagramie <a href="https://instagram.com/laura.prokrastynacja" target="_blank" rel="noopener">@laura.prokrastynacja</a>. Odpowiadam na wszystkie wiadomości, chociaż zajmuje mi to czasem 1-2 tygodnie (bez wyrzutów sumienia, jesteśmy tu wszyscy przecież po to samo).</div>
+  </div>
+</section>
+
+<!-- ══════════ DODATEK C — BIBLIOGRAFIA ══════════ -->
+<section id="bibliografia" class="book-section">
+  <span class="section-eyebrow">Dodatek C</span>
+  <h2 class="section-title">Bibliografia<br>i poziomy dowodów</h2>
+
+  <p>Nie każde zdanie w tej książce ma za sobą tę samą wagę dowodową. Poniżej znajdziesz wybrane źródła, uporządkowane wg poziomu dowodów, żebyś sama mogła sięgnąć głębiej lub zweryfikować, co warto.</p>
+
+  <h3 class="section-subtitle">Poziom I &middot; Mocne dowody</h3>
+  <ul class="ref-list">
+    <li><b>Steel, P. (2007).</b> <em>The nature of procrastination: A meta-analytic and theoretical review of quintessential self-regulatory failure.</em> Psychological Bulletin, 133(1), 65-94. — kluczowa metaanaliza definiująca prokrastynację jako problem samoregulacji.</li>
+    <li><b>Sirois, F., &amp; Pychyl, T. (2013).</b> <em>Procrastination and the priority of short-term mood regulation.</em> Social and Personality Psychology Compass, 7(2), 115-127. — źródło ramy „prokrastynacja jako regulacja emocji".</li>
+    <li><b>Daminger, A. (2019).</b> <em>The Cognitive Dimension of Household Labor.</em> American Sociological Review, 84(4), 609-633. — cztery fazy Mental Load u par heteroseksualnych.</li>
+    <li><b>Neff, K. D. (2003).</b> <em>Self-compassion: An alternative conceptualization of a healthy attitude toward oneself.</em> Self and Identity, 2(2), 85-101. — fundament badań nad samowspółczuciem.</li>
+    <li><b>Baumeister, R., &amp; Tierney, J. (2011).</b> <em>Willpower: Rediscovering the greatest human strength.</em> Penguin. — mechanizm decision fatigue.</li>
+    <li><b>Marlatt, G. A., &amp; Gordon, J. R. (1985).</b> <em>Relapse prevention.</em> Guilford Press. — źródło „what-the-hell effect" i modelu powrotu po nawrocie.</li>
+    <li><b>Hewitt, P. L., &amp; Flett, G. L. (1991).</b> <em>Perfectionism in the self and social contexts.</em> Journal of Personality and Social Psychology, 60(3), 456-470. — rozróżnienie perfekcjonizmu adaptacyjnego i dezadaptacyjnego.</li>
+  </ul>
+
+  <h3 class="section-subtitle">Poziom II &middot; Dowody umiarkowane</h3>
+  <ul class="ref-list">
+    <li><b>Lembke, A. (2021).</b> <em>Dopamine Nation.</em> Dutton. — koncepcja dopaminowego długu (książka popularnonaukowa oparta na klinice).</li>
+    <li><b>Schwartz, R. (1995).</b> <em>Internal Family Systems Therapy.</em> Guilford Press. — model IFS, cytowany w rozdziale IV; skuteczność potwierdzona w mniejszych RCT.</li>
+    <li><b>Sweller, J. (1988).</b> <em>Cognitive load during problem solving.</em> Cognitive Science, 12(2), 257-285. — teoria obciążenia poznawczego, mocno udokumentowana w edukacji, słabiej w praktyce osobistej.</li>
+    <li><b>Vitti, A. (2013).</b> <em>WomanCode.</em> HarperOne. — koncepcja cycle syncing; wciąż wymaga twardych badań RCT.</li>
+    <li><b>Huberman, A.</b> Fizjologiczne westchnienie i regulacja układu autonomicznego — badania własne laboratorium Stanford i publikacje w Cell Reports Medicine (2023).</li>
+  </ul>
+
+  <h3 class="section-subtitle">Poziom III &middot; Praktyka kliniczna</h3>
+  <ul class="ref-list">
+    <li>Metoda <strong>Czuły Start</strong> (7 kroków) — autorska metoda Laury/Czuły Balans, wypracowana na kilkuset klientkach; nie ma za sobą walidacji naukowej, jest praktyką kliniczną opartą o powyższe koncepcje.</li>
+    <li>Podział na <strong>5 profili oporu</strong> — model roboczy oparty o obserwacje w praktyce. Traktuj jako pomoc w wyborze narzędzi, nie jako klasyfikację diagnostyczną.</li>
+    <li>Plan 21 dni oraz karty pracy — autorskie materiały edukacyjne oparte o powyższe źródła i praktykę.</li>
+  </ul>
+
+  <div class="clinical-note">
+    <div class="clinical-note-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div>
+    <div>
+      <div class="clinical-note-title">Co to znaczy „praktyka"</div>
+      To nie znaczy „wymyśliłam sobie". To znaczy, że koncepcja została wypracowana w gabinetach terapeutów i coachów, działa dla wielu osób, ale nie ma za sobą kontrolowanych badań RCT. Zawsze traktuj taką koncepcję jako propozycję do przetestowania na sobie, nie jako fakt.
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <p style="text-align:center;font-family:var(--display);font-style:italic;font-size:22px;color:var(--text-muted);margin-top:40px">koniec</p>
+  <p style="text-align:center;font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin-top:16px">Czuły Balans &middot; 2026</p>
+
+</section>
+
+</main>
+
+<button class="to-top no-print" id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Powrót na górę">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 15 6-6 6 6"/></svg>
+</button>
+
+<script>
+/* ══════════════════════════════════════════
+   NAWIGACJA — dynamiczne menu z sekcji
+   ══════════════════════════════════════════ */
+const SECTIONS = [
+  { id: 'okladka',        label: 'Okładka',                num: '—' },
+  { id: 'metryka',        label: 'Strona redakcyjna',      num: '—' },
+  { id: 'spis-tresci',    label: 'Spis treści',            num: '—' },
+  { id: 'wprowadzenie',   label: 'Wprowadzenie',           num: '—', part: 'CZĘŚĆ I &middot; ZROZUMIENIE' },
+  { id: 'jak-czytac',     label: 'Jak korzystać',          num: '—' },
+  { id: 'to-nie-lenistwo',label: 'To nie lenistwo',        num: 'I' },
+  { id: 'diagnostyka',    label: 'Poznaj swój wzorzec',    num: 'II' },
+  { id: 'mental-load',    label: 'Mental Load',            num: 'III', part: 'CZĘŚĆ II &middot; ŹRÓDŁA OPORU' },
+  { id: 'perfekcjonizm',  label: 'Perfekcjonizm',          num: 'IV' },
+  { id: 'cialo',          label: 'Ciało i cykle',          num: 'V' },
+  { id: 'dopamina',       label: 'Dopamina i telefon',     num: 'VI' },
+  { id: 'czuly-start',    label: 'Metoda Czuły Start',     num: 'VII', part: 'CZĘŚĆ III &middot; DZIAŁANIE' },
+  { id: 'narzedziownik',  label: '21 narzędzi',            num: 'VIII' },
+  { id: 'plan-21',        label: 'Plan 21 dni',            num: 'IX' },
+  { id: 'nawrot',         label: 'Kryzys i nawrót',        num: 'X' },
+  { id: 'rozmowy',        label: 'Rozmowy z otoczeniem',   num: 'XI' },
+  { id: 'zakonczenie',    label: 'Zakończenie',            num: '—' },
+  { id: 'karty-pracy',    label: 'Karty pracy',            num: 'A',   part: 'DODATKI' },
+  { id: 'faq',            label: 'FAQ',                    num: 'B' },
+  { id: 'bibliografia',   label: 'Bibliografia',           num: 'C' },
+];
+
+function buildMenu(el){
+  const html = SECTIONS.map(s => {
+    const partHtml = s.part ? `<li class="menu-label">${s.part}</li>` : '';
+    return `${partHtml}<li><a href="#${s.id}" data-target="${s.id}"><span class="menu-num">${s.num}</span><span>${s.label}</span></a></li>`;
+  }).join('');
+  el.innerHTML = html;
+}
+buildMenu(document.getElementById('desktopMenu'));
+buildMenu(document.getElementById('mobileMenu'));
+
+function toggleDrawer(open){
+  const d = document.getElementById('mobileDrawer');
+  d.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+document.querySelectorAll('#mobileMenu a').forEach(a => a.addEventListener('click', () => toggleDrawer(false)));
+
+/* pasek postępu + aktywna pozycja */
+const bar = document.getElementById('progressBar');
+const toTop = document.getElementById('toTop');
+const menuLinks = document.querySelectorAll('.sidebar-menu a[data-target]');
+function onScroll(){
+  const h = document.documentElement;
+  const pct = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+  bar.style.width = pct + '%';
+  toTop.classList.toggle('show', h.scrollTop > 800);
+
+  // aktywna sekcja
+  let curr = SECTIONS[0].id;
+  for (const s of SECTIONS){
+    const el = document.getElementById(s.id);
+    if (!el) continue;
+    if (el.getBoundingClientRect().top < 200) curr = s.id;
+  }
+  menuLinks.forEach(a => a.classList.toggle('active', a.dataset.target === curr));
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+/* ══════════════════════════════════════════
+   QUIZ — obliczanie profilu
+   ══════════════════════════════════════════ */
+const PROFILES = {
+  a: {
+    name: 'Perfekcjonistka',
+    desc: 'Twój wzorzec oporu bierze się z lęku przed oceną. Odkładasz start, bo pierwsza wersja nigdy nie jest wystarczająco dobra w porównaniu z obrazem doskonałym, który masz w głowie. Twój Wewnętrzny Krytyk działa na pełny etat.',
+    rx: 'Twoje narzędzia: <strong>01 Wersja szkicowa</strong>, <strong>02 Zasada 80%</strong>, <strong>04 Dialog z Krytykiem</strong>. Rozdziały do przeczytania w pierwszej kolejności: IV i VII.'
+  },
+  b: {
+    name: 'Przeciążona (Mental Load)',
+    desc: 'Twoja kora przedczołowa jest wyczerpana zanim usiądziesz do własnych spraw, bo cały dzień prowadzisz w głowie logistykę życia domowego. To nie brak umiejętności — to fizjologiczny brak paliwa.',
+    rx: 'Twoje narzędzia: <strong>06 Zewnętrzna pamięć rodziny</strong>, <strong>07 Deleguj decyzję</strong>, <strong>10 Rytuał zamknięcia dnia</strong>. Rozdziały pierwsze do czytania: III i XI (skrypt rozmowy z partnerem).'
+  },
+  c: {
+    name: 'Uciekinierka w troskę',
+    desc: 'Twoja ucieczka od własnych zadań ma szlachetną maskę: pomagasz innym. To zwykle skutek wczesnego nauczenia się, że własne potrzeby to egoizm. Ratowanie innych daje szybką ulgę i dobre samopoczucie, ale trzyma Cię w miejscu.',
+    rx: 'Twoje narzędzia: <strong>11 Godzina tylko moja</strong>, <strong>13 Skrypt „to nie ja dziś"</strong>, <strong>14 Praca z częścią Opiekunki</strong>. Rozdziały: IV (praca z częściami) i XI (rozmowy).'
+  },
+  d: {
+    name: 'Znieczulaczka wieczorna',
+    desc: 'Twoje odkładanie ma dobrze zdefiniowane miejsce w dobie: wieczór i noc. To zjawisko nazwane w psychologii <em>revenge bedtime procrastination</em> — mścisz się na dniu za to, że odebrał Ci wszystko, co Twoje.',
+    rx: 'Twoje narzędzia: <strong>15 Wcześniejszy „mój czas"</strong>, <strong>17 Telefon poza sypialnią</strong>, <strong>18 Wieczór analogowy 3&times;/tydz.</strong> Rozdziały: VI (dopamina) i V (sen).'
+  },
+  e: {
+    name: 'Zagubiona w chaosie',
+    desc: 'Startujesz z pełną energią, ale trudno Ci utrzymać strukturę i uwagę. Rzadko kończysz to, co zaczęłaś. Jeśli towarzyszy Ci to od dzieciństwa i mocno wpływa na życie — koniecznie skonsultuj się z psychiatrą w kierunku ADHD.',
+    rx: 'Twoje narzędzia: <strong>19 Body doubling</strong>, <strong>20 Rytm zamiast planu</strong>, <strong>21 Zewnętrzny mózg</strong>. Ważne: zajrzyj do rozdziału II (schemat kliniczny) i rozważ konsultację specjalistyczną.'
+  }
+};
+
+function calculateQuiz(){
+  const scores = {a:0,b:0,c:0,d:0,e:0};
+  ['a','b','c','d','e'].forEach(letter => {
+    ['1','2'].forEach(n => {
+      const el = document.querySelector(`input[name="${letter}${n}"]:checked`);
+      if (el) scores[letter] += parseInt(el.value, 10);
+    });
+  });
+
+  const sortedKeys = Object.keys(scores).sort((x,y) => scores[y] - scores[x]);
+  const top = sortedKeys[0];
+  const topScore = scores[top];
+  const secondScore = scores[sortedKeys[1]];
+
+  const card = document.getElementById('quizResult');
+  const title = document.getElementById('quizProfileTitle');
+  const text = document.getElementById('quizProfileText');
+  const rx = document.getElementById('quizProfileRx');
+  const chips = document.getElementById('quizScores');
+
+  const chipsHtml = ['a','b','c','d','e'].map(k => {
+    const cls = k === top ? 'quiz-score-chip top' : 'quiz-score-chip';
+    return `<span class="${cls}">${PROFILES[k].name}: ${scores[k]}/6</span>`;
+  }).join('');
+  chips.innerHTML = chipsHtml;
+
+  if (topScore === 0){
+    title.textContent = 'Wyniki są zbyt niskie do interpretacji';
+    text.innerHTML = 'Wygląda na to, że wybrałaś „0" przy każdym pytaniu — być może formularz nie został wypełniony. Przejdź pytania jeszcze raz, zaznaczając wartości szczerze zgodnie ze swoim codziennym stanem.';
+    rx.innerHTML = '';
+  } else {
+    title.innerHTML = `Twój dominujący profil: <em>${PROFILES[top].name}</em>`;
+    let desc = PROFILES[top].desc;
+    if (topScore - secondScore <= 1){
+      desc += ` <br><br>Uwaga: różnica między Twoim pierwszym a drugim profilem (${PROFILES[sortedKeys[1]].name}) jest niewielka. Zajrzyj też do rozdziałów przypisanych do drugiego profilu — w Twoim przypadku wzorce są prawdopodobnie mieszane.`;
+    }
+    text.innerHTML = desc;
+    rx.innerHTML = PROFILES[top].rx;
+  }
+  card.classList.add('show');
+  card.scrollIntoView({behavior:'smooth', block:'start'});
+}
+window.calculateQuiz = calculateQuiz;
+window.toggleDrawer = toggleDrawer;
+</script>
+
+</body>
+</html>
