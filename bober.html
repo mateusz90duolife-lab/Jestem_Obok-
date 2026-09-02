@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOBER TEAM – Mycie kostki brukowej | Pajęczno, Działoszyn</title>
+  <meta name="description" content="Profesjonalne mycie kostki brukowej, podjazdów, tarasów i elewacji ciśnieniowo. Działamy w Pajęcznie, Działoszynie i okolicach. Bezpłatna wycena!" />
+  <meta name="keywords" content="mycie kostki brukowej, czyszczenie bruku, myjka ciśnieniowa Pajęczno, czyszczenie podjazdu Działoszyn, impregnacja kostki, usuwanie chwastów" />
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in { animation: fadeInUp 0.6s ease both; }
+
+    input[type=range] { -webkit-appearance: none; appearance: none; background: transparent; cursor: pointer; }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: #2563eb; border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+      margin-top: -10px;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      height: 8px; border-radius: 4px; background: #dbeafe;
+    }
+    input[type=range]::-moz-range-thumb {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: #2563eb; border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    }
+    input[type=range]::-moz-range-track {
+      height: 8px; border-radius: 4px; background: #dbeafe;
+    }
+
+    /* Before/After slider */
+    .slider-container { position: relative; overflow: hidden; cursor: ew-resize; user-select: none; }
+    .slider-handle {
+      position: absolute; top: 0; bottom: 0; width: 4px;
+      background: #fff; z-index: 10; display: flex; align-items: center; justify-content: center;
+    }
+    .slider-handle::after {
+      content: ''; width: 36px; height: 36px; border-radius: 50%;
+      background: #2563eb; border: 3px solid #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useRef, useEffect, useCallback } = React;
+
+/* ===== SVG Icons ===== */
+const IconPhone = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.59a16 16 0 0 0 6.59 6.59l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </svg>
+);
+const IconMail = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="4" width="20" height="16" rx="2"/>
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+  </svg>
+);
+const IconMapPin = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+    <circle cx="12" cy="10" r="3"/>
+  </svg>
+);
+const IconStar = ({ filled }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+    fill={filled ? "#f59e0b" : "none"} stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+  </svg>
+);
+const IconTools = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+  </svg>
+);
+const IconShield = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </svg>
+);
+const IconClock = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="12 6 12 12 16 14"/>
+  </svg>
+);
+const IconCash = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="6" width="20" height="12" rx="2"/>
+    <path d="M22 10H2M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+  </svg>
+);
+const IconSparkles = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 3 9.5 9.5 3 12l6.5 2.5L12 21l2.5-6.5L21 12l-6.5-2.5L12 3z"/>
+  </svg>
+);
+const IconCalculator = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="4" y="2" width="16" height="20" rx="2"/>
+    <path d="M8 6h8M8 10h2M12 10h2M16 10h0M8 14h2M12 14h2M16 14h2M8 18h2M12 18h2M16 18h2"/>
+  </svg>
+);
+
+/* ===== Beaver Mascot SVG ===== */
+const BoberMascot = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" style={{flexShrink:0}}>
+    {/* Body - overall */}
+    <ellipse cx="100" cy="180" rx="50" ry="60" fill="#1d4ed8"/>
+    {/* Overall straps */}
+    <rect x="82" y="120" width="12" height="40" rx="6" fill="#1d4ed8"/>
+    <rect x="106" y="120" width="12" height="40" rx="6" fill="#1d4ed8"/>
+    {/* Bib */}
+    <rect x="80" y="130" width="40" height="30" rx="6" fill="#2563eb"/>
+    {/* Legs */}
+    <ellipse cx="80" cy="232" rx="20" ry="18" fill="#1d4ed8"/>
+    <ellipse cx="120" cy="232" rx="20" ry="18" fill="#1d4ed8"/>
+    {/* Feet */}
+    <ellipse cx="78" cy="248" rx="22" ry="10" fill="#92400e"/>
+    <ellipse cx="122" cy="248" rx="22" ry="10" fill="#92400e"/>
+    {/* Head */}
+    <ellipse cx="100" cy="95" rx="42" ry="40" fill="#92400e"/>
+    {/* Cheeks */}
+    <ellipse cx="73" cy="105" rx="14" ry="12" fill="#b45309"/>
+    <ellipse cx="127" cy="105" rx="14" ry="12" fill="#b45309"/>
+    {/* Eyes */}
+    <circle cx="87" cy="88" r="9" fill="white"/>
+    <circle cx="113" cy="88" r="9" fill="white"/>
+    <circle cx="89" cy="89" r="5" fill="#1e293b"/>
+    <circle cx="115" cy="89" r="5" fill="#1e293b"/>
+    <circle cx="90" cy="87" r="2" fill="white"/>
+    <circle cx="116" cy="87" r="2" fill="white"/>
+    {/* Nose */}
+    <ellipse cx="100" cy="104" rx="8" ry="5" fill="#7c2d12"/>
+    {/* Teeth */}
+    <rect x="92" y="108" width="10" height="11" rx="2" fill="white"/>
+    <rect x="98" y="108" width="10" height="11" rx="2" fill="white"/>
+    <line x1="100" y1="108" x2="100" y2="119" stroke="#e5e7eb" strokeWidth="1"/>
+    {/* Ears */}
+    <ellipse cx="63" cy="68" rx="14" ry="16" fill="#92400e"/>
+    <ellipse cx="63" cy="68" rx="8" ry="10" fill="#fca5a5"/>
+    <ellipse cx="137" cy="68" rx="14" ry="16" fill="#92400e"/>
+    <ellipse cx="137" cy="68" rx="8" ry="10" fill="#fca5a5"/>
+    {/* Tail */}
+    <ellipse cx="100" cy="195" rx="26" ry="12" fill="#78350f" transform="rotate(-5 100 195)" style={{opacity:0.6}}/>
+    {/* Left arm */}
+    <ellipse cx="52" cy="155" rx="16" ry="32" fill="#1d4ed8" transform="rotate(20 52 155)"/>
+    <ellipse cx="42" cy="183" rx="13" ry="9" fill="#92400e"/>
+    {/* Right arm – holding pressure lance */}
+    <ellipse cx="148" cy="152" rx="16" ry="32" fill="#1d4ed8" transform="rotate(-20 148 152)"/>
+    <ellipse cx="158" cy="178" rx="13" ry="9" fill="#92400e"/>
+    {/* Pressure lance */}
+    <rect x="152" y="162" width="6" height="55" rx="3" fill="#64748b" transform="rotate(30 155 180)"/>
+    <rect x="167" y="194" width="22" height="5" rx="2" fill="#94a3b8" transform="rotate(30 178 196)"/>
+    {/* Water spray */}
+    <ellipse cx="188" cy="215" rx="5" ry="2" fill="#93c5fd" transform="rotate(30 188 215)" style={{opacity:0.8}}/>
+    <ellipse cx="194" cy="208" rx="4" ry="2" fill="#bfdbfe" transform="rotate(30 194 208)" style={{opacity:0.7}}/>
+    <ellipse cx="198" cy="218" rx="3" ry="2" fill="#dbeafe" transform="rotate(20 198 218)" style={{opacity:0.6}}/>
+    {/* Hard hat */}
+    <ellipse cx="100" cy="58" rx="45" ry="14" fill="#facc15"/>
+    <ellipse cx="100" cy="55" rx="36" ry="16" fill="#fde047"/>
+    <rect x="64" y="52" width="72" height="7" rx="3" fill="#facc15"/>
+    {/* Hat brim highlight */}
+    <rect x="60" y="56" width="80" height="5" rx="2" fill="#fef08a" style={{opacity:0.5}}/>
+    {/* Logo on bib */}
+    <text x="100" y="152" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold" fontFamily="sans-serif">BOBER</text>
+    <text x="100" y="161" textAnchor="middle" fill="white" fontSize="7" fontFamily="sans-serif">TEAM</text>
+  </svg>
+);
+
+/* ===== Gallery images (placeholder gradients) ===== */
+const galleryItems = [
+  { label: "Podjazdy", color: "#1e3a5f", desc: "Mycie podjazdów i parkingów" },
+  { label: "Tarasy",   color: "#14532d", desc: "Czyszczenie tarasów i patio" },
+  { label: "Chodniki", color: "#3b1f5e", desc: "Renowacja chodników i alejek" },
+  { label: "Elewacje", color: "#4a1c1c", desc: "Mycie elewacji i murów" },
+];
+
+/* ===== Testimonials ===== */
+const testimonials = [
+  { name: "Krzysztof W.", city: "Pajęczno", text: "Podjazd wyglądał jak nowy po zaledwie 2 godzinach pracy. Bardzo polecam!", stars: 5 },
+  { name: "Małgorzata L.", city: "Działoszyn", text: "Solidna ekipa, punktualna i uczciwa cenowo. Taras błyszczy!", stars: 5 },
+  { name: "Tomasz K.", city: "Wieluń",    text: "Skorzystałem z impregnacji – po roku kostka nadal jak nowa. Super robota.", stars: 5 },
+];
+
+/* ===== Price calculator ===== */
+const BASE_PRICE = 12; // zł/m²
+
+function calcPrice({ area, dirtLevel, impregnation, weedsRemoval }) {
+  let price = area * BASE_PRICE;
+  if (dirtLevel === "heavy")   price *= 1.35;
+  if (dirtLevel === "extreme") price *= 1.65;
+  if (impregnation)  price += area * 8;
+  if (weedsRemoval)  price += area * 5;
+  return Math.round(price);
+}
+
+/* ===== Service areas ===== */
+const areas = [
+  "Pajęczno","Działoszyn","Wieluń","Łask","Sieradz",
+  "Radomsko","Kamieńsk","Wolbórz","Piotrków Tryb.","Bełchatów",
+];
+
+/* ===== Main App ===== */
+function App() {
+  /* Before/After slider */
+  const [sliderPos, setSliderPos] = useState(50);
+  const sliderRef = useRef(null);
+  const dragging = useRef(false);
+
+  /* Calculator */
+  const [area, setArea]             = useState(50);
+  const [dirtLevel, setDirtLevel]   = useState("normal");
+  const [impregnation, setImpregn]  = useState(false);
+  const [weedsRemoval, setWeeds]    = useState(false);
+  const calcResult = calcPrice({ area, dirtLevel, impregnation, weedsRemoval });
+
+  /* Modal form */
+  const [isModalOpen, setModal]     = useState(false);
+  const [formData, setFormData]     = useState({ name:"", phone:"", email:"", message:"" });
+  const [formSubmitted, setSubmitted] = useState(false);
+
+  /* Gallery */
+  const [activeGallery, setActiveGallery] = useState(0);
+
+  /* Mobile nav */
+  const [navOpen, setNavOpen] = useState(false);
+
+  /* ----- Before/After drag logic ----- */
+  const getSliderPercent = useCallback((e, el) => {
+    const rect = el.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    return Math.min(100, Math.max(0, ((clientX - rect.left) / rect.width) * 100));
+  }, []);
+
+  const onMouseDown = (e) => { dragging.current = true; };
+  const onMouseMove = useCallback((e) => {
+    if (!dragging.current || !sliderRef.current) return;
+    setSliderPos(getSliderPercent(e, sliderRef.current));
+  }, [getSliderPercent]);
+  const onMouseUp = () => { dragging.current = false; };
+
+  const onTouchStart = (e) => { dragging.current = true; };
+  const onTouchMove = useCallback((e) => {
+    e.preventDefault();
+    if (!dragging.current || !sliderRef.current) return;
+    setSliderPos(getSliderPercent(e, sliderRef.current));
+  }, [getSliderPercent]);
+  const onTouchEnd = () => { dragging.current = false; };
+
+  useEffect(() => {
+    window.addEventListener("mouseup", onMouseUp);
+    return () => window.removeEventListener("mouseup", onMouseUp);
+  }, []);
+
+  /* ----- Form ----- */
+  const handleFormChange = (e) => setFormData(p => ({ ...p, [e.target.name]: e.target.value }));
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => { setModal(false); setSubmitted(false); setFormData({ name:"", phone:"", email:"", message:"" }); }, 3000);
+  };
+
+  const navLinks = [
+    { href:"#uslugi",    label:"Usługi" },
+    { href:"#galeria",   label:"Galeria" },
+    { href:"#kalkulator",label:"Kalkulator" },
+    { href:"#opinie",    label:"Opinie" },
+    { href:"#obszar",    label:"Obszar" },
+  ];
+
+  return (
+    <div className="min-h-screen">
+      {/* ===== Top bar ===== */}
+      <div className="bg-blue-700 text-white text-sm py-2 px-4">
+        <div className="max-w-6xl mx-auto flex flex-wrap gap-4 justify-between items-center">
+          <div className="flex items-center gap-4 flex-wrap">
+            <a href="tel:+48500000000" className="flex items-center gap-1 hover:text-blue-200 transition-colors">
+              <IconPhone /><span>+48 500 000 000</span>
+            </a>
+            <a href="mailto:bober@example.pl" className="flex items-center gap-1 hover:text-blue-200 transition-colors">
+              <IconMail /><span>bober@example.pl</span>
+            </a>
+          </div>
+          <div className="flex items-center gap-1 text-blue-200">
+            <IconMapPin /><span>Pajęczno, Działoszyn i okolice</span>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== Navigation ===== */}
+      <nav className="bg-white shadow-md sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+          <a href="#" className="flex items-center gap-2">
+            <div style={{width:40,height:40}}>
+              <BoberMascot />
+            </div>
+            <div>
+              <div className="font-black text-xl text-blue-700 leading-none">BOBER TEAM</div>
+              <div className="text-xs text-gray-500 leading-none">Mycie ciśnieniowe</div>
+            </div>
+          </a>
+          {/* Desktop links */}
+          <div className="hidden md:flex items-center gap-6">
+            {navLinks.map(l => (
+              <a key={l.href} href={l.href} className="text-gray-700 hover:text-blue-700 font-medium transition-colors">{l.label}</a>
+            ))}
+            <button onClick={() => setModal(true)}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-lg transition-colors">
+              Bezpłatna wycena
+            </button>
+          </div>
+          {/* Hamburger */}
+          <button className="md:hidden p-2" onClick={() => setNavOpen(p => !p)} aria-label="Menu">
+            <div className="space-y-1.5">
+              <span className={`block w-6 h-0.5 bg-gray-700 transition-all ${navOpen ? "rotate-45 translate-y-2" : ""}`}></span>
+              <span className={`block w-6 h-0.5 bg-gray-700 transition-all ${navOpen ? "opacity-0" : ""}`}></span>
+              <span className={`block w-6 h-0.5 bg-gray-700 transition-all ${navOpen ? "-rotate-45 -translate-y-2" : ""}`}></span>
+            </div>
+          </button>
+        </div>
+        {navOpen && (
+          <div className="md:hidden px-4 pb-4 border-t">
+            {navLinks.map(l => (
+              <a key={l.href} href={l.href} onClick={() => setNavOpen(false)}
+                className="block py-2 text-gray-700 hover:text-blue-700 font-medium">{l.label}</a>
+            ))}
+            <button onClick={() => { setModal(true); setNavOpen(false); }}
+              className="mt-2 w-full bg-blue-600 text-white font-bold py-2 rounded-lg">
+              Bezpłatna wycena
+            </button>
+          </div>
+        )}
+      </nav>
+
+      {/* ===== Hero ===== */}
+      <section className="bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900 text-white py-16 px-4">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-10">
+          <div className="flex-1 animate-in">
+            <div className="inline-block bg-blue-500/30 text-blue-100 text-sm font-semibold px-3 py-1 rounded-full mb-4">
+              🦫 Profesjonalne mycie ciśnieniowe
+            </div>
+            <h1 className="text-4xl lg:text-6xl font-black leading-tight mb-4">
+              Twoja kostka<br/>
+              <span className="text-yellow-300">lśni jak nowa!</span>
+            </h1>
+            <p className="text-blue-200 text-lg mb-8 max-w-lg">
+              Specjaliści od mycia kostki brukowej, tarasów, podjazdów i elewacji.
+              Działamy w Pajęcznie, Działoszynie i okolicach. Efekty gwarantowane!
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <button onClick={() => setModal(true)}
+                className="bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-black text-lg px-8 py-4 rounded-xl shadow-lg transition-all hover:scale-105">
+                Bezpłatna wycena →
+              </button>
+              <a href="#uslugi"
+                className="border-2 border-white/50 hover:border-white text-white font-bold px-8 py-4 rounded-xl transition-all">
+                Zobacz usługi
+              </a>
+            </div>
+            <div className="flex flex-wrap gap-6 mt-8 text-sm">
+              {["✓ Bez zaliczki","✓ Gwarancja efektu","✓ Certyfikowane środki"].map(t => (
+                <span key={t} className="text-blue-200">{t}</span>
+              ))}
+            </div>
+          </div>
+          {/* Mascot */}
+          <div className="w-56 lg:w-72" style={{flexShrink:0}}>
+            <BoberMascot />
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Before / After slider ===== */}
+      <section className="py-16 px-4 bg-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-black text-gray-900 mb-2">Efekty naszej pracy</h2>
+          <p className="text-gray-500 mb-8">Przesuń suwak, by zobaczyć różnicę</p>
+          <div
+            ref={sliderRef}
+            className="slider-container rounded-2xl overflow-hidden shadow-2xl select-none"
+            style={{ aspectRatio: "16/7" }}
+            onMouseDown={onMouseDown}
+            onMouseMove={onMouseMove}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
+            {/* AFTER (background) */}
+            <div className="absolute inset-0" style={{
+              background: "linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%)"
+            }}>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-white text-center">
+                  <div className="text-6xl mb-2">✨</div>
+                  <div className="font-black text-2xl">PO</div>
+                  <div className="text-blue-200">czysta kostka</div>
+                </div>
+              </div>
+            </div>
+            {/* BEFORE (clipped overlay) */}
+            <div className="absolute inset-0" style={{
+              clipPath: `inset(0 ${100 - sliderPos}% 0 0)`,
+              background: "linear-gradient(135deg, #4a3728 0%, #78350f 100%)"
+            }}>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-white text-center">
+                  <div className="text-6xl mb-2">🌿</div>
+                  <div className="font-black text-2xl">PRZED</div>
+                  <div className="text-amber-200">brudna, zachwaszczona</div>
+                </div>
+              </div>
+            </div>
+            {/* Handle */}
+            <div className="slider-handle" style={{ left: `calc(${sliderPos}% - 2px)` }}>
+              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-blue-600 border-4 border-white shadow-xl flex items-center justify-center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                  <path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/>
+                </svg>
+              </div>
+            </div>
+            {/* Labels */}
+            <div className="absolute bottom-3 left-4 bg-black/50 text-white text-xs font-bold px-3 py-1 rounded-full">PRZED</div>
+            <div className="absolute bottom-3 right-4 bg-blue-600/80 text-white text-xs font-bold px-3 py-1 rounded-full">PO</div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Services ===== */}
+      <section id="uslugi" className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-black text-gray-900 mb-2">Nasze usługi</h2>
+            <p className="text-gray-500">Kompleksowa oferta mycia i renowacji nawierzchni</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon:"🧱", title:"Kostka brukowa", desc:"Mycie ciśnieniowe z usuwaniem chwastów, mchów i alg. Fugowanie i piaskowanie." },
+              { icon:"🏡", title:"Podjazdy i parkingi", desc:"Głębokie czyszczenie betonu i kostki. Odtłuszczanie, usuwanie plam z oleju." },
+              { icon:"🌿", title:"Tarasy i patio", desc:"Delikatne mycie płyt granitowych, ceramicznych i betonowych. Impregnacja." },
+              { icon:"🏗️", title:"Elewacje", desc:"Mycie tynków, cegły klinkierowej. Usuwanie grzybów i pleśni." },
+              { icon:"🛡️", title:"Impregnacja", desc:"Zabezpieczenie po myciu. Ochrona przed wodą, olejem i porastaniem. Na lata." },
+              { icon:"🌱", title:"Usuwanie chwastów", desc:"Wypalanie lub chemiczne zwalczanie chwastów w spoinach. Trwałe rezultaty." },
+            ].map(s => (
+              <div key={s.title} className="border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-shadow group">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">{s.icon}</div>
+                <h3 className="font-bold text-xl text-gray-900 mb-2">{s.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Why us ===== */}
+      <section className="py-16 px-4 bg-blue-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-black text-gray-900 mb-2">Dlaczego BOBER TEAM?</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon:<IconTools />,    color:"bg-blue-100 text-blue-600",   title:"Pro sprzęt",        desc:"Maszyny Kärcher z regulacją ciśnienia do każdej nawierzchni." },
+              { icon:<IconShield />,   color:"bg-green-100 text-green-600", title:"Gwarancja",         desc:"Jeśli efekt Cię nie satysfakcjonuje – wracamy i poprawiamy." },
+              { icon:<IconClock />,    color:"bg-yellow-100 text-yellow-600",title:"Punktualność",      desc:"Szanujemy Twój czas. Przyjeżdżamy zawsze o umówionej porze." },
+              { icon:<IconCash />,     color:"bg-purple-100 text-purple-600",title:"Uczciwa cena",      desc:"Bezpłatna wycena, stała cena – bez ukrytych opłat." },
+            ].map(w => (
+              <div key={w.title} className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                <div className={`w-14 h-14 ${w.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                  {w.icon}
+                </div>
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{w.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{w.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Gallery ===== */}
+      <section id="galeria" className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-black text-gray-900 mb-2">Galeria realizacji</h2>
+            <p className="text-gray-500">Przykłady naszych prac</p>
+          </div>
+          {/* Tabs */}
+          <div className="flex flex-wrap gap-2 justify-center mb-6">
+            {galleryItems.map((g, i) => (
+              <button key={g.label}
+                onClick={() => setActiveGallery(i)}
+                className={`px-5 py-2 rounded-full font-semibold transition-all ${activeGallery === i ? "bg-blue-600 text-white shadow" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}>
+                {g.label}
+              </button>
+            ))}
+          </div>
+          {/* Gallery display */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[0,1,2,3,4,5].map(i => (
+              <div key={i} className="rounded-xl overflow-hidden shadow-md" style={{ aspectRatio:"4/3" }}>
+                <div className="w-full h-full flex items-center justify-center text-white font-bold text-lg"
+                  style={{
+                    background: `linear-gradient(${i*60}deg, ${galleryItems[activeGallery].color}, #0f172a)`,
+                    minHeight: "160px"
+                  }}>
+                  <div className="text-center px-4">
+                    <div className="text-3xl mb-1">📸</div>
+                    <div className="text-sm opacity-75">{galleryItems[activeGallery].desc}</div>
+                    <div className="text-xs opacity-50 mt-1">Zdjęcie {i+1}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Price Calculator ===== */}
+      <section id="kalkulator" className="py-16 px-4 bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <IconCalculator />
+            </div>
+            <h2 className="text-3xl font-black text-gray-900 mb-2">Kalkulator cen</h2>
+            <p className="text-gray-500">Orientacyjna wycena – dokładna po wizji terenowej</p>
+          </div>
+          <div className="bg-white rounded-2xl shadow-xl p-8">
+            {/* Area */}
+            <div className="mb-6">
+              <label className="block font-semibold text-gray-700 mb-3">
+                Powierzchnia: <span className="text-blue-600 font-bold">{area} m²</span>
+              </label>
+              <input type="range" min="10" max="500" step="5" value={area}
+                onChange={e => setArea(Number(e.target.value))}
+                className="w-full" />
+              <div className="flex justify-between text-xs text-gray-400 mt-1">
+                <span>10 m²</span><span>500 m²</span>
+              </div>
+            </div>
+            {/* Dirt level */}
+            <div className="mb-6">
+              <label className="block font-semibold text-gray-700 mb-3">Stopień zabrudzenia</label>
+              <div className="grid grid-cols-3 gap-3">
+                {[
+                  { val:"normal",  label:"Standardowe", emoji:"🟡" },
+                  { val:"heavy",   label:"Mocne",        emoji:"🟠" },
+                  { val:"extreme", label:"Bardzo mocne", emoji:"🔴" },
+                ].map(d => (
+                  <button key={d.val}
+                    onClick={() => setDirtLevel(d.val)}
+                    className={`p-3 rounded-xl border-2 text-center transition-all ${dirtLevel === d.val ? "border-blue-600 bg-blue-50" : "border-gray-200 hover:border-gray-300"}`}>
+                    <div className="text-2xl mb-1">{d.emoji}</div>
+                    <div className="text-sm font-semibold text-gray-700">{d.label}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+            {/* Options */}
+            <div className="mb-8 space-y-3">
+              <label className="flex items-center gap-3 p-3 rounded-xl border border-gray-200 cursor-pointer hover:bg-gray-50">
+                <input type="checkbox" checked={impregnation} onChange={e => setImpregn(e.target.checked)}
+                  className="w-5 h-5 accent-blue-600" />
+                <div>
+                  <div className="font-semibold text-gray-700">Impregnacja (+8 zł/m²)</div>
+                  <div className="text-xs text-gray-400">Ochrona na 3-5 lat</div>
+                </div>
+              </label>
+              <label className="flex items-center gap-3 p-3 rounded-xl border border-gray-200 cursor-pointer hover:bg-gray-50">
+                <input type="checkbox" checked={weedsRemoval} onChange={e => setWeeds(e.target.checked)}
+                  className="w-5 h-5 accent-blue-600" />
+                <div>
+                  <div className="font-semibold text-gray-700">Usuwanie chwastów (+5 zł/m²)</div>
+                  <div className="text-xs text-gray-400">Ze spoin i szczelin</div>
+                </div>
+              </label>
+            </div>
+            {/* Result */}
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-6 text-white text-center">
+              <div className="text-sm text-blue-200 mb-1">Szacunkowa cena netto</div>
+              <div className="text-5xl font-black mb-1">{calcResult} <span className="text-2xl">zł</span></div>
+              <div className="text-blue-200 text-sm mb-4">Ostateczna cena po bezpłatnej wizji terenowej</div>
+              <button onClick={() => setModal(true)}
+                className="bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-black px-8 py-3 rounded-xl transition-all hover:scale-105">
+                Zamów bezpłatną wycenę
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Testimonials ===== */}
+      <section id="opinie" className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-black text-gray-900 mb-2">Co mówią klienci?</h2>
+            <p className="text-gray-500">Ponad 200 zadowolonych klientów w regionie</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map(t => (
+              <div key={t.name} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                <div className="flex gap-0.5 mb-3">
+                  {[1,2,3,4,5].map(i => <IconStar key={i} filled={i <= t.stars} />)}
+                </div>
+                <p className="text-gray-700 italic mb-4 leading-relaxed">"{t.text}"</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-700">
+                    {t.name[0]}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">{t.name}</div>
+                    <div className="text-xs text-gray-400">{t.city}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Service area ===== */}
+      <section id="obszar" className="py-16 px-4 bg-blue-700 text-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-black mb-2">Obszar działania</h2>
+            <p className="text-blue-200">Dojeżdżamy do 60 km od Pajęczna – bez dopłat za dojazd!</p>
+          </div>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {areas.map(a => (
+              <span key={a} className="bg-blue-600/60 border border-blue-500 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-500 transition-colors cursor-default">
+                📍 {a}
+              </span>
+            ))}
+          </div>
+          <p className="text-center text-blue-300 mt-8 text-sm">
+            Nie widzisz swojej miejscowości? Zadzwoń – na pewno coś ustalimy!
+          </p>
+        </div>
+      </section>
+
+      {/* ===== CTA ===== */}
+      <section className="py-20 px-4 bg-gradient-to-br from-yellow-400 to-amber-400">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="text-5xl mb-4">🦫</div>
+          <h2 className="text-4xl font-black text-blue-900 mb-4">Gotowy na błyszczącą kostkę?</h2>
+          <p className="text-blue-800 text-lg mb-8">Zadzwoń lub napisz – wycena jest zawsze bezpłatna i bez zobowiązań!</p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <button onClick={() => setModal(true)}
+              className="bg-blue-700 hover:bg-blue-800 text-white font-black text-xl px-10 py-4 rounded-xl shadow-lg transition-all hover:scale-105">
+              Zamów wycenę online
+            </button>
+            <a href="tel:+48500000000"
+              className="bg-white hover:bg-gray-50 text-blue-900 font-black text-xl px-10 py-4 rounded-xl shadow-lg transition-all hover:scale-105 flex items-center gap-2">
+              <IconPhone /> Zadzwoń teraz
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Footer ===== */}
+      <footer className="bg-gray-900 text-gray-400 py-10 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <div className="font-black text-white text-xl mb-2">BOBER TEAM</div>
+              <p className="text-sm leading-relaxed">Profesjonalne mycie i renowacja nawierzchni brukowych. Pajęczno i okolice.</p>
+            </div>
+            <div>
+              <div className="font-bold text-white mb-3">Kontakt</div>
+              <div className="space-y-2 text-sm">
+                <div className="flex items-center gap-2"><IconPhone /><a href="tel:+48500000000" className="hover:text-white">+48 500 000 000</a></div>
+                <div className="flex items-center gap-2"><IconMail /><a href="mailto:bober@example.pl" className="hover:text-white">bober@example.pl</a></div>
+                <div className="flex items-center gap-2"><IconMapPin /><span>Pajęczno, woj. łódzkie</span></div>
+              </div>
+            </div>
+            <div>
+              <div className="font-bold text-white mb-3">Usługi</div>
+              <ul className="space-y-1 text-sm">
+                {["Mycie kostki brukowej","Mycie podjazdów","Czyszczenie tarasów","Mycie elewacji","Impregnacja nawierzchni"].map(s => (
+                  <li key={s} className="hover:text-white cursor-default">→ {s}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 pt-6 text-center text-xs">
+            © 2025 BOBER TEAM – Mycie Ciśnieniowe. Wszelkie prawa zastrzeżone.
+          </div>
+        </div>
+      </footer>
+
+      {/* ===== Modal Contact Form ===== */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ background: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)" }}>
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 relative animate-in">
+            <button onClick={() => setModal(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold leading-none">×</button>
+            {formSubmitted ? (
+              <div className="text-center py-8">
+                <div className="text-6xl mb-4">✅</div>
+                <h3 className="text-2xl font-black text-gray-900 mb-2">Dziękujemy!</h3>
+                <p className="text-gray-500">Skontaktujemy się z Tobą w ciągu 24 godzin.</p>
+              </div>
+            ) : (
+              <>
+                <h3 className="text-2xl font-black text-gray-900 mb-6">Bezpłatna wycena</h3>
+                <form onSubmit={handleFormSubmit} className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">Imię i nazwisko *</label>
+                    <input type="text" name="name" value={formData.name} onChange={handleFormChange} required
+                      placeholder="Jan Kowalski"
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">Telefon *</label>
+                    <input type="tel" name="phone" value={formData.phone} onChange={handleFormChange} required
+                      placeholder="+48 500 000 000"
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">E-mail</label>
+                    <input type="email" name="email" value={formData.email} onChange={handleFormChange}
+                      placeholder="jan@example.pl"
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">Opis zlecenia</label>
+                    <textarea name="message" value={formData.message} onChange={handleFormChange} rows="3"
+                      placeholder="Np. podjazd ok. 60 m², mocno zabrudzony, interesuje mnie impregnacja..."
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" />
+                  </div>
+                  <button type="submit"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-4 rounded-xl transition-all hover:scale-105 text-lg">
+                    Wyślij zapytanie →
+                  </button>
+                  <p className="text-xs text-gray-400 text-center">Odpowiadamy w ciągu 24h. Bezpłatna wycena bez zobowiązań.</p>
+                </form>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+</script>
+</body>
+</html>
