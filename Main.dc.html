@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: #07101c; color: #e8f0fa; -webkit-font-smoothing: antialiased; }
+    a { color: #3b82f6; } a:hover { color: #1d4ed8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+  </style>
+</helmet>
+
+<!-- Top Bar -->
+<div style="position: sticky; top: 0; z-index: 100; height: 56px; background: rgba(7,16,28,0.92); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; padding: 0 20px;">
+  <div style="display: flex; align-items: center; gap: 9px; max-width: 860px; margin: 0 auto; width: 100%;">
+    <div style="width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #3b82f6, #8b5cf6); display: grid; place-items: center; font-size: 13px; flex-shrink: 0;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+    </div>
+    <div>
+      <div style="font-weight: 800; font-size: 14px; white-space: nowrap; line-height: 1.2;">Jestem Obok</div>
+      <div style="font-size: 10px; font-weight: 400; color: #6585a8; line-height: 1;">ADHD · ASD · Zdrowie psychiczne</div>
+    </div>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<div style="padding: 72px 20px 50px; text-align: center; position: relative; overflow: hidden;">
+  <!-- Glow -->
+  <div style="position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 700px; height: 400px; background: radial-gradient(ellipse, rgba(59,130,246,0.1) 0%, transparent 70%); pointer-events: none;"></div>
+
+  <div style="max-width: 860px; margin: 0 auto; position: relative;">
+    <!-- Badge -->
+    <div style="display: inline-flex; align-items: center; gap: 7px; background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); color: #3b82f6; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 6px 14px; border-radius: 99px; margin-bottom: 22px;">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      Narzędzie samooceny · DSM-5-TR &amp; ICD-11
+    </div>
+
+    <!-- Title -->
+    <div style="font-size: 46px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 18px;">
+      Profesjonalny test przesiewowy<br>
+      <span style="background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">dla dorosłych</span>
+    </div>
+
+    <!-- Subtitle -->
+    <div style="font-size: 17px; color: #9fb8d4; max-width: 560px; margin: 0 auto 40px; font-weight: 400; line-height: 1.6;">
+      Kompleksowa samoocena w kierunku ADHD, spektrum autyzmu (ASD), zaburzeń lękowych, depresji i PTSD/CPTSD oparta na kryteriach naukowych.
+    </div>
+
+    <!-- Stats Row -->
+    <div style="display: flex; justify-content: center; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; overflow: hidden; background: #162439; max-width: 560px; margin: 0 auto 44px;">
+      <div style="flex: 1; padding: 18px 12px; border-right: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <div style="font-size: 26px; font-weight: 900; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">196</div>
+        <div style="font-size: 11px; color: #6585a8; margin-top: 2px;">pytań diagnostycznych</div>
+      </div>
+      <div style="flex: 1; padding: 18px 12px; border-right: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <div style="font-size: 26px; font-weight: 900; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">19</div>
+        <div style="font-size: 11px; color: #6585a8; margin-top: 2px;">sekcji klinicznych</div>
+      </div>
+      <div style="flex: 1; padding: 18px 12px; border-right: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <div style="font-size: 26px; font-weight: 900; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">~50 min</div>
+        <div style="font-size: 11px; color: #6585a8; margin-top: 2px;">czas wypełniania</div>
+      </div>
+      <div style="flex: 1; padding: 18px 12px; text-align: center;">
+        <div style="font-size: 26px; font-weight: 900; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">5</div>
+        <div style="font-size: 11px; color: #6585a8; margin-top: 2px;">obszarów oceny</div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 44px;">
+      <div style="display: inline-flex; align-items: center; gap: 7px; font-size: 15px; font-weight: 700; padding: 13px 26px; border-radius: 12px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; box-shadow: 0 4px 20px rgba(59,130,246,0.3); cursor: pointer;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Rozpocznij test
+      </div>
+      <div style="display: inline-flex; align-items: center; gap: 7px; font-size: 15px; font-weight: 700; padding: 13px 26px; border-radius: 12px; background: transparent; color: #e8f0fa; border: 1px solid rgba(255,255,255,0.15); cursor: pointer;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+        Wznów zapisany
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scale Box -->
+<div style="max-width: 860px; margin: 0 auto; padding: 0 20px 20px;">
+  <div style="background: #162439; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 20px;">
+    <div style="font-size: 14px; font-weight: 700; margin-bottom: 12px;">Skala odpowiedzi 0-4</div>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px;">
+      <div style="background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 11px 6px; text-align: center;">
+        <div style="font-size: 20px; font-weight: 800; color: #3b82f6;">0</div>
+        <div style="font-size: 10px; color: #6585a8; margin-top: 3px;">Nigdy</div>
+      </div>
+      <div style="background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 11px 6px; text-align: center;">
+        <div style="font-size: 20px; font-weight: 800; color: #3b82f6;">1</div>
+        <div style="font-size: 10px; color: #6585a8; margin-top: 3px;">Rzadko</div>
+      </div>
+      <div style="background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 11px 6px; text-align: center;">
+        <div style="font-size: 20px; font-weight: 800; color: #3b82f6;">2</div>
+        <div style="font-size: 10px; color: #6585a8; margin-top: 3px;">Czasami</div>
+      </div>
+      <div style="background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 11px 6px; text-align: center;">
+        <div style="font-size: 20px; font-weight: 800; color: #3b82f6;">3</div>
+        <div style="font-size: 10px; color: #6585a8; margin-top: 3px;">Często</div>
+      </div>
+      <div style="background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 11px 6px; text-align: center;">
+        <div style="font-size: 20px; font-weight: 800; color: #3b82f6;">4</div>
+        <div style="font-size: 10px; color: #6585a8; margin-top: 3px;">Bardzo często</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tools -->
+<div style="max-width: 860px; margin: 0 auto; padding: 0 20px 20px;">
+  <div style="background: #162439; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 20px;">
+    <div style="font-size: 14px; font-weight: 700; margin-bottom: 12px;">Narzędzia referencyjne</div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+      <div style="background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 12px; font-size: 12.5px; display: flex; align-items: center; gap: 7px;">
+        <span style="width: 5px; height: 5px; border-radius: 50%; background: #3b82f6; flex-shrink: 0;"></span>ASRS v1.1 — ADHD
+      </div>
+      <div style="background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 12px; font-size: 12.5px; display: flex; align-items: center; gap: 7px;">
+        <span style="width: 5px; height: 5px; border-radius: 50%; background: #3b82f6; flex-shrink: 0;"></span>AQ-50 — spektrum autyzmu
+      </div>
+      <div style="background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 12px; font-size: 12.5px; display: flex; align-items: center; gap: 7px;">
+        <span style="width: 5px; height: 5px; border-radius: 50%; background: #3b82f6; flex-shrink: 0;"></span>PHQ-9 — depresja
+      </div>
+      <div style="background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 12px; font-size: 12.5px; display: flex; align-items: center; gap: 7px;">
+        <span style="width: 5px; height: 5px; border-radius: 50%; background: #3b82f6; flex-shrink: 0;"></span>GAD-7 — lęk uogólniony
+      </div>
+      <div style="background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 12px; font-size: 12.5px; display: flex; align-items: center; gap: 7px;">
+        <span style="width: 5px; height: 5px; border-radius: 50%; background: #3b82f6; flex-shrink: 0;"></span>PCL-5 — PTSD
+      </div>
+      <div style="background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 12px; font-size: 12.5px; display: flex; align-items: center; gap: 7px;">
+        <span style="width: 5px; height: 5px; border-radius: 50%; background: #3b82f6; flex-shrink: 0;"></span>DERS — regulacja emocji
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Disclaimer -->
+<div style="max-width: 860px; margin: 0 auto; padding: 0 20px 40px;">
+  <div style="background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2); border-radius: 14px; padding: 16px 18px; font-size: 13.5px; color: #ffd0d0; line-height: 1.7;">
+    <strong style="color: white;">Ważne zastrzeżenie.</strong> To narzędzie <strong style="color: white;">przesiewowe</strong> — nie stanowi diagnozy klinicznej. Wyniki omów ze specjalistą: psychiatrą, psychologiem klinicznym lub neuropsychologiem.<br>
+    <span style="display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); padding: 5px 12px; border-radius: 7px; font-weight: 700; font-size: 13px; color: #ff9999;">Kryzys psychiczny / myśli suicydalne → 116 123 | Zagrożenie życia → 112</span>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="background: #0c1828; border-top: 1px solid rgba(255,255,255,0.05); padding: 20px 0; text-align: center; font-size: 11.5px; color: #3d5a7a;">
+  <div style="max-width: 860px; margin: 0 auto; padding: 0 20px;">Kwestionariusz przesiewowy v2.0 · DSM-5-TR (APA 2022) · ICD-11 (WHO 2022) · Nie zastępuje diagnozy klinicznej</div>
+</div>
+
+</x-dc>
+</body>
+</html>

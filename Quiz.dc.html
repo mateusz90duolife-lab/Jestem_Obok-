@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: #07101c; color: #e8f0fa; -webkit-font-smoothing: antialiased; }
+    a { color: #3b82f6; } a:hover { color: #1d4ed8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+  </style>
+</helmet>
+
+<!-- Top Bar with Progress -->
+<div style="position: sticky; top: 0; z-index: 100; height: 56px; background: rgba(7,16,28,0.92); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; padding: 0 20px;">
+  <div style="display: flex; align-items: center; gap: 14px; max-width: 860px; margin: 0 auto; width: 100%;">
+    <div style="display: flex; align-items: center; gap: 9px; flex-shrink: 0;">
+      <div style="width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #3b82f6, #8b5cf6); display: grid; place-items: center;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div>
+        <div style="font-weight: 800; font-size: 14px; white-space: nowrap; line-height: 1.2;">Jestem Obok</div>
+        <div style="font-size: 10px; font-weight: 400; color: #6585a8; line-height: 1;">ADHD · ASD · Zdrowie psychiczne</div>
+      </div>
+    </div>
+    <!-- Progress -->
+    <div style="flex: 1; display: flex; align-items: center; gap: 10px;">
+      <div style="flex: 1; height: 4px; background: #243455; border-radius: 99px; overflow: hidden;">
+        <div style="height: 100%; width: 38%; background: linear-gradient(90deg, #3b82f6, #8b5cf6); border-radius: 99px;"></div>
+      </div>
+      <div style="font-size: 11px; color: #6585a8; white-space: nowrap; min-width: 52px; text-align: right;">74 / 196</div>
+    </div>
+  </div>
+</div>
+
+<!-- Section Navigation -->
+<div style="background: rgba(7,16,28,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); overflow-x: auto; padding: 7px 20px;">
+  <div style="display: flex; gap: 5px; max-width: 860px; margin: 0 auto;">
+    <div style="width: 32px; height: 32px; border-radius: 9px; border-color: rgba(16,185,129,0.5); color: #10b981; background: #162439; border: 1px solid rgba(16,185,129,0.5); font-size: 11px; font-weight: 800; display: grid; place-items: center; cursor: pointer; flex-shrink: 0; position: relative;">A<span style="position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; border-radius: 50%; background: #10b981;"></span></div>
+    <div style="width: 32px; height: 32px; border-radius: 9px; border-color: rgba(16,185,129,0.5); color: #10b981; background: #162439; border: 1px solid rgba(16,185,129,0.5); font-size: 11px; font-weight: 800; display: grid; place-items: center; cursor: pointer; flex-shrink: 0; position: relative;">B<span style="position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; border-radius: 50%; background: #10b981;"></span></div>
+    <div style="width: 32px; height: 32px; border-radius: 9px; border-color: rgba(16,185,129,0.5); color: #10b981; background: #162439; border: 1px solid rgba(16,185,129,0.5); font-size: 11px; font-weight: 800; display: grid; place-items: center; cursor: pointer; flex-shrink: 0; position: relative;">C<span style="position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; border-radius: 50%; background: #10b981;"></span></div>
+    <div style="width: 32px; height: 32px; border-radius: 9px; border-color: rgba(16,185,129,0.5); color: #10b981; background: #162439; border: 1px solid rgba(16,185,129,0.5); font-size: 11px; font-weight: 800; display: grid; place-items: center; cursor: pointer; flex-shrink: 0; position: relative;">D<span style="position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; border-radius: 50%; background: #10b981;"></span></div>
+    <div style="width: 32px; height: 32px; border-radius: 9px; border-color: rgba(16,185,129,0.5); color: #10b981; background: #162439; border: 1px solid rgba(16,185,129,0.5); font-size: 11px; font-weight: 800; display: grid; place-items: center; cursor: pointer; flex-shrink: 0; position: relative;">E<span style="position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; border-radius: 50%; background: #10b981;"></span></div>
+    <div style="width: 32px; height: 32px; border-radius: 9px; border-color: rgba(16,185,129,0.5); color: #10b981; background: #162439; border: 1px solid rgba(16,185,129,0.5); font-size: 11px; font-weight: 800; display: grid; place-items: center; cursor: pointer; flex-shrink: 0; position: relative;">F<span style="position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; border-radius: 50%; background: #10b981;"></span></div>
+    <div style="width: 32px; height: 32px; border-radius: 9px; background: #3b82f6; border: 1px solid #3b82f6; color: white; box-shadow: 0 0 14px rgba(59,130,246,0.2); font-size: 11px; font-weight: 800; display: grid; place-items: center; cursor: pointer; flex-shrink: 0;">G</div>
+    <div style="width: 32px; height: 32px; border-radius: 9px; background: #162439; border: 1px solid rgba(255,255,255,0.05); color: #6585a8; font-size: 11px; font-weight: 800; display: grid; place-items: center; cursor: pointer; flex-shrink: 0;">H</div>
+    <div style="width: 32px; height: 32px; border-radius: 9px; background: #162439; border: 1px solid rgba(255,255,255,0.05); color: #6585a8; font-size: 11px; font-weight: 800; display: grid; place-items: center; cursor: pointer; flex-shrink: 0;">I</div>
+    <div style="width: 32px; height: 32px; border-radius: 9px; background: #162439; border: 1px solid rgba(255,255,255,0.05); color: #6585a8; font-size: 11px; font-weight: 800; display: grid; place-items: center; cursor: pointer; flex-shrink: 0;">J</div>
+    <div style="width: 32px; height: 32px; border-radius: 9px; background: #162439; border: 1px solid rgba(255,255,255,0.05); color: #6585a8; font-size: 11px; font-weight: 800; display: grid; place-items: center; cursor: pointer; flex-shrink: 0;">K</div>
+    <div style="width: 32px; height: 32px; border-radius: 9px; background: #162439; border: 1px solid rgba(255,255,255,0.05); color: #6585a8; font-size: 11px; font-weight: 800; display: grid; place-items: center; cursor: pointer; flex-shrink: 0;">L</div>
+  </div>
+</div>
+
+<!-- Quiz Content -->
+<div style="max-width: 860px; margin: 0 auto; padding: 20px 20px 80px;">
+
+  <!-- Section Header -->
+  <div style="padding: 16px 0 14px; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 18px;">
+    <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #3b82f6; margin-bottom: 6px;">Sekcja G · 10 pytań</div>
+    <div style="font-size: 21px; font-weight: 800; letter-spacing: -0.3px; display: flex; align-items: center; gap: 9px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Regulacja emocji
+    </div>
+    <div style="display: inline-flex; align-items: center; gap: 6px; margin-top: 9px; background: rgba(59,130,246,0.07); border: 1px solid rgba(59,130,246,0.18); padding: 7px 12px; border-radius: 8px; font-size: 13px; color: #9fb8d4;">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      Oceń na podstawie ostatnich 6 miesięcy
+    </div>
+  </div>
+
+  <!-- Question Card 1 - Answered -->
+  <div style="background: #162439; border: 1px solid rgba(16,185,129,0.35); border-radius: 14px; padding: 18px 20px; margin-bottom: 10px;">
+    <div style="font-size: 10.5px; font-weight: 800; color: #3d5a7a; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px;">G1</div>
+    <div style="font-size: 15px; font-weight: 600; line-height: 1.55; margin-bottom: 7px;">Kiedy doświadczam silnych emocji, trudno mi je kontrolować — działam impulsywnie.</div>
+    <div style="display: inline-flex; align-items: center; gap: 5px; background: #243455; border: 1px solid rgba(255,255,255,0.05); font-size: 11px; font-weight: 600; color: #6585a8; padding: 3px 9px; border-radius: 6px; margin-bottom: 12px;">Regulacja emocji — ADHD/ASD</div>
+    <div style="display: flex; gap: 5px;">
+      <div style="flex: 1; background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer;">
+        <span style="font-size: 18px; font-weight: 800; display: block;">0</span>
+        <span style="font-size: 9.5px; color: #6585a8; display: block; margin-top: 2px;">Nigdy</span>
+      </div>
+      <div style="flex: 1; background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer;">
+        <span style="font-size: 18px; font-weight: 800; display: block;">1</span>
+        <span style="font-size: 9.5px; color: #6585a8; display: block; margin-top: 2px;">Rzadko</span>
+      </div>
+      <div style="flex: 1; background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer;">
+        <span style="font-size: 18px; font-weight: 800; display: block;">2</span>
+        <span style="font-size: 9.5px; color: #6585a8; display: block; margin-top: 2px;">Czasami</span>
+      </div>
+      <div style="flex: 1; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border: 1px solid #3b82f6; border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer; box-shadow: 0 3px 12px rgba(59,130,246,0.2); transform: translateY(-2px);">
+        <span style="font-size: 18px; font-weight: 800; display: block; color: white;">3</span>
+        <span style="font-size: 9.5px; color: rgba(255,255,255,0.75); display: block; margin-top: 2px;">Często</span>
+      </div>
+      <div style="flex: 1; background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer;">
+        <span style="font-size: 18px; font-weight: 800; display: block;">4</span>
+        <span style="font-size: 9.5px; color: #6585a8; display: block; margin-top: 2px;">Bardzo często</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question Card 2 - Answered -->
+  <div style="background: #162439; border: 1px solid rgba(16,185,129,0.35); border-radius: 14px; padding: 18px 20px; margin-bottom: 10px;">
+    <div style="font-size: 10.5px; font-weight: 800; color: #3d5a7a; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px;">G2</div>
+    <div style="font-size: 15px; font-weight: 600; line-height: 1.55; margin-bottom: 7px;">Moje reakcje emocjonalne są nieproporcjonalnie silne w stosunku do sytuacji.</div>
+    <div style="display: inline-flex; align-items: center; gap: 5px; background: #243455; border: 1px solid rgba(255,255,255,0.05); font-size: 11px; font-weight: 600; color: #6585a8; padding: 3px 9px; border-radius: 6px; margin-bottom: 12px;">Regulacja emocji — ADHD/ASD</div>
+    <div style="display: flex; gap: 5px;">
+      <div style="flex: 1; background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer;">
+        <span style="font-size: 18px; font-weight: 800; display: block;">0</span>
+        <span style="font-size: 9.5px; color: #6585a8; display: block; margin-top: 2px;">Nigdy</span>
+      </div>
+      <div style="flex: 1; background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer;">
+        <span style="font-size: 18px; font-weight: 800; display: block;">1</span>
+        <span style="font-size: 9.5px; color: #6585a8; display: block; margin-top: 2px;">Rzadko</span>
+      </div>
+      <div style="flex: 1; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border: 1px solid #3b82f6; border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer; box-shadow: 0 3px 12px rgba(59,130,246,0.2); transform: translateY(-2px);">
+        <span style="font-size: 18px; font-weight: 800; display: block; color: white;">2</span>
+        <span style="font-size: 9.5px; color: rgba(255,255,255,0.75); display: block; margin-top: 2px;">Czasami</span>
+      </div>
+      <div style="flex: 1; background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer;">
+        <span style="font-size: 18px; font-weight: 800; display: block;">3</span>
+        <span style="font-size: 9.5px; color: #6585a8; display: block; margin-top: 2px;">Często</span>
+      </div>
+      <div style="flex: 1; background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer;">
+        <span style="font-size: 18px; font-weight: 800; display: block;">4</span>
+        <span style="font-size: 9.5px; color: #6585a8; display: block; margin-top: 2px;">Bardzo często</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question Card 3 - Unanswered (current) -->
+  <div style="background: #162439; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 18px 20px; margin-bottom: 10px;">
+    <div style="font-size: 10.5px; font-weight: 800; color: #3d5a7a; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 5px;">G3</div>
+    <div style="font-size: 15px; font-weight: 600; line-height: 1.55; margin-bottom: 7px;">Po kłótni lub konflikcie potrzebuję bardzo długiego czasu, by się uspokoić.</div>
+    <div style="display: inline-flex; align-items: center; gap: 5px; background: #243455; border: 1px solid rgba(255,255,255,0.05); font-size: 11px; font-weight: 600; color: #6585a8; padding: 3px 9px; border-radius: 6px; margin-bottom: 12px;">Regulacja emocji — ADHD/ASD</div>
+    <div style="display: flex; gap: 5px;">
+      <div style="flex: 1; background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer;">
+        <span style="font-size: 18px; font-weight: 800; display: block;">0</span>
+        <span style="font-size: 9.5px; color: #6585a8; display: block; margin-top: 2px;">Nigdy</span>
+      </div>
+      <div style="flex: 1; background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer;">
+        <span style="font-size: 18px; font-weight: 800; display: block;">1</span>
+        <span style="font-size: 9.5px; color: #6585a8; display: block; margin-top: 2px;">Rzadko</span>
+      </div>
+      <div style="flex: 1; background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer;">
+        <span style="font-size: 18px; font-weight: 800; display: block;">2</span>
+        <span style="font-size: 9.5px; color: #6585a8; display: block; margin-top: 2px;">Czasami</span>
+      </div>
+      <div style="flex: 1; background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer;">
+        <span style="font-size: 18px; font-weight: 800; display: block;">3</span>
+        <span style="font-size: 9.5px; color: #6585a8; display: block; margin-top: 2px;">Często</span>
+      </div>
+      <div style="flex: 1; background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 9px; padding: 9px 4px; text-align: center; cursor: pointer;">
+        <span style="font-size: 18px; font-weight: 800; display: block;">4</span>
+        <span style="font-size: 9.5px; color: #6585a8; display: block; margin-top: 2px;">Bardzo często</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 20px 0 10px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 20px;">
+    <div style="display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 700; padding: 10px 18px; border-radius: 10px; background: transparent; color: #e8f0fa; border: 1px solid rgba(255,255,255,0.15); cursor: pointer;">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Sekcja F
+    </div>
+    <div style="font-size: 12px; color: #6585a8;">Sekcja 7 z 19</div>
+    <div style="display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 700; padding: 10px 18px; border-radius: 10px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; box-shadow: 0 4px 20px rgba(59,130,246,0.3); cursor: pointer;">
+      Sekcja H
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
+  </div>
+  <div style="text-align: center; font-size: 11.5px; color: #3d5a7a; padding: 8px; display: flex; align-items: center; justify-content: center; gap: 5px;">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/></svg>
+    Postęp zapisany automatycznie
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>

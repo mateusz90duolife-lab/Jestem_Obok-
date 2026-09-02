@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: #07101c; color: #e8f0fa; -webkit-font-smoothing: antialiased; }
+    a { color: #3b82f6; } a:hover { color: #1d4ed8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+  </style>
+</helmet>
+
+<!-- Top Bar -->
+<div style="position: sticky; top: 0; z-index: 100; height: 56px; background: rgba(7,16,28,0.92); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; padding: 0 20px;">
+  <div style="display: flex; align-items: center; gap: 9px; max-width: 860px; margin: 0 auto; width: 100%;">
+    <div style="width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #3b82f6, #8b5cf6); display: grid; place-items: center;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+    </div>
+    <div>
+      <div style="font-weight: 800; font-size: 14px; white-space: nowrap; line-height: 1.2;">Jestem Obok</div>
+      <div style="font-size: 10px; font-weight: 400; color: #6585a8; line-height: 1;">ADHD · ASD · Zdrowie psychiczne</div>
+    </div>
+  </div>
+</div>
+
+<!-- Results Hero -->
+<div style="background: linear-gradient(180deg, rgba(59,130,246,0.07), transparent); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 36px 0 28px; text-align: center;">
+  <div style="max-width: 860px; margin: 0 auto; padding: 0 20px;">
+    <div style="font-size: 28px; font-weight: 900; letter-spacing: -0.5px;">Twój profil przesiewowy</div>
+    <div style="color: #9fb8d4; margin-top: 5px; font-size: 14px;">Data: 02.09.2026 · Wypełniono: 189 / 196 pytań</div>
+  </div>
+</div>
+
+<!-- Content -->
+<div style="max-width: 860px; margin: 0 auto; padding: 0 20px 80px;">
+
+  <!-- Reliability Panel -->
+  <div style="background: #162439; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 22px; margin-top: 20px;">
+    <div style="font-size: 16px; font-weight: 800; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      Rzetelność odpowiedzi
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+      <span style="font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 99px; background: rgba(16,185,129,0.15); color: #34d399;">Wysoka</span>
+      <span style="color: #6585a8; font-size: 13px;">0 / 7 par pytań kontrolnych wykazało sprzeczność</span>
+    </div>
+  </div>
+
+  <!-- Gauge Grid -->
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; padding: 24px 0 10px;">
+
+    <!-- ADHD Card -->
+    <div style="background: #162439; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 22px; position: relative; overflow: hidden;">
+      <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #f59e0b;"></div>
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 16px;">
+        <div style="font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 7px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          ADHD
+        </div>
+        <span style="font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 99px; background: rgba(249,115,22,0.15); color: #fb923c;">Umiarkowany</span>
+      </div>
+      <!-- Gauge SVG -->
+      <svg width="100" height="100" viewBox="0 0 100 100" style="display: block; margin: 0 auto 12px;">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#243455" stroke-width="9"/>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#f59e0b" stroke-width="9" stroke-linecap="round"
+          stroke-dasharray="251.2" stroke-dashoffset="100.5"
+          transform="rotate(-90 50 50)"/>
+        <text x="50" y="46" text-anchor="middle" dominant-baseline="central" fill="#e8f0fa" style="font-size: 20px; font-weight: 900; font-family: Inter, sans-serif;">60%</text>
+        <text x="50" y="62" text-anchor="middle" dominant-baseline="central" fill="#6585a8" style="font-size: 9px; font-family: Inter, sans-serif;">87/144</text>
+      </svg>
+      <div style="font-size: 12.5px; color: #9fb8d4; text-align: center; line-height: 1.5;">Umiarkowane nasilenie objawów nieuwagi i nadpobudliwości</div>
+    </div>
+
+    <!-- ASD Card -->
+    <div style="background: #162439; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 22px; position: relative; overflow: hidden;">
+      <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #8b5cf6;"></div>
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 16px;">
+        <div style="font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 7px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          ASD
+        </div>
+        <span style="font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 99px; background: rgba(239,68,68,0.18); color: #f87171;">Wysoki</span>
+      </div>
+      <svg width="100" height="100" viewBox="0 0 100 100" style="display: block; margin: 0 auto 12px;">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#243455" stroke-width="9"/>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#8b5cf6" stroke-width="9" stroke-linecap="round"
+          stroke-dasharray="251.2" stroke-dashoffset="62.8"
+          transform="rotate(-90 50 50)"/>
+        <text x="50" y="46" text-anchor="middle" dominant-baseline="central" fill="#e8f0fa" style="font-size: 20px; font-weight: 900; font-family: Inter, sans-serif;">75%</text>
+        <text x="50" y="62" text-anchor="middle" dominant-baseline="central" fill="#6585a8" style="font-size: 9px; font-family: Inter, sans-serif;">132/176</text>
+      </svg>
+      <div style="font-size: 12.5px; color: #9fb8d4; text-align: center; line-height: 1.5;">Wysokie nasilenie cech spektrum autyzmu</div>
+    </div>
+
+    <!-- Depression Card -->
+    <div style="background: #162439; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 22px; position: relative; overflow: hidden;">
+      <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #06b6d4;"></div>
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 16px;">
+        <div style="font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 7px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"><path d="M12 2v6M12 18v4M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M18 12h4M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/></svg>
+          Depresja
+        </div>
+        <span style="font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 99px; background: rgba(245,158,11,0.15); color: #fbbf24;">Łagodny</span>
+      </div>
+      <svg width="100" height="100" viewBox="0 0 100 100" style="display: block; margin: 0 auto 12px;">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#243455" stroke-width="9"/>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#06b6d4" stroke-width="9" stroke-linecap="round"
+          stroke-dasharray="251.2" stroke-dashoffset="163.3"
+          transform="rotate(-90 50 50)"/>
+        <text x="50" y="46" text-anchor="middle" dominant-baseline="central" fill="#e8f0fa" style="font-size: 20px; font-weight: 900; font-family: Inter, sans-serif;">35%</text>
+        <text x="50" y="62" text-anchor="middle" dominant-baseline="central" fill="#6585a8" style="font-size: 9px; font-family: Inter, sans-serif;">42/120</text>
+      </svg>
+      <div style="font-size: 12.5px; color: #9fb8d4; text-align: center; line-height: 1.5;">Łagodne objawy obniżonego nastroju</div>
+    </div>
+
+    <!-- Anxiety Card -->
+    <div style="background: #162439; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 22px; position: relative; overflow: hidden;">
+      <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #f97316;"></div>
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 16px;">
+        <div style="font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 7px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Lęk
+        </div>
+        <span style="font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 99px; background: rgba(245,158,11,0.15); color: #fbbf24;">Łagodny</span>
+      </div>
+      <svg width="100" height="100" viewBox="0 0 100 100" style="display: block; margin: 0 auto 12px;">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#243455" stroke-width="9"/>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#f97316" stroke-width="9" stroke-linecap="round"
+          stroke-dasharray="251.2" stroke-dashoffset="175.8"
+          transform="rotate(-90 50 50)"/>
+        <text x="50" y="46" text-anchor="middle" dominant-baseline="central" fill="#e8f0fa" style="font-size: 20px; font-weight: 900; font-family: Inter, sans-serif;">30%</text>
+        <text x="50" y="62" text-anchor="middle" dominant-baseline="central" fill="#6585a8" style="font-size: 9px; font-family: Inter, sans-serif;">36/120</text>
+      </svg>
+      <div style="font-size: 12.5px; color: #9fb8d4; text-align: center; line-height: 1.5;">Łagodne objawy lękowe</div>
+    </div>
+
+    <!-- PTSD Card -->
+    <div style="background: #162439; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 22px; position: relative; overflow: hidden;">
+      <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #ef4444;"></div>
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 16px;">
+        <div style="font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 7px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          PTSD/CPTSD
+        </div>
+        <span style="font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 99px; background: rgba(16,185,129,0.15); color: #34d399;">Niski</span>
+      </div>
+      <svg width="100" height="100" viewBox="0 0 100 100" style="display: block; margin: 0 auto 12px;">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#243455" stroke-width="9"/>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#ef4444" stroke-width="9" stroke-linecap="round"
+          stroke-dasharray="251.2" stroke-dashoffset="213.5"
+          transform="rotate(-90 50 50)"/>
+        <text x="50" y="46" text-anchor="middle" dominant-baseline="central" fill="#e8f0fa" style="font-size: 20px; font-weight: 900; font-family: Inter, sans-serif;">15%</text>
+        <text x="50" y="62" text-anchor="middle" dominant-baseline="central" fill="#6585a8" style="font-size: 9px; font-family: Inter, sans-serif;">18/120</text>
+      </svg>
+      <div style="font-size: 12.5px; color: #9fb8d4; text-align: center; line-height: 1.5;">Niskie nasilenie objawów pourazowych</div>
+    </div>
+  </div>
+
+  <!-- Synthetic Profile Chart -->
+  <div style="background: #162439; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 22px; margin-top: 8px;">
+    <div style="font-size: 16px; font-weight: 800; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>
+      Profil syntetyczny
+    </div>
+    <div style="display: flex; align-items: flex-end; gap: 16px; height: 160px; padding: 0 20px; justify-content: center;">
+      <!-- ADHD bar -->
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 7px;">
+        <div style="width: 44px; height: 84px; border-radius: 8px 8px 0 0; background: #f59e0b; position: relative;">
+          <span style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: 700; color: #e8f0fa; white-space: nowrap;">60%</span>
+        </div>
+        <div style="font-size: 10px; color: #6585a8; text-align: center; max-width: 50px; line-height: 1.3;">ADHD</div>
+      </div>
+      <!-- ASD bar -->
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 7px;">
+        <div style="width: 44px; height: 105px; border-radius: 8px 8px 0 0; background: #8b5cf6; position: relative;">
+          <span style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: 700; color: #e8f0fa; white-space: nowrap;">75%</span>
+        </div>
+        <div style="font-size: 10px; color: #6585a8; text-align: center; max-width: 50px; line-height: 1.3;">ASD</div>
+      </div>
+      <!-- Depresja bar -->
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 7px;">
+        <div style="width: 44px; height: 49px; border-radius: 8px 8px 0 0; background: #06b6d4; position: relative;">
+          <span style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: 700; color: #e8f0fa; white-space: nowrap;">35%</span>
+        </div>
+        <div style="font-size: 10px; color: #6585a8; text-align: center; max-width: 50px; line-height: 1.3;">Depresja</div>
+      </div>
+      <!-- Lęk bar -->
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 7px;">
+        <div style="width: 44px; height: 42px; border-radius: 8px 8px 0 0; background: #f97316; position: relative;">
+          <span style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: 700; color: #e8f0fa; white-space: nowrap;">30%</span>
+        </div>
+        <div style="font-size: 10px; color: #6585a8; text-align: center; max-width: 50px; line-height: 1.3;">Lęk</div>
+      </div>
+      <!-- PTSD bar -->
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 7px;">
+        <div style="width: 44px; height: 21px; border-radius: 8px 8px 0 0; background: #ef4444; position: relative;">
+          <span style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: 700; color: #e8f0fa; white-space: nowrap;">15%</span>
+        </div>
+        <div style="font-size: 10px; color: #6585a8; text-align: center; max-width: 50px; line-height: 1.3;">PTSD</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Red Flags -->
+  <div style="background: #162439; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 22px; margin-top: 8px;">
+    <div style="font-size: 16px; font-weight: 800; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+      Czerwone flagi diagnostyczne
+    </div>
+    <div style="font-size: 12.5px; color: #9fb8d4; margin-bottom: 12px;">Wzorce szczególnie podnoszące prawdopodobieństwo rozpoznania.</div>
+    <div style="display: flex; gap: 11px; align-items: flex-start; padding: 12px 14px; border-radius: 10px; margin-bottom: 8px; font-size: 13.5px; line-height: 1.6; background: rgba(139,92,246,0.07); border: 1px solid rgba(139,92,246,0.22);">
+      <span style="font-size: 17px; flex-shrink: 0; margin-top: 1px; color: #8b5cf6;">&#9670;</span>
+      <div><span style="color: #8b5cf6; font-weight: 700;">ASD — </span><strong style="color: #e8f0fa;">Silny wzorzec rutyn i sztywności:</strong> 7 pytań z sekcji I ocenionych na ≥3 — kryterium B DSM-5-TR.</div>
+    </div>
+    <div style="display: flex; gap: 11px; align-items: flex-start; padding: 12px 14px; border-radius: 10px; margin-bottom: 8px; font-size: 13.5px; line-height: 1.6; background: rgba(245,158,11,0.07); border: 1px solid rgba(245,158,11,0.22);">
+      <span style="font-size: 17px; flex-shrink: 0; margin-top: 1px; color: #f59e0b;">&#9650;</span>
+      <div><span style="color: #f59e0b; font-weight: 700;">ADHD — </span><strong style="color: #e8f0fa;">Paraliza startowa + ślepota czasowa:</strong> E4=4/4, E5=3/4 — kluczowe markery dysfunkcji wykonawczej ADHD (Barkley, 2015).</div>
+    </div>
+  </div>
+
+  <!-- Recommendations -->
+  <div style="background: #162439; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 22px; margin-top: 8px;">
+    <div style="font-size: 16px; font-weight: 800; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      Rekomendacje kolejnych kroków
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
+      <div style="background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 11px; padding: 14px;">
+        <div style="font-size: 22px; margin-bottom: 8px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 5px;">Diagnostyka ASD</div>
+        <div style="font-size: 12px; color: #9fb8d4; line-height: 1.55;">Psycholog kliniczny z doświadczeniem w ASD u dorosłych. Narzędzia: ADOS-2, ADI-R, RAADS-R.</div>
+      </div>
+      <div style="background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 11px; padding: 14px;">
+        <div style="font-size: 22px; margin-bottom: 8px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 5px;">Diagnostyka ADHD</div>
+        <div style="font-size: 12px; color: #9fb8d4; line-height: 1.55;">Psychiatra specjalizujący się w ADHD u dorosłych. Wywiad DIVA-5, neuropsychologia.</div>
+      </div>
+      <div style="background: #1c2d47; border: 1px solid rgba(255,255,255,0.05); border-radius: 11px; padding: 14px;">
+        <div style="font-size: 22px; margin-bottom: 8px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 5px;">Wydrukuj wyniki</div>
+        <div style="font-size: 12px; color: #9fb8d4; line-height: 1.55;">Zabierz wyniki na konsultację ze specjalistą.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div style="display: flex; justify-content: center; gap: 10px; margin-top: 30px;">
+    <div style="display: inline-flex; align-items: center; gap: 7px; font-size: 15px; font-weight: 700; padding: 13px 26px; border-radius: 12px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; box-shadow: 0 4px 20px rgba(59,130,246,0.3); cursor: pointer;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Drukuj / Zapisz PDF
+    </div>
+    <div style="display: inline-flex; align-items: center; gap: 7px; font-size: 15px; font-weight: 700; padding: 13px 26px; border-radius: 12px; background: transparent; color: #e8f0fa; border: 1px solid rgba(255,255,255,0.15); cursor: pointer;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Wróć do testu
+    </div>
+  </div>
+
+  <!-- Bottom Disclaimer -->
+  <div style="background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2); border-radius: 14px; padding: 16px 18px; font-size: 13px; color: #ffd0d0; line-height: 1.7; margin-top: 24px;">
+    Wydrukuj wyniki i zabierz na konsultację. Psychiatra przez NFZ — skierowanie od lekarza pierwszego kontaktu. Centrum Zdrowia Psychicznego — bez skierowania.<br>
+    Kryzys: <strong style="color: white;">116 123</strong> (tel. zaufania) | Zagrożenie życia: <strong style="color: white;">112</strong>
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>
