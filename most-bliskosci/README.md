@@ -7,10 +7,9 @@ bez zależności i bez kroku budowania. Wystarczy otworzyć go w przeglądarce.
 
 ## Co jest w środku
 
-- **187 kart rozmowy** w pięciu kategoriach: Poznaj (25), Zbliż się (25), Naprawa (25),
-  Odkryj (56), Odwaga (56). Podstawą jest talia BLIŻEJ: poziom 1 rozdzielony na Poznaj i Zbliż się,
-  poziom 2 to Odkryj, poziom 3 to Odwaga. Naprawa i karty o wzorcach z wcześniejszych relacji
-  to warstwa dopisana do tamtego szkieletu.
+- **150 kart rozmowy** w czterech kategoriach: Poznaj (25), Zbliż się (25), Odkryj (50), Odwaga (50).
+  To finalna, autorska talia — regulacja konfliktu i wzorce z wcześniejszych relacji są wplecione
+  w Odkryj i Odwagę, a nie wydzielone osobno.
 - **18 Kart Sytuacji** — scenki z codziennego życia z mechaniką Lustro → Twoja reakcja → Klucz empatii.
 - **12 Kart Akcji**, **6 Złotych Kart Mostu** (z minutowym odliczaniem), **10 Kart Przywileju**.
 - **Żetony Odwagi** — po 3 na osobę: wejdź głębiej, czy mnie znasz, wybierz za mnie, jeszcze raz.
@@ -37,18 +36,19 @@ najpierw przewiduje się reakcję partnera, a dopiero potem sprawdza prawdziwą.
    jedno słowo o stanie) zanim para dołoży element Mostu. Odsłonięcie się bez odpowiedzi drugiej
    strony zostawia gorszy ślad niż milczenie, więc ten krok jest obowiązkowy, nie opcjonalny.
 3. *Limit dwóch kart Odwagi z rzędu* — potem kategoria jest chwilowo zablokowana, a gra proponuje
-   Naprawę albo Zbliż się.
+   Odkryj albo Zbliż się.
 
 Do tego przycisk **Kończymy na dziś** dostępny w każdej chwili: zamyka wieczór tym samym pytaniem
 co finał („co zabieramy ze sobą?”), zapisuje most w miejscu, w którym stanął, i pozwala wrócić.
 
-**Regulacja konfliktu jako osobna oś.** Kategoria Naprawa (25 kart) dotyczy eskalacji, przerwy,
-przeprosin i powrotu po kłótni. Celowo nie leży na drabinie głębokości — nie jest „trudniejsza”
-od Odkryj, tylko inna, więc można po nią sięgnąć również po to, żeby zejść z wysokiego napięcia.
+**Regulacja konfliktu wewnątrz Odkryj.** Kilkanaście kart tej kategorii dotyczy wprost tego, co dzieje
+się w kłótni i po niej: po czym poznajesz, że rozmowa idzie w złą stronę, co dzieje się w Tobie tuż
+przed zamknięciem się, jaki sygnał moglibyśmy umówić na „potrzebuję przerwy, ale nie odchodzę”,
+co sprawia, że po konflikcie jesteś gotowy/a znowu mnie usłyszeć.
 
-**Wzorce z wcześniejszych relacji** mają dwanaście własnych kart, rozdzielonych między Odkryj
-(czego nauczyły, co przestało obowiązywać) i Odwagę (jaki lęk jeszcze wraca, przed czym się
-chronisz, choć to nie ja Cię zraniłem).
+**Wzorce z przeszłości** wracają w obu głębszych kategoriach — wzorzec komunikacji z domu rodzinnego
+i decyzje, które czegoś nauczyły (Odkryj), oraz lęk przed powtórzeniem schematu i rana, która wciąż
+się odzywa (Odwaga).
 
 ## Stan gry
 
