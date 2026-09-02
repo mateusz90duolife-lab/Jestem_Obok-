@@ -28,18 +28,33 @@ z żetonu. Trafienia są liczone osobno dla każdej osoby i pokazane w finale �
 tylko jako obraz tego, jak dobrze każde z Was czyta drugie. Do tego 18 kart sytuacji, w których
 najpierw przewiduje się reakcję partnera, a dopiero potem sprawdza prawdziwą.
 
-**Bezpieczniki przy wysokiej podatności.** Poziom Odwaga ma trzy zabezpieczenia:
+**Bezpieczniki przy wysokiej podatności.** Poziom Odwaga ma cztery zabezpieczenia:
 
 1. *Bramka zgody* przed pierwszą kartą — para umawia się, że wolno powiedzieć pas, że to co padnie
    nie wraca w kłótni i że „stop” kończy rozmowę bez negocjacji.
-2. *Domknięcie* po każdej karcie Odwagi — trzy kroki (odbicie bez rady, nazwanie własnej potrzeby,
-   jedno słowo o stanie) zanim para dołoży element Mostu. Odsłonięcie się bez odpowiedzi drugiej
-   strony zostawia gorszy ślad niż milczenie, więc ten krok jest obowiązkowy, nie opcjonalny.
+2. *Karta TERAZ* po każdej karcie Odwagi — obowiązkowy rytuał regulujący (12 kart: od cichego
+   oddychania razem po przytulenie), zanim para dołoży element Mostu. Odsłonięcie się bez powrotu
+   do kontaktu zostawia gorszy ślad niż milczenie, więc ten krok nie jest opcjonalny — jest wymienny
+   (przycisk *Inna karta*) i przerywalny w każdej chwili (*Wystarczy*).
 3. *Limit dwóch kart Odwagi z rzędu* — potem kategoria jest chwilowo zablokowana, a gra proponuje
    Odkryj albo Zbliż się.
+4. *Karta TERAZ na żądanie* — przycisk w nagłówku działa przez całą grę, nie tylko po Odwadze.
 
 Do tego przycisk **Kończymy na dziś** dostępny w każdej chwili: zamyka wieczór tym samym pytaniem
 co finał („co zabieramy ze sobą?”), zapisuje most w miejscu, w którym stanął, i pozwala wrócić.
+
+## Talia TERAZ
+
+Dwanaście krótkich rytuałów regulujących, podzielonych na cztery grupy narastającej bliskości
+fizycznej: **bez dotyku** (oddech, spojrzenie, jedno zdanie, siedzenie obok), **lekki dotyk**
+(trzymanie za rękę, oparcie głowy, masaż dłoni, czoła), **pełny kontakt** (uścisk, oparcie plecami)
+i **rozładowanie** (potrząśnięcie ciałem, przyniesienie wody). Rozkład jest celowy — dla par,
+u których dotyk po odsłonięciu podatności bywa deregulujący, a nie kojący, karty bez dotyku
+i rozładowujące dają odpowiedź inną niż zbliżenie.
+
+Karty akcji **Bez słów** i **Powiedz mi coś dobrego** zostały w talii akcji — to ruchy w grze,
+zmieniające sposób odpowiedzi. **Bliskość** przeniosła się do TERAZ, bo pełniła inną funkcję:
+nie urozmaicała odpowiedzi, tylko regulowała stan po niej.
 
 **Regulacja konfliktu wewnątrz Odkryj.** Kilkanaście kart tej kategorii dotyczy wprost tego, co dzieje
 się w kłótni i po niej: po czym poznajesz, że rozmowa idzie w złą stronę, co dzieje się w Tobie tuż

@@ -309,6 +309,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--t3);font
     <div class="wordmark"><span></span>Most Bliskości</div>
     <div class="hgap"></div>
     <button class="tbtn" id="btnRules">Zasady</button>
+    <button class="tbtn hide" id="btnTeraz">Karta TERAZ</button>
     <button class="tbtn hide" id="btnStop">Kończymy na dziś</button>
     <button class="tbtn hide" id="btnReset">Od nowa</button>
   </div>
@@ -476,10 +477,17 @@ footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--t3);font
       <ul>
         <li>Przed pierwszą kartą Odwagi umawiacie się na trzy zasady: wolno powiedzieć pas,
           to co padnie nie wraca w kłótni, „stop” kończy rozmowę bez negocjacji.</li>
-        <li>Po każdej karcie Odwagi jest <b>domknięcie</b> — trzy krótkie kroki, zanim dołożycie element Mostu.
-          Nie pomijajcie ich: odsłonięcie się bez odpowiedzi drugiej strony zostawia gorszy ślad niż milczenie.</li>
+        <li>Po każdej karcie Odwagi dobieracie <b>kartę TERAZ</b> — 12 krótkich rytuałów regulujących:
+          od cichego oddychania razem, przez trzymanie za ręce, po przytulenie. Nie pomijajcie tego kroku:
+          odsłonięcie się bez powrotu do kontaktu zostawia gorszy ślad niż milczenie.</li>
+        <li>Karta TERAZ jest zawsze do wymiany — przycisk <b>Inna karta</b> daje nową bez pytania dlaczego,
+          gdyby akurat wylosowana nie pasowała do tego, czego teraz potrzebujecie.</li>
+        <li>Każde z Was może w każdej chwili powiedzieć <b>„wystarczy”</b> — to kończy kartę TERAZ
+          natychmiast, bez tłumaczenia.</li>
         <li>Dwie karty Odwagi z rzędu to maksimum. Potem kategoria blokuje się na turę,
           a gra proponuje Odkryj albo Zbliż się.</li>
+        <li>Przycisk <b>Karta TERAZ</b> w nagłówku działa przez całą grę, nie tylko po Odwadze —
+          sięgnijcie po niego, kiedy tylko poczujecie taką potrzebę.</li>
         <li>W każdej chwili możecie kliknąć <b>Kończymy na dziś</b>. Gra zapisze most tam, gdzie go zostawiacie.</li>
       </ul>
     </section>
@@ -778,7 +786,6 @@ const ACTIONS = [
   {n:'Powiedz mi coś dobrego',t:'Przez 30 sekund mów partnerowi o jednej rzeczy, którą naprawdę w nim/niej doceniasz. Bez „ale”.', sec:30},
   {n:'Wybieram za Ciebie',    t:'Partner wybiera kategorię Twojej następnej karty.'},
   {n:'Jeszcze głębiej',       t:'Po Twojej odpowiedzi partner może zadać jedno dodatkowe pytanie.'},
-  {n:'Bliskość',              t:'Wybierzcie jeden gest bliskości: przytulenie, trzymanie za ręce, masaż dłoni albo oparcie głowy na ramieniu.', sec:60},
   {n:'Rozładuj',              t:'Najpierw wymyślcie razem najbardziej absurdalną odpowiedź. Potem wróćcie do prawdziwej.'},
   {n:'Odbicie',               t:'Partner własnymi słowami mówi, co usłyszał. Druga osoba odpowiada: „Tak, dokładnie” albo „Nie do końca. Chodziło mi o…”.'},
   {n:'Gdyby…',                t:'Zmieńcie to pytanie w hipotetyczną sytuację i odpowiedzcie na nie oboje.'},
@@ -816,6 +823,21 @@ const PRIVILEGES = [
   {n:'Randka',              t:'Partner organizuje małą randkę dla Was dwojga.'},
   {n:'Wiadomość',           t:'Partner pisze Ci wiadomość, w której wymienia trzy rzeczy, które w Tobie docenia.'},
   {n:'Niespodzianka',       t:'Partner ma przygotować dla Ciebie małą niespodziankę w ciągu najbliższych 7 dni.'}
+];
+
+const TERAZ = [
+  {n:'Oddech',       grp:'bez dotyku', sec:60, t:'Usiądźcie naprzeciwko siebie. Przez 60 sekund oddychajcie w jednym rytmie. Nic nie mówcie.'},
+  {n:'Spojrzenie',   grp:'bez dotyku', sec:60, t:'Przez 60 sekund patrzcie sobie w oczy. Kiedy zrobi się niezręcznie, zostańcie jeszcze chwilę.'},
+  {n:'Jedno zdanie', grp:'bez dotyku', sec:0,  t:'Powiedz drugiej osobie jedno zdanie zaczynające się od: „Cieszę się, że mi to powiedziałeś/aś, bo…”. Jedno. Potem cisza.'},
+  {n:'Obok',         grp:'bez dotyku', sec:60, t:'Przez 60 sekund po prostu siedźcie obok siebie. Bez rozmowy, bez telefonu, bez zadania.'},
+  {n:'Dłoń',         grp:'lekki dotyk', sec:60, t:'Weź drugą osobę za rękę i trzymaj przez 60 sekund. Nie głaszcz, nie ściskaj. Po prostu trzymaj.'},
+  {n:'Ramię',        grp:'lekki dotyk', sec:60, t:'Oprzyj głowę na ramieniu drugiej osoby na 60 sekund. W połowie możecie się zamienić.'},
+  {n:'Ręce',         grp:'lekki dotyk', sec:120, t:'Przez 2 minuty masuj drugiej osobie dłonie. Najpierw jedną, potem drugą.'},
+  {n:'Czoło',        grp:'lekki dotyk', sec:30, t:'Zetknijcie się czołami i zostańcie tak przez 30 sekund. Zamknijcie oczy.'},
+  {n:'Uścisk',       grp:'pełny kontakt', sec:0, t:'Przytulcie się i wytrzymajcie dłużej, niż zwykle to robicie. Puszcza ta osoba, która przytuliła się jako druga.'},
+  {n:'Plecy',        grp:'pełny kontakt', sec:120, t:'Usiądźcie plecami do siebie, opierając się o siebie, na 2 minuty. Czujecie oddech drugiej osoby, ale nie widzicie jej twarzy.'},
+  {n:'Wstańcie',     grp:'rozładowanie', sec:30, t:'Wstańcie oboje i przez 30 sekund potrząśnijcie rękami, ramionami, całym ciałem. Wolno się przy tym śmiać.'},
+  {n:'Woda',         grp:'rozładowanie', sec:0, t:'Jedno z Was wstaje i przynosi drugiemu szklankę wody. Bez pytania, co chce. Wypijcie ją, zanim wrócicie do gry.'}
 ];
 
 const STAGES = ['Zaciekawienie','Śmiech','Docenienie','Wspomnienie','Odkrycie',
@@ -858,7 +880,7 @@ function freshState(mode, names){
     v:1, mode, names,
     turn:0, bridge:0, drawn:0, tokens:[3,3], privs:[[],[]],
     used:{poznaj:[], zbliz:[], odkryj:[], odwaga:[]},
-    usedSit:[], usedGold:[], usedPriv:[],
+    usedSit:[], usedGold:[], usedPriv:[], usedTeraz:[],
     goldAt:slots, challengeAt: cfg.daily ? [] : [4,8],
     phase:'choose', card:null, pend:{}, reaction:null,
     odwagaStreak:0, consent:false, knowStat:[{h:0, m:0}, {h:0, m:0}],
@@ -903,6 +925,13 @@ function drawGolden(){
   do { i = Math.floor(Math.random() * GOLDEN.length); } while (S.usedGold.includes(i));
   S.usedGold.push(i);
   return GOLDEN[i];
+}
+function drawTeraz(){
+  if (S.usedTeraz.length >= TERAZ.length) S.usedTeraz = [];
+  let i;
+  do { i = Math.floor(Math.random() * TERAZ.length); } while (S.usedTeraz.includes(i));
+  S.usedTeraz.push(i);
+  return TERAZ[i];
 }
 function deeper(cat){
   const i = ORDER.indexOf(cat);
@@ -1191,17 +1220,11 @@ function viewClose(){
   return `
     <div class="prompt">
       <h2>Domknięcie</h2>
-      <p>Po trudnej karcie ważniejsze od komentarza jest to, żeby druga osoba poczuła,
-         że nic złego się nie stało. Zróbcie te trzy rzeczy, zanim pójdziecie dalej.</p>
-    </div>
-    <div class="note" style="max-width:600px">
-      <span class="mono">Trzy kroki</span>
-      <p><strong>${esc(partnerName())}</strong> — powiedz jednym zdaniem, co usłyszałeś/aś. Bez rady, bez oceny, bez „ale”.</p>
-      <p><strong>${esc(activeName())}</strong> — powiedz, czego teraz potrzebujesz: chwili ciszy, przytulenia czy zwyczajnej zmiany tematu.</p>
-      <p><strong>Oboje</strong> — jedno słowo, jak się teraz czujecie. Tyle wystarczy.</p>
+      <p>Po karcie Odwagi nie idziecie dalej od razu. Dobierzcie kartę TERAZ —
+         to nie przerwa w rozmowie, to jej część.</p>
     </div>
     <div class="acts">
-      <button class="btn gold" data-earn="1">Domknięte · dołóżcie element Mostu</button>
+      <button class="btn gold" data-teraz="close">Dobierzcie kartę TERAZ</button>
       <button class="btn ghost" data-stop="1">Kończymy na dziś</button>
     </div>
     ${railHTML(5)}`;
@@ -1230,6 +1253,7 @@ function bind(){
   const ps = $('[data-pass]'); if (ps) ps.onclick = passCard;
   document.querySelectorAll('[data-react]').forEach(b => b.onclick = () => { S.reaction = +b.dataset.react; render(); });
   const cl = $('[data-close]'); if (cl) cl.onclick = () => { S.phase = 'close'; render(); };
+  const tz = $('[data-teraz]'); if (tz) tz.onclick = () => openTeraz(tz.dataset.teraz === 'close');
   const st = $('[data-stop]'); if (st) st.onclick = () => finish('today');
   document.querySelectorAll('[data-earn]').forEach(b => b.onclick = () => earn(b.dataset.earn !== 'skip'));
   const nx = $('[data-next]'); if (nx) nx.onclick = nextTurn;
@@ -1394,6 +1418,39 @@ function openGolden(){
   };
   runRing(o, 60, reveal);
   o.querySelector('[data-skip]').onclick = () => { if (ovTimer){ clearInterval(ovTimer); ovTimer = null; } reveal(); };
+}
+function openTeraz(mandatory){
+  const render_card = (card) => {
+    const timed = card.sec > 0;
+    const box = `
+      <div class="kicker">Karta TERAZ · ${esc(card.grp)}</div>
+      <h3>${esc(card.n)}</h3>
+      <p>${esc(card.t)}</p>
+      ${timed ? ringHTML(card.sec) : ''}
+      <p class="quiet">Każde z Was może w każdej chwili powiedzieć „wystarczy” — to kończy kartę bez tłumaczenia.</p>
+      <div class="acts" style="justify-content:center">
+        <button class="btn" data-swap="1">Inna karta</button>
+        <button class="btn gold" data-enough="1">Wystarczy</button>
+      </div>`;
+    return { box, timed };
+  };
+  let card = drawTeraz();
+  let built = render_card(card);
+  const o = openOv(built.box);
+  const wire = () => {
+    if (built.timed) runRing(o, card.sec, () => {});
+    o.querySelector('[data-swap]').onclick = () => {
+      card = drawTeraz();
+      built = render_card(card);
+      o.querySelector('.box').innerHTML = built.box;
+      wire();
+    };
+    o.querySelector('[data-enough]').onclick = () => {
+      closeOv();
+      if (mandatory) earn(true); else render();
+    };
+  };
+  wire();
 }
 function openConsent(cat){
   const o = openOv(`
@@ -1560,6 +1617,7 @@ function show(id){
   ['setup','game','daily','final'].forEach(k => $('#' + k).classList.toggle('hide', k !== id));
   $('#btnReset').classList.toggle('hide', id === 'setup');
   $('#btnStop').classList.toggle('hide', id !== 'game');
+  $('#btnTeraz').classList.toggle('hide', id !== 'game');
   window.scrollTo({top:0, behavior:'smooth'});
 }
 
@@ -1606,6 +1664,7 @@ $('#btnRules').onclick = () => $('#rules').classList.remove('hide');
 $('#btnRulesClose').onclick = () => $('#rules').classList.add('hide');
 $('#rules').onclick = e => { if (e.target.id === 'rules') $('#rules').classList.add('hide'); };
 $('#btnStop').onclick = () => finish('today');
+$('#btnTeraz').onclick = () => openTeraz(false);
 $('#btnReset').onclick = () => {
   if (confirm('Zakończyć tę rozgrywkę i wrócić do ekranu startowego? Postęp Mostu zostanie skasowany.')){
     wipe(); S = null; boot();
