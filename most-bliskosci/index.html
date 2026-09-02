@@ -6,6 +6,27 @@
 <title>Most Bliskości</title>
 <meta name="description" content="Kooperacyjna gra dla dwojga: 150 pytań, karty sytuacji, żetony odwagi i wspólnie budowany Most Bliskości.">
 <meta name="theme-color" content="#0A1A20">
+<link rel="canonical" href="https://mateusz90duolife-lab.github.io/Jestem_Obok-/most-bliskosci/">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Most Bliskości">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Most Bliskości">
+<meta property="og:title" content="Most Bliskości — gra dla dwojga">
+<meta property="og:description" content="Nie chodzi o to, żeby znać wszystkie odpowiedzi. Chodzi o to, żeby nadal być ciekawym siebie. 150 kart rozmowy, karty sytuacji i most, który budujecie razem.">
+<meta property="og:url" content="https://mateusz90duolife-lab.github.io/Jestem_Obok-/most-bliskosci/">
+<meta property="og:image" content="https://mateusz90duolife-lab.github.io/Jestem_Obok-/most-bliskosci/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Most Bliskości — gra dla dwojga, 150 kart rozmowy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Most Bliskości — gra dla dwojga">
+<meta name="twitter:description" content="150 kart rozmowy, karty sytuacji, żetony odwagi i most, który budujecie razem.">
+<meta name="twitter:image" content="https://mateusz90duolife-lab.github.io/Jestem_Obok-/most-bliskosci/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
@@ -14,7 +35,7 @@
   /* zmierzch nad rzeką */
   --ink:#0A1A20; --ink2:#0E242C; --surf:#153039; --surf2:#1C3E49; --surf3:#25505D;
   --line:rgba(233,220,199,.11); --line2:rgba(233,220,199,.2);
-  --t0:#EFE4D3; --t1:#A6BCBD; --t2:#71898C; --t3:#4E6469;
+  --t0:#EFE4D3; --t1:#A6BCBD; --t2:#71898C; --t3:#66808A;
   --paper:#F2E8DA; --paper2:#E4D6C1; --pink:#1C2A30; --pink2:#4A5B60;
   --gold:#E8A94A; --gold2:#B77C24; --gold-glow:rgba(232,169,74,.28);
   --poznaj:#6FA07A; --zbliz:#CE8098; --odkryj:#6B93B8; --odwaga:#C4553A;
@@ -197,6 +218,10 @@ header .shell{display:flex;align-items:center;gap:16px;height:56px}
 .meta b{font-family:var(--serif);font-size:21px;font-weight:600}
 .setup{width:100%;max-width:760px;display:flex;flex-direction:column;gap:22px;text-align:left;padding-bottom:60px}
 .field{display:flex;flex-direction:column;gap:9px}
+.note{border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:0 var(--r2) var(--r2) 0;
+  padding:15px 18px;background:rgba(232,169,74,.05);display:flex;flex-direction:column;gap:7px}
+.note p{font-size:14px;color:var(--t1);line-height:1.6;max-width:68ch}
+.note em{font-family:var(--serif);font-style:italic;color:var(--t0)}
 .names{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .names input{background:rgba(21,48,57,.55);border:1px solid var(--line);border-radius:10px;
   padding:13px 15px;color:var(--t0);font-size:16px;font-family:var(--serif);width:100%;transition:var(--tr)}
@@ -321,6 +346,14 @@ footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--t3);font
       <div class="modes" id="modes"></div>
     </div>
 
+    <div class="note">
+      <span class="mono">Zanim zaczniecie</span>
+      <p>Most Bliskości to gra towarzyska dla dorosłych, nie terapia ani narzędzie diagnostyczne.
+        Poziom Odwaga dotyka lęków, granic i trudnych wspomnień — na każdej karcie wolno powiedzieć
+        <em>pas</em>, bez tłumaczenia. Jeśli rozmowa otworzy coś, co Was przerasta, przerwijcie grę
+        i wróćcie do niej innym razem albo poszukajcie wsparcia u specjalisty.</p>
+    </div>
+
     <div class="acts" style="justify-content:flex-start;max-width:none">
       <button class="btn gold" id="btnStart">Rozłóż karty</button>
       <button class="btn ghost hide" id="btnResume">Wróć do zapisanej gry</button>
@@ -363,6 +396,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--t3);font
 
 <footer class="shell">
   <p>Most Bliskości · gra dla par · zasada nadrzędna: <em style="font-family:var(--serif)">nie naprawiaj, najpierw poznaj</em></p>
+  <p style="margin-top:7px">Gra nie zbiera żadnych danych — postęp zapisuje się wyłącznie w Twojej przeglądarce.</p>
 </footer>
 
 <!-- ══════════ ZASADY ══════════ -->
@@ -422,6 +456,13 @@ footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--t3);font
       <p>Nagroda nie jest karą dla przegranego — to przywilej dla zwycięzcy. Jeśli karta nie pasuje do Waszej
         sytuacji, odrzućcie ją i dobierzcie inną. Nagrody mają być lekkie i możliwe do wykonania,
         a nie źródłem prawdziwego konfliktu.</p>
+    </section>
+
+    <section>
+      <h4>Czym ta gra nie jest</h4>
+      <p>To gra towarzyska dla dorosłych, nie terapia ani narzędzie diagnostyczne. Nie służy do oceniania
+        partnera ani do rozstrzygania sporów. Jeśli rozmowa otworzy coś, co Was przerasta — przerwijcie
+        i wróćcie do niej innym razem albo poszukajcie wsparcia u specjalisty.</p>
     </section>
 
     <section>
@@ -685,7 +726,7 @@ const ACTIONS = [
   {n:'Rozładuj',              t:'Najpierw wymyślcie razem najbardziej absurdalną odpowiedź. Potem wróćcie do prawdziwej.'},
   {n:'Odbicie',               t:'Partner własnymi słowami mówi, co usłyszał. Druga osoba odpowiada: „Tak, dokładnie” albo „Nie do końca. Chodziło mi o…”.'},
   {n:'Gdyby…',                t:'Zmieńcie to pytanie w hipotetyczną sytuację i odpowiedzcie na nie oboje.'},
-  {n:'Kradzież',              t:'Przejmij kartę partnera i odpowiedz na nią jako pierwszy/a.'},
+  {n:'Kradzież',              t:'Partner przejmuje tę kartę i odpowiada na nią jako pierwszy/a. Dopiero potem odpowiadasz Ty.', steal:true},
   {n:'Pass',                  t:'Możesz pominąć aktualną kartę. Bez tłumaczenia. Partner odpowiada tylko: „Jasne”.', pass:true}
 ];
 
@@ -823,7 +864,7 @@ function riskCategory(){
 }
 function maybeAction(){
   if (Math.random() > MODES[S.mode].act) return null;
-  const pool = ACTIONS.filter(a => !a.pass && a.n !== 'Kradzież');
+  const pool = ACTIONS.filter(a => !a.pass);
   return rnd(pool);
 }
 
@@ -1117,7 +1158,7 @@ function startCard(c){
   const a = maybeAction();
   if (a){
     if (a.know && !S.pend.know){ S.pend.know = true; S.pend.knowStep = 'predict'; }
-    else S.pend.action = a;
+    else if (!(a.steal && S.pend.know)) S.pend.action = a;
   }
   render();
 }

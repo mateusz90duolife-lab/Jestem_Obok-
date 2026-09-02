@@ -23,3 +23,33 @@ bez zależności i bez kroku budowania. Wystarczy otworzyć go w przeglądarce.
 Rozgrywka zapisuje się w `localStorage` przeglądarki (klucz `most-bliskosci-v1`),
 więc można wrócić do przerwanej gry oraz prowadzić tryb „jedna karta dziennie” przez 30 dni.
 Nic nie jest wysyłane na serwer.
+
+## Publikacja
+
+Strona jest przygotowana do udostępniania publicznie:
+
+- **Podgląd linku** — `og-image.png` (1200×630) plus komplet tagów `og:` i `twitter:`,
+  więc wklejenie adresu na Messengerze czy Facebooku pokazuje kartę z tytułem i mostem.
+- **Ikony i instalacja** — `icon.svg`, `apple-touch-icon.png` (180), `icon-192.png`, `icon-512.png`
+  oraz `manifest.webmanifest`. Na telefonie „dodaj do ekranu głównego" daje pełnoekranową aplikację.
+- **Prywatność** — gra nie zbiera żadnych danych i nie ma analityki; postęp żyje wyłącznie
+  w `localStorage` przeglądarki, więc nie jest potrzebna zgoda na cookies.
+- **Dostępność** — wszystkie kolory tekstu mają kontrast powyżej 3:1 wobec swojego tła.
+- **Nota o charakterze gry** — ekran startowy i panel zasad mówią wprost, że to gra towarzyska
+  dla dorosłych, a nie terapia ani narzędzie diagnostyczne.
+
+Adres kanoniczny ustawiony w `<link rel="canonical">` i tagach `og:` to
+`https://mateusz90duolife-lab.github.io/Jestem_Obok-/most-bliskosci/`.
+Jeśli gra trafi na własną domenę, trzeba podmienić go w pięciu miejscach w nagłówku `index.html`.
+
+### Do zrobienia przed komercyjną publikacją
+
+- **Self-hosting fontów.** Strona ciągnie Faustinę, Karlę i IBM Plex Mono z CDN Google, co przy
+  odbiorcy z UE oznacza przekazanie adresu IP do Google bez zgody. Pobierz woff2 (np. z
+  `gwfh.mranftl.com`), wrzuć do `most-bliskosci/fonts/`, dodaj reguły `@font-face`
+  z `font-display:swap` i usuń trzy tagi `<link>` do `fonts.googleapis.com`.
+- **Autor, kontakt i licencja.** Repozytorium nie ma pliku `LICENSE`, a strona nie mówi, czyja jest gra.
+- **Jedna kanoniczna talia.** Aplikacja ma 150 kart w czterech kategoriach, a PDF do druku 90 kart
+  w trzech sekcjach. Do rozstrzygnięcia, która wersja jest tą właściwą.
+- **Generator arkuszy do druku** z tej samej listy kart, żeby wersja pudełkowa i strona
+  nie rozjeżdżały się przy każdej zmianie.
