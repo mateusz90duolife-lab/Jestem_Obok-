@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Most Bliskości</title>
+<meta name="description" content="Kooperacyjna gra dla dwojga: 150 pytań, karty sytuacji, żetony odwagi i wspólnie budowany Most Bliskości.">
+<meta name="theme-color" content="#0A1A20">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* zmierzch nad rzeką */
+  --ink:#0A1A20; --ink2:#0E242C; --surf:#153039; --surf2:#1C3E49; --surf3:#25505D;
+  --line:rgba(233,220,199,.11); --line2:rgba(233,220,199,.2);
+  --t0:#EFE4D3; --t1:#A6BCBD; --t2:#71898C; --t3:#4E6469;
+  --paper:#F2E8DA; --paper2:#E4D6C1; --pink:#1C2A30; --pink2:#4A5B60;
+  --gold:#E8A94A; --gold2:#B77C24; --gold-glow:rgba(232,169,74,.28);
+  --poznaj:#6FA07A; --zbliz:#CE8098; --odkryj:#6B93B8; --odwaga:#C4553A;
+  --poznaj-p:#3D6A4A; --zbliz-p:#9A4761; --odkryj-p:#3B6285; --odwaga-p:#9C3B22;
+  --r:4px; --r2:12px; --tr:.2s cubic-bezier(.4,0,.2,1);
+  --serif:'Faustina',Georgia,'Times New Roman',serif;
+  --sans:'Karla','Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);background:var(--ink);color:var(--t0);line-height:1.55;
+  min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-image:
+    radial-gradient(760px 380px at 50% -8%,rgba(232,169,74,.10),transparent 70%),
+    radial-gradient(620px 420px at 12% 108%,rgba(107,147,184,.09),transparent 70%),
+    radial-gradient(520px 380px at 92% 100%,rgba(206,128,152,.07),transparent 70%);
+  background-attachment:fixed;
+}
+::selection{background:var(--gold-glow);color:var(--t0)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+input{font:inherit}
+.shell{max-width:1060px;margin:0 auto;padding:0 20px;width:100%}
+.mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.16em;font-size:10.5px;font-weight:500;color:var(--t2)}
+.hide{display:none!important}
+.center{text-align:center}
+
+/* ── PASEK GÓRNY ── */
+header{position:sticky;top:0;z-index:60;background:rgba(10,26,32,.9);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)}
+header .shell{display:flex;align-items:center;gap:16px;height:56px}
+.wordmark{display:flex;align-items:baseline;gap:9px;font-family:var(--mono);font-weight:600;
+  letter-spacing:.2em;font-size:12px;text-transform:uppercase;color:var(--t0)}
+.wordmark span{width:7px;height:7px;border-radius:50%;background:var(--gold);
+  box-shadow:0 0 12px var(--gold-glow);flex:0 0 auto;align-self:center}
+.hgap{flex:1}
+.tbtn{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:10.5px;
+  color:var(--t1);padding:7px 12px;border:1px solid var(--line);border-radius:99px;transition:var(--tr)}
+.tbtn:hover{color:var(--t0);border-color:var(--line2);background:var(--surf)}
+
+/* ── MOST ── */
+.bridge{padding:22px 0 6px}
+.bridge svg{width:100%;height:auto;display:block;max-height:190px}
+.seg{transition:fill .7s ease,opacity .7s ease}
+.cable,.tower,.deckline{fill:none;stroke:var(--surf3);stroke-width:2}
+.cable-lit{stroke:var(--gold2)}
+.hanger{stroke:var(--surf3);stroke-width:1.2}
+.hanger.on{stroke:var(--gold2)}
+.lamp{fill:var(--surf3)}
+.lamp.on{fill:var(--gold);filter:drop-shadow(0 0 7px var(--gold-glow))}
+.bank{fill:var(--surf2)}
+.stagerow{display:flex;align-items:baseline;justify-content:center;gap:14px;flex-wrap:wrap;
+  padding:2px 0 18px;border-bottom:1px solid var(--line)}
+.stagerow b{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--gold);font-weight:600}
+.stagerow em{font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--t3)}
+
+/* ── GRACZE ── */
+.banks{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:18px 0}
+.player{border:1px solid var(--line);border-radius:var(--r2);padding:13px 15px;background:linear-gradient(180deg,rgba(21,48,57,.7),rgba(21,48,57,.25));
+  display:flex;flex-direction:column;gap:9px;transition:var(--tr)}
+.player.active{border-color:rgba(232,169,74,.5);box-shadow:0 0 0 1px rgba(232,169,74,.16),0 10px 30px -18px var(--gold)}
+.player .who{display:flex;align-items:center;gap:9px;justify-content:space-between}
+.player .nm{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.01em}
+.player.active .nm{color:var(--gold)}
+.turnflag{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--ink);background:var(--gold);
+  padding:3px 7px;border-radius:99px;font-weight:600}
+.tokens{display:flex;align-items:center;gap:6px}
+.tok{width:15px;height:15px;border-radius:50%;border:1.5px solid var(--gold2);position:relative}
+.tok.full{background:radial-gradient(circle at 34% 30%,#F6CC85,var(--gold) 62%,var(--gold2));border-color:var(--gold);
+  box-shadow:0 0 9px var(--gold-glow)}
+.tok.spent{opacity:.3}
+.plabel{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;color:var(--t3)}
+.privlist{display:flex;flex-wrap:wrap;gap:5px}
+.priv{font-size:11px;padding:3px 8px;border-radius:99px;border:1px solid rgba(232,169,74,.35);
+  color:var(--gold);background:rgba(232,169,74,.07)}
+
+/* ── SCENA / KARTA ── */
+.stage{padding:6px 0 40px;display:flex;flex-direction:column;gap:20px;align-items:center}
+.prompt{text-align:center;max-width:56ch}
+.prompt h2{font-family:var(--serif);font-size:clamp(23px,3.4vw,31px);font-weight:600;line-height:1.25;
+  text-wrap:balance;margin-bottom:7px}
+.prompt p{color:var(--t1);font-size:15px}
+
+.card{width:100%;max-width:600px;background:linear-gradient(158deg,var(--paper),var(--paper2));
+  color:var(--pink);border-radius:3px 3px 16px 16px;padding:26px 28px 20px;position:relative;
+  box-shadow:0 26px 60px -28px rgba(0,0,0,.85),0 2px 0 rgba(255,255,255,.06);
+  display:flex;flex-direction:column;gap:16px;min-height:250px;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--acc,var(--gold2))}
+.card.deal{animation:deal .5s cubic-bezier(.2,.7,.3,1)}
+@keyframes deal{from{opacity:0;transform:translateY(20px) rotate(-1.4deg) scale(.97)}to{opacity:1;transform:none}}
+.card .eyebrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.card .eyebrow .k{font-family:var(--mono);text-transform:uppercase;letter-spacing:.2em;font-size:10.5px;
+  font-weight:600;color:var(--acc-p,var(--pink2))}
+.card .eyebrow .sub{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink2)}
+.card .q{font-family:var(--serif);font-size:clamp(21px,2.9vw,27px);line-height:1.32;font-weight:500;
+  text-wrap:balance;flex:1;display:flex;align-items:center}
+.card .q em{font-style:italic}
+.card .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  border-top:1px solid rgba(28,42,48,.14);padding-top:11px;font-family:var(--mono);font-size:10px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--pink2)}
+.card .scene{font-family:var(--serif);font-size:17px;line-height:1.5;white-space:pre-line;color:#2B3B41}
+.card .beat{border-left:2px solid var(--acc-p,var(--pink2));padding-left:12px;display:flex;flex-direction:column;gap:3px}
+.card .beat .bl{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc-p)}
+.card .beat .bt{font-size:15px;line-height:1.45}
+.card .key{background:rgba(28,42,48,.055);border-radius:8px;padding:11px 13px;font-size:14px;line-height:1.5;font-style:italic}
+.card .key b{display:block;font-family:var(--mono);font-style:normal;font-size:9.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--pink2);margin-bottom:3px;font-weight:600}
+
+/* ── PRZYPINKA AKCJI ── */
+.pin{width:100%;max-width:600px;border:1px dashed rgba(232,169,74,.42);border-radius:var(--r2);
+  padding:13px 16px;background:rgba(232,169,74,.06);display:flex;flex-direction:column;gap:6px}
+.pin .ph{display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.pin .pn{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.pin .pt{font-size:14.5px;color:var(--t1);line-height:1.5}
+
+/* ── WYBÓR KATEGORII ── */
+.choices{width:100%;max-width:600px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.cat{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--line);
+  border-radius:var(--r2);background:rgba(21,48,57,.5);text-align:left;transition:var(--tr)}
+.cat:hover{background:var(--surf2);border-color:var(--line2);transform:translateY(-1px)}
+.cat i{width:4px;align-self:stretch;border-radius:99px;background:var(--acc);flex:0 0 auto}
+.cat .cn{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--acc)}
+.cat .cd{font-size:12.5px;color:var(--t2);line-height:1.35}
+.cat.wide{grid-column:1/-1}
+.cat.risk i{background:linear-gradient(180deg,var(--poznaj),var(--zbliz) 40%,var(--odkryj) 70%,var(--odwaga))}
+.cat.risk .cn{color:var(--t0)}
+
+/* ── PRZYCISKI ── */
+.acts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;width:100%;max-width:600px}
+.btn{padding:12px 20px;border-radius:99px;border:1px solid var(--line2);color:var(--t0);
+  font-size:14px;font-weight:500;transition:var(--tr);background:rgba(21,48,57,.5)}
+.btn:hover{background:var(--surf2);border-color:var(--t3)}
+.btn.gold{background:linear-gradient(180deg,#F0B95F,var(--gold));color:#241202;border-color:transparent;font-weight:700;
+  box-shadow:0 10px 26px -14px var(--gold)}
+.btn.gold:hover{filter:brightness(1.06)}
+.btn.ghost{border-style:dashed;color:var(--t2)}
+.btn.small{padding:8px 14px;font-size:13px}
+.react{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;max-width:600px}
+.react button{padding:14px 12px;border:1px solid var(--line);border-radius:var(--r2);
+  background:rgba(21,48,57,.5);text-align:left;transition:var(--tr)}
+.react button:hover{background:var(--surf2);border-color:var(--line2)}
+.react .rn{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.react .rq{font-family:var(--serif);font-size:14.5px;font-style:italic;color:var(--t1);line-height:1.35;margin-top:4px}
+
+/* ── ŻETONY ── */
+.tokbar{width:100%;max-width:600px;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
+.tokbar summary{list-style:none;cursor:pointer;padding:12px 16px;display:flex;align-items:center;
+  justify-content:space-between;gap:10px;background:rgba(21,48,57,.4);transition:var(--tr)}
+.tokbar summary::-webkit-details-marker{display:none}
+.tokbar summary:hover{background:var(--surf2)}
+.tokbar .inner{padding:6px 12px 12px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.tokbar .inner button{border:1px solid var(--line);border-radius:9px;padding:11px 13px;text-align:left;transition:var(--tr)}
+.tokbar .inner button:hover:not(:disabled){background:var(--surf2);border-color:var(--line2)}
+.tokbar .inner button:disabled{opacity:.35;cursor:not-allowed}
+.tokbar .tn{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.tokbar .td{font-size:12.5px;color:var(--t2);line-height:1.35;margin-top:3px}
+
+/* ── KROKI TURY ── */
+.rail{display:flex;gap:0;width:100%;max-width:600px;border-top:1px solid var(--line);padding-top:12px}
+.rail div{flex:1;font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--t3);text-align:center;position:relative;padding-top:13px}
+.rail div::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:7px;height:7px;border-radius:50%;background:var(--surf3)}
+.rail div.on{color:var(--gold)}
+.rail div.on::before{background:var(--gold);box-shadow:0 0 10px var(--gold-glow)}
+.rail div.done::before{background:var(--gold2)}
+
+/* ── EKRAN STARTOWY ── */
+.hero{padding:44px 0 30px;display:flex;flex-direction:column;gap:26px;align-items:center;text-align:center}
+.hero h1{font-family:var(--serif);font-size:clamp(40px,8vw,72px);font-weight:700;line-height:1;letter-spacing:-.015em}
+.hero h1 span{display:block;font-size:.42em;font-weight:400;font-style:italic;color:var(--gold);
+  letter-spacing:.01em;margin-top:10px}
+.hero .lede{max-width:52ch;font-size:16.5px;color:var(--t1);line-height:1.6}
+.meta{display:flex;gap:0;flex-wrap:wrap;justify-content:center;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);width:100%;max-width:760px}
+.meta div{flex:1;min-width:120px;padding:14px 10px;display:flex;flex-direction:column;gap:3px;align-items:center}
+.meta div+div{border-left:1px solid var(--line)}
+.meta b{font-family:var(--serif);font-size:21px;font-weight:600}
+.setup{width:100%;max-width:760px;display:flex;flex-direction:column;gap:22px;text-align:left;padding-bottom:60px}
+.field{display:flex;flex-direction:column;gap:9px}
+.names{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.names input{background:rgba(21,48,57,.55);border:1px solid var(--line);border-radius:10px;
+  padding:13px 15px;color:var(--t0);font-size:16px;font-family:var(--serif);width:100%;transition:var(--tr)}
+.names input:focus{outline:none;border-color:var(--gold);background:var(--surf2)}
+.names input::placeholder{color:var(--t3);font-style:italic}
+.modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:11px}
+.mode{border:1px solid var(--line);border-radius:var(--r2);padding:16px;text-align:left;
+  background:rgba(21,48,57,.4);display:flex;flex-direction:column;gap:6px;transition:var(--tr)}
+.mode:hover{border-color:var(--line2);background:var(--surf2)}
+.mode.sel{border-color:var(--gold);background:rgba(232,169,74,.09);box-shadow:0 0 0 1px rgba(232,169,74,.2)}
+.mode .mn{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--gold)}
+.mode .mt{font-size:13px;color:var(--t1);line-height:1.45}
+.mode .mm{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--t3)}
+
+/* ── ZASADY ── */
+.rules{position:fixed;inset:0;z-index:90;background:rgba(6,16,20,.72);backdrop-filter:blur(6px);
+  display:flex;justify-content:flex-end}
+.rules .panel{width:min(560px,100%);height:100%;overflow-y:auto;background:var(--ink2);
+  border-left:1px solid var(--line);padding:24px 26px 60px;display:flex;flex-direction:column;gap:22px;
+  animation:slide .3s cubic-bezier(.2,.7,.3,1)}
+@keyframes slide{from{transform:translateX(30px);opacity:0}to{transform:none;opacity:1}}
+.rules h3{font-family:var(--serif);font-size:26px;font-weight:600}
+.rules section{display:flex;flex-direction:column;gap:7px}
+.rules h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.rules p,.rules li{font-size:14.5px;color:var(--t1);line-height:1.6}
+.rules ul{padding-left:18px;display:flex;flex-direction:column;gap:5px}
+.rules .creed{font-family:var(--serif);font-size:20px;font-style:italic;color:var(--t0);
+  border-left:2px solid var(--gold);padding-left:14px;line-height:1.4}
+
+/* ── OVERLAY ── */
+.ov{position:fixed;inset:0;z-index:100;background:rgba(6,15,19,.93);backdrop-filter:blur(10px);
+  display:flex;align-items:center;justify-content:center;padding:22px;animation:fade .35s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.ov .box{max-width:540px;width:100%;display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center}
+.ov .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.ov h3{font-family:var(--serif);font-size:clamp(28px,5vw,40px);font-weight:600;line-height:1.15;text-wrap:balance}
+.ov p{font-size:16px;color:var(--t1);line-height:1.6;max-width:44ch;white-space:pre-line}
+.ov .quiet{font-style:italic;font-family:var(--serif);font-size:18px;color:var(--t0)}
+.ring{width:150px;height:150px;position:relative;display:grid;place-items:center}
+.ring svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:3}
+.ring .bg{stroke:var(--surf2)}
+.ring .fg{stroke:var(--gold);stroke-linecap:round;transition:stroke-dashoffset 1s linear}
+.ring b{font-family:var(--mono);font-size:34px;font-weight:500;color:var(--t0);
+  font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.ring.breathe .fg{filter:drop-shadow(0 0 8px var(--gold-glow))}
+
+/* ── DZIEŃ PO DNIU ── */
+.grid30{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;width:100%;max-width:600px}
+.grid30 div{aspect-ratio:1;border-radius:5px;border:1px solid var(--line);display:grid;place-items:center;
+  font-family:var(--mono);font-size:10px;color:var(--t3)}
+.grid30 div.done{background:rgba(232,169,74,.16);border-color:rgba(232,169,74,.45);color:var(--gold)}
+.grid30 div.today{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+
+/* ── FINAŁ ── */
+.final{padding:40px 0 70px;display:flex;flex-direction:column;gap:26px;align-items:center;text-align:center}
+.final .takeaway{border:1px solid var(--line);border-radius:var(--r2);padding:20px 22px;max-width:560px;
+  background:rgba(21,48,57,.4);display:flex;flex-direction:column;gap:9px}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;width:100%;max-width:700px}
+.summary div{border:1px solid var(--line);border-radius:var(--r2);padding:14px;display:flex;flex-direction:column;gap:4px}
+.summary b{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--gold)}
+footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--t3);font-size:12.5px;text-align:center}
+
+@media(max-width:660px){
+  .banks{grid-template-columns:1fr}
+  .choices{grid-template-columns:1fr}
+  .react{grid-template-columns:1fr}
+  .names{grid-template-columns:1fr}
+  .tokbar .inner{grid-template-columns:1fr}
+  .card{padding:22px 20px 18px}
+  .rail div{font-size:8px;letter-spacing:.08em}
+  .grid30{grid-template-columns:repeat(6,1fr)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shell">
+    <div class="wordmark"><span></span>Most Bliskości</div>
+    <div class="hgap"></div>
+    <button class="tbtn" id="btnRules">Zasady</button>
+    <button class="tbtn hide" id="btnReset">Od nowa</button>
+  </div>
+</header>
+
+<!-- ══════════ EKRAN 1 · PRZYGOTOWANIE ══════════ -->
+<main id="setup" class="shell">
+  <div class="hero">
+    <h1>Most Bliskości<span>Nie chodzi o to, żeby znać wszystkie odpowiedzi.</span></h1>
+    <p class="lede">Gra dla dwojga, w której nie rywalizujecie ze sobą, tylko budujecie coś razem.
+      Dziesięć elementów Mostu, sto pięćdziesiąt pytań, karty sytuacji z codziennego życia
+      i trzy żetony odwagi na osobę. Wygrywacie razem albo wcale.</p>
+    <div class="meta">
+      <div><b>2</b><span class="mono">graczy</span></div>
+      <div><b>150</b><span class="mono">kart rozmowy</span></div>
+      <div><b>10</b><span class="mono">elementów mostu</span></div>
+      <div><b>30–60</b><span class="mono">minut</span></div>
+      <div><b>18+</b><span class="mono">wiek</span></div>
+    </div>
+    <div style="width:100%;max-width:760px;display:flex;flex-direction:column;gap:6px">
+      <svg id="heroBridge" viewBox="0 0 1000 200" role="img" aria-label="Ilustracja: most z trzema zapalonymi elementami"></svg>
+      <p class="mono" style="text-align:center">dziesięć elementów · zdobywacie je razem</p>
+    </div>
+  </div>
+
+  <div class="setup">
+    <div class="field">
+      <div class="mono">Kto siada przy stole</div>
+      <div class="names">
+        <input id="n1" maxlength="18" placeholder="Imię pierwszej osoby" autocomplete="off">
+        <input id="n2" maxlength="18" placeholder="Imię drugiej osoby" autocomplete="off">
+      </div>
+      <p style="font-size:13px;color:var(--t2)">Zaczyna ta osoba, która ostatnia powiedziała: <em style="font-family:var(--serif)">„Wiesz co?…”</em></p>
+    </div>
+
+    <div class="field">
+      <div class="mono">Tryb rozgrywki</div>
+      <div class="modes" id="modes"></div>
+    </div>
+
+    <div class="acts" style="justify-content:flex-start;max-width:none">
+      <button class="btn gold" id="btnStart">Rozłóż karty</button>
+      <button class="btn ghost hide" id="btnResume">Wróć do zapisanej gry</button>
+    </div>
+  </div>
+</main>
+
+<!-- ══════════ EKRAN 2 · GRA ══════════ -->
+<main id="game" class="hide">
+  <div class="shell">
+    <div class="bridge">
+      <svg id="bridge" viewBox="0 0 1000 200" role="img" aria-label="Most Bliskości w budowie"></svg>
+    </div>
+    <div class="stagerow">
+      <b id="stageName">MOST CZEKA NA PIERWSZY ELEMENT</b>
+      <em id="stageCount">0 / 10</em>
+    </div>
+
+    <div class="banks" id="banks"></div>
+  </div>
+
+  <div class="shell stage" id="stage" aria-live="polite"></div>
+</main>
+
+<!-- ══════════ EKRAN 3 · JEDNA KARTA DZIENNIE ══════════ -->
+<main id="daily" class="hide shell">
+  <div class="stage" style="padding-top:34px">
+    <div class="prompt">
+      <h2>30 dni — 30 kart</h2>
+      <p>Jedna karta dziennie. Jedna odpowiedź. Jedna rozmowa. Co trzy dni dokładacie element Mostu.</p>
+    </div>
+    <div id="dailyCard" style="width:100%;display:flex;flex-direction:column;gap:20px;align-items:center"></div>
+    <div class="grid30" id="grid30"></div>
+    <p class="mono" id="dailyState"></p>
+  </div>
+</main>
+
+<!-- ══════════ EKRAN 4 · FINAŁ ══════════ -->
+<main id="final" class="hide shell"><div class="final" id="finalBody"></div></main>
+
+<footer class="shell">
+  <p>Most Bliskości · gra dla par · zasada nadrzędna: <em style="font-family:var(--serif)">nie naprawiaj, najpierw poznaj</em></p>
+</footer>
+
+<!-- ══════════ ZASADY ══════════ -->
+<div class="rules hide" id="rules">
+  <div class="panel">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+      <h3>Zasady w pigułce</h3>
+      <button class="tbtn" id="btnRulesClose">Zamknij</button>
+    </div>
+
+    <p class="creed">Nie chodzi o to, żeby znać wszystkie odpowiedzi. Chodzi o to, żeby nadal być ciekawym siebie.</p>
+
+    <section>
+      <h4>Cel</h4>
+      <p>Zdobywacie razem 10 elementów Mostu. Nie wygrywa osoba, która zna wszystkie odpowiedzi partnera —
+        wygrywa para, która zbuduje Most. Most buduje się przez spotkanie, a nie przez identyczność.</p>
+    </section>
+
+    <section>
+      <h4>Tura ma pięć etapów</h4>
+      <ul>
+        <li><b>Wybierz</b> — kategorię albo ryzyko.</li>
+        <li><b>Dobierz</b> — kartę i przeczytaj ją na głos.</li>
+        <li><b>Odpowiedz</b> — liczy się autentyczność, nie „idealna” odpowiedź.</li>
+        <li><b>Partner reaguje</b> — dopytaj, odbij albo doceń.</li>
+        <li><b>Zdobądźcie Most</b> — jeśli oboje byliście w turze, dokładacie element.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h4>Zasada PASS</h4>
+      <p>Zawsze możesz powiedzieć PASS. Nie musisz tłumaczyć dlaczego, uzasadniać decyzji, odpowiadać później,
+        wykonywać kary ani oddawać Żetonu Odwagi. Partner odpowiada tylko: <em>„Jasne.”</em> Karta idzie na stos odrzuconych.</p>
+    </section>
+
+    <section>
+      <h4>Żetony Odwagi</h4>
+      <p>Każde z Was ma trzy. Możesz wydać żeton, żeby wejść głębiej, uruchomić „Czy mnie znasz?”,
+        oddać wybór kategorii partnerowi albo odpowiedzieć jeszcze raz — tym razem naprawdę.</p>
+    </section>
+
+    <section>
+      <h4>Czy mnie znasz?</h4>
+      <p>Partner najpierw przewiduje Twoją odpowiedź, dopiero potem odpowiadasz naprawdę. Trafienie daje bonus.
+        Nietrafiona odpowiedź nie jest porażką — jest odkryciem. Mówisz wtedy tylko: <em>„Teraz już wiesz.”</em></p>
+    </section>
+
+    <section>
+      <h4>Złote Karty Mostu</h4>
+      <p>Sześć razy w grze wszystko się zatrzymuje na minutę. Nie rozmawiacie. Możecie patrzeć sobie w oczy,
+        przytulić się, trzymać za ręce albo po prostu siedzieć obok siebie.
+        Nie każda chwila bliskości potrzebuje słów.</p>
+    </section>
+
+    <section>
+      <h4>Karty Przywileju</h4>
+      <p>Nagroda nie jest karą dla przegranego — to przywilej dla zwycięzcy. Jeśli karta nie pasuje do Waszej
+        sytuacji, odrzućcie ją i dobierzcie inną. Nagrody mają być lekkie i możliwe do wykonania,
+        a nie źródłem prawdziwego konfliktu.</p>
+    </section>
+
+    <section>
+      <h4>Najważniejsza zasada</h4>
+      <p class="creed">Nie naprawiaj. Najpierw poznaj.</p>
+      <p>Kiedy partner coś Ci mówi, nie musisz od razu rozwiązywać problemu, doradzać, przekonywać ani bronić siebie.
+        Czasami najlepszą odpowiedzią jest: <em>„Powiedz mi o tym więcej.”</em></p>
+    </section>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+/* ═══════════════ TALIA · 150 KART ROZMOWY ═══════════════ */
+
+const DECK = {
+  poznaj: [
+    'Moim ulubionym wspomnieniem z początku naszej relacji jest…',
+    'Gdyby ktoś obserwował nas przez jeden dzień, jaki moment najlepiej pokazałby mu, jacy jesteśmy jako para?',
+    'Jakimi trzema słowami opisałbyś/opisałabyś naszą relację dzisiaj?',
+    'Co Twoim zdaniem inni ludzie najbardziej podziwiają we mnie?',
+    'Jak wyglądałby Twój wymarzony zwyczajny dzień spędzony tylko ze mną?',
+    'Jaki drobiazg potrafi Cię zaskakująco mocno zirytować?',
+    'Co z dzieciństwa nadal potrafi wywołać u Ciebie uśmiech?',
+    'Jaki smak, zapach albo potrawa najbardziej kojarzy Ci się z domem rodzinnym?',
+    'O czym marzyłeś/aś jako dziecko?',
+    'Jaka piosenka, książka, film albo miejsce natychmiast przywołuje ważne wspomnienie?',
+    'Jaka Twoja pasja lub ciekawość rzadko wychodzi na pierwszy plan?',
+    'Gdybyś jutro dostał/a cały dzień tylko dla siebie, jak byś go spędził/a?',
+    'Co najbardziej lubisz robić, kiedy jesteś sam/a?',
+    'Wygrywamy 50 milionów. Jak wygląda nasz idealny wtorek za dwa lata?',
+    'Możemy zamieszkać w dowolnym miejscu na świecie. Gdzie wybierasz?',
+    'Gdyby nasz związek miał piosenkę przewodnią, jaka by była?',
+    'Jak wyglądałby nasz idealny weekend, gdyby pieniądze i obowiązki nie miały znaczenia?',
+    'Gdybyśmy mogli teraz teleportować się na jeden wieczór w dowolne miejsce, gdzie byśmy trafili?',
+    'Jakie trzy rzeczy zabralibyśmy ze sobą na bezludną wyspę?',
+    'Gdyby nasza relacja miała własną supermoc, jaka by była?',
+    'Gdybyśmy mieli razem stworzyć biznes, który wykorzystuje nasze największe talenty, czym by się zajmował?',
+    'Jakie miejsce chciałbyś/chciałabyś kiedyś zobaczyć ze mną?',
+    'Jakiego wspólnego doświadczenia chciałbyś/chciałabyś spróbować po raz pierwszy?',
+    'Gdybyśmy mieli stworzyć własne święto, jak by się nazywało i jak byśmy je obchodzili?',
+    'Jak wyglądałby nasz wymarzony dom, gdybyśmy mogli zaprojektować go bez żadnych ograniczeń?'
+  ],
+  zbliz: [
+    'Czuję się najbardziej bezpiecznie w naszej relacji, gdy…',
+    'Jaka mała rzecz, którą robisz, potrafi natychmiast poprawić mi dzień?',
+    'Jaka moja cecha sprawia, że cieszysz się, że właśnie ze mną jesteś?',
+    'Za co najbardziej doceniasz mnie w ostatnim czasie?',
+    'Jaki zwyczajny moment spędzony razem chciałbyś/chciałabyś zachować na zawsze?',
+    'Co potrafi mnie przy Tobie rozśmieszyć nawet wtedy, gdy mam zły dzień?',
+    'Często zapominam Ci powiedzieć, jak bardzo jestem wdzięczny/a za…',
+    'W jakim momencie zwykłego dnia najbardziej lubisz mieć mnie obok?',
+    'Kiedy czujesz, że naprawdę Ci kibicuję?',
+    'Jaki komplement ode mnie zapamiętałeś/aś najbardziej?',
+    'Z czego najbardziej jesteś dumny/a, kiedy myślisz o nas?',
+    'W jakich sytuacjach czujesz, że jesteśmy świetnym zespołem?',
+    'Wymień trzy rzeczy, które zrobiłem/am ostatnio i które sprawiły Ci przyjemność.',
+    'Za jaką małą, codzienną rzecz chciałbyś/chciałabyś mi dzisiaj podziękować?',
+    'Co robię, dzięki czemu łatwiej Ci przy mnie odetchnąć?',
+    'Jaka nasza mała tradycja daje Ci najwięcej radości?',
+    'Co ostatnio zrobiłem/am, czym pozytywnie Cię zaskoczyłem/am?',
+    'Jakie uczucie pojawia się w Tobie, kiedy wracasz do domu i wiesz, że tam jestem?',
+    'Jaki nowy mały rytuał chciałbyś/chciałabyś stworzyć tylko dla nas?',
+    'Co sprawia, że nasze wspólne posiłki albo wieczory są dla Ciebie wyjątkowe?',
+    'Jaka rzecz, którą robimy razem, nigdy Ci się nie nudzi?',
+    'Za co najbardziej dziękujesz losowi, że nasze drogi się spotkały?',
+    'Jaki mój drobny gest najbardziej Cię rozczula?',
+    'Jakie trzy rzeczy chciałbyś/chciałabyś, żebyśmy robili częściej razem?',
+    'Gdybyśmy mogli zatrzymać jeden obecny moment naszego życia na zawsze, który byś wybrał/a?'
+  ],
+  odkryj: [
+    'Jest we mnie coś, co chciałbym/chciałabym, żebyś lepiej rozumiał/a. Co to jest?',
+    'Czego nauczyły Cię nasze dotychczasowe trudne momenty?',
+    'Co chciałbyś/chciałabyś, żebyśmy robili inaczej podczas kłótni?',
+    'Kiedy czujesz, że naprawdę troszczę się o Twoje ciało i komfort?',
+    'Jaki mój gest sprawił kiedyś, że poczułeś/aś: „Naprawdę mnie widzi”?',
+    'Gdybyśmy mogli wrócić do początku naszej relacji, co zrobilibyśmy wcześniej?',
+    'Jaki gest najbardziej pomaga Ci się uspokoić, kiedy jesteś zestresowany/a?',
+    'Spójrzcie sobie w oczy przez dwie minuty. Potem każde z Was powiedz jedno słowo opisujące to, co poczuło.',
+    'Co robię, dzięki czemu czujesz się atrakcyjnie?',
+    'O jakiej części siebie możesz mi dzisiaj opowiedzieć, bo czujesz się przy mnie bezpiecznie?',
+    'Jaka moja cecha najbardziej pomogła nam przetrwać trudny moment?',
+    'Jaką formę emocjonalnej odwagi najbardziej we mnie cenisz?',
+    'Jakie jedno słowo mogłoby oznaczać między nami: „Potrzebuję przerwy, ale nie odchodzę od Ciebie”?',
+    'Co w naszej bliskości daje Ci największe poczucie spełnienia?',
+    'Jakie zdanie chciałbyś/chciałabyś usłyszeć ode mnie w naprawdę trudnym dniu?',
+    'Jakie wspomnienie z dzieciństwa miało duży wpływ na to, kim jesteś dzisiaj?',
+    'Co w Twoim domu rodzinnym dawało Ci największe poczucie bezpieczeństwa?',
+    'Jaki moment dorosłego życia najbardziej zmienił sposób, w jaki patrzysz na siebie?',
+    'Jakie zachowanie innych ludzi najszybciej podważa Twoje zaufanie?',
+    'Kiedy poczułeś/aś po raz pierwszy, że naprawdę Cię znam?',
+    'Jakie wydarzenie najbardziej wpłynęło na Twój stosunek do pieniędzy?',
+    'Jaka decyzja z ostatnich kilku lat nauczyła Cię o sobie najwięcej?',
+    'W jakiej sytuacji jesteś wobec siebie najbardziej surowy/a?',
+    'Jaki komplement trudno Ci przyjąć, nawet kiedy wiesz, że jest szczery?',
+    'Co robisz, kiedy jesteś przeciążony/a? Czego wtedy najbardziej potrzebujesz ode mnie?',
+    'O co najtrudniej Ci mnie poprosić?',
+    'Co dzieje się w Tobie chwilę przed tym, zanim podczas konfliktu zaczynasz się zamykać albo wycofywać?',
+    'Co mogę zrobić podczas konfliktu, żebyś poczuł/a, że nadal jesteśmy po tej samej stronie?',
+    'Co dla Ciebie naprawdę oznacza lojalność w związku?',
+    'Co najłatwiej uruchamia w Tobie zazdrość?',
+    'Jaki sposób komunikowania się wyniesiony z domu rodzinnego czasem pojawia się między nami?',
+    'Co pomaga Ci wrócić do rozmowy po konflikcie?',
+    'Jaka moja reakcja w trudnym momencie działa na Ciebie najbardziej uspokajająco?',
+    'Czego nauczyłeś/aś się o sobie podczas naszej ostatniej większej kłótni?',
+    'Kiedy masz gorszy dzień, co działa na Ciebie najlepiej: słowa, obecność, dotyk czy konkretna pomoc?',
+    'Co sprawia, że czujesz się bezpiecznie, mówiąc mi o swoim błędzie?',
+    'Jaką granicę chciałbyś/chciałabyś, żebym lepiej rozumiał/a i szanował/a?',
+    'Co robię, kiedy jesteś zestresowany/a, co pomaga, a co czasem pogarsza sytuację?',
+    'Jaka rozmowa między nami jest trudna do rozpoczęcia?',
+    'Co sprawia, że możesz się ze mną nie zgadzać i nadal czuć się kochany/a?',
+    'Kiedy najłatwiej zaczynasz wątpić we własne decyzje?',
+    'Jak najczęściej pokazujesz, że potrzebujesz bliskości, nawet jeśli nie mówisz tego wprost?',
+    'Co chciałbyś/chciałabyś, żebym zauważał/a wcześniej, zanim zaczniesz czuć się źle?',
+    'Jakiego rodzaju wsparcia najbardziej potrzebujesz, kiedy coś Ci nie wychodzi?',
+    'Co chciałbyś/chciałabyś częściej ode mnie słyszeć?',
+    'W jakiej sytuacji najłatwiej jest Ci powiedzieć „nie”, a w jakiej najtrudniej?',
+    'Jak wygląda dla Ciebie zdrowa granica między wspólnym życiem a własną przestrzenią?',
+    'Co Twoim zdaniem najbardziej wzmacnia zaufanie między dwojgiem ludzi?',
+    'Jaka rzecz w naszej relacji wymaga od Ciebie najwięcej świadomego wysiłku?',
+    'Gdybyś mógł/mogła poprawić jedną rzecz w sposobie, w jaki się komunikujemy, co byś wybrał/a?'
+  ],
+  odwaga: [
+    'Najbardziej bezbronny/a czuję się w momentach, kiedy…',
+    'Moją największą obawą związaną z upływem czasu i starzeniem się jest…',
+    'Czuję, że odsuwam się emocjonalnie, kiedy…',
+    'Jaki był jeden z najtrudniejszych dni Twojego życia, o którym możesz i chcesz dziś opowiedzieć?',
+    'Jaka cecha we mnie bywa dla Ciebie trudna i co chciałbyś/chciałabyś, żebym lepiej o niej rozumiał/a?',
+    'Czego najbardziej boisz się w bliskich relacjach?',
+    'Gdyby Twój największy obecny lęk mógł przemówić, przed czym próbowałby Cię ochronić?',
+    'Czy jest coś, czego boisz się, że kiedyś mogę o Tobie pomyśleć?',
+    'Kiedy pojawia się w Tobie myśl „nie jestem wystarczająco dobry/a”, co najbardziej chciałbyś/chciałabyś wtedy ode mnie usłyszeć?',
+    'Co najbardziej boli Cię w poczuciu odrzucenia?',
+    'Kiedy Cię zranię, czego potrzebujesz, żeby móc ponownie się do mnie zbliżyć?',
+    'Jak wygląda dla Ciebie prawdziwe „przepraszam”?',
+    'Czego najbardziej boisz się kiedyś stracić w naszym związku?',
+    'Jaka część Ciebie potrzebuje istnieć niezależnie od naszego związku?',
+    'Jaka granica jest dla Ciebie szczególnie ważna, ponieważ jej przekroczenie mogłoby mocno naruszyć Twoje zaufanie?',
+    'Kiedy zaczynasz wątpić w naszą relację, jaka historia pojawia się w Twojej głowie?',
+    'Jakiej potrzeby najczęściej próbujesz nie mieć, ponieważ boisz się, że możesz być „za bardzo”?',
+    'Po czym poznajesz, że jesteś kochany/a, nawet jeśli nikt nie mówi Ci tego słowami?',
+    'Wyobraź sobie nas za 30 lat. Za co chciałbyś/chciałabyś wtedy podziękować naszej obecnej wersji?',
+    'Jaki moment naszej wspólnej historii najbardziej Cię wzrusza, kiedy patrzysz na niego dzisiaj?',
+    'Czy jest coś, co mi wybaczyłeś/aś, o czym rzadko rozmawiamy?',
+    'W jakich momentach czujesz się samotny/a, nawet kiedy jestem obok?',
+    'Jaki wzorzec z domu rodzinnego najbardziej boisz się powtórzyć w naszym związku?',
+    'Co sprawia, że czujesz dumę ze mnie właśnie wtedy, kiedy przeżywam trudny moment?',
+    'Czego nauczyłeś/aś się o sobie dzięki temu, że mnie kochasz?',
+    'Jaka cisza między nami daje Ci spokój, a jaka zaczyna Cię niepokoić?',
+    'Co chciałbyś/chciałabyś, żebym zapamiętał/a o Tobie nawet wtedy, gdyby wszystko inne w naszym życiu się zmieniło?',
+    'Jaka zmiana we mnie najbardziej Cię poruszyła w ciągu ostatnich lat?',
+    'Jakie jedno zdanie mogłoby dać Ci największe poczucie bezpieczeństwa?',
+    'Gdybyś mógł/mogła dać naszej relacji jedną rzecz na całe życie, czego chciałbyś/chciałabyś, żeby nigdy nam nie zabrakło?',
+    'Co w naszej relacji pozwala Ci naprawdę być sobą?',
+    'Jaki lęk dotyczący naszej przyszłości najrzadziej wypowiadasz na głos?',
+    'Czego potrzebujesz ode mnie, kiedy czujesz, że nikt nie widzi Twojego bólu?',
+    'Czy jest rana z przeszłości, która czasem odzywa się jeszcze w naszej relacji?',
+    'Co pomogłoby Ci jeszcze bardziej uwierzyć, że możesz być przy mnie w pełni sobą?',
+    'Gdybyś mógł/mogła przeżyć jeszcze raz jedną chwilę między nami, którą byś wybrał/a i dlaczego?',
+    'Jaka część Twojej historii jest nadal trudna do opowiedzenia — nawet mnie?',
+    'Co sprawia, że czujesz się naprawdę bezpiecznie, pokazując mi swoją słabość?',
+    'Czego najbardziej chciałbyś/chciałabyś, żebym rozumiał/a o Twoim milczeniu w trudnych chwilach?',
+    'Jaka jest jedna prawda o Tobie, którą chciałbyś/chciałabyś, żebym zawsze pamiętał/a?',
+    'Czego najbardziej potrzebujesz ode mnie, kiedy boisz się, że mnie tracisz?',
+    'Czy jest coś, czego pragniesz w naszej relacji, ale boisz się poprosić o to wprost?',
+    'Jaki moment sprawił, że najbardziej bałeś/aś się, że możemy się od siebie oddalić?',
+    'Kiedy czujesz się przeze mnie naprawdę widziany/a, a kiedy najbardziej niewidoczny/a?',
+    'Co chciałbyś/chciałabyś, żebym lepiej rozumiał/a o Twoich najgłębszych potrzebach?',
+    'Gdybyś mógł/mogła zdjąć ze swoich barków jeden ciężar, który nosisz od dawna, co by to było?',
+    'Jakiej części siebie najbardziej potrzebujesz ode mnie nie naprawiać, tylko zaakceptować?',
+    'Jeśli kiedyś przejdziemy przez bardzo trudny okres, co chciałbyś/chciałabyś, żebyśmy sobie wtedy przypomnieli?',
+    'Gdybyś miał/a powiedzieć mi jedną rzecz, której nigdy nie chcesz, żebym przestał/a robić, co by to było?',
+    'Gdybyś mógł/mogła powiedzieć mi teraz jedną rzecz całkowicie szczerze — bez strachu przed oceną, złością ani konsekwencjami — co chciałbyś/chciałabyś, żebym usłyszał/a?'
+  ]
+};
+
+const CATS = {
+  poznaj: {name:'Poznaj',    desc:'lekko, ciepło i z ciekawością',   level:1},
+  zbliz:  {name:'Zbliż się', desc:'wdzięczność, docenianie, potrzeby', level:1},
+  odkryj: {name:'Odkryj',    desc:'emocje, charakter, doświadczenia', level:2},
+  odwaga: {name:'Odwaga',    desc:'granice, zaufanie, wrażliwość',    level:3}
+};
+const ORDER = ['poznaj','zbliz','odkryj','odwaga'];
+
+/* ═══════════════ KARTY SYTUACJI ═══════════════ */
+
+const SITUATIONS = [
+  { t:'Ciężki dzień',
+    s:'Wracam do domu po bardzo trudnym dniu.\nNie mówię prawie nic. Odkładam rzeczy i zaczynam nerwowo sprzątać mieszkanie.\nNie patrzę Ci w oczy.',
+    m:'Jak myślisz, co druga osoba zrobi jako pierwsze?',
+    r:'Co naprawdę zrobił(a)byś w tej sytuacji?',
+    k:'Zanim spróbujesz coś naprawić, sprawdź, czy druga osoba potrzebuje rozwiązania, czy obecności.' },
+  { t:'Dwie wersje ustaleń',
+    s:'Jest 22:30. Oboje jesteście zmęczeni.\nMieliście coś ustalone, ale każde z Was pamięta te ustalenia zupełnie inaczej.\nGłosy zaczynają się podnosić.',
+    m:'Jak myślisz, co druga osoba powie jako pierwsze?',
+    r:'Co naprawdę powiedział(a)byś w tej sytuacji?',
+    k:'O 22:30 rzadko chodzi jeszcze o ustalenia. Częściej chodzi o zmęczenie i o to, kto ma rację.' },
+  { t:'Telefon przy stole',
+    s:'Siedzimy przy kolacji. Opowiadam Ci o czymś, co było dla mnie ważne.\nW połowie zdania sięgasz po telefon i zaczynasz coś sprawdzać.\nMilknę.',
+    m:'Jak myślisz, co druga osoba zrobi z tym milczeniem?',
+    r:'Co naprawdę zrobił(a)byś, gdyby to Tobie przerwano w połowie zdania?',
+    k:'Nie każde milczenie jest złością. Czasami to sprawdzanie, czy warto mówić dalej.' },
+  { t:'Nieplanowany wydatek',
+    s:'Kupiłem/am coś dość drogiego, nie pytając Cię wcześniej o zdanie.\nMówię Ci o tym dopiero wieczorem, lekkim tonem, jakby to była drobnostka.',
+    m:'Jak myślisz, jaka będzie pierwsza reakcja drugiej osoby?',
+    r:'Co naprawdę czuł(a)byś w tej sytuacji i co byś powiedział/a?',
+    k:'Pieniądze prawie nigdy nie są tylko o pieniądzach. Częściej są o bezpieczeństwie albo o byciu pytanym.' },
+  { t:'Uwaga przy ludziach',
+    s:'Jesteśmy u znajomych. Rzucam żart na Twój temat.\nWszyscy się śmieją.\nWidzę, że Ty się nie śmiejesz.',
+    m:'Jak myślisz, co druga osoba zrobi: powie coś od razu czy zaczeka do domu?',
+    r:'Co naprawdę zrobił(a)byś w tej sytuacji?',
+    k:'To, co dla jednej osoby jest żartem, dla drugiej bywa publicznym odsłonięciem.' },
+  { t:'Zaproszenie i zmęczenie',
+    s:'W piątek wieczorem dzwonią znajomi. Chcą, żebyśmy do nich wpadli.\nJa bardzo chcę iść. Ty masz za sobą wyczerpujący tydzień i marzysz o wieczorze w domu.',
+    m:'Jak myślisz, co druga osoba zaproponuje jako pierwsze?',
+    r:'Co naprawdę powiedział(a)byś, żeby nikt nie poczuł się winny?',
+    k:'Kompromis nie polega na tym, żeby oboje wyszli zawiedzeni. Czasem lepsze są dwa różne wieczory.' },
+  { t:'Rodzina w środku',
+    s:'Ktoś z mojej rodziny powiedział Ci coś, co Cię ukłuło.\nByłem/am obok i nic nie powiedziałem/am.\nW drodze powrotnej jest cicho.',
+    m:'Jak myślisz, czego druga osoba potrzebuje najbardziej w tej ciszy?',
+    r:'Co naprawdę chciał(a)byś usłyszeć w samochodzie w drodze do domu?',
+    k:'Lojalność bywa najbardziej widoczna w jednym zdaniu wypowiedzianym w odpowiednim momencie.' },
+  { t:'Choroba',
+    s:'Leżę z gorączką od dwóch dni.\nJestem marudny/a, wszystko mi przeszkadza i mówię, że niczego nie potrzebuję.\nOczywiście nieprawda.',
+    m:'Jak myślisz, czego druga osoba naprawdę potrzebuje, kiedy mówi, że niczego nie potrzebuje?',
+    r:'Czego Ty naprawdę potrzebujesz, kiedy jesteś chory/a?',
+    k:'„Nic mi nie potrzeba” to zdanie, które prawie zawsze ma dalszy ciąg.' },
+  { t:'Praca do późna',
+    s:'Trzeci wieczór z rzędu siedzę przy laptopie.\nMówię: „jeszcze tylko pół godziny” — i nie schodzę na dół przez dwie.',
+    m:'Jak myślisz, co druga osoba czuje w drugiej godzinie czekania?',
+    r:'Co naprawdę zrobił(a)byś: powiedział/a coś, poszedł/poszła spać czy czekał/a dalej?',
+    k:'Czasami prośba o obecność ubiera się w wyrzut, bo tak jest jej łatwiej wyjść.' },
+  { t:'Nietrafiony prezent',
+    s:'Dostajesz ode mnie prezent, na który wyraźnie się starałem/am.\nWidzę po Twojej twarzy, że kompletnie nie trafiłem/am.\nMówisz: „Dzięki, super”.',
+    m:'Jak myślisz, co druga osoba zrobi z tą chwilą?',
+    r:'Co naprawdę byś zrobił/a: udawał/a radość czy powiedział/a prawdę?',
+    k:'Uczciwość i wdzięczność nie muszą się wykluczać, ale trzeba je powiedzieć w tej kolejności.' },
+  { t:'Po kłótni',
+    s:'Pokłóciliśmy się godzinę temu. Nic się nie wyjaśniło.\nSiedzimy w dwóch różnych pokojach.\nJa nie wiem, czy przyjść, czy zostawić Ci przestrzeń.',
+    m:'Jak myślisz, czego druga osoba chce teraz bardziej: przestrzeni czy zbliżenia?',
+    r:'Czego Ty naprawdę potrzebujesz godzinę po kłótni?',
+    k:'Umówcie się na jedno słowo, które znaczy: „Potrzebuję przerwy, ale nie odchodzę od Ciebie”.' },
+  { t:'Wolna sobota',
+    s:'Mamy całą sobotę wolną, bez żadnych planów.\nJa mam w głowie listę rzeczy do zrobienia.\nTy chcesz nie robić nic.',
+    m:'Jak myślisz, jak druga osoba wyobraża sobie idealną wersję tego dnia?',
+    r:'Jak naprawdę wygląda Twoja idealna wersja tej soboty?',
+    k:'Odpoczynek jednej osoby bywa dla drugiej bałaganem, a porządek bywa dla drugiej presją.' }
+];
+
+/* ═══════════════ 12 KART AKCJI ═══════════════ */
+
+const ACTIONS = [
+  {n:'Zamiana ról',           t:'Odpowiedz tak, jak Twoim zdaniem odpowiedziałby partner. Potem partner odpowiada naprawdę.'},
+  {n:'Czy mnie znasz?',       t:'Partner najpierw przewiduje Twoją odpowiedź. Dopiero potem odpowiadasz naprawdę.', know:true},
+  {n:'Bez słów',              t:'Przekaż partnerowi swoją odpowiedź bez używania słów. Możesz użyć gestu, mimiki, spojrzenia lub dotyku.', sec:30},
+  {n:'Powiedz mi coś dobrego',t:'Przez 30 sekund mów partnerowi o jednej rzeczy, którą naprawdę w nim/niej doceniasz. Bez „ale”.', sec:30},
+  {n:'Wybieram za Ciebie',    t:'Partner wybiera kategorię Twojej następnej karty.'},
+  {n:'Jeszcze głębiej',       t:'Po Twojej odpowiedzi partner może zadać jedno dodatkowe pytanie.'},
+  {n:'Bliskość',              t:'Wybierzcie jeden gest bliskości: przytulenie, trzymanie za ręce, masaż dłoni albo oparcie głowy na ramieniu.', sec:60},
+  {n:'Rozładuj',              t:'Najpierw wymyślcie razem najbardziej absurdalną odpowiedź. Potem wróćcie do prawdziwej.'},
+  {n:'Odbicie',               t:'Partner własnymi słowami mówi, co usłyszał. Druga osoba odpowiada: „Tak, dokładnie” albo „Nie do końca. Chodziło mi o…”.'},
+  {n:'Gdyby…',                t:'Zmieńcie to pytanie w hipotetyczną sytuację i odpowiedzcie na nie oboje.'},
+  {n:'Kradzież',              t:'Przejmij kartę partnera i odpowiedz na nią jako pierwszy/a.'},
+  {n:'Pass',                  t:'Możesz pominąć aktualną kartę. Bez tłumaczenia. Partner odpowiada tylko: „Jasne”.', pass:true}
+];
+
+/* ═══════════════ 6 ZŁOTYCH KART MOSTU ═══════════════ */
+
+const GOLDEN = [
+  {t:'Spojrzenie', ritual:'Przez minutę patrzcie sobie w oczy. Nie rozmawiajcie.',
+   after:'Po minucie każde z Was kończy zdanie: „W Twoich oczach widzę…”.'},
+  {t:'Dłonie',     ritual:'Przez minutę trzymajcie się za ręce. Bez słów.',
+   after:'Po minucie powiedzcie sobie jedną rzecz, za którą jesteście dzisiaj wdzięczni.'},
+  {t:'Oddech',     ritual:'Przez minutę siedźcie obok siebie i oddychajcie w tym samym rytmie.',
+   after:'Po minucie każde z Was mówi jedno słowo opisujące to, co teraz czuje.'},
+  {t:'Ramię',      ritual:'Przez minutę oprzyj głowę na ramieniu partnera. Zamieńcie się w połowie, jeśli chcecie.',
+   after:'Po minucie dokończcie zdanie: „Najbezpieczniej jest mi przy Tobie, kiedy…”.'},
+  {t:'Cisza',      ritual:'Przez minutę po prostu siedźcie obok siebie. Nic nie musicie robić.',
+   after:'Po minucie powiedzcie, czy ta cisza była łatwa, czy trudna — i dlaczego.'},
+  {t:'Uścisk',     ritual:'Przez minutę po prostu się przytulcie. Dłużej, niż zwykle to robicie.',
+   after:'Po minucie dokończcie zdanie: „Chciałbym/chciałabym, żebyśmy częściej…”.'}
+];
+
+/* ═══════════════ KARTY PRZYWILEJU ═══════════════ */
+
+const PRIVILEGES = [
+  {n:'Dziś nie zmywasz',    t:'Partner przejmuje zmywanie przez cały dzień.'},
+  {n:'Tydzień bez śmieci',  t:'Partner wynosi śmieci przez najbliższe 7 dni.'},
+  {n:'Odkurzanie premium',  t:'Partner odkurza całe mieszkanie.'},
+  {n:'Kawa na życzenie',    t:'Partner przygotowuje Ci ulubioną kawę lub herbatę.'},
+  {n:'Ty wybierasz',        t:'Ty wybierasz film lub serial na wspólny wieczór.'},
+  {n:'Kolacja na życzenie', t:'Partner organizuje lub przygotowuje kolację według Twojego wyboru.'},
+  {n:'Dzisiaj odpoczywasz', t:'Partner przejmuje wybrane przez Ciebie zadanie domowe.'},
+  {n:'Randka',              t:'Partner organizuje małą randkę dla Was dwojga.'},
+  {n:'Wiadomość',           t:'Partner pisze Ci wiadomość, w której wymienia trzy rzeczy, które w Tobie docenia.'},
+  {n:'Niespodzianka',       t:'Partner ma przygotować dla Ciebie małą niespodziankę w ciągu najbliższych 7 dni.'}
+];
+
+const STAGES = ['Zaciekawienie','Śmiech','Docenienie','Wspomnienie','Odkrycie',
+                'Zrozumienie','Bliskość','Odwaga','Wspólny moment','Most'];
+
+const MODES = {
+  pierwsze: {n:'Pierwsze spotkanie', m:'20–30 minut',
+    t:'Tylko Poznaj i Zbliż się, lekkie karty akcji. Dla nowych par albo spokojnego wieczoru.',
+    cats:['poznaj','zbliz'], sit:.10, act:.18, gold:3},
+  wieczor:  {n:'Nasz wieczór', m:'30–60 minut',
+    t:'Wszystkie cztery kategorie, karty sytuacji i pełna mechanika. Podstawowy tryb gry.',
+    cats:['poznaj','zbliz','odkryj','odwaga'], sit:.18, act:.25, gold:6},
+  bezfiltra:{n:'Bez filtra', m:'45–90 minut',
+    t:'Więcej Odwagi, więcej sytuacji, więcej „Czy mnie znasz?”. Dla par, które chcą wejść naprawdę głęboko.',
+    cats:['poznaj','zbliz','odkryj','odwaga'], sit:.26, act:.32, gold:6, deep:true},
+  dzien:    {n:'Jedna karta dziennie', m:'30 dni',
+    t:'Nie musicie budować całego Mostu jednego wieczoru. Jedna karta dziennie przez miesiąc.',
+    cats:['poznaj','zbliz','odkryj','odwaga'], sit:.12, act:.15, gold:0, daily:true}
+};
+</script>
+
+<script>
+'use strict';
+
+/* ═══════════════ NARZĘDZIA ═══════════════ */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const rnd = a => a[Math.floor(Math.random() * a.length)];
+const KEY = 'most-bliskosci-v1';
+const SVGNS = 'http://www.w3.org/2000/svg';
+
+let S = null;
+let setupMode = 'wieczor';
+
+/* ═══════════════ STAN ═══════════════ */
+function freshState(mode, names){
+  const cfg = MODES[mode];
+  const slots = [1,2,3,4,5,6,7,8,9].sort(() => Math.random() - .5).slice(0, cfg.gold);
+  return {
+    v:1, mode, names,
+    turn:0, bridge:0, drawn:0, tokens:[3,3], privs:[[],[]],
+    used:{poznaj:[], zbliz:[], odkryj:[], odwaga:[]},
+    usedSit:[], usedGold:[], usedPriv:[],
+    goldAt:slots, challengeAt: cfg.daily ? [] : [4,8],
+    phase:'choose', card:null, pend:{}, reaction:null,
+    daily:{day:0, last:null, card:null}
+  };
+}
+const save = () => { try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} };
+const load = () => { try{ return JSON.parse(localStorage.getItem(KEY)); }catch(e){ return null; } };
+const wipe = () => { try{ localStorage.removeItem(KEY); }catch(e){} };
+
+const other = i => i === 0 ? 1 : 0;
+const activeName = () => S.names[S.turn];
+const partnerName = () => S.names[other(S.turn)];
+
+/* ═══════════════ DOBIERANIE KART ═══════════════ */
+function drawQuestion(cat){
+  if (S.used[cat].length >= DECK[cat].length) S.used[cat] = [];
+  let i;
+  do { i = Math.floor(Math.random() * DECK[cat].length); } while (S.used[cat].includes(i));
+  S.used[cat].push(i);
+  S.drawn++;
+  return {kind:'q', cat, i, text:DECK[cat][i]};
+}
+function drawSituation(){
+  if (S.usedSit.length >= SITUATIONS.length) S.usedSit = [];
+  let i;
+  do { i = Math.floor(Math.random() * SITUATIONS.length); } while (S.usedSit.includes(i));
+  S.usedSit.push(i);
+  S.drawn++;
+  return Object.assign({kind:'sit', i, step:0}, SITUATIONS[i]);
+}
+function drawPrivilege(){
+  if (S.usedPriv.length >= PRIVILEGES.length) S.usedPriv = [];
+  let i;
+  do { i = Math.floor(Math.random() * PRIVILEGES.length); } while (S.usedPriv.includes(i));
+  S.usedPriv.push(i);
+  return PRIVILEGES[i];
+}
+function drawGolden(){
+  if (S.usedGold.length >= GOLDEN.length) S.usedGold = [];
+  let i;
+  do { i = Math.floor(Math.random() * GOLDEN.length); } while (S.usedGold.includes(i));
+  S.usedGold.push(i);
+  return GOLDEN[i];
+}
+function deeper(cat){
+  const i = ORDER.indexOf(cat);
+  const allowed = MODES[S.mode].cats;
+  for (let j = i + 1; j < ORDER.length; j++) if (allowed.includes(ORDER[j])) return ORDER[j];
+  return cat;
+}
+function riskCategory(){
+  const cats = MODES[S.mode].cats;
+  const pool = [];
+  cats.forEach(c => {
+    const w = MODES[S.mode].deep ? {poznaj:1, zbliz:2, odkryj:3, odwaga:4}[c] : {poznaj:2, zbliz:2, odkryj:2, odwaga:1}[c];
+    for (let k = 0; k < w; k++) pool.push(c);
+  });
+  return rnd(pool);
+}
+function maybeAction(){
+  if (Math.random() > MODES[S.mode].act) return null;
+  const pool = ACTIONS.filter(a => !a.pass && a.n !== 'Kradzież');
+  return rnd(pool);
+}
+
+/* ═══════════════ MOST (SVG) ═══════════════ */
+function cableY(x){
+  if (x <= 250) return 78 + (x / 250) * (32 - 78);
+  if (x >= 750) return 32 + ((x - 750) / 250) * (78 - 32);
+  const t = (x - 250) / 500;
+  return (1 - t) * (1 - t) * 32 + 2 * (1 - t) * t * 128 + t * t * 32;
+}
+function mk(tag, attrs){
+  const n = document.createElementNS(SVGNS, tag);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  return n;
+}
+function paintBridge(svg, done){
+  if (!svg) return;
+  svg.innerHTML = '';
+  const N = 10, x0 = 60, x1 = 940, w = (x1 - x0) / N, deckY = 148;
+
+  svg.appendChild(mk('rect', {x:0, y:deckY, width:66, height:16, rx:3, class:'bank'}));
+  svg.appendChild(mk('rect', {x:934, y:deckY, width:66, height:16, rx:3, class:'bank'}));
+  svg.appendChild(mk('rect', {x:0, y:deckY + 16, width:1000, height:2, fill:'rgba(233,220,199,.07)'}));
+
+  svg.appendChild(mk('path', {d:'M0,78 L250,32 Q500,128 750,32 L1000,78', class:'cable' + (done === 10 ? ' cable-lit' : '')}));
+  [250, 750].forEach(tx => {
+    svg.appendChild(mk('line', {x1:tx, y1:26, x2:tx, y2:deckY + 8, class:'tower'}));
+    svg.appendChild(mk('line', {x1:tx - 13, y1:60, x2:tx + 13, y2:60, class:'tower'}));
+    svg.appendChild(mk('circle', {cx:tx, cy:22, r:4.5, class:'lamp' + (done >= 1 ? ' on' : '')}));
+  });
+  svg.appendChild(mk('circle', {cx:24, cy:deckY - 10, r:5, class:'lamp on'}));
+  svg.appendChild(mk('circle', {cx:976, cy:deckY - 10, r:5, class:'lamp on'}));
+
+  for (let i = 0; i < N; i++){
+    const cx = x0 + i * w + w / 2, lit = i < done;
+    svg.appendChild(mk('line', {x1:cx, y1:cableY(cx), x2:cx, y2:deckY, class:'hanger' + (lit ? ' on' : '')}));
+    const seg = mk('rect', {
+      x:x0 + i * w + 2, y:deckY, width:w - 4, height:11, rx:2, class:'seg',
+      fill: lit ? 'var(--gold)' : 'var(--surf2)',
+      opacity: lit ? 1 : .55
+    });
+    if (lit) seg.setAttribute('style', 'filter:drop-shadow(0 0 8px var(--gold-glow))');
+    svg.appendChild(seg);
+    const lbl = mk('text', {
+      x:cx, y:deckY + 30, 'text-anchor':'middle',
+      'font-family':'IBM Plex Mono, monospace', 'font-size':'9.5',
+      'letter-spacing':'1', fill: lit ? 'var(--gold2)' : 'var(--t3)'
+    });
+    lbl.textContent = String(i + 1).padStart(2, '0');
+    svg.appendChild(lbl);
+  }
+}
+function renderBridge(){
+  paintBridge($('#bridge'), S.bridge);
+  $('#stageName').textContent = S.bridge === 0 ? 'MOST CZEKA NA PIERWSZY ELEMENT' : STAGES[S.bridge - 1].toUpperCase();
+  $('#stageCount').textContent = S.bridge + ' / 10';
+}
+
+/* ═══════════════ GRACZE ═══════════════ */
+function renderBanks(){
+  $('#banks').innerHTML = S.names.map((n, i) => `
+    <div class="player${i === S.turn ? ' active' : ''}">
+      <div class="who">
+        <span class="nm">${esc(n)}</span>
+        ${i === S.turn ? '<span class="turnflag">Tura</span>' : ''}
+      </div>
+      <div class="tokens" title="Żetony Odwagi">
+        ${[0,1,2].map(k => `<span class="tok ${k < S.tokens[i] ? 'full' : 'spent'}"></span>`).join('')}
+        <span class="plabel" style="margin-left:4px">żetony odwagi</span>
+      </div>
+      <div class="privlist">
+        ${S.privs[i].length
+          ? S.privs[i].map(p => `<span class="priv">${esc(p)}</span>`).join('')
+          : '<span class="plabel">brak przywilejów</span>'}
+      </div>
+    </div>`).join('');
+}
+
+/* ═══════════════ KARTA ═══════════════ */
+function accentVars(cat){
+  return `--acc:var(--${cat});--acc-p:var(--${cat}-p)`;
+}
+function cardHTML(c){
+  if (c.kind === 'sit'){
+    return `<div class="card deal" style="--acc:var(--gold);--acc-p:#8A5B12">
+      <div class="eyebrow"><span class="k">Karta sytuacji</span><span class="sub">${esc(c.t)}</span></div>
+      <div class="scene">${esc(c.s)}</div>
+      ${c.step >= 0 ? `<div class="beat"><span class="bl">Lustro</span><span class="bt">${esc(c.m)}</span></div>` : ''}
+      ${c.step >= 1 ? `<div class="beat"><span class="bl">Twoja reakcja</span><span class="bt">${esc(c.r)}</span></div>` : ''}
+      ${c.step >= 1 ? `<div class="key"><b>Klucz empatii</b>${esc(c.k)}</div>` : ''}
+      <div class="foot"><span>Most Bliskości</span><span>sytuacja ${c.i + 1} / ${SITUATIONS.length}</span></div>
+    </div>`;
+  }
+  const cat = CATS[c.cat];
+  return `<div class="card deal" style="${accentVars(c.cat)}">
+    <div class="eyebrow"><span class="k">${esc(cat.name)}</span><span class="sub">${esc(cat.desc)}</span></div>
+    <div class="q">${esc(c.text)}</div>
+    <div class="foot"><span>Most Bliskości</span><span>karta ${c.i + 1} / ${DECK[c.cat].length} · poziom ${cat.level}</span></div>
+  </div>`;
+}
+function railHTML(step){
+  const names = ['Wybierz','Dobierz','Odpowiedz','Reakcja','Most'];
+  return `<div class="rail">${names.map((n, i) =>
+    `<div class="${i + 1 === step ? 'on' : (i + 1 < step ? 'done' : '')}">${n}</div>`).join('')}</div>`;
+}
+
+/* ═══════════════ EKRAN GRY ═══════════════ */
+function render(){
+  if (S.mode === 'dzien'){ renderDaily(); return; }
+  show('game');
+  renderBridge();
+  renderBanks();
+  const st = $('#stage');
+  st.innerHTML = S.phase === 'choose' ? viewChoose()
+               : S.phase === 'card'   ? viewCard()
+               : S.phase === 'react'  ? viewReact()
+               : viewEarn();
+  bind();
+  save();
+}
+
+function viewChoose(){
+  const p = S.pend;
+  const chooser = p.partnerPicks ? partnerName() : activeName();
+  const cats = MODES[S.mode].cats;
+  const note = p.deeper ? 'Żeton wydany: dobierzesz kartę z trudniejszej kategorii.'
+             : p.know   ? 'Żeton wydany: partner najpierw przewidzi Twoją odpowiedź.'
+             : p.partnerPicks ? `${partnerName()} wybiera kategorię za ${activeName()}.`
+             : 'Możesz też zaryzykować i pozwolić, żeby karta wybrała się sama.';
+  return `
+    <div class="prompt">
+      <h2>${esc(chooser)}, czego chcesz w tej chwili?</h2>
+      <p>${esc(note)}</p>
+    </div>
+    <div class="choices">
+      ${cats.map(c => `<button class="cat" data-cat="${c}" style="${accentVars(c)}">
+          <i></i><span><span class="cn">${esc(CATS[c].name)}</span><br><span class="cd">${esc(CATS[c].desc)}</span></span>
+        </button>`).join('')}
+      ${MODES[S.mode].sit > 0 ? `<button class="cat" data-sit="1" style="--acc:var(--gold);--acc-p:var(--gold)">
+          <i></i><span><span class="cn" style="color:var(--gold)">Sytuacja</span><br><span class="cd">scena z codziennego życia</span></span>
+        </button>` : ''}
+      <button class="cat wide risk" data-risk="1">
+        <i></i><span><span class="cn">Ryzyko</span><br><span class="cd">karta losuje się sama — może być z każdej kategorii</span></span>
+      </button>
+    </div>
+    ${tokenBar()}
+    ${railHTML(1)}`;
+}
+
+function tokenBar(){
+  const t = S.tokens[S.turn], p = S.pend;
+  const choosing = S.phase === 'choose';
+  const b = (id, n, d, off) =>
+    `<button data-tok="${id}" ${(t < 1 || off) ? 'disabled' : ''}><span class="tn">${n}</span><span class="td">${d}</span></button>`;
+  return `<details class="tokbar">
+    <summary><span class="mono">Żetony Odwagi · ${esc(activeName())}: ${t} z 3</span><span class="mono">rozwiń</span></summary>
+    <div class="inner">
+      ${b('deep', 'Wejdź głębiej', 'Dobierz kartę z trudniejszej kategorii.', p.deeper || !choosing)}
+      ${b('know', 'Czy mnie znasz?', 'Partner najpierw przewiduje Twoją odpowiedź.', p.know || !choosing)}
+      ${b('pick', 'Wybierz za mnie', 'Partner wybiera kategorię Twojej karty.', p.partnerPicks || !choosing)}
+      ${b('again', 'Jeszcze raz', 'Pierwsza odpowiedź nie musi być najlepsza.', S.phase !== 'card')}
+    </div>
+  </details>`;
+}
+
+function viewCard(){
+  const c = S.card, p = S.pend;
+  let banner = '', acts = '';
+
+  if (p.action){
+    banner += `<div class="pin">
+      <div class="ph"><span class="pn">Karta akcji · ${esc(p.action.n)}</span>
+        ${p.action.sec ? `<button class="btn small" data-timer="${p.action.sec}">Odlicz ${p.action.sec} s</button>` : ''}</div>
+      <div class="pt">${esc(p.action.t)}</div>
+    </div>`;
+  }
+  if (p.know){
+    const step = p.knowStep || 'predict';
+    if (step === 'predict'){
+      banner += `<div class="pin"><div class="ph"><span class="pn">Czy mnie znasz?</span></div>
+        <div class="pt">${esc(partnerName())} mówi na głos: „Myślę, że powiedział(a)byś…”. ${esc(activeName())} jeszcze nie odpowiada.</div></div>`;
+      acts = `<button class="btn gold" data-know="answer">${esc(activeName())} odpowiada naprawdę</button>`;
+    } else if (step === 'judge'){
+      banner += `<div class="pin"><div class="ph"><span class="pn">Czy mnie znasz?</span></div>
+        <div class="pt">Czy ${esc(partnerName())} trafił/a?</div></div>`;
+      acts = `<button class="btn gold" data-know="hit">Trafił/a</button>
+              <button class="btn" data-know="miss">Nie trafił/a</button>`;
+    } else {
+      banner += `<div class="pin"><div class="ph"><span class="pn">${p.knowHit ? 'Trafione' : 'Teraz już wiesz'}</span></div>
+        <div class="pt">${p.knowHit
+          ? esc(partnerName()) + ' zna Cię lepiej, niż myślałeś/aś. Bonus: dobrana Karta Przywileju.'
+          : 'Nietrafiona odpowiedź nie jest porażką. Jest odkryciem.'}</div></div>`;
+    }
+  }
+
+  if (!acts){
+    if (c.kind === 'sit' && c.step === 0){
+      acts = `<button class="btn gold" data-sitnext="1">Odsłoń prawdziwą reakcję</button>`;
+    } else {
+      acts = `<button class="btn gold" data-answered="1">Odpowiedź padła → reakcja partnera</button>`;
+    }
+  }
+
+  return `
+    <div class="prompt">
+      <h2>Czyta ${esc(activeName())}</h2>
+      <p>Przeczytaj kartę na głos. Nie ma obowiązku „idealnej” odpowiedzi — liczy się autentyczność.</p>
+    </div>
+    ${cardHTML(c)}
+    ${banner}
+    <div class="acts">
+      ${acts}
+      <button class="btn ghost" data-pass="1">Pass</button>
+    </div>
+    ${tokenBar()}
+    ${railHTML(c.kind === 'sit' && c.step === 0 ? 2 : 3)}`;
+}
+
+function viewReact(){
+  const R = [
+    ['Dopytaj', '„Powiedz mi o tym więcej.”'],
+    ['Odbij',   '„To, co od Ciebie usłyszałem/am, to…”'],
+    ['Doceń',   '„Dziękuję, że mi to powiedziałeś/aś.”']
+  ];
+  if (S.reaction == null){
+    return `
+      <div class="prompt">
+        <h2>${esc(partnerName())} reaguje</h2>
+        <p>Nie przechodź od razu do radzenia, oceniania albo udowadniania, że masz rację. Wybierz jedną z trzech reakcji.</p>
+      </div>
+      ${cardHTML(S.card)}
+      <div class="react">${R.map(([n, q], i) =>
+        `<button data-react="${i}"><span class="rn">${n}</span><span class="rq">${esc(q)}</span></button>`).join('')}</div>
+      ${railHTML(4)}`;
+  }
+  const [n, q] = R[S.reaction];
+  return `
+    <div class="prompt">
+      <h2>${esc(partnerName())}: ${esc(q)}</h2>
+      <p>Zostańcie w tym zdaniu przez chwilę. Potem dołóżcie element Mostu.</p>
+    </div>
+    ${cardHTML(S.card)}
+    <div class="acts">
+      <button class="btn gold" data-earn="1">Zdobądźcie element Mostu</button>
+      <button class="btn" data-earn="skip">Ta tura nie zamyka elementu</button>
+    </div>
+    ${railHTML(5)}`;
+}
+
+function viewEarn(){
+  return `<div class="prompt"><h2>${esc(STAGES[S.bridge - 1])}</h2>
+    <p>Element ${S.bridge} z 10 leży na moście.</p></div>
+    <div class="acts"><button class="btn gold" data-next="1">Następna tura · ${esc(partnerName())}</button></div>
+    ${railHTML(5)}`;
+}
+
+/* ═══════════════ AKCJE ═══════════════ */
+function bind(){
+  document.querySelectorAll('[data-cat]').forEach(b => b.onclick = () => pickCategory(b.dataset.cat));
+  const sit = $('[data-sit]'); if (sit) sit.onclick = () => startCard(drawSituation());
+  const risk = $('[data-risk]'); if (risk) risk.onclick = () => {
+    if (MODES[S.mode].sit > 0 && Math.random() < .22) startCard(drawSituation());
+    else pickCategory(riskCategory(), true);
+  };
+  document.querySelectorAll('[data-tok]').forEach(b => b.onclick = () => spendToken(b.dataset.tok));
+  const t = $('[data-timer]'); if (t) t.onclick = () => openTimer(+t.dataset.timer, 'Karta akcji', S.pend.action.n, S.pend.action.t);
+  document.querySelectorAll('[data-know]').forEach(b => b.onclick = () => knowStep(b.dataset.know));
+  const sn = $('[data-sitnext]'); if (sn) sn.onclick = () => { S.card.step = 1; render(); };
+  const an = $('[data-answered]'); if (an) an.onclick = () => { S.phase = 'react'; S.reaction = null; render(); };
+  const ps = $('[data-pass]'); if (ps) ps.onclick = passCard;
+  document.querySelectorAll('[data-react]').forEach(b => b.onclick = () => { S.reaction = +b.dataset.react; render(); });
+  document.querySelectorAll('[data-earn]').forEach(b => b.onclick = () => earn(b.dataset.earn !== 'skip'));
+  const nx = $('[data-next]'); if (nx) nx.onclick = nextTurn;
+}
+
+function pickCategory(cat, fromRisk){
+  if (S.pend.deeper){ cat = deeper(cat); S.pend.deeper = false; }
+  const c = drawQuestion(cat);
+  c.viaRisk = !!fromRisk;
+  startCard(c);
+}
+function startCard(c){
+  S.card = c;
+  S.phase = 'card';
+  S.reaction = null;
+  const keepKnow = S.pend.know;
+  S.pend = {know:keepKnow, knowStep: keepKnow ? 'predict' : null};
+  if (!keepKnow && c.kind === 'q' && MODES[S.mode].deep && Math.random() < .18){
+    S.pend.know = true; S.pend.knowStep = 'predict';
+  }
+  const a = maybeAction();
+  if (a){
+    if (a.know && !S.pend.know){ S.pend.know = true; S.pend.knowStep = 'predict'; }
+    else S.pend.action = a;
+  }
+  render();
+}
+function spendToken(kind){
+  if (S.tokens[S.turn] < 1) return;
+  S.tokens[S.turn]--;
+  if (kind === 'deep') S.pend.deeper = true;
+  if (kind === 'know'){ S.pend.know = true; S.pend.knowStep = 'predict'; }
+  if (kind === 'pick') S.pend.partnerPicks = true;
+  if (kind === 'again'){
+    S.pend.again = true;
+    render();
+    openNote('Jeszcze raz', 'Pierwsza odpowiedź nie musi być Twoją najlepszą odpowiedzią.',
+      '„Chcę spróbować odpowiedzieć jeszcze raz, tym razem naprawdę.”');
+    return;
+  }
+  render();
+}
+function knowStep(k){
+  if (k === 'answer'){ S.pend.knowStep = 'judge'; render(); return; }
+  S.pend.knowStep = 'done';
+  S.pend.knowHit = (k === 'hit');
+  if (k === 'hit'){
+    const p = drawPrivilege();
+    S.privs[other(S.turn)].push(p.n);
+    render();
+    openNote('Karta Przywileju dla ' + partnerName(), p.n + ' — ' + p.t,
+      'Nagroda nie jest karą dla przegranego. To przywilej dla zwycięzcy.');
+  } else {
+    render();
+  }
+}
+function passCard(){
+  S.phase = 'choose';
+  S.pend = {};
+  S.card = null;
+  render();
+  openNote('Pass', 'Partner odpowiada tylko: „Jasne.” Karta trafia na stos odrzuconych.',
+    'Nie musisz tłumaczyć dlaczego, uzasadniać decyzji ani oddawać Żetonu Odwagi.');
+}
+function earn(yes){
+  if (!yes){ nextTurn(); return; }
+  S.bridge = Math.min(10, S.bridge + 1);
+  S.phase = 'earn';
+  render();
+  if (S.bridge >= 10){ setTimeout(() => finish(), 700); return; }
+  if (S.goldAt.includes(S.bridge)){
+    S.goldAt = S.goldAt.filter(x => x !== S.bridge);
+    setTimeout(openGolden, 600);
+  } else if (S.challengeAt.includes(S.bridge)){
+    S.challengeAt = S.challengeAt.filter(x => x !== S.bridge);
+    setTimeout(openChallenge, 600);
+  }
+}
+function nextTurn(){
+  S.turn = other(S.turn);
+  S.phase = 'choose';
+  S.card = null;
+  S.reaction = null;
+  S.pend = {};
+  render();
+}
+
+/* ═══════════════ NAKŁADKI ═══════════════ */
+let ovTimer = null;
+function closeOv(){
+  if (ovTimer){ clearInterval(ovTimer); ovTimer = null; }
+  const o = $('.ov'); if (o) o.remove();
+}
+function openOv(html, onMount){
+  closeOv();
+  const o = document.createElement('div');
+  o.className = 'ov';
+  o.innerHTML = `<div class="box">${html}</div>`;
+  o.addEventListener('click', e => { if (e.target === o) closeOv(); });
+  document.body.appendChild(o);
+  if (onMount) onMount(o);
+  const btn = o.querySelector('[data-close]');
+  if (btn) btn.onclick = () => { closeOv(); if (btn.dataset.close === 'render') render(); };
+  return o;
+}
+function openNote(title, text, quiet){
+  openOv(`
+    <div class="kicker">Most Bliskości</div>
+    <h3>${esc(title)}</h3>
+    <p>${esc(text)}</p>
+    ${quiet ? `<p class="quiet">${esc(quiet)}</p>` : ''}
+    <button class="btn gold" data-close="1">Dobrze</button>`);
+}
+function ringHTML(sec){
+  return `<div class="ring breathe">
+    <svg viewBox="0 0 150 150"><circle class="bg" cx="75" cy="75" r="70"></circle>
+    <circle class="fg" cx="75" cy="75" r="70" stroke-dasharray="439.8" stroke-dashoffset="0"></circle></svg>
+    <b data-clock>${sec}</b></div>`;
+}
+function runRing(box, sec, onDone){
+  const fg = box.querySelector('.fg'), clock = box.querySelector('[data-clock]');
+  let left = sec;
+  if (ovTimer) clearInterval(ovTimer);
+  ovTimer = setInterval(() => {
+    left--;
+    if (clock) clock.textContent = Math.max(0, left);
+    if (fg) fg.setAttribute('stroke-dashoffset', String(439.8 * (1 - left / sec)));
+    if (left <= 0){ clearInterval(ovTimer); ovTimer = null; if (onDone) onDone(); }
+  }, 1000);
+}
+function openTimer(sec, kicker, title, text){
+  openOv(`
+    <div class="kicker">${esc(kicker)}</div>
+    <h3>${esc(title)}</h3>
+    <p>${esc(text)}</p>
+    ${ringHTML(sec)}
+    <button class="btn" data-close="1">Zamknij</button>`,
+    o => runRing(o, sec));
+}
+function openGolden(){
+  const g = drawGolden();
+  const o = openOv(`
+    <div class="kicker">Złota Karta Mostu · ${esc(g.t)}</div>
+    <h3>Stop. Na minutę.</h3>
+    <p>${esc(g.ritual)}</p>
+    ${ringHTML(60)}
+    <p class="quiet">Nie każda chwila bliskości potrzebuje słów.</p>
+    <div class="acts" style="justify-content:center">
+      <button class="btn" data-skip="1">Pomiń odliczanie</button>
+    </div>`);
+  const reveal = () => {
+    o.querySelector('.box').innerHTML = `
+      <div class="kicker">Złota Karta Mostu · ${esc(g.t)}</div>
+      <h3>Minęła minuta.</h3>
+      <p>${esc(g.after)}</p>
+      <button class="btn gold" data-close="render">Wracamy do gry</button>`;
+    o.querySelector('[data-close]').onclick = () => { closeOv(); render(); };
+  };
+  runRing(o, 60, reveal);
+  o.querySelector('[data-skip]').onclick = () => { if (ovTimer){ clearInterval(ovTimer); ovTimer = null; } reveal(); };
+}
+function openChallenge(){
+  const prize = drawPrivilege();
+  const cat = rnd(MODES[S.mode].cats);
+  const q = drawQuestion(cat);
+  const drawer = activeName(), guessed = partnerName(), di = S.turn;
+
+  const step3 = won => {
+    const winner = won ? di : other(di);
+    S.privs[winner].push(prize.n);
+    save();
+    const o = $('.ov');
+    o.querySelector('.box').innerHTML = `
+      <div class="kicker">Walka o przywilej</div>
+      <h3>${esc(S.names[winner])} zgarnia nagrodę</h3>
+      <p><strong style="color:var(--gold)">${esc(prize.n.toUpperCase())}</strong>\n${esc(prize.t)}</p>
+      <p class="quiet">${won ? '„Ciekawe, co właśnie wygrałem/am…”' : 'Nagroda przechodzi na partnera. Bez urazy.'}</p>
+      <button class="btn gold" data-close="render">Wracamy do gry</button>`;
+    o.querySelector('[data-close]').onclick = () => { closeOv(); render(); };
+  };
+  const step2 = () => {
+    const o = $('.ov');
+    o.querySelector('.box').innerHTML = `
+      <div class="kicker">Walka o przywilej · wyzwanie</div>
+      <h3>${esc(drawer)} przewiduje odpowiedź ${esc(guessed)}</h3>
+      <div class="card" style="${accentVars(cat)};text-align:left">
+        <div class="eyebrow"><span class="k">${esc(CATS[cat].name)}</span><span class="sub">wyzwanie</span></div>
+        <div class="q">${esc(q.text)}</div>
+        <div class="foot"><span>Most Bliskości</span><span>walka o przywilej</span></div>
+      </div>
+      <p>Najpierw zgaduje ${esc(drawer)}. Potem ${esc(guessed)} odpowiada naprawdę.</p>
+      <div class="acts" style="justify-content:center">
+        <button class="btn gold" data-w="1">Trafione</button>
+        <button class="btn" data-w="0">Nietrafione</button>
+      </div>`;
+    o.querySelectorAll('[data-w]').forEach(b => b.onclick = () => step3(b.dataset.w === '1'));
+  };
+  const o = openOv(`
+    <div class="kicker">Walka o przywilej</div>
+    <h3>${esc(drawer)} losuje zakrytą Kartę Przywileju</h3>
+    <p>Nie pokazuj jej partnerowi. Jeśli wygrasz wyzwanie — zachowujesz nagrodę.
+       Jeśli przegrasz — nagrodę dostaje ${esc(guessed)}.</p>
+    <p class="quiet">Ciekawe, co właśnie wylosowałeś/aś…</p>
+    <button class="btn gold" data-go="1">Biorę wyzwanie</button>`);
+  o.querySelector('[data-go]').onclick = step2;
+}
+
+/* ═══════════════ JEDNA KARTA DZIENNIE ═══════════════ */
+const todayKey = () => new Date().toISOString().slice(0, 10);
+
+function renderDaily(){
+  show('daily');
+  const d = S.daily, today = todayKey();
+  const doneToday = d.last === today;
+
+  if (!doneToday && (!d.card || d.opened !== today)){
+    const lvl = d.day < 10 ? ['poznaj','zbliz'] : d.day < 20 ? ['zbliz','odkryj'] : ['odkryj','odwaga'];
+    d.card = Math.random() < MODES.dzien.sit ? drawSituation() : drawQuestion(rnd(lvl));
+    if (d.card.kind === 'sit') d.card.step = 1;
+    d.opened = today;
+  }
+
+  $('#dailyCard').innerHTML = doneToday
+    ? `<div class="prompt"><h2>Na dziś to wszystko.</h2>
+         <p>Karta ${d.day} z 30 zamknięta. Wróćcie tu jutro — jedna rozmowa dziennie wystarczy.</p></div>`
+    : `${cardHTML(d.card)}
+       <div class="acts">
+         <button class="btn gold" data-done="1">Rozmowa odbyta · zamknij dzień ${d.day + 1}</button>
+       </div>`;
+
+  $('#grid30').innerHTML = Array.from({length:30}, (_, i) => {
+    const cls = i < d.day ? 'done' : (i === d.day && !doneToday ? 'today' : '');
+    return `<div class="${cls}">${i + 1}</div>`;
+  }).join('');
+
+  $('#dailyState').textContent =
+    `dzień ${Math.min(30, d.day + (doneToday ? 0 : 1))} z 30 · most: ${S.bridge} / 10 elementów`;
+
+  const b = $('[data-done]');
+  if (b) b.onclick = () => {
+    d.day++; d.last = today; d.card = null;
+    if (d.day % 3 === 0) S.bridge = Math.min(10, S.bridge + 1);
+    if (d.day >= 30 || S.bridge >= 10){ S.bridge = 10; finish(); return; }
+    render();
+  };
+  save();
+}
+
+/* ═══════════════ FINAŁ ═══════════════ */
+function finish(){
+  closeOv();
+  show('final');
+  const [a, b] = S.names;
+  $('#finalBody').innerHTML = `
+    <div class="prompt">
+      <div class="mono" style="margin-bottom:10px">Most jest gotowy</div>
+      <h2 style="font-size:clamp(30px,6vw,52px)">Co zabieramy ze sobą?</h2>
+      <p>Nie dobieracie już kolejnej karty. Każde z Was kończy jedno zdanie —
+         a potem przez chwilę po prostu patrzycie na gotowy Most.</p>
+    </div>
+    <div class="takeaway">
+      <span class="mono">${esc(a)}</span>
+      <span style="font-family:var(--serif);font-size:19px;font-style:italic">
+        „Jedną rzeczą z tej gry, którą chciał(a)bym zabrać do naszego codziennego życia, jest…”</span>
+    </div>
+    <div class="takeaway">
+      <span class="mono">${esc(b)}</span>
+      <span style="font-family:var(--serif);font-size:19px;font-style:italic">
+        „Jedną rzeczą z tej gry, którą chciał(a)bym zabrać do naszego codziennego życia, jest…”</span>
+    </div>
+    <div class="summary">
+      <div><span class="mono">Elementy mostu</span><b>10 / 10</b></div>
+      <div><span class="mono">Dobrane karty</span><b>${S.drawn}</b></div>
+      <div><span class="mono">Przywileje · ${esc(a)}</span><b>${S.privs[0].length}</b>
+        <span style="font-size:12.5px;color:var(--t2)">${esc(S.privs[0].join(' · ')) || '—'}</span></div>
+      <div><span class="mono">Przywileje · ${esc(b)}</span><b>${S.privs[1].length}</b>
+        <span style="font-size:12.5px;color:var(--t2)">${esc(S.privs[1].join(' · ')) || '—'}</span></div>
+    </div>
+    <p class="mono" style="max-width:44ch;line-height:2">${STAGES.map(s => s.toUpperCase()).join(' · ')}</p>
+    <p style="font-family:var(--serif);font-size:22px;font-style:italic;max-width:34ch;color:var(--gold)">
+      Wygrywacie razem.</p>
+    <div class="acts" style="justify-content:center">
+      <button class="btn gold" id="btnAgain">Zagrajcie jeszcze raz</button>
+    </div>`;
+  $('#btnAgain').onclick = () => { wipe(); S = null; boot(); };
+  save();
+}
+
+/* ═══════════════ EKRANY ═══════════════ */
+function show(id){
+  ['setup','game','daily','final'].forEach(k => $('#' + k).classList.toggle('hide', k !== id));
+  $('#btnReset').classList.toggle('hide', id === 'setup');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ═══════════════ START ═══════════════ */
+function renderModes(){
+  $('#modes').innerHTML = Object.entries(MODES).map(([k, m]) => `
+    <button class="mode${k === setupMode ? ' sel' : ''}" data-mode="${k}">
+      <span class="mn">${esc(m.n)}</span>
+      <span class="mt">${esc(m.t)}</span>
+      <span class="mm">${esc(m.m)}</span>
+    </button>`).join('');
+  document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => {
+    setupMode = b.dataset.mode;
+    renderModes();
+  });
+}
+function startGame(){
+  const n1 = $('#n1').value.trim() || 'Osoba 1';
+  const n2 = $('#n2').value.trim() || 'Osoba 2';
+  S = freshState(setupMode, [n1, n2]);
+  render();
+}
+function boot(){
+  renderModes();
+  paintBridge($('#heroBridge'), 3);
+  const saved = load();
+  const resume = $('#btnResume');
+  if (saved && saved.names){
+    resume.classList.remove('hide');
+    resume.textContent = `Wróć do gry · ${saved.names[0]} i ${saved.names[1]} · ${saved.bridge}/10`;
+    resume.onclick = () => { S = saved; if (!S.pend) S.pend = {}; render(); };
+    $('#n1').value = saved.names[0];
+    $('#n2').value = saved.names[1];
+    setupMode = saved.mode;
+    renderModes();
+  } else {
+    resume.classList.add('hide');
+  }
+  show('setup');
+}
+
+$('#btnStart').onclick = startGame;
+$('#btnRules').onclick = () => $('#rules').classList.remove('hide');
+$('#btnRulesClose').onclick = () => $('#rules').classList.add('hide');
+$('#rules').onclick = e => { if (e.target.id === 'rules') $('#rules').classList.add('hide'); };
+$('#btnReset').onclick = () => {
+  if (confirm('Zakończyć tę rozgrywkę i wrócić do ekranu startowego? Postęp Mostu zostanie skasowany.')){
+    wipe(); S = null; boot();
+  }
+};
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if ($('.ov')) closeOv();
+  else $('#rules').classList.add('hide');
+});
+
+boot();
+</script>
+</body>
+</html>
