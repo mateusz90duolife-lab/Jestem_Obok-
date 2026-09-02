@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+<text x="500" y="52" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="27" font-weight="bold" fill="#241E2B">Kiedy narzędzie, a kiedy lekarz</text>
+
+<rect x="330" y="92" width="340" height="86" rx="14" fill="#FAF6F0" stroke="#7A4E63" stroke-width="2.5"/>
+<text x="500" y="128" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="23" fill="#241E2B">Odkładasz zadania</text>
+<text x="500" y="158" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="23" fill="#241E2B">i to Ci przeszkadza</text>
+
+<path d="M 500 178 L 500 226" stroke="#EAD9C6" stroke-width="5" marker-end="url(#a3)"/>
+<defs><marker id="a3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#EAD9C6"/></marker></defs>
+
+<rect x="270" y="226" width="460" height="80" rx="14" fill="#EAD9C6"/>
+<text x="500" y="262" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#241E2B">Czy trudności ustępują, gdy obciążenie spada?</text>
+<text x="500" y="290" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="20" fill="#553546">urlop, wolny weekend, spokojniejszy okres</text>
+
+<path d="M 380 306 L 250 372" stroke="#7E8F73" stroke-width="5" marker-end="url(#a4)"/>
+<path d="M 620 306 L 750 372" stroke="#C36A4B" stroke-width="5" marker-end="url(#a5)"/>
+<defs>
+<marker id="a4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7E8F73"/></marker>
+<marker id="a5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C36A4B"/></marker>
+</defs>
+
+<rect x="50" y="380" width="400" height="170" rx="14" fill="#FAF6F0" stroke="#7E8F73" stroke-width="2.5"/>
+<rect x="50" y="380" width="400" height="7" rx="3.5" fill="#7E8F73"/>
+<text x="80" y="428" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="26" font-weight="bold" fill="#7E8F73">TAK — ustępują</text>
+<text x="80" y="464" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="21" fill="#241E2B">To najpewniej przeciążenie.</text>
+<text x="80" y="494" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="21" fill="#8B8091">Pracuj narzędziami z rozdziałów</text>
+<text x="80" y="522" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="21" fill="#8B8091">4–9. Zacznij od redystrybucji.</text>
+
+<rect x="550" y="380" width="400" height="170" rx="14" fill="#FAF6F0" stroke="#C36A4B" stroke-width="2.5"/>
+<rect x="550" y="380" width="400" height="7" rx="3.5" fill="#C36A4B"/>
+<text x="580" y="428" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="26" font-weight="bold" fill="#C36A4B">NIE — trwają mimo wszystko</text>
+<text x="580" y="464" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="21" fill="#241E2B">Umów wizytę u lekarza.</text>
+<text x="580" y="494" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="21" fill="#8B8091">Opisz: co, od kiedy, jak często,</text>
+<text x="580" y="522" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="21" fill="#8B8091">z jakim wpływem na życie.</text>
+</svg>

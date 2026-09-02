@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520">
+<text x="40" y="52" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="27" font-weight="bold" fill="#241E2B">Nie boisz się pracy. Boisz się progu.</text>
+
+<rect x="60" y="150" width="360" height="290" rx="14" fill="#FAF6F0" stroke="#EAD9C6" stroke-width="2"/>
+<text x="240" y="196" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="24" font-weight="bold" fill="#8B8091">ZADANIE W GŁOWIE</text>
+<rect x="150" y="226" width="180" height="180" rx="8" fill="#7A4E63" opacity="0.9"/>
+<text x="240" y="308" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="26" fill="#FAF6F0">„zacząć ćwiczyć”</text>
+<text x="240" y="344" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="22" fill="#EAD9C6">45 minut, strój, plan,</text>
+<text x="240" y="372" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="22" fill="#EAD9C6">porządek w pokoju</text>
+
+<path d="M 450 295 L 545 295" stroke="#C36A4B" stroke-width="5" marker-end="url(#a2)"/>
+<defs><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C36A4B"/></marker></defs>
+
+<rect x="580" y="150" width="360" height="290" rx="14" fill="#FAF6F0" stroke="#C36A4B" stroke-width="2.5"/>
+<text x="760" y="196" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="24" font-weight="bold" fill="#C36A4B">MIKRO-START</text>
+<rect x="722" y="360" width="76" height="46" rx="6" fill="#C36A4B"/>
+<text x="760" y="392" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="24" fill="#FAF6F0">2 min</text>
+<text x="760" y="262" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="26" fill="#241E2B">„rozłożę matę</text>
+<text x="760" y="296" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="26" fill="#241E2B">i zrobię jeden skłon”</text>
+<text x="760" y="332" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="21" fill="#8B8091">po dwóch minutach wolno przerwać</text>
+
+<line x1="60" y1="472" x2="940" y2="472" stroke="#EAD9C6" stroke-width="2"/>
+<text x="500" y="504" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Helvetica, sans-serif" font-size="22" fill="#7A4E63">Twoja jedyna robota to pojawić się na progu. Reszta to inercja, nie dyscyplina.</text>
+</svg>
