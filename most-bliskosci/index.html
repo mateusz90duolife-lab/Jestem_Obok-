@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Most Bliskości</title>
-<meta name="description" content="Kooperacyjna gra dla dwojga: 150 pytań, karty sytuacji, żetony odwagi i wspólnie budowany Most Bliskości.">
+<meta name="description" content="Kooperacyjna gra dla dwojga: 187 kart rozmowy, karty sytuacji, żetony odwagi i wspólnie budowany Most Bliskości.">
 <meta name="theme-color" content="#0A1A20">
 <link rel="canonical" href="https://mateusz90duolife-lab.github.io/Jestem_Obok-/most-bliskosci/">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -17,15 +17,15 @@
 <meta property="og:locale" content="pl_PL">
 <meta property="og:site_name" content="Most Bliskości">
 <meta property="og:title" content="Most Bliskości — gra dla dwojga">
-<meta property="og:description" content="Nie chodzi o to, żeby znać wszystkie odpowiedzi. Chodzi o to, żeby nadal być ciekawym siebie. 150 kart rozmowy, karty sytuacji i most, który budujecie razem.">
+<meta property="og:description" content="Nie chodzi o to, żeby znać wszystkie odpowiedzi. Chodzi o to, żeby nadal być ciekawym siebie. 187 kart rozmowy, karty sytuacji i most, który budujecie razem.">
 <meta property="og:url" content="https://mateusz90duolife-lab.github.io/Jestem_Obok-/most-bliskosci/">
 <meta property="og:image" content="https://mateusz90duolife-lab.github.io/Jestem_Obok-/most-bliskosci/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Most Bliskości — gra dla dwojga, 150 kart rozmowy">
+<meta property="og:image:alt" content="Most Bliskości — gra dla dwojga, 187 kart rozmowy">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Most Bliskości — gra dla dwojga">
-<meta name="twitter:description" content="150 kart rozmowy, karty sytuacji, żetony odwagi i most, który budujecie razem.">
+<meta name="twitter:description" content="187 kart rozmowy, karty sytuacji, żetony odwagi i most, który budujecie razem.">
 <meta name="twitter:image" content="https://mateusz90duolife-lab.github.io/Jestem_Obok-/most-bliskosci/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,8 +38,8 @@
   --t0:#EFE4D3; --t1:#A6BCBD; --t2:#71898C; --t3:#66808A;
   --paper:#F2E8DA; --paper2:#E4D6C1; --pink:#1C2A30; --pink2:#4A5B60;
   --gold:#E8A94A; --gold2:#B77C24; --gold-glow:rgba(232,169,74,.28);
-  --poznaj:#6FA07A; --zbliz:#CE8098; --odkryj:#6B93B8; --odwaga:#C4553A;
-  --poznaj-p:#3D6A4A; --zbliz-p:#9A4761; --odkryj-p:#3B6285; --odwaga-p:#9C3B22;
+  --poznaj:#6FA07A; --zbliz:#CE8098; --odkryj:#6B93B8; --odwaga:#C4553A; --naprawa:#5EA6A0;
+  --poznaj-p:#3D6A4A; --zbliz-p:#9A4761; --odkryj-p:#3B6285; --odwaga-p:#9C3B22; --naprawa-p:#2C6B65;
   --r:4px; --r2:12px; --tr:.2s cubic-bezier(.4,0,.2,1);
   --serif:'Faustina',Georgia,'Times New Roman',serif;
   --sans:'Karla','Helvetica Neue',Arial,sans-serif;
@@ -164,6 +164,8 @@ header .shell{display:flex;align-items:center;gap:16px;height:56px}
 .cat.wide{grid-column:1/-1}
 .cat.risk i{background:linear-gradient(180deg,var(--poznaj),var(--zbliz) 40%,var(--odkryj) 70%,var(--odwaga))}
 .cat.risk .cn{color:var(--t0)}
+.cat.off{opacity:.42;cursor:not-allowed}
+.cat.off:hover{background:rgba(21,48,57,.5);border-color:var(--line);transform:none}
 
 /* ── PRZYCISKI ── */
 .acts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;width:100%;max-width:600px}
@@ -307,6 +309,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--t3);font
     <div class="wordmark"><span></span>Most Bliskości</div>
     <div class="hgap"></div>
     <button class="tbtn" id="btnRules">Zasady</button>
+    <button class="tbtn hide" id="btnStop">Kończymy na dziś</button>
     <button class="tbtn hide" id="btnReset">Od nowa</button>
   </div>
 </header>
@@ -316,12 +319,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--t3);font
   <div class="hero">
     <h1>Most Bliskości<span>Nie chodzi o to, żeby znać wszystkie odpowiedzi.</span></h1>
     <p class="lede">Gra dla dwojga, w której nie rywalizujecie ze sobą, tylko budujecie coś razem.
-      Dziesięć elementów Mostu, sto pięćdziesiąt pytań, karty sytuacji z codziennego życia
+      Dziesięć elementów Mostu, sto osiemdziesiąt siedem pytań, osiemnaście scen z codziennego życia
       i trzy żetony odwagi na osobę. Wygrywacie razem albo wcale.</p>
     <div class="meta">
       <div><b>2</b><span class="mono">graczy</span></div>
-      <div><b>150</b><span class="mono">kart rozmowy</span></div>
-      <div><b>10</b><span class="mono">elementów mostu</span></div>
+      <div><b>187</b><span class="mono">kart rozmowy</span></div>
+      <div><b>18</b><span class="mono">kart sytuacji</span></div>
       <div><b>30–60</b><span class="mono">minut</span></div>
       <div><b>18+</b><span class="mono">wiek</span></div>
     </div>
@@ -440,7 +443,8 @@ footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--t3);font
 
     <section>
       <h4>Czy mnie znasz?</h4>
-      <p>Partner najpierw przewiduje Twoją odpowiedź, dopiero potem odpowiadasz naprawdę. Trafienie daje bonus.
+      <p>To jeden z filarów gry, więc pojawia się często — im głębszy tryb, tym częściej.
+        Partner najpierw przewiduje Twoją odpowiedź, dopiero potem odpowiadasz naprawdę. Trafienie daje bonus.
         Nietrafiona odpowiedź nie jest porażką — jest odkryciem. Mówisz wtedy tylko: <em>„Teraz już wiesz.”</em></p>
     </section>
 
@@ -456,6 +460,28 @@ footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--t3);font
       <p>Nagroda nie jest karą dla przegranego — to przywilej dla zwycięzcy. Jeśli karta nie pasuje do Waszej
         sytuacji, odrzućcie ją i dobierzcie inną. Nagrody mają być lekkie i możliwe do wykonania,
         a nie źródłem prawdziwego konfliktu.</p>
+    </section>
+
+    <section>
+      <h4>Pięć kategorii</h4>
+      <p><b>Poznaj</b> i <b>Zbliż się</b> to lekki początek: ciekawość, wspomnienia, wdzięczność.
+        <b>Naprawa</b> dotyczy tego, co dzieje się między Wami w kłótni i po niej — eskalacji, przerwy,
+        przeprosin i powrotu. <b>Odkryj</b> to emocje, potrzeby i wzorce, także te wyniesione
+        z wcześniejszych relacji. <b>Odwaga</b> to granice, lęki i wrażliwość.</p>
+      <p>Naprawa nie jest „trudniejsza” od Odkryj — to osobna oś. Możecie po nią sięgnąć zawsze,
+        także wtedy, gdy potrzebujecie zejść z wysokiego poziomu podatności.</p>
+    </section>
+
+    <section>
+      <h4>Bezpieczniki na poziomie Odwaga</h4>
+      <ul>
+        <li>Przed pierwszą kartą Odwagi umawiacie się na trzy zasady: wolno powiedzieć pas,
+          to co padnie nie wraca w kłótni, „stop” kończy rozmowę bez negocjacji.</li>
+        <li>Po każdej karcie Odwagi jest <b>domknięcie</b> — trzy krótkie kroki, zanim dołożycie element Mostu.
+          Nie pomijajcie ich: odsłonięcie się bez odpowiedzi drugiej strony zostawia gorszy ślad niż milczenie.</li>
+        <li>Dwie karty Odwagi z rzędu to maksimum. Potem gra sama proponuje oddech.</li>
+        <li>W każdej chwili możecie kliknąć <b>Kończymy na dziś</b>. Gra zapisze most tam, gdzie go zostawiacie.</li>
+      </ul>
     </section>
 
     <section>
@@ -477,7 +503,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--t3);font
 <script>
 'use strict';
 
-/* ═══════════════ TALIA · 150 KART ROZMOWY ═══════════════ */
+/* ═══════════════ TALIA · 187 KART ROZMOWY ═══════════════ */
 
 const DECK = {
   poznaj: [
@@ -584,7 +610,13 @@ const DECK = {
     'Jak wygląda dla Ciebie zdrowa granica między wspólnym życiem a własną przestrzenią?',
     'Co Twoim zdaniem najbardziej wzmacnia zaufanie między dwojgiem ludzi?',
     'Jaka rzecz w naszej relacji wymaga od Ciebie najwięcej świadomego wysiłku?',
-    'Gdybyś mógł/mogła poprawić jedną rzecz w sposobie, w jaki się komunikujemy, co byś wybrał/a?'
+    'Gdybyś mógł/mogła poprawić jedną rzecz w sposobie, w jaki się komunikujemy, co byś wybrał/a?',
+    'Czego nauczyły Cię Twoje wcześniejsze relacje o tym, czego naprawdę potrzebujesz?',
+    'Jaka zasada, którą wyniosłeś/aś z przeszłości, okazała się przy mnie niepotrzebna?',
+    'Co robiłeś/aś we wcześniejszych relacjach, czego nie chcesz już powtarzać?',
+    'Jaka Twoja reakcja bywa odpowiedzią na coś, co wydarzyło się dawno temu, a nie na to, co robię ja?',
+    'Co w byciu w związku wydawało Ci się oczywiste, zanim mnie poznałeś/aś — i przestało być?',
+    'Czego nauczyła Cię relacja, która się nie udała?'
   ],
   odwaga: [
     'Najbardziej bezbronny/a czuję się w momentach, kiedy…',
@@ -636,16 +668,51 @@ const DECK = {
     'Jakiej części siebie najbardziej potrzebujesz ode mnie nie naprawiać, tylko zaakceptować?',
     'Jeśli kiedyś przejdziemy przez bardzo trudny okres, co chciałbyś/chciałabyś, żebyśmy sobie wtedy przypomnieli?',
     'Gdybyś miał/a powiedzieć mi jedną rzecz, której nigdy nie chcesz, żebym przestał/a robić, co by to było?',
-    'Gdybyś mógł/mogła powiedzieć mi teraz jedną rzecz całkowicie szczerze — bez strachu przed oceną, złością ani konsekwencjami — co chciałbyś/chciałabyś, żebym usłyszał/a?'
+    'Gdybyś mógł/mogła powiedzieć mi teraz jedną rzecz całkowicie szczerze — bez strachu przed oceną, złością ani konsekwencjami — co chciałbyś/chciałabyś, żebym usłyszał/a?',
+    'Jaki lęk z wcześniejszej relacji czasem jeszcze odzywa się przy mnie?',
+    'Czy jest coś, przed czym się przy mnie chronisz, chociaż to nie ja Cię zraniłem/am?',
+    'Jaka rana z przeszłości sprawia, że pewne rzeczy trudno Ci ode mnie przyjąć?',
+    'Co mogę robić, żeby stary schemat z Twojej przeszłości nie powtórzył się między nami?',
+    'Czego nie chcesz, żebym nigdy Ci nie zrobił/a, bo ktoś kiedyś już to zrobił?',
+    'Jaką część siebie schowałeś/aś w poprzedniej relacji i dopiero przy mnie zaczęła wracać?'
+  ],
+  naprawa: [
+    'Po czym poznajesz, że nasza rozmowa właśnie zaczyna zmieniać się w kłótnię?',
+    'Co dzieje się w Twoim ciele w pierwszych sekundach kłótni?',
+    'Jaki jest Twój pierwszy odruch, kiedy czujesz się zaatakowany/a: bronić się, atakować, wycofać czy załagodzić?',
+    'Ile czasu potrzebujesz po kłótni, zanim jesteś gotowy/a wrócić do rozmowy?',
+    'Jakiego znaku ode mnie potrzebujesz, żeby wiedzieć, że przerwa nie jest karą ani wycofaniem się?',
+    'Co mówię w kłótni, co najszybciej Cię zamyka?',
+    'Co mówię w kłótni, co naprawdę pomaga Ci się uspokoić?',
+    'Umówcie się teraz na jedno zdanie, które będzie oznaczać: „Potrzebuję przerwy i wrócę do tej rozmowy”.',
+    'Jak myślisz, która Twoja reakcja w kłótni rani mnie najbardziej?',
+    'Co jest dla Ciebie prawdziwym przeproszeniem, a co brzmi tylko jak formalność?',
+    'Co przychodzi Ci łatwiej: przeprosić czy przyjąć przeprosiny?',
+    'Jak wygląda Twoje „już mi przeszło”? Po czym mam to poznać?',
+    'Kiedy ostatnio pokłóciliśmy się o coś, co tak naprawdę nie było tematem tej kłótni?',
+    'Która nasza kłótnia wraca w kółko, tylko w innych przebraniach?',
+    'Jaka jest Twoja część w tym powtarzającym się schemacie?',
+    'Czego potrzebujesz najbardziej w pierwszych pięciu minutach po kłótni?',
+    'Co pomaga Ci uwierzyć, że jesteśmy po tej samej stronie, nawet kiedy się nie zgadzamy?',
+    'Jak w Twoim domu rodzinnym kończyły się kłótnie?',
+    'Czego nauczyłeś/aś się o kłótniach od rodziców — i co chcesz robić inaczej?',
+    'Kiedy milkniesz w kłótni, co się wtedy w Tobie naprawdę dzieje?',
+    'Co robisz, kiedy chcesz naprawić sytuację, ale nie wiesz jak?',
+    'Co po kłótni działa na Ciebie najlepiej: dotyk, słowa, czas czy zwykła obecność obok?',
+    'O co nigdy się nie kłócimy, a może powinniśmy?',
+    'Co zrobił(a)byś inaczej, gdybyś mógł/mogła powtórzyć naszą ostatnią kłótnię?',
+    'Jakie jedno zdanie chciałbyś/chciałabyś usłyszeć ode mnie, kiedy zrobię Ci przykrość?'
   ]
 };
 
 const CATS = {
-  poznaj: {name:'Poznaj',    desc:'lekko, ciepło i z ciekawością',   level:1},
-  zbliz:  {name:'Zbliż się', desc:'wdzięczność, docenianie, potrzeby', level:1},
-  odkryj: {name:'Odkryj',    desc:'emocje, charakter, doświadczenia', level:2},
-  odwaga: {name:'Odwaga',    desc:'granice, zaufanie, wrażliwość',    level:3}
+  poznaj:  {name:'Poznaj',    desc:'lekko, ciepło i z ciekawością',    level:1},
+  zbliz:   {name:'Zbliż się', desc:'wdzięczność, docenianie, potrzeby', level:1},
+  naprawa: {name:'Naprawa',   desc:'kłótnie, przerwa, powrót do siebie', level:2},
+  odkryj:  {name:'Odkryj',    desc:'emocje, potrzeby, wzorce',          level:2},
+  odwaga:  {name:'Odwaga',    desc:'granice, zaufanie, wrażliwość',     level:3}
 };
+/* Drabina głębokości — Naprawa jest osobną osią, nie kolejnym stopniem podatności. */
 const ORDER = ['poznaj','zbliz','odkryj','odwaga'];
 
 /* ═══════════════ KARTY SYTUACJI ═══════════════ */
@@ -706,6 +773,36 @@ const SITUATIONS = [
     m:'Jak myślisz, czego druga osoba chce teraz bardziej: przestrzeni czy zbliżenia?',
     r:'Czego Ty naprawdę potrzebujesz godzinę po kłótni?',
     k:'Umówcie się na jedno słowo, które znaczy: „Potrzebuję przerwy, ale nie odchodzę od Ciebie”.' },
+  { t:'Podniesiony głos',
+    s:'W kłótni podnoszę głos. Nie krzyczę, ale słychać, że jestem wściekły/a.\nWidzę, jak na sekundę się cofasz.',
+    m:'Jak myślisz, co dzieje się w drugiej osobie w tej jednej sekundzie?',
+    r:'Co naprawdę dzieje się w Tobie, kiedy ktoś podnosi na Ciebie głos?',
+    k:'Ciało reaguje na ton szybciej niż na treść. Zanim wrócicie do argumentów, wróćcie do głośności.' },
+  { t:'Wyjście z pokoju',
+    s:'W środku kłótni wstaję i wychodzę z pokoju. Nic nie mówię.\nDrzwi zostają uchylone.',
+    m:'Jak myślisz, co druga osoba usłyszała w tym wyjściu: „uciekam” czy „potrzebuję chwili”?',
+    r:'Co naprawdę znaczy Twoje wyjście — i czego wtedy najbardziej potrzebujesz?',
+    k:'Przerwa działa tylko wtedy, kiedy jest zapowiedziana. Wyjście bez słowa czyta się jako porzucenie.' },
+  { t:'Zapomniałem/am',
+    s:'Zapomniałem/am o czymś, co było dla Ciebie ważne. Przypominam sobie dzień później.\nMówię: „przepraszam, miałem/am urwanie głowy”.',
+    m:'Jak myślisz, co jest dla drugiej osoby trudniejsze: samo zapomnienie czy to zdanie po nim?',
+    r:'Czego naprawdę potrzebujesz usłyszeć, kiedy ktoś o Tobie zapomni?',
+    k:'Przeprosiny, które zaczynają się od wyjaśnienia, brzmią jak obrona. Najpierw skutek, dopiero potem powód.' },
+  { t:'Zdanie o przeszłości',
+    s:'W rozmowie ze znajomymi wspominam coś z czasów sprzed nas. Mimochodem, bez złych intencji.\nRobi się cicho.',
+    m:'Jak myślisz, co poczuła druga osoba w tej ciszy?',
+    r:'Co Ty naprawdę czujesz, kiedy pojawia się temat wcześniejszych relacji?',
+    k:'Przeszłość rzadko jest zagrożeniem sama w sobie. Zagrożeniem bywa to, że nie wiadomo, gdzie się kończy.' },
+  { t:'Przeczytane',
+    s:'Piszę do Ciebie w środku dnia coś dla mnie ważnego. Widzę, że przeczytałeś/aś.\nMijają godziny bez odpowiedzi.',
+    m:'Jak myślisz, jaką historię układa sobie w głowie druga osoba przez te godziny?',
+    r:'Co naprawdę dzieje się z Tobą, kiedy nie dostajesz odpowiedzi?',
+    k:'W ciszy każdy dopisuje własną wersję. Zwykle gorszą od prawdziwej.' },
+  { t:'Rano po kłótni',
+    s:'Kłótnia skończyła się wczoraj i nikt do niej nie wrócił.\nRano zachowuję się zupełnie normalnie, jakby nic się nie stało.',
+    m:'Jak myślisz, czy dla drugiej osoby to ulga, czy sprawa niedokończona?',
+    r:'Tobie wystarcza, że wróciła normalność — czy potrzebujesz to jeszcze nazwać?',
+    k:'Dla jednej osoby cisza jest zakończeniem, dla drugiej odroczeniem. Warto wiedzieć, kto jest kim.' },
   { t:'Wolna sobota',
     s:'Mamy całą sobotę wolną, bez żadnych planów.\nJa mam w głowie listę rzeczy do zrobienia.\nTy chcesz nie robić nic.',
     m:'Jak myślisz, jak druga osoba wyobraża sobie idealną wersję tego dnia?',
@@ -768,16 +865,16 @@ const STAGES = ['Zaciekawienie','Śmiech','Docenienie','Wspomnienie','Odkrycie',
 const MODES = {
   pierwsze: {n:'Pierwsze spotkanie', m:'20–30 minut',
     t:'Tylko Poznaj i Zbliż się, lekkie karty akcji. Dla nowych par albo spokojnego wieczoru.',
-    cats:['poznaj','zbliz'], sit:.10, act:.18, gold:3},
+    cats:['poznaj','zbliz'], sit:.12, act:.18, know:.20, gold:3},
   wieczor:  {n:'Nasz wieczór', m:'30–60 minut',
-    t:'Wszystkie cztery kategorie, karty sytuacji i pełna mechanika. Podstawowy tryb gry.',
-    cats:['poznaj','zbliz','odkryj','odwaga'], sit:.18, act:.25, gold:6},
+    t:'Wszystkie kategorie razem z Naprawą, karty sytuacji i pełna mechanika. Podstawowy tryb gry.',
+    cats:['poznaj','zbliz','naprawa','odkryj','odwaga'], sit:.22, act:.25, know:.30, gold:6},
   bezfiltra:{n:'Bez filtra', m:'45–90 minut',
-    t:'Więcej Odwagi, więcej sytuacji, więcej „Czy mnie znasz?”. Dla par, które chcą wejść naprawdę głęboko.',
-    cats:['poznaj','zbliz','odkryj','odwaga'], sit:.26, act:.32, gold:6, deep:true},
+    t:'Więcej Odwagi, więcej sytuacji, dużo częstsze „Czy mnie znasz?”. Dla par, które chcą wejść naprawdę głęboko.',
+    cats:['poznaj','zbliz','naprawa','odkryj','odwaga'], sit:.28, act:.30, know:.42, gold:6, deep:true},
   dzien:    {n:'Jedna karta dziennie', m:'30 dni',
     t:'Nie musicie budować całego Mostu jednego wieczoru. Jedna karta dziennie przez miesiąc.',
-    cats:['poznaj','zbliz','odkryj','odwaga'], sit:.12, act:.15, gold:0, daily:true}
+    cats:['poznaj','zbliz','naprawa','odkryj','odwaga'], sit:.15, act:.15, know:.25, gold:0, daily:true}
 };
 </script>
 
@@ -801,10 +898,11 @@ function freshState(mode, names){
   return {
     v:1, mode, names,
     turn:0, bridge:0, drawn:0, tokens:[3,3], privs:[[],[]],
-    used:{poznaj:[], zbliz:[], odkryj:[], odwaga:[]},
+    used:{poznaj:[], zbliz:[], naprawa:[], odkryj:[], odwaga:[]},
     usedSit:[], usedGold:[], usedPriv:[],
     goldAt:slots, challengeAt: cfg.daily ? [] : [4,8],
     phase:'choose', card:null, pend:{}, reaction:null,
+    odwagaStreak:0, consent:false, knowStat:[{h:0, m:0}, {h:0, m:0}],
     daily:{day:0, last:null, card:null}
   };
 }
@@ -853,14 +951,19 @@ function deeper(cat){
   for (let j = i + 1; j < ORDER.length; j++) if (allowed.includes(ORDER[j])) return ORDER[j];
   return cat;
 }
+const ODWAGA_LIMIT = 2;
+const odwagaLocked = () => S.odwagaStreak >= ODWAGA_LIMIT;
+
 function riskCategory(){
-  const cats = MODES[S.mode].cats;
+  const deep = MODES[S.mode].deep;
   const pool = [];
-  cats.forEach(c => {
-    const w = MODES[S.mode].deep ? {poznaj:1, zbliz:2, odkryj:3, odwaga:4}[c] : {poznaj:2, zbliz:2, odkryj:2, odwaga:1}[c];
+  MODES[S.mode].cats.forEach(c => {
+    if (c === 'odwaga' && odwagaLocked()) return;
+    const w = deep ? {poznaj:1, zbliz:2, naprawa:3, odkryj:3, odwaga:4}[c]
+                   : {poznaj:2, zbliz:2, naprawa:2, odkryj:2, odwaga:1}[c];
     for (let k = 0; k < w; k++) pool.push(c);
   });
-  return rnd(pool);
+  return pool.length ? rnd(pool) : 'zbliz';
 }
 function maybeAction(){
   if (Math.random() > MODES[S.mode].act) return null;
@@ -981,6 +1084,7 @@ function render(){
   st.innerHTML = S.phase === 'choose' ? viewChoose()
                : S.phase === 'card'   ? viewCard()
                : S.phase === 'react'  ? viewReact()
+               : S.phase === 'close'  ? viewClose()
                : viewEarn();
   bind();
   save();
@@ -990,7 +1094,8 @@ function viewChoose(){
   const p = S.pend;
   const chooser = p.partnerPicks ? partnerName() : activeName();
   const cats = MODES[S.mode].cats;
-  const note = p.deeper ? 'Żeton wydany: dobierzesz kartę z trudniejszej kategorii.'
+  const note = odwagaLocked() ? 'Dwie karty Odwagi z rzędu wystarczą. Naprawa albo Zbliż się pozwolą Wam złapać oddech.'
+             : p.deeper ? 'Żeton wydany: dobierzesz kartę z trudniejszej kategorii.'
              : p.know   ? 'Żeton wydany: partner najpierw przewidzi Twoją odpowiedź.'
              : p.partnerPicks ? `${partnerName()} wybiera kategorię za ${activeName()}.`
              : 'Możesz też zaryzykować i pozwolić, żeby karta wybrała się sama.';
@@ -1000,9 +1105,13 @@ function viewChoose(){
       <p>${esc(note)}</p>
     </div>
     <div class="choices">
-      ${cats.map(c => `<button class="cat" data-cat="${c}" style="${accentVars(c)}">
-          <i></i><span><span class="cn">${esc(CATS[c].name)}</span><br><span class="cd">${esc(CATS[c].desc)}</span></span>
-        </button>`).join('')}
+      ${cats.map(c => {
+        const off = c === 'odwaga' && odwagaLocked();
+        return `<button class="cat${off ? ' off' : ''}" ${off ? 'disabled' : ''} data-cat="${c}" style="${accentVars(c)}">
+          <i></i><span><span class="cn">${esc(CATS[c].name)}</span><br><span class="cd">${
+            off ? 'weźcie oddech — wróćcie tu za turę' : esc(CATS[c].desc)}</span></span>
+        </button>`;
+      }).join('')}
       ${MODES[S.mode].sit > 0 ? `<button class="cat" data-sit="1" style="--acc:var(--gold);--acc-p:var(--gold)">
           <i></i><span><span class="cn" style="color:var(--gold)">Sytuacja</span><br><span class="cd">scena z codziennego życia</span></span>
         </button>` : ''}
@@ -1104,12 +1213,37 @@ function viewReact(){
   return `
     <div class="prompt">
       <h2>${esc(partnerName())}: ${esc(q)}</h2>
-      <p>Zostańcie w tym zdaniu przez chwilę. Potem dołóżcie element Mostu.</p>
+      <p>Zostańcie w tym zdaniu przez chwilę.</p>
     </div>
     ${cardHTML(S.card)}
     <div class="acts">
-      <button class="btn gold" data-earn="1">Zdobądźcie element Mostu</button>
-      <button class="btn" data-earn="skip">Ta tura nie zamyka elementu</button>
+      ${needsClose()
+        ? `<button class="btn gold" data-close="1">Domknijcie tę kartę</button>`
+        : `<button class="btn gold" data-earn="1">Zdobądźcie element Mostu</button>
+           <button class="btn" data-earn="skip">Ta tura nie zamyka elementu</button>`}
+    </div>
+    ${railHTML(5)}`;
+}
+
+/* Po karcie Odwagi rozmowa nie kończy się samym pytaniem — najpierw domknięcie. */
+const needsClose = () => S.card && S.card.kind === 'q' && S.card.cat === 'odwaga';
+
+function viewClose(){
+  return `
+    <div class="prompt">
+      <h2>Domknięcie</h2>
+      <p>Po trudnej karcie ważniejsze od komentarza jest to, żeby druga osoba poczuła,
+         że nic złego się nie stało. Zróbcie te trzy rzeczy, zanim pójdziecie dalej.</p>
+    </div>
+    <div class="note" style="max-width:600px">
+      <span class="mono">Trzy kroki</span>
+      <p><strong>${esc(partnerName())}</strong> — powiedz jednym zdaniem, co usłyszałeś/aś. Bez rady, bez oceny, bez „ale”.</p>
+      <p><strong>${esc(activeName())}</strong> — powiedz, czego teraz potrzebujesz: chwili ciszy, przytulenia czy zwyczajnej zmiany tematu.</p>
+      <p><strong>Oboje</strong> — jedno słowo, jak się teraz czujecie. Tyle wystarczy.</p>
+    </div>
+    <div class="acts">
+      <button class="btn gold" data-earn="1">Domknięte · dołóżcie element Mostu</button>
+      <button class="btn ghost" data-stop="1">Kończymy na dziś</button>
     </div>
     ${railHTML(5)}`;
 }
@@ -1136,12 +1270,15 @@ function bind(){
   const an = $('[data-answered]'); if (an) an.onclick = () => { S.phase = 'react'; S.reaction = null; render(); };
   const ps = $('[data-pass]'); if (ps) ps.onclick = passCard;
   document.querySelectorAll('[data-react]').forEach(b => b.onclick = () => { S.reaction = +b.dataset.react; render(); });
+  const cl = $('[data-close]'); if (cl) cl.onclick = () => { S.phase = 'close'; render(); };
+  const st = $('[data-stop]'); if (st) st.onclick = () => finish('today');
   document.querySelectorAll('[data-earn]').forEach(b => b.onclick = () => earn(b.dataset.earn !== 'skip'));
   const nx = $('[data-next]'); if (nx) nx.onclick = nextTurn;
 }
 
 function pickCategory(cat, fromRisk){
   if (S.pend.deeper){ cat = deeper(cat); S.pend.deeper = false; }
+  if (cat === 'odwaga' && !S.consent){ openConsent(fromRisk ? null : cat); return; }
   const c = drawQuestion(cat);
   c.viaRisk = !!fromRisk;
   startCard(c);
@@ -1152,9 +1289,10 @@ function startCard(c){
   S.reaction = null;
   const keepKnow = S.pend.know;
   S.pend = {know:keepKnow, knowStep: keepKnow ? 'predict' : null};
-  if (!keepKnow && c.kind === 'q' && MODES[S.mode].deep && Math.random() < .18){
+  if (!keepKnow && c.kind === 'q' && Math.random() < (MODES[S.mode].know || 0)){
     S.pend.know = true; S.pend.knowStep = 'predict';
   }
+  S.odwagaStreak = (c.kind === 'q' && c.cat === 'odwaga') ? S.odwagaStreak + 1 : 0;
   const a = maybeAction();
   if (a){
     if (a.know && !S.pend.know){ S.pend.know = true; S.pend.knowStep = 'predict'; }
@@ -1181,6 +1319,8 @@ function knowStep(k){
   if (k === 'answer'){ S.pend.knowStep = 'judge'; render(); return; }
   S.pend.knowStep = 'done';
   S.pend.knowHit = (k === 'hit');
+  const stat = S.knowStat && S.knowStat[other(S.turn)];
+  if (stat) stat[k === 'hit' ? 'h' : 'm']++;
   if (k === 'hit'){
     const p = drawPrivilege();
     S.privs[other(S.turn)].push(p.n);
@@ -1204,7 +1344,7 @@ function earn(yes){
   S.bridge = Math.min(10, S.bridge + 1);
   S.phase = 'earn';
   render();
-  if (S.bridge >= 10){ setTimeout(() => finish(), 700); return; }
+  if (S.bridge >= 10){ setTimeout(() => finish('bridge'), 700); return; }
   if (S.goldAt.includes(S.bridge)){
     S.goldAt = S.goldAt.filter(x => x !== S.bridge);
     setTimeout(openGolden, 600);
@@ -1296,6 +1436,26 @@ function openGolden(){
   runRing(o, 60, reveal);
   o.querySelector('[data-skip]').onclick = () => { if (ovTimer){ clearInterval(ovTimer); ovTimer = null; } reveal(); };
 }
+function openConsent(cat){
+  const o = openOv(`
+    <div class="kicker">Poziom Odwaga</div>
+    <h3>Wchodzicie głębiej</h3>
+    <p>Karty Odwagi dotykają lęków, granic i ran. Zanim je odsłonicie, umówcie się na trzy rzeczy:</p>
+    <div class="note" style="text-align:left;max-width:460px">
+      <p>Wolno powiedzieć <em>pas</em> — bez tłumaczenia i bez pytania „dlaczego”.</p>
+      <p>To, co tu padnie, nie wraca później w kłótni. Nigdy.</p>
+      <p>Kiedy któreś z Was powie „stop”, kończycie — bez negocjowania.</p>
+    </div>
+    <div class="acts" style="justify-content:center">
+      <button class="btn gold" data-yes="1">Umawiamy się</button>
+      <button class="btn" data-no="1">Jeszcze nie teraz</button>
+    </div>`);
+  o.querySelector('[data-yes]').onclick = () => {
+    S.consent = true; closeOv(); pickCategory(cat || 'odwaga', !cat);
+  };
+  o.querySelector('[data-no]').onclick = () => { closeOv(); render(); };
+}
+
 function openChallenge(){
   const prize = drawPrivilege();
   const cat = rnd(MODES[S.mode].cats);
@@ -1384,16 +1544,22 @@ function renderDaily(){
 }
 
 /* ═══════════════ FINAŁ ═══════════════ */
-function finish(){
+function finish(reason){
   closeOv();
   show('final');
+  const today = reason === 'today';
   const [a, b] = S.names;
+  const kn = i => {
+    const k = (S.knowStat && S.knowStat[i]) || {h:0, m:0};
+    return k.h + k.m ? `${k.h} / ${k.h + k.m}` : '—';
+  };
   $('#finalBody').innerHTML = `
     <div class="prompt">
-      <div class="mono" style="margin-bottom:10px">Most jest gotowy</div>
+      <div class="mono" style="margin-bottom:10px">${today ? 'Kończycie na dziś' : 'Most jest gotowy'}</div>
       <h2 style="font-size:clamp(30px,6vw,52px)">Co zabieramy ze sobą?</h2>
-      <p>Nie dobieracie już kolejnej karty. Każde z Was kończy jedno zdanie —
-         a potem przez chwilę po prostu patrzycie na gotowy Most.</p>
+      <p>${today
+        ? 'Przerwanie w dobrym momencie jest częścią gry, nie porażką. Zanim wstaniecie od stołu, dokończcie jeszcze jedno zdanie — most poczeka w tym miejscu, w którym go zostawiacie.'
+        : 'Nie dobieracie już kolejnej karty. Każde z Was kończy jedno zdanie — a potem przez chwilę po prostu patrzycie na gotowy Most.'}</p>
     </div>
     <div class="takeaway">
       <span class="mono">${esc(a)}</span>
@@ -1406,8 +1572,12 @@ function finish(){
         „Jedną rzeczą z tej gry, którą chciał(a)bym zabrać do naszego codziennego życia, jest…”</span>
     </div>
     <div class="summary">
-      <div><span class="mono">Elementy mostu</span><b>10 / 10</b></div>
+      <div><span class="mono">Elementy mostu</span><b>${S.bridge} / 10</b></div>
       <div><span class="mono">Dobrane karty</span><b>${S.drawn}</b></div>
+      <div><span class="mono">Trafienia · ${esc(a)}</span><b>${kn(0)}</b>
+        <span style="font-size:12.5px;color:var(--t2)">przewidzianych odpowiedzi</span></div>
+      <div><span class="mono">Trafienia · ${esc(b)}</span><b>${kn(1)}</b>
+        <span style="font-size:12.5px;color:var(--t2)">przewidzianych odpowiedzi</span></div>
       <div><span class="mono">Przywileje · ${esc(a)}</span><b>${S.privs[0].length}</b>
         <span style="font-size:12.5px;color:var(--t2)">${esc(S.privs[0].join(' · ')) || '—'}</span></div>
       <div><span class="mono">Przywileje · ${esc(b)}</span><b>${S.privs[1].length}</b>
@@ -1417,9 +1587,12 @@ function finish(){
     <p style="font-family:var(--serif);font-size:22px;font-style:italic;max-width:34ch;color:var(--gold)">
       Wygrywacie razem.</p>
     <div class="acts" style="justify-content:center">
-      <button class="btn gold" id="btnAgain">Zagrajcie jeszcze raz</button>
+      ${today ? '<button class="btn gold" id="btnBack">Wróćcie do stołu</button>' : ''}
+      <button class="btn${today ? '' : ' gold'}" id="btnAgain">Zagrajcie jeszcze raz</button>
     </div>`;
   $('#btnAgain').onclick = () => { wipe(); S = null; boot(); };
+  const back = $('#btnBack');
+  if (back) back.onclick = () => { S.phase = 'choose'; S.card = null; S.reaction = null; S.pend = {}; render(); };
   save();
 }
 
@@ -1427,6 +1600,7 @@ function finish(){
 function show(id){
   ['setup','game','daily','final'].forEach(k => $('#' + k).classList.toggle('hide', k !== id));
   $('#btnReset').classList.toggle('hide', id === 'setup');
+  $('#btnStop').classList.toggle('hide', id !== 'game');
   window.scrollTo({top:0, behavior:'smooth'});
 }
 
@@ -1472,6 +1646,7 @@ $('#btnStart').onclick = startGame;
 $('#btnRules').onclick = () => $('#rules').classList.remove('hide');
 $('#btnRulesClose').onclick = () => $('#rules').classList.add('hide');
 $('#rules').onclick = e => { if (e.target.id === 'rules') $('#rules').classList.add('hide'); };
+$('#btnStop').onclick = () => finish('today');
 $('#btnReset').onclick = () => {
   if (confirm('Zakończyć tę rozgrywkę i wrócić do ekranu startowego? Postęp Mostu zostanie skasowany.')){
     wipe(); S = null; boot();
