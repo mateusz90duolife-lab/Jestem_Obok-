@@ -1,0 +1,44 @@
+{
+  "note": "Font contract. 'required' is what the design system is specified against. 'substitution' is the explicitly declared fallback profile; it is never applied silently - every artifact records that it was used.",
+  "directory": "assets/fonts",
+  "required": {
+    "display": {
+      "family": "Cormorant Garamond",
+      "faces": {
+        "500":  { "file": "CormorantGaramond-Medium.ttf" },
+        "600":  { "file": "CormorantGaramond-SemiBold.ttf" },
+        "400i": { "file": "CormorantGaramond-Italic.ttf" }
+      }
+    },
+    "ui": {
+      "family": "Manrope",
+      "faces": {
+        "400": { "file": "Manrope-Regular.ttf" },
+        "500": { "file": "Manrope-Medium.ttf" },
+        "600": { "file": "Manrope-SemiBold.ttf" }
+      }
+    }
+  },
+  "substitution": {
+    "allowed": true,
+    "reason": "Cormorant Garamond and Manrope are unobtainable in this environment: the egress proxy denies fonts.googleapis.com and the npm registry, so neither the font files nor a font package can be fetched.",
+    "display": {
+      "family": "Instrument Serif",
+      "licence": "OFL-1.1",
+      "faces": {
+        "500":  { "file": "InstrumentSerif-Regular.ttf", "renderWeight": 400, "lossy": true, "note": "Instrument Serif has no Medium; resolves to Regular." },
+        "600":  { "file": "InstrumentSerif-Regular.ttf", "renderWeight": 400, "lossy": true, "note": "Instrument Serif has no SemiBold; resolves to Regular." },
+        "400i": { "file": "InstrumentSerif-Italic.ttf",  "renderWeight": 400, "lossy": false }
+      }
+    },
+    "ui": {
+      "family": "Instrument Sans",
+      "licence": "OFL-1.1",
+      "faces": {
+        "400": { "file": "InstrumentSans-Regular.ttf", "renderWeight": 400, "lossy": false },
+        "500": { "file": "InstrumentSans-Regular.ttf", "renderWeight": 400, "lossy": true, "note": "Instrument Sans has no Medium; resolves to Regular." },
+        "600": { "file": "InstrumentSans-Bold.ttf",    "renderWeight": 700, "lossy": true, "note": "Instrument Sans has no SemiBold; resolves to Bold." }
+      }
+    }
+  }
+}

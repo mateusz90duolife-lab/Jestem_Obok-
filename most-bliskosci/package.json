@@ -1,0 +1,20 @@
+{
+  "name": "most-bliskosci",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MOST BLISKOSCI - premium 77-card conversation deck: design system, generator, prepress and visual QA pipeline.",
+  "type": "module",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "audit": "node src/cli.ts audit",
+    "generate": "node src/cli.ts generate",
+    "render": "node src/cli.ts render",
+    "validate": "node src/cli.ts validate",
+    "qa": "node src/cli.ts qa",
+    "proof": "node src/cli.ts proof",
+    "contact-sheet": "node src/cli.ts contact-sheet",
+    "inspect": "node src/cli.ts inspect",
+    "test": "node --test test/",
+    "build": "node src/cli.ts build"
+  }
+}

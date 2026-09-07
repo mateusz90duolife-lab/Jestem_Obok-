@@ -1,0 +1,114 @@
+{
+  "$schema": "./src/tokens.schema.md",
+  "designVersion": "1.0.0",
+  "meta": {
+    "deck": "MOST BLISKOSCI",
+    "colorSpace": "sRGB",
+    "note": "RGB is the working space. Final CMYK conversion happens at print-prep against the printer's ICC profile."
+  },
+
+  "color": {
+    "core": {
+      "ivory100":  { "value": "#F7F3EC", "role": "primary card background" },
+      "ivory200":  { "value": "#EDE6DA", "role": "alternate background" },
+      "ink":       { "value": "#211D1A", "role": "primary text" },
+      "wine":      { "value": "#672F3D", "role": "primary accent" },
+      "wineDark":  { "value": "#43202A", "role": "dark backgrounds" },
+      "champagne": { "value": "#B69A68", "role": "subtle premium detail" },
+      "white":     { "value": "#FFFDF9", "role": "text on dark" }
+    },
+    "levels": {
+      "01": { "name": "POZNAJ",      "color": "#A98272", "order": 1 },
+      "02": { "name": "ODKRYJ",      "color": "#8E6260", "order": 2 },
+      "03": { "name": "OTWORZ SIE",  "displayName": "OTWÓRZ SIĘ", "color": "#75464F", "order": 3 },
+      "04": { "name": "ZBLIZ SIE",   "displayName": "ZBLIŻ SIĘ",  "color": "#672F3D", "order": 4 },
+      "05": { "name": "WYBIERZ NAS", "color": "#43202A", "order": 5 }
+    }
+  },
+
+  "typography": {
+    "families": {
+      "display": { "spec": "Cormorant Garamond", "stack": ["Cormorant Garamond"] },
+      "ui":      { "spec": "Manrope",            "stack": ["Manrope"] }
+    },
+    "styles": {
+      "brandPrimary":   { "family": "display", "weight": 600, "sizePt": 30, "trackingEm": 0.02,  "lineHeightPt": 30 },
+      "brandSecondary": { "family": "display", "weight": 600, "sizePt": 13, "trackingEm": 0.30,  "lineHeightPt": 13 },
+      "level":          { "family": "ui",      "weight": 600, "sizePt": 8,  "trackingEm": 0.12,  "lineHeightPt": 8 },
+      "question":       { "family": "ui",      "weight": 500, "sizePt": 16, "trackingEm": 0,     "lineHeightPt": 21 },
+      "number":         { "family": "ui",      "weight": 400, "sizePt": 7,  "trackingEm": 0.06,  "lineHeightPt": 7 },
+      "footerNumber":   { "family": "ui",      "weight": 400, "sizePt": 6,  "trackingEm": 0.10,  "lineHeightPt": 6 },
+      "situationLabel": { "family": "ui",      "weight": 600, "sizePt": 8,  "trackingEm": 0.16,  "lineHeightPt": 8 },
+      "situationTitle": { "family": "display", "weight": 600, "sizePt": 22, "trackingEm": 0.01,  "lineHeightPt": 26 },
+      "instruction":    { "family": "ui",      "weight": 400, "sizePt": 12, "trackingEm": 0,     "lineHeightPt": 17 },
+      "bridgeTitle":    { "family": "display", "weight": 600, "sizePt": 26, "trackingEm": 0.02,  "lineHeightPt": 28 },
+      "bridgeLevel":    { "family": "ui",      "weight": 600, "sizePt": 8,  "trackingEm": 0.16,  "lineHeightPt": 8 },
+      "bridgeCaption":  { "family": "ui",      "weight": 400, "sizePt": 11, "trackingEm": 0,     "lineHeightPt": 16 }
+    }
+  },
+
+  "geometry": {
+    "unit": "mm",
+    "trim":      { "width": 70, "height": 100 },
+    "bleedMm":   3,
+    "full":      { "width": 76, "height": 106 },
+    "cornerRadiusMm": 4,
+    "safeInsetFromTrimMm": 5,
+    "grid": { "baselineMm": 1, "columns": 12, "gutterMm": 2 }
+  },
+
+  "spacing": {
+    "base": 1,
+    "cardPaddingXMm": 8,
+    "cardPaddingTopMm": 8,
+    "cardPaddingBottomMm": 7,
+    "headerNumberBaselineMm": 15.4,
+    "headerLevelBaselineMm": 21.2,
+    "footerMarkCenterMm": 89.6,
+    "footerMarkWidthMm": 15,
+    "footerMarkStrokeMm": 0.2,
+    "footerNumberBaselineMm": 90.2,
+    "questionMeasurePreferredMm": 44,
+    "questionMeasureMaxMm": 50,
+
+    "bridgeMarkCenterMm": 45,
+    "bridgeMarkWidthMm": 40,
+    "bridgeMarkStrokeMm": 0.32,
+    "bridgeTitleBaselineMm": 60,
+    "bridgeLevelBaselineMm": 67.5,
+    "bridgeCaptionTopMm": 74,
+    "bridgeCaptionMeasureMm": 46,
+
+    "backLogoPrimaryBaselineMm": 46,
+    "backLogoSecondaryBaselineMm": 54.5,
+    "backMarkCenterMm": 64.5,
+    "backMarkWidthMm": 26,
+    "backMarkStrokeMm": 0.24,
+
+    "questionBlockTopMm": 26,
+    "questionBlockBottomMm": 80
+  },
+
+  "bridgeMark": {
+    "defaultWidthMm": 17,
+    "riseRatio": 0.125,
+    "gapRatio": 0.15,
+    "shoulderRatio": 0.25,
+    "deckRatio": 0.62,
+    "strokeWidthMm": 0.22
+  },
+
+  "effects": {
+    "note": "Print SVG carries no effects. The shadow token applies only to HTML/PNG presentation surfaces.",
+    "cardShadowScreenOnly": { "yPx": 2, "blurPx": 8, "opacity": 0.08, "color": "#211D1A" }
+  },
+
+  "autofit": {
+    "preferredFontSizePt": 16,
+    "minimumFontSizePt": 14,
+    "preferredLineHeightPt": 21,
+    "minimumLineHeightPt": 18,
+    "maximumLines": 6,
+    "maxRepairIterations": 10
+  }
+}
