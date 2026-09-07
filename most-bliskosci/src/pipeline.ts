@@ -3,6 +3,7 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { generate, cleanArtefacts, type GeneratedCard } from './build/generate.ts';
 import { rasterise } from './build/rasterise.ts';
+import { exportPrint } from './build/print.ts';
 import { loadDeck } from './content/load.ts';
 import { validateContent } from './content/validate.ts';
 import { resolveFonts } from './fonts/registry.ts';
@@ -121,7 +122,16 @@ export async function build(opts: BuildOptions = {}): Promise<BuildResult> {
     detail: `${overflowCount} kart z przepełnieniem`,
   });
 
-  // 4. Rasterise ---------------------------------------------------------
+  // 4. Print export ------------------------------------------------------
+  log(opts.quiet, 'print     : CARD / MASTER trim variant');
+  const printExport = exportPrint(cards);
+  stages.push({
+    name: 'print',
+    status: printExport.written === cards.length ? 'PASS' : 'FAIL',
+    detail: `bleed 76x106mm w front/ + back/, master 70x100mm w print/master-70x100/ (${printExport.written} plikow)`,
+  });
+
+  // 5. Rasterise ---------------------------------------------------------
   let raster = null as Awaited<ReturnType<typeof rasterise>> | null;
   if (opts.skipRender) {
     stages.push({ name: 'png', status: 'BLOCKED', detail: 'pominięto (--skip-render)' });
@@ -140,7 +150,7 @@ export async function build(opts: BuildOptions = {}): Promise<BuildResult> {
     });
   }
 
-  // 5. Pixel QA ----------------------------------------------------------
+  // 6. Pixel QA ----------------------------------------------------------
   const pixelByCard = new Map<string, { density: number; violations: string[] }>();
   let pixelStatus: StageStatus;
   if (raster && raster.status === 'PASS') {
@@ -166,7 +176,7 @@ export async function build(opts: BuildOptions = {}): Promise<BuildResult> {
   }
   stages.push(pixelStatus);
 
-  // 6. Diagnostics -------------------------------------------------------
+  // 7. Diagnostics -------------------------------------------------------
   const diagnostics: CardDiagnostics[] = cards.map((c) => {
     const safeViolations = safeAreaByCard.get(c.card.id) ?? [];
     const pixel = pixelByCard.get(c.card.id);
@@ -192,7 +202,7 @@ export async function build(opts: BuildOptions = {}): Promise<BuildResult> {
     };
   });
 
-  // 7. Sheets ------------------------------------------------------------
+  // 8. Sheets ------------------------------------------------------------
   let contactDetail = 'pominięto: brak PNG';
   let contactStatus: StageStatus['status'] = 'BLOCKED';
   const extremes = pickExtremes(diagnostics);
@@ -208,7 +218,7 @@ export async function build(opts: BuildOptions = {}): Promise<BuildResult> {
   }
   stages.push({ name: 'contact-sheet', status: contactStatus, detail: contactDetail });
 
-  // 8. Statistics and reports -------------------------------------------
+  // 9. Statistics and reports -------------------------------------------
   log(opts.quiet, 'report    : statistics, manifest, QA report');
   const cStats = contentStats();
   const dStats = designStats(diagnostics);
@@ -318,6 +328,8 @@ function writeManifest(
       contentStats: 'qa/content-stats.json',
       designStats: 'qa/design-stats.json',
       contentRevisions: 'qa/content-revisions.json',
+      printSpec: 'print/print-spec.json',
+      printMaster: 'print/master-70x100',
     },
   });
 }

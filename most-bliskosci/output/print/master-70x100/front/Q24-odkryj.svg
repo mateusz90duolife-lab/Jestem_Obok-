@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="70mm" height="100mm"
+     viewBox="3 3 70 100">
+  <title>MOST BLISKOSCI - Q24</title>
+  <desc>type=question id=Q24 level=02 design=1.0.0 fonts=SUBSTITUTED</desc>
+  <!-- CARD / MASTER export, cropped to trim | 70x100mm at 3,3 | safe area 60x90mm at 8,8 -->
+  <!-- FONT SUBSTITUTION IN FORCE: display Cormorant Garamond -> Instrument Serif; ui Manrope -> Instrument Sans -->
+  <rect id="background" x="0" y="0" width="76" height="106" fill="#F7F3EC"/>
+  <text id="header-number" x="11" y="15.4" font-family="Instrument Sans" font-size="2.469" font-weight="400" letter-spacing="0.148" fill="#B69A68">24</text>
+  <text id="header-level" x="11" y="21.2" font-family="Instrument Sans" font-size="2.822" font-weight="700" letter-spacing="0.339" fill="#8E6260">ODKRYJ</text>
+  <text id="question-line-1" x="11" y="47.624" font-family="Instrument Sans" font-size="5.644" font-weight="400" fill="#211D1A">Jakiego pytania</text>
+  <text id="question-line-2" x="11" y="55.032" font-family="Instrument Sans" font-size="5.644" font-weight="400" fill="#211D1A">nikt Ci dawno</text>
+  <text id="question-line-3" x="11" y="62.44" font-family="Instrument Sans" font-size="5.644" font-weight="400" fill="#211D1A">nie zadał?</text>
+  <path id="bridge-mark-left" d="M 11 89.6 L 11.829 89.6 C 12.626 89.6 12.626 87.725 13.423 87.725 L 17.375 87.725" fill="none" stroke="#B69A68" stroke-width="0.2" stroke-linecap="round"/>
+  <path id="bridge-mark-right" d="M 26 89.6 L 25.171 89.6 C 24.374 89.6 24.374 87.725 23.578 87.725 L 19.625 87.725" fill="none" stroke="#B69A68" stroke-width="0.2" stroke-linecap="round"/>
+  <text id="footer-number" x="62.439" y="90.2" font-family="Instrument Sans" font-size="2.117" font-weight="400" letter-spacing="0.212" fill="#B69A68">24</text>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="70mm" height="100mm"
+     viewBox="3 3 70 100">
+  <title>MOST BLISKOSCI - B04</title>
+  <desc>type=bridge id=B04 level=04 design=1.0.0 fonts=SUBSTITUTED</desc>
+  <!-- CARD / MASTER export, cropped to trim | 70x100mm at 3,3 | safe area 60x90mm at 8,8 -->
+  <!-- FONT SUBSTITUTION IN FORCE: display Cormorant Garamond -> Instrument Serif; ui Manrope -> Instrument Sans -->
+  <rect id="background" x="0" y="0" width="76" height="106" fill="#F7F3EC"/>
+  <path id="bridge-mark-left" d="M 18 45 L 20.21 45 C 22.335 45 22.335 40 24.46 40 L 35 40" fill="none" stroke="#B69A68" stroke-width="0.32" stroke-linecap="round"/>
+  <path id="bridge-mark-right" d="M 58 45 L 55.79 45 C 53.665 45 53.665 40 51.54 40 L 41 40" fill="none" stroke="#B69A68" stroke-width="0.32" stroke-linecap="round"/>
+  <text id="bridge-title" x="23.343" y="60" font-family="Instrument Serif" font-size="9.172" font-weight="400" letter-spacing="0.183" fill="#211D1A">MOST 04</text>
+  <text id="bridge-level" x="29.865" y="67.5" font-family="Instrument Sans" font-size="2.822" font-weight="700" letter-spacing="0.452" fill="#672F3D">ZBLIŻ SIĘ</text>
+  <text id="bridge-caption-1" x="24.311" y="78.219" font-family="Instrument Sans" font-size="3.881" font-weight="400" fill="#211D1A">Zbliżcie się. Bez</text>
+  <text id="bridge-caption-2" x="28.295" y="83.864" font-family="Instrument Sans" font-size="3.881" font-weight="400" fill="#211D1A">pośpiechu.</text>
+</svg>

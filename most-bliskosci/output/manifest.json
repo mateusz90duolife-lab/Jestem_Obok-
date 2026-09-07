@@ -848,6 +848,8 @@
     "overflowReport": "qa/overflow-report.json",
     "contentStats": "qa/content-stats.json",
     "designStats": "qa/design-stats.json",
-    "contentRevisions": "qa/content-revisions.json"
+    "contentRevisions": "qa/content-revisions.json",
+    "printSpec": "print/print-spec.json",
+    "printMaster": "print/master-70x100"
   }
 }

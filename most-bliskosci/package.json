@@ -4,7 +4,9 @@
   "private": true,
   "description": "MOST BLISKOSCI - premium 77-card conversation deck: design system, generator, prepress and visual QA pipeline.",
   "type": "module",
-  "engines": { "node": ">=22.18.0" },
+  "engines": {
+    "node": ">=22.18.0"
+  },
   "scripts": {
     "audit": "node src/cli.ts audit",
     "generate": "node src/cli.ts generate",
@@ -14,7 +16,7 @@
     "proof": "node src/cli.ts proof",
     "contact-sheet": "node src/cli.ts contact-sheet",
     "inspect": "node src/cli.ts inspect",
-    "test": "node --test test/",
+    "test": "node --test --test-concurrency=1 --test-reporter=spec test/*.test.ts",
     "build": "node src/cli.ts build"
   }
 }

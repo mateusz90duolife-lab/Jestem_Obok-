@@ -132,6 +132,11 @@
       "detail": "0 kart z przepełnieniem"
     },
     {
+      "name": "print",
+      "status": "PASS",
+      "detail": "bleed 76x106mm w front/ + back/, master 70x100mm w print/master-70x100/ (78 plikow)"
+    },
+    {
       "name": "png",
       "status": "PASS",
       "detail": "78/78 @ 898x1252px (300 DPI)"

@@ -5,11 +5,15 @@ import { round } from '../fonts/measure.ts';
 import type { CardLayout, Issue, Rect } from '../types.ts';
 
 /**
- * Measured text can sit up to ~0.7mm wider than the engine predicts on
- * letter-spaced runs (see scripts/calibrate.ts). Safe-area checks inflate every
- * ink box by this margin so the check errs towards rejecting, never accepting.
+ * Safe-area checks inflate every ink box by this margin, so the check errs
+ * towards rejecting rather than accepting.
+ *
+ * `node scripts/calibrate.ts` measures the engine against the renderer on this
+ * font set and reports a worst-case disagreement of 0.025mm, so 0.3mm is about
+ * twelve times the observed error - conservative without being slack. The
+ * calibration test asserts the margin still covers the measured delta.
  */
-export const MEASUREMENT_TOLERANCE_MM = 0.8;
+export const MEASUREMENT_TOLERANCE_MM = 0.3;
 
 const FORBIDDEN = [
   { pattern: /<script\b/i, what: 'a <script> element' },

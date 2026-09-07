@@ -1,0 +1,44 @@
+{
+  "deck": "MOST BLISKOŚCI",
+  "variants": {
+    "CARD / MASTER": {
+      "directory": "print/master-70x100",
+      "widthMm": 70,
+      "heightMm": 100,
+      "note": "Trim-only export. Same layout, cropped to the trim box."
+    },
+    "PRINT / BLEED": {
+      "directory": "front + back",
+      "widthMm": 76,
+      "heightMm": 106,
+      "note": "The artboard the generator lays out on. Supply this to the printer."
+    }
+  },
+  "trimMm": {
+    "width": 70,
+    "height": 100
+  },
+  "bleedMm": 3,
+  "fullMm": {
+    "width": 76,
+    "height": 106
+  },
+  "safeAreaMm": {
+    "width": 60,
+    "height": 90,
+    "insetFromTrimMm": 5
+  },
+  "cornerRadiusMm": 4,
+  "cornerNote": "Corner rounding is a die-cut specification, not artwork. The background is full-bleed, so no corner is drawn in the SVG.",
+  "raster": {
+    "dpi": 300,
+    "widthPx": 898,
+    "heightPx": 1252
+  },
+  "colour": {
+    "workingSpace": "sRGB",
+    "deliverable": "RGB",
+    "cmyk": "This pipeline does NOT perform colour separation. Final CMYK conversion happens during print-prep against the printer's ICC profile. Treat the RGB values in design-tokens.json as the appearance target, not as CMYK."
+  },
+  "fonts": "Live text, not outlined. Supply the font files with the artwork, or outline the text during print-prep, per the printer's requirement."
+}
