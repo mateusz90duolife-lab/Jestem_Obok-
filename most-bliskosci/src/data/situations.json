@@ -1,0 +1,19 @@
+{
+  "contentVersion": "1.0.0",
+  "language": "pl",
+  "footer": "ZRÓBCIE TO RAZEM",
+  "situations": [
+    { "id": "S01", "number": 1,  "title": "60 SEKUND CISZY",   "instruction": ["Patrzcie sobie w oczy.", "Nie mówcie nic."] },
+    { "id": "S02", "number": 2,  "title": "WSPÓLNY ODDECH",    "instruction": ["Usiądźcie naprzeciw siebie.", "Oddychajcie w jednym rytmie."] },
+    { "id": "S03", "number": 3,  "title": "DŁOŃ W DŁONI",      "instruction": ["Weźcie się za ręce.", "Wytrzymajcie w ciszy minutę."] },
+    { "id": "S04", "number": 4,  "title": "BEZ SŁÓW",          "instruction": ["Powiedzcie sobie coś ważnego.", "Samym spojrzeniem."] },
+    { "id": "S05", "number": 5,  "title": "TRZY PODZIĘKOWANIA", "instruction": ["Powiedzcie po trzy rzeczy,", "za które jesteście wdzięczni."] },
+    { "id": "S06", "number": 6,  "title": "PIERWSZY DZIEŃ",    "instruction": ["Opowiedzcie swój pierwszy wspólny dzień.", "Każde ze swojej strony."] },
+    { "id": "S07", "number": 7,  "title": "ZAMIANA MIEJSC",    "instruction": ["Odpowiedzcie na ostatnie pytanie", "za drugą osobę."] },
+    { "id": "S08", "number": 8,  "title": "DWIE MINUTY",       "instruction": ["Mówi tylko jedno z was.", "Drugie słucha i nie przerywa."] },
+    { "id": "S09", "number": 9,  "title": "TAK BLISKO",        "instruction": ["Usiądźcie tak blisko, jak chcecie.", "Zostańcie tak chwilę."] },
+    { "id": "S10", "number": 10, "title": "JEDNO ZDANIE",      "instruction": ["Dokończcie: dziś potrzebuję od Ciebie.", "Po kolei, bez tłumaczenia się."] },
+    { "id": "S11", "number": 11, "title": "ODŁÓŻCIE TELEFONY", "instruction": ["Schowajcie je poza zasięgiem wzroku.", "Wróćcie do rozmowy."] },
+    { "id": "S12", "number": 12, "title": "NA KONIEC",         "instruction": ["Powiedzcie sobie jedno zdanie,", "które chcecie zapamiętać."] }
+  ]
+}

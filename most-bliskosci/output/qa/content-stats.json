@@ -1,0 +1,57 @@
+{
+  "totals": {
+    "questions": 60,
+    "situations": 12,
+    "bridges": 5,
+    "cards": 77
+  },
+  "words": {
+    "min": 5,
+    "max": 9,
+    "mean": 7.1,
+    "median": 7
+  },
+  "characters": {
+    "min": 30,
+    "max": 55,
+    "mean": 42.78,
+    "median": 42
+  },
+  "byLevel": {
+    "01": {
+      "count": 12,
+      "averageWords": 6.67,
+      "averageCharacters": 41.33
+    },
+    "02": {
+      "count": 12,
+      "averageWords": 7.17,
+      "averageCharacters": 43.67
+    },
+    "03": {
+      "count": 12,
+      "averageWords": 7.42,
+      "averageCharacters": 45.33
+    },
+    "04": {
+      "count": 12,
+      "averageWords": 7.42,
+      "averageCharacters": 44.17
+    },
+    "05": {
+      "count": 12,
+      "averageWords": 6.83,
+      "averageCharacters": 39.42
+    }
+  },
+  "shortestQuestion": {
+    "id": "Q55",
+    "characters": 30,
+    "text": "Co jest wspólne i tylko nasze?"
+  },
+  "longestQuestion": {
+    "id": "Q49",
+    "characters": 55,
+    "text": "Co chciałbyś, żebyśmy zawsze chronili w naszej relacji?"
+  }
+}

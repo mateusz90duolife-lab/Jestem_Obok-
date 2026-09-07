@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="76mm" height="106mm"
+     viewBox="0 0 76 106">
+  <title>MOST BLISKOSCI - S08</title>
+  <desc>type=situation id=S08 design=1.0.0 fonts=SUBSTITUTED</desc>
+  <!-- trim 70x100mm at 3,3 | safe area 60x90mm at 8,8 -->
+  <!-- FONT SUBSTITUTION IN FORCE: display Cormorant Garamond -> Instrument Serif; ui Manrope -> Instrument Sans -->
+  <rect id="background" x="0" y="0" width="76" height="106" fill="#43202A"/>
+  <text id="header-number" x="11" y="15.4" font-family="Instrument Sans" font-size="2.469" font-weight="400" letter-spacing="0.148" fill="#B69A68">08</text>
+  <text id="header-label" x="11" y="21.2" font-family="Instrument Sans" font-size="2.822" font-weight="700" letter-spacing="0.452" fill="#B69A68">SYTUACJA</text>
+  <text id="situation-title-1" x="11" y="43.143" font-family="Instrument Serif" font-size="7.761" font-weight="400" letter-spacing="0.078" fill="#F7F3EC">DWIE MINUTY</text>
+  <text id="situation-instruction-1" x="11" y="56.613" font-family="Instrument Sans" font-size="4.233" font-weight="400" fill="#F7F3EC">Mówi tylko jedno z was.</text>
+  <text id="situation-instruction-2" x="11" y="62.61" font-family="Instrument Sans" font-size="4.233" font-weight="400" fill="#F7F3EC">Drugie słucha i nie</text>
+  <text id="situation-instruction-3" x="11" y="68.607" font-family="Instrument Sans" font-size="4.233" font-weight="400" fill="#F7F3EC">przerywa.</text>
+  <text id="footer-label" x="11" y="90.2" font-family="Instrument Sans" font-size="2.822" font-weight="700" letter-spacing="0.452" fill="#B69A68">ZRÓBCIE TO RAZEM</text>
+  <path id="bridge-mark-left" d="M 50 89.6 L 50.829 89.6 C 51.626 89.6 51.626 87.725 52.423 87.725 L 56.375 87.725" fill="none" stroke="#B69A68" stroke-width="0.2" stroke-linecap="round"/>
+  <path id="bridge-mark-right" d="M 65 89.6 L 64.171 89.6 C 63.374 89.6 63.374 87.725 62.578 87.725 L 58.625 87.725" fill="none" stroke="#B69A68" stroke-width="0.2" stroke-linecap="round"/>
+</svg>

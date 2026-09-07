@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="76mm" height="106mm"
+     viewBox="0 0 76 106">
+  <title>MOST BLISKOSCI - BACK</title>
+  <desc>type=back id=BACK design=1.0.0 fonts=SUBSTITUTED</desc>
+  <!-- trim 70x100mm at 3,3 | safe area 60x90mm at 8,8 -->
+  <!-- FONT SUBSTITUTION IN FORCE: display Cormorant Garamond -> Instrument Serif; ui Manrope -> Instrument Sans -->
+  <rect id="background" x="0" y="0" width="76" height="106" fill="#43202A"/>
+  <text id="logo-primary" x="26.819" y="46" font-family="Instrument Serif" font-size="10.583" font-weight="400" letter-spacing="0.212" fill="#F7F3EC">MOST</text>
+  <text id="logo-secondary" x="24.106" y="54.5" font-family="Instrument Serif" font-size="4.586" font-weight="400" letter-spacing="1.376" fill="#F7F3EC">BLISKOŚCI</text>
+  <path id="bridge-mark-left" d="M 25 64.5 L 26.437 64.5 C 27.818 64.5 27.818 61.25 29.199 61.25 L 36.05 61.25" fill="none" stroke="#B69A68" stroke-width="0.24" stroke-linecap="round"/>
+  <path id="bridge-mark-right" d="M 51 64.5 L 49.564 64.5 C 48.182 64.5 48.182 61.25 46.801 61.25 L 39.95 61.25" fill="none" stroke="#B69A68" stroke-width="0.24" stroke-linecap="round"/>
+</svg>

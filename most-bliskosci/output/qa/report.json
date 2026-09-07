@@ -1,0 +1,3592 @@
+{
+  "deck": "MOST BLISKOŚCI",
+  "automatedStatus": "PASS",
+  "humanReview": "REQUIRED",
+  "designVersion": "1.0.0",
+  "generatorVersion": "1.0.0",
+  "contentVersion": "1.0.0",
+  "fonts": {
+    "status": "SUBSTITUTED",
+    "specified": {
+      "display": "Cormorant Garamond",
+      "ui": "Manrope"
+    },
+    "rendered": {
+      "display": "Instrument Serif",
+      "ui": "Instrument Sans"
+    },
+    "reason": "Cormorant Garamond and Manrope are unobtainable in this environment: the egress proxy denies fonts.googleapis.com and the npm registry, so neither the font files nor a font package can be fetched.",
+    "missing": [],
+    "substitutions": [
+      {
+        "role": "display",
+        "specFamily": "Cormorant Garamond",
+        "specFace": "500",
+        "renderFamily": "Instrument Serif",
+        "renderWeight": 400,
+        "lossy": true,
+        "note": "Instrument Serif has no Medium; resolves to Regular."
+      },
+      {
+        "role": "display",
+        "specFamily": "Cormorant Garamond",
+        "specFace": "600",
+        "renderFamily": "Instrument Serif",
+        "renderWeight": 400,
+        "lossy": true,
+        "note": "Instrument Serif has no SemiBold; resolves to Regular."
+      },
+      {
+        "role": "display",
+        "specFamily": "Cormorant Garamond",
+        "specFace": "400i",
+        "renderFamily": "Instrument Serif",
+        "renderWeight": 400,
+        "lossy": false
+      },
+      {
+        "role": "ui",
+        "specFamily": "Manrope",
+        "specFace": "400",
+        "renderFamily": "Instrument Sans",
+        "renderWeight": 400,
+        "lossy": false
+      },
+      {
+        "role": "ui",
+        "specFamily": "Manrope",
+        "specFace": "500",
+        "renderFamily": "Instrument Sans",
+        "renderWeight": 400,
+        "lossy": true,
+        "note": "Instrument Sans has no Medium; resolves to Regular."
+      },
+      {
+        "role": "ui",
+        "specFamily": "Manrope",
+        "specFace": "600",
+        "renderFamily": "Instrument Sans",
+        "renderWeight": 700,
+        "lossy": true,
+        "note": "Instrument Sans has no SemiBold; resolves to Bold."
+      }
+    ],
+    "files": [
+      {
+        "role": "display",
+        "face": "500",
+        "file": "../assets/fonts/InstrumentSerif-Regular.ttf",
+        "sha256": "4716546a56c751695132102507fb35ec1da1816eca925e209eae9544c859f449"
+      },
+      {
+        "role": "display",
+        "face": "600",
+        "file": "../assets/fonts/InstrumentSerif-Regular.ttf",
+        "sha256": "4716546a56c751695132102507fb35ec1da1816eca925e209eae9544c859f449"
+      },
+      {
+        "role": "display",
+        "face": "400i",
+        "file": "../assets/fonts/InstrumentSerif-Italic.ttf",
+        "sha256": "e34a5eae24277f9d59d6f722b19789b71c74df65b0f3e18c7a987a8a56dbb03b"
+      },
+      {
+        "role": "ui",
+        "face": "400",
+        "file": "../assets/fonts/InstrumentSans-Regular.ttf",
+        "sha256": "ea0a4ed6e2bd84459c312a1e22432078bd187833d264107f2b246e5d278e37cf"
+      },
+      {
+        "role": "ui",
+        "face": "500",
+        "file": "../assets/fonts/InstrumentSans-Regular.ttf",
+        "sha256": "ea0a4ed6e2bd84459c312a1e22432078bd187833d264107f2b246e5d278e37cf"
+      },
+      {
+        "role": "ui",
+        "face": "600",
+        "file": "../assets/fonts/InstrumentSans-Bold.ttf",
+        "sha256": "a33d3f3eb9abfb19c80049454816721e3a661f8554459773d5b98d375faced68"
+      }
+    ]
+  },
+  "stages": [
+    {
+      "name": "content",
+      "status": "PASS",
+      "detail": "60 pytań, 12 sytuacji, 5 mostów = 77"
+    },
+    {
+      "name": "fonts",
+      "status": "WARNING",
+      "detail": "SUBSTITUTED: Cormorant Garamond -> Instrument Serif, Manrope -> Instrument Sans"
+    },
+    {
+      "name": "svg",
+      "status": "PASS",
+      "detail": "78 plików, 0 błędów"
+    },
+    {
+      "name": "overflow",
+      "status": "PASS",
+      "detail": "0 kart z przepełnieniem"
+    },
+    {
+      "name": "png",
+      "status": "PASS",
+      "detail": "78/78 @ 898x1252px (300 DPI)"
+    },
+    {
+      "name": "pixel-qa",
+      "status": "PASS",
+      "detail": "78 kart zmierzonych, 0 naruszeń safe area"
+    },
+    {
+      "name": "contact-sheet",
+      "status": "PASS",
+      "detail": "77/77 kart, 1178x2759px, 77 etykiet"
+    }
+  ],
+  "counts": {
+    "questions": 60,
+    "situations": 12,
+    "bridges": 5,
+    "fronts": 77,
+    "svg": 78,
+    "png": 78,
+    "overflow": 0,
+    "safeAreaViolations": 0
+  },
+  "cards": [
+    {
+      "cardId": "Q01",
+      "type": "question",
+      "level": "01",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Jaki mały gest",
+            "zawsze poprawia",
+            "Ci humor?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 43.2308,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 0.7692,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 96.49,
+        "resolved": true
+      },
+      "density": 0.0277
+    },
+    {
+      "cardId": "Q02",
+      "type": "question",
+      "level": "01",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co Cię ostatnio",
+            "szczerze",
+            "rozśmieszyło?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 39.5676,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 4.4324,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 90.31,
+        "resolved": true
+      },
+      "density": 0.0261
+    },
+    {
+      "cardId": "Q03",
+      "type": "question",
+      "level": "01",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Która pora dnia",
+            "jest naprawdę",
+            "Twoja?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 39.1273,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 4.8727,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 97.14,
+        "resolved": true
+      },
+      "density": 0.0256
+    },
+    {
+      "cardId": "Q04",
+      "type": "question",
+      "level": "01",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co robisz, kiedy",
+            "chcesz odpocząć",
+            "na serio?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 44.1791,
+          "totalHeight": 22.225,
+          "availableWidth": 46,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.8209,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 46,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "widen-measure-1",
+        "score": 93.93,
+        "resolved": true
+      },
+      "density": 0.0279
+    },
+    {
+      "cardId": "Q05",
+      "type": "question",
+      "level": "01",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Jaki zapach",
+            "przypomina Ci",
+            "dzieciństwo?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 37.5581,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 6.4419,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 93.17,
+        "resolved": true
+      },
+      "density": 0.0267
+    },
+    {
+      "cardId": "Q06",
+      "type": "question",
+      "level": "01",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "O czym myślisz",
+            "tuż przed",
+            "zaśnięciem?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 39.3079,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 4.6921,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 91.22,
+        "resolved": true
+      },
+      "density": 0.0251
+    },
+    {
+      "cardId": "Q07",
+      "type": "question",
+      "level": "01",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Która nasza",
+            "wspólna chwila",
+            "wraca do Ciebie",
+            "najczęściej?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 40.9617,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 3.0383,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 95.17,
+        "resolved": true
+      },
+      "density": 0.0365
+    },
+    {
+      "cardId": "Q08",
+      "type": "question",
+      "level": "01",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co potrafisz",
+            "robić godzinami",
+            "i się nie nudzisz?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 42.4744,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.5256,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 94.89,
+        "resolved": true
+      },
+      "density": 0.0298
+    },
+    {
+      "cardId": "Q09",
+      "type": "question",
+      "level": "01",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Jaka piosenka",
+            "zawsze coś",
+            "w Tobie porusza?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 44.2073,
+          "totalHeight": 22.225,
+          "availableWidth": 46,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.7927,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 46,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "widen-measure-1",
+        "score": 92.11,
+        "resolved": true
+      },
+      "density": 0.0284
+    },
+    {
+      "cardId": "Q10",
+      "type": "question",
+      "level": "01",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co w sobie lubisz,",
+            "choć rzadko to",
+            "mówisz?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 45.3588,
+          "totalHeight": 22.225,
+          "availableWidth": 46,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 0.6412,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 46,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "widen-measure-1",
+        "score": 90.93,
+        "resolved": true
+      },
+      "density": 0.0265
+    },
+    {
+      "cardId": "Q11",
+      "type": "question",
+      "level": "01",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Gdzie czujesz się",
+            "najbardziej sobą?"
+          ],
+          "lineCount": 2,
+          "maxLineWidth": 44.6984,
+          "totalHeight": 14.8167,
+          "availableWidth": 46,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.3016,
+          "remainingHeight": 39.1833
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 46,
+        "lineCount": 2,
+        "iterations": 10,
+        "strategy": "widen-measure-1",
+        "score": 95.22,
+        "resolved": true
+      },
+      "density": 0.0245
+    },
+    {
+      "cardId": "Q12",
+      "type": "question",
+      "level": "01",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Jaka drobna",
+            "rzecz potrafi",
+            "zepsuć Ci cały",
+            "dzień?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 36.6042,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 7.3958,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 93.83,
+        "resolved": true
+      },
+      "density": 0.0304
+    },
+    {
+      "cardId": "Q13",
+      "type": "question",
+      "level": "02",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co chciałbyś,",
+            "żebym lepiej",
+            "rozumiał w Tobie?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 45.9006,
+          "totalHeight": 22.225,
+          "availableWidth": 46,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 0.0994,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 46,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "widen-measure-1",
+        "score": 93.2,
+        "resolved": true
+      },
+      "density": 0.0292
+    },
+    {
+      "cardId": "Q14",
+      "type": "question",
+      "level": "02",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Jakie marzenie",
+            "miałeś, zanim się",
+            "poznaliśmy?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 43.4792,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 0.5208,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 97.11,
+        "resolved": true
+      },
+      "density": 0.0296
+    },
+    {
+      "cardId": "Q15",
+      "type": "question",
+      "level": "02",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co jest dla Ciebie",
+            "luksusem, choć",
+            "nie ma ceny?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 44.5685,
+          "totalHeight": 22.225,
+          "availableWidth": 46,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.4315,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 46,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "widen-measure-1",
+        "score": 93.08,
+        "resolved": true
+      },
+      "density": 0.0296
+    },
+    {
+      "cardId": "Q16",
+      "type": "question",
+      "level": "02",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Która decyzja",
+            "zmieniła Twoje",
+            "życie najbardziej?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 45.5507,
+          "totalHeight": 22.225,
+          "availableWidth": 46,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 0.4493,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 46,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "widen-measure-1",
+        "score": 92.73,
+        "resolved": true
+      },
+      "density": 0.0316
+    },
+    {
+      "cardId": "Q17",
+      "type": "question",
+      "level": "02",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Czego nauczyło",
+            "Cię coś, co",
+            "poszło nie tak?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 40.8601,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 3.1399,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 93.38,
+        "resolved": true
+      },
+      "density": 0.0272
+    },
+    {
+      "cardId": "Q18",
+      "type": "question",
+      "level": "02",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co dziś robisz",
+            "inaczej niż pięć",
+            "lat temu?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 38.4556,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 5.5444,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 96.5,
+        "resolved": true
+      },
+      "density": 0.0258
+    },
+    {
+      "cardId": "Q19",
+      "type": "question",
+      "level": "02",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Jaka zasada jest",
+            "u Ciebie nie do",
+            "podważenia?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 40.9956,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 3.0044,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 98.48,
+        "resolved": true
+      },
+      "density": 0.0298
+    },
+    {
+      "cardId": "Q20",
+      "type": "question",
+      "level": "02",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co ostatnio",
+            "zaskoczyło Cię",
+            "w Tobie samym?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 42.6946,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.3054,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 96.02,
+        "resolved": true
+      },
+      "density": 0.0282
+    },
+    {
+      "cardId": "Q21",
+      "type": "question",
+      "level": "02",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Czego chciałbyś",
+            "spróbować, ale",
+            "wciąż odkładasz?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 44.3766,
+          "totalHeight": 22.225,
+          "availableWidth": 46,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.6234,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 46,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "widen-measure-1",
+        "score": 93.8,
+        "resolved": true
+      },
+      "density": 0.0333
+    },
+    {
+      "cardId": "Q22",
+      "type": "question",
+      "level": "02",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Kiedy czujesz, że",
+            "robisz coś",
+            "naprawdę",
+            "swojego?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 42.9824,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.0176,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 91.81,
+        "resolved": true
+      },
+      "density": 0.0314
+    },
+    {
+      "cardId": "Q23",
+      "type": "question",
+      "level": "02",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co z dzieciństwa",
+            "chciałbyś zabrać",
+            "do dziś?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 42.9373,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.0627,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 99.73,
+        "resolved": true
+      },
+      "density": 0.0283
+    },
+    {
+      "cardId": "Q24",
+      "type": "question",
+      "level": "02",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Jakiego pytania",
+            "nikt Ci dawno",
+            "nie zadał?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 40.1433,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 3.8567,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 97.08,
+        "resolved": true
+      },
+      "density": 0.0269
+    },
+    {
+      "cardId": "Q25",
+      "type": "question",
+      "level": "03",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "O czym",
+            "najtrudniej jest",
+            "Ci ze mną",
+            "rozmawiać?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 38.3484,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 5.6516,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 90,
+        "resolved": true
+      },
+      "density": 0.0306
+    },
+    {
+      "cardId": "Q26",
+      "type": "question",
+      "level": "03",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Czego się boisz,",
+            "kiedy jest nam za",
+            "dobrze?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 43.9138,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 0.0862,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 97.84,
+        "resolved": true
+      },
+      "density": 0.0294
+    },
+    {
+      "cardId": "Q27",
+      "type": "question",
+      "level": "03",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co Cię ostatnio",
+            "zabolało, a nic nie",
+            "powiedziałeś?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 44.7717,
+          "totalHeight": 22.225,
+          "availableWidth": 46,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.2283,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 46,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "widen-measure-1",
+        "score": 92.66,
+        "resolved": true
+      },
+      "density": 0.0326
+    },
+    {
+      "cardId": "Q28",
+      "type": "question",
+      "level": "03",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Którą stronę",
+            "siebie pokazujesz",
+            "mi najrzadziej?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 44.8451,
+          "totalHeight": 22.225,
+          "availableWidth": 46,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.1549,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 46,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "widen-measure-1",
+        "score": 88.83,
+        "resolved": true
+      },
+      "density": 0.0326
+    },
+    {
+      "cardId": "Q29",
+      "type": "question",
+      "level": "03",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Kiedy najbardziej",
+            "potrzebujesz,",
+            "żebym po prostu",
+            "był?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 44.0605,
+          "totalHeight": 29.6333,
+          "availableWidth": 46,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.9395,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 46,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "widen-measure-1",
+        "score": 91.83,
+        "resolved": true
+      },
+      "density": 0.0366
+    },
+    {
+      "cardId": "Q30",
+      "type": "question",
+      "level": "03",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Czego nie",
+            "potrafisz",
+            "powiedzieć mi",
+            "wprost?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 36.8695,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 7.1305,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 90.36,
+        "resolved": true
+      },
+      "density": 0.0299
+    },
+    {
+      "cardId": "Q31",
+      "type": "question",
+      "level": "03",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co sprawia, że",
+            "się przede mną",
+            "zamykasz?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 39.0596,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 4.9404,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 97.32,
+        "resolved": true
+      },
+      "density": 0.0284
+    },
+    {
+      "cardId": "Q32",
+      "type": "question",
+      "level": "03",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Gdzie przebiega",
+            "granica, której",
+            "nie chcesz",
+            "przekraczać?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 41.8592,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 2.1408,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 93.87,
+        "resolved": true
+      },
+      "density": 0.038
+    },
+    {
+      "cardId": "Q33",
+      "type": "question",
+      "level": "03",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Czego ode mnie",
+            "oczekujesz, choć",
+            "o to nie prosisz?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 43.3606,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 0.6394,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 99.13,
+        "resolved": true
+      },
+      "density": 0.0329
+    },
+    {
+      "cardId": "Q34",
+      "type": "question",
+      "level": "03",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co Cię męczy,",
+            "a wydaje Ci się",
+            "zbyt małe?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 37.3436,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 6.6564,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 96.47,
+        "resolved": true
+      },
+      "density": 0.0279
+    },
+    {
+      "cardId": "Q35",
+      "type": "question",
+      "level": "03",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Kiedy ostatnio",
+            "czułeś się przy",
+            "mnie samotny?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 39.8893,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 4.1107,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 99.4,
+        "resolved": true
+      },
+      "density": 0.0308
+    },
+    {
+      "cardId": "Q36",
+      "type": "question",
+      "level": "03",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Czego się",
+            "wstydzisz, choć",
+            "wcale nie",
+            "musisz?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 40.0812,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 3.9188,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 92.21,
+        "resolved": true
+      },
+      "density": 0.0299
+    },
+    {
+      "cardId": "Q37",
+      "type": "question",
+      "level": "04",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Kiedy ostatnio",
+            "poczułeś, że",
+            "naprawdę",
+            "jesteśmy blisko?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 42.006,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.994,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 95.33,
+        "resolved": true
+      },
+      "density": 0.0363
+    },
+    {
+      "cardId": "Q38",
+      "type": "question",
+      "level": "04",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Przy czym czujesz",
+            "się ze mną",
+            "bezpiecznie?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 46.4876,
+          "totalHeight": 22.225,
+          "availableWidth": 48,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.5124,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 48,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "widen-measure-2",
+        "score": 81.2,
+        "resolved": true
+      },
+      "density": 0.028
+    },
+    {
+      "cardId": "Q39",
+      "type": "question",
+      "level": "04",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Za co jesteś mi",
+            "wdzięczny,",
+            "a rzadko to",
+            "mówisz?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 37.7218,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 6.2782,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 92.7,
+        "resolved": true
+      },
+      "density": 0.03
+    },
+    {
+      "cardId": "Q40",
+      "type": "question",
+      "level": "04",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co pomaga Ci",
+            "najbardziej zaraz",
+            "po kłótni?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 42.7849,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.2151,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 96.89,
+        "resolved": true
+      },
+      "density": 0.0286
+    },
+    {
+      "cardId": "Q41",
+      "type": "question",
+      "level": "04",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Który mój gest",
+            "znaczy więcej,",
+            "niż myślę?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 37.496,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 6.504,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 96.6,
+        "resolved": true
+      },
+      "density": 0.027
+    },
+    {
+      "cardId": "Q42",
+      "type": "question",
+      "level": "04",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co robimy",
+            "razem, czego nie",
+            "robisz z nikim",
+            "innym?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 42.8131,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.1869,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 93.42,
+        "resolved": true
+      },
+      "density": 0.0308
+    },
+    {
+      "cardId": "Q43",
+      "type": "question",
+      "level": "04",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Po czym",
+            "poznajesz, że",
+            "naprawdę Cię",
+            "słucham?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 35.402,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 8.598,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 88.98,
+        "resolved": true
+      },
+      "density": 0.0306
+    },
+    {
+      "cardId": "Q44",
+      "type": "question",
+      "level": "04",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co Cię do mnie",
+            "przyciągnęło",
+            "i działa do dziś?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 39.7877,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 4.2123,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 96.33,
+        "resolved": true
+      },
+      "density": 0.0298
+    },
+    {
+      "cardId": "Q45",
+      "type": "question",
+      "level": "04",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Czego brakuje",
+            "nam ostatnio na",
+            "co dzień?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 41.3794,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 2.6206,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 97.82,
+        "resolved": true
+      },
+      "density": 0.0274
+    },
+    {
+      "cardId": "Q46",
+      "type": "question",
+      "level": "04",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Po czym mam",
+            "poznać, że",
+            "potrzebujesz",
+            "bliskości?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 36.3164,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 7.6836,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 92.06,
+        "resolved": true
+      },
+      "density": 0.032
+    },
+    {
+      "cardId": "Q47",
+      "type": "question",
+      "level": "04",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co chciałbyś,",
+            "żebyśmy robili",
+            "częściej?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 36.6945,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 7.3055,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 95.04,
+        "resolved": true
+      },
+      "density": 0.026
+    },
+    {
+      "cardId": "Q48",
+      "type": "question",
+      "level": "04",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Kiedy było nam",
+            "najlepiej",
+            "i dlaczego",
+            "właśnie wtedy?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 39.6184,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 4.3816,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 91.42,
+        "resolved": true
+      },
+      "density": 0.0344
+    },
+    {
+      "cardId": "Q49",
+      "type": "question",
+      "level": "05",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co chciałbyś,",
+            "żebyśmy zawsze",
+            "chronili w naszej",
+            "relacji?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 42.2938,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.7062,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 96.23,
+        "resolved": true
+      },
+      "density": 0.037
+    },
+    {
+      "cardId": "Q50",
+      "type": "question",
+      "level": "05",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Jak ma wyglądać",
+            "nasz zwykły",
+            "dzień za rok?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 43.4735,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 0.5265,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 93.26,
+        "resolved": true
+      },
+      "density": 0.0298
+    },
+    {
+      "cardId": "Q51",
+      "type": "question",
+      "level": "05",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co wybieramy",
+            "w sobie na nowo",
+            "każdego dnia?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 42.2825,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.7175,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 97.32,
+        "resolved": true
+      },
+      "density": 0.0314
+    },
+    {
+      "cardId": "Q52",
+      "type": "question",
+      "level": "05",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "O czym chciałbyś,",
+            "żebyśmy marzyli",
+            "razem?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 46.0417,
+          "totalHeight": 22.225,
+          "availableWidth": 48,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.9583,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 48,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "widen-measure-2",
+        "score": 89.05,
+        "resolved": true
+      },
+      "density": 0.0295
+    },
+    {
+      "cardId": "Q53",
+      "type": "question",
+      "level": "05",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Czego chcemy",
+            "unikać w naszym",
+            "wspólnym",
+            "domu?"
+          ],
+          "lineCount": 4,
+          "maxLineWidth": 43.5751,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 0.4249,
+          "remainingHeight": 24.3667
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 92.47,
+        "resolved": true
+      },
+      "density": 0.0337
+    },
+    {
+      "cardId": "Q54",
+      "type": "question",
+      "level": "05",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Jaką obietnicę",
+            "chcesz mi dziś",
+            "złożyć?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 36.988,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 7.012,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 96.55,
+        "resolved": true
+      },
+      "density": 0.0269
+    },
+    {
+      "cardId": "Q55",
+      "type": "question",
+      "level": "05",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co jest wspólne",
+            "i tylko nasze?"
+          ],
+          "lineCount": 2,
+          "maxLineWidth": 40.64,
+          "totalHeight": 14.8167,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 3.36,
+          "remainingHeight": 39.1833
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 2,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 100,
+        "resolved": true
+      },
+      "density": 0.0225
+    },
+    {
+      "cardId": "Q56",
+      "type": "question",
+      "level": "05",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Na co chcemy",
+            "mieć więcej",
+            "czasu?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 36.322,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 7.678,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 92.93,
+        "resolved": true
+      },
+      "density": 0.0242
+    },
+    {
+      "cardId": "Q57",
+      "type": "question",
+      "level": "05",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Czego chcemy",
+            "się razem",
+            "nauczyć?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 38.3935,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 5.6065,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 90.95,
+        "resolved": true
+      },
+      "density": 0.025
+    },
+    {
+      "cardId": "Q58",
+      "type": "question",
+      "level": "05",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Co zostawiamy",
+            "za sobą, żeby iść",
+            "dalej?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 42.1527,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.8473,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 98.39,
+        "resolved": true
+      },
+      "density": 0.0279
+    },
+    {
+      "cardId": "Q59",
+      "type": "question",
+      "level": "05",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Jak chcemy do",
+            "siebie wracać po",
+            "trudnym dniu?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 42.5365,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 1.4635,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 97.8,
+        "resolved": true
+      },
+      "density": 0.0316
+    },
+    {
+      "cardId": "Q60",
+      "type": "question",
+      "level": "05",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Jak wyobrażasz",
+            "sobie nas za",
+            "dziesięć lat?"
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 39.72,
+          "totalHeight": 22.225,
+          "availableWidth": 44,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 16,
+          "lineHeight": 21,
+          "scaleFactor": 1,
+          "remainingWidth": 4.28,
+          "remainingHeight": 31.775
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "fit": {
+        "fontSize": 16,
+        "lineHeight": 21,
+        "measureMm": 44,
+        "lineCount": 3,
+        "iterations": 10,
+        "strategy": "preferred",
+        "score": 94.9,
+        "resolved": true
+      },
+      "density": 0.0293
+    },
+    {
+      "cardId": "S01",
+      "type": "situation",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "60 SEKUND CISZY"
+          ],
+          "lineCount": 1,
+          "maxLineWidth": 48.9571,
+          "totalHeight": 9.1722,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 22,
+          "lineHeight": 26,
+          "scaleFactor": 1,
+          "remainingWidth": 1.0429,
+          "remainingHeight": 44.8278
+        },
+        {
+          "lines": [
+            "Patrzcie sobie w oczy. Nie",
+            "mówcie nic."
+          ],
+          "lineCount": 2,
+          "maxLineWidth": 48.967,
+          "totalHeight": 11.9944,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 12,
+          "lineHeight": 17,
+          "scaleFactor": 1,
+          "remainingWidth": 1.033,
+          "remainingHeight": 42.0056
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0369
+    },
+    {
+      "cardId": "S02",
+      "type": "situation",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "WSPÓLNY",
+            "ODDECH"
+          ],
+          "lineCount": 2,
+          "maxLineWidth": 27.1484,
+          "totalHeight": 18.3444,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 22,
+          "lineHeight": 26,
+          "scaleFactor": 1,
+          "remainingWidth": 22.8516,
+          "remainingHeight": 35.6556
+        },
+        {
+          "lines": [
+            "Usiądźcie naprzeciw",
+            "siebie. Oddychajcie",
+            "w jednym rytmie."
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 39.1033,
+          "totalHeight": 17.9917,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 12,
+          "lineHeight": 17,
+          "scaleFactor": 1,
+          "remainingWidth": 10.8967,
+          "remainingHeight": 36.0083
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0467
+    },
+    {
+      "cardId": "S03",
+      "type": "situation",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "DŁOŃ W DŁONI"
+          ],
+          "lineCount": 1,
+          "maxLineWidth": 41.3822,
+          "totalHeight": 9.1722,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 22,
+          "lineHeight": 26,
+          "scaleFactor": 1,
+          "remainingWidth": 8.6178,
+          "remainingHeight": 44.8278
+        },
+        {
+          "lines": [
+            "Weźcie się za ręce.",
+            "Wytrzymajcie w ciszy",
+            "minutę."
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 41.5078,
+          "totalHeight": 17.9917,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 12,
+          "lineHeight": 17,
+          "scaleFactor": 1,
+          "remainingWidth": 8.4922,
+          "remainingHeight": 36.0083
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.039
+    },
+    {
+      "cardId": "S04",
+      "type": "situation",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "BEZ SŁÓW"
+          ],
+          "lineCount": 1,
+          "maxLineWidth": 27.6994,
+          "totalHeight": 9.1722,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 22,
+          "lineHeight": 26,
+          "scaleFactor": 1,
+          "remainingWidth": 22.3006,
+          "remainingHeight": 44.8278
+        },
+        {
+          "lines": [
+            "Powiedzcie sobie coś",
+            "ważnego. Samym",
+            "spojrzeniem."
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 40.8347,
+          "totalHeight": 17.9917,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 12,
+          "lineHeight": 17,
+          "scaleFactor": 1,
+          "remainingWidth": 9.1653,
+          "remainingHeight": 36.0083
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0371
+    },
+    {
+      "cardId": "S05",
+      "type": "situation",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "TRZY",
+            "PODZIĘKOWANIA"
+          ],
+          "lineCount": 2,
+          "maxLineWidth": 46.6676,
+          "totalHeight": 18.3444,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 22,
+          "lineHeight": 26,
+          "scaleFactor": 1,
+          "remainingWidth": 3.3324,
+          "remainingHeight": 35.6556
+        },
+        {
+          "lines": [
+            "Powiedzcie po trzy",
+            "rzeczy, za które jesteście",
+            "wdzięczni."
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 47.244,
+          "totalHeight": 17.9917,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 12,
+          "lineHeight": 17,
+          "scaleFactor": 1,
+          "remainingWidth": 2.756,
+          "remainingHeight": 36.0083
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0492
+    },
+    {
+      "cardId": "S06",
+      "type": "situation",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "PIERWSZY DZIEŃ"
+          ],
+          "lineCount": 1,
+          "maxLineWidth": 47.2962,
+          "totalHeight": 9.1722,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 22,
+          "lineHeight": 26,
+          "scaleFactor": 1,
+          "remainingWidth": 2.7038,
+          "remainingHeight": 44.8278
+        },
+        {
+          "lines": [
+            "Opowiedzcie swój",
+            "pierwszy wspólny dzień.",
+            "Każde ze swojej strony."
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 46.1179,
+          "totalHeight": 17.9917,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 12,
+          "lineHeight": 17,
+          "scaleFactor": 1,
+          "remainingWidth": 3.8821,
+          "remainingHeight": 36.0083
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0486
+    },
+    {
+      "cardId": "S07",
+      "type": "situation",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "ZAMIANA MIEJSC"
+          ],
+          "lineCount": 1,
+          "maxLineWidth": 46.4192,
+          "totalHeight": 9.1722,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 22,
+          "lineHeight": 26,
+          "scaleFactor": 1,
+          "remainingWidth": 3.5808,
+          "remainingHeight": 44.8278
+        },
+        {
+          "lines": [
+            "Odpowiedzcie na ostatnie",
+            "pytanie za drugą osobę."
+          ],
+          "lineCount": 2,
+          "maxLineWidth": 49.9914,
+          "totalHeight": 11.9944,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 12,
+          "lineHeight": 17,
+          "scaleFactor": 1,
+          "remainingWidth": 0.0086,
+          "remainingHeight": 42.0056
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0427
+    },
+    {
+      "cardId": "S08",
+      "type": "situation",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "DWIE MINUTY"
+          ],
+          "lineCount": 1,
+          "maxLineWidth": 39.0927,
+          "totalHeight": 9.1722,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 22,
+          "lineHeight": 26,
+          "scaleFactor": 1,
+          "remainingWidth": 10.9073,
+          "remainingHeight": 44.8278
+        },
+        {
+          "lines": [
+            "Mówi tylko jedno z was.",
+            "Drugie słucha i nie",
+            "przerywa."
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 44.8691,
+          "totalHeight": 17.9917,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 12,
+          "lineHeight": 17,
+          "scaleFactor": 1,
+          "remainingWidth": 5.1309,
+          "remainingHeight": 36.0083
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0401
+    },
+    {
+      "cardId": "S09",
+      "type": "situation",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "TAK BLISKO"
+          ],
+          "lineCount": 1,
+          "maxLineWidth": 32.1698,
+          "totalHeight": 9.1722,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 22,
+          "lineHeight": 26,
+          "scaleFactor": 1,
+          "remainingWidth": 17.8302,
+          "remainingHeight": 44.8278
+        },
+        {
+          "lines": [
+            "Usiądźcie tak blisko, jak",
+            "chcecie. Zostańcie tak",
+            "chwilę."
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 44.7125,
+          "totalHeight": 17.9917,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 12,
+          "lineHeight": 17,
+          "scaleFactor": 1,
+          "remainingWidth": 5.2875,
+          "remainingHeight": 36.0083
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0388
+    },
+    {
+      "cardId": "S10",
+      "type": "situation",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "JEDNO ZDANIE"
+          ],
+          "lineCount": 1,
+          "maxLineWidth": 40.3112,
+          "totalHeight": 9.1722,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 22,
+          "lineHeight": 26,
+          "scaleFactor": 1,
+          "remainingWidth": 9.6888,
+          "remainingHeight": 44.8278
+        },
+        {
+          "lines": [
+            "Dokończcie: dziś",
+            "potrzebuję od Ciebie. Po",
+            "kolei, bez tłumaczenia się."
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 49.5596,
+          "totalHeight": 17.9917,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 12,
+          "lineHeight": 17,
+          "scaleFactor": 1,
+          "remainingWidth": 0.4404,
+          "remainingHeight": 36.0083
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0464
+    },
+    {
+      "cardId": "S11",
+      "type": "situation",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "ODŁÓŻCIE",
+            "TELEFONY"
+          ],
+          "lineCount": 2,
+          "maxLineWidth": 29.3292,
+          "totalHeight": 18.3444,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 22,
+          "lineHeight": 26,
+          "scaleFactor": 1,
+          "remainingWidth": 20.6708,
+          "remainingHeight": 35.6556
+        },
+        {
+          "lines": [
+            "Schowajcie je poza",
+            "zasięgiem wzroku.",
+            "Wróćcie do rozmowy."
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 41.5756,
+          "totalHeight": 17.9917,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 12,
+          "lineHeight": 17,
+          "scaleFactor": 1,
+          "remainingWidth": 8.4244,
+          "remainingHeight": 36.0083
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0488
+    },
+    {
+      "cardId": "S12",
+      "type": "situation",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "NA KONIEC"
+          ],
+          "lineCount": 1,
+          "maxLineWidth": 30.5089,
+          "totalHeight": 9.1722,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 22,
+          "lineHeight": 26,
+          "scaleFactor": 1,
+          "remainingWidth": 19.4911,
+          "remainingHeight": 44.8278
+        },
+        {
+          "lines": [
+            "Powiedzcie sobie jedno",
+            "zdanie, które chcecie",
+            "zapamiętać."
+          ],
+          "lineCount": 3,
+          "maxLineWidth": 45.0808,
+          "totalHeight": 17.9917,
+          "availableWidth": 50,
+          "availableHeight": 54,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 12,
+          "lineHeight": 17,
+          "scaleFactor": 1,
+          "remainingWidth": 4.9192,
+          "remainingHeight": 36.0083
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0394
+    },
+    {
+      "cardId": "B01",
+      "type": "bridge",
+      "level": "01",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Poznajcie się trochę bliżej."
+          ],
+          "lineCount": 1,
+          "maxLineWidth": 45.9147,
+          "totalHeight": 5.6444,
+          "availableWidth": 46,
+          "availableHeight": 11.2889,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 11,
+          "lineHeight": 16,
+          "scaleFactor": 1,
+          "remainingWidth": 0.0853,
+          "remainingHeight": 5.6444
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0229
+    },
+    {
+      "cardId": "B02",
+      "type": "bridge",
+      "level": "02",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Czas na to, co pod",
+            "powierzchnią."
+          ],
+          "lineCount": 2,
+          "maxLineWidth": 31.84,
+          "totalHeight": 11.2889,
+          "availableWidth": 46,
+          "availableHeight": 11.2889,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 11,
+          "lineHeight": 16,
+          "scaleFactor": 1,
+          "remainingWidth": 14.16,
+          "remainingHeight": 0
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0246
+    },
+    {
+      "cardId": "B03",
+      "type": "bridge",
+      "level": "03",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Dalej jest szczerość. Nie",
+            "spieszcie się."
+          ],
+          "lineCount": 2,
+          "maxLineWidth": 41.8518,
+          "totalHeight": 11.2889,
+          "availableWidth": 46,
+          "availableHeight": 11.2889,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 11,
+          "lineHeight": 16,
+          "scaleFactor": 1,
+          "remainingWidth": 4.1482,
+          "remainingHeight": 0
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0277
+    },
+    {
+      "cardId": "B04",
+      "type": "bridge",
+      "level": "04",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "Zbliżcie się. Bez",
+            "pośpiechu."
+          ],
+          "lineCount": 2,
+          "maxLineWidth": 27.3773,
+          "totalHeight": 11.2889,
+          "availableWidth": 46,
+          "availableHeight": 11.2889,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 11,
+          "lineHeight": 16,
+          "scaleFactor": 1,
+          "remainingWidth": 18.6227,
+          "remainingHeight": 0
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.024
+    },
+    {
+      "cardId": "B05",
+      "type": "bridge",
+      "level": "05",
+      "status": "PASS",
+      "textLayouts": [
+        {
+          "lines": [
+            "To, co wybierzecie,",
+            "zostanie z wami."
+          ],
+          "lineCount": 2,
+          "maxLineWidth": 32.9886,
+          "totalHeight": 11.2889,
+          "availableWidth": 46,
+          "availableHeight": 11.2889,
+          "overflowX": false,
+          "overflowY": false,
+          "overflow": false,
+          "fontSize": 11,
+          "lineHeight": 16,
+          "scaleFactor": 1,
+          "remainingWidth": 13.0114,
+          "remainingHeight": 0
+        }
+      ],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.0269
+    },
+    {
+      "cardId": "BACK",
+      "type": "back",
+      "status": "PASS",
+      "textLayouts": [],
+      "safeAreaViolations": [],
+      "overflow": false,
+      "warnings": [],
+      "failures": [],
+      "density": 0.015
+    }
+  ],
+  "issues": [
+    {
+      "severity": "WARNING",
+      "stage": "fonts",
+      "message": "Cormorant Garamond 500 substituted by Instrument Serif 400 (weight mapping is lossy)"
+    },
+    {
+      "severity": "WARNING",
+      "stage": "fonts",
+      "message": "Cormorant Garamond 600 substituted by Instrument Serif 400 (weight mapping is lossy)"
+    },
+    {
+      "severity": "WARNING",
+      "stage": "fonts",
+      "message": "Cormorant Garamond 400i substituted by Instrument Serif 400"
+    },
+    {
+      "severity": "WARNING",
+      "stage": "fonts",
+      "message": "Manrope 400 substituted by Instrument Sans 400"
+    },
+    {
+      "severity": "WARNING",
+      "stage": "fonts",
+      "message": "Manrope 500 substituted by Instrument Sans 400 (weight mapping is lossy)"
+    },
+    {
+      "severity": "WARNING",
+      "stage": "fonts",
+      "message": "Manrope 600 substituted by Instrument Sans 700 (weight mapping is lossy)"
+    }
+  ],
+  "warnings": [
+    {
+      "severity": "WARNING",
+      "stage": "fonts",
+      "message": "Cormorant Garamond 500 substituted by Instrument Serif 400 (weight mapping is lossy)"
+    },
+    {
+      "severity": "WARNING",
+      "stage": "fonts",
+      "message": "Cormorant Garamond 600 substituted by Instrument Serif 400 (weight mapping is lossy)"
+    },
+    {
+      "severity": "WARNING",
+      "stage": "fonts",
+      "message": "Cormorant Garamond 400i substituted by Instrument Serif 400"
+    },
+    {
+      "severity": "WARNING",
+      "stage": "fonts",
+      "message": "Manrope 400 substituted by Instrument Sans 400"
+    },
+    {
+      "severity": "WARNING",
+      "stage": "fonts",
+      "message": "Manrope 500 substituted by Instrument Sans 400 (weight mapping is lossy)"
+    },
+    {
+      "severity": "WARNING",
+      "stage": "fonts",
+      "message": "Manrope 600 substituted by Instrument Sans 700 (weight mapping is lossy)"
+    }
+  ],
+  "failures": []
+}

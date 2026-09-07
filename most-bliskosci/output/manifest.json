@@ -1,0 +1,853 @@
+{
+  "deck": "MOST BLISKOŚCI",
+  "version": "1.0.0",
+  "generatorVersion": "1.0.0",
+  "designVersion": "1.0.0",
+  "contentVersion": "1.0.0",
+  "fonts": {
+    "status": "SUBSTITUTED",
+    "specified": {
+      "display": "Cormorant Garamond",
+      "ui": "Manrope"
+    },
+    "rendered": {
+      "display": "Instrument Serif",
+      "ui": "Instrument Sans"
+    },
+    "reason": "Cormorant Garamond and Manrope are unobtainable in this environment: the egress proxy denies fonts.googleapis.com and the npm registry, so neither the font files nor a font package can be fetched.",
+    "missing": [],
+    "substitutions": [
+      {
+        "role": "display",
+        "specFamily": "Cormorant Garamond",
+        "specFace": "500",
+        "renderFamily": "Instrument Serif",
+        "renderWeight": 400,
+        "lossy": true,
+        "note": "Instrument Serif has no Medium; resolves to Regular."
+      },
+      {
+        "role": "display",
+        "specFamily": "Cormorant Garamond",
+        "specFace": "600",
+        "renderFamily": "Instrument Serif",
+        "renderWeight": 400,
+        "lossy": true,
+        "note": "Instrument Serif has no SemiBold; resolves to Regular."
+      },
+      {
+        "role": "display",
+        "specFamily": "Cormorant Garamond",
+        "specFace": "400i",
+        "renderFamily": "Instrument Serif",
+        "renderWeight": 400,
+        "lossy": false
+      },
+      {
+        "role": "ui",
+        "specFamily": "Manrope",
+        "specFace": "400",
+        "renderFamily": "Instrument Sans",
+        "renderWeight": 400,
+        "lossy": false
+      },
+      {
+        "role": "ui",
+        "specFamily": "Manrope",
+        "specFace": "500",
+        "renderFamily": "Instrument Sans",
+        "renderWeight": 400,
+        "lossy": true,
+        "note": "Instrument Sans has no Medium; resolves to Regular."
+      },
+      {
+        "role": "ui",
+        "specFamily": "Manrope",
+        "specFace": "600",
+        "renderFamily": "Instrument Sans",
+        "renderWeight": 700,
+        "lossy": true,
+        "note": "Instrument Sans has no SemiBold; resolves to Bold."
+      }
+    ],
+    "files": [
+      {
+        "role": "display",
+        "face": "500",
+        "file": "../assets/fonts/InstrumentSerif-Regular.ttf",
+        "sha256": "4716546a56c751695132102507fb35ec1da1816eca925e209eae9544c859f449"
+      },
+      {
+        "role": "display",
+        "face": "600",
+        "file": "../assets/fonts/InstrumentSerif-Regular.ttf",
+        "sha256": "4716546a56c751695132102507fb35ec1da1816eca925e209eae9544c859f449"
+      },
+      {
+        "role": "display",
+        "face": "400i",
+        "file": "../assets/fonts/InstrumentSerif-Italic.ttf",
+        "sha256": "e34a5eae24277f9d59d6f722b19789b71c74df65b0f3e18c7a987a8a56dbb03b"
+      },
+      {
+        "role": "ui",
+        "face": "400",
+        "file": "../assets/fonts/InstrumentSans-Regular.ttf",
+        "sha256": "ea0a4ed6e2bd84459c312a1e22432078bd187833d264107f2b246e5d278e37cf"
+      },
+      {
+        "role": "ui",
+        "face": "500",
+        "file": "../assets/fonts/InstrumentSans-Regular.ttf",
+        "sha256": "ea0a4ed6e2bd84459c312a1e22432078bd187833d264107f2b246e5d278e37cf"
+      },
+      {
+        "role": "ui",
+        "face": "600",
+        "file": "../assets/fonts/InstrumentSans-Bold.ttf",
+        "sha256": "a33d3f3eb9abfb19c80049454816721e3a661f8554459773d5b98d375faced68"
+      }
+    ]
+  },
+  "totalCards": 77,
+  "questions": 60,
+  "situations": 12,
+  "bridges": 5,
+  "dimensions": {
+    "unit": "mm",
+    "trim": {
+      "width": 70,
+      "height": 100
+    },
+    "bleed": 3,
+    "full": {
+      "width": 76,
+      "height": 106
+    },
+    "safeArea": {
+      "width": 60,
+      "height": 90
+    },
+    "cornerRadius": 4,
+    "raster": {
+      "dpi": 300,
+      "widthPx": 898,
+      "heightPx": 1252
+    },
+    "colourSpace": "sRGB; convert to CMYK at print-prep against the printer ICC profile"
+  },
+  "cards": [
+    {
+      "id": "Q01",
+      "type": "question",
+      "level": "01",
+      "svg": "front/Q01-poznaj.svg",
+      "png": "png/front/Q01-poznaj.png",
+      "svgSha256": "90f3278a54ac069bd3e1f2e346e791c59987f803223749a067c41d98f991760d",
+      "pngSha256": "2b43ba12a8387349ae1abbf6c335168c4424664508515cd5657ca7e20fd19e7b"
+    },
+    {
+      "id": "Q02",
+      "type": "question",
+      "level": "01",
+      "svg": "front/Q02-poznaj.svg",
+      "png": "png/front/Q02-poznaj.png",
+      "svgSha256": "f57b71f0259047bb96e32bc71f8b44c21839b5a9e7860f2efe243557b4f47ced",
+      "pngSha256": "19beef98e4dad72a7cb243294b80bb42ab9666e040b13242642ce12e5695b880"
+    },
+    {
+      "id": "Q03",
+      "type": "question",
+      "level": "01",
+      "svg": "front/Q03-poznaj.svg",
+      "png": "png/front/Q03-poznaj.png",
+      "svgSha256": "deb8075f6b08136a5eed6d211494dd12c613747d1f9993f051834f1d30ab7640",
+      "pngSha256": "31eb82286025a5c017336c1693bf777c3bc6cc3bbdac564938aaa9e52865a6d1"
+    },
+    {
+      "id": "Q04",
+      "type": "question",
+      "level": "01",
+      "svg": "front/Q04-poznaj.svg",
+      "png": "png/front/Q04-poznaj.png",
+      "svgSha256": "9624859c9a51e02c32405b7bc8644a7aeb5d73e703d096fc2a4a0adfc52a7937",
+      "pngSha256": "e760bf5ed76d134afefec7cf6edbdb3bec8299ed5347f54b4ac525cb12ac109f"
+    },
+    {
+      "id": "Q05",
+      "type": "question",
+      "level": "01",
+      "svg": "front/Q05-poznaj.svg",
+      "png": "png/front/Q05-poznaj.png",
+      "svgSha256": "0fe6691f6f53aad9415959b7c89bda741adf95bc564d90111803f76002cdff8b",
+      "pngSha256": "e02462b92d309f3cd6067bc57cb6b6abd2271bba5ec21ed8bac1a2566cc4f9b4"
+    },
+    {
+      "id": "Q06",
+      "type": "question",
+      "level": "01",
+      "svg": "front/Q06-poznaj.svg",
+      "png": "png/front/Q06-poznaj.png",
+      "svgSha256": "df99e0f2eac35a0fa11c8a55ad0408d5132cd729f635349ae5adc3fa9ebfd30a",
+      "pngSha256": "22f13903bb5619f2ea691647a7d0daa62a1b88fbdf63d656ff40d7435e9f7e5f"
+    },
+    {
+      "id": "Q07",
+      "type": "question",
+      "level": "01",
+      "svg": "front/Q07-poznaj.svg",
+      "png": "png/front/Q07-poznaj.png",
+      "svgSha256": "e7895c3780bfd670e3cb25f86a5c851a78d26dc07a62ed631cdb0f0bca862100",
+      "pngSha256": "018972319b949d7248abb7ab1cba56d1531364ac304491ddb2bfed89dbc643cf"
+    },
+    {
+      "id": "Q08",
+      "type": "question",
+      "level": "01",
+      "svg": "front/Q08-poznaj.svg",
+      "png": "png/front/Q08-poznaj.png",
+      "svgSha256": "6dab07cd536afd4bf8ec1646ae35f53afa134d08aaf9280cbefc14ba3b0607b3",
+      "pngSha256": "16967ee72a0260617d9574d93236157955ade74aa4787cc42026e2278a3829de"
+    },
+    {
+      "id": "Q09",
+      "type": "question",
+      "level": "01",
+      "svg": "front/Q09-poznaj.svg",
+      "png": "png/front/Q09-poznaj.png",
+      "svgSha256": "72e128477791807745e82f85e3965210b4cb8daa3c1eb9e841585e2aa2fa5930",
+      "pngSha256": "605d2ec14a1d74699b5f4d0dbd5902cc73c03460c5b3b276857a7ce7b4a88b43"
+    },
+    {
+      "id": "Q10",
+      "type": "question",
+      "level": "01",
+      "svg": "front/Q10-poznaj.svg",
+      "png": "png/front/Q10-poznaj.png",
+      "svgSha256": "20f6470660b4e2a71c8904632e9986976ea7958e79942cf1ca8ccaa25f91dceb",
+      "pngSha256": "0c6065447fcc64f47e91133e07a12f75372e13ab180771afbb7e6c4cd4223a12"
+    },
+    {
+      "id": "Q11",
+      "type": "question",
+      "level": "01",
+      "svg": "front/Q11-poznaj.svg",
+      "png": "png/front/Q11-poznaj.png",
+      "svgSha256": "8812ac3db1451e707cca2267d63ea89eb83a75d185af2ad1329f911ca3038ef5",
+      "pngSha256": "1adec1311f8519a1a097ceb8a2d7108600f109f1f4a1844bbf81d49ad6805e48"
+    },
+    {
+      "id": "Q12",
+      "type": "question",
+      "level": "01",
+      "svg": "front/Q12-poznaj.svg",
+      "png": "png/front/Q12-poznaj.png",
+      "svgSha256": "65f3f7d3f87f821340ac8336c950137f345b73e6227914c608c484907c73c10f",
+      "pngSha256": "0a195f9946645b13cbf93448d2b0fe3abd283e94f30bea978b89003197d0285f"
+    },
+    {
+      "id": "Q13",
+      "type": "question",
+      "level": "02",
+      "svg": "front/Q13-odkryj.svg",
+      "png": "png/front/Q13-odkryj.png",
+      "svgSha256": "a9da5b7c09032ac85329dede9b81bfeb5302eab390ac015460046d50f7bb4368",
+      "pngSha256": "c80ef95f4d05c943ad594b85d94193778e9c9adc6e4fe33bad33a52447389830"
+    },
+    {
+      "id": "Q14",
+      "type": "question",
+      "level": "02",
+      "svg": "front/Q14-odkryj.svg",
+      "png": "png/front/Q14-odkryj.png",
+      "svgSha256": "6577d2d69e4dc167111e410a248a127b345196c46ff4f40a2c352883bab5fda5",
+      "pngSha256": "f0be8fcf4df3e3449ad8294c6ea58df7eda6257cd1b925a95dea252d82d5ea6f"
+    },
+    {
+      "id": "Q15",
+      "type": "question",
+      "level": "02",
+      "svg": "front/Q15-odkryj.svg",
+      "png": "png/front/Q15-odkryj.png",
+      "svgSha256": "ba1832b7ee2b730882f6f37d8718487b86b5f74ac2dcb62c129f98b065406728",
+      "pngSha256": "d3acf4f2112082f0c7e0999568a61d38e404f110c22a8fc9240051899df5f8ad"
+    },
+    {
+      "id": "Q16",
+      "type": "question",
+      "level": "02",
+      "svg": "front/Q16-odkryj.svg",
+      "png": "png/front/Q16-odkryj.png",
+      "svgSha256": "57961e2a4b016db98e6386b7ee118d7abb3214b6a8eec17b51509c09751640fe",
+      "pngSha256": "73de9922d43d87280b86ee8ca5b0bea3aa75814853a64483b8c80d0f252dba5a"
+    },
+    {
+      "id": "Q17",
+      "type": "question",
+      "level": "02",
+      "svg": "front/Q17-odkryj.svg",
+      "png": "png/front/Q17-odkryj.png",
+      "svgSha256": "0fd2caf24b5e31a6801b2dfecc240df75754b37035bc0cf1cf75033ad63cd586",
+      "pngSha256": "adca40a858f8d4bf26f8a289d2a9e73342b862624ce3744b762a0a27bea74a5e"
+    },
+    {
+      "id": "Q18",
+      "type": "question",
+      "level": "02",
+      "svg": "front/Q18-odkryj.svg",
+      "png": "png/front/Q18-odkryj.png",
+      "svgSha256": "58492a527892618c7d5ee6e9aaf3fd3eae768869e402cccee605b5c81bd76f4e",
+      "pngSha256": "84f5c6e4f900d4340611ee1379789084a99b084a91a6677b483d6729089f933d"
+    },
+    {
+      "id": "Q19",
+      "type": "question",
+      "level": "02",
+      "svg": "front/Q19-odkryj.svg",
+      "png": "png/front/Q19-odkryj.png",
+      "svgSha256": "8bc1d1ef0bcfbdfba9eaa1b6202a8f35897a8c4956f8c2b494bc6946864cf9ed",
+      "pngSha256": "206a0b3f3f79a20713dfc2906ab93ecc2bb4ebc5ad003bc3101f9a246693554b"
+    },
+    {
+      "id": "Q20",
+      "type": "question",
+      "level": "02",
+      "svg": "front/Q20-odkryj.svg",
+      "png": "png/front/Q20-odkryj.png",
+      "svgSha256": "c118d7a7d6aafac53fbd54233dfc13981add3a79bec1cc0f0adf8d7d5dd05244",
+      "pngSha256": "6b6ecccecac736d1cce62dc6301b9bd82a70ccd9969a48577a0c28d68c551add"
+    },
+    {
+      "id": "Q21",
+      "type": "question",
+      "level": "02",
+      "svg": "front/Q21-odkryj.svg",
+      "png": "png/front/Q21-odkryj.png",
+      "svgSha256": "20f665e7d77fdb6f05732edf69f6fd845054fa0b8708f1df87607bf32a9adc3d",
+      "pngSha256": "3e38b576ab4197e90c27654d0eb0404a2d3dcf14353812ea51e5f3cef92a545f"
+    },
+    {
+      "id": "Q22",
+      "type": "question",
+      "level": "02",
+      "svg": "front/Q22-odkryj.svg",
+      "png": "png/front/Q22-odkryj.png",
+      "svgSha256": "c60bb2b740218e23f1a59089b8e49f0281b422200e92d70502d04a47d5ff09b0",
+      "pngSha256": "2aaca81010b8fd085de782294df69dcec2dfccb4d1ef58d2eff626fcf91083e6"
+    },
+    {
+      "id": "Q23",
+      "type": "question",
+      "level": "02",
+      "svg": "front/Q23-odkryj.svg",
+      "png": "png/front/Q23-odkryj.png",
+      "svgSha256": "64ade3e9c1500450ce7537a8763272b9f9cdd92bae80740d02b05f9f72bb0a6d",
+      "pngSha256": "cfa69f552713188888f1dc155f72dd8f61c952a1e4e036b979ac0bd5dd0c67f3"
+    },
+    {
+      "id": "Q24",
+      "type": "question",
+      "level": "02",
+      "svg": "front/Q24-odkryj.svg",
+      "png": "png/front/Q24-odkryj.png",
+      "svgSha256": "41b4b92df45e7be10e94fca125ca860eea8e0bbf100b972ace3ed7846f986352",
+      "pngSha256": "c92fc197938199b44b9a95265e2a8ffae7c349ec4eb2cacaf4ea3e3f4b3bcb71"
+    },
+    {
+      "id": "Q25",
+      "type": "question",
+      "level": "03",
+      "svg": "front/Q25-otworz-sie.svg",
+      "png": "png/front/Q25-otworz-sie.png",
+      "svgSha256": "61deaeff08b91221f7fbcdaab04caddc4ce9ae783f2dd1057df6b94bf3cfe36a",
+      "pngSha256": "345c6f00736166564b99d97d41cc78a0daecb79806e565821f267736822de0ea"
+    },
+    {
+      "id": "Q26",
+      "type": "question",
+      "level": "03",
+      "svg": "front/Q26-otworz-sie.svg",
+      "png": "png/front/Q26-otworz-sie.png",
+      "svgSha256": "8e4606df4d4c9d148c332eddb2422aa37d7f4f78f691dbb3f4485eaf2092afca",
+      "pngSha256": "266783b58d0b037eac473c7253599c47102509da9013b6ee08932340e04d0bc1"
+    },
+    {
+      "id": "Q27",
+      "type": "question",
+      "level": "03",
+      "svg": "front/Q27-otworz-sie.svg",
+      "png": "png/front/Q27-otworz-sie.png",
+      "svgSha256": "6ab18a39f964dc1a14804433a3f0bb9f96fd1e63d56d28f743d35932bab7bc3d",
+      "pngSha256": "c288bb7b795e06465e33caf31427d612926ae9288563bc2d7b7f57f6afb164d2"
+    },
+    {
+      "id": "Q28",
+      "type": "question",
+      "level": "03",
+      "svg": "front/Q28-otworz-sie.svg",
+      "png": "png/front/Q28-otworz-sie.png",
+      "svgSha256": "ca3188755c2c1a13ab37d5e8d514a64e19c3d8e5b69553c287abfb405c1dd4ee",
+      "pngSha256": "a861f978a76d483a829ad50b055359e416f32120cce888c4a9e7aca4bc747a8d"
+    },
+    {
+      "id": "Q29",
+      "type": "question",
+      "level": "03",
+      "svg": "front/Q29-otworz-sie.svg",
+      "png": "png/front/Q29-otworz-sie.png",
+      "svgSha256": "a1fece15e06f5e72f10ca8e49b2ab1b70a3b5c33cc1081cbe57b53a0205b214d",
+      "pngSha256": "a795c4e5f55e74204f935c2fe3dc8a96d20b563904f5afbab8ae16485e469e1b"
+    },
+    {
+      "id": "Q30",
+      "type": "question",
+      "level": "03",
+      "svg": "front/Q30-otworz-sie.svg",
+      "png": "png/front/Q30-otworz-sie.png",
+      "svgSha256": "a7f672834d6156ea657d8afcdee4c26994a3be2e8bc6e3df150e4996703964de",
+      "pngSha256": "580fe58cb85bdbb48cfa33fd0b851cbaf7d9f573f640220aad23b6f1d7dd6e17"
+    },
+    {
+      "id": "Q31",
+      "type": "question",
+      "level": "03",
+      "svg": "front/Q31-otworz-sie.svg",
+      "png": "png/front/Q31-otworz-sie.png",
+      "svgSha256": "68c5328b024c0d7c470b657ad5b26315617a9f5a92cbef3f36599bd79987a4c1",
+      "pngSha256": "3d6312a1f2ec90412dab7e2fa135991db07fa551f2e4df10081309a3882a8d23"
+    },
+    {
+      "id": "Q32",
+      "type": "question",
+      "level": "03",
+      "svg": "front/Q32-otworz-sie.svg",
+      "png": "png/front/Q32-otworz-sie.png",
+      "svgSha256": "d9191420522f07f67b7a6e5df85ec50a06481d36c30f73bcd39b52cfe20b1908",
+      "pngSha256": "1438f0346ca99b0f43231f729784368e92de2e73f1a5f4a6b9e9cbf93f6c482c"
+    },
+    {
+      "id": "Q33",
+      "type": "question",
+      "level": "03",
+      "svg": "front/Q33-otworz-sie.svg",
+      "png": "png/front/Q33-otworz-sie.png",
+      "svgSha256": "7a6cbdfd15f1436f4181a0ca8844c893ee3c87439f1e6092985b60873e933eec",
+      "pngSha256": "004d94d67cba06192e5c8f390a093424caeafd85b6c1855b27a7de0aaa02c170"
+    },
+    {
+      "id": "Q34",
+      "type": "question",
+      "level": "03",
+      "svg": "front/Q34-otworz-sie.svg",
+      "png": "png/front/Q34-otworz-sie.png",
+      "svgSha256": "1e62890f2b25b5b9c9711c79a20dc78730639cae626ea344afc433668fffdeaa",
+      "pngSha256": "ea861e1cbd298bcaaa6fa8a085031eef1e59b9f8d1a4db0f18c5f9d05eb11a3d"
+    },
+    {
+      "id": "Q35",
+      "type": "question",
+      "level": "03",
+      "svg": "front/Q35-otworz-sie.svg",
+      "png": "png/front/Q35-otworz-sie.png",
+      "svgSha256": "29244e605e092ac5b46cfbd08d93499c90efc0cd0f1f4c050a803e29b1001b18",
+      "pngSha256": "e36ffbd403ee17a3b2e302a9af00cbbbb7e75da33bca540d46bd000a697dcf07"
+    },
+    {
+      "id": "Q36",
+      "type": "question",
+      "level": "03",
+      "svg": "front/Q36-otworz-sie.svg",
+      "png": "png/front/Q36-otworz-sie.png",
+      "svgSha256": "1124863a0878b0ffa707192fc04bbfcb4d062b534a4f516a4e0769d96ca2f573",
+      "pngSha256": "8fcb9cb5f427e236131878220e7f1c30aa519d4b9ab4b8afea4e2a6763c6f38a"
+    },
+    {
+      "id": "Q37",
+      "type": "question",
+      "level": "04",
+      "svg": "front/Q37-zbliz-sie.svg",
+      "png": "png/front/Q37-zbliz-sie.png",
+      "svgSha256": "7b36fc03da535057ed14f05f110d5b65330e47aefa6d34e6de33faf1d0925162",
+      "pngSha256": "4b6d426875397a8c6b1ce0a93e87c00671fa8e8044a864322a8d62b9adec659d"
+    },
+    {
+      "id": "Q38",
+      "type": "question",
+      "level": "04",
+      "svg": "front/Q38-zbliz-sie.svg",
+      "png": "png/front/Q38-zbliz-sie.png",
+      "svgSha256": "3db773bde4459df8c91b25bf4cb11274ec5c89c36180b658f7eb017b2f5d8b01",
+      "pngSha256": "48aba16843172649110779e2c20da06d3d6d9ea7d9cdd1c77c4f48388a9e58b6"
+    },
+    {
+      "id": "Q39",
+      "type": "question",
+      "level": "04",
+      "svg": "front/Q39-zbliz-sie.svg",
+      "png": "png/front/Q39-zbliz-sie.png",
+      "svgSha256": "168ed004a3fd1f6620ee0bded6ea9cecee14c31ac0ac1be7145589c4a33564b9",
+      "pngSha256": "927146028848dcd1def966dabbdb08e9998763bc2815ce8295ed64adba79a4d1"
+    },
+    {
+      "id": "Q40",
+      "type": "question",
+      "level": "04",
+      "svg": "front/Q40-zbliz-sie.svg",
+      "png": "png/front/Q40-zbliz-sie.png",
+      "svgSha256": "25c305231e126b41b98d65596e540fd68be9688f86c49388339a2c76963bfdb7",
+      "pngSha256": "40b85bf6d854404086d9f58ebba50a283efe398329beb900f29e96494cfb6437"
+    },
+    {
+      "id": "Q41",
+      "type": "question",
+      "level": "04",
+      "svg": "front/Q41-zbliz-sie.svg",
+      "png": "png/front/Q41-zbliz-sie.png",
+      "svgSha256": "34944ee8c9b4dbad36ac44093cc3354698d152436864a8dd95d312342473d87f",
+      "pngSha256": "e5cbebf8e359215217c8de6c095c6568e8fe1dbd46abc4afb15867f722201767"
+    },
+    {
+      "id": "Q42",
+      "type": "question",
+      "level": "04",
+      "svg": "front/Q42-zbliz-sie.svg",
+      "png": "png/front/Q42-zbliz-sie.png",
+      "svgSha256": "205f8d3cabf482c6148aef635cebd72308bfb3f9e4be2bc6766c6df85e1c3184",
+      "pngSha256": "54a108da1b24831f7cb0dd287d10ed27e78cd97bec869b7d2903d0da3e73d64e"
+    },
+    {
+      "id": "Q43",
+      "type": "question",
+      "level": "04",
+      "svg": "front/Q43-zbliz-sie.svg",
+      "png": "png/front/Q43-zbliz-sie.png",
+      "svgSha256": "88c94312f0579970d7497177959d85e4301952c3aeda90a12eed59a60be1a4d4",
+      "pngSha256": "92f74fae5e5551c69b85ace05d2013ef81b9f6b46f6092955a79a06cd51f4780"
+    },
+    {
+      "id": "Q44",
+      "type": "question",
+      "level": "04",
+      "svg": "front/Q44-zbliz-sie.svg",
+      "png": "png/front/Q44-zbliz-sie.png",
+      "svgSha256": "4598d9f31a57a1df1d11904440394b3e67df8894a7f7135f81b9f3c9beedd8a9",
+      "pngSha256": "21f6e2bc50fea041fdeec033c87f4dd7fb2e2b8204a8e84258b5929bfabb37c0"
+    },
+    {
+      "id": "Q45",
+      "type": "question",
+      "level": "04",
+      "svg": "front/Q45-zbliz-sie.svg",
+      "png": "png/front/Q45-zbliz-sie.png",
+      "svgSha256": "694ddbeb822fd23362995a7a71e033683ace4ec310e680b977d68949dce131a5",
+      "pngSha256": "e84548067a17a43e10f20e68b2b3221e0c6b7e9c0e73c34e9dc786259c029430"
+    },
+    {
+      "id": "Q46",
+      "type": "question",
+      "level": "04",
+      "svg": "front/Q46-zbliz-sie.svg",
+      "png": "png/front/Q46-zbliz-sie.png",
+      "svgSha256": "d55ec31c151b9ccd0a14bf4870990411f0f16ff090db80ea618a79d6122161ab",
+      "pngSha256": "e29dd410fc64d14cc90e8401469b3ca446d9fd6547c22346d8bd3f1de8e09c3a"
+    },
+    {
+      "id": "Q47",
+      "type": "question",
+      "level": "04",
+      "svg": "front/Q47-zbliz-sie.svg",
+      "png": "png/front/Q47-zbliz-sie.png",
+      "svgSha256": "be798df2e11021da93a312bc57b86f9bf30bc15d5e0a90fc2f9017181aaf11a8",
+      "pngSha256": "02ca415c58ecf31761196ed8212cc8ed286236aafac5d4078c0ebc20b319fa0d"
+    },
+    {
+      "id": "Q48",
+      "type": "question",
+      "level": "04",
+      "svg": "front/Q48-zbliz-sie.svg",
+      "png": "png/front/Q48-zbliz-sie.png",
+      "svgSha256": "bb9f78de1efd38f9cf7533494650545b2586c3a40bcaffb60dafb8263cc559cd",
+      "pngSha256": "c7ebffb2a5abe33e6c1129f5b3c99de63ab51cf07eaa6c3082bbe4d89f15c5cd"
+    },
+    {
+      "id": "Q49",
+      "type": "question",
+      "level": "05",
+      "svg": "front/Q49-wybierz-nas.svg",
+      "png": "png/front/Q49-wybierz-nas.png",
+      "svgSha256": "5f44c75726e12896d0f5475332c3496a9964988517bea2a111a35240f8b123ca",
+      "pngSha256": "d211c98eceece56b60aeeff20e852c9fd6c5306e1186be99bf634c1dda108163"
+    },
+    {
+      "id": "Q50",
+      "type": "question",
+      "level": "05",
+      "svg": "front/Q50-wybierz-nas.svg",
+      "png": "png/front/Q50-wybierz-nas.png",
+      "svgSha256": "539e7c95a2a76650ba2e1c9330b2d56ffee4f1a2ef1ed337aae4070942bde18e",
+      "pngSha256": "08a3443134b13e8b74d647eade0e0afb754fedd4e61b40385522d2ef33855c5c"
+    },
+    {
+      "id": "Q51",
+      "type": "question",
+      "level": "05",
+      "svg": "front/Q51-wybierz-nas.svg",
+      "png": "png/front/Q51-wybierz-nas.png",
+      "svgSha256": "f51496e6d21b5aefb7eb3f3f6aff6f949e137ece4566a9cca21a85a9ac0851d2",
+      "pngSha256": "2264206c99c9da762935df53534a9d2777784f9a7eef85b64a23a8a950c70e18"
+    },
+    {
+      "id": "Q52",
+      "type": "question",
+      "level": "05",
+      "svg": "front/Q52-wybierz-nas.svg",
+      "png": "png/front/Q52-wybierz-nas.png",
+      "svgSha256": "8bd070ab1e4c5135b6178e522b1f2807961ce506a1a44b2c65a83b4dcc9996af",
+      "pngSha256": "7174d4a004493d66c69de12b19929485107fecf6b4ebb8efb9cf6546aff7b95c"
+    },
+    {
+      "id": "Q53",
+      "type": "question",
+      "level": "05",
+      "svg": "front/Q53-wybierz-nas.svg",
+      "png": "png/front/Q53-wybierz-nas.png",
+      "svgSha256": "723cee553be0c0493994b7fd5d0cb6b85c69468f712126010e7ed5e40188f4c0",
+      "pngSha256": "6b8be30b0697b0804f7e05c64fea49394b12df6704ba5cf184efa1da4d672e9d"
+    },
+    {
+      "id": "Q54",
+      "type": "question",
+      "level": "05",
+      "svg": "front/Q54-wybierz-nas.svg",
+      "png": "png/front/Q54-wybierz-nas.png",
+      "svgSha256": "b528a2118f716b7beaf89c4f381fa5699c69f2d516e19324283e9d88f18f81b5",
+      "pngSha256": "4760fed78f3cec74201fce05dfeb401d60021d1f9ded84f2120a7d54c383353a"
+    },
+    {
+      "id": "Q55",
+      "type": "question",
+      "level": "05",
+      "svg": "front/Q55-wybierz-nas.svg",
+      "png": "png/front/Q55-wybierz-nas.png",
+      "svgSha256": "79b108d7acf36896fad7c2199d8c3971e791b29ae6452b107b0d1781aac66730",
+      "pngSha256": "2d8246f058fa9946517dd3ce2f83f58c03f317cdf2f03160956a3426eb5476e5"
+    },
+    {
+      "id": "Q56",
+      "type": "question",
+      "level": "05",
+      "svg": "front/Q56-wybierz-nas.svg",
+      "png": "png/front/Q56-wybierz-nas.png",
+      "svgSha256": "0ee1096ba974e0c956700eb8a374da729e05647017476dd4aceca66d4cda412d",
+      "pngSha256": "d16643b856d73523716c8bdaab2ac458ba6b19e4e146d4044c98cebdb4937d52"
+    },
+    {
+      "id": "Q57",
+      "type": "question",
+      "level": "05",
+      "svg": "front/Q57-wybierz-nas.svg",
+      "png": "png/front/Q57-wybierz-nas.png",
+      "svgSha256": "93c4cd04d02c3903aab4cfbf2e27f6406b73c5fdb1597099da85c5c736f27031",
+      "pngSha256": "387256da46438efccee7eb319d2c19b0de30c7fdfbf33fa5c3bb3dc7bdd0f404"
+    },
+    {
+      "id": "Q58",
+      "type": "question",
+      "level": "05",
+      "svg": "front/Q58-wybierz-nas.svg",
+      "png": "png/front/Q58-wybierz-nas.png",
+      "svgSha256": "d9735717eb103e18cc2d627243c3de3685b615d7345902d86c071bea8879a94b",
+      "pngSha256": "5cc5d49f7f60a0e88d608a0150314701a4ccc80b074f071ef85b19af8d9d5161"
+    },
+    {
+      "id": "Q59",
+      "type": "question",
+      "level": "05",
+      "svg": "front/Q59-wybierz-nas.svg",
+      "png": "png/front/Q59-wybierz-nas.png",
+      "svgSha256": "e94ce9eebcc70c7761737d46597c6d3c52adcfd2b3d9e994a1e94db28c0c0eb7",
+      "pngSha256": "d6e936e8d16605584aaef837337ea63cd2fbb4e1191ac7eb6a79c93d2f7c9c91"
+    },
+    {
+      "id": "Q60",
+      "type": "question",
+      "level": "05",
+      "svg": "front/Q60-wybierz-nas.svg",
+      "png": "png/front/Q60-wybierz-nas.png",
+      "svgSha256": "b59a0619853f29829f6d24a45785e6063131599c33ed3493eb49ec43c3e6e7e1",
+      "pngSha256": "49d5b54db33b7d4a11b82c1d37226adc3c7d380e9d2c9d057f7ce0aed5c9094d"
+    },
+    {
+      "id": "S01",
+      "type": "situation",
+      "level": null,
+      "svg": "front/S01-sytuacja.svg",
+      "png": "png/front/S01-sytuacja.png",
+      "svgSha256": "a90f751e91631ef383ec73cdafe3e82ecdbaeb966331ec80d720d88d75071427",
+      "pngSha256": "fb251ec4ea9d762c55b9e88062733463b8a1f970c10591fad8e541f83a2ae8f3"
+    },
+    {
+      "id": "S02",
+      "type": "situation",
+      "level": null,
+      "svg": "front/S02-sytuacja.svg",
+      "png": "png/front/S02-sytuacja.png",
+      "svgSha256": "1f6d8216e904d1fe157a5e6d27c0a7e2cc254ca7e6db0dc3b8bfe503dc00dbe7",
+      "pngSha256": "eb53d159325a48716e43615fc69a8e245040ed277ff96fa8a3646c22ff48d6e9"
+    },
+    {
+      "id": "S03",
+      "type": "situation",
+      "level": null,
+      "svg": "front/S03-sytuacja.svg",
+      "png": "png/front/S03-sytuacja.png",
+      "svgSha256": "850bf6cea60c5aec09b07836802aee65f6c2c1e9fa4f2d09825ea72c23f6015c",
+      "pngSha256": "abb4ee390c1ef12cdce4b454cac11303a416641e4a8123073a65f929a46e873e"
+    },
+    {
+      "id": "S04",
+      "type": "situation",
+      "level": null,
+      "svg": "front/S04-sytuacja.svg",
+      "png": "png/front/S04-sytuacja.png",
+      "svgSha256": "697690e1d719c735fb0cc45436e6d96e680d06a7e0726c79b4255ed6b53449ed",
+      "pngSha256": "23ee6855391d105eb94b71ceccbff8d2d505df8abb8e4820ec829863b1eeeab8"
+    },
+    {
+      "id": "S05",
+      "type": "situation",
+      "level": null,
+      "svg": "front/S05-sytuacja.svg",
+      "png": "png/front/S05-sytuacja.png",
+      "svgSha256": "66cf5520d998a239b48f120d2d327f789e24b914b740293c4b1c3c6b44df5abf",
+      "pngSha256": "17ee616ae0aa0e7fbf5d3d988b506b50bb56300fec26fede5fd705cab542a1eb"
+    },
+    {
+      "id": "S06",
+      "type": "situation",
+      "level": null,
+      "svg": "front/S06-sytuacja.svg",
+      "png": "png/front/S06-sytuacja.png",
+      "svgSha256": "2585afb1b684d63b6acef9ca7a12a5224a43cf7d8147363bbd57ada789ac920d",
+      "pngSha256": "a00255176b017153c0782c424786f94f920603057dfa9d5835763ec036bf37dc"
+    },
+    {
+      "id": "S07",
+      "type": "situation",
+      "level": null,
+      "svg": "front/S07-sytuacja.svg",
+      "png": "png/front/S07-sytuacja.png",
+      "svgSha256": "518d9dbfb1d570b528fd50c2c32d7183750cc7e72dbdc765fa851354eb76e6b9",
+      "pngSha256": "6333ca1849429667d9ad7d4b7cd8380fca055b9c9e60a0a572ac59168c223a6b"
+    },
+    {
+      "id": "S08",
+      "type": "situation",
+      "level": null,
+      "svg": "front/S08-sytuacja.svg",
+      "png": "png/front/S08-sytuacja.png",
+      "svgSha256": "a5a109f342482c82495e4fa59f27712784b81fab01fe5b5ee28e032e500ce36e",
+      "pngSha256": "0b2c6ec9a581087d4fa41ecb148c320c99ea57c4358eac89286477bc1cc398b6"
+    },
+    {
+      "id": "S09",
+      "type": "situation",
+      "level": null,
+      "svg": "front/S09-sytuacja.svg",
+      "png": "png/front/S09-sytuacja.png",
+      "svgSha256": "0492ffbb075a2bb174663650246b74006eb8e38b557a6cc347ab84d4cf8411fe",
+      "pngSha256": "d7804590c76ea6f5d3e02034287c9fa6937c7b6188d866390dece240b18a4229"
+    },
+    {
+      "id": "S10",
+      "type": "situation",
+      "level": null,
+      "svg": "front/S10-sytuacja.svg",
+      "png": "png/front/S10-sytuacja.png",
+      "svgSha256": "1746513e66ac23e965956247e802224c7a84048d4757ff74f8a0c869c0ab6b4d",
+      "pngSha256": "11352c283b1aa711b307fbf8cf4e2962db7d284499121edc5855f5488b55e629"
+    },
+    {
+      "id": "S11",
+      "type": "situation",
+      "level": null,
+      "svg": "front/S11-sytuacja.svg",
+      "png": "png/front/S11-sytuacja.png",
+      "svgSha256": "440f3a3b0a1ba1b1fa441e14017f153e399358efca5b2d5ac9842c2879bf0aa4",
+      "pngSha256": "a60918bbcd27a3776f349151885eb70e2bd5d8a82fccbbcbc7273783a360e308"
+    },
+    {
+      "id": "S12",
+      "type": "situation",
+      "level": null,
+      "svg": "front/S12-sytuacja.svg",
+      "png": "png/front/S12-sytuacja.png",
+      "svgSha256": "85cb2f6cf65ae5ed3dd1850ce0c95205bd14166f9e1a595e24bd7842276ecffc",
+      "pngSha256": "85003a5e0b1864e0c94f12ae86774e983f96324d04351fcba407ae3faa661dcb"
+    },
+    {
+      "id": "B01",
+      "type": "bridge",
+      "level": "01",
+      "svg": "front/B01-most.svg",
+      "png": "png/front/B01-most.png",
+      "svgSha256": "dbf15a9ad7ceb176e4aa68a812bebc78393ecd8356fedf5f043415c01b445208",
+      "pngSha256": "b9d0074dd999c53db37a3df526cbd5bf2a052dd7d334b29f211dc3700ddfee08"
+    },
+    {
+      "id": "B02",
+      "type": "bridge",
+      "level": "02",
+      "svg": "front/B02-most.svg",
+      "png": "png/front/B02-most.png",
+      "svgSha256": "c12c7fc8742220622b869f03353aed5785006016cde0d2d0dbed182115e3b566",
+      "pngSha256": "40d40d742678b00cb6ae9eb3456411662148b1437cd8fe34f936e095141b60a4"
+    },
+    {
+      "id": "B03",
+      "type": "bridge",
+      "level": "03",
+      "svg": "front/B03-most.svg",
+      "png": "png/front/B03-most.png",
+      "svgSha256": "b773ffeb98132605f56d676a6881d1bdeb4f0e08e2f89d1740b55479dea6483b",
+      "pngSha256": "3d433474726acb844289b23e7f3884592b2dfd036e1fbbe51189590d576e7875"
+    },
+    {
+      "id": "B04",
+      "type": "bridge",
+      "level": "04",
+      "svg": "front/B04-most.svg",
+      "png": "png/front/B04-most.png",
+      "svgSha256": "fc07400a82eda5cf3f2ef3ecefd9b58d5c25512877e998e7f0b1177c697548e7",
+      "pngSha256": "d8ce9ae53c413c6c0aaae6479bad5e213e090bf352c64851c695058f8033459d"
+    },
+    {
+      "id": "B05",
+      "type": "bridge",
+      "level": "05",
+      "svg": "front/B05-most.svg",
+      "png": "png/front/B05-most.png",
+      "svgSha256": "e9ace15aaa778849e1eb43235c2e7d73b7b6fb92db31f569266b798aad91ce86",
+      "pngSha256": "84993bfe47bb77ab53199afa9747163e47814943b1a2b2616461e97fd09d6d7a"
+    },
+    {
+      "id": "BACK",
+      "type": "back",
+      "level": null,
+      "svg": "back/back.svg",
+      "png": "png/back/back.png",
+      "svgSha256": "3a95e0f406c9cc5d081f5c92a5fc19ee314d037b7325143fc339b6c5fac59c63",
+      "pngSha256": "82b37f500401d0a505ca71fe67ab4989ee368d01fe22ba15dcf8ec193cdb2756"
+    }
+  ],
+  "files": {
+    "contactSheet": "contact-sheet/all-77-cards.png",
+    "proofIndex": "proof/index.html",
+    "report": "qa/report.json",
+    "reportHtml": "qa/report.html",
+    "overflowReport": "qa/overflow-report.json",
+    "contentStats": "qa/content-stats.json",
+    "designStats": "qa/design-stats.json",
+    "contentRevisions": "qa/content-revisions.json"
+  }
+}

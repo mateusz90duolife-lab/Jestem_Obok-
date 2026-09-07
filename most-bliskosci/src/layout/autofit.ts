@@ -48,6 +48,7 @@ function stages(input: FitInput): Array<{ strategy: string; measureMm: number; s
   const m = input.maxMeasureMm;
   const mid1 = round(p + (m - p) / 3, 2);
   const mid2 = round(p + (2 * (m - p)) / 3, 2);
+  void mid1; void mid2;
   const size = t.preferredFontSizePt;
   const lh = t.preferredLineHeightPt;
   const minLh = t.minimumLineHeightPt;
@@ -56,8 +57,8 @@ function stages(input: FitInput): Array<{ strategy: string; measureMm: number; s
   const midSize = round((size + minSize) / 2, 2);
   return [
     { strategy: 'preferred',            measureMm: p,    sizePt: size,     lineHeightPt: lh },
-    { strategy: 'widen-measure-1',      measureMm: mid1, sizePt: size,     lineHeightPt: lh },
-    { strategy: 'widen-measure-2',      measureMm: mid2, sizePt: size,     lineHeightPt: lh },
+    { strategy: 'widen-measure-1',      measureMm: round(p + (m - p) / 3, 2), sizePt: size, lineHeightPt: lh },
+    { strategy: 'widen-measure-2',      measureMm: round(p + (2 * (m - p)) / 3, 2), sizePt: size, lineHeightPt: lh },
     { strategy: 'widen-measure-max',    measureMm: m,    sizePt: size,     lineHeightPt: lh },
     { strategy: 'tighten-leading-1',    measureMm: m,    sizePt: size,     lineHeightPt: midLh },
     { strategy: 'tighten-leading-min',  measureMm: m,    sizePt: size,     lineHeightPt: minLh },
@@ -71,6 +72,18 @@ function stages(input: FitInput): Array<{ strategy: string; measureMm: number; s
 /** Target share of the content column the question block should occupy. */
 const MEASURE_TARGET_LO = 0.75;
 const MEASURE_TARGET_HI = 0.80;
+
+/**
+ * Weights. Type size dominates, so a stage that shrinks the text can never beat
+ * one that does not. Below that, an even rag matters more than sitting exactly
+ * on the preferred measure - a stranded two-syllable first line is the defect a
+ * reader actually sees.
+ */
+const W_FONT = 40;
+const W_LEADING = 15;
+const W_MEASURE = 10;
+const W_WHITESPACE = 13;
+const W_BALANCE = 22;
 
 export function scoreCandidate(c: Omit<FitCandidate, 'score'>, input: FitInput): number {
   if (!c.valid) return 0;
@@ -86,14 +99,33 @@ export function scoreCandidate(c: Omit<FitCandidate, 'score'>, input: FitInput):
     ? 1
     : 1 - clamp01(Math.min(Math.abs(share - MEASURE_TARGET_LO), Math.abs(share - MEASURE_TARGET_HI)) / 0.25);
 
-  // Balance: how even the rag is across all but the last line.
+  // Balance: how even the rag is across all but the last line, minus a penalty
+  // for any line stranded far below the widest one. The first line is weighted
+  // hardest because a short opening line is the most visible break failure.
   const body = c.widths.length > 1 ? c.widths.slice(0, -1) : c.widths;
   const mean = body.reduce((a, b) => a + b, 0) / Math.max(1, body.length);
   const variance = body.reduce((a, b) => a + (b - mean) ** 2, 0) / Math.max(1, body.length);
-  const balanceScore = 1 - clamp01(Math.sqrt(variance) / Math.max(1e-9, c.measureMm * 0.5));
+  const evenness = 1 - clamp01(Math.sqrt(variance) / Math.max(1e-9, c.measureMm * 0.5));
 
-  return round(40 * fontScore + 15 * leadScore + 15 * measureScore + 15 * whitespaceScore + 15 * balanceScore, 2);
+  const widest = Math.max(...c.widths, 1e-9);
+  let strandPenalty = 0;
+  for (const [i, w] of body.entries()) {
+    const share = w / widest;
+    if (share < SHORT_LINE_SHARE) {
+      strandPenalty += (SHORT_LINE_SHARE - share) * (i === 0 ? 1.6 : 1);
+    }
+  }
+  const balanceScore = clamp01(evenness - strandPenalty);
+
+  return round(
+    W_FONT * fontScore + W_LEADING * leadScore + W_MEASURE * measureScore +
+    W_WHITESPACE * whitespaceScore + W_BALANCE * balanceScore,
+    2,
+  );
 }
+
+/** A line narrower than this share of the widest line reads as stranded. */
+const SHORT_LINE_SHARE = 0.5;
 
 function clamp01(n: number): number {
   return n < 0 ? 0 : n > 1 ? 1 : n;
@@ -102,15 +134,16 @@ function clamp01(n: number): number {
 /**
  * Fit a question into its column.
  *
- * Stages are tried in order and the first valid one wins. Because the stage
- * list degrades monotonically along the spec's priority order, first-valid is
- * also highest-quality; the score is still computed for every attempt so the
- * QA report can show why a card landed where it did.
+ * Every stage in the fixed ten-stage list is evaluated, then the highest-scoring
+ * valid one wins, ties broken by the earlier stage. Because type size dominates
+ * the score, a stage that shrinks the text can never beat one that does not; the
+ * scoring only decides between equally-sized options, where an even rag should
+ * win over sitting exactly on the preferred measure. The search is bounded and
+ * deterministic: same input, same ten candidates, same winner.
  */
 export function autofit(input: FitInput): FitResult {
   const t = loadTokens().autofit;
   const attempts: FitCandidate[] = [];
-  let chosen: FitCandidate | null = null;
 
   for (const [i, stage] of stages(input).entries()) {
     const style: TextStyle = { ...input.baseStyle, sizePt: stage.sizePt, lineHeightPt: stage.lineHeightPt };
@@ -135,9 +168,13 @@ export function autofit(input: FitInput): FitResult {
       valid: reasons.length === 0,
       reasons,
     };
-    const candidate: FitCandidate = { ...partial, score: scoreCandidate(partial, input) };
-    attempts.push(candidate);
-    if (candidate.valid) { chosen = candidate; break; }
+    attempts.push({ ...partial, score: scoreCandidate(partial, input) });
+  }
+
+  let chosen: FitCandidate | null = null;
+  for (const c of attempts) {
+    if (!c.valid) continue;
+    if (!chosen || c.score > chosen.score) chosen = c;
   }
 
   const final = chosen ?? attempts[attempts.length - 1]!;

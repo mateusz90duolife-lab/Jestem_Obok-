@@ -1,0 +1,590 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8">
+<title>MOST BLISKOSCI - raport QA</title><style>
+body{font:14px/1.5 ui-sans-serif,system-ui,sans-serif;margin:0;padding:32px;background:#F7F3EC;color:#211D1A}
+h1{font-size:22px;letter-spacing:.06em;margin:0 0 4px}
+h2{font-size:15px;letter-spacing:.1em;text-transform:uppercase;margin:32px 0 10px;color:#672F3D}
+table{border-collapse:collapse;width:100%;background:#FFFDF9;font-size:13px}
+th,td{border:1px solid #E3DACB;padding:6px 9px;text-align:left;vertical-align:top}
+th{background:#EDE6DA;font-weight:600}
+.badge{color:#fff;padding:2px 8px;border-radius:9px;font-size:11px;letter-spacing:.06em}
+.headline{font-size:30px;font-weight:700;letter-spacing:.04em}
+.muted{color:#75464F}
+.note{background:#EDE6DA;border-left:3px solid #B69A68;padding:10px 14px;margin:14px 0}
+</style></head><body>
+<h1>MOST BLISKOŚCI</h1>
+<p class="muted">design 1.0.0 · generator 1.0.0 · treść 1.0.0</p>
+<p class="headline" style="color:#2F7A4F">AUTOMATED QA: PASS</p>
+<div class="note"><strong>AUTOMATED PASS nie oznacza PRINT PROOF APPROVED.</strong>
+Walidacja maszynowa i przegląd wizualny przez człowieka to dwa osobne kroki. Human review: REQUIRED.</div>
+<h2>Etapy</h2><table><tr><th>Etap</th><th>Status</th><th>Szczegóły</th></tr>
+      <tr><td>content</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>60 pytań, 12 sytuacji, 5 mostów = 77</td></tr>
+      <tr><td>fonts</td>
+          <td><span class="badge" style="background:#B07D2B">WARNING</span></td>
+          <td>SUBSTITUTED: Cormorant Garamond -&gt; Instrument Serif, Manrope -&gt; Instrument Sans</td></tr>
+      <tr><td>svg</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>78 plików, 0 błędów</td></tr>
+      <tr><td>overflow</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>0 kart z przepełnieniem</td></tr>
+      <tr><td>png</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>78/78 @ 898x1252px (300 DPI)</td></tr>
+      <tr><td>pixel-qa</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>78 kart zmierzonych, 0 naruszeń safe area</td></tr>
+      <tr><td>contact-sheet</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>77/77 kart, 1178x2759px, 77 etykiet</td></tr></table>
+<h2>Błędy (0)</h2><table><tr><th>Waga</th><th>Etap</th><th>Karta</th><th>Opis</th></tr><tr><td colspan="4" class="muted">brak</td></tr></table>
+<h2>Ostrzeżenia (6)</h2><table><tr><th>Waga</th><th>Etap</th><th>Karta</th><th>Opis</th></tr><tr><td>WARNING</td><td>fonts</td><td>-</td><td>Cormorant Garamond 500 substituted by Instrument Serif 400 (weight mapping is lossy)</td></tr><tr><td>WARNING</td><td>fonts</td><td>-</td><td>Cormorant Garamond 600 substituted by Instrument Serif 400 (weight mapping is lossy)</td></tr><tr><td>WARNING</td><td>fonts</td><td>-</td><td>Cormorant Garamond 400i substituted by Instrument Serif 400</td></tr><tr><td>WARNING</td><td>fonts</td><td>-</td><td>Manrope 400 substituted by Instrument Sans 400</td></tr><tr><td>WARNING</td><td>fonts</td><td>-</td><td>Manrope 500 substituted by Instrument Sans 400 (weight mapping is lossy)</td></tr><tr><td>WARNING</td><td>fonts</td><td>-</td><td>Manrope 600 substituted by Instrument Sans 700 (weight mapping is lossy)</td></tr></table>
+<h2>Karty (78)</h2><table><tr><th>ID</th><th>Typ</th><th>Poziom</th><th>Status</th><th>Stopień / interlinia</th><th>Wierszy</th><th>Strategia</th><th>Gęstość</th><th>Uwagi</th></tr>
+      <tr><td>Q01</td><td>question</td><td>01</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.77%</td>
+          <td>-</td></tr>
+      <tr><td>Q02</td><td>question</td><td>01</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.61%</td>
+          <td>-</td></tr>
+      <tr><td>Q03</td><td>question</td><td>01</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.56%</td>
+          <td>-</td></tr>
+      <tr><td>Q04</td><td>question</td><td>01</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>widen-measure-1</td>
+          <td>2.79%</td>
+          <td>-</td></tr>
+      <tr><td>Q05</td><td>question</td><td>01</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.67%</td>
+          <td>-</td></tr>
+      <tr><td>Q06</td><td>question</td><td>01</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.51%</td>
+          <td>-</td></tr>
+      <tr><td>Q07</td><td>question</td><td>01</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>3.65%</td>
+          <td>-</td></tr>
+      <tr><td>Q08</td><td>question</td><td>01</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.98%</td>
+          <td>-</td></tr>
+      <tr><td>Q09</td><td>question</td><td>01</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>widen-measure-1</td>
+          <td>2.84%</td>
+          <td>-</td></tr>
+      <tr><td>Q10</td><td>question</td><td>01</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>widen-measure-1</td>
+          <td>2.65%</td>
+          <td>-</td></tr>
+      <tr><td>Q11</td><td>question</td><td>01</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>2</td>
+          <td>widen-measure-1</td>
+          <td>2.45%</td>
+          <td>-</td></tr>
+      <tr><td>Q12</td><td>question</td><td>01</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>3.04%</td>
+          <td>-</td></tr>
+      <tr><td>Q13</td><td>question</td><td>02</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>widen-measure-1</td>
+          <td>2.92%</td>
+          <td>-</td></tr>
+      <tr><td>Q14</td><td>question</td><td>02</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.96%</td>
+          <td>-</td></tr>
+      <tr><td>Q15</td><td>question</td><td>02</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>widen-measure-1</td>
+          <td>2.96%</td>
+          <td>-</td></tr>
+      <tr><td>Q16</td><td>question</td><td>02</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>widen-measure-1</td>
+          <td>3.16%</td>
+          <td>-</td></tr>
+      <tr><td>Q17</td><td>question</td><td>02</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.72%</td>
+          <td>-</td></tr>
+      <tr><td>Q18</td><td>question</td><td>02</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.58%</td>
+          <td>-</td></tr>
+      <tr><td>Q19</td><td>question</td><td>02</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.98%</td>
+          <td>-</td></tr>
+      <tr><td>Q20</td><td>question</td><td>02</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.82%</td>
+          <td>-</td></tr>
+      <tr><td>Q21</td><td>question</td><td>02</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>widen-measure-1</td>
+          <td>3.33%</td>
+          <td>-</td></tr>
+      <tr><td>Q22</td><td>question</td><td>02</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>3.14%</td>
+          <td>-</td></tr>
+      <tr><td>Q23</td><td>question</td><td>02</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.83%</td>
+          <td>-</td></tr>
+      <tr><td>Q24</td><td>question</td><td>02</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.69%</td>
+          <td>-</td></tr>
+      <tr><td>Q25</td><td>question</td><td>03</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>3.06%</td>
+          <td>-</td></tr>
+      <tr><td>Q26</td><td>question</td><td>03</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.94%</td>
+          <td>-</td></tr>
+      <tr><td>Q27</td><td>question</td><td>03</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>widen-measure-1</td>
+          <td>3.26%</td>
+          <td>-</td></tr>
+      <tr><td>Q28</td><td>question</td><td>03</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>widen-measure-1</td>
+          <td>3.26%</td>
+          <td>-</td></tr>
+      <tr><td>Q29</td><td>question</td><td>03</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>widen-measure-1</td>
+          <td>3.66%</td>
+          <td>-</td></tr>
+      <tr><td>Q30</td><td>question</td><td>03</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>2.99%</td>
+          <td>-</td></tr>
+      <tr><td>Q31</td><td>question</td><td>03</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.84%</td>
+          <td>-</td></tr>
+      <tr><td>Q32</td><td>question</td><td>03</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>3.80%</td>
+          <td>-</td></tr>
+      <tr><td>Q33</td><td>question</td><td>03</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>3.29%</td>
+          <td>-</td></tr>
+      <tr><td>Q34</td><td>question</td><td>03</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.79%</td>
+          <td>-</td></tr>
+      <tr><td>Q35</td><td>question</td><td>03</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>3.08%</td>
+          <td>-</td></tr>
+      <tr><td>Q36</td><td>question</td><td>03</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>2.99%</td>
+          <td>-</td></tr>
+      <tr><td>Q37</td><td>question</td><td>04</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>3.63%</td>
+          <td>-</td></tr>
+      <tr><td>Q38</td><td>question</td><td>04</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>widen-measure-2</td>
+          <td>2.80%</td>
+          <td>-</td></tr>
+      <tr><td>Q39</td><td>question</td><td>04</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>3.00%</td>
+          <td>-</td></tr>
+      <tr><td>Q40</td><td>question</td><td>04</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.86%</td>
+          <td>-</td></tr>
+      <tr><td>Q41</td><td>question</td><td>04</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.70%</td>
+          <td>-</td></tr>
+      <tr><td>Q42</td><td>question</td><td>04</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>3.08%</td>
+          <td>-</td></tr>
+      <tr><td>Q43</td><td>question</td><td>04</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>3.06%</td>
+          <td>-</td></tr>
+      <tr><td>Q44</td><td>question</td><td>04</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.98%</td>
+          <td>-</td></tr>
+      <tr><td>Q45</td><td>question</td><td>04</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.74%</td>
+          <td>-</td></tr>
+      <tr><td>Q46</td><td>question</td><td>04</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>3.20%</td>
+          <td>-</td></tr>
+      <tr><td>Q47</td><td>question</td><td>04</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.60%</td>
+          <td>-</td></tr>
+      <tr><td>Q48</td><td>question</td><td>04</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>3.44%</td>
+          <td>-</td></tr>
+      <tr><td>Q49</td><td>question</td><td>05</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>3.70%</td>
+          <td>-</td></tr>
+      <tr><td>Q50</td><td>question</td><td>05</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.98%</td>
+          <td>-</td></tr>
+      <tr><td>Q51</td><td>question</td><td>05</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>3.14%</td>
+          <td>-</td></tr>
+      <tr><td>Q52</td><td>question</td><td>05</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>widen-measure-2</td>
+          <td>2.95%</td>
+          <td>-</td></tr>
+      <tr><td>Q53</td><td>question</td><td>05</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>4</td>
+          <td>preferred</td>
+          <td>3.37%</td>
+          <td>-</td></tr>
+      <tr><td>Q54</td><td>question</td><td>05</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.69%</td>
+          <td>-</td></tr>
+      <tr><td>Q55</td><td>question</td><td>05</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>2</td>
+          <td>preferred</td>
+          <td>2.25%</td>
+          <td>-</td></tr>
+      <tr><td>Q56</td><td>question</td><td>05</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.42%</td>
+          <td>-</td></tr>
+      <tr><td>Q57</td><td>question</td><td>05</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.50%</td>
+          <td>-</td></tr>
+      <tr><td>Q58</td><td>question</td><td>05</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.79%</td>
+          <td>-</td></tr>
+      <tr><td>Q59</td><td>question</td><td>05</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>3.16%</td>
+          <td>-</td></tr>
+      <tr><td>Q60</td><td>question</td><td>05</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>16pt / 21pt</td>
+          <td>3</td>
+          <td>preferred</td>
+          <td>2.93%</td>
+          <td>-</td></tr>
+      <tr><td>S01</td><td>situation</td><td>-</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>3.69%</td>
+          <td>-</td></tr>
+      <tr><td>S02</td><td>situation</td><td>-</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>4.67%</td>
+          <td>-</td></tr>
+      <tr><td>S03</td><td>situation</td><td>-</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>3.90%</td>
+          <td>-</td></tr>
+      <tr><td>S04</td><td>situation</td><td>-</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>3.71%</td>
+          <td>-</td></tr>
+      <tr><td>S05</td><td>situation</td><td>-</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>4.92%</td>
+          <td>-</td></tr>
+      <tr><td>S06</td><td>situation</td><td>-</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>4.86%</td>
+          <td>-</td></tr>
+      <tr><td>S07</td><td>situation</td><td>-</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>4.27%</td>
+          <td>-</td></tr>
+      <tr><td>S08</td><td>situation</td><td>-</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>4.01%</td>
+          <td>-</td></tr>
+      <tr><td>S09</td><td>situation</td><td>-</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>3.88%</td>
+          <td>-</td></tr>
+      <tr><td>S10</td><td>situation</td><td>-</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>4.64%</td>
+          <td>-</td></tr>
+      <tr><td>S11</td><td>situation</td><td>-</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>4.88%</td>
+          <td>-</td></tr>
+      <tr><td>S12</td><td>situation</td><td>-</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>3.94%</td>
+          <td>-</td></tr>
+      <tr><td>B01</td><td>bridge</td><td>01</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>2.29%</td>
+          <td>-</td></tr>
+      <tr><td>B02</td><td>bridge</td><td>02</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>2.46%</td>
+          <td>-</td></tr>
+      <tr><td>B03</td><td>bridge</td><td>03</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>2.77%</td>
+          <td>-</td></tr>
+      <tr><td>B04</td><td>bridge</td><td>04</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>2.40%</td>
+          <td>-</td></tr>
+      <tr><td>B05</td><td>bridge</td><td>05</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>2.69%</td>
+          <td>-</td></tr>
+      <tr><td>BACK</td><td>back</td><td>-</td>
+          <td><span class="badge" style="background:#2F7A4F">PASS</span></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>1.50%</td>
+          <td>-</td></tr></table>
+</body></html>
