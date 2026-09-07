@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Most Bliskości">
+  <rect width="512" height="512" rx="104" fill="#0A1A20"/>
+  <g fill="none" stroke="#E8A94A" stroke-linecap="round">
+    <path d="M52 262 L170 138 Q256 344 342 138 L460 262" stroke-width="20"/>
+  </g>
+  <rect x="161" y="126" width="19" height="222" rx="9" fill="#E8A94A"/>
+  <rect x="332" y="126" width="19" height="222" rx="9" fill="#E8A94A"/>
+  <rect x="52" y="330" width="408" height="30" rx="15" fill="#E8A94A"/>
+  <circle cx="170" cy="120" r="17" fill="#F6CC85"/>
+  <circle cx="342" cy="120" r="17" fill="#F6CC85"/>
+</svg>
