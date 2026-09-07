@@ -42,8 +42,11 @@ export function writeProofIndex(
     <strong>${esc(id)}</strong>${label ? ` <em>${esc(label)}</em>` : ''}
     <span class="badge" style="background:${STATUS_COLOUR[d.status]}">${esc(d.status)}</span>
     <span class="t">${esc(textOf.get(id) ?? '')}</span>
-    <span class="m">${d.fit ? `${d.fit.fontSize}pt / ${d.fit.lineHeight}pt · ${d.fit.lineCount} w. · ${esc(d.fit.strategy)} · score ${d.fit.score}` : 'brak auto-fitu'}</span>
-    <span class="m">${metrics ? `szerokość ${metrics.maxLineWidth}mm / ${metrics.availableWidth}mm · zapas ${metrics.remainingWidth}mm` : ''}${d.density !== undefined ? ` · gęstość ${(d.density * 100).toFixed(2)}%` : ''}</span>
+    <span class="m">${d.fit ? `${d.fit.fontSize}pt / ${d.fit.lineHeight}pt · ${d.fit.lineCount} w. · ${esc(d.fit.strategy)} (etap ${d.fit.iterations}/${d.fit.evaluated}) · score ${d.fit.score}` : 'brak auto-fitu'}</span>
+    <span class="m">${[
+      metrics ? `szerokość ${metrics.maxLineWidth}mm / ${metrics.availableWidth}mm · zapas ${metrics.remainingWidth}mm` : '',
+      d.density !== undefined ? `gęstość ${(d.density * 100).toFixed(2)}%` : '',
+    ].filter(Boolean).join(' · ')}</span>
     ${d.warnings.length ? `<span class="w">${esc(d.warnings.join(' · '))}</span>` : ''}
     ${d.failures.length ? `<span class="f">${esc(d.failures.join(' · '))}</span>` : ''}
   </figcaption>

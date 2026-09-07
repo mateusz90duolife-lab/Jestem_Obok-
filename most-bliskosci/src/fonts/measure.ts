@@ -124,7 +124,13 @@ export function wrapText(text: string, maxWidthMm: number, style: TextStyle): Wr
   const targetLines = greedy.length - 1;
 
   // Pass 2: with the line count fixed, choose the breaks that minimise
-  // raggedness (sum of squared slack on every line but the last).
+  // raggedness.
+  //
+  // The slack of EVERY line counts, the last one included. Excluding it - the
+  // classic justified-text cost - fills the opening lines and strands whatever
+  // is left onto a short final line. With the line count already fixed and the
+  // total ink nearly constant, penalising every line's slack minimises the sum
+  // of squared widths, which is smallest when the lines are even.
   const INF = Number.POSITIVE_INFINITY;
   const cost: number[][] = [];
   const from: number[][] = [];
@@ -141,7 +147,7 @@ export function wrapText(text: string, maxWidthMm: number, style: TextStyle): Wr
         if (prev === INF) continue;
         const w = spanWidth(i, j);
         if (w > maxWidthMm + 1e-9) break;
-        const slack = j === words.length ? 0 : (maxWidthMm - w) ** 2;
+        const slack = (maxWidthMm - w) ** 2;
         const total = prev + slack;
         if (total < cost[l]![j]!) { cost[l]![j] = total; from[l]![j] = i; }
       }

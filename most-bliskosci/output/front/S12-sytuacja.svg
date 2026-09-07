@@ -10,8 +10,8 @@
   <text id="header-number" x="11" y="15.4" font-family="Instrument Sans" font-size="2.469" font-weight="400" letter-spacing="0.148" fill="#B69A68">12</text>
   <text id="header-label" x="11" y="21.2" font-family="Instrument Sans" font-size="2.822" font-weight="700" letter-spacing="0.452" fill="#B69A68">SYTUACJA</text>
   <text id="situation-title-1" x="11" y="40.144" font-family="Instrument Serif" font-size="7.761" font-weight="400" letter-spacing="0.078" fill="#F7F3EC">NA KONIEC</text>
-  <text id="situation-instruction-1" x="11" y="53.614" font-family="Instrument Sans" font-size="4.233" font-weight="400" fill="#F7F3EC">Powiedzcie sobie jedno</text>
-  <text id="situation-instruction-2" x="11" y="59.612" font-family="Instrument Sans" font-size="4.233" font-weight="400" fill="#F7F3EC">zdanie,</text>
+  <text id="situation-instruction-1" x="11" y="53.614" font-family="Instrument Sans" font-size="4.233" font-weight="400" fill="#F7F3EC">Powiedzcie sobie</text>
+  <text id="situation-instruction-2" x="11" y="59.612" font-family="Instrument Sans" font-size="4.233" font-weight="400" fill="#F7F3EC">jedno zdanie,</text>
   <text id="situation-instruction-3" x="11" y="65.609" font-family="Instrument Sans" font-size="4.233" font-weight="400" fill="#F7F3EC">które chcecie</text>
   <text id="situation-instruction-4" x="11" y="71.606" font-family="Instrument Sans" font-size="4.233" font-weight="400" fill="#F7F3EC">zapamiętać.</text>
   <text id="footer-label" x="11" y="90.2" font-family="Instrument Sans" font-size="2.822" font-weight="700" letter-spacing="0.452" fill="#B69A68">ZRÓBCIE TO RAZEM</text>

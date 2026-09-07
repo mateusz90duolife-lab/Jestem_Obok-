@@ -152,6 +152,8 @@ describe('auto-fit', () => {
     assert.ok(r.resolved);
     assert.equal(r.outcome.fontSize, limits.preferredFontSizePt);
     assert.equal(r.outcome.lineHeight, limits.preferredLineHeightPt);
+    assert.equal(r.outcome.iterations, 1, 'no repair needed means stage 1');
+    assert.equal(r.outcome.evaluated, 10, 'the whole ladder is still scored');
   });
 
   test('never returns more than the maximum number of lines when resolved', () => {
@@ -165,6 +167,8 @@ describe('auto-fit', () => {
     assert.equal(r.resolved, false, 'must not claim to have fitted');
     assert.ok(r.attempts.length <= limits.maxRepairIterations, 'repair loop must be bounded');
     assert.equal(r.attempts.length, 10, 'all ten strategies must be tried before giving up');
+    assert.equal(r.outcome.evaluated, 10);
+    assert.equal(r.outcome.iterations, 10, 'a hard failure has exhausted the ladder');
     assert.ok(r.chosen.reasons.length > 0, 'failure must carry a reason');
     assert.equal(r.outcome.score, 0);
   });

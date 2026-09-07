@@ -669,13 +669,13 @@
       "overflow": false,
       "overflowX": false,
       "overflowY": false,
-      "lineCount": 3,
+      "lineCount": 4,
       "maxLines": 6,
       "fontSize": 16,
       "minimumFontSize": 14,
-      "maxLineWidth": 46.0417,
-      "availableWidth": 48,
-      "strategy": "widen-measure-2"
+      "maxLineWidth": 38.6757,
+      "availableWidth": 44,
+      "strategy": "preferred"
     },
     {
       "cardId": "Q53",

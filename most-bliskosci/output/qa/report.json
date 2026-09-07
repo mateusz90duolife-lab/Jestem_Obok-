@@ -199,7 +199,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 96.49,
         "resolved": true
@@ -242,7 +243,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 90.31,
         "resolved": true
@@ -285,7 +287,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 97.14,
         "resolved": true
@@ -328,7 +331,8 @@
         "lineHeight": 21,
         "measureMm": 46,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 2,
+        "evaluated": 10,
         "strategy": "widen-measure-1",
         "score": 93.93,
         "resolved": true
@@ -371,7 +375,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 93.17,
         "resolved": true
@@ -414,7 +419,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 91.22,
         "resolved": true
@@ -458,7 +464,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 95.17,
         "resolved": true
@@ -501,7 +508,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 94.89,
         "resolved": true
@@ -544,7 +552,8 @@
         "lineHeight": 21,
         "measureMm": 46,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 2,
+        "evaluated": 10,
         "strategy": "widen-measure-1",
         "score": 92.11,
         "resolved": true
@@ -587,7 +596,8 @@
         "lineHeight": 21,
         "measureMm": 46,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 2,
+        "evaluated": 10,
         "strategy": "widen-measure-1",
         "score": 90.93,
         "resolved": true
@@ -629,7 +639,8 @@
         "lineHeight": 21,
         "measureMm": 46,
         "lineCount": 2,
-        "iterations": 10,
+        "iterations": 2,
+        "evaluated": 10,
         "strategy": "widen-measure-1",
         "score": 95.22,
         "resolved": true
@@ -673,7 +684,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 93.83,
         "resolved": true
@@ -716,7 +728,8 @@
         "lineHeight": 21,
         "measureMm": 46,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 2,
+        "evaluated": 10,
         "strategy": "widen-measure-1",
         "score": 93.2,
         "resolved": true
@@ -759,7 +772,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 97.11,
         "resolved": true
@@ -802,7 +816,8 @@
         "lineHeight": 21,
         "measureMm": 46,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 2,
+        "evaluated": 10,
         "strategy": "widen-measure-1",
         "score": 93.08,
         "resolved": true
@@ -845,7 +860,8 @@
         "lineHeight": 21,
         "measureMm": 46,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 2,
+        "evaluated": 10,
         "strategy": "widen-measure-1",
         "score": 92.73,
         "resolved": true
@@ -888,7 +904,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 93.38,
         "resolved": true
@@ -931,7 +948,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 96.5,
         "resolved": true
@@ -974,7 +992,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 98.48,
         "resolved": true
@@ -1017,7 +1036,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 96.02,
         "resolved": true
@@ -1060,7 +1080,8 @@
         "lineHeight": 21,
         "measureMm": 46,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 2,
+        "evaluated": 10,
         "strategy": "widen-measure-1",
         "score": 93.8,
         "resolved": true
@@ -1104,7 +1125,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 91.81,
         "resolved": true
@@ -1147,7 +1169,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 99.73,
         "resolved": true
@@ -1190,7 +1213,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 97.08,
         "resolved": true
@@ -1234,7 +1258,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 90,
         "resolved": true
@@ -1277,7 +1302,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 97.84,
         "resolved": true
@@ -1320,7 +1346,8 @@
         "lineHeight": 21,
         "measureMm": 46,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 2,
+        "evaluated": 10,
         "strategy": "widen-measure-1",
         "score": 92.66,
         "resolved": true
@@ -1363,7 +1390,8 @@
         "lineHeight": 21,
         "measureMm": 46,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 2,
+        "evaluated": 10,
         "strategy": "widen-measure-1",
         "score": 88.83,
         "resolved": true
@@ -1407,7 +1435,8 @@
         "lineHeight": 21,
         "measureMm": 46,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 2,
+        "evaluated": 10,
         "strategy": "widen-measure-1",
         "score": 91.83,
         "resolved": true
@@ -1451,7 +1480,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 90.36,
         "resolved": true
@@ -1494,7 +1524,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 97.32,
         "resolved": true
@@ -1538,7 +1569,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 93.87,
         "resolved": true
@@ -1581,7 +1613,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 99.13,
         "resolved": true
@@ -1624,7 +1657,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 96.47,
         "resolved": true
@@ -1667,7 +1701,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 99.4,
         "resolved": true
@@ -1711,7 +1746,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 92.21,
         "resolved": true
@@ -1755,7 +1791,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 95.33,
         "resolved": true
@@ -1798,7 +1835,8 @@
         "lineHeight": 21,
         "measureMm": 48,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 3,
+        "evaluated": 10,
         "strategy": "widen-measure-2",
         "score": 81.2,
         "resolved": true
@@ -1842,7 +1880,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 92.7,
         "resolved": true
@@ -1885,7 +1924,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 96.89,
         "resolved": true
@@ -1928,7 +1968,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 96.6,
         "resolved": true
@@ -1972,7 +2013,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 93.42,
         "resolved": true
@@ -2016,7 +2058,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 88.98,
         "resolved": true
@@ -2059,7 +2102,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 96.33,
         "resolved": true
@@ -2102,7 +2146,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 97.82,
         "resolved": true
@@ -2146,7 +2191,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 92.06,
         "resolved": true
@@ -2189,7 +2235,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 95.04,
         "resolved": true
@@ -2233,7 +2280,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 91.42,
         "resolved": true
@@ -2277,7 +2325,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 96.23,
         "resolved": true
@@ -2320,7 +2369,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 93.26,
         "resolved": true
@@ -2363,7 +2413,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 97.32,
         "resolved": true
@@ -2378,14 +2429,15 @@
       "textLayouts": [
         {
           "lines": [
-            "O czym chciałbyś,",
-            "żebyśmy marzyli",
-            "razem?"
+            "O czym",
+            "chciałbyś,",
+            "żebyśmy",
+            "marzyli razem?"
           ],
-          "lineCount": 3,
-          "maxLineWidth": 46.0417,
-          "totalHeight": 22.225,
-          "availableWidth": 48,
+          "lineCount": 4,
+          "maxLineWidth": 38.6757,
+          "totalHeight": 29.6333,
+          "availableWidth": 44,
           "availableHeight": 54,
           "overflowX": false,
           "overflowY": false,
@@ -2393,8 +2445,8 @@
           "fontSize": 16,
           "lineHeight": 21,
           "scaleFactor": 1,
-          "remainingWidth": 1.9583,
-          "remainingHeight": 31.775
+          "remainingWidth": 5.3243,
+          "remainingHeight": 24.3667
         }
       ],
       "safeAreaViolations": [],
@@ -2404,14 +2456,15 @@
       "fit": {
         "fontSize": 16,
         "lineHeight": 21,
-        "measureMm": 48,
-        "lineCount": 3,
-        "iterations": 10,
-        "strategy": "widen-measure-2",
-        "score": 89.05,
+        "measureMm": 44,
+        "lineCount": 4,
+        "iterations": 1,
+        "evaluated": 10,
+        "strategy": "preferred",
+        "score": 95.74,
         "resolved": true
       },
-      "density": 0.0295
+      "density": 0.0294
     },
     {
       "cardId": "Q53",
@@ -2450,7 +2503,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 4,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 92.47,
         "resolved": true
@@ -2493,7 +2547,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 96.55,
         "resolved": true
@@ -2535,7 +2590,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 2,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 100,
         "resolved": true
@@ -2578,7 +2634,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 92.93,
         "resolved": true
@@ -2621,7 +2678,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 90.95,
         "resolved": true
@@ -2664,7 +2722,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 98.39,
         "resolved": true
@@ -2707,7 +2766,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 97.8,
         "resolved": true
@@ -2750,7 +2810,8 @@
         "lineHeight": 21,
         "measureMm": 44,
         "lineCount": 3,
-        "iterations": 10,
+        "iterations": 1,
+        "evaluated": 10,
         "strategy": "preferred",
         "score": 94.9,
         "resolved": true
@@ -3105,7 +3166,7 @@
       "overflow": false,
       "warnings": [],
       "failures": [],
-      "density": 0.0427
+      "density": 0.0428
     },
     {
       "cardId": "S08",
@@ -3155,7 +3216,7 @@
       "overflow": false,
       "warnings": [],
       "failures": [],
-      "density": 0.0401
+      "density": 0.04
     },
     {
       "cardId": "S09",
@@ -3429,12 +3490,11 @@
       "textLayouts": [
         {
           "lines": [
-            "Dalej jest szczerość. Nie",
-            "spieszcie się."
+            "Dalej jest szczerość."
           ],
-          "lineCount": 2,
-          "maxLineWidth": 41.8518,
-          "totalHeight": 11.2889,
+          "lineCount": 1,
+          "maxLineWidth": 35.1074,
+          "totalHeight": 5.6444,
           "availableWidth": 46,
           "availableHeight": 11.2889,
           "overflowX": false,
@@ -3443,15 +3503,15 @@
           "fontSize": 11,
           "lineHeight": 16,
           "scaleFactor": 1,
-          "remainingWidth": 4.1482,
-          "remainingHeight": 0
+          "remainingWidth": 10.8926,
+          "remainingHeight": 5.6444
         }
       ],
       "safeAreaViolations": [],
       "overflow": false,
       "warnings": [],
       "failures": [],
-      "density": 0.0277
+      "density": 0.0228
     },
     {
       "cardId": "B04",
@@ -3461,11 +3521,11 @@
       "textLayouts": [
         {
           "lines": [
-            "Zbliżcie się. Bez",
-            "pośpiechu."
+            "Zbliżcie się.",
+            "Bez pośpiechu."
           ],
           "lineCount": 2,
-          "maxLineWidth": 27.3773,
+          "maxLineWidth": 26.64,
           "totalHeight": 11.2889,
           "availableWidth": 46,
           "availableHeight": 11.2889,
@@ -3475,7 +3535,7 @@
           "fontSize": 11,
           "lineHeight": 16,
           "scaleFactor": 1,
-          "remainingWidth": 18.6227,
+          "remainingWidth": 19.36,
           "remainingHeight": 0
         }
       ],

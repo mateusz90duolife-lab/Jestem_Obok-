@@ -133,7 +133,10 @@ export interface FitOutcome {
   readonly lineHeight: number;
   readonly measureMm: number;
   readonly lineCount: number;
+  /** How far down the repair ladder the winning stage sits (1 = preferred). */
   readonly iterations: number;
+  /** How many of the ten stages were evaluated. */
+  readonly evaluated: number;
   readonly strategy: string;
   readonly score: number;
   readonly resolved: boolean;

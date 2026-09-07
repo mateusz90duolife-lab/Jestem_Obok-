@@ -144,7 +144,7 @@ async function inspect(): Promise<number> {
   out(`FONT  display ${fonts.renderFamilies.display} · ui ${fonts.renderFamilies.ui} (${fonts.status})`);
   if (layout.fit) {
     out(`FIT   ${layout.fit.fontSize}pt / ${layout.fit.lineHeight}pt · measure ${layout.fit.measureMm}mm · ${layout.fit.lineCount} wierszy`);
-    out(`      strategy '${layout.fit.strategy}' after ${layout.fit.iterations} iteration(s), score ${layout.fit.score}, resolved ${layout.fit.resolved}`);
+    out(`      strategy '${layout.fit.strategy}' at repair stage ${layout.fit.iterations} of ${layout.fit.evaluated} evaluated, score ${layout.fit.score}, resolved ${layout.fit.resolved}`);
   }
   for (const t of layout.textLayouts) {
     out('');
