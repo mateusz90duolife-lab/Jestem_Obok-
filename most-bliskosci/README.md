@@ -120,7 +120,7 @@ sieciowych do Google, zero przekazywania adresu IP odwiedzającego stronę trzec
 
 ## Jak powstała ta gra
 
-Treść kart i kod zostały stworzone przy współpracy z sztuczną inteligencją. Informacja o tym
+Treść kart i kod zostały stworzone przy współpracy ze sztuczną inteligencją. Informacja o tym
 jest widoczna na stronie w dwóch miejscach: w stopce (na każdym ekranie) i w panelu zasad,
 w sekcji „Jak powstała ta gra” — razem z zastrzeżeniem, że to nie jest narzędzie zaprojektowane
 ani zweryfikowane przez licencjonowanego terapeutę.
