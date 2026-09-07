@@ -4,8 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Test przesiewowy ADHD · ASD · Zdrowie psychiczne</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Inter';
+  src:url('fonts/Inter.ttf') format('truetype-variations'),url('fonts/Inter.ttf') format('truetype');
+  font-weight:100 900;font-style:normal;font-display:swap}
+</style>
 <style>
 /* ─── TOKENS ─── */
 :root{
@@ -21,7 +24,14 @@
   --sh:0 8px 40px rgba(0,0,0,.5); --sh2:0 2px 12px rgba(0,0,0,.3);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
 html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important}
+  .opt:hover{transform:none}
+}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t0);
   line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg1)}
@@ -310,9 +320,9 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--blue),var(--purpl
   <section class="hero">
     <div class="hero-glow"></div>
     <div class="wrap">
-      <div class="badge">⬡ Narzędzie samooceny · DSM-5-TR &amp; ICD-11</div>
-      <h1>Profesjonalny test przesiewowy<br><em>dla dorosłych</em></h1>
-      <p class="hero-sub">Kompleksowa samoocena w kierunku ADHD, spektrum autyzmu (ASD), zaburzeń lękowych, depresji i PTSD/CPTSD oparta na kryteriach naukowych.</p>
+      <div class="badge">⬡ Kwestionariusz samooceny · inspirowany DSM-5-TR i ICD-11</div>
+      <h1>Kwestionariusz samooceny<br><em>dla dorosłych</em></h1>
+      <p class="hero-sub">Autorski kwestionariusz samoobserwacji w obszarach ADHD, spektrum autyzmu, lęku, nastroju i doświadczeń pourazowych. Nie jest testem diagnostycznym ani zwalidowanym narzędziem psychometrycznym — porządkuje obserwacje przed rozmową ze specjalistą.</p>
       <div class="stats-row">
         <div class="stat"><div class="n">196</div><div class="l">pytań (189 diagnost. + 7 kontrolnych)</div></div>
         <div class="stat"><div class="n">19</div><div class="l">sekcji klinicznych</div></div>
@@ -320,13 +330,29 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--blue),var(--purpl
         <div class="stat"><div class="n">5</div><div class="l">obszarów oceny</div></div>
       </div>
       <div class="brow">
-        <button class="btn btn-p" onclick="startQuiz(false)">▶&ensp;Rozpocznij test</button>
+        <button class="btn btn-p" onclick="startQuiz(false)">▶&ensp;Rozpocznij kwestionariusz</button>
         <button class="btn btn-g" id="resumeBtn" style="display:none" onclick="startQuiz(true)">↻&ensp;Wznów zapisany</button>
       </div>
     </div>
   </section>
 
   <div class="wrap" style="padding-bottom:60px">
+
+    <div class="disc" style="background:rgba(59,130,246,.06);border-color:rgba(59,130,246,.22);color:var(--t0)">
+      <strong>Zanim zaczniesz — trzy rzeczy</strong><br><br>
+      <strong>1. To nie jest diagnoza ani test zwalidowany.</strong> To autorski kwestionariusz samoobserwacji,
+      inspirowany kryteriami DSM-5-TR i ICD-11 oraz konstrukcjami znanych narzędzi, ale nieprzechodzący
+      procedury walidacji psychometrycznej. Wyniki procentowe opisują wzorzec Twoich odpowiedzi,
+      a nie nasilenie zaburzenia. Rozpoznanie stawia wyłącznie specjalista.<br><br>
+      <strong>2. Twoje odpowiedzi zostają na tym urządzeniu.</strong> Zapisujemy je wyłącznie w pamięci
+      lokalnej Twojej przeglądarki, żebyś mógł/mogła wrócić do przerwanego kwestionariusza.
+      Nie wysyłamy ich na żaden serwer, nie zbieramy statystyk, nie używamy analityki.
+      Wyczyszczenie danych przeglądarki usuwa je bezpowrotnie.<br><br>
+      <strong>3. Możesz przerwać w dowolnym momencie.</strong> Część pytań dotyczy trudnych doświadczeń —
+      myśli o śmierci, samookaleczeń, traumy. Jeśli to za dużo, zamknij stronę. Nic nie zostanie wysłane.
+      <div class="crisis-chip">☎ Kryzys: 116 123 · 112 · 800 70 2222</div>
+    </div>
+
     <div class="scale-box">
       <h3>Skala odpowiedzi 0–4</h3>
       <div class="scale-row">
@@ -416,27 +442,27 @@ const CONTROL_PAIRS = [
 // ── Syndromes ──
 const SYND = [
   {k:'adhd',lb:'ADHD',ic:'⚡',cl:'#f59e0b',sets:['E','F','G','H'],
-   bands:[[25,'Brak wskazań klinicznych',0],[45,'Łagodne objawy — obserwacja',1],
-          [65,'Objawy umiarkowane — konsultacja wskazana',2],[80,'Objawy nasilone — diagnoza pilnie wskazana',3],
-          [101,'Bardzo nasilone — pilna konsultacja psychiatryczna',4]]},
+   bands:[[25,'Wynik nie jest podwyższony',0],[45,'Wynik lekko podwyższony',1],
+          [65,'Wynik wyraźnie podwyższony — warto to omówić',2],[80,'Wynik wysoki — rozważ konsultację',3],
+          [101,'Wynik bardzo wysoki — rozważ konsultację',4]]},
   {k:'asd',lb:'Spektrum autyzmu (ASD)',ic:'🎭',cl:'#8b5cf6',sets:['C','D','I','J','N'],
-   bands:[[20,'Brak wskazań klinicznych',0],[40,'Łagodne cechy — obserwacja',1],
-          [60,'Cechy umiarkowane — diagnoza wskazana',2],[80,'Silne cechy — diagnoza pilnie wskazana',3],
-          [101,'Bardzo silne wskazania kliniczne',4]]},
-  {k:'dep',lb:'Depresja',ic:'🌧️',cl:'#06b6d4',sets:['O'],
-   bands:[[22.5,'Minimalne objawy',0],[45,'Łagodna depresja',1],
-          [67.5,'Umiarkowana — konsultacja wskazana',2],[90,'Ciężka — pilna konsultacja',3],
-          [101,'Bardzo ciężka — natychmiastowa pomoc',4]]},
-  {k:'anx',lb:'Zaburzenia lękowe',ic:'😰',cl:'#f97316',sets:['P'],
-   bands:[[22.5,'Minimalne objawy',0],[45,'Łagodny lęk',1],
-          [67.5,'Umiarkowany lęk — konsultacja wskazana',2],
-          [101,'Ciężki lęk — pilna konsultacja',3]]},
-  {k:'ptsd',lb:'PTSD / CPTSD',ic:'🛡️',cl:'#ef4444',sets:['Q'],
-   bands:[[23,'Brak wskazań',0],[50,'Subkliniczne objawy pourazowe',1],
-          [75,'Kliniczne wskazania — ocena trauma-informed',2],
-          [101,'Silne wskazania CPTSD — pilna pomoc',3]]},
+   bands:[[20,'Wynik nie jest podwyższony',0],[40,'Wynik lekko podwyższony',1],
+          [60,'Wynik wyraźnie podwyższony — warto to omówić',2],[80,'Wynik wysoki — rozważ konsultację',3],
+          [101,'Wynik bardzo wysoki — rozważ konsultację',4]]},
+  {k:'dep',lb:'Objawy depresyjne',ic:'🌧️',cl:'#06b6d4',sets:['O'],
+   bands:[[22.5,'Wynik nie jest podwyższony',0],[45,'Wynik lekko podwyższony',1],
+          [67.5,'Wynik wyraźnie podwyższony — warto to omówić',2],[90,'Wynik wysoki — skontaktuj się ze specjalistą',3],
+          [101,'Wynik bardzo wysoki — skontaktuj się ze specjalistą w najbliższym czasie',4]]},
+  {k:'anx',lb:'Objawy lękowe',ic:'😰',cl:'#f97316',sets:['P'],
+   bands:[[22.5,'Wynik nie jest podwyższony',0],[45,'Wynik lekko podwyższony',1],
+          [67.5,'Wynik wyraźnie podwyższony — warto to omówić',2],
+          [101,'Wynik wysoki — rozważ konsultację',3]]},
+  {k:'ptsd',lb:'Objawy pourazowe',ic:'🛡️',cl:'#ef4444',sets:['Q'],
+   bands:[[23,'Wynik nie jest podwyższony',0],[50,'Wynik lekko podwyższony',1],
+          [75,'Wynik wyraźnie podwyższony — warto omówić z osobą pracującą z traumą',2],
+          [101,'Wynik wysoki — rozważ konsultację z osobą pracującą z traumą',3]]},
 ];
-const LV_LB = ['Brak wskazań','Łagodne','Umiarkowane','Nasilone','B. nasilone'];
+const LV_LB = ['Nie podwyższony','Lekko podwyższony','Wyraźnie podwyższony','Wysoki','Bardzo wysoki'];
 const LV_CL = ['lv0','lv1','lv2','lv3','lv4'];
 
 // ── State ──
@@ -530,6 +556,7 @@ function renderSec(){
   <div class="save-note">💾 Autozapis aktywny — możesz wrócić później</div>`;
 
   document.getElementById('quizWrap').innerHTML=h;
+  ['O7','R2'].forEach(k=>{ if(ans[k]!=null) safetyCheck(k,ans[k]); });
   window.scrollTo({top:0,behavior:'instant'});
   updProg(); updDots();
 }
@@ -540,7 +567,31 @@ function setA(id,val){
   const c=document.getElementById('qc-'+id);
   c.classList.add('ans');
   c.querySelectorAll('.opt').forEach((o,i)=>o.classList.toggle('sel',i===val));
+  safetyCheck(id,val);
   updProg(); updDots();
+}
+
+/* Pomoc pojawia się w chwili odpowiedzi, nie dopiero w wynikach po ~50 minutach.
+   Panel jest nieblokujący — nikt nie zostaje uwięziony w oknie modalnym. */
+function safetyCheck(id,val){
+  const trig=(id==='O7'&&val>=2)||(id==='R2'&&val>=1);
+  const c=document.getElementById('qc-'+id);
+  if(!c) return;
+  const existing=document.getElementById('safety-'+id);
+  if(!trig){ if(existing) existing.remove(); return; }
+  if(existing) return;
+  const box=document.createElement('div');
+  box.id='safety-'+id;
+  box.className='disc';
+  box.setAttribute('role','alert');
+  box.innerHTML='<strong>Zatrzymaj się na chwilę.</strong><br>'+
+    'Zaznaczona odpowiedź dotyczy czegoś ważnego. Nie musisz kończyć kwestionariusza, '+
+    'żeby poprosić o pomoc — możesz zadzwonić teraz. Rozmowa jest bezpłatna i anonimowa.'+
+    '<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">'+
+    '<div class="crisis-chip" style="margin-top:0">☎ 116 123 — kryzys emocjonalny, całodobowo</div> '+
+    '<div class="crisis-chip" style="margin-top:0">☎ 800 70 2222 — Centrum Wsparcia, całodobowo</div> '+
+    '<div class="crisis-chip" style="margin-top:0">☎ 112 — bezpośrednie zagrożenie życia</div></div>';
+  c.insertAdjacentElement('afterend',box);
 }
 function next(){ if(cur<DATA.length-1){cur++;renderSec();} }
 function prev(){ if(cur>0){cur--;renderSec();} }
@@ -610,7 +661,7 @@ function flags(){
   const chASD=['A11','A12','A13','A14','A15','A16','A17','A18'].filter(id=>v(id)>=3).length;
   if(chASD>=5) r.asd.push(`<b>Wczesne sygnały ASD:</b> ${chASD}/8 markerów dziecięcych ocenionych wysoko.`);
   if(v('N6')>=3&&v('K10')>=3) r.asd.push(`<b>Maskowanie z wyczerpaniem:</b> N6=${v('N6')}/4, K10=${v('K10')}/4 — wzorzec autistic burnout (Raymaker i in., 2020).`);
-  if(v('O7')>=2) r.crit.push(`<b>🚨 Myśli suicydalne / rezygnacyjne (O7: ${v('O7')}/4)</b> — skontaktuj się niezwłocznie ze specjalistą lub zadzwoń: <strong>116 123</strong> (tel. zaufania) | <strong>112</strong> (kryzys).`);
+  if(v('O7')>=2) r.crit.push(`<b>🚨 Twoja odpowiedź dotyczyła myśli o śmierci</b> — to powód, żeby porozmawiać z kimś jeszcze dziś, niezależnie od reszty wyników. <strong>116 123</strong> (kryzys emocjonalny, całodobowo) | <strong>800 70 2222</strong> (Centrum Wsparcia) | <strong>112</strong> (bezpośrednie zagrożenie życia).`);
   if(v('R2')>=2) r.crit.push(`<b>🚨 Impulsywne zachowania autodestrukcyjne (R2: ${v('R2')}/4)</b> — wskazana natychmiastowa pomoc specjalistyczna.`);
   if(v('Q2')>=3&&v('Q4')>=3) r.crit.push(`<b>⚠ Flashbacki + stała czujność (Q2: ${v('Q2')}, Q4: ${v('Q4')})</b> — pilna konsultacja traumatologiczna.`);
   return r;
@@ -726,12 +777,12 @@ function renderResults(){
 
   /* ── Czerwone flagi ── */
   h+=`<div class="sum-panel">
-    <h3>🚩 Czerwone flagi diagnostyczne</h3>
-    <p style="font-size:12.5px;color:var(--t1);margin-bottom:12px">Wzorce szczególnie podnoszące prawdopodobieństwo rozpoznania.</p>`;
+    <h3>⚠ Obszary wymagające dalszej oceny</h3>
+    <p style="font-size:12.5px;color:var(--t1);margin-bottom:12px">Wzorce odpowiedzi, które warto poruszyć w rozmowie ze specjalistą. To nie są kryteria rozpoznania.</p>`;
   if(fl.adhd.length) fl.adhd.forEach(t=>h+=`<div class="flag fa"><span class="fi" style="color:var(--adhd)">▲</span><div><span style="color:var(--adhd);font-weight:700">ADHD — </span>${t}</div></div>`);
   if(fl.asd.length) fl.asd.forEach(t=>h+=`<div class="flag fs"><span class="fi" style="color:var(--asd)">◆</span><div><span style="color:var(--asd);font-weight:700">ASD — </span>${t}</div></div>`);
   if(!fl.adhd.length&&!fl.asd.length)
-    h+=`<div class="flag fok"><span class="fi">✓</span><div>Brak wyraźnych czerwonych flag powyżej progów ilościowych. Interpretuj wyniki całościowo ze specjalistą.</div></div>`;
+    h+=`<div class="flag fok"><span class="fi">✓</span><div>Żaden wzorzec nie przekroczył progów przyjętych w tym kwestionariuszu. Niski wynik nie wyklucza trudności — interpretuj całość ze specjalistą.</div></div>`;
   h+=`</div>`;
 
   /* ── Rekomendacje ── */
