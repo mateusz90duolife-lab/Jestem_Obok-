@@ -1,1052 +1,1202 @@
 [
  {
-  "sec": "POZNAJ",
-  "n": 1,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 1,
   "text": "Moim ulubionym wspomnieniem z początku naszej relacji jest…",
+  "n": 1,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 2,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 2,
   "text": "Gdyby ktoś obserwował nas przez jeden dzień, jaki moment najlepiej pokazałby mu, jacy jesteśmy jako para?",
+  "n": 2,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 3,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 3,
-  "text": "Gdybyś miał/a opisać naszą relację jednym obrazem, co by to było?",
+  "text": "Gdyby nasz związek był jednym miejscem, gdzie byśmy się znaleźli — i co robilibyśmy tam razem?",
+  "n": 3,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 4,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 4,
   "text": "Co Twoim zdaniem inni ludzie najbardziej podziwiają we mnie?",
+  "n": 4,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 5,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 5,
   "text": "Jak wyglądałby Twój wymarzony zwyczajny dzień spędzony tylko ze mną?",
+  "n": 5,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 6,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 6,
   "text": "Jaki drobiazg potrafi Cię zaskakująco mocno zirytować?",
+  "n": 6,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 7,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 7,
   "text": "Co z dzieciństwa nadal potrafi wywołać u Ciebie uśmiech?",
+  "n": 7,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 8,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 8,
   "text": "Jaki smak, zapach albo potrawa najbardziej kojarzy Ci się z domem rodzinnym?",
+  "n": 8,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 9,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 9,
   "text": "O czym marzyłeś/aś jako dziecko, a dziś nadal trochę za tym tęsknisz?",
+  "n": 9,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 10,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 10,
   "text": "Jaki utwór, film, książka albo miejsce przenosi Cię natychmiast do konkretnego momentu Twojego życia?",
+  "n": 10,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 11,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 11,
   "text": "Jaka Twoja pasja lub ciekawość rzadko wychodzi na pierwszy plan?",
+  "n": 11,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 12,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 12,
   "text": "Gdybyś jutro dostał/a cały dzień tylko dla siebie, jak naprawdę chciał(a)byś go spędzić?",
+  "n": 12,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 13,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 13,
   "text": "Co najbardziej lubisz robić, kiedy jesteś sam/a?",
+  "n": 13,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 14,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 14,
   "text": "Gdyby pieniądze nie miały żadnego znaczenia, jak wyglądałby jeden zwyczajny wtorek naszego życia za pięć lat?",
+  "n": 14,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 15,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 15,
   "text": "Gdybyśmy mogli przez rok zamieszkać gdziekolwiek na świecie, czego chciał(a)byś tam doświadczyć?",
+  "n": 15,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 16,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 16,
-  "text": "Gdyby nasz związek miał piosenkę przewodnią, jaka by była i dlaczego właśnie ta?",
+  "text": "Jaka piosenka przypomina Ci o mnie, nawet jeśli nigdy Ci jej nie dedykowałem/am?",
+  "n": 16,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 17,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 17,
   "text": "Jaki weekend z naszego życia chciał(a)byś kiedyś przeżyć jeszcze raz?",
+  "n": 17,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 18,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 18,
   "text": "Jakie miejsce z Twojej przeszłości chciał(a)byś mi kiedyś pokazać osobiście?",
+  "n": 18,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 19,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 19,
   "text": "Jaką jedną rzecz z obecnego życia byłoby Ci najtrudniej zostawić na miesiąc?",
+  "n": 19,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 20,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 20,
   "text": "Co jest naszą „tajną bronią”, kiedy życie robi się trudne?",
+  "n": 20,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 21,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 21,
   "text": "W czym, Twoim zdaniem, jesteśmy razem lepsi niż każde z nas osobno?",
+  "n": 21,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 22,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 22,
-  "text": "Jakie miejsce chciał(a)byś kiedyś zobaczyć właśnie ze mną?",
+  "text": "Jakie miejsce chciałbyś/chciałabyś kiedyś zobaczyć ze mną?",
+  "n": 22,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 23,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 23,
-  "text": "Jakiego wspólnego doświadczenia chciał(a)byś spróbować po raz pierwszy?",
+  "text": "Jakiego wspólnego doświadczenia chciałbyś/chciałabyś spróbować po raz pierwszy?",
+  "n": 23,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 24,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 24,
-  "text": "Jaki dzień z naszej wspólnej historii zasługuje na własną małą tradycję?",
+  "text": "Jaki dzień albo moment z naszej historii chciał(a)byś zamienić w małą tradycję, którą będziemy powtarzać co roku?",
+  "n": 24,
   "of": 25
  },
  {
-  "sec": "POZNAJ",
-  "n": 25,
+  "sec": "Poznaj",
+  "sub": "Lekko, ciepło i z ciekawością",
   "pos": 25,
-  "text": "Jak wyglądałby nasz wymarzony dom, gdybyśmy mogli zaprojektować go bez żadnych ograniczeń?",
+  "text": "Jaki element domu rodzinnego chciał(a)byś przenieść do naszego wspólnego życia — a czego absolutnie nie chcesz powtórzyć?",
+  "n": 25,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 26,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 1,
   "text": "Czuję się najbardziej sobą przy Tobie, gdy…",
+  "n": 26,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 27,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 2,
   "text": "Jaka mała rzecz, którą robisz, potrafi natychmiast poprawić mi dzień?",
+  "n": 27,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 28,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 3,
   "text": "Jaka moja cecha sprawia, że cieszysz się, że właśnie ze mną jesteś?",
+  "n": 28,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 29,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 4,
   "text": "Za co najbardziej doceniasz mnie w ostatnim czasie?",
+  "n": 29,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 30,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 5,
   "text": "Jaki zwyczajny moment spędzony razem chciał(a)byś zachować na zawsze?",
+  "n": 30,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 31,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 6,
   "text": "Co potrafi mnie przy Tobie rozśmieszyć nawet wtedy, gdy mam zły dzień?",
+  "n": 31,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 32,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 7,
   "text": "Często zapominam Ci powiedzieć, jak bardzo jestem wdzięczny/a za…",
+  "n": 32,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 33,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 8,
   "text": "W jakim momencie zwykłego dnia najbardziej lubisz mieć mnie obok?",
+  "n": 33,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 34,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 9,
   "text": "W jakiej sytuacji najbardziej poczułeś/aś, że naprawdę stoję po Twojej stronie?",
+  "n": 34,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 35,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 10,
   "text": "Jaki komplement ode mnie zapamiętałeś/aś najbardziej?",
+  "n": 35,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 36,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 11,
   "text": "Z czego najbardziej jesteś dumny/a, kiedy myślisz o nas?",
+  "n": 36,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 37,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 12,
   "text": "W jakich sytuacjach czujesz, że jesteśmy świetnym zespołem?",
+  "n": 37,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 38,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 13,
   "text": "Jaki mój gest ostatnio sprawił Ci przyjemność, choć prawdopodobnie nie wiedziałem/am, że go zauważyłeś/aś?",
+  "n": 38,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 39,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 14,
-  "text": "Za co z naszego wspólnego życia jesteś mi wdzięczny/a, choć rzadko o tym mówimy?",
+  "text": "Jaka rzecz, którą robimy dla siebie tak często, że przestaliśmy ją zauważać, wciąż ma dla Ciebie duże znaczenie?",
+  "n": 39,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 40,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 15,
   "text": "Przy jakim moim zachowaniu możesz odpuścić kontrolę i po prostu być?",
+  "n": 40,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 41,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 16,
   "text": "Jaka nasza mała tradycja daje Ci najwięcej radości?",
+  "n": 41,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 42,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 17,
   "text": "Co ostatnio zrobiłem/am, czym pozytywnie Cię zaskoczyłem/am?",
+  "n": 42,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 43,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 18,
   "text": "Jakie uczucie pojawia się w Tobie, kiedy wracasz do domu i wiesz, że tam jestem?",
+  "n": 43,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 44,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 19,
   "text": "Jaki nowy mały rytuał chciał(a)byś stworzyć tylko dla nas?",
+  "n": 44,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 45,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 20,
   "text": "Jaki zwyczajny moment między nami ma dla Ciebie więcej znaczenia, niż mogłoby się wydawać komuś z zewnątrz?",
+  "n": 45,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 46,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 21,
   "text": "Co robimy razem, przy czym najbardziej czujesz: „To jest nasze”?",
+  "n": 46,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 47,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 22,
-  "text": "Za co najbardziej dziękujesz losowi, że nasze drogi się spotkały?",
+  "text": "Jaka rzecz we mnie stała się dla Ciebie ważniejsza dopiero z czasem?",
+  "n": 47,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 48,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 23,
   "text": "Jaki mój drobny gest najbardziej Cię rozczula?",
+  "n": 48,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 49,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 24,
   "text": "Czego chciał(a)byś, żebyśmy mieli w naszym życiu więcej — nie rzeczy, tylko chwil?",
+  "n": 49,
   "of": 25
  },
  {
-  "sec": "ZBLIŻ SIĘ",
-  "n": 50,
+  "sec": "Zbliż się",
+  "sub": "Wdzięczność, docenianie, potrzeby",
   "pos": 25,
   "text": "Gdybyśmy mogli zatrzymać jeden obecny moment naszego życia na zawsze, który byś wybrał/a?",
+  "n": 50,
   "of": 25
  },
  {
-  "sec": "ODKRYJ",
-  "n": 51,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 1,
-  "text": "Jest we mnie coś, co chciał(a)byś lepiej rozumieć. Co to jest?",
+  "text": "Jest we mnie coś, co chciał(a)bym, żebyś lepiej rozumiał/a. Co to jest?",
+  "n": 51,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 52,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 2,
   "text": "Czego nauczyły Cię nasze dotychczasowe trudne momenty?",
+  "n": 52,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 53,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 3,
   "text": "Po czym poznajesz, że rozmowa między nami zaczyna iść w złą stronę?",
+  "n": 53,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 54,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 4,
   "text": "Kiedy czujesz, że naprawdę troszczę się o Twój komfort?",
+  "n": 54,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 55,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 5,
   "text": "Jaki mój gest sprawił kiedyś, że pomyślałeś/aś: „Naprawdę mnie widzi”?",
+  "n": 55,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 56,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 6,
   "text": "Gdybyśmy mogli wrócić do początku naszej relacji, co zrobilibyśmy inaczej?",
+  "n": 56,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 57,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 7,
   "text": "Co pomaga Ci wrócić do siebie, kiedy emocje są silniejsze od słów?",
+  "n": 57,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 58,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 8,
   "text": "Jaka chwila między nami nauczyła Cię czegoś ważnego o bliskości?",
+  "n": 58,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 59,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 9,
   "text": "Co robię, dzięki czemu czujesz się atrakcyjnie?",
+  "n": 59,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 60,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 10,
   "text": "O jakiej części siebie możesz mi dzisiaj opowiedzieć, bo czujesz, że jestem gotowy/a jej wysłuchać?",
+  "n": 60,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 61,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 11,
   "text": "Jaka moja cecha najbardziej pomogła nam przetrwać trudny moment?",
+  "n": 61,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 62,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 12,
-  "text": "Jaką formę emocjonalnej odwagi najbardziej we mnie cenisz?",
+  "text": "Kiedy ostatnio zobaczyłeś/aś we mnie odwagę, której wcześniej nie dostrzegałeś/aś?",
+  "n": 62,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 63,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 13,
   "text": "Jakie słowo albo gest moglibyśmy umówić jako sygnał: „Potrzebuję przerwy, ale nie odchodzę”?",
+  "n": 63,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 64,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 14,
   "text": "Co sprawia, że bliskość między nami jest dla Ciebie naprawdę satysfakcjonująca?",
+  "n": 64,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 65,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 15,
   "text": "Czego chciał(a)byś ode mnie w trudnym dniu, o co nie zawsze umiesz wtedy poprosić?",
+  "n": 65,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 66,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 16,
   "text": "Jakie doświadczenie z dzieciństwa nauczyło Cię czegoś o miłości?",
+  "n": 66,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 67,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 17,
   "text": "Co w Twoim domu rodzinnym dawało Ci poczucie bezpieczeństwa?",
+  "n": 67,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 68,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 18,
   "text": "Jaki moment dorosłości najbardziej zmienił sposób, w jaki patrzysz na siebie?",
+  "n": 68,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 69,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 19,
   "text": "Jakie zachowanie najbardziej podważa Twoje zaufanie do drugiej osoby?",
+  "n": 69,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 70,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 20,
   "text": "Kiedy po raz pierwszy poczułeś/aś, że naprawdę Cię znam?",
+  "n": 70,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 71,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 21,
   "text": "Jakie wydarzenie najbardziej wpłynęło na Twój stosunek do pieniędzy?",
+  "n": 71,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 72,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 22,
   "text": "Jaka decyzja z przeszłości nauczyła Cię o sobie czegoś, czego wcześniej nie wiedziałeś/aś?",
+  "n": 72,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 73,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 23,
   "text": "Kiedy jesteś wobec siebie najbardziej surowy/a?",
+  "n": 73,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 74,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 24,
   "text": "Jaki komplement najtrudniej Ci przyjąć — nawet jeśli wiesz, że jest prawdziwy?",
+  "n": 74,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 75,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 25,
   "text": "Po czym mogę poznać, że jesteś już przeciążony/a, zanim sam/a to zauważysz?",
+  "n": 75,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 76,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 26,
   "text": "O co najtrudniej Ci mnie poprosić?",
+  "n": 76,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 77,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 27,
   "text": "Co dzieje się w Tobie tuż przed tym, jak zamykasz się podczas konfliktu?",
+  "n": 77,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 78,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 28,
   "text": "Co mogę zrobić podczas konfliktu, żebyśmy oboje pamiętali, że jesteśmy po tej samej stronie?",
+  "n": 78,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 79,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 29,
   "text": "Co dla Ciebie naprawdę oznacza lojalność w związku?",
+  "n": 79,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 80,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 30,
   "text": "Co najczęściej uruchamia w Tobie zazdrość?",
+  "n": 80,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 81,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 31,
   "text": "Jaki wzorzec komunikacji wyniesiony z domu rodzinnego nadal czasem pojawia się między nami?",
+  "n": 81,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 82,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 32,
   "text": "Co sprawia, że po konflikcie jesteś naprawdę gotowy/a znowu mnie usłyszeć?",
+  "n": 82,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 83,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 33,
   "text": "Kiedy masz gorszy dzień, czego najbardziej nie chcesz ode mnie — nawet jeśli mam dobre intencje?",
+  "n": 83,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 84,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 34,
   "text": "Co sprawia, że możesz powiedzieć mi o swoim błędzie bez potrzeby bronienia się?",
+  "n": 84,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 85,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 35,
   "text": "Jaka Twoja granica jest dla Ciebie ważna, a ja powinienem/powinnam lepiej ją rozumieć?",
+  "n": 85,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 86,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 36,
   "text": "Kiedy jesteś zestresowany/a, po czym poznam, że potrzebujesz mnie blisko, a nie rozwiązania?",
+  "n": 86,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 87,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 37,
   "text": "Jaka trudna rozmowa między nami od dawna czeka na dobry moment?",
+  "n": 87,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 88,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 38,
   "text": "Co sprawia, że możesz się ze mną nie zgadzać i nadal czuć się kochany/a?",
+  "n": 88,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 89,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 39,
-  "text": "W jakiej dziedzinie życia najłatwiej zapominasz, że możesz sobie zaufać?",
+  "text": "W czym najczęściej wątpisz w siebie, nawet kiedy obiektywnie masz powody, żeby sobie zaufać?",
+  "n": 89,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 90,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 40,
   "text": "Jak pokazujesz potrzebę bliskości, kiedy nie masz ochoty o niej mówić?",
+  "n": 90,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 91,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 41,
   "text": "Jaki sygnał wysyłasz, kiedy potrzebujesz ode mnie więcej uwagi, choć nie mówisz tego wprost?",
+  "n": 91,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 92,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 42,
   "text": "Jakiego rodzaju wsparcia najbardziej potrzebujesz, kiedy coś Ci nie wychodzi?",
+  "n": 92,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 93,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 43,
   "text": "Jakiej prawdy o Tobie najczęściej nie zauważam, choć jest dla Ciebie ważna?",
+  "n": 93,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 94,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 44,
   "text": "W jakich sytuacjach najłatwiej jest Ci powiedzieć „nie”, a w jakich najtrudniej?",
+  "n": 94,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 95,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 45,
   "text": "Gdzie dla Ciebie przebiega granica między wspólnym życiem a własną przestrzenią?",
+  "n": 95,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 96,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 46,
   "text": "Po czym poznajesz, że zaufanie między dwojgiem ludzi naprawdę rośnie?",
+  "n": 96,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 97,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 47,
   "text": "Co w naszym związku wymaga od Ciebie najwięcej świadomego wysiłku?",
+  "n": 97,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 98,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 48,
   "text": "Jaka rozmowa między nami mogłaby wyglądać zupełnie inaczej, gdybyśmy oboje czuli się naprawdę słyszani?",
+  "n": 98,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 99,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 49,
   "text": "Jaką rzecz o Tobie najczęściej błędnie odczytuję?",
+  "n": 99,
   "of": 50
  },
  {
-  "sec": "ODKRYJ",
-  "n": 100,
+  "sec": "Odkryj",
+  "sub": "Emocje, wzorce, powrót po konflikcie",
   "pos": 50,
   "text": "W jakiej sytuacji najbardziej chciał(a)byś, żebym najpierw Cię wysłuchał/a, a dopiero potem cokolwiek powiedział/a?",
+  "n": 100,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 101,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 1,
-  "text": "Kiedy w naszej relacji czujesz się najbardziej bezbronny/a?",
+  "text": "Najbardziej bezbronny/a czuję się w momentach, kiedy…",
+  "n": 101,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 102,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 2,
-  "text": "Czego najbardziej boisz się, że czas może zmienić między nami?",
+  "text": "Moją największą obawą związaną z upływem czasu i starzeniem się jest…",
+  "n": 102,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 103,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 3,
-  "text": "Co sprawia, że czasem odsuwasz się ode mnie emocjonalnie?",
+  "text": "Czuję, że odsuwam się emocjonalnie, kiedy…",
+  "n": 103,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 104,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 4,
   "text": "Jaki był jeden z najtrudniejszych dni w Twoim życiu, o którym chciał(a)byś, żebym lepiej rozumiał/a jego znaczenie?",
+  "n": 104,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 105,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 5,
   "text": "Jaka moja cecha bywa dla Ciebie trudna do kochania, nawet jeśli ją rozumiesz?",
+  "n": 105,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 106,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 6,
   "text": "Czego najbardziej boisz się w bliskich relacjach?",
+  "n": 106,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 107,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 7,
   "text": "Co, Twoim zdaniem, próbuje ochronić Twój największy lęk?",
+  "n": 107,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 108,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 8,
   "text": "Czego boisz się, że kiedyś mógłbym/mogłabym o Tobie pomyśleć?",
+  "n": 108,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 109,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 9,
   "text": "W jakiej chwili najłatwiej uwierzyć Ci w myśl: „Nie jestem wystarczająco dobry/a”?",
+  "n": 109,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 110,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 10,
   "text": "Co najbardziej boli Cię w odrzuceniu?",
+  "n": 110,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 111,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 11,
   "text": "Czego potrzebujesz ode mnie po tym, jak Cię zranię?",
+  "n": 111,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 112,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 12,
   "text": "Po czym poznajesz, że czyjeś „przepraszam” jest naprawdę szczere?",
+  "n": 112,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 113,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 13,
   "text": "Czego najbardziej boisz się stracić w naszym związku?",
+  "n": 113,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 114,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 14,
   "text": "Jaka Twoja potrzeba wydaje Ci się czasem „za duża”, choć wiesz, że jest prawdziwa?",
+  "n": 114,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 115,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 15,
   "text": "Po czym poznajesz, że jesteś kochany/a, nawet jeśli nikt niczego nie mówi?",
+  "n": 115,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 116,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 16,
   "text": "Wyobraź sobie nas za trzydzieści lat. Za co, Twoim zdaniem, podziękujemy dzisiejszej wersji nas?",
+  "n": 116,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 117,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 17,
   "text": "Która wspólna historia z naszego życia dzisiaj najbardziej Cię wzrusza?",
+  "n": 117,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 118,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 18,
   "text": "Czy jest coś, co mi wybaczyłeś/aś, ale rzadko o tym rozmawiamy?",
+  "n": 118,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 119,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 19,
   "text": "Kiedy możesz czuć się samotny/a, mimo że jestem obok?",
+  "n": 119,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 120,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 20,
   "text": "Jaki wzorzec z domu rodzinnego najbardziej boisz się powtórzyć w naszym związku?",
+  "n": 120,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 121,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 21,
   "text": "W jakim trudnym momencie najbardziej byłeś/aś ze mnie dumny/a?",
+  "n": 121,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 122,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 22,
   "text": "Czego nauczyłeś/aś się o sobie dzięki temu, że mnie kochasz?",
+  "n": 122,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 123,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 23,
   "text": "Jaka cisza między dwojgiem ludzi daje Ci spokój, a jaka zaczyna Cię niepokoić?",
+  "n": 123,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 124,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 24,
   "text": "Gdyby wiele rzeczy w naszym życiu kiedyś się zmieniło, co chciał(a)byś, żebym zawsze pamiętał/a o Tobie?",
+  "n": 124,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 125,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 25,
   "text": "Jaka zmiana we mnie najbardziej Cię poruszyła w ciągu ostatnich lat?",
+  "n": 125,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 126,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 26,
   "text": "Jakie moje zachowanie daje Ci poczucie: „Nie muszę tutaj niczego udowadniać”?",
+  "n": 126,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 127,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 27,
   "text": "Gdybyś mógł/mogła dać naszej relacji jedną rzecz na całe życie, czego chciał(a)byś, żeby nigdy nam nie zabrakło?",
+  "n": 127,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 128,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 28,
   "text": "Co w naszej relacji pozwala Ci naprawdę być sobą?",
+  "n": 128,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 129,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 29,
   "text": "Jaki lęk dotyczący naszej przyszłości najrzadziej wypowiadasz na głos?",
+  "n": 129,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 130,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 30,
   "text": "Co robisz ze swoim bólem, kiedy nie wiesz jeszcze, czy chcesz się nim ze mną podzielić?",
+  "n": 130,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 131,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 31,
   "text": "Czy jest rana z przeszłości, która czasem odzywa się jeszcze w naszej relacji?",
+  "n": 131,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 132,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 32,
   "text": "Co pomogłoby Ci jeszcze bardziej uwierzyć, że możesz być przy mnie w pełni sobą?",
+  "n": 132,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 133,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 33,
   "text": "Gdybyś mógł/mogła przeżyć jeszcze raz jedną chwilę między nami, którą byś wybrał/a i dlaczego?",
+  "n": 133,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 134,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 34,
   "text": "Jaka część Twojej historii jest nadal trudna do opowiedzenia — nawet mnie?",
+  "n": 134,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 135,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 35,
   "text": "Co sprawia, że odważasz się powiedzieć mi coś, czego normalnie nie powiedział(a)byś nikomu?",
+  "n": 135,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 136,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 36,
   "text": "Co chciał(a)byś, żebym lepiej rozumiał/a o Twoim milczeniu w trudnych chwilach?",
+  "n": 136,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 137,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 37,
   "text": "Jaka jest jedna prawda o Tobie, którą chciał(a)byś, żebym zawsze pamiętał/a?",
+  "n": 137,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 138,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 38,
   "text": "Co robisz, kiedy boisz się utraty bliskości — przybliżasz się, odsuwasz czy udajesz, że nic się nie dzieje?",
+  "n": 138,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 139,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 39,
   "text": "Czy jest coś, czego pragniesz w naszej relacji, ale boisz się poprosić o to wprost?",
+  "n": 139,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 140,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 40,
   "text": "Jaki moment sprawił, że najbardziej bałeś/aś się, że możemy się od siebie oddalić?",
+  "n": 140,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 141,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 41,
   "text": "Jaka część Ciebie jest najłatwiejsza do pokochania, a jaka najtrudniejsza do pokazania?",
+  "n": 141,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 142,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 42,
   "text": "Jaka potrzeba w Tobie jest dla Ciebie najtrudniejsza do zaakceptowania?",
+  "n": 142,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 143,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 43,
   "text": "Gdybyś mógł/mogła zdjąć ze swoich barków jeden ciężar, który nosisz od dawna, co by to było?",
+  "n": 143,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 144,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 44,
   "text": "Jakiej części siebie najbardziej potrzebujesz ode mnie nie naprawiać, tylko zaakceptować?",
+  "n": 144,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 145,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 45,
   "text": "Jeśli kiedyś przejdziemy przez bardzo trudny okres, co chciał(a)byś, żebyśmy sobie wtedy przypomnieli?",
+  "n": 145,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 146,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 46,
   "text": "Jakiej jednej rzeczy nigdy nie chcesz, żebym przestał/a robić?",
+  "n": 146,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 147,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 47,
   "text": "Jaki temat między nami jest dla Ciebie ważny, ale wciąż odkładasz rozmowę o nim?",
+  "n": 147,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 148,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 48,
   "text": "Co chciał(a)byś kiedyś zrobić, powiedzieć albo przeżyć ze mną, ale jeszcze nie znaleźliśmy na to odwagi?",
+  "n": 148,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 149,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 49,
   "text": "Gdybyś mógł/mogła powiedzieć mi jedną rzecz, którą naprawdę chciał(a)byś, żebym usłyszał/a i zapamiętał/a, co by to było?",
+  "n": 149,
   "of": 50
  },
  {
-  "sec": "ODWAGA",
-  "n": 150,
+  "sec": "Odwaga",
+  "sub": "Granice, zaufanie, wrażliwość",
   "pos": 50,
-  "text": "Gdybyś miał/a powiedzieć mi dzisiaj jedną rzecz całkowicie szczerze, której zwykle nie masz odwagi powiedzieć — co chciał(a)byś, żebym usłyszał/a?",
+  "text": "Po tej całej rozmowie — czego najbardziej chciał(a)byś, żebym teraz o Tobie wiedział/a?",
+  "n": 150,
   "of": 50
  }
 ]

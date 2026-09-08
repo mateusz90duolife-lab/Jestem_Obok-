@@ -1,0 +1,146 @@
+[
+ {
+  "pos": 1,
+  "title": "Ciężki dzień",
+  "sytuacja": "Wracam do domu po bardzo trudnym dniu. Nie mówię prawie nic. Odkładam rzeczy i zaczynam nerwowo sprzątać mieszkanie. Nie patrzę Ci w oczy.",
+  "lustro": "Jak myślisz, co druga osoba zrobi jako pierwsze?",
+  "reakcja": "Co naprawdę zrobił(a)byś w tej sytuacji?",
+  "klucz": "Zanim spróbujesz coś naprawić, sprawdź, czy druga osoba potrzebuje rozwiązania, czy obecności."
+ },
+ {
+  "pos": 2,
+  "title": "Dwie wersje ustaleń",
+  "sytuacja": "Jest 22:30. Oboje jesteście zmęczeni. Mieliście coś ustalone, ale każde z Was pamięta te ustalenia zupełnie inaczej. Głosy zaczynają się podnosić.",
+  "lustro": "Jak myślisz, co druga osoba powie jako pierwsze?",
+  "reakcja": "Co naprawdę powiedział(a)byś w tej sytuacji?",
+  "klucz": "O 22:30 rzadko chodzi jeszcze o ustalenia. Częściej chodzi o zmęczenie i o to, kto ma rację."
+ },
+ {
+  "pos": 3,
+  "title": "Telefon przy stole",
+  "sytuacja": "Siedzimy przy kolacji. Opowiadam Ci o czymś, co było dla mnie ważne. W połowie zdania sięgasz po telefon i zaczynasz coś sprawdzać. Milknę.",
+  "lustro": "Jak myślisz, co druga osoba zrobi z tym milczeniem?",
+  "reakcja": "Co naprawdę zrobił(a)byś, gdyby to Tobie przerwano w połowie zdania?",
+  "klucz": "Nie każde milczenie jest złością. Czasami to sprawdzanie, czy warto mówić dalej."
+ },
+ {
+  "pos": 4,
+  "title": "Nieplanowany wydatek",
+  "sytuacja": "Kupiłem/am coś dość drogiego, nie pytając Cię wcześniej o zdanie. Mówię Ci o tym dopiero wieczorem, lekkim tonem, jakby to była drobnostka.",
+  "lustro": "Jak myślisz, jaka będzie pierwsza reakcja drugiej osoby?",
+  "reakcja": "Co naprawdę czuł(a)byś w tej sytuacji i co byś powiedział/a?",
+  "klucz": "Pieniądze prawie nigdy nie są tylko o pieniądzach. Częściej są o bezpieczeństwie albo o byciu pytanym."
+ },
+ {
+  "pos": 5,
+  "title": "Uwaga przy ludziach",
+  "sytuacja": "Jesteśmy u znajomych. Rzucam żart na Twój temat. Wszyscy się śmieją. Widzę, że Ty się nie śmiejesz.",
+  "lustro": "Jak myślisz, co druga osoba zrobi: powie coś od razu czy zaczeka do domu?",
+  "reakcja": "Co naprawdę zrobił(a)byś w tej sytuacji?",
+  "klucz": "To, co dla jednej osoby jest żartem, dla drugiej bywa publicznym odsłonięciem."
+ },
+ {
+  "pos": 6,
+  "title": "Zaproszenie i zmęczenie",
+  "sytuacja": "W piątek wieczorem dzwonią znajomi. Chcą, żebyśmy do nich wpadli. Ja bardzo chcę iść. Ty masz za sobą wyczerpujący tydzień i marzysz o wieczorze w domu.",
+  "lustro": "Jak myślisz, co druga osoba zaproponuje jako pierwsze?",
+  "reakcja": "Co naprawdę powiedział(a)byś, żeby nikt nie poczuł się winny?",
+  "klucz": "Kompromis nie polega na tym, żeby oboje wyszli zawiedzeni. Czasem lepsze są dwa różne wieczory."
+ },
+ {
+  "pos": 7,
+  "title": "Rodzina w środku",
+  "sytuacja": "Ktoś z mojej rodziny powiedział Ci coś, co Cię ukłuło. Byłem/am obok i nic nie powiedziałem/am. W drodze powrotnej jest cicho.",
+  "lustro": "Jak myślisz, czego druga osoba potrzebuje najbardziej w tej ciszy?",
+  "reakcja": "Co naprawdę chciał(a)byś usłyszeć w samochodzie w drodze do domu?",
+  "klucz": "Lojalność bywa najbardziej widoczna w jednym zdaniu wypowiedzianym w odpowiednim momencie."
+ },
+ {
+  "pos": 8,
+  "title": "Choroba",
+  "sytuacja": "Leżę z gorączką od dwóch dni. Jestem marudny/a, wszystko mi przeszkadza i mówię, że niczego nie potrzebuję. Oczywiście nieprawda.",
+  "lustro": "Jak myślisz, czego druga osoba naprawdę potrzebuje, kiedy mówi, że niczego nie potrzebuje?",
+  "reakcja": "Czego Ty naprawdę potrzebujesz, kiedy jesteś chory/a?",
+  "klucz": "„Nic mi nie potrzeba” to zdanie, które prawie zawsze ma dalszy ciąg."
+ },
+ {
+  "pos": 9,
+  "title": "Praca do późna",
+  "sytuacja": "Trzeci wieczór z rzędu siedzę przy laptopie. Mówię: „jeszcze tylko pół godziny” — i nie schodzę na dół przez dwie.",
+  "lustro": "Jak myślisz, co druga osoba czuje w drugiej godzinie czekania?",
+  "reakcja": "Co naprawdę zrobił(a)byś: powiedział/a coś, poszedł/poszła spać czy czekał/a dalej?",
+  "klucz": "Czasami prośba o obecność ubiera się w wyrzut, bo tak jest jej łatwiej wyjść."
+ },
+ {
+  "pos": 10,
+  "title": "Nietrafiony prezent",
+  "sytuacja": "Dostajesz ode mnie prezent, na który wyraźnie się starałem/am. Widzę po Twojej twarzy, że kompletnie nie trafiłem/am. Mówisz: „Dzięki, super”.",
+  "lustro": "Jak myślisz, co druga osoba zrobi z tą chwilą?",
+  "reakcja": "Co naprawdę byś zrobił/a: udawał/a radość czy powiedział/a prawdę?",
+  "klucz": "Uczciwość i wdzięczność nie muszą się wykluczać, ale trzeba je powiedzieć w tej kolejności."
+ },
+ {
+  "pos": 11,
+  "title": "Po kłótni",
+  "sytuacja": "Pokłóciliśmy się godzinę temu. Nic się nie wyjaśniło. Siedzimy w dwóch różnych pokojach. Ja nie wiem, czy przyjść, czy zostawić Ci przestrzeń.",
+  "lustro": "Jak myślisz, czego druga osoba chce teraz bardziej: przestrzeni czy zbliżenia?",
+  "reakcja": "Czego Ty naprawdę potrzebujesz godzinę po kłótni?",
+  "klucz": "Umówcie się na jedno słowo, które znaczy: „Potrzebuję przerwy, ale nie odchodzę od Ciebie”."
+ },
+ {
+  "pos": 12,
+  "title": "Podniesiony głos",
+  "sytuacja": "W kłótni podnoszę głos. Nie krzyczę, ale słychać, że jestem wściekły/a. Widzę, jak na sekundę się cofasz.",
+  "lustro": "Jak myślisz, co dzieje się w drugiej osobie w tej jednej sekundzie?",
+  "reakcja": "Co naprawdę dzieje się w Tobie, kiedy ktoś podnosi na Ciebie głos?",
+  "klucz": "Ciało reaguje na ton szybciej niż na treść. Zanim wrócicie do argumentów, wróćcie do głośności."
+ },
+ {
+  "pos": 13,
+  "title": "Wyjście z pokoju",
+  "sytuacja": "W środku kłótni wstaję i wychodzę z pokoju. Nic nie mówię. Drzwi zostają uchylone.",
+  "lustro": "Jak myślisz, co druga osoba usłyszała w tym wyjściu: „uciekam” czy „potrzebuję chwili”?",
+  "reakcja": "Co naprawdę znaczy Twoje wyjście — i czego wtedy najbardziej potrzebujesz?",
+  "klucz": "Przerwa działa tylko wtedy, kiedy jest zapowiedziana. Wyjście bez słowa czyta się jako porzucenie."
+ },
+ {
+  "pos": 14,
+  "title": "Zapomniałem/am",
+  "sytuacja": "Zapomniałem/am o czymś, co było dla Ciebie ważne. Przypominam sobie dzień później. Mówię: „przepraszam, miałem/am urwanie głowy”.",
+  "lustro": "Jak myślisz, co jest dla drugiej osoby trudniejsze: samo zapomnienie czy to zdanie po nim?",
+  "reakcja": "Czego naprawdę potrzebujesz usłyszeć, kiedy ktoś o Tobie zapomni?",
+  "klucz": "Przeprosiny, które zaczynają się od wyjaśnienia, brzmią jak obrona. Najpierw skutek, dopiero potem powód."
+ },
+ {
+  "pos": 15,
+  "title": "Zdanie o przeszłości",
+  "sytuacja": "W rozmowie ze znajomymi wspominam coś z czasów sprzed nas. Mimochodem, bez złych intencji. Robi się cicho.",
+  "lustro": "Jak myślisz, co poczuła druga osoba w tej ciszy?",
+  "reakcja": "Co Ty naprawdę czujesz, kiedy pojawia się temat wcześniejszych relacji?",
+  "klucz": "Przeszłość rzadko jest zagrożeniem sama w sobie. Zagrożeniem bywa to, że nie wiadomo, gdzie się kończy."
+ },
+ {
+  "pos": 16,
+  "title": "Przeczytane",
+  "sytuacja": "Piszę do Ciebie w środku dnia coś dla mnie ważnego. Widzę, że przeczytałeś/aś. Mijają godziny bez odpowiedzi.",
+  "lustro": "Jak myślisz, jaką historię układa sobie w głowie druga osoba przez te godziny?",
+  "reakcja": "Co naprawdę dzieje się z Tobą, kiedy nie dostajesz odpowiedzi?",
+  "klucz": "W ciszy każdy dopisuje własną wersję. Zwykle gorszą od prawdziwej."
+ },
+ {
+  "pos": 17,
+  "title": "Rano po kłótni",
+  "sytuacja": "Kłótnia skończyła się wczoraj i nikt do niej nie wrócił. Rano zachowuję się zupełnie normalnie, jakby nic się nie stało.",
+  "lustro": "Jak myślisz, czy dla drugiej osoby to ulga, czy sprawa niedokończona?",
+  "reakcja": "Tobie wystarcza, że wróciła normalność — czy potrzebujesz to jeszcze nazwać?",
+  "klucz": "Dla jednej osoby cisza jest zakończeniem, dla drugiej odroczeniem. Warto wiedzieć, kto jest kim."
+ },
+ {
+  "pos": 18,
+  "title": "Wolna sobota",
+  "sytuacja": "Mamy całą sobotę wolną, bez żadnych planów. Ja mam w głowie listę rzeczy do zrobienia. Ty chcesz nie robić nic.",
+  "lustro": "Jak myślisz, jak druga osoba wyobraża sobie idealną wersję tego dnia?",
+  "reakcja": "Jak naprawdę wygląda Twoja idealna wersja tej soboty?",
+  "klucz": "Odpoczynek jednej osoby bywa dla drugiej bałaganem, a porządek bywa dla drugiej presją."
+ }
+]

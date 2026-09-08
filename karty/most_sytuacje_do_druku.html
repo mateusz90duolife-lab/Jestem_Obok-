@@ -1,0 +1,393 @@
+<title>Karty Sytuacji</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  --paper:#ffffff; --ink:#1d1a17; --ink-soft:#6d655c; --ink-faint:#9a938a;
+  --hair:#ded7cd; --cut:#bdb5aa; --desk:#e9edec; --desk-edge:#d2d8d7;
+  --accent:#10716e; --key-bg:#f1f6f5;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--desk:#161a19;--desk-edge:#2a302f}}
+:root[data-theme="dark"]{--desk:#161a19;--desk-edge:#2a302f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--desk);font-family:"Lora","Iowan Old Style",Georgia,"DejaVu Serif",serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.dot{color:var(--ink-faint);padding:0 .15em}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 20px;background:var(--desk);border-bottom:1px solid var(--desk-edge)}
+.bar h1{font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0;color:var(--ink)}
+.bar-note{font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:12px;color:var(--ink-soft);margin:0}
+:root[data-theme="dark"] .bar h1,:root[data-theme="dark"] .bar-note{color:#e4eae9}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bar h1,:root:not([data-theme="light"]) .bar-note{color:#e4eae9}}
+.bar button{margin-left:auto;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);border:0;border-radius:2px;padding:9px 18px;cursor:pointer}
+.bar button:hover{background:#0c5c5a}
+.bar button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.stack{padding:26px 20px 60px;display:flex;flex-direction:column;align-items:center;gap:26px}
+.sheet{width:297mm;height:210mm;background:var(--paper);position:relative;overflow:hidden;flex:0 0 auto}
+.stack .sheet{box-shadow:0 1px 2px rgba(0,0,0,.12),0 10px 30px rgba(0,0,0,.14)}
+.cards-sheet{padding:7mm 7mm 5mm}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:3mm;height:191mm}
+.sheet-foot{position:absolute;left:0;right:0;bottom:2.5mm;text-align:center;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.card{position:relative;display:flex;flex-direction:column;background:var(--paper);border:.4mm dashed var(--cut);padding:7mm 8mm 6mm;overflow:hidden}
+.band{position:absolute;top:0;left:0;right:0;height:3mm;background:var(--accent)}
+.c-head{margin:2.5mm 0 0}
+.eyebrow{margin:0;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:7pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.c-title{margin:1.2mm 0 0;font-size:15pt;font-weight:600;line-height:1.15;color:var(--ink)}
+.scene{margin:3.5mm 0 0;font-size:10.5pt;line-height:1.45;color:var(--ink);text-wrap:pretty}
+.asks{margin-top:auto;padding-top:3.5mm;display:flex;flex-direction:column;gap:2mm}
+.ask{margin:0;font-size:9pt;line-height:1.4;color:var(--ink)}
+.lab{display:block;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:6.5pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.6mm}
+.key{margin-top:3.5mm;background:var(--key-bg);border-left:1mm solid var(--accent);padding:2.5mm 3mm}
+.key-lab{margin:0;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:6pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.key-note{font-weight:400;letter-spacing:.06em;color:var(--ink-soft);text-transform:none}
+.key-txt{margin:1.2mm 0 0;font-size:8.5pt;line-height:1.4;font-style:italic;color:var(--ink)}
+.card-blank .c-title{color:var(--ink-faint)}
+.lines{display:flex;flex-direction:column;gap:7mm;margin-top:6mm}
+.lines span{display:block;height:0;border-bottom:1px solid var(--hair)}
+@page{size:A4 landscape;margin:0}
+@media print{
+  html,body{background:#fff}
+  .bar{display:none}
+  .stack{padding:0;gap:0;display:block}
+  .sheet{box-shadow:none;break-after:page;page-break-after:always;margin:0}
+  .sheet:last-child{break-after:auto;page-break-after:auto}
+  .card{break-inside:avoid;page-break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<div class="bar">
+  <h1>Most Bliskości — Karty Sytuacji</h1>
+  <p class="bar-note">18 kart + 2 puste <span class="dot">·</span> 4 na arkuszu <span class="dot">·</span> A4 poziomo <span class="dot">·</span> 5 arkuszy</p>
+  <button type="button" onclick="window.print()">Drukuj / zapisz PDF</button>
+</div>
+<div class="stack">
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 1/18</p>
+          <h3 class="c-title">Ciężki dzień</h3>
+        </header>
+        <p class="scene">Wracam do domu po bardzo trudnym dniu. Nie mówię prawie nic. Odkładam rzeczy i zaczynam nerwowo sprzątać mieszkanie. Nie patrzę Ci w oczy.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, co druga osoba zrobi jako pierwsze?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Co naprawdę zrobił(a)byś w tej sytuacji?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">Zanim spróbujesz coś naprawić, sprawdź, czy druga osoba potrzebuje rozwiązania, czy obecności.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 2/18</p>
+          <h3 class="c-title">Dwie wersje ustaleń</h3>
+        </header>
+        <p class="scene">Jest 22:30. Oboje jesteście zmęczeni. Mieliście coś ustalone, ale każde z Was pamięta te ustalenia zupełnie inaczej. Głosy zaczynają się podnosić.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, co druga osoba powie jako pierwsze?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Co naprawdę powiedział(a)byś w tej sytuacji?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">O 22:30 rzadko chodzi jeszcze o ustalenia. Częściej chodzi o zmęczenie i o to, kto ma rację.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 3/18</p>
+          <h3 class="c-title">Telefon przy stole</h3>
+        </header>
+        <p class="scene">Siedzimy przy kolacji. Opowiadam Ci o czymś, co było dla mnie ważne. W połowie zdania sięgasz po telefon i zaczynasz coś sprawdzać. Milknę.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, co druga osoba zrobi z tym milczeniem?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Co naprawdę zrobił(a)byś, gdyby to Tobie przerwano w połowie zdania?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">Nie każde milczenie jest złością. Czasami to sprawdzanie, czy warto mówić dalej.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 4/18</p>
+          <h3 class="c-title">Nieplanowany wydatek</h3>
+        </header>
+        <p class="scene">Kupiłem/am coś dość drogiego, nie pytając Cię wcześniej o zdanie. Mówię Ci o tym dopiero wieczorem, lekkim tonem, jakby to była drobnostka.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, jaka będzie pierwsza reakcja drugiej osoby?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Co naprawdę czuł(a)byś w tej sytuacji i co byś powiedział/a?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">Pieniądze prawie nigdy nie są tylko o pieniądzach. Częściej są o bezpieczeństwie albo o byciu pytanym.</p>
+        </div>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości <span class="dot">·</span> Karty Sytuacji <span class="dot">·</span> arkusz 1 z 5</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 5/18</p>
+          <h3 class="c-title">Uwaga przy ludziach</h3>
+        </header>
+        <p class="scene">Jesteśmy u znajomych. Rzucam żart na Twój temat. Wszyscy się śmieją. Widzę, że Ty się nie śmiejesz.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, co druga osoba zrobi: powie coś od razu czy zaczeka do domu?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Co naprawdę zrobił(a)byś w tej sytuacji?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">To, co dla jednej osoby jest żartem, dla drugiej bywa publicznym odsłonięciem.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 6/18</p>
+          <h3 class="c-title">Zaproszenie i zmęczenie</h3>
+        </header>
+        <p class="scene">W piątek wieczorem dzwonią znajomi. Chcą, żebyśmy do nich wpadli. Ja bardzo chcę iść. Ty masz za sobą wyczerpujący tydzień i marzysz o wieczorze w domu.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, co druga osoba zaproponuje jako pierwsze?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Co naprawdę powiedział(a)byś, żeby nikt nie poczuł się winny?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">Kompromis nie polega na tym, żeby oboje wyszli zawiedzeni. Czasem lepsze są dwa różne wieczory.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 7/18</p>
+          <h3 class="c-title">Rodzina w środku</h3>
+        </header>
+        <p class="scene">Ktoś z mojej rodziny powiedział Ci coś, co Cię ukłuło. Byłem/am obok i nic nie powiedziałem/am. W drodze powrotnej jest cicho.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, czego druga osoba potrzebuje najbardziej w tej ciszy?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Co naprawdę chciał(a)byś usłyszeć w samochodzie w drodze do domu?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">Lojalność bywa najbardziej widoczna w jednym zdaniu wypowiedzianym w odpowiednim momencie.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 8/18</p>
+          <h3 class="c-title">Choroba</h3>
+        </header>
+        <p class="scene">Leżę z gorączką od dwóch dni. Jestem marudny/a, wszystko mi przeszkadza i mówię, że niczego nie potrzebuję. Oczywiście nieprawda.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, czego druga osoba naprawdę potrzebuje, kiedy mówi, że niczego nie potrzebuje?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Czego Ty naprawdę potrzebujesz, kiedy jesteś chory/a?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">„Nic mi nie potrzeba” to zdanie, które prawie zawsze ma dalszy ciąg.</p>
+        </div>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości <span class="dot">·</span> Karty Sytuacji <span class="dot">·</span> arkusz 2 z 5</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 9/18</p>
+          <h3 class="c-title">Praca do późna</h3>
+        </header>
+        <p class="scene">Trzeci wieczór z rzędu siedzę przy laptopie. Mówię: „jeszcze tylko pół godziny” — i nie schodzę na dół przez dwie.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, co druga osoba czuje w drugiej godzinie czekania?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Co naprawdę zrobił(a)byś: powiedział/a coś, poszedł/poszła spać czy czekał/a dalej?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">Czasami prośba o obecność ubiera się w wyrzut, bo tak jest jej łatwiej wyjść.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 10/18</p>
+          <h3 class="c-title">Nietrafiony prezent</h3>
+        </header>
+        <p class="scene">Dostajesz ode mnie prezent, na który wyraźnie się starałem/am. Widzę po Twojej twarzy, że kompletnie nie trafiłem/am. Mówisz: „Dzięki, super”.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, co druga osoba zrobi z tą chwilą?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Co naprawdę byś zrobił/a: udawał/a radość czy powiedział/a prawdę?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">Uczciwość i wdzięczność nie muszą się wykluczać, ale trzeba je powiedzieć w tej kolejności.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 11/18</p>
+          <h3 class="c-title">Po kłótni</h3>
+        </header>
+        <p class="scene">Pokłóciliśmy się godzinę temu. Nic się nie wyjaśniło. Siedzimy w dwóch różnych pokojach. Ja nie wiem, czy przyjść, czy zostawić Ci przestrzeń.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, czego druga osoba chce teraz bardziej: przestrzeni czy zbliżenia?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Czego Ty naprawdę potrzebujesz godzinę po kłótni?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">Umówcie się na jedno słowo, które znaczy: „Potrzebuję przerwy, ale nie odchodzę od Ciebie”.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 12/18</p>
+          <h3 class="c-title">Podniesiony głos</h3>
+        </header>
+        <p class="scene">W kłótni podnoszę głos. Nie krzyczę, ale słychać, że jestem wściekły/a. Widzę, jak na sekundę się cofasz.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, co dzieje się w drugiej osobie w tej jednej sekundzie?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Co naprawdę dzieje się w Tobie, kiedy ktoś podnosi na Ciebie głos?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">Ciało reaguje na ton szybciej niż na treść. Zanim wrócicie do argumentów, wróćcie do głośności.</p>
+        </div>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości <span class="dot">·</span> Karty Sytuacji <span class="dot">·</span> arkusz 3 z 5</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 13/18</p>
+          <h3 class="c-title">Wyjście z pokoju</h3>
+        </header>
+        <p class="scene">W środku kłótni wstaję i wychodzę z pokoju. Nic nie mówię. Drzwi zostają uchylone.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, co druga osoba usłyszała w tym wyjściu: „uciekam” czy „potrzebuję chwili”?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Co naprawdę znaczy Twoje wyjście — i czego wtedy najbardziej potrzebujesz?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">Przerwa działa tylko wtedy, kiedy jest zapowiedziana. Wyjście bez słowa czyta się jako porzucenie.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 14/18</p>
+          <h3 class="c-title">Zapomniałem/am</h3>
+        </header>
+        <p class="scene">Zapomniałem/am o czymś, co było dla Ciebie ważne. Przypominam sobie dzień później. Mówię: „przepraszam, miałem/am urwanie głowy”.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, co jest dla drugiej osoby trudniejsze: samo zapomnienie czy to zdanie po nim?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Czego naprawdę potrzebujesz usłyszeć, kiedy ktoś o Tobie zapomni?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">Przeprosiny, które zaczynają się od wyjaśnienia, brzmią jak obrona. Najpierw skutek, dopiero potem powód.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 15/18</p>
+          <h3 class="c-title">Zdanie o przeszłości</h3>
+        </header>
+        <p class="scene">W rozmowie ze znajomymi wspominam coś z czasów sprzed nas. Mimochodem, bez złych intencji. Robi się cicho.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, co poczuła druga osoba w tej ciszy?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Co Ty naprawdę czujesz, kiedy pojawia się temat wcześniejszych relacji?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">Przeszłość rzadko jest zagrożeniem sama w sobie. Zagrożeniem bywa to, że nie wiadomo, gdzie się kończy.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 16/18</p>
+          <h3 class="c-title">Przeczytane</h3>
+        </header>
+        <p class="scene">Piszę do Ciebie w środku dnia coś dla mnie ważnego. Widzę, że przeczytałeś/aś. Mijają godziny bez odpowiedzi.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, jaką historię układa sobie w głowie druga osoba przez te godziny?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Co naprawdę dzieje się z Tobą, kiedy nie dostajesz odpowiedzi?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">W ciszy każdy dopisuje własną wersję. Zwykle gorszą od prawdziwej.</p>
+        </div>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości <span class="dot">·</span> Karty Sytuacji <span class="dot">·</span> arkusz 4 z 5</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 17/18</p>
+          <h3 class="c-title">Rano po kłótni</h3>
+        </header>
+        <p class="scene">Kłótnia skończyła się wczoraj i nikt do niej nie wrócił. Rano zachowuję się zupełnie normalnie, jakby nic się nie stało.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, czy dla drugiej osoby to ulga, czy sprawa niedokończona?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Tobie wystarcza, że wróciła normalność — czy potrzebujesz to jeszcze nazwać?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">Dla jednej osoby cisza jest zakończeniem, dla drugiej odroczeniem. Warto wiedzieć, kto jest kim.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Sytuacja 18/18</p>
+          <h3 class="c-title">Wolna sobota</h3>
+        </header>
+        <p class="scene">Mamy całą sobotę wolną, bez żadnych planów. Ja mam w głowie listę rzeczy do zrobienia. Ty chcesz nie robić nic.</p>
+        <div class="asks">
+          <p class="ask"><span class="lab">Lustro</span>Jak myślisz, jak druga osoba wyobraża sobie idealną wersję tego dnia?</p>
+          <p class="ask"><span class="lab">Reakcja</span>Jak naprawdę wygląda Twoja idealna wersja tej soboty?</p>
+        </div>
+        <div class="key">
+          <p class="key-lab">Klucz empatii <span class="key-note">— przeczytajcie dopiero po odpowiedziach</span></p>
+          <p class="key-txt">Odpoczynek jednej osoby bywa dla drugiej bałaganem, a porządek bywa dla drugiej presją.</p>
+        </div>
+      </article>
+      <article class="card card-blank">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Wasza sytuacja</p>
+          <h3 class="c-title">&nbsp;</h3>
+        </header>
+        <div class="lines"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      </article>
+      <article class="card card-blank">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">Wasza sytuacja</p>
+          <h3 class="c-title">&nbsp;</h3>
+        </header>
+        <div class="lines"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości <span class="dot">·</span> Karty Sytuacji <span class="dot">·</span> arkusz 5 z 5</div>
+  </section>
+</div>
