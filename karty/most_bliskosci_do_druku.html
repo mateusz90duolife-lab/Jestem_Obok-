@@ -1,0 +1,2204 @@
+<title>Most Bliskości 2.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  --paper:#ffffff; --ink:#1d1a17; --ink-soft:#6d655c; --ink-faint:#9a938a;
+  --hair:#ded7cd; --cut:#bdb5aa; --desk:#efece6; --desk-edge:#d9d4cb;
+  --s1:#c0842c; --s2:#2f6f9e; --s3:#6b4a8a; --s4:#8a3a58;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--desk:#1a1917;--desk-edge:#302d29}}
+:root[data-theme="dark"]{--desk:#1a1917;--desk-edge:#302d29}
+*{box-sizing:border-box}
+body{margin:0;background:var(--desk);font-family:"Lora","Iowan Old Style",Georgia,"DejaVu Serif",serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.dot{color:var(--ink-faint);padding:0 .15em}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 20px;background:var(--desk);border-bottom:1px solid var(--desk-edge)}
+.bar h1{font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0;color:var(--ink)}
+.bar-note{font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:12px;color:var(--ink-soft);margin:0}
+:root[data-theme="dark"] .bar h1,:root[data-theme="dark"] .bar-note{color:#e8e3db}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bar h1,:root:not([data-theme="light"]) .bar-note{color:#e8e3db}}
+.bar button{margin-left:auto;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--s2);border:0;border-radius:2px;padding:9px 18px;cursor:pointer}
+.bar button:hover{background:#25597e}
+.bar button:focus-visible{outline:2px solid var(--s4);outline-offset:2px}
+.stack{padding:26px 20px 60px;display:flex;flex-direction:column;align-items:center;gap:26px}
+.sheet{width:297mm;height:210mm;background:var(--paper);position:relative;overflow:hidden;flex:0 0 auto}
+.stack .sheet{box-shadow:0 1px 2px rgba(0,0,0,.12),0 10px 30px rgba(0,0,0,.14)}
+.cards-sheet{padding:7mm 7mm 5mm}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:3mm;height:191mm}
+.sheet-foot{position:absolute;left:0;right:0;bottom:2.5mm;text-align:center;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.card{position:relative;display:flex;flex-direction:column;background:var(--paper);border:.4mm dashed var(--cut);padding:6.5mm 7mm 5.5mm;overflow:hidden}
+.band{position:absolute;top:0;left:0;right:0;height:2.6mm}
+.card.s1 .band{background:var(--s1)} .card.s2 .band{background:var(--s2)}
+.card.s3 .band{background:var(--s3)} .card.s4 .band{background:var(--s4)}
+.c-head{margin:2mm 0 0}
+.eyebrow{margin:0;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:7pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.card.s1 .eyebrow{color:var(--s1)} .card.s2 .eyebrow{color:var(--s2)}
+.card.s3 .eyebrow{color:var(--s3)} .card.s4 .eyebrow{color:var(--s4)}
+.sub{margin:.8mm 0 0;font-style:italic;font-size:8pt;color:var(--ink-soft)}
+.rule{height:1px;background:var(--hair);margin:3mm 0 0}
+.q-wrap{flex:1;display:flex;align-items:center;min-height:0}
+.q{margin:0;color:var(--ink);text-wrap:pretty;hyphens:auto}
+.q-xl{font-size:15pt;line-height:1.33} .q-lg{font-size:13pt;line-height:1.34}
+.q-md{font-size:11pt;line-height:1.38} .q-sm{font-size:9.5pt;line-height:1.42}
+.c-foot{display:flex;align-items:baseline;justify-content:space-between;gap:4mm;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;padding-top:3mm;border-top:1px solid var(--hair)}
+.mark{font-size:6.5pt;font-weight:700;letter-spacing:.16em}
+.card.s1 .mark{color:var(--s1)} .card.s2 .mark{color:var(--s2)}
+.card.s3 .mark{color:var(--s3)} .card.s4 .mark{color:var(--s4)}
+.count{font-size:6.5pt;letter-spacing:.08em;color:var(--ink-faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+.cover{padding:0}
+.cover-inner{height:100%;padding:13mm 18mm 10mm;display:flex;flex-direction:column;border-top:4mm solid var(--s2)}
+.cover-eyebrow{margin:0;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:9pt;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft)}
+.cover-title{margin:2mm 0 0;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:40pt;font-weight:800;letter-spacing:.1em;line-height:1;color:var(--s2)}
+.cover-lede{margin:5mm 0 0;max-width:180mm;font-size:12pt;line-height:1.5;color:var(--ink);text-wrap:balance}
+.cover-cols{margin-top:8mm;display:grid;grid-template-columns:1fr 1.2fr;gap:15mm;flex:1;min-height:0;align-content:start}
+.cover-sections{display:flex;flex-direction:column;gap:7mm}
+.sec-row{display:flex;align-items:flex-start;gap:4mm}
+.sec-chip{flex:0 0 auto;width:10.5mm;height:10.5mm;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:12.5pt;font-weight:700;color:#fff}
+.sec-row.s1 .sec-chip{background:var(--s1)} .sec-row.s2 .sec-chip{background:var(--s2)}
+.sec-row.s3 .sec-chip{background:var(--s3)} .sec-row.s4 .sec-chip{background:var(--s4)}
+.sec-name{margin:.4mm 0 0;font-size:15pt;font-weight:600}
+.sec-meta{margin:1.4mm 0 0;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:9pt;color:var(--ink-soft)}
+.cover-how h2{margin:0 0 3mm;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:9pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--s4)}
+.cover-how h2+ol{margin-bottom:6mm}
+.cover-how ol{margin:0;padding-left:6mm}
+.cover-how li{font-size:10pt;line-height:1.5;margin-bottom:1.8mm;color:var(--ink);padding-left:.8mm}
+.cover-how b{font-weight:600}
+.cover-foot{margin:0;padding-top:4mm;border-top:1px solid var(--hair);font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:7.5pt;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+@page{size:A4 landscape;margin:0}
+@media print{
+  html,body{background:#fff}
+  .bar{display:none}
+  .stack{padding:0;gap:0;display:block}
+  .sheet{box-shadow:none;break-after:page;page-break-after:always;margin:0}
+  .sheet:last-child{break-after:auto;page-break-after:auto}
+  .card{break-inside:avoid;page-break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<div class="bar">
+  <h1>Most Bliskości 2.0 — 150 kart</h1>
+  <p class="bar-note">A4 poziomo <span class="dot">·</span> skala 100% <span class="dot">·</span> 26 stron (okładka + 25 arkuszy)</p>
+  <button type="button" onclick="window.print()">Drukuj / zapisz PDF</button>
+</div>
+<div class="stack">
+  <section class="sheet cover">
+    <div class="cover-inner">
+      <p class="cover-eyebrow">150 kart rozmowy dla par</p>
+      <h1 class="cover-title">MOST BLISKOŚCI</h1>
+      <p class="cover-lede">Cztery sekcje o rosnącym ciężarze. Zaczynacie od ciekawości,
+      kończycie tam, gdzie potrzeba odwagi. Idziecie tak daleko, jak oboje chcecie — i ani kroku dalej.</p>
+      <div class="cover-cols">
+        <div class="cover-sections"><div class="sec-row s1">
+            <span class="sec-chip">1</span>
+            <div><p class="sec-name">Poznaj</p>
+            <p class="sec-meta">karty 1–25 <span class="dot">·</span> lekko i ciekawie</p></div>
+          </div><div class="sec-row s2">
+            <span class="sec-chip">2</span>
+            <div><p class="sec-name">Zbliż się</p>
+            <p class="sec-meta">karty 26–50 <span class="dot">·</span> wdzięczność i docenienie</p></div>
+          </div><div class="sec-row s3">
+            <span class="sec-chip">3</span>
+            <div><p class="sec-name">Odkryj</p>
+            <p class="sec-meta">karty 51–100 <span class="dot">·</span> wymaga otwartości</p></div>
+          </div><div class="sec-row s4">
+            <span class="sec-chip">4</span>
+            <div><p class="sec-name">Odwaga</p>
+            <p class="sec-meta">karty 101–150 <span class="dot">·</span> duża bliskość i zaufanie</p></div>
+          </div></div>
+        <div class="cover-how">
+          <h2>Jak wydrukować</h2>
+          <ol>
+            <li>Papier <b>A4, orientacja pozioma</b>, skala <b>100%</b> (nie „dopasuj do strony”).</li>
+            <li>Karton <b>250–300 g/m²</b>, druk jednostronny. Z arkusza wychodzi 6 kart, razem <b>25 arkuszy</b>.</li>
+            <li>Kolor paska u góry karty oznacza sekcję — po pocięciu łatwo posortować talię.</li>
+          </ol>
+          <h2>Zasady rozmowy</h2>
+          <ol>
+            <li>Jedna karta naraz. Oboje odpowiadacie, zanim dobierzecie następną.</li>
+            <li>Ten, kto słucha, nie ocenia, nie poprawia i nie odpowiada od razu o sobie.</li>
+            <li><b>„Nie chcę dziś o tym mówić”</b> to pełna odpowiedź. Odkładacie kartę bez pytań i bez tłumaczenia.</li>
+            <li>Sekcja <b>ODWAGA</b> działa tylko wtedy, gdy nikt się nie spieszy. Nie zaczynajcie od niej.</li>
+          </ol>
+        </div>
+      </div>
+      <p class="cover-foot">Wydrukuj, potnij, rozmawiajcie.</p>
+    </div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Moim ulubionym wspomnieniem z początku naszej relacji jest…</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">1/25 <span class="dot">·</span> karta 1/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Gdyby ktoś obserwował nas przez jeden dzień, jaki moment najlepiej pokazałby mu, jacy jesteśmy jako para?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">2/25 <span class="dot">·</span> karta 2/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Gdybyś miał/a opisać naszą relację jednym obrazem, co by to było?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">3/25 <span class="dot">·</span> karta 3/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co Twoim zdaniem inni ludzie najbardziej podziwiają we mnie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">4/25 <span class="dot">·</span> karta 4/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jak wyglądałby Twój wymarzony zwyczajny dzień spędzony tylko ze mną?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">5/25 <span class="dot">·</span> karta 5/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Jaki drobiazg potrafi Cię zaskakująco mocno zirytować?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">6/25 <span class="dot">·</span> karta 6/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 1 z 25 <span class="dot">·</span> karty 1–6</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co z dzieciństwa nadal potrafi wywołać u Ciebie uśmiech?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">7/25 <span class="dot">·</span> karta 7/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki smak, zapach albo potrawa najbardziej kojarzy Ci się z domem rodzinnym?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">8/25 <span class="dot">·</span> karta 8/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">O czym marzyłeś/aś jako dziecko, a dziś nadal trochę za tym tęsknisz?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">9/25 <span class="dot">·</span> karta 9/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaki utwór, film, książka albo miejsce przenosi Cię natychmiast do konkretnego momentu Twojego życia?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">10/25 <span class="dot">·</span> karta 10/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka Twoja pasja lub ciekawość rzadko wychodzi na pierwszy plan?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">11/25 <span class="dot">·</span> karta 11/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Gdybyś jutro dostał/a cały dzień tylko dla siebie, jak naprawdę chciał(a)byś go spędzić?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">12/25 <span class="dot">·</span> karta 12/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 2 z 25 <span class="dot">·</span> karty 7–12</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Co najbardziej lubisz robić, kiedy jesteś sam/a?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">13/25 <span class="dot">·</span> karta 13/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Gdyby pieniądze nie miały żadnego znaczenia, jak wyglądałby jeden zwyczajny wtorek naszego życia za pięć lat?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">14/25 <span class="dot">·</span> karta 14/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Gdybyśmy mogli przez rok zamieszkać gdziekolwiek na świecie, czego chciał(a)byś tam doświadczyć?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">15/25 <span class="dot">·</span> karta 15/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Gdyby nasz związek miał piosenkę przewodnią, jaka by była i dlaczego właśnie ta?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">16/25 <span class="dot">·</span> karta 16/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki weekend z naszego życia chciał(a)byś kiedyś przeżyć jeszcze raz?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">17/25 <span class="dot">·</span> karta 17/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jakie miejsce z Twojej przeszłości chciał(a)byś mi kiedyś pokazać osobiście?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">18/25 <span class="dot">·</span> karta 18/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 3 z 25 <span class="dot">·</span> karty 13–18</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaką jedną rzecz z obecnego życia byłoby Ci najtrudniej zostawić na miesiąc?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">19/25 <span class="dot">·</span> karta 19/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co jest naszą „tajną bronią”, kiedy życie robi się trudne?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">20/25 <span class="dot">·</span> karta 20/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">W czym, Twoim zdaniem, jesteśmy razem lepsi niż każde z nas osobno?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">21/25 <span class="dot">·</span> karta 21/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jakie miejsce chciał(a)byś kiedyś zobaczyć właśnie ze mną?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">22/25 <span class="dot">·</span> karta 22/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jakiego wspólnego doświadczenia chciał(a)byś spróbować po raz pierwszy?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">23/25 <span class="dot">·</span> karta 23/150</span>
+        </footer>
+      </article>
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki dzień z naszej wspólnej historii zasługuje na własną małą tradycję?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">24/25 <span class="dot">·</span> karta 24/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 4 z 25 <span class="dot">·</span> karty 19–24</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s1">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">POZNAJ</p>
+          <p class="sub">lekko i ciekawie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jak wyglądałby nasz wymarzony dom, gdybyśmy mogli zaprojektować go bez żadnych ograniczeń?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">25/25 <span class="dot">·</span> karta 25/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Czuję się najbardziej sobą przy Tobie, gdy…</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">1/25 <span class="dot">·</span> karta 26/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka mała rzecz, którą robisz, potrafi natychmiast poprawić mi dzień?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">2/25 <span class="dot">·</span> karta 27/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka moja cecha sprawia, że cieszysz się, że właśnie ze mną jesteś?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">3/25 <span class="dot">·</span> karta 28/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Za co najbardziej doceniasz mnie w ostatnim czasie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">4/25 <span class="dot">·</span> karta 29/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki zwyczajny moment spędzony razem chciał(a)byś zachować na zawsze?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">5/25 <span class="dot">·</span> karta 30/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 5 z 25 <span class="dot">·</span> karty 25–30</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co potrafi mnie przy Tobie rozśmieszyć nawet wtedy, gdy mam zły dzień?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">6/25 <span class="dot">·</span> karta 31/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Często zapominam Ci powiedzieć, jak bardzo jestem wdzięczny/a za…</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">7/25 <span class="dot">·</span> karta 32/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">W jakim momencie zwykłego dnia najbardziej lubisz mieć mnie obok?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">8/25 <span class="dot">·</span> karta 33/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">W jakiej sytuacji najbardziej poczułeś/aś, że naprawdę stoję po Twojej stronie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">9/25 <span class="dot">·</span> karta 34/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Jaki komplement ode mnie zapamiętałeś/aś najbardziej?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">10/25 <span class="dot">·</span> karta 35/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Z czego najbardziej jesteś dumny/a, kiedy myślisz o nas?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">11/25 <span class="dot">·</span> karta 36/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 6 z 25 <span class="dot">·</span> karty 31–36</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">W jakich sytuacjach czujesz, że jesteśmy świetnym zespołem?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">12/25 <span class="dot">·</span> karta 37/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaki mój gest ostatnio sprawił Ci przyjemność, choć prawdopodobnie nie wiedziałem/am, że go zauważyłeś/aś?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">13/25 <span class="dot">·</span> karta 38/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Za co z naszego wspólnego życia jesteś mi wdzięczny/a, choć rzadko o tym mówimy?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">14/25 <span class="dot">·</span> karta 39/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Przy jakim moim zachowaniu możesz odpuścić kontrolę i po prostu być?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">15/25 <span class="dot">·</span> karta 40/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Jaka nasza mała tradycja daje Ci najwięcej radości?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">16/25 <span class="dot">·</span> karta 41/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co ostatnio zrobiłem/am, czym pozytywnie Cię zaskoczyłem/am?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">17/25 <span class="dot">·</span> karta 42/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 7 z 25 <span class="dot">·</span> karty 37–42</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jakie uczucie pojawia się w Tobie, kiedy wracasz do domu i wiesz, że tam jestem?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">18/25 <span class="dot">·</span> karta 43/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki nowy mały rytuał chciał(a)byś stworzyć tylko dla nas?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">19/25 <span class="dot">·</span> karta 44/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaki zwyczajny moment między nami ma dla Ciebie więcej znaczenia, niż mogłoby się wydawać komuś z zewnątrz?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">20/25 <span class="dot">·</span> karta 45/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co robimy razem, przy czym najbardziej czujesz: „To jest nasze”?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">21/25 <span class="dot">·</span> karta 46/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Za co najbardziej dziękujesz losowi, że nasze drogi się spotkały?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">22/25 <span class="dot">·</span> karta 47/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Jaki mój drobny gest najbardziej Cię rozczula?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">23/25 <span class="dot">·</span> karta 48/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 8 z 25 <span class="dot">·</span> karty 43–48</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czego chciał(a)byś, żebyśmy mieli w naszym życiu więcej — nie rzeczy, tylko chwil?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">24/25 <span class="dot">·</span> karta 49/150</span>
+        </footer>
+      </article>
+      <article class="card s2">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ZBLIŻ SIĘ</p>
+          <p class="sub">wdzięczność i docenienie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Gdybyśmy mogli zatrzymać jeden obecny moment naszego życia na zawsze, który byś wybrał/a?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">25/25 <span class="dot">·</span> karta 50/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jest we mnie coś, co chciał(a)byś lepiej rozumieć. Co to jest?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">1/50 <span class="dot">·</span> karta 51/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Czego nauczyły Cię nasze dotychczasowe trudne momenty?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">2/50 <span class="dot">·</span> karta 52/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Po czym poznajesz, że rozmowa między nami zaczyna iść w złą stronę?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">3/50 <span class="dot">·</span> karta 53/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Kiedy czujesz, że naprawdę troszczę się o Twój komfort?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">4/50 <span class="dot">·</span> karta 54/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 9 z 25 <span class="dot">·</span> karty 49–54</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki mój gest sprawił kiedyś, że pomyślałeś/aś: „Naprawdę mnie widzi”?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">5/50 <span class="dot">·</span> karta 55/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Gdybyśmy mogli wrócić do początku naszej relacji, co zrobilibyśmy inaczej?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">6/50 <span class="dot">·</span> karta 56/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co pomaga Ci wrócić do siebie, kiedy emocje są silniejsze od słów?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">7/50 <span class="dot">·</span> karta 57/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka chwila między nami nauczyła Cię czegoś ważnego o bliskości?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">8/50 <span class="dot">·</span> karta 58/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Co robię, dzięki czemu czujesz się atrakcyjnie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">9/50 <span class="dot">·</span> karta 59/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">O jakiej części siebie możesz mi dzisiaj opowiedzieć, bo czujesz, że jestem gotowy/a jej wysłuchać?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">10/50 <span class="dot">·</span> karta 60/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 10 z 25 <span class="dot">·</span> karty 55–60</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka moja cecha najbardziej pomogła nam przetrwać trudny moment?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">11/50 <span class="dot">·</span> karta 61/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaką formę emocjonalnej odwagi najbardziej we mnie cenisz?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">12/50 <span class="dot">·</span> karta 62/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jakie słowo albo gest moglibyśmy umówić jako sygnał: „Potrzebuję przerwy, ale nie odchodzę”?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">13/50 <span class="dot">·</span> karta 63/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co sprawia, że bliskość między nami jest dla Ciebie naprawdę satysfakcjonująca?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">14/50 <span class="dot">·</span> karta 64/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czego chciał(a)byś ode mnie w trudnym dniu, o co nie zawsze umiesz wtedy poprosić?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">15/50 <span class="dot">·</span> karta 65/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jakie doświadczenie z dzieciństwa nauczyło Cię czegoś o miłości?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">16/50 <span class="dot">·</span> karta 66/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 11 z 25 <span class="dot">·</span> karty 61–66</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co w Twoim domu rodzinnym dawało Ci poczucie bezpieczeństwa?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">17/50 <span class="dot">·</span> karta 67/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki moment dorosłości najbardziej zmienił sposób, w jaki patrzysz na siebie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">18/50 <span class="dot">·</span> karta 68/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jakie zachowanie najbardziej podważa Twoje zaufanie do drugiej osoby?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">19/50 <span class="dot">·</span> karta 69/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Kiedy po raz pierwszy poczułeś/aś, że naprawdę Cię znam?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">20/50 <span class="dot">·</span> karta 70/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jakie wydarzenie najbardziej wpłynęło na Twój stosunek do pieniędzy?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">21/50 <span class="dot">·</span> karta 71/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka decyzja z przeszłości nauczyła Cię o sobie czegoś, czego wcześniej nie wiedziałeś/aś?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">22/50 <span class="dot">·</span> karta 72/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 12 z 25 <span class="dot">·</span> karty 67–72</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Kiedy jesteś wobec siebie najbardziej surowy/a?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">23/50 <span class="dot">·</span> karta 73/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki komplement najtrudniej Ci przyjąć — nawet jeśli wiesz, że jest prawdziwy?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">24/50 <span class="dot">·</span> karta 74/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Po czym mogę poznać, że jesteś już przeciążony/a, zanim sam/a to zauważysz?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">25/50 <span class="dot">·</span> karta 75/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">O co najtrudniej Ci mnie poprosić?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">26/50 <span class="dot">·</span> karta 76/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co dzieje się w Tobie tuż przed tym, jak zamykasz się podczas konfliktu?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">27/50 <span class="dot">·</span> karta 77/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Co mogę zrobić podczas konfliktu, żebyśmy oboje pamiętali, że jesteśmy po tej samej stronie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">28/50 <span class="dot">·</span> karta 78/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 13 z 25 <span class="dot">·</span> karty 73–78</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Co dla Ciebie naprawdę oznacza lojalność w związku?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">29/50 <span class="dot">·</span> karta 79/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Co najczęściej uruchamia w Tobie zazdrość?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">30/50 <span class="dot">·</span> karta 80/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaki wzorzec komunikacji wyniesiony z domu rodzinnego nadal czasem pojawia się między nami?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">31/50 <span class="dot">·</span> karta 81/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co sprawia, że po konflikcie jesteś naprawdę gotowy/a znowu mnie usłyszeć?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">32/50 <span class="dot">·</span> karta 82/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Kiedy masz gorszy dzień, czego najbardziej nie chcesz ode mnie — nawet jeśli mam dobre intencje?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">33/50 <span class="dot">·</span> karta 83/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co sprawia, że możesz powiedzieć mi o swoim błędzie bez potrzeby bronienia się?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">34/50 <span class="dot">·</span> karta 84/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 14 z 25 <span class="dot">·</span> karty 79–84</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka Twoja granica jest dla Ciebie ważna, a ja powinienem/powinnam lepiej ją rozumieć?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">35/50 <span class="dot">·</span> karta 85/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Kiedy jesteś zestresowany/a, po czym poznam, że potrzebujesz mnie blisko, a nie rozwiązania?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">36/50 <span class="dot">·</span> karta 86/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka trudna rozmowa między nami od dawna czeka na dobry moment?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">37/50 <span class="dot">·</span> karta 87/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co sprawia, że możesz się ze mną nie zgadzać i nadal czuć się kochany/a?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">38/50 <span class="dot">·</span> karta 88/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">W jakiej dziedzinie życia najłatwiej zapominasz, że możesz sobie zaufać?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">39/50 <span class="dot">·</span> karta 89/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jak pokazujesz potrzebę bliskości, kiedy nie masz ochoty o niej mówić?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">40/50 <span class="dot">·</span> karta 90/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 15 z 25 <span class="dot">·</span> karty 85–90</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaki sygnał wysyłasz, kiedy potrzebujesz ode mnie więcej uwagi, choć nie mówisz tego wprost?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">41/50 <span class="dot">·</span> karta 91/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jakiego rodzaju wsparcia najbardziej potrzebujesz, kiedy coś Ci nie wychodzi?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">42/50 <span class="dot">·</span> karta 92/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jakiej prawdy o Tobie najczęściej nie zauważam, choć jest dla Ciebie ważna?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">43/50 <span class="dot">·</span> karta 93/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">W jakich sytuacjach najłatwiej jest Ci powiedzieć „nie”, a w jakich najtrudniej?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">44/50 <span class="dot">·</span> karta 94/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Gdzie dla Ciebie przebiega granica między wspólnym życiem a własną przestrzenią?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">45/50 <span class="dot">·</span> karta 95/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Po czym poznajesz, że zaufanie między dwojgiem ludzi naprawdę rośnie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">46/50 <span class="dot">·</span> karta 96/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 16 z 25 <span class="dot">·</span> karty 91–96</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co w naszym związku wymaga od Ciebie najwięcej świadomego wysiłku?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">47/50 <span class="dot">·</span> karta 97/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaka rozmowa między nami mogłaby wyglądać zupełnie inaczej, gdybyśmy oboje czuli się naprawdę słyszani?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">48/50 <span class="dot">·</span> karta 98/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Jaką rzecz o Tobie najczęściej błędnie odczytuję?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">49/50 <span class="dot">·</span> karta 99/150</span>
+        </footer>
+      </article>
+      <article class="card s3">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODKRYJ</p>
+          <p class="sub">wymaga otwartości</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">W jakiej sytuacji najbardziej chciał(a)byś, żebym najpierw Cię wysłuchał/a, a dopiero potem cokolwiek powiedział/a?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">50/50 <span class="dot">·</span> karta 100/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Kiedy w naszej relacji czujesz się najbardziej bezbronny/a?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">1/50 <span class="dot">·</span> karta 101/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czego najbardziej boisz się, że czas może zmienić między nami?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">2/50 <span class="dot">·</span> karta 102/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 17 z 25 <span class="dot">·</span> karty 97–102</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co sprawia, że czasem odsuwasz się ode mnie emocjonalnie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">3/50 <span class="dot">·</span> karta 103/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jaki był jeden z najtrudniejszych dni w Twoim życiu, o którym chciał(a)byś, żebym lepiej rozumiał/a jego znaczenie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">4/50 <span class="dot">·</span> karta 104/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka moja cecha bywa dla Ciebie trudna do kochania, nawet jeśli ją rozumiesz?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">5/50 <span class="dot">·</span> karta 105/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Czego najbardziej boisz się w bliskich relacjach?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">6/50 <span class="dot">·</span> karta 106/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co, Twoim zdaniem, próbuje ochronić Twój największy lęk?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">7/50 <span class="dot">·</span> karta 107/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czego boisz się, że kiedyś mógłbym/mogłabym o Tobie pomyśleć?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">8/50 <span class="dot">·</span> karta 108/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 18 z 25 <span class="dot">·</span> karty 103–108</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">W jakiej chwili najłatwiej uwierzyć Ci w myśl: „Nie jestem wystarczająco dobry/a”?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">9/50 <span class="dot">·</span> karta 109/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Co najbardziej boli Cię w odrzuceniu?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">10/50 <span class="dot">·</span> karta 110/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Czego potrzebujesz ode mnie po tym, jak Cię zranię?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">11/50 <span class="dot">·</span> karta 111/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Po czym poznajesz, że czyjeś „przepraszam” jest naprawdę szczere?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">12/50 <span class="dot">·</span> karta 112/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Czego najbardziej boisz się stracić w naszym związku?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">13/50 <span class="dot">·</span> karta 113/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka Twoja potrzeba wydaje Ci się czasem „za duża”, choć wiesz, że jest prawdziwa?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">14/50 <span class="dot">·</span> karta 114/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 19 z 25 <span class="dot">·</span> karty 109–114</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Po czym poznajesz, że jesteś kochany/a, nawet jeśli nikt niczego nie mówi?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">15/50 <span class="dot">·</span> karta 115/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Wyobraź sobie nas za trzydzieści lat. Za co, Twoim zdaniem, podziękujemy dzisiejszej wersji nas?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">16/50 <span class="dot">·</span> karta 116/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Która wspólna historia z naszego życia dzisiaj najbardziej Cię wzrusza?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">17/50 <span class="dot">·</span> karta 117/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czy jest coś, co mi wybaczyłeś/aś, ale rzadko o tym rozmawiamy?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">18/50 <span class="dot">·</span> karta 118/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Kiedy możesz czuć się samotny/a, mimo że jestem obok?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">19/50 <span class="dot">·</span> karta 119/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki wzorzec z domu rodzinnego najbardziej boisz się powtórzyć w naszym związku?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">20/50 <span class="dot">·</span> karta 120/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 20 z 25 <span class="dot">·</span> karty 115–120</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">W jakim trudnym momencie najbardziej byłeś/aś ze mnie dumny/a?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">21/50 <span class="dot">·</span> karta 121/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czego nauczyłeś/aś się o sobie dzięki temu, że mnie kochasz?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">22/50 <span class="dot">·</span> karta 122/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka cisza między dwojgiem ludzi daje Ci spokój, a jaka zaczyna Cię niepokoić?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">23/50 <span class="dot">·</span> karta 123/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Gdyby wiele rzeczy w naszym życiu kiedyś się zmieniło, co chciał(a)byś, żebym zawsze pamiętał/a o Tobie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">24/50 <span class="dot">·</span> karta 124/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka zmiana we mnie najbardziej Cię poruszyła w ciągu ostatnich lat?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">25/50 <span class="dot">·</span> karta 125/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jakie moje zachowanie daje Ci poczucie: „Nie muszę tutaj niczego udowadniać”?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">26/50 <span class="dot">·</span> karta 126/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 21 z 25 <span class="dot">·</span> karty 121–126</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Gdybyś mógł/mogła dać naszej relacji jedną rzecz na całe życie, czego chciał(a)byś, żeby nigdy nam nie zabrakło?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">27/50 <span class="dot">·</span> karta 127/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-xl">Co w naszej relacji pozwala Ci naprawdę być sobą?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">28/50 <span class="dot">·</span> karta 128/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki lęk dotyczący naszej przyszłości najrzadziej wypowiadasz na głos?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">29/50 <span class="dot">·</span> karta 129/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co robisz ze swoim bólem, kiedy nie wiesz jeszcze, czy chcesz się nim ze mną podzielić?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">30/50 <span class="dot">·</span> karta 130/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czy jest rana z przeszłości, która czasem odzywa się jeszcze w naszej relacji?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">31/50 <span class="dot">·</span> karta 131/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co pomogłoby Ci jeszcze bardziej uwierzyć, że możesz być przy mnie w pełni sobą?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">32/50 <span class="dot">·</span> karta 132/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 22 z 25 <span class="dot">·</span> karty 127–132</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Gdybyś mógł/mogła przeżyć jeszcze raz jedną chwilę między nami, którą byś wybrał/a i dlaczego?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">33/50 <span class="dot">·</span> karta 133/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka część Twojej historii jest nadal trudna do opowiedzenia — nawet mnie?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">34/50 <span class="dot">·</span> karta 134/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Co sprawia, że odważasz się powiedzieć mi coś, czego normalnie nie powiedział(a)byś nikomu?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">35/50 <span class="dot">·</span> karta 135/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Co chciał(a)byś, żebym lepiej rozumiał/a o Twoim milczeniu w trudnych chwilach?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">36/50 <span class="dot">·</span> karta 136/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka jest jedna prawda o Tobie, którą chciał(a)byś, żebym zawsze pamiętał/a?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">37/50 <span class="dot">·</span> karta 137/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Co robisz, kiedy boisz się utraty bliskości — przybliżasz się, odsuwasz czy udajesz, że nic się nie dzieje?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">38/50 <span class="dot">·</span> karta 138/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 23 z 25 <span class="dot">·</span> karty 133–138</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Czy jest coś, czego pragniesz w naszej relacji, ale boisz się poprosić o to wprost?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">39/50 <span class="dot">·</span> karta 139/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki moment sprawił, że najbardziej bałeś/aś się, że możemy się od siebie oddalić?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">40/50 <span class="dot">·</span> karta 140/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka część Ciebie jest najłatwiejsza do pokochania, a jaka najtrudniejsza do pokazania?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">41/50 <span class="dot">·</span> karta 141/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaka potrzeba w Tobie jest dla Ciebie najtrudniejsza do zaakceptowania?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">42/50 <span class="dot">·</span> karta 142/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Gdybyś mógł/mogła zdjąć ze swoich barków jeden ciężar, który nosisz od dawna, co by to było?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">43/50 <span class="dot">·</span> karta 143/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jakiej części siebie najbardziej potrzebujesz ode mnie nie naprawiać, tylko zaakceptować?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">44/50 <span class="dot">·</span> karta 144/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 24 z 25 <span class="dot">·</span> karty 139–144</div>
+  </section>
+  <section class="sheet cards-sheet">
+    <div class="grid">
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Jeśli kiedyś przejdziemy przez bardzo trudny okres, co chciał(a)byś, żebyśmy sobie wtedy przypomnieli?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">45/50 <span class="dot">·</span> karta 145/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jakiej jednej rzeczy nigdy nie chcesz, żebym przestał/a robić?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">46/50 <span class="dot">·</span> karta 146/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-lg">Jaki temat między nami jest dla Ciebie ważny, ale wciąż odkładasz rozmowę o nim?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">47/50 <span class="dot">·</span> karta 147/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Co chciał(a)byś kiedyś zrobić, powiedzieć albo przeżyć ze mną, ale jeszcze nie znaleźliśmy na to odwagi?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">48/50 <span class="dot">·</span> karta 148/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-md">Gdybyś mógł/mogła powiedzieć mi jedną rzecz, którą naprawdę chciał(a)byś, żebym usłyszał/a i zapamiętał/a, co by to było?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">49/50 <span class="dot">·</span> karta 149/150</span>
+        </footer>
+      </article>
+      <article class="card s4">
+        <div class="band"></div>
+        <header class="c-head">
+          <p class="eyebrow">ODWAGA</p>
+          <p class="sub">duża bliskość i zaufanie</p>
+        </header>
+        <div class="rule"></div>
+        <div class="q-wrap"><p class="q q-sm">Gdybyś miał/a powiedzieć mi dzisiaj jedną rzecz całkowicie szczerze, której zwykle nie masz odwagi powiedzieć — co chciał(a)byś, żebym usłyszał/a?</p></div>
+        <footer class="c-foot">
+          <span class="mark">MOST BLISKOŚCI</span>
+          <span class="count">50/50 <span class="dot">·</span> karta 150/150</span>
+        </footer>
+      </article>
+    </div>
+    <div class="sheet-foot">Most Bliskości 2.0 <span class="dot">·</span> arkusz 25 z 25 <span class="dot">·</span> karty 145–150</div>
+  </section>
+</div>
