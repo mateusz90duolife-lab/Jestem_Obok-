@@ -1,0 +1,152 @@
+<title>Karty Przywileju</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--desk);font-family:"Lora","Iowan Old Style",Georgia,"DejaVu Serif",serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.dot{color:var(--ink-faint);padding:0 .15em}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 20px;background:var(--desk);border-bottom:1px solid var(--desk-edge)}
+.bar h1{font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0;color:var(--ink)}
+.bar-note{font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:12px;color:var(--ink-soft);margin:0}
+.bar button{margin-left:auto;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);border:0;border-radius:2px;padding:9px 18px;cursor:pointer}
+.bar button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.stack{padding:26px 20px 60px;display:flex;flex-direction:column;align-items:center;gap:26px}
+.sheet{width:297mm;height:210mm;background:var(--paper);position:relative;overflow:hidden;flex:0 0 auto;padding:7mm 7mm 5mm}
+.stack .sheet{box-shadow:0 1px 2px rgba(0,0,0,.12),0 10px 30px rgba(0,0,0,.14)}
+.sheet-foot{position:absolute;left:0;right:0;bottom:2.5mm;text-align:center;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.card{position:relative;display:flex;flex-direction:column;background:var(--card-bg,var(--paper));border:.4mm dashed var(--cut);overflow:hidden}
+.eyebrow{margin:0;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:7pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.c-title{margin:1.2mm 0 0;font-weight:600;line-height:1.15;color:var(--ink)}
+.body{margin:0;color:var(--ink);text-wrap:pretty}
+.rule{height:1px;background:var(--hair)}
+.lines{display:flex;flex-direction:column;width:100%}
+.lines span{display:block;height:0;border-bottom:1px solid var(--hair)}
+@page{size:A4 landscape;margin:0}
+@media print{
+  html,body{background:#fff}
+  .bar{display:none}
+  .stack{padding:0;gap:0;display:block}
+  .sheet{box-shadow:none;break-after:page;page-break-after:always;margin:0}
+  .sheet:last-child{break-after:auto;page-break-after:auto}
+  .card{break-inside:avoid;page-break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+:root{--paper:#ffffff;--ink:#1d1a17;--ink-soft:#6d655c;--ink-faint:#9a938a;--hair:#ded7cd;--cut:#bdb5aa;--desk:#ececed;--desk-edge:#d6d6d9;--accent:#4a4f7a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--desk:#17171a;--desk-edge:#2c2c33}}
+:root[data-theme="dark"]{--desk:#17171a;--desk-edge:#2c2c33}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:3mm;height:191mm}
+.card{padding:7mm 7mm 6mm 10mm}
+.card::before{content:"";position:absolute;top:0;bottom:0;left:0;width:4mm;background:var(--accent)}
+.c-title{font-size:15pt;margin-top:1.5mm}
+.rule{margin:3mm 0 0}
+.body{margin-top:auto;margin-bottom:auto;font-size:10pt;line-height:1.45;padding:3mm 0}
+.c-foot{margin-top:auto;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:6.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);border-top:1px solid var(--hair);padding-top:2.5mm}
+.rules-list{margin:3mm 0 auto;padding-left:5mm;font-size:8.5pt;line-height:1.45}
+.rules-list li{margin-bottom:1.8mm}
+.lines{gap:6.5mm;margin-top:5mm}
+:root[data-theme="dark"] .bar h1,:root[data-theme="dark"] .bar-note{color:#e8e3db}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bar h1,:root:not([data-theme="light"]) .bar-note{color:#e8e3db}}
+.bar button:hover{background:#3a3e63}
+</style>
+<div class="bar">
+  <h1>Most Bliskości — Karty Przywileju</h1>
+  <p class="bar-note">10 kart + zasady + 1 pusta <span class="dot">·</span> A4 poziomo <span class="dot">·</span> 2 arkusze</p>
+  <button type="button" onclick="window.print()">Drukuj / zapisz PDF</button>
+</div>
+<div class="stack">
+  <section class="sheet"><div class="grid">
+      <article class="card">
+        <p class="eyebrow">Przywilej 1/10</p>
+        <h3 class="c-title">Pas</h3>
+        <div class="rule"></div>
+        <p class="body">Odkładasz aktualną kartę bez odpowiadania. Nie tłumaczysz się, a druga osoba nie wraca do tego tematu tego wieczoru.</p>
+        <div class="c-foot">Most Bliskości</div>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Przywilej 2/10</p>
+        <h3 class="c-title">Wybór</h3>
+        <div class="rule"></div>
+        <p class="body">Zamiast losować, wybierasz dowolną kartę z dowolnej talii. Możesz ją najpierw przeczytać.</p>
+        <div class="c-foot">Most Bliskości</div>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Przywilej 3/10</p>
+        <h3 class="c-title">Dopytaj</h3>
+        <div class="rule"></div>
+        <p class="body">Po odpowiedzi partnera zadajesz jedno dodatkowe pytanie o to, co przed chwilą powiedział. Jedno, nie trzy.</p>
+        <div class="c-foot">Most Bliskości</div>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Przywilej 4/10</p>
+        <h3 class="c-title">Zmiana biegu</h3>
+        <div class="rule"></div>
+        <p class="body">Przenosisz grę do innej sekcji: lżejszej, jeśli zrobiło się za ciężko, albo głębszej, jeśli oboje jesteście gotowi.</p>
+        <div class="c-foot">Most Bliskości</div>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Przywilej 5/10</p>
+        <h3 class="c-title">Koniec na dziś</h3>
+        <div class="rule"></div>
+        <p class="body">Kończycie grę w tym momencie. Bez negocjacji i bez dokańczania jeszcze jednej karty.</p>
+        <div class="c-foot">Most Bliskości</div>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Przywilej 6/10</p>
+        <h3 class="c-title">Oddaję Tobie</h3>
+        <div class="rule"></div>
+        <p class="body">Podajesz kartę partnerowi — to on odpowiada zamiast Ciebie. Nie musisz mówić dlaczego.</p>
+        <div class="c-foot">Most Bliskości</div>
+      </article>
+  </div><div class="sheet-foot">Most Bliskości <span class="dot">·</span> Karty Przywileju <span class="dot">·</span> arkusz 1 z 2</div></section>
+  <section class="sheet"><div class="grid">
+      <article class="card">
+        <p class="eyebrow">Przywilej 7/10</p>
+        <h3 class="c-title">Druga szansa</h3>
+        <div class="rule"></div>
+        <p class="body">Wracasz do dowolnej karty, którą wcześniej spasowaliście — Twojej albo partnera — i odpowiadasz na nią teraz.</p>
+        <div class="c-foot">Most Bliskości</div>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Przywilej 8/10</p>
+        <h3 class="c-title">Cisza</h3>
+        <div class="rule"></div>
+        <p class="body">Bierzesz dwie minuty ciszy, zanim odpowiesz. Partner nie podpowiada, nie żartuje i nie wypełnia tej ciszy.</p>
+        <div class="c-foot">Most Bliskości</div>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Przywilej 9/10</p>
+        <h3 class="c-title">Powtórz mi</h3>
+        <div class="rule"></div>
+        <p class="body">Prosisz partnera, żeby powtórzył własnymi słowami to, co przed chwilą powiedziałeś/aś. Słuchasz i mówisz, czy się zgadza.</p>
+        <div class="c-foot">Most Bliskości</div>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Przywilej 10/10</p>
+        <h3 class="c-title">Zapisane</h3>
+        <div class="rule"></div>
+        <p class="body">Wybierasz jedno zdanie, które padło dziś wieczorem, i zapisujecie je. Zostaje z Wami — na lodówce, w telefonie, gdziekolwiek.</p>
+        <div class="c-foot">Most Bliskości</div>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Przywileje</p>
+        <h3 class="c-title">Zasady</h3>
+        <div class="rule"></div>
+        <ol class="rules-list">
+          <li>Na początku wieczoru każde z Was bierze po <b>pięć</b> Kart Przywileju i trzyma je w ręce.</li>
+          <li>Przywilej zagrywasz w dowolnym momencie, <b>bez pytania o zgodę</b> i bez uzasadniania.</li>
+          <li>Każdą kartę zagrywa się <b>raz</b>. Potem odkładacie ją na bok.</li>
+          <li>Niezagrane przywileje przepadają na koniec wieczoru. Nie zbieracie ich na później.</li>
+        </ol>
+        <div class="c-foot">karta zasad</div>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Wasz przywilej</p>
+        <h3 class="c-title">&nbsp;</h3>
+        <div class="rule"></div>
+        <div class="lines"><span></span><span></span><span></span><span></span></div>
+        <div class="c-foot">dopiszcie własny</div>
+      </article>
+  </div><div class="sheet-foot">Most Bliskości <span class="dot">·</span> Karty Przywileju <span class="dot">·</span> arkusz 2 z 2</div></section>
+</div>

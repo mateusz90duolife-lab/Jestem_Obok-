@@ -1,0 +1,112 @@
+<title>Złote Karty Mostu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--desk);font-family:"Lora","Iowan Old Style",Georgia,"DejaVu Serif",serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.dot{color:var(--ink-faint);padding:0 .15em}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 20px;background:var(--desk);border-bottom:1px solid var(--desk-edge)}
+.bar h1{font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0;color:var(--ink)}
+.bar-note{font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:12px;color:var(--ink-soft);margin:0}
+.bar button{margin-left:auto;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);border:0;border-radius:2px;padding:9px 18px;cursor:pointer}
+.bar button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.stack{padding:26px 20px 60px;display:flex;flex-direction:column;align-items:center;gap:26px}
+.sheet{width:297mm;height:210mm;background:var(--paper);position:relative;overflow:hidden;flex:0 0 auto;padding:7mm 7mm 5mm}
+.stack .sheet{box-shadow:0 1px 2px rgba(0,0,0,.12),0 10px 30px rgba(0,0,0,.14)}
+.sheet-foot{position:absolute;left:0;right:0;bottom:2.5mm;text-align:center;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.card{position:relative;display:flex;flex-direction:column;background:var(--card-bg,var(--paper));border:.4mm dashed var(--cut);overflow:hidden}
+.eyebrow{margin:0;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:7pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.c-title{margin:1.2mm 0 0;font-weight:600;line-height:1.15;color:var(--ink)}
+.body{margin:0;color:var(--ink);text-wrap:pretty}
+.rule{height:1px;background:var(--hair)}
+.lines{display:flex;flex-direction:column;width:100%}
+.lines span{display:block;height:0;border-bottom:1px solid var(--hair)}
+@page{size:A4 landscape;margin:0}
+@media print{
+  html,body{background:#fff}
+  .bar{display:none}
+  .stack{padding:0;gap:0;display:block}
+  .sheet{box-shadow:none;break-after:page;page-break-after:always;margin:0}
+  .sheet:last-child{break-after:auto;page-break-after:auto}
+  .card{break-inside:avoid;page-break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+:root{--paper:#ffffff;--ink:#1d1a17;--ink-soft:#6d655c;--ink-faint:#9a938a;--hair:#ded7cd;--cut:#bdb5aa;--desk:#efe9dc;--desk-edge:#dcd3c0;--accent:#8a6a12;--card-bg:#fdf9ef}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--desk:#1a1813;--desk-edge:#312c20}}
+:root[data-theme="dark"]{--desk:#1a1813;--desk-edge:#312c20}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:3mm;height:191mm}
+.card{padding:6mm;border:.4mm dashed var(--cut)}
+.frame{flex:1;display:flex;flex-direction:column;border:.9mm solid var(--accent);padding:5mm 5.5mm 4.5mm;min-height:0}
+.c-title{font-size:15pt;margin-top:1.2mm}
+.rule{margin:2.5mm 0 0;background:var(--accent);opacity:.35}
+.body{margin-top:auto;margin-bottom:auto;font-size:9.5pt;line-height:1.45;padding:3mm 0}
+.c-foot{margin-top:auto;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:6pt;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);text-align:center}
+:root[data-theme="dark"] .bar h1,:root[data-theme="dark"] .bar-note{color:#e8e3db}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bar h1,:root:not([data-theme="light"]) .bar-note{color:#e8e3db}}
+.bar button:hover{background:#6d5410}
+</style>
+<div class="bar">
+  <h1>Most Bliskości — Złote Karty</h1>
+  <p class="bar-note">6 kart <span class="dot">·</span> A4 poziomo <span class="dot">·</span> 1 arkusz</p>
+  <button type="button" onclick="window.print()">Drukuj / zapisz PDF</button>
+</div>
+<div class="stack">
+  <section class="sheet"><div class="grid">
+      <article class="card">
+        <div class="frame">
+          <p class="eyebrow">Złota karta 1/6</p>
+          <h3 class="c-title">List</h3>
+          <div class="rule"></div>
+          <p class="body">Weźcie po kartce. Każde z Was pisze do drugiego krótki list — kilka zdań wystarczy. Nie czytacie ich teraz na głos. Wymieniacie się i czytacie osobno, kiedy zostaniecie sami.</p>
+          <div class="c-foot">Most Bliskości</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="frame">
+          <p class="eyebrow">Złota karta 2/6</p>
+          <h3 class="c-title">Obietnica</h3>
+          <div class="rule"></div>
+          <p class="body">Powiedz na głos jedną konkretną rzecz, którą zrobisz dla nas w ciągu najbliższego miesiąca. Ustalcie datę, w której do tego wrócicie, i zapiszcie ją.</p>
+          <div class="c-foot">Most Bliskości</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="frame">
+          <p class="eyebrow">Złota karta 3/6</p>
+          <h3 class="c-title">Odkładam to</h3>
+          <div class="rule"></div>
+          <p class="body">Nazwij jedną rzecz z przeszłości, do której jesteś gotowy/a przestać wracać w kłótniach. Powiedz ją na głos i od dzisiaj naprawdę do niej nie wracaj. Jeśli nie jesteś gotowy/a — odłóż tę kartę bez tłumaczenia.</p>
+          <div class="c-foot">Most Bliskości</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="frame">
+          <p class="eyebrow">Złota karta 4/6</p>
+          <h3 class="c-title">Twoja godzina</h3>
+          <div class="rule"></div>
+          <p class="body">Twój partner dostaje w ciągu najbliższego tygodnia jedną godzinę w całości na swoich warunkach. Ty ją organizujesz i zdejmujesz z niego wszystko, co trzeba, żeby mógł ją mieć.</p>
+          <div class="c-foot">Most Bliskości</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="frame">
+          <p class="eyebrow">Złota karta 5/6</p>
+          <h3 class="c-title">Powiedz to całe</h3>
+          <div class="rule"></div>
+          <p class="body">Powiedz tę jedną rzecz, której nigdy nie powiedziałeś/aś na głos. Bez skracania. Partner słucha do końca i odpowiada tylko: „Dziękuję, że mi to powiedziałeś/aś”. Rozmowa o tym może poczekać do jutra. Możesz też odłożyć tę kartę — to również jest odpowiedź.</p>
+          <div class="c-foot">Most Bliskości</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="frame">
+          <p class="eyebrow">Złota karta 6/6</p>
+          <h3 class="c-title">Nasza zasada</h3>
+          <div class="rule"></div>
+          <p class="body">Ułóżcie razem jedno zdanie — zasadę, która od dziś obowiązuje Was oboje. Krótka, konkretna i taka, że da się zauważyć, kiedy ktoś ją złamie. Zapiszcie ją i powieście tam, gdzie ją widać.</p>
+          <div class="c-foot">Most Bliskości</div>
+        </div>
+      </article>
+  </div><div class="sheet-foot">Most Bliskości <span class="dot">·</span> Złote Karty Mostu <span class="dot">·</span> jeden arkusz <span class="dot">·</span> po złotej karcie kończycie wieczór</div></section>
+</div>

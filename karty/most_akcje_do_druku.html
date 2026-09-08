@@ -1,0 +1,149 @@
+<title>Karty Akcji</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--desk);font-family:"Lora","Iowan Old Style",Georgia,"DejaVu Serif",serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.dot{color:var(--ink-faint);padding:0 .15em}
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 20px;background:var(--desk);border-bottom:1px solid var(--desk-edge)}
+.bar h1{font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0;color:var(--ink)}
+.bar-note{font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:12px;color:var(--ink-soft);margin:0}
+.bar button{margin-left:auto;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);border:0;border-radius:2px;padding:9px 18px;cursor:pointer}
+.bar button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.stack{padding:26px 20px 60px;display:flex;flex-direction:column;align-items:center;gap:26px}
+.sheet{width:297mm;height:210mm;background:var(--paper);position:relative;overflow:hidden;flex:0 0 auto;padding:7mm 7mm 5mm}
+.stack .sheet{box-shadow:0 1px 2px rgba(0,0,0,.12),0 10px 30px rgba(0,0,0,.14)}
+.sheet-foot{position:absolute;left:0;right:0;bottom:2.5mm;text-align:center;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.card{position:relative;display:flex;flex-direction:column;background:var(--card-bg,var(--paper));border:.4mm dashed var(--cut);overflow:hidden}
+.eyebrow{margin:0;font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:7pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.c-title{margin:1.2mm 0 0;font-weight:600;line-height:1.15;color:var(--ink)}
+.body{margin:0;color:var(--ink);text-wrap:pretty}
+.rule{height:1px;background:var(--hair)}
+.lines{display:flex;flex-direction:column;width:100%}
+.lines span{display:block;height:0;border-bottom:1px solid var(--hair)}
+@page{size:A4 landscape;margin:0}
+@media print{
+  html,body{background:#fff}
+  .bar{display:none}
+  .stack{padding:0;gap:0;display:block}
+  .sheet{box-shadow:none;break-after:page;page-break-after:always;margin:0}
+  .sheet:last-child{break-after:auto;page-break-after:auto}
+  .card{break-inside:avoid;page-break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+:root{--paper:#ffffff;--ink:#1d1a17;--ink-soft:#6d655c;--ink-faint:#9a938a;--hair:#ded7cd;--cut:#bdb5aa;--desk:#f0ebe7;--desk-edge:#ddd5cf;--accent:#a8512e}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--desk:#1b1816;--desk-edge:#312b28}}
+:root[data-theme="dark"]{--desk:#1b1816;--desk-edge:#312b28}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:3mm;height:191mm}
+.card{padding:8mm 9mm 7mm}
+.card::before,.card::after{content:"";position:absolute;left:0;right:0;height:2.6mm;background:var(--accent)}
+.card::before{top:0} .card::after{bottom:0}
+.c-head{margin:2mm 0 0;display:flex;align-items:baseline;justify-content:space-between;gap:5mm}
+.c-title{font-size:16pt}
+.dur{font-family:"Archivo","DejaVu Sans","Helvetica Neue",Arial,sans-serif;font-size:7.5pt;font-weight:600;letter-spacing:.1em;color:var(--accent);white-space:nowrap}
+.rule{margin:3.5mm 0 0}
+.body{margin:auto 0;padding:4mm 0;font-size:11pt;line-height:1.45}
+.note{margin:0;padding-top:4mm;font-size:9pt;line-height:1.4;font-style:italic;color:var(--ink-soft);border-top:1px solid var(--hair)}
+:root[data-theme="dark"] .bar h1,:root[data-theme="dark"] .bar-note{color:#e8e3db}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bar h1,:root:not([data-theme="light"]) .bar-note{color:#e8e3db}}
+.bar button:hover{background:#8b4227}
+</style>
+<div class="bar">
+  <h1>Most Bliskości — Karty Akcji</h1>
+  <p class="bar-note">12 kart <span class="dot">·</span> 4 na arkuszu <span class="dot">·</span> A4 poziomo <span class="dot">·</span> 3 arkusze</p>
+  <button type="button" onclick="window.print()">Drukuj / zapisz PDF</button>
+</div>
+<div class="stack">
+  <section class="sheet"><div class="grid">
+      <article class="card">
+        <p class="eyebrow" style="margin-top:0">Akcja 1/12</p>
+        <div class="c-head"><h3 class="c-title">Lustro</h3><span class="dur">10 minut</span></div>
+        <div class="rule"></div>
+        <p class="body">Jedno z Was mówi dwa–trzy zdania o czymś ważnym. Drugie powtarza je własnymi słowami: „Usłyszałem/am, że…”, a potem pyta: „Czy dobrze zrozumiałem/am? Czy jest coś jeszcze?”. Dopiero gdy mówiący powie, że to wszystko — zamiana ról.</p>
+        <p class="note">Słuchający nie dodaje nic od siebie. Ani rady, ani sprostowania.</p>
+      </article>
+      <article class="card">
+        <p class="eyebrow" style="margin-top:0">Akcja 2/12</p>
+        <div class="c-head"><h3 class="c-title">Cztery kroki</h3><span class="dur">5 minut na osobę</span></div>
+        <div class="rule"></div>
+        <p class="body">Wybierz jedną rzecz, która ostatnio między Wami zgrzytnęła, i powiedz ją w czterech krokach: co się wydarzyło (sam fakt), co poczułeś/aś, czego potrzebowałeś/aś, o co konkretnie prosisz.</p>
+        <p class="note">Bez słów „zawsze” i „nigdy”. Jeśli padną — zacznij zdanie od nowa.</p>
+      </article>
+      <article class="card">
+        <p class="eyebrow" style="margin-top:0">Akcja 3/12</p>
+        <div class="c-head"><h3 class="c-title">Dziesięć minut o czymś spoza nas</h3><span class="dur">10 minut na osobę</span></div>
+        <div class="rule"></div>
+        <p class="body">Jedno mówi o czymś, co go uwiera poza związkiem: praca, rodzina, zdrowie, pieniądze. Drugie słucha i staje po jego stronie. Potem zamiana.</p>
+        <p class="note">Nie doradzasz, nie szukasz drugiej strony medalu i nie bronisz nikogo, kogo nie ma w pokoju.</p>
+      </article>
+      <article class="card">
+        <p class="eyebrow" style="margin-top:0">Akcja 4/12</p>
+        <div class="c-head"><h3 class="c-title">Cztery minuty</h3><span class="dur">4 minuty</span></div>
+        <div class="rule"></div>
+        <p class="body">Usiądźcie naprzeciwko siebie i patrzcie sobie w oczy przez cztery minuty. Bez słów, bez telefonu, bez ratowania się śmiechem.</p>
+        <p class="note">Jeśli którekolwiek z Was chce przerwać — przerywacie od razu i bez pytań.</p>
+      </article>
+  </div><div class="sheet-foot">Most Bliskości <span class="dot">·</span> Karty Akcji <span class="dot">·</span> arkusz 1 z 3</div></section>
+  <section class="sheet"><div class="grid">
+      <article class="card">
+        <p class="eyebrow" style="margin-top:0">Akcja 5/12</p>
+        <div class="c-head"><h3 class="c-title">Miękki start</h3><span class="dur">6 minut</span></div>
+        <div class="rule"></div>
+        <p class="body">Weź prawdziwy zarzut, który masz. Powiedz go trzy razy: najpierw tak, jak przyszedł Ci do głowy. Potem bez słowa „ty”. Na koniec zaczynając od „Czuję…” i kończąc na tym, czego potrzebujesz.</p>
+        <p class="note">Partner słucha wszystkich trzech wersji i mówi, przy której naprawdę Cię usłyszał.</p>
+      </article>
+      <article class="card">
+        <p class="eyebrow" style="margin-top:0">Akcja 6/12</p>
+        <div class="c-head"><h3 class="c-title">Bez kto miał rację</h3><span class="dur">5 minut na osobę</span></div>
+        <div class="rule"></div>
+        <p class="body">Wybierzcie kłótnię sprzed co najmniej tygodnia. Każde z Was opowiada wyłącznie o tym, co wtedy czuło — nie o tym, co się stało i kto zaczął.</p>
+        <p class="note">Nie wolno przytaczać argumentów ani prostować faktów. Fakty tym razem nie są tematem.</p>
+      </article>
+      <article class="card">
+        <p class="eyebrow" style="margin-top:0">Akcja 7/12</p>
+        <div class="c-head"><h3 class="c-title">Co jest pod spodem</h3><span class="dur">6 minut na osobę</span></div>
+        <div class="rule"></div>
+        <p class="body">Wybierzcie spór, który wraca u Was od lat. Jedno pyta drugie: „Co jest dla Ciebie w tym naprawdę ważne? Skąd to się u Ciebie wzięło?”. Potem zamiana.</p>
+        <p class="note">Tylko pytania. Żadnego przekonywania i żadnych rozwiązań — dzisiaj nic nie ustalacie.</p>
+      </article>
+      <article class="card">
+        <p class="eyebrow" style="margin-top:0">Akcja 8/12</p>
+        <div class="c-head"><h3 class="c-title">Trzy zdania ratunkowe</h3><span class="dur">8 minut</span></div>
+        <div class="rule"></div>
+        <p class="body">Ustalcie razem trzy zdania, które każde z Was może powiedzieć w środku kłótni, żeby ją zatrzymać — i które drugie zobowiązuje się przyjąć bez dyskusji. Zapiszcie je.</p>
+        <p class="note">Przykłady: „Zaczynam się gubić”. „Potrzebuję pięciu minut”. „Możemy zacząć jeszcze raz?”.</p>
+      </article>
+  </div><div class="sheet-foot">Most Bliskości <span class="dot">·</span> Karty Akcji <span class="dot">·</span> arkusz 2 z 3</div></section>
+  <section class="sheet"><div class="grid">
+      <article class="card">
+        <p class="eyebrow" style="margin-top:0">Akcja 9/12</p>
+        <div class="c-head"><h3 class="c-title">Zauważyłem</h3><span class="dur">5 minut</span></div>
+        <div class="rule"></div>
+        <p class="body">Każde z Was wymienia pięć konkretnych rzeczy, które druga osoba zrobiła w tym tygodniu. Każde zdanie zaczyna się od „Zauważyłem/am, że…”.</p>
+        <p class="note">Bez uogólnień w rodzaju „jesteś kochana”. Tylko zdarzenia, które da się wskazać palcem.</p>
+      </article>
+      <article class="card">
+        <p class="eyebrow" style="margin-top:0">Akcja 10/12</p>
+        <div class="c-head"><h3 class="c-title">Zamiana stron</h3><span class="dur">3 minuty na osobę</span></div>
+        <div class="rule"></div>
+        <p class="body">Wybierzcie sprawę, w której się nie zgadzacie. Każde z Was broni przez trzy minuty stanowiska drugiej osoby — na serio, najlepiej jak potrafi.</p>
+        <p class="note">Na koniec powiedzcie, co usłyszeliście u siebie, kiedy wypowiedział to ktoś inny.</p>
+      </article>
+      <article class="card">
+        <p class="eyebrow" style="margin-top:0">Akcja 11/12</p>
+        <div class="c-head"><h3 class="c-title">Powrót do domu</h3><span class="dur">5 minut</span></div>
+        <div class="rule"></div>
+        <p class="body">Odegrajcie powitanie po całym dniu tak, jak chcielibyście, żeby wyglądało: uścisk trwający co najmniej sześć sekund i jedno pytanie o miniony dzień.</p>
+        <p class="note">Umówcie się na głos, że od jutra tak wygląda Wasze powitanie. Sześć sekund to dłużej, niż myślisz.</p>
+      </article>
+      <article class="card">
+        <p class="eyebrow" style="margin-top:0">Akcja 12/12</p>
+        <div class="c-head"><h3 class="c-title">Trzy prośby</h3><span class="dur">8 minut</span></div>
+        <div class="rule"></div>
+        <p class="body">Każde z Was formułuje trzy prośby na najbliższy tydzień. Każda konkretna, wykonalna i powiedziana na plus: „chcę, żebyś…” zamiast „przestań…”.</p>
+        <p class="note">Druga osoba wybiera jedną i mówi na głos, że ją bierze. Jedną, którą naprawdę zrobi.</p>
+      </article>
+  </div><div class="sheet-foot">Most Bliskości <span class="dot">·</span> Karty Akcji <span class="dot">·</span> arkusz 3 z 3</div></section>
+</div>
