@@ -91,7 +91,7 @@ Dodatkowo w R7 **obalono mit "21 dni na nawyk"** i podano medianę ~66 dni z bad
 - Format zmieniony na **źródło → twierdzenie → rozdział**: każda pozycja ma strzałkę wskazującą, które twierdzenie i w którym rozdziale potwierdza.
 - Numery odsyłaczy `[n]` wstawione w tekście przy twierdzeniach empirycznych.
 - Uzupełniono luki wskazane w recenzji: Mental Load [4, 5], odkładanie snu [13, 14], ADHD u dorosłych kobiet [23, 24, 25, 26], depresja [29], wypalenie rodzicielskie [27, 28], funkcje wykonawcze [9, 10], ACT [18], sen [10], tarczyca [21], menopauza [22], PCOS [30], żelazo [31].
-- Poprawiono błąd bibliograficzny pierwotnej wersji: komiks o Mental Load autorstwa Emmy był przypisany do "Darcy, L., & Darcy, M. (2021)".
+- Poprawiono błąd bibliograficzny pierwotnej wersji: komiks o Mental Load autorstwa Emmy był przypisany do "Darcy, L., & Darcy, M. (2021)". *(Uwaga: pierwsza próba poprawki też była błędna — zob. sekcja „Wydanie pierwsze” niżej.)*
 
 ---
 
@@ -156,3 +156,45 @@ Wynikają z punktów 3, 9 i 13 recenzji:
 3. **Konsultacja Rozdziału 10 przez lekarza lub psychologa klinicznego** przed sprzedażą. Rozdział jest teraz znacznie ostrożniejszy, ale to nadal najbardziej wrażliwa część publikacji.
 
 **Zamknięte:** status historii jako fikcyjnych — potwierdzony przez autorkę, oznaczenia w tekście zaktualizowane.
+
+
+---
+
+# Wydanie pierwsze — poprawki po analizie rynku i audycie
+
+Po analizie rynkowej przeprowadziłem audyt własnej pracy. Znalazłem trzy błędy, które popełniłem przy pierwszej redakcji, i wszystkie naprawiłem.
+
+## 1. Notatki redakcyjne usunięte z tekstu dla czytelniczki
+
+W 14 miejscach tekst odwoływał się do „poprzedniej wersji”, której czytelniczka nigdy nie widziała („Sprostowanie wobec poprzedniej wersji”, „Usunęłam…”, „W poprzedniej wersji pisałam…”), a nota o sile dowodów zawierała listę „twierdzeń wycofanych z poprzedniej wersji”.
+
+Każde z tych miejsc przepisałem jako tekst pierwszego wydania. Treść merytoryczna została, zmieniła się rama: zamiast „wcześniej pisałam X” jest „często można usłyszeć X — to nieprawda, bo…”. Lista na końcu nosi teraz tytuł „Popularne twierdzenia, których w tej książce świadomie nie powtarzam”.
+
+## 2. Rys. 4 bez wymyślonych liczb
+
+Poprzedni rysunek pokazywał odsetki (82 / 58 / 52 / 84%) z podpisem „za: Daminger, 2019”. **Te liczby wymyśliłem.** Badanie Daminger to wywiady jakościowe z 35 parami i nie podaje odsetków.
+
+Nowy rysunek pokazuje cztery etapy pracy kognitywnej i oznacza tylko to, co faktycznie stwierdza abstrakt badania: kobiety wykonywały więcej przewidywania i monitorowania, a decyzje podejmowano mniej więcej po równo. Podpis mówi wprost, że badanie jest jakościowe.
+
+Przy okazji poprawiłem dwa zdania w tekście (Wstęp i Rozdział 3), które przypisywały badaniu wniosek „nawet w parach deklarujących równy podział obowiązków”. Abstrakt tego nie mówi. Dodałem natomiast obserwację, której wcześniej brakowało: decyzje są dzielone po równo, a nierówność dotyczy zauważania i pilnowania.
+
+## 3. Bibliografia zweryfikowana w Crossref
+
+Wszystkie 28 artykułów i rozdziałów naukowych sprawdziłem w bazie Crossref. Każdy wpis ma teraz numer DOI.
+
+| Wpis | Problem | Poprawka |
+|---|---|---|
+| [2] Sirois i Pychyl (2013) | Błędny tytuł: „…mood repair” | „…mood regulation: Consequences for future self” |
+| [17] Zeigarnik (1927) | Błędny tytuł: „Über das Behalten von…” | „Das Behalten erledigter und unerledigter Handlungen” |
+| [27] Parental burnout (2020) | Odwrócona kolejność autorów (także w oryginale) | Mikolajczak, M., & Roskam, I. |
+| Komiks Emmy | Moja wcześniejsza poprawka przypisała go „Darcy, E.” i dopisała polskie wydanie, którego nie znalazłem | Emma (2017), *Fallait demander*; wyd. ang. *The Mental Load: A Feminist Comic* |
+
+Pozostałe 25 artykułów zgadzało się co do autorów, tytułu, czasopisma, tomu i stron.
+
+Trzech książek ([7] Hochschild i Machung, [18] Hayes i in., [29] DSM-5-TR / ICD-11) oraz pozycji z listy literatury popularnej nie weryfikowałem w bazie bibliograficznej. To standardowe, szeroko cytowane wydania.
+
+## 4. Inne zmiany w tym wydaniu
+
+- **Podtytuł** zawiera teraz frazę „obciążenie mentalne”, na okładce i na stronie tytułowej.
+- **Placeholder trackera** w Zakończeniu zastąpiony opisem dołączonego zeszytu ćwiczeń.
+- **Nowe pliki:** zeszyt ćwiczeń (13 stron A4), darmowy fragment (20 stron A5), teksty sprzedażowe w `sprzedaz/opis-produktu.md`.

@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8">
+<title>Zeszyt ćwiczeń — Prokrastynacja w kobiecym zaciszu</title><style>/* ══ Zeszyt ćwiczeń — A4 do druku ══ */
+:root{
+  --ink:#241E2B; --plum:#7A4E63; --plumd:#553546; --terra:#C36A4B; --sand:#EAD9C6;
+  --cream:#FAF6F0; --sage:#7E8F73; --gold:#D9A441; --muted:#7C7285; --rule:#D9CCBE;
+  --serif:"Bitstream Charter","DejaVu Serif",Georgia,serif;
+  --sans:"DejaVu Sans","Liberation Sans",Helvetica,sans-serif;
+}
+@page{ size:A4; margin:14mm 15mm 16mm; }
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+body{ margin:0; background:#fff; color:var(--ink); font-family:var(--sans); font-size:9.6pt; line-height:1.45 }
+.pg{ break-after:page; }
+.pg:last-child{ break-after:auto }
+.pg-tag{ font-size:7.4pt; letter-spacing:.2em; color:var(--terra); font-weight:700; margin-bottom:1.5mm }
+h2{ font-family:var(--serif); font-size:20pt; color:var(--plumd); margin:0 0 2mm; font-weight:700; line-height:1.15 }
+.lead{ font-family:var(--serif); font-style:italic; color:var(--plumd); font-size:10.6pt; margin:0 0 6mm; max-width:165mm }
+.lbl{ font-size:8.4pt; font-weight:700; color:var(--plum); margin:3mm 0 1mm }
+.lbl.big{ font-size:9.4pt; margin-top:6mm }
+.lines{ background-image:repeating-linear-gradient(to bottom, transparent 0, transparent calc(9mm - .6pt), var(--rule) calc(9mm - .6pt), var(--rule) 9mm); }
+.card{ border:1pt solid var(--rule); border-radius:3mm; padding:3.5mm 4.5mm 4mm; margin:0 0 4.5mm; break-inside:avoid; background:#fff }
+.card-h{ font-family:var(--serif); font-size:12pt; font-weight:700; color:var(--plumd); margin-bottom:1mm }
+.two{ display:grid; grid-template-columns:1fr 1fr; gap:6mm }
+.cb{ display:inline-block; width:3.6mm; height:3.6mm; border:1pt solid var(--plum); border-radius:.8mm; vertical-align:-.6mm; margin-right:1mm; background:#fff }
+.mk-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.5mm 5mm; font-size:8.6pt }
+.fill{ margin:3.5mm 0 0; font-size:10pt; display:flex; align-items:flex-end; gap:1.5mm; flex-wrap:wrap }
+.fill.small{ font-size:8.6pt; color:var(--muted); margin-top:4mm }
+.blank{ display:inline-block; border-bottom:.8pt solid var(--ink); height:6mm }
+.blank.s{ width:24mm } .blank.m{ width:62mm } .blank.l{ width:130mm }
+.lead .blank.l{ width:110mm; height:5mm }
+.say{ font-family:var(--serif); font-size:10.4pt; color:var(--plumd); margin:5mm 0 0; text-align:center }
+.note{ background:var(--cream); border-left:2.4pt solid var(--plum); padding:2.6mm 4mm; margin:5mm 0 0; font-size:8.8pt; border-radius:0 2mm 2mm 0; break-inside:avoid }
+.warn{ background:#FBF0EA; border:1pt solid var(--terra); padding:2.6mm 4mm; margin:4mm 0 0; font-size:8.6pt; border-radius:2mm }
+.ex{ margin-top:4mm } .ex ul{ margin:1mm 0 0; padding-left:5mm; font-size:9pt } .ex li{ margin-bottom:1mm }
+
+/* tabele */
+table{ width:100%; border-collapse:collapse }
+th{ background:var(--plumd); color:#fff; font-size:8pt; text-align:left; padding:2mm 2.4mm; font-weight:700 }
+td{ border:.6pt solid var(--rule); padding:2mm 2.4mm; vertical-align:top; font-size:8.8pt }
+.toc td{ border:0; border-bottom:.6pt solid var(--rule); padding:2.6mm 2.4mm; font-size:10pt }
+.toc .n{ width:14mm; color:var(--terra); font-weight:700 } .toc .r{ width:24mm; color:var(--muted); text-align:right }
+.toc th:last-child{ text-align:right }
+.quiz{ margin-bottom:2.2mm; break-inside:avoid }
+.quiz th{ text-align:center; width:9mm; padding:1.1mm 0 }
+.quiz th.qh{ text-align:left; width:auto; padding-left:2.4mm; font-size:8.6pt }
+.lt{ display:inline-block; width:5mm; height:5mm; line-height:5mm; text-align:center; border-radius:50%; background:var(--terra); color:#fff; font-size:7.6pt; margin-right:1.2mm }
+.quiz td{ padding:.75mm 2.4mm; font-size:8.3pt }
+.quiz td.sc{ text-align:center; color:var(--muted); width:9mm; font-size:8.6pt }
+.quiz tr.sum td{ font-weight:700; color:var(--plumd); background:var(--cream) }
+.quiz td.box{ background:#fff !important }
+.grid3 td.tall{ height:24mm } .grid3 td.day{ width:18mm; font-weight:700; color:var(--plumd) }
+.grid3 td.yn{ width:22mm; font-size:8.4pt; line-height:2 } .grid3 td.opt{ width:30mm; font-size:8.2pt; line-height:2 }
+.map td{ height:12.5mm } .map td.area{ width:42mm; font-weight:700; color:var(--plumd); font-size:8.6pt }
+.map td.wide{ width:62mm } .map td.yn{ width:20mm; text-align:center }
+.track td{ height:10.2mm; padding:1.5mm 2.4mm } .track td.day{ width:14mm; text-align:center }
+.track td.goal{ width:22mm; font-size:8.2pt; color:var(--muted) } .track td.cbx{ width:20mm; text-align:center }
+.track td.wide{ width:80mm }
+.track tr.p1 td.day{ background:#F7E3DA } .track tr.p2 td.day{ background:#EEE2E8 } .track tr.p3 td.day{ background:#E6ECE2 }
+.legend{ font-size:8.2pt; color:var(--muted); margin-top:2.5mm; display:flex; gap:2mm; align-items:center }
+.sw{ display:inline-block; width:4mm; height:4mm; border-radius:1mm } .sw.p1{background:#F7E3DA} .sw.p2{background:#EEE2E8} .sw.p3{background:#E6ECE2}
+.legend .sw:not(:first-child){ margin-left:4mm }
+
+/* karta awaryjna */
+.emerg{ border:1.6pt solid var(--terra); border-radius:4mm; padding:5mm 7mm; background:#FBF3EE; break-inside:avoid }
+.em-h{ font-family:var(--serif); font-size:15pt; font-weight:700; color:var(--terra); letter-spacing:.06em; margin-bottom:2mm }
+.emerg ol{ margin:0; padding-left:5.5mm; font-size:10pt } .emerg li{ margin-bottom:2mm }
+.em-f{ font-size:8.4pt; color:var(--muted); margin-top:2mm; border-top:.6pt solid var(--sand); padding-top:2mm }
+.cut{ text-align:center; color:var(--muted); margin:7mm 0; letter-spacing:.1em; font-size:9pt }
+
+/* pomoc */
+.help{ margin-top:6mm; border:1.4pt solid #B4403A; border-radius:3mm; padding:3.5mm 5mm; background:#FBEDEC; break-inside:avoid }
+.help-h{ font-weight:700; color:#B4403A; font-size:9.6pt; margin-bottom:2mm }
+.help-g{ display:grid; grid-template-columns:1fr 1fr; gap:1.5mm 6mm; font-size:9pt } .help-g b{ color:var(--ink); margin-right:1.5mm }
+
+/* okładka zeszytu */
+.cover{ text-align:center; padding-top:42mm }
+.cv-kicker{ font-size:9pt; letter-spacing:.38em; color:var(--terra); font-weight:700 }
+.cover h1{ font-family:var(--serif); font-weight:400; font-size:36pt; line-height:1.12; margin:10mm 0 0 }
+.cover h1 em{ color:var(--plum); font-size:30pt }
+.cv-rule{ width:40mm; height:1px; background:var(--plum); opacity:.5; margin:9mm auto }
+.cv-sub{ font-size:11pt; color:var(--muted); margin:0 }
+.cv-orn{ width:60mm; margin:16mm auto 0 } .cv-orn svg{ width:100%; display:block }
+.cv-note{ max-width:120mm; margin:18mm auto 0; font-family:var(--serif); font-size:11pt; color:var(--plumd); line-height:1.6 }
+.cv-author{ margin-top:30mm; letter-spacing:.16em; font-size:10pt }
+@media screen{ body{ background:#EFE9E1 } .pg{ background:#fff; max-width:210mm; margin:16px auto; padding:14mm 15mm; box-shadow:0 4px 20px rgba(0,0,0,.1) } }
+</style></head>
+<body><section class="pg cover">
+  <div class="cv-kicker">ZESZYT ĆWICZEŃ</div>
+  <h1>Prokrastynacja<br><em>w kobiecym zaciszu</em></h1>
+  <div class="cv-rule"></div>
+  <p class="cv-sub">Wszystkie ćwiczenia z e-booka, z miejscem na Twoje odpowiedzi</p>
+  <div class="cv-orn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60">
+<path d="M 20.00 30.00 C 24.33 31.70, 37.33 38.07, 46.00 40.18 C 54.67 42.29, 63.33 43.43, 72.00 42.66 C 80.67 41.89, 89.33 38.62, 98.00 35.56 C 106.67 32.49, 115.33 27.29, 124.00 24.25 C 132.67 21.20, 141.33 18.01, 150.00 17.29 C 158.67 16.58, 167.33 17.80, 176.00 19.95 C 184.67 22.11, 193.33 26.82, 202.00 30.22 C 210.67 33.61, 219.33 38.25, 228.00 40.32 C 236.67 42.38, 245.33 43.44, 254.00 42.61 C 262.67 41.78, 275.67 36.57, 280.00 35.36" fill="none" stroke="#7A4E63" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+<circle cx="280" cy="35" r="6" fill="#C36A4B"/>
+<circle cx="20" cy="30" r="3" fill="#7A4E63" opacity="0.6"/>
+</svg></div>
+  <div class="cv-note">
+    <strong>Nie drukuj wszystkiego.</strong> Wydrukuj jedną stronę — tę, której potrzebujesz dziś.
+    Każda strona działa samodzielnie i odsyła do rozdziału, w którym znajdziesz wyjaśnienie.
+  </div>
+  <p class="cv-author">[IMIĘ I NAZWISKO AUTORKI]</p>
+</section><section class="pg">
+  <div class="pg-tag">JAK KORZYSTAĆ</div>
+  <h2>Twój zeszyt</h2>
+  <p class="lead">Ten zeszyt nie jest testem ani zadaniem domowym. To miejsce, w którym myśli z głowy lądują na papierze — bo tam przestają krążyć.</p>
+  <table class="toc"><thead><tr><th>Str.</th><th>Ćwiczenie</th><th>Rozdział</th></tr></thead><tbody><tr><td class="n">3</td><td>Autotest: pięć wzorców odkładania</td><td class="r">R2.5</td></tr><tr><td class="n">4</td><td>Moje trzy odkładane zadania</td><td class="r">R1–2</td></tr><tr><td class="n">5</td><td>Eksperyment trzech dni</td><td class="r">R3</td></tr><tr><td class="n">6</td><td>Plan mikro-startu</td><td class="r">R4</td></tr><tr><td class="n">7</td><td>Trzy kroki defuzji</td><td class="r">R5</td></tr><tr><td class="n">8</td><td>Zdejmij to z głowy</td><td class="r">R6</td></tr><tr><td class="n">9</td><td>Mapa odpowiedzialności w domu</td><td class="r">R6.5</td></tr><tr><td class="n">10</td><td>Tracker 14 dni</td><td class="r">R7</td></tr><tr><td class="n">11</td><td>Moje miejsce i moje bariery</td><td class="r">R8</td></tr><tr><td class="n">12</td><td>Karta: Protokół Awaryjny</td><td class="r">R9</td></tr><tr><td class="n">13</td><td>Przygotowanie do wizyty u lekarza</td><td class="r">R10</td></tr></tbody></table>
+  <div class="note"><strong>Zasada jednej strony.</strong> Jeśli masz gorszy dzień, wybierz najkrótsze ćwiczenie albo żadne.
+  Plan 14 dni przewiduje wracanie do wersji dwuminutowej — przerwa nie oznacza porażki.</div>
+</section><section class="pg">
+  <div class="pg-tag">ROZDZIAŁ 2.5 · AUTOTEST</div>
+  <h2>Pięć wzorców odkładania</h2>
+  <p class="lead">Zakreśl jedną liczbę przy każdym zdaniu: 0 — nigdy, 1 — czasami, 2 — często, 3 — bardzo często.</p>
+  <table class="quiz"><thead><tr><th class="qh"><span class="lt">A</span> Perfekcyjna Pani Domu</th>
+      <th>0</th><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td class="q">Odkładam rozpoczęcie projektu, dopóki nie będę mieć czasu zrobić go perfekcyjnie.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Poprawiam po domownikach, bo „zrobią to źle”.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Trudno mi odpocząć, gdy w zlewie leżą naczynia.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Wolę w ogóle nie ćwiczyć, niż zrobić „niepełny”, krótki trening.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr>
+      <tr class="sum"><td class="q">Suma sekcji A</td><td colspan="4" class="box"></td></tr></tbody></table><table class="quiz"><thead><tr><th class="qh"><span class="lt">B</span> Męczennica Mental Load</th>
+      <th>0</th><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td class="q">Czuję wyczerpanie na samą myśl o tym, co dziś na obiad.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Moja głowa to lista zadań, o których nikt inny w domu nie pamięta.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Odkładam sprawy urzędowe, bo „tylko ja muszę myśleć o wszystkim”.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Płaczę lub wybucham złością z powodu drobnostki.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr>
+      <tr class="sum"><td class="q">Suma sekcji B</td><td colspan="4" class="box"></td></tr></tbody></table><table class="quiz"><thead><tr><th class="qh"><span class="lt">C</span> Uciekinierka w Troskę</th>
+      <th>0</th><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td class="q">Ignoruję własne sprawy, rzucając się do pomocy innym.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Mój kalendarz jest pełen spraw innych ludzi, a na moje cele brakuje w nim miejsca.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Czuję poczucie winy, gdy odmawiam, żeby zająć się sobą.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Sprzątam szczególnie dokładnie wtedy, gdy mam ważną pracę.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr>
+      <tr class="sum"><td class="q">Suma sekcji C</td><td colspan="4" class="box"></td></tr></tbody></table><table class="quiz"><thead><tr><th class="qh"><span class="lt">D</span> Znieczulaczka Wieczorna</th>
+      <th>0</th><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td class="q">Celowo przedłużam wieczór przed ekranem, choć rano będę wykończona.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Wieczór to jedyny moment, kiedy nikt niczego ode mnie nie chce.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Mój dzień należał do innych, więc „odbieram” sobie czas kosztem snu.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Odbija się to na mojej energii następnego dnia.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr>
+      <tr class="sum"><td class="q">Suma sekcji D</td><td colspan="4" class="box"></td></tr></tbody></table><table class="quiz"><thead><tr><th class="qh"><span class="lt">E</span> Zagubiona w Chaosie</th>
+      <th>0</th><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td class="q">Zaczynam kilka czynności naraz i nie kończę żadnej.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Gubię dokumenty i klucze, zapominam o terminach mimo dobrych chęci.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Czuję silny opór przed otwieraniem poczty lub logowaniem do banku.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr><tr><td class="q">Organizacja przestrzeni wydaje mi się zadaniem ponad siły.</td><td class="sc">0</td><td class="sc">1</td><td class="sc">2</td><td class="sc">3</td></tr>
+      <tr class="sum"><td class="q">Suma sekcji E</td><td colspan="4" class="box"></td></tr></tbody></table><div class="warn"><strong>To nie jest test diagnostyczny.</strong> Autotest nie był walidowany, a progi są umowne.
+  Sekcja z najwyższym wynikiem pokazuje tylko, od którego rozdziału warto zacząć. Wysoki wynik w sekcji E nie oznacza ADHD.</div>
+</section><section class="pg">
+  <div class="pg-tag">ROZDZIAŁ 1 i 2</div>
+  <h2>Moje trzy odkładane zadania</h2>
+  <p class="lead">Zapisz zadania, które odkładasz od dawna. Przy każdym nazwij szczerze, co Cię zatrzymuje — bez oceniania.</p>
+  <div class="card"><div class="card-h">Zadanie 1</div><div class="lines " style="height:9mm"></div>
+      <div class="lbl">Emocja lub wymówka, która mnie blokuje</div><div class="lines " style="height:18mm"></div>
+      <div class="lbl">Który mechanizm pasuje najlepiej?</div><div class="mk-grid"><div class="mk"><span class="cb"></span> A · lęk lub presja oceny</div><div class="mk"><span class="cb"></span> B · robię to wieczorem, po wyczerpującym dniu</div><div class="mk"><span class="cb"></span> C · zawsze jest coś prostszego</div><div class="mk"><span class="cb"></span> D · obwinianie siebie zwiększa odkładanie</div></div></div><div class="card"><div class="card-h">Zadanie 2</div><div class="lines " style="height:9mm"></div>
+      <div class="lbl">Emocja lub wymówka, która mnie blokuje</div><div class="lines " style="height:18mm"></div>
+      <div class="lbl">Który mechanizm pasuje najlepiej?</div><div class="mk-grid"><div class="mk"><span class="cb"></span> A · lęk lub presja oceny</div><div class="mk"><span class="cb"></span> B · robię to wieczorem, po wyczerpującym dniu</div><div class="mk"><span class="cb"></span> C · zawsze jest coś prostszego</div><div class="mk"><span class="cb"></span> D · obwinianie siebie zwiększa odkładanie</div></div></div><div class="card"><div class="card-h">Zadanie 3</div><div class="lines " style="height:9mm"></div>
+      <div class="lbl">Emocja lub wymówka, która mnie blokuje</div><div class="lines " style="height:18mm"></div>
+      <div class="lbl">Który mechanizm pasuje najlepiej?</div><div class="mk-grid"><div class="mk"><span class="cb"></span> A · lęk lub presja oceny</div><div class="mk"><span class="cb"></span> B · robię to wieczorem, po wyczerpującym dniu</div><div class="mk"><span class="cb"></span> C · zawsze jest coś prostszego</div><div class="mk"><span class="cb"></span> D · obwinianie siebie zwiększa odkładanie</div></div></div><p class="say">Powiedz na głos: <em>To nie jest kwestia charakteru. To reakcja na obciążenie i dyskomfort.</em></p>
+</section><section class="pg">
+  <div class="pg-tag">ROZDZIAŁ 3</div>
+  <h2>Eksperyment trzech dni</h2>
+  <p class="lead">Rano, zanim sięgniesz po telefon, zapisz jedną rzecz dla siebie — nie dla domu, nie dla rodziny. Wieczorem sprawdź, czy się wydarzyła.</p>
+  <table class="grid3"><thead><tr><th></th><th>Rano: jedna rzecz dla siebie</th><th>Udało się?</th>
+  <th>O której skończyłam decydować za innych?</th></tr></thead><tbody><tr><td class="day">Dzień 1</td><td class="tall"></td><td class="yn"><span class="cb"></span> tak<br><span class="cb"></span> nie</td><td class="tall"></td></tr><tr><td class="day">Dzień 2</td><td class="tall"></td><td class="yn"><span class="cb"></span> tak<br><span class="cb"></span> nie</td><td class="tall"></td></tr><tr><td class="day">Dzień 3</td><td class="tall"></td><td class="yn"><span class="cb"></span> tak<br><span class="cb"></span> nie</td><td class="tall"></td></tr></tbody></table>
+  <div class="lbl big">Co zauważam po trzech dniach?</div><div class="lines " style="height:45mm"></div>
+  <div class="note">Godzina z ostatniej kolumny to Twoja praktyczna granica. Planuj swoje sprawy przed nią, nie po.</div>
+</section><section class="pg">
+  <div class="pg-tag">ROZDZIAŁ 4</div>
+  <h2>Plan mikro-startu</h2>
+  <p class="lead">Najmniejszy możliwy pierwszy ruch plus konkretny moment, w którym go zrobisz. To połączenie ma najmocniejsze wsparcie w badaniach.</p>
+  <div class="card plan"><div class="card-h">Plan 1</div>
+      <div class="fill">Jutro o <span class="blank s"></span>, zaraz po <span class="blank m"></span>,</div>
+      <div class="fill">zrobię <span class="blank l"></span></div>
+      <div class="fill small">Limit: <strong>2 minuty.</strong> Potem wolno mi przerwać. <span class="cb"></span> zrobione</div></div><div class="card plan"><div class="card-h">Plan 2</div>
+      <div class="fill">Jutro o <span class="blank s"></span>, zaraz po <span class="blank m"></span>,</div>
+      <div class="fill">zrobię <span class="blank l"></span></div>
+      <div class="fill small">Limit: <strong>2 minuty.</strong> Potem wolno mi przerwać. <span class="cb"></span> zrobione</div></div><div class="card plan"><div class="card-h">Plan 3</div>
+      <div class="fill">Jutro o <span class="blank s"></span>, zaraz po <span class="blank m"></span>,</div>
+      <div class="fill">zrobię <span class="blank l"></span></div>
+      <div class="fill small">Limit: <strong>2 minuty.</strong> Potem wolno mi przerwać. <span class="cb"></span> zrobione</div></div><div class="ex"><div class="lbl">Przykłady mikro-startów</div>
+  <ul><li>Otwórz stronę przychodni i zatrzymaj się. Nie rejestrujesz się.</li>
+  <li>Otwórz trudnego maila i przeczytaj go jeszcze raz. Nie odpisujesz.</li>
+  <li>Otwórz pusty dokument i wpisz tytuł.</li><li>Rozłóż matę i zrób jeden skłon.</li></ul></div>
+</section><section class="pg">
+  <div class="pg-tag">ROZDZIAŁ 5</div>
+  <h2>Trzy kroki defuzji</h2>
+  <p class="lead">Gdy wewnętrzny krytyk włącza się na pełne obroty, oddziel to, co się wydarzyło, od tego, co Twój umysł z tego zrobił.</p>
+  <div class="card"><div class="card-h">Sytuacja 1</div>
+      <div class="lbl">1 · Nazwij myśl: „Zauważam, że mam myśl, że…”</div><div class="lines " style="height:18mm"></div>
+      <div class="two"><div><div class="lbl">2 · Fakt</div><div class="lines " style="height:18mm"></div></div><div><div class="lbl">Interpretacja</div><div class="lines " style="height:18mm"></div></div></div>
+      <div class="lbl">3 · Co się naprawdę stało?</div><div class="lines " style="height:18mm"></div></div><div class="card"><div class="card-h">Sytuacja 2</div>
+      <div class="lbl">1 · Nazwij myśl: „Zauważam, że mam myśl, że…”</div><div class="lines " style="height:18mm"></div>
+      <div class="two"><div><div class="lbl">2 · Fakt</div><div class="lines " style="height:18mm"></div></div><div><div class="lbl">Interpretacja</div><div class="lines " style="height:18mm"></div></div></div>
+      <div class="lbl">3 · Co się naprawdę stało?</div><div class="lines " style="height:18mm"></div></div><p class="say">Przykład: <em>Fakt — nie wykonałam dziś zadania. Interpretacja — jestem beznadziejna. Co się stało — byłam wyczerpana i wybrałam ulgę. To mechanizm, nie wyrok.</em></p>
+</section><section class="pg">
+  <div class="pg-tag">ROZDZIAŁ 6</div>
+  <h2>Zdejmij to z głowy</h2>
+  <p class="lead">Każda decyzja, którą podejmiesz raz i zamienisz w regułę, znika z codziennej listy. Zacznij od jednego zadania w ciągu 48 godzin.</p>
+  <table class="grid3"><thead><tr><th>Powtarzalne zadanie</th><th>Co robię</th><th>Jak konkretnie</th><th>Do kiedy</th></tr></thead>
+  <tbody><tr><td class="tall"></td><td class="opt"><span class="cb"></span> automatyzuję<br><span class="cb"></span> oddaję<br><span class="cb"></span> skreślam</td><td class="tall"></td><td></td></tr><tr><td class="tall"></td><td class="opt"><span class="cb"></span> automatyzuję<br><span class="cb"></span> oddaję<br><span class="cb"></span> skreślam</td><td class="tall"></td><td></td></tr><tr><td class="tall"></td><td class="opt"><span class="cb"></span> automatyzuję<br><span class="cb"></span> oddaję<br><span class="cb"></span> skreślam</td><td class="tall"></td><td></td></tr><tr><td class="tall"></td><td class="opt"><span class="cb"></span> automatyzuję<br><span class="cb"></span> oddaję<br><span class="cb"></span> skreślam</td><td class="tall"></td><td></td></tr><tr><td class="tall"></td><td class="opt"><span class="cb"></span> automatyzuję<br><span class="cb"></span> oddaję<br><span class="cb"></span> skreślam</td><td class="tall"></td><td></td></tr></tbody></table>
+  <div class="note">Podpowiedzi: stałe zlecenia na rachunki, stałe menu na dwa tygodnie, zakupy z dostawą,
+  wspólny kalendarz z przypisaną osobą, sprzątanie raz w miesiącu przez firmę.</div>
+</section><section class="pg">
+  <div class="pg-tag">ROZDZIAŁ 6.5</div>
+  <h2>Mapa odpowiedzialności w domu</h2>
+  <p class="lead">Nie dzielcie zadań. Dzielcie całe obszary — od zauważenia, że trzeba, po sprawdzenie, że się wydarzyło.</p>
+  <table class="grid3 map"><thead><tr><th>Obszar</th><th>Kto odpowiada od A do Z</th><th>Co obejmuje „od A do Z”</th><th>Plan awaryjny?</th></tr></thead>
+  <tbody><tr><td class="area">Obiady (które dni?)</td><td></td><td class="wide"></td><td class="yn"><span class="cb"></span></td></tr><tr><td class="area">Zakupy spożywcze</td><td></td><td class="wide"></td><td class="yn"><span class="cb"></span></td></tr><tr><td class="area">Wizyty lekarskie dzieci</td><td></td><td class="wide"></td><td class="yn"><span class="cb"></span></td></tr><tr><td class="area">Rachunki i opłaty</td><td></td><td class="wide"></td><td class="yn"><span class="cb"></span></td></tr><tr><td class="area">Pranie</td><td></td><td class="wide"></td><td class="yn"><span class="cb"></span></td></tr><tr><td class="area">Szkoła / przedszkole</td><td></td><td class="wide"></td><td class="yn"><span class="cb"></span></td></tr><tr><td class="area">Urodziny i prezenty</td><td></td><td class="wide"></td><td class="yn"><span class="cb"></span></td></tr><tr><td class="area">Naprawy i usterki</td><td></td><td class="wide"></td><td class="yn"><span class="cb"></span></td></tr><tr><td class="area"></td><td></td><td class="wide"></td><td class="yn"><span class="cb"></span></td></tr></tbody></table>
+  <div class="two"><div><div class="lbl">Data pierwszego check-inu</div><div class="lines " style="height:9mm"></div></div><div><div class="lbl">Kolejny check-in (za 2 tygodnie)</div><div class="lines " style="height:9mm"></div></div></div>
+  <div class="lbl big">Moje słowa na początek rozmowy</div><div class="lines " style="height:27mm"></div>
+  <div class="note">„Plan awaryjny” zaznacz przy sprawach, w których potknięcie byłoby groźne — np. zdrowie dziecka.
+  Tam ustalcie z góry, kto i kiedy sprawdza.</div>
+</section><section class="pg">
+  <div class="pg-tag">ROZDZIAŁ 7</div>
+  <h2>Tracker 14 dni</h2>
+  <p class="lead">Moje zadanie dla siebie: <span class="blank l"></span></p>
+  <table class="grid3 track"><thead><tr><th>Dzień</th><th>Cel</th><th>Zrobione</th><th>Ile minut</th><th>Krótka notatka</th></tr></thead>
+  <tbody><tr class="p1"><td class="day">1</td><td class="goal">2 min</td><td class="cbx"><span class="cb"></span></td><td></td><td class="wide"></td></tr><tr class="p1"><td class="day">2</td><td class="goal">2 min</td><td class="cbx"><span class="cb"></span></td><td></td><td class="wide"></td></tr><tr class="p1"><td class="day">3</td><td class="goal">2 min</td><td class="cbx"><span class="cb"></span></td><td></td><td class="wide"></td></tr><tr class="p2"><td class="day">4</td><td class="goal">10–15 min</td><td class="cbx"><span class="cb"></span></td><td></td><td class="wide"></td></tr><tr class="p2"><td class="day">5</td><td class="goal">10–15 min</td><td class="cbx"><span class="cb"></span></td><td></td><td class="wide"></td></tr><tr class="p2"><td class="day">6</td><td class="goal">10–15 min</td><td class="cbx"><span class="cb"></span></td><td></td><td class="wide"></td></tr><tr class="p2"><td class="day">7</td><td class="goal">10–15 min</td><td class="cbx"><span class="cb"></span></td><td></td><td class="wide"></td></tr><tr class="p3"><td class="day">8</td><td class="goal">25 min</td><td class="cbx"><span class="cb"></span></td><td></td><td class="wide"></td></tr><tr class="p3"><td class="day">9</td><td class="goal">25 min</td><td class="cbx"><span class="cb"></span></td><td></td><td class="wide"></td></tr><tr class="p3"><td class="day">10</td><td class="goal">25 min</td><td class="cbx"><span class="cb"></span></td><td></td><td class="wide"></td></tr><tr class="p3"><td class="day">11</td><td class="goal">25 min</td><td class="cbx"><span class="cb"></span></td><td></td><td class="wide"></td></tr><tr class="p3"><td class="day">12</td><td class="goal">25 min</td><td class="cbx"><span class="cb"></span></td><td></td><td class="wide"></td></tr><tr class="p3"><td class="day">13</td><td class="goal">25 min</td><td class="cbx"><span class="cb"></span></td><td></td><td class="wide"></td></tr><tr class="p3"><td class="day">14</td><td class="goal">25 min</td><td class="cbx"><span class="cb"></span></td><td></td><td class="wide"></td></tr></tbody></table>
+  <div class="legend"><span class="sw p1"></span> przełamywanie oporu <span class="sw p2"></span> stabilizacja <span class="sw p3"></span> nowa normalność</div>
+  <div class="note">Trudny dzień? Wróć do wersji dwuminutowej i postaw znaczek. Nie zaczynasz od zera.</div>
+</section><section class="pg">
+  <div class="pg-tag">ROZDZIAŁ 8</div>
+  <h2>Moje miejsce i moje bariery</h2>
+  <p class="lead">Łatwiej nie ulegać pokusie, której nie masz w zasięgu ręki, niż z nią walczyć.</p>
+  <div class="card"><div class="card-h">Moje miejsce</div>
+    <div class="lbl">Gdzie jest (choćby jedno krzesło)?</div><div class="lines " style="height:9mm"></div>
+    <div class="lbl">Co na nim stawiam, żeby było moje?</div><div class="lines " style="height:9mm"></div>
+    <div class="lbl">Umowa z domownikami: kiedy tam siedzę…</div><div class="lines " style="height:18mm"></div></div>
+  <div class="card"><div class="card-h">Bariera cyfrowa</div>
+    <div class="lbl">Trzy profile, po których czuję się gorzej — odcinam na 2 tygodnie</div>
+    <div class="fill">1. <span class="blank l"></span></div><div class="fill">2. <span class="blank l"></span></div><div class="fill">3. <span class="blank l"></span></div>
+    <div class="lbl">Po dwóch tygodniach zauważam:</div><div class="lines " style="height:18mm"></div></div>
+  <div class="card"><div class="card-h">Bariera wieczorna</div>
+    <div class="lbl">Od dziś ładuję telefon w:</div><div class="lines " style="height:9mm"></div>
+    <div class="lbl">Na szafce nocnej zamiast telefonu kładę:</div><div class="lines " style="height:9mm"></div></div>
+</section><section class="pg">
+  <div class="pg-tag">ROZDZIAŁ 9</div>
+  <h2>Karta: Protokół Awaryjny</h2>
+  <p class="lead">Wytnij i powieś tam, gdzie zobaczysz ją w najgorszy wieczór: na lodówce, w łazience, w portfelu.</p>
+  <div class="emerg"><div class="em-h">PROTOKÓŁ AWARYJNY</div><ol>
+  <li><strong>Zatrzymaj efekt „pal licho”.</strong> Dziś był ciężki dzień. Jutro zaczynam od nowa.</li>
+  <li><strong>Kwarantanna winy.</strong> Odpuść, zamów jedzenie, weź prysznic, idź spać.</li>
+  <li><strong>Rano: jedno zadanie.</strong> Co absolutnie musi się dziś wydarzyć? Nie lista.</li>
+  <li><strong>Kiedy opadnie kurz:</strong> co mnie tak przeciążyło? Bez wyroku, z ciekawością.</li></ol>
+  <div class="em-f">Jeśli takie dni zdarzają się coraz częściej — porozmawiaj ze specjalistą. Rozdział 10.</div></div><div class="cut">✂ · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·</div><div class="emerg"><div class="em-h">PROTOKÓŁ AWARYJNY</div><ol>
+  <li><strong>Zatrzymaj efekt „pal licho”.</strong> Dziś był ciężki dzień. Jutro zaczynam od nowa.</li>
+  <li><strong>Kwarantanna winy.</strong> Odpuść, zamów jedzenie, weź prysznic, idź spać.</li>
+  <li><strong>Rano: jedno zadanie.</strong> Co absolutnie musi się dziś wydarzyć? Nie lista.</li>
+  <li><strong>Kiedy opadnie kurz:</strong> co mnie tak przeciążyło? Bez wyroku, z ciekawością.</li></ol>
+  <div class="em-f">Jeśli takie dni zdarzają się coraz częściej — porozmawiaj ze specjalistą. Rozdział 10.</div></div>
+</section><section class="pg">
+  <div class="pg-tag">ROZDZIAŁ 10</div>
+  <h2>Przygotowanie do wizyty u lekarza</h2>
+  <p class="lead">Weź tę kartkę ze sobą. Najważniejsza informacja dla lekarza to wpływ objawów na Twoje codzienne funkcjonowanie.</p>
+  <div class="two"><div><div class="lbl">Co się dzieje (objawy)</div><div class="lines " style="height:27mm"></div></div><div><div class="lbl">Od kiedy · jak często</div><div class="lines " style="height:27mm"></div></div></div>
+  <div class="two"><div><div class="lbl">Co nasila, co łagodzi</div><div class="lines " style="height:18mm"></div></div><div><div class="lbl">Objawy fizyczne (nawet „niezwiązane”)</div><div class="lines " style="height:18mm"></div></div></div>
+  <div class="lbl">Jak to wpływa na moje życie — konkretnie</div><div class="lines " style="height:27mm"></div>
+  <div class="lbl">Moje pytania</div>
+  <div class="fill"><span class="cb"></span> Czy warto sprawdzić, czy za tym stoi przyczyna medyczna?</div>
+  <div class="fill"><span class="cb"></span> Jeśli teraz nie robimy badań — po czym poznam, że powinnam wrócić?</div>
+  <div class="fill"><span class="cb"></span> <span class="blank l"></span></div>
+  <div class="help"><div class="help-h">Gdy jest naprawdę źle — dzwoń</div>
+    <div class="help-g"><div><b>112</b> zagrożenie życia</div><div><b>800 70 2222</b> Centrum Wsparcia, całodobowo</div>
+    <div><b>116 123</b> Kryzysowy Telefon Zaufania</div><div><b>116 111</b> dla dzieci i młodzieży</div></div></div>
+</section></body></html>

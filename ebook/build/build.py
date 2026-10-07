@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """Skład e-booka: Markdown -> HTML (A5, gotowy do druku PDF)."""
-import os, re, html, io
+import os, re, html, io, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, ".."))
-SRC = os.path.join(ROOT, "prokrastynacja-w-kobiecym-zaciszu.md")
+SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, "prokrastynacja-w-kobiecym-zaciszu.md")
 ASSETS = os.path.join(ROOT, "assets")
-OUT_HTML = os.path.join(ROOT, "Prokrastynacja-w-Kobiecym-Zaciszu.html")
+OUT_HTML = sys.argv[2] if len(sys.argv) > 2 else os.path.join(ROOT, "Prokrastynacja-w-Kobiecym-Zaciszu.html")
 
 def svg(name):
     with open(os.path.join(ASSETS, name), encoding="utf-8") as f:
@@ -22,7 +22,7 @@ FIGURES = [
     ("Sekcja A: Perfekcyjna Pani Domu (presja obrazka)", "before", "fig-08-profile.svg",
      "Rys. 3. Pięć wzorców odkładania opisanych w tym rozdziale."),
     ("ROZDZIAŁ 3: MENTAL LOAD — MÓZG POD OBCIĄŻENIEM", "after", "fig-03-mental-load.svg",
-     "Rys. 4. Cztery składowe pracy kognitywnej w gospodarstwie domowym (za: Daminger, 2019)."),
+     "Rys. 4. Cztery etapy pracy kognitywnej w domu. Na podstawie: Daminger (2019), wywiady z 35 parami. Badanie jakościowe nie podaje odsetków."),
     ("Zasada 2 minut", "before", "fig-04-prog-wejscia.svg",
      "Rys. 5. To samo zadanie widziane jako całość i jako mikro-start."),
     ("Dni 1–3: przełamywanie oporu", "before", "fig-05-plan-14-dni.svg",
@@ -232,11 +232,11 @@ def main():
     # ── strona tytułowa
     hl = [l for l in head.split("\n") if l.strip()]
     title_page = f'''<section class="titlepage">
-  <div class="tp-kicker">PORADNIK PRAKTYCZNY</div>
+  <div class="tp-kicker">PORADNIK DLA PRZECIĄŻONYCH KOBIET</div>
   <h1 class="tp-title">Prokrastynacja<br><em>w kobiecym zaciszu</em></h1>
   <div class="tp-rule"></div>
-  <p class="tp-sub">Praktyczny poradnik dla przeciążonych kobiet,<br>które odkładają własne sprawy</p>
-  <p class="tp-note">Edycja 2026 — wersja poprawiona merytorycznie</p>
+  <p class="tp-sub">Obciążenie mentalne, perfekcjonizm<br>i odkładanie własnych spraw</p>
+  <p class="tp-note">Wydanie pierwsze, 2026</p>
   <p class="tp-lead">To nie jest e-book o tym, jak lepiej sprzątać dom czy perfekcyjnie
      organizować czas rodzinie. To praktyczny przewodnik dla kobiet, których układ nerwowy
      tonie w niewidzialnych obowiązkach.</p>

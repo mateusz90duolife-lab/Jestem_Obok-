@@ -122,7 +122,7 @@ def cover():
 
 <!-- typografia -->
 <text x="740" y="290" text-anchor="middle" font-family="{SANS}" font-size="34"
-      letter-spacing="14" fill="{TERRA}">PORADNIK PRAKTYCZNY</text>
+      letter-spacing="12" fill="{TERRA}">PORADNIK DLA PRZECIĄŻONYCH KOBIET</text>
 <line x1="560" y1="336" x2="920" y2="336" stroke="{TERRA}" stroke-width="2" opacity="0.6"/>
 
 <text x="740" y="500" text-anchor="middle" font-family="{SERIF}" font-size="118"
@@ -131,9 +131,9 @@ def cover():
       font-style="italic" fill="{PLUM}">w kobiecym zaciszu</text>
 
 <line x1="640" y1="716" x2="840" y2="716" stroke="{PLUM}" stroke-width="2" opacity="0.45"/>
-<text x="740" y="790" text-anchor="middle" font-family="{SANS}" font-size="36" fill="{MUTED}">Praktyczny poradnik dla przeciążonych kobiet,</text>
-<text x="740" y="842" text-anchor="middle" font-family="{SANS}" font-size="36" fill="{MUTED}">które odkładają własne sprawy</text>
-<text x="740" y="930" text-anchor="middle" font-family="{SANS}" font-size="27" letter-spacing="5" fill="{TERRA}">MENTAL LOAD · PERFEKCJONIZM · MIKRO-KROKI</text>
+<text x="740" y="790" text-anchor="middle" font-family="{SANS}" font-size="37" fill="{MUTED}">Obciążenie mentalne, perfekcjonizm</text>
+<text x="740" y="842" text-anchor="middle" font-family="{SANS}" font-size="37" fill="{MUTED}">i odkładanie własnych spraw</text>
+<text x="740" y="930" text-anchor="middle" font-family="{SANS}" font-size="26" letter-spacing="5" fill="{TERRA}">Z ZESZYTEM ĆWICZEŃ I PLANEM 14 DNI</text>
 
 <text x="740" y="1885" text-anchor="middle" font-family="{SERIF}" font-size="62" letter-spacing="3" fill="{CREAM}">[IMIĘ I NAZWISKO AUTORKI]</text>
 <text x="740" y="1960" text-anchor="middle" font-family="{SANS}" font-size="32" letter-spacing="9" fill="{SAND}" opacity="0.85">EDYCJA 2026</text>
@@ -215,27 +215,42 @@ def fig_mech():
 # FIG 3 — cztery składowe Mental Load
 # ─────────────────────────────────────────────────────────────
 def fig_mental_load():
-    W, H = 1000, 560
-    rows = [
-        ("Przewidywanie", "wychwycenie, że coś będzie potrzebne", 82),
-        ("Identyfikowanie", "znalezienie możliwych rozwiązań", 58),
-        ("Decydowanie", "wybór jednego z nich", 52),
-        ("Monitorowanie", "sprawdzenie, czy się wydarzyło", 84),
+    """Jakościowy obraz badania Daminger (2019) — bez odsetków, bo badanie ich nie podaje."""
+    W, H = 1000, 590
+    stages = [
+        ("Przewidywanie", ["wychwycenie, że coś", "będzie potrzebne"], "women"),
+        ("Identyfikowanie", ["znalezienie", "możliwych rozwiązań"], "none"),
+        ("Decydowanie", ["wybór jednego", "z nich"], "equal"),
+        ("Monitorowanie", ["sprawdzenie, czy", "się wydarzyło"], "women"),
     ]
-    out = f'''<text x="40" y="52" font-family="{SANS}" font-size="27" font-weight="bold" fill="{INK}">Cztery składowe pracy kognitywnej w domu</text>
-<text x="40" y="86" font-family="{SANS}" font-size="21" fill="{MUTED}">Udział osoby, która „pamięta za wszystkich” — obraz typowy, nie pomiar w Twoim domu</text>'''
-    y0 = 140
-    for i, (name, desc, pct) in enumerate(rows):
-        y = y0 + i * 96
-        out += f'<text x="40" y="{y-6}" font-family="{SANS}" font-size="26" font-weight="bold" fill="{INK}">{name}</text>'
-        out += f'<text x="40" y="{y+22}" font-family="{SANS}" font-size="20" fill="{MUTED}">{desc}</text>'
-        bx, bw = 520, 400
-        out += f'<rect x="{bx}" y="{y-30}" width="{bw}" height="44" rx="8" fill="{SAND}"/>'
-        out += f'<rect x="{bx}" y="{y-30}" width="{bw*pct/100:.0f}" height="44" rx="8" fill="{PLUM if pct<70 else TERRA}"/>'
-        out += f'<text x="{bx+bw*pct/100-14:.0f}" y="{y+2}" text-anchor="end" font-family="{SANS}" font-size="24" font-weight="bold" fill="{CREAM}">{pct}%</text>'
-    out += f'''<line x1="40" y1="{y0+4*96-30}" x2="960" y2="{y0+4*96-30}" stroke="{SAND}" stroke-width="2"/>
-<text x="40" y="{y0+4*96+12}" font-family="{SANS}" font-size="22" fill="{TERRA}" font-weight="bold">Wykonanie zadania to nie to samo, co odpowiedzialność za to, że ktoś o nim pomyślał.</text>'''
-    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">{out}</svg>'
+    col = {"women": TERRA, "equal": SAGE, "none": MUTED}
+    out = f'''<text x="40" y="52" font-family="{SANS}" font-size="27" font-weight="bold" fill="{INK}">Cztery etapy pracy kognitywnej w domu</text>
+<text x="40" y="86" font-family="{SANS}" font-size="20" fill="{MUTED}">Każde „trzeba kupić mleko” przechodzi przez nie, zanim ktoś pójdzie do sklepu</text>'''
+    bw, gap, y = 212, 24, 124
+    for i, (name, desc, who) in enumerate(stages):
+        x = 40 + i * (bw + gap)
+        c = col[who]
+        fill = CREAM if who == "none" else ("#FBEFE9" if who == "women" else "#EFF3EC")
+        out += f'<rect x="{x}" y="{y}" width="{bw}" height="200" rx="14" fill="{fill}" stroke="{c}" stroke-width="2.5"/>'
+        out += f'<circle cx="{x+34}" cy="{y+38}" r="17" fill="{c}"/>'
+        out += f'<text x="{x+34}" y="{y+46}" text-anchor="middle" font-family="{SANS}" font-size="21" font-weight="bold" fill="#FFFFFF">{i+1}</text>'
+        out += f'<text x="{x+16}" y="{y+100}" font-family="{SANS}" font-size="20" font-weight="bold" fill="{INK}">{name}</text>'
+        for j, line in enumerate(desc):
+            out += f'<text x="{x+16}" y="{y+134+j*26}" font-family="{SANS}" font-size="18" fill="{MUTED}">{line}</text>'
+        if i < 3:
+            ax = x + bw + 4
+            out += f'<path d="M {ax} {y+100} L {ax+gap-6} {y+100}" stroke="{SAND}" stroke-width="4" marker-end="url(#am)"/>'
+    ly = y + 250
+    out += f'<rect x="40" y="{ly}" width="22" height="22" rx="4" fill="{TERRA}"/>'
+    out += f'<text x="74" y="{ly+18}" font-family="{SANS}" font-size="21" fill="{INK}">W badanych parach częściej wykonywały je kobiety</text>'
+    out += f'<rect x="40" y="{ly+38}" width="22" height="22" rx="4" fill="{SAGE}"/>'
+    out += f'<text x="74" y="{ly+56}" font-family="{SANS}" font-size="21" fill="{INK}">Decyzje podejmowano mniej więcej po równo</text>'
+    out += f'<line x1="40" y1="{ly+92}" x2="960" y2="{ly+92}" stroke="{SAND}" stroke-width="2"/>'
+    out += f'<text x="40" y="{ly+128}" font-family="{SANS}" font-size="22" fill="{TERRA}" font-weight="bold">Wykonanie zadania to nie to samo, co odpowiedzialność</text>'
+    out += f'<text x="40" y="{ly+158}" font-family="{SANS}" font-size="22" fill="{TERRA}" font-weight="bold">za to, że ktoś w ogóle o nim pomyślał.</text>'
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">
+<defs><marker id="am" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="{SAND}"/></marker></defs>
+{out}</svg>'''
 
 
 # ─────────────────────────────────────────────────────────────

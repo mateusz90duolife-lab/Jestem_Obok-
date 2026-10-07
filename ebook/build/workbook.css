@@ -1,0 +1,84 @@
+/* ══ Zeszyt ćwiczeń — A4 do druku ══ */
+:root{
+  --ink:#241E2B; --plum:#7A4E63; --plumd:#553546; --terra:#C36A4B; --sand:#EAD9C6;
+  --cream:#FAF6F0; --sage:#7E8F73; --gold:#D9A441; --muted:#7C7285; --rule:#D9CCBE;
+  --serif:"Bitstream Charter","DejaVu Serif",Georgia,serif;
+  --sans:"DejaVu Sans","Liberation Sans",Helvetica,sans-serif;
+}
+@page{ size:A4; margin:14mm 15mm 16mm; }
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+body{ margin:0; background:#fff; color:var(--ink); font-family:var(--sans); font-size:9.6pt; line-height:1.45 }
+.pg{ break-after:page; }
+.pg:last-child{ break-after:auto }
+.pg-tag{ font-size:7.4pt; letter-spacing:.2em; color:var(--terra); font-weight:700; margin-bottom:1.5mm }
+h2{ font-family:var(--serif); font-size:20pt; color:var(--plumd); margin:0 0 2mm; font-weight:700; line-height:1.15 }
+.lead{ font-family:var(--serif); font-style:italic; color:var(--plumd); font-size:10.6pt; margin:0 0 6mm; max-width:165mm }
+.lbl{ font-size:8.4pt; font-weight:700; color:var(--plum); margin:3mm 0 1mm }
+.lbl.big{ font-size:9.4pt; margin-top:6mm }
+.lines{ background-image:repeating-linear-gradient(to bottom, transparent 0, transparent calc(9mm - .6pt), var(--rule) calc(9mm - .6pt), var(--rule) 9mm); }
+.card{ border:1pt solid var(--rule); border-radius:3mm; padding:3.5mm 4.5mm 4mm; margin:0 0 4.5mm; break-inside:avoid; background:#fff }
+.card-h{ font-family:var(--serif); font-size:12pt; font-weight:700; color:var(--plumd); margin-bottom:1mm }
+.two{ display:grid; grid-template-columns:1fr 1fr; gap:6mm }
+.cb{ display:inline-block; width:3.6mm; height:3.6mm; border:1pt solid var(--plum); border-radius:.8mm; vertical-align:-.6mm; margin-right:1mm; background:#fff }
+.mk-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.5mm 5mm; font-size:8.6pt }
+.fill{ margin:3.5mm 0 0; font-size:10pt; display:flex; align-items:flex-end; gap:1.5mm; flex-wrap:wrap }
+.fill.small{ font-size:8.6pt; color:var(--muted); margin-top:4mm }
+.blank{ display:inline-block; border-bottom:.8pt solid var(--ink); height:6mm }
+.blank.s{ width:24mm } .blank.m{ width:62mm } .blank.l{ width:130mm }
+.lead .blank.l{ width:110mm; height:5mm }
+.say{ font-family:var(--serif); font-size:10.4pt; color:var(--plumd); margin:5mm 0 0; text-align:center }
+.note{ background:var(--cream); border-left:2.4pt solid var(--plum); padding:2.6mm 4mm; margin:5mm 0 0; font-size:8.8pt; border-radius:0 2mm 2mm 0; break-inside:avoid }
+.warn{ background:#FBF0EA; border:1pt solid var(--terra); padding:2.6mm 4mm; margin:4mm 0 0; font-size:8.6pt; border-radius:2mm }
+.ex{ margin-top:4mm } .ex ul{ margin:1mm 0 0; padding-left:5mm; font-size:9pt } .ex li{ margin-bottom:1mm }
+
+/* tabele */
+table{ width:100%; border-collapse:collapse }
+th{ background:var(--plumd); color:#fff; font-size:8pt; text-align:left; padding:2mm 2.4mm; font-weight:700 }
+td{ border:.6pt solid var(--rule); padding:2mm 2.4mm; vertical-align:top; font-size:8.8pt }
+.toc td{ border:0; border-bottom:.6pt solid var(--rule); padding:2.6mm 2.4mm; font-size:10pt }
+.toc .n{ width:14mm; color:var(--terra); font-weight:700 } .toc .r{ width:24mm; color:var(--muted); text-align:right }
+.toc th:last-child{ text-align:right }
+.quiz{ margin-bottom:2.2mm; break-inside:avoid }
+.quiz th{ text-align:center; width:9mm; padding:1.1mm 0 }
+.quiz th.qh{ text-align:left; width:auto; padding-left:2.4mm; font-size:8.6pt }
+.lt{ display:inline-block; width:5mm; height:5mm; line-height:5mm; text-align:center; border-radius:50%; background:var(--terra); color:#fff; font-size:7.6pt; margin-right:1.2mm }
+.quiz td{ padding:.75mm 2.4mm; font-size:8.3pt }
+.quiz td.sc{ text-align:center; color:var(--muted); width:9mm; font-size:8.6pt }
+.quiz tr.sum td{ font-weight:700; color:var(--plumd); background:var(--cream) }
+.quiz td.box{ background:#fff !important }
+.grid3 td.tall{ height:24mm } .grid3 td.day{ width:18mm; font-weight:700; color:var(--plumd) }
+.grid3 td.yn{ width:22mm; font-size:8.4pt; line-height:2 } .grid3 td.opt{ width:30mm; font-size:8.2pt; line-height:2 }
+.map td{ height:12.5mm } .map td.area{ width:42mm; font-weight:700; color:var(--plumd); font-size:8.6pt }
+.map td.wide{ width:62mm } .map td.yn{ width:20mm; text-align:center }
+.track td{ height:10.2mm; padding:1.5mm 2.4mm } .track td.day{ width:14mm; text-align:center }
+.track td.goal{ width:22mm; font-size:8.2pt; color:var(--muted) } .track td.cbx{ width:20mm; text-align:center }
+.track td.wide{ width:80mm }
+.track tr.p1 td.day{ background:#F7E3DA } .track tr.p2 td.day{ background:#EEE2E8 } .track tr.p3 td.day{ background:#E6ECE2 }
+.legend{ font-size:8.2pt; color:var(--muted); margin-top:2.5mm; display:flex; gap:2mm; align-items:center }
+.sw{ display:inline-block; width:4mm; height:4mm; border-radius:1mm } .sw.p1{background:#F7E3DA} .sw.p2{background:#EEE2E8} .sw.p3{background:#E6ECE2}
+.legend .sw:not(:first-child){ margin-left:4mm }
+
+/* karta awaryjna */
+.emerg{ border:1.6pt solid var(--terra); border-radius:4mm; padding:5mm 7mm; background:#FBF3EE; break-inside:avoid }
+.em-h{ font-family:var(--serif); font-size:15pt; font-weight:700; color:var(--terra); letter-spacing:.06em; margin-bottom:2mm }
+.emerg ol{ margin:0; padding-left:5.5mm; font-size:10pt } .emerg li{ margin-bottom:2mm }
+.em-f{ font-size:8.4pt; color:var(--muted); margin-top:2mm; border-top:.6pt solid var(--sand); padding-top:2mm }
+.cut{ text-align:center; color:var(--muted); margin:7mm 0; letter-spacing:.1em; font-size:9pt }
+
+/* pomoc */
+.help{ margin-top:6mm; border:1.4pt solid #B4403A; border-radius:3mm; padding:3.5mm 5mm; background:#FBEDEC; break-inside:avoid }
+.help-h{ font-weight:700; color:#B4403A; font-size:9.6pt; margin-bottom:2mm }
+.help-g{ display:grid; grid-template-columns:1fr 1fr; gap:1.5mm 6mm; font-size:9pt } .help-g b{ color:var(--ink); margin-right:1.5mm }
+
+/* okładka zeszytu */
+.cover{ text-align:center; padding-top:42mm }
+.cv-kicker{ font-size:9pt; letter-spacing:.38em; color:var(--terra); font-weight:700 }
+.cover h1{ font-family:var(--serif); font-weight:400; font-size:36pt; line-height:1.12; margin:10mm 0 0 }
+.cover h1 em{ color:var(--plum); font-size:30pt }
+.cv-rule{ width:40mm; height:1px; background:var(--plum); opacity:.5; margin:9mm auto }
+.cv-sub{ font-size:11pt; color:var(--muted); margin:0 }
+.cv-orn{ width:60mm; margin:16mm auto 0 } .cv-orn svg{ width:100%; display:block }
+.cv-note{ max-width:120mm; margin:18mm auto 0; font-family:var(--serif); font-size:11pt; color:var(--plumd); line-height:1.6 }
+.cv-author{ margin-top:30mm; letter-spacing:.16em; font-size:10pt }
+@media screen{ body{ background:#EFE9E1 } .pg{ background:#fff; max-width:210mm; margin:16px auto; padding:14mm 15mm; box-shadow:0 4px 20px rgba(0,0,0,.1) } }

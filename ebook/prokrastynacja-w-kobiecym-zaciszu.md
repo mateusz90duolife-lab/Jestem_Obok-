@@ -1,8 +1,8 @@
 # PROKRASTYNACJA W KOBIECYM ZACISZU
 
-### Praktyczny poradnik dla przeciążonych kobiet, które odkładają własne sprawy
+### Obciążenie mentalne, perfekcjonizm i odkładanie własnych spraw. Praktyczny poradnik dla przeciążonych kobiet
 
-**Edycja 2026 — wersja poprawiona merytorycznie**
+**Wydanie pierwsze, 2026**
 
 To nie jest e-book o tym, jak lepiej sprzątać dom czy perfekcyjnie organizować czas rodzinie.
 To praktyczny przewodnik dla kobiet, których układ nerwowy tonie w niewidzialnych obowiązkach.
@@ -106,7 +106,7 @@ Sformułujmy to precyzyjnie:
 Jeśli to zdanie brzmi jak opis Twojego życia, ta książka jest dla Ciebie. Jeśli nie — może się okazać, że Twoja prokrastynacja ma inne źródło, i to też jest ważna informacja.
 
 📚 **CO WIEMY Z BADAŃ**
-**Mental Load** (obciążenie mentalne, zwane też pracą kognitywną gospodarstwa domowego) to realnie badane zjawisko. Badania socjologiczne pokazują, że praca polegająca na **przewidywaniu potrzeb, planowaniu, podejmowaniu decyzji i monitorowaniu** ich wykonania rozkłada się w rodzinach nierówno i częściej spada na kobiety — nawet w parach, które dzielą fizyczne obowiązki domowe po połowie [4, 5]. To nie jest odczucie. To zmierzone zjawisko.
+**Mental Load** (obciążenie mentalne, zwane też pracą kognitywną gospodarstwa domowego) to realnie badane zjawisko. Badania socjologiczne pokazują, że praca polegająca na **przewidywaniu potrzeb, planowaniu, podejmowaniu decyzji i monitorowaniu** ich wykonania rozkłada się w rodzinach nierówno i częściej spada na kobiety [4, 5]. To nie jest tylko odczucie — to zjawisko opisane w badaniach.
 
 🧭 **JAK MOŻESZ TO WYKORZYSTAĆ**
 Kiedy w końcu masz chwilę dla siebie, często odrzucasz ambitne cele — naukę języka, ćwiczenia, własny projekt — i wybierasz scrollowanie albo serial. To zachowanie ma sens, jeśli spojrzysz na nie jak na **regulację nastroju w stanie wyczerpania zasobów**, a nie jak na wadę charakteru. Zmiana interpretacji nie rozwiązuje problemu, ale przerywa jeden z jego napędów: wstyd.
@@ -334,7 +334,7 @@ Sekcja, w której masz najwięcej punktów, wskazuje **wzorzec, od którego wart
 📚 **CO WIEMY Z BADAŃ**
 **Odkładanie snu** (*bedtime procrastination*) to opisane i badane zjawisko: świadome opóźnianie pójścia spać bez zewnętrznego powodu, wiążące się z krótszym snem i gorszym samopoczuciem [13, 14]. Popularna nazwa "revenge bedtime procrastination" pochodzi z internetu, nie z literatury naukowej — samo zjawisko jest jednak realne i badane.
 
-⚠️ **Sprostowanie wobec wcześniejszej wersji tekstu:** określenie, że wieczorne scrollowanie to "samobójstwo dla mózgu", zostało usunięte. Jest nieprawdziwe i nieodpowiedzialne. Odkładanie snu szkodzi zdrowiu i samopoczuciu, ale nie jest formą autoagresji ani niczym, o czym należy mówić w takich kategoriach.
+⚠️ **Uwaga na język:** w internecie można trafić na określenia w rodzaju „scrollowanie to samobójstwo dla mózgu”. Są nieprawdziwe i krzywdzące. Odkładanie snu szkodzi zdrowiu i samopoczuciu, ale nie jest formą autoagresji — i nie warto myśleć o sobie w takich kategoriach.
 
 ### Przykład 5: Zagubiona w Chaosie — Julia (postać fikcyjna)
 
@@ -345,7 +345,7 @@ Sekcja, w której masz najwięcej punktów, wskazuje **wzorzec, od którego wart
 ⚠️ **UWAGA — słabe dowody**
 *Body doubling* jest bardzo popularne w społeczności osób z ADHD i wielu osobom pomaga, ale **jego baza dowodowa jest uboga** — to praktyka oparta głównie na relacjach użytkowników, nie na badaniach kontrolowanych. To samo dotyczy techniki Pomodoro. Traktuj je jako warte spróbowania narzędzia, nie jako metody o potwierdzonej skuteczności.
 
-⚠️ **Ważne:** w pierwotnej wersji ta historia kończyła się diagnozą ADHD, co mogło sugerować, że opisany wzorzec zachowań wskazuje na ADHD. Tak nie jest. Trudności z rozpoczynaniem i organizacją występują w wielu stanach i sytuacjach życiowych. O tym, co odróżnia przeciążenie od zaburzenia — i kto może to rozstrzygnąć — piszę w Rozdziale 10.
+⚠️ **Ważne:** z tej historii nie wynika, że Julia ma ADHD — i z podobnych trudności u Ciebie też to nie wynika. Trudności z rozpoczynaniem i organizacją występują w wielu stanach i sytuacjach życiowych. O tym, co odróżnia przeciążenie od zaburzenia — i kto może to rozstrzygnąć — piszę w Rozdziale 10.
 
 ---
 
@@ -355,7 +355,7 @@ Sekcja, w której masz najwięcej punktów, wskazuje **wzorzec, od którego wart
 *(Dlaczego drobna sprawa potrafi wywołać nieproporcjonalny opór)*
 
 📚 **CO WIEMY Z BADAŃ**
-Mental Load to nie metafora ani pojęcie z poradników. Socjolożka Allison Daminger wyodrębniła cztery składowe pracy kognitywnej w gospodarstwie domowym: **przewidywanie** potrzeb, **identyfikowanie** możliwych rozwiązań, **decydowanie** i **monitorowanie** rezultatów. Jej badania pokazują, że dwa z tych etapów — przewidywanie i monitorowanie — spadają nieproporcjonalnie na kobiety, nawet w parach deklarujących równy podział obowiązków [4]. Późniejsze prace potwierdzają związek tego obciążenia z gorszym samopoczuciem i przeciążeniem [5].
+Mental Load to nie metafora ani pojęcie z poradników. Socjolożka Allison Daminger wyodrębniła cztery składowe pracy kognitywnej w gospodarstwie domowym: **przewidywanie** potrzeb, **identyfikowanie** możliwych rozwiązań, **decydowanie** i **monitorowanie** rezultatów. W jej badaniu (wywiady z 35 parami) kobiety wykonywały więcej tej pracy w ogóle, a zwłaszcza przewidywania i monitorowania. Decyzje para podejmowała natomiast mniej więcej po równo [4]. To ważny szczegół: problemem nie jest to, kto ma ostatnie słowo, tylko kto musi w ogóle zauważyć, że jest o czym decydować. Późniejsze prace potwierdzają związek tego obciążenia z gorszym samopoczuciem i przeciążeniem [5].
 
 To kluczowe rozróżnienie tej książki: **wykonanie zadania to nie to samo, co ponoszenie odpowiedzialności za to, żeby zadanie w ogóle zaistniało w czyjejś głowie.**
 
@@ -367,7 +367,7 @@ Jeśli od trzech tygodni omijasz wzrokiem kopertę z wezwaniem do zapłaty, cho�
 *Przykład ilustracyjny (historia fikcyjna):* Beata ma na biurku kopertę z wezwaniem do zapłaty. Leży tam od trzech tygodni. Wie, że to jeden przelew. Za każdym razem, gdy na nią patrzy, sięga po telefon.
 
 ⚠️ **UWAGA — to uproszczenie**
-W poprzedniej wersji tego rozdziału pisałam, że "dla Twojego układu nerwowego niezapłacony rachunek to atak tygrysa szablozębnego". To chwytliwe, ale nieprawdziwe. Reakcja stresowa na abstrakcyjne zagrożenie **nie jest tożsama** z reakcją na zagrożenie życia — różni się intensywnością, przebiegiem i konsekwencjami. Prawdziwe jest coś skromniejszego: **przewlekły stres podtrzymuje stan podwyższonej czujności, a w tym stanie trudniej podejmować i realizować decyzje** [9].
+W poradnikach często pada zdanie, że „dla układu nerwowego niezapłacony rachunek to atak tygrysa szablozębnego”. To chwytliwe, ale nieprawdziwe. Reakcja stresowa na abstrakcyjne zagrożenie **nie jest tożsama** z reakcją na zagrożenie życia — różni się intensywnością, przebiegiem i konsekwencjami. Prawdziwe jest coś skromniejszego: **przewlekły stres podtrzymuje stan podwyższonej czujności, a w tym stanie trudniej podejmować i realizować decyzje** [9].
 
 ### Kiedy naprawdę pomaga zmiana systemu, a nie kolejny planer
 
@@ -619,8 +619,8 @@ Cel: **25 minut.**
 
 *(Kiedy przestrzeń krzyczy listą obowiązków)*
 
-⚠️ **UWAGA — sprostowanie**
-W poprzedniej wersji powoływałam się tu na *ego depletion* jako zjawisko "równie realne jak zmęczenie mięśni". To nieprawda i zostało usunięte — ten efekt nie replikował się w dużych badaniach wieloośrodkowych [8].
+⚠️ **UWAGA — popularny mit**
+W wielu poradnikach przeczytasz, że silna wola wyczerpuje się w ciągu dnia jak zmęczony mięsień (tzw. *ego depletion*). Ten efekt nie potwierdził się w dużych badaniach wieloośrodkowych [8], dlatego nie opieram na nim tego rozdziału.
 
 🧭 **JAK MOŻESZ TO WYKORZYSTAĆ**
 To, co zostaje, jest prostsze i praktyczniejsze: **łatwiej nie ulegać pokusie, której nie masz w zasięgu ręki, niż z nią walczyć.** Zamiast pracować nad silną wolą, zmieniaj otoczenie tak, żeby nie była potrzebna.
@@ -635,7 +635,7 @@ Wyznacz **jeden fotel albo kącik**, na którym nie ma prawa leżeć żaden domo
 
 🧭 Jeśli oglądanie cudzych idealnych domów pogarsza Twoje samopoczucie — przestań je oglądać. Nie musisz mieć na to badania. Wystarczy, że sprawdzisz to na sobie: odetnij trzy profile na dwa tygodnie i zobacz, czy coś się zmieni.
 
-⚠️ Zdanie "każde takie zdjęcie podnosi Twój poziom kortyzolu" zostało usunięte — nikt Ci tego kortyzolu nie mierzył, mnie również nie.
+⚠️ Nie napiszę, że „każde takie zdjęcie podnosi Ci kortyzol” — nikt tego u Ciebie nie mierzył. Liczy się to, co sama zauważysz po dwóch tygodniach.
 
 ### Tarcie dla pokus: odkładanie snu
 
@@ -723,8 +723,8 @@ Jeśli rozpoznajesz u siebie którykolwiek z poniższych punktów, umów wizytę
 
 ### SEKCJA A: KIEDY WARTO SPRAWDZIĆ PRZYCZYNY SOMATYCZNE
 
-⚠️ **Sprostowanie wobec poprzedniej wersji**
-Wcześniej pisałam, że "wiele objawów przypisywanych prokrastynacji to w rzeczywistości skutki zaburzeń hormonalnych". To twierdzenie było zbyt szerokie i nieuprawnione — nie znam badań, które pozwalałyby oszacować taką proporcję. Usunęłam też listę badań "do wykonania". **Nie jestem lekarką i nie mogę zlecać ani sugerować panelu badań.**
+⚠️ **Ważne zastrzeżenie**
+Możesz trafić na twierdzenie, że „wiele objawów przypisywanych prokrastynacji to w rzeczywistości zaburzenia hormonalne”. Nie znam badań, które pozwalałyby oszacować taką proporcję, więc tego nie powtarzam. Nie znajdziesz tu też listy badań „do wykonania”. **Nie jestem lekarką i nie mogę zlecać ani sugerować panelu badań.**
 
 Prawdziwe jest coś węższego i ważnego: **niektóre stany somatyczne dają objawy, które łatwo pomylić z brakiem motywacji.** Dlatego jeśli zmęczeniu i trudnościom z koncentracją towarzyszą objawy fizyczne — warto, żeby przyjrzał się temu lekarz.
 
@@ -753,7 +753,7 @@ To realnie zwiększa szansę na dobrą rozmowę:
 5. **Zapytaj o plan**: *"Jeśli teraz nie robimy badań — po czym poznam, że powinnam wrócić?"*
 
 ⚠️ **O "medycznym gaslightingu"**
-W poprzedniej wersji był tu skrypt sugerujący żądanie konkretnych badań i domaganie się adnotacji o odmowie. Usunęłam go. Bagatelizowanie objawów kobiet to realny, opisywany problem — i masz pełne prawo poprosić o wyjaśnienie oraz skorzystać z drugiej opinii. Ale **nie chcę uczyć Cię wchodzenia w konflikt z lekarzem ani sugerować, że badania należą się na żądanie**. Skuteczniejsze i uczciwsze jest: dobrze opisać objawy, zapytać o uzasadnienie decyzji i — jeśli nadal masz wątpliwości — poprosić o konsultację u innego specjalisty.
+W sieci krążą gotowe skrypty, które uczą żądania konkretnych badań i domagania się adnotacji o odmowie. Nie polecam ich. Bagatelizowanie objawów kobiet to realny, opisywany problem — i masz pełne prawo poprosić o wyjaśnienie oraz skorzystać z drugiej opinii. Ale **nie chcę uczyć Cię wchodzenia w konflikt z lekarzem ani sugerować, że badania należą się na żądanie**. Skuteczniejsze i uczciwsze jest: dobrze opisać objawy, zapytać o uzasadnienie decyzji i — jeśli nadal masz wątpliwości — poprosić o konsultację u innego specjalisty.
 
 ---
 
@@ -765,8 +765,8 @@ ADHD to zaburzenie neurorozwojowe, którego rozpoznanie wymaga **specjalistyczne
 📚 **CO WIEMY Z BADAŃ**
 Obraz ADHD u dziewcząt i kobiet bywa inny niż stereotypowy: częściej dominuje typ z przewagą zaburzeń uwagi, a nadruchliwość bywa mniej widoczna. Eksperckie stanowisko konsensusowe wskazuje, że prowadzi to do **niedodiagnozowania i późniejszego rozpoznawania ADHD u kobiet**, a także do częstszego rozpoznawania w pierwszej kolejności zaburzeń nastroju i lękowych [25].
 
-⚠️ **Doprecyzowanie wobec poprzedniej wersji**
-Napisałam wcześniej, że "dorosłe kobiety z ADHD często żyją latami z diagnozą depresji lub lęku, bo ich prawdziwy problem został pominięty". To sformułowanie było mylące z dwóch powodów. Po pierwsze — zaburzenia lękowe i depresyjne **bardzo często faktycznie współwystępują** z ADHD, a nie tylko je "podszywają". Po drugie — z tego, że ktoś ma rozpoznaną depresję, nie wynika, że rozpoznanie jest błędne. Ostrożniejsza i zgodna z literaturą wersja brzmi: **u części kobiet ADHD bywa rozpoznawane późno, po latach leczenia współwystępujących zaburzeń nastroju i lęku** [25].
+⚠️ **Doprecyzowanie**
+Często można usłyszeć, że „dorosłe kobiety z ADHD latami żyją z błędną diagnozą depresji lub lęku”. To sformułowanie jest mylące z dwóch powodów. Po pierwsze — zaburzenia lękowe i depresyjne **bardzo często faktycznie współwystępują** z ADHD, a nie tylko je "podszywają". Po drugie — z tego, że ktoś ma rozpoznaną depresję, nie wynika, że rozpoznanie jest błędne. Ostrożniejsza i zgodna z literaturą wersja brzmi: **u części kobiet ADHD bywa rozpoznawane późno, po latach leczenia współwystępujących zaburzeń nastroju i lęku** [25].
 
 **Trudności, które zgłaszają dorosłe osoby z ADHD** (to opis doświadczeń, nie kryteria diagnostyczne):
 - przewlekłe trudności organizacyjne — gubienie rzeczy, zapominanie o terminach i opłatach;
@@ -775,8 +775,8 @@ Napisałam wcześniej, że "dorosłe kobiety z ADHD często żyją latami z diag
 - trudność z utrzymaniem rutyny mimo wielokrotnych prób;
 - przesunięty rytm dobowy i aktywność wieczorna.
 
-⚠️ **Sprostowanie: to nie jest różnica "przeciążenie kontra ADHD"**
-W poprzedniej wersji zestawiłam to tak: *Mental Load = za dużo zadań; ADHD = mózg nie potrafi zainicjować działania*. To rozróżnienie jest **nieprawdziwe i mylące**. Granica nie przebiega w tym miejscu:
+⚠️ **Uwaga: to nie jest różnica „przeciążenie kontra ADHD”**
+Kusi proste rozróżnienie: *Mental Load = za dużo zadań; ADHD = mózg nie potrafi zainicjować działania*. To rozróżnienie jest **nieprawdziwe i mylące**. Granica nie przebiega w tym miejscu:
 
 - Osoba z ADHD **również** może być skrajnie przeciążona — i często jest, bo trudności wykonawcze zwiększają obciążenie codzienne.
 - Osoba **bez** ADHD może doświadczać bardzo silnego paraliżu wykonawczego wskutek przewlekłego stresu, deprywacji snu, depresji, lęku lub choroby somatycznej.
@@ -808,7 +808,7 @@ Jeśli natomiast szukasz sygnału, kiedy w ogóle o tym pomyśleć — wystarczy
 📚 **CO WIEMY O LECZENIU**
 Metaanaliza sieciowa obejmująca badania nad farmakoterapią ADHD wskazuje, że leki stosowane u dorosłych są skuteczne w redukcji objawów podstawowych, przy zróżnicowanym profilu tolerancji [26]. **Nie oznacza to, że są odpowiednie dla każdej osoby.** O tym, czy i jakie leczenie zastosować, decyduje lekarz po ocenie stanu zdrowia, chorób współistniejących i przeciwwskazań. W Polsce leki stosowane w ADHD są dostępne wyłącznie na receptę, a część z nich podlega dodatkowym regulacjom.
 
-⚠️ Usunęłam z tej sekcji zdanie, że "leki często dramatycznie pomagają w odzyskaniu funkcji wykonawczych". Brzmiało jak obietnica i zachęta, a decyzja o leczeniu nie należy do autorki poradnika.
+⚠️ Nie znajdziesz tu zapewnień, że „leki dramatycznie pomagają”. Takie zdanie brzmi jak obietnica i zachęta, a decyzja o leczeniu nie należy do autorki poradnika.
 
 #### Realia dostępu do diagnostyki w Polsce
 
@@ -840,8 +840,8 @@ Jeśli to Twój obraz — **porozmawiaj z psychologiem lub psychiatrą.** Wypale
 
 #### Kiedy to może nie być prokrastynacja
 
-⚠️ **Sprostowanie wobec poprzedniej wersji**
-Wcześniej napisałam: *"Jeśli przez co najmniej 2 tygodnie doświadczasz [...] — to nie jest prokrastynacja. To depresja."* **To sformułowanie było zbyt kategoryczne i wycofuję je.** Dwa tygodnie to element kryteriów czasowych używanych w klasyfikacjach diagnostycznych [29], a nie próg, po którego przekroczeniu można cokolwiek stwierdzić. Rozpoznanie depresji wymaga oceny wielu objawów, ich nasilenia, wpływu na funkcjonowanie i wykluczenia innych przyczyn — i może je postawić wyłącznie specjalista.
+⚠️ **Dlaczego nie ma tu prostej reguły**
+W sieci krąży reguła: *„Jeśli przez co najmniej 2 tygodnie doświadczasz [...] — to nie jest prokrastynacja. To depresja.”* **To zbyt kategoryczne.** Dwa tygodnie to element kryteriów czasowych używanych w klasyfikacjach diagnostycznych [29], a nie próg, po którego przekroczeniu można cokolwiek stwierdzić. Rozpoznanie depresji wymaga oceny wielu objawów, ich nasilenia, wpływu na funkcjonowanie i wykluczenia innych przyczyn — i może je postawić wyłącznie specjalista.
 
 Ostrożniejsza, prawdziwa wersja brzmi:
 
@@ -904,11 +904,11 @@ I jedna granica: **kiedy techniki nie działają, problem może nie leżeć w te
 
 Nie czekaj, aż poczujesz ochotę na zmianę. Zrób najmniejszy krok, jaki dziś zaprojektowałaś.
 
-### TRACKER ODZYSKANEGO CZASU
+### ZESZYT ĆWICZEŃ
 
-Prosty system śledzenia postępów przez 14 dni — bez skomplikowanych tabel, które same stają się kolejnym obowiązkiem.
+Do tej książki dołączony jest **Zeszyt ćwiczeń** (osobny plik PDF do wydruku, format A4). Znajdziesz w nim wszystkie ćwiczenia z kolejnych rozdziałów z miejscem na zapisywanie, arkusz autotestu, tracker 14 dni, mapę podziału odpowiedzialności w domu, kartę Protokołu Awaryjnego do powieszenia na lodówce i notatkę do przygotowania wizyty u lekarza.
 
-[Link: Pobierz arkusz "Odzyskiwanie Czasu"]
+Nie musisz drukować wszystkiego. Wydrukuj jedną stronę — tę, której potrzebujesz dziś.
 
 ---
 
@@ -956,97 +956,97 @@ Prosty system śledzenia postępów przez 14 dni — bez skomplikowanych tabel, 
 
 Każda pozycja jest przypisana do konkretnego twierdzenia z książki. Jeśli jakiegoś twierdzenia nie ma na tej liście — znaczy, że jest oznaczone jako 🧭 rekomendacja praktyczna, a nie ustalenie badawcze.
 
-**[1]** Steel, P. (2007). *The nature of procrastination: A meta-analytic and theoretical review of quintessential self-regulatory failure.* Psychological Bulletin, 133(1), 65–94.
+**[1]** Steel, P. (2007). *The nature of procrastination: A meta-analytic and theoretical review of quintessential self-regulatory failure.* Psychological Bulletin, 133(1), 65–94. https://doi.org/10.1037/0033-2909.133.1.65
 → Prokrastynacja jako problem samoregulacji; awersja do zadania, impulsywność i dyskontowanie odroczonej nagrody jako główne korelaty (Wstęp, R1, R2).
 
-**[2]** Sirois, F. M., & Pychyl, T. A. (2013). *Procrastination and the priority of short-term mood repair.* Social and Personality Psychology Compass, 7(2), 115–127.
+**[2]** Sirois, F. M., & Pychyl, T. A. (2013). *Procrastination and the priority of short-term mood regulation: Consequences for future self.* Social and Personality Psychology Compass, 7(2), 115–127. https://doi.org/10.1111/spc3.12011
 → Odkładanie jako regulacja nastroju w krótkim horyzoncie kosztem celów długoterminowych (Wstęp, R1).
 
-**[3]** Rozental, A., & Carlbring, P. (2014). *Understanding and treating procrastination: A review of a common self-regulatory failure.* Psychology, 5(13), 1488–1502.
+**[3]** Rozental, A., & Carlbring, P. (2014). *Understanding and treating procrastination: A review of a common self-regulatory failure.* Psychology, 5(13), 1488–1502. https://doi.org/10.4236/psych.2014.513160
 → Interwencje poznawczo-behawioralne jako podejście o najlepszym wsparciu empirycznym (R5).
 
-**[4]** Daminger, A. (2019). *The cognitive dimension of household labor.* American Sociological Review, 84(4), 609–633.
+**[4]** Daminger, A. (2019). *The cognitive dimension of household labor.* American Sociological Review, 84(4), 609–633. https://doi.org/10.1177/0003122419859007
 → Cztery składowe pracy kognitywnej w domu; nierówny rozkład przewidywania i monitorowania (Wstęp, R3, R6.5).
 
-**[5]** Dean, L., Churchill, B., & Ruppanner, L. (2022). *The mental load: Building a deeper theoretical understanding of how cognitive and emotional labor overload women and mothers.* Community, Work & Family, 25(1), 13–29.
+**[5]** Dean, L., Churchill, B., & Ruppanner, L. (2022). *The mental load: Building a deeper theoretical understanding of how cognitive and emotional labor overload women and mothers.* Community, Work & Family, 25(1), 13–29. https://doi.org/10.1080/13668803.2021.2002813
 → Mental Load jako obciążenie wpływające na samopoczucie (Wstęp, R3).
 
-**[6]** Stoeber, J., & Otto, K. (2006). *Positive conceptions of perfectionism: Approaches, evidence, challenges.* Personality and Social Psychology Review, 10(4), 295–319.
+**[6]** Stoeber, J., & Otto, K. (2006). *Positive conceptions of perfectionism: Approaches, evidence, challenges.* Personality and Social Psychology Review, 10(4), 295–319. https://doi.org/10.1207/s15327957pspr1004_2
 → Rozróżnienie perfekcjonizmu adaptacyjnego i dezadaptacyjnego; to obawy przed oceną, nie wysokie standardy, wiążą się z odkładaniem (R1).
 
 **[7]** Hochschild, A., & Machung, A. (1989/2012). *The Second Shift: Working Families and the Revolution at Home.* Penguin.
 → Pojęcie drugiego etatu (R1).
 
-**[8]** Hagger, M. S., et al. (2016). *A multilab preregistered replication of the ego-depletion effect.* Perspectives on Psychological Science, 11(4), 546–573.
-→ Brak potwierdzenia efektu wyczerpania ego; podstawa do wycofania metafory "baterii siły woli" (R1, R2, R8).
+**[8]** Hagger, M. S., et al. (2016). *A multilab preregistered replication of the ego-depletion effect.* Perspectives on Psychological Science, 11(4), 546–573. https://doi.org/10.1177/1745691616652873
+→ Brak potwierdzenia efektu wyczerpania ego; dlatego „bateria siły woli” jest w tej książce tylko metaforą (R1, R2, R8).
 
-**[9]** Arnsten, A. F. T. (2009). *Stress signalling pathways that impair prefrontal cortex structure and function.* Nature Reviews Neuroscience, 10(6), 410–422.
+**[9]** Arnsten, A. F. T. (2009). *Stress signalling pathways that impair prefrontal cortex structure and function.* Nature Reviews Neuroscience, 10(6), 410–422. https://doi.org/10.1038/nrn2648
 → Stres pogarsza funkcjonowanie kory przedczołowej (R2, R3).
 
-**[10]** Killgore, W. D. S. (2010). *Effects of sleep deprivation on cognition.* Progress in Brain Research, 185, 105–129.
+**[10]** Killgore, W. D. S. (2010). *Effects of sleep deprivation on cognition.* Progress in Brain Research, 185, 105–129. https://doi.org/10.1016/B978-0-444-53702-7.00007-5
 → Deprywacja snu pogarsza funkcje wykonawcze (R2).
 
-**[11]** Sirois, F. M. (2014). *Procrastination and stress: Exploring the role of self-compassion.* Self and Identity, 13(2), 128–145.
+**[11]** Sirois, F. M. (2014). *Procrastination and stress: Exploring the role of self-compassion.* Self and Identity, 13(2), 128–145. https://doi.org/10.1080/15298868.2013.763404
 → Samowspółczucie pośredniczy w związku prokrastynacji ze stresem (R1, R2, R5).
 
-**[12]** LeDoux, J. E., & Pine, D. S. (2016). *Using neuroscience to help understand fear and anxiety: A two-system framework.* American Journal of Psychiatry, 173(11), 1083–1093.
+**[12]** LeDoux, J. E., & Pine, D. S. (2016). *Using neuroscience to help understand fear and anxiety: A two-system framework.* American Journal of Psychiatry, 173(11), 1083–1093. https://doi.org/10.1176/appi.ajp.2016.16030353
 → Podstawa zastrzeżenia, że "ciało migdałowate jako ośrodek strachu" to uproszczenie (R2).
 
-**[13]** Kroese, F. M., De Ridder, D. T. D., Evers, C., & Adriaanse, M. A. (2014). *Bedtime procrastination: Introducing a new area of procrastination.* Frontiers in Psychology, 5, 611.
+**[13]** Kroese, F. M., De Ridder, D. T. D., Evers, C., & Adriaanse, M. A. (2014). *Bedtime procrastination: Introducing a new area of procrastination.* Frontiers in Psychology, 5, 611. https://doi.org/10.3389/fpsyg.2014.00611
 → Odkładanie snu jako odrębne, badane zjawisko (R2.5, R8).
 
-**[14]** Kroese, F. M., Nauts, S., Kamphorst, B. A., Anderson, J. H., & de Ridder, D. T. D. (2016). *Bedtime procrastination: A behavioral perspective on sleep insufficiency.* W: *Procrastination, Health, and Well-Being* (s. 93–119). Academic Press.
+**[14]** Kroese, F. M., Nauts, S., Kamphorst, B. A., Anderson, J. H., & de Ridder, D. T. D. (2016). *Bedtime procrastination: A behavioral perspective on sleep insufficiency.* W: *Procrastination, Health, and Well-Being* (s. 93–119). Academic Press. https://doi.org/10.1016/B978-0-12-802862-9.00005-0
 → Związek odkładania snu z niedoborem snu i gorszym funkcjonowaniem (R2.5, R8).
 
-**[15]** Gollwitzer, P. M. (1999). *Implementation intentions: Strong effects of simple plans.* American Psychologist, 54(7), 493–503.
+**[15]** Gollwitzer, P. M. (1999). *Implementation intentions: Strong effects of simple plans.* American Psychologist, 54(7), 493–503. https://doi.org/10.1037/0003-066X.54.7.493
 → Skuteczność planów "jeśli X, to Y" (R4, R7).
 
-**[16]** Gollwitzer, P. M., & Sheeran, P. (2006). *Implementation intentions and goal achievement: A meta-analysis of effects and processes.* Advances in Experimental Social Psychology, 38, 69–119.
+**[16]** Gollwitzer, P. M., & Sheeran, P. (2006). *Implementation intentions and goal achievement: A meta-analysis of effects and processes.* Advances in Experimental Social Psychology, 38, 69–119. https://doi.org/10.1016/S0065-2601(06)38002-1
 → Metaanaliza potwierdzająca skuteczność intencji wdrożeniowych (R4, R7).
 
-**[17]** Zeigarnik, B. (1927). *Über das Behalten von erledigten und unerledigten Handlungen.* Psychologische Forschung, 9, 1–85.
+**[17]** Zeigarnik, B. (1927). *Das Behalten erledigter und unerledigter Handlungen.* Psychologische Forschung, 9, 1–85. https://doi.org/10.1007/BF02409755
 → Źródło efektu Zeigarnik; cytowane wraz z zastrzeżeniem o niespójnych replikacjach (R4).
 
 **[18]** Hayes, S. C., Strosahl, K. D., & Wilson, K. G. (2012). *Acceptance and Commitment Therapy: The Process and Practice of Mindful Change* (2nd ed.). Guilford Press.
 → Defuzja poznawcza jako technika ACT (R5).
 
-**[19]** Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., & Wardle, J. (2010). *How are habits formed: Modelling habit formation in the real world.* European Journal of Social Psychology, 40(6), 998–1009.
+**[19]** Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., & Wardle, J. (2010). *How are habits formed: Modelling habit formation in the real world.* European Journal of Social Psychology, 40(6), 998–1009. https://doi.org/10.1002/ejsp.674
 → Mediana ok. 66 dni do automatyzacji zachowania; podstawa obalenia mitu "21 dni" (R7).
 
-**[20]** Polivy, J., & Herman, C. P. (1985). *Dieting and binging: A causal analysis.* American Psychologist, 40(2), 193–201.
+**[20]** Polivy, J., & Herman, C. P. (1985). *Dieting and binging: A causal analysis.* American Psychologist, 40(2), 193–201. https://doi.org/10.1037/0003-066X.40.2.193
 → Efekt "pal licho" (R9).
 
-**[21]** Samuels, M. H. (2014). *Psychiatric and cognitive manifestations of hypothyroidism.* Current Opinion in Endocrinology, Diabetes and Obesity, 21(5), 377–383.
+**[21]** Samuels, M. H. (2014). *Psychiatric and cognitive manifestations of hypothyroidism.* Current Opinion in Endocrinology, Diabetes and Obesity, 21(5), 377–383. https://doi.org/10.1097/MED.0000000000000089
 → Objawy poznawcze i nastroju w niedoczynności tarczycy (R10, sekcja A).
 
-**[22]** Maki, P. M., & Jaff, N. G. (2022). *Brain fog in menopause: A health-care professional's guide for decision-making and counseling on cognition.* Climacteric, 25(6), 570–578.
+**[22]** Maki, P. M., & Jaff, N. G. (2022). *Brain fog in menopause: A health-care professional's guide for decision-making and counseling on cognition.* Climacteric, 25(6), 570–578. https://doi.org/10.1080/13697137.2022.2122792
 → Trudności poznawcze w okresie okołomenopauzalnym — realne, zwykle łagodne i przejściowe (R10, sekcja A).
 
-**[23]** Kessler, R. C., et al. (2005). *The World Health Organization Adult ADHD Self-Report Scale (ASRS): A short screening scale for use in the general population.* Psychological Medicine, 35(2), 245–256.
+**[23]** Kessler, R. C., et al. (2005). *The World Health Organization Adult ADHD Self-Report Scale (ASRS): A short screening scale for use in the general population.* Psychological Medicine, 35(2), 245–256. https://doi.org/10.1017/S0033291704002892
 → Charakterystyka ASRS jako narzędzia przesiewowego (R10, sekcja B).
 
-**[24]** Ustun, B., et al. (2017). *The World Health Organization Adult Attention-Deficit/Hyperactivity Disorder Self-Report Screening Scale for DSM-5.* JAMA Psychiatry, 74(5), 520–526.
+**[24]** Ustun, B., et al. (2017). *The World Health Organization Adult Attention-Deficit/Hyperactivity Disorder Self-Report Screening Scale for DSM-5.* JAMA Psychiatry, 74(5), 520–526. https://doi.org/10.1001/jamapsychiatry.2017.0298
 → Zaktualizowana wersja skali przesiewowej (R10, sekcja B).
 
-**[25]** Young, S., et al. (2020). *Females with ADHD: An expert consensus statement taking a lifespan approach providing guidance for the identification and treatment of attention-deficit/hyperactivity disorder in girls and women.* BMC Psychiatry, 20, 404.
+**[25]** Young, S., et al. (2020). *Females with ADHD: An expert consensus statement taking a lifespan approach providing guidance for the identification and treatment of attention-deficit/hyperactivity disorder in girls and women.* BMC Psychiatry, 20, 404. https://doi.org/10.1186/s12888-020-02707-9
 → Odmienny obraz i późniejsze rozpoznawanie ADHD u dziewcząt i kobiet; współwystępowanie zaburzeń nastroju i lęku (R10, sekcja B).
 
-**[26]** Cortese, S., et al. (2018). *Comparative efficacy and tolerability of medications for attention-deficit/hyperactivity disorder in children, adolescents, and adults: A systematic review and network meta-analysis.* The Lancet Psychiatry, 5(9), 727–738.
+**[26]** Cortese, S., et al. (2018). *Comparative efficacy and tolerability of medications for attention-deficit/hyperactivity disorder in children, adolescents, and adults: A systematic review and network meta-analysis.* The Lancet Psychiatry, 5(9), 727–738. https://doi.org/10.1016/S2215-0366(18)30269-4
 → Skuteczność farmakoterapii ADHD u dorosłych, ze zróżnicowaną tolerancją (R10, sekcja B).
 
-**[27]** Roskam, I., & Mikolajczak, M. (2020). *Parental burnout: Moving the focus from children to parents.* New Directions for Child and Adolescent Development, 2020(174), 7–13.
+**[27]** Mikolajczak, M., & Roskam, I. (2020). *Parental burnout: Moving the focus from children to parents.* New Directions for Child and Adolescent Development, 2020(174), 7–13. https://doi.org/10.1002/cad.20376
 → Definicja i wymiary wypalenia rodzicielskiego (R10, sekcja C).
 
-**[28]** Mikolajczak, M., Gross, J. J., & Roskam, I. (2019). *Parental burnout: What is it, and why does it matter?* Clinical Psychological Science, 7(6), 1319–1329.
+**[28]** Mikolajczak, M., Gross, J. J., & Roskam, I. (2019). *Parental burnout: What is it, and why does it matter?* Clinical Psychological Science, 7(6), 1319–1329. https://doi.org/10.1177/2167702619858430
 → Konsekwencje wypalenia rodzicielskiego; odrębność od wypalenia zawodowego i depresji (R10, sekcja C).
 
 **[29]** American Psychiatric Association (2022). *Diagnostic and Statistical Manual of Mental Disorders* (5th ed., text rev.); World Health Organization (2019/2021). *ICD-11*.
-→ Kryteria czasowe i objawowe epizodu depresyjnego; podstawa sprostowania twierdzenia o "dwóch tygodniach" (R10, sekcja C).
+→ Kryteria czasowe i objawowe epizodu depresyjnego; kontekst dla kryterium „dwóch tygodni” (R10, sekcja C).
 
-**[30]** Barry, J. A., Kuczmierczyk, A. R., & Hardiman, P. J. (2011). *Anxiety and depression in polycystic ovary syndrome: A systematic review and meta-analysis.* Human Reproduction, 26(9), 2442–2451.
+**[30]** Barry, J. A., Kuczmierczyk, A. R., & Hardiman, P. J. (2011). *Anxiety and depression in polycystic ovary syndrome: A systematic review and meta-analysis.* Human Reproduction, 26(9), 2442–2451. https://doi.org/10.1093/humrep/der197
 → Podwyższone ryzyko objawów lękowych i depresyjnych w PCOS (R10, sekcja A).
 
-**[31]** Houston, B. L., et al. (2018). *Efficacy of iron supplementation on fatigue and physical capacity in non-anaemic iron-deficient adults: A systematic review of randomised controlled trials.* BMJ Open, 8(4), e019240.
+**[31]** Houston, B. L., et al. (2018). *Efficacy of iron supplementation on fatigue and physical capacity in non-anaemic iron-deficient adults: A systematic review of randomised controlled trials.* BMJ Open, 8(4), e019240. https://doi.org/10.1136/bmjopen-2017-019240
 → Zmęczenie przy niedoborze żelaza bez niedokrwistości (R10, sekcja A).
 
 ### Literatura popularna i uzupełniająca
@@ -1055,7 +1055,7 @@ Poniższe pozycje ukształtowały sposób myślenia o tej książce, ale **nie s
 
 - Clear, J. (2018). *Atomic Habits.* Avery.
 - Criado Perez, C. (2019). *Invisible Women: Data Bias in a World Designed for Men.* Chatto & Windus.
-- Darcy, E. (Emma) (2017). *Fallait demander* / wyd. pol. *Mental Load: komiks feministyczny.*
+- Emma (2017). *Fallait demander* [komiks internetowy]. Wydanie angielskie: *The Mental Load: A Feminist Comic*, Seven Stories Press.
 - Kahneman, D. (2011). *Thinking, Fast and Slow.* Farrar, Straus and Giroux.
 - Nagoski, E., & Nagoski, A. (2019). *Burnout: The Secret to Unlocking the Stress Cycle.* Ballantine Books.
 - Ratey, N. A. (2008). *The Disorganized Mind.* St. Martin's Press.
@@ -1083,7 +1083,7 @@ Uczciwość wobec czytelniczki wymaga powiedzenia, **które fragmenty tej ksią�
 - Body doubling, technika Pomodoro, plan 14 dni, autotest z Rozdziału 2.5, konkretne skrypty rozmów, "zasada kalendarza", progi "30 procent".
 - Efekt Zeigarnik [17] — niespójne replikacje.
 
-**Twierdzenia wycofane z poprzedniej wersji tej książki:**
+**Popularne twierdzenia, których w tej książce świadomie nie powtarzam:**
 - "Siła woli działa jak bateria" / *ego depletion* jako fakt [8].
 - "Niezapłacony rachunek to dla mózgu atak tygrysa szablozębnego".
 - "Kobieca prokrastynacja to krzyk rozpaczy przebodźcowanego układu nerwowego" jako opis ogólny.
